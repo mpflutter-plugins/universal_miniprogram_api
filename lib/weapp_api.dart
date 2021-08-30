@@ -111,6 +111,29 @@ class Wx {
 
   // 转发
 
+  void updateShareMenu(UpdateShareMenuOption option) {
+    context.callMethod('updateShareMenu', [option.toJson()]);
+  }
+
+  void showShareMenu(ShowShareMenuOption option) {
+    context.callMethod('showShareMenu', [option.toJson()]);
+  }
+
+  void showShareImageMenu(ShowShareImageMenuOption option) {
+    context.callMethod('showShareImageMenu', [option.toJson()]);
+  }
+
+  void shareVideoMessage(ShareVideoMessageOption option) {
+    context.callMethod('shareVideoMessage', [option.toJson()]);
+  }
+
+  void shareFileMessage(ShareFileMessageOption option) {
+    context.callMethod('shareFileMessage', [option.toJson()]);
+  }
+
+  void hideShareMenu(HideShareMenuOption option) {
+    context.callMethod('hideShareMenu', [option.toJson()]);
+  }
   // 基础.电池
 
   Future<GetBatteryInfoSyncResult> getBatteryInfoSync() async {
@@ -119,7 +142,7 @@ class Wx {
     return GetBatteryInfoSyncResult(result);
   }
 
-  // 界面
+  // 界面.交互
 
   void showToast(ShowToastOption option) {
     context.callMethod('showToast', [option.toJson()]);
@@ -151,6 +174,93 @@ class Wx {
 
   void disableAlertBeforeUnload() {
     context.callMethod('disableAlertBeforeUnload', []);
+  }
+
+  // 界面.导航栏
+
+  void showNavigationBarLoading() {
+    context.callMethod('showNavigationBarLoading', []);
+  }
+
+  void setNavigationBarTitle(SetNavigationBarTitleOption option) {
+    context.callMethod('setNavigationBarTitle', [option.toJson()]);
+  }
+
+  void setNavigationBarColor(SetNavigationBarColorOption option) {
+    context.callMethod('setNavigationBarColor', [option.toJson()]);
+  }
+
+  void hideNavigationBarLoading() {
+    context.callMethod('hideNavigationBarLoading', []);
+  }
+
+  void hideHomeButton() {
+    context.callMethod('hideHomeButton', []);
+  }
+
+  // 界面.下拉刷新
+
+  void stopPullDownRefresh() {
+    context.callMethod('stopPullDownRefresh', []);
+  }
+
+  void startPullDownRefresh() {
+    context.callMethod('startPullDownRefresh', []);
+  }
+
+  // 界面.置顶
+
+  void setTopBarText(SetTopBarTextOption option) {
+    context.callMethod('setTopBarText', [option.toJson()]);
+  }
+
+  // 界面.菜单
+
+  Future<Rect> getMenuButtonBoundingClientRect() async {
+    final result = await context.callMethod('getMenuButtonBoundingClientRect');
+    if (result is! mpjs.JsObject)
+      throw 'Fail to getMenuButtonBoundingClientRect result.';
+    return Rect(result);
+  }
+
+  // 支付
+
+  void requestPayment(RequestPaymentOption option) {
+    context.callMethod('requestPayment', [option.toJson()]);
+  }
+
+  void requestOrderPayment(RequestOrderPaymentOption option) {
+    context.callMethod('requestOrderPayment', [option.toJson()]);
+  }
+
+  // 媒体.图片
+
+  void saveImageToPhotosAlbum(SaveImageToPhotosAlbumOption option) {
+    context.callMethod('saveImageToPhotosAlbum', [option.toJson()]);
+  }
+
+  void previewMedia(PreviewMediaOption option) {
+    context.callMethod('previewMedia', [option.toJson()]);
+  }
+
+  void previewImage(PreviewImageOption option) {
+    context.callMethod('previewImage', [option.toJson()]);
+  }
+
+  void getImageInfo(GetImageInfoOption option) {
+    context.callMethod('getImageInfo', [option.toJson()]);
+  }
+
+  void compressImage(CompressImageOption option) {
+    context.callMethod('compressImage', [option.toJson()]);
+  }
+
+  void chooseMessageFile(ChooseMessageFileOption option) {
+    context.callMethod('chooseMessageFile', [option.toJson()]);
+  }
+
+  void chooseImage(ChooseImageOption option) {
+    context.callMethod('chooseImage', [option.toJson()]);
   }
 }
 
@@ -195,6 +305,30 @@ class WechatRequestObject {
       void Function(OnCheckForUpdateCallbackResult)? callback) {
     if (callback == null) return null;
     return (e) => callback(OnCheckForUpdateCallbackResult(e));
+  }
+
+  dynamic wrapGetImageInfoSuccessCallback(
+      void Function(GetImageInfoSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetImageInfoSuccessCallbackResult(e));
+  }
+
+  dynamic wrapChooseImageSuccessCallback(
+      void Function(ChooseImageSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChooseImageSuccessCallbackResult(e));
+  }
+
+  dynamic wrapCompressImageSuccessCallback(
+      void Function(CompressImageSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(CompressImageSuccessCallbackResult(e));
+  }
+
+  dynamic wrapChooseMessageFileSuccessCallback(
+      void Function(ChooseMessageFileSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChooseMessageFileSuccessCallbackResult(e));
   }
 }
 
