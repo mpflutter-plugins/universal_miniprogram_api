@@ -262,6 +262,76 @@ class Wx {
   void chooseImage(ChooseImageOption option) {
     context.callMethod('chooseImage', [option.toJson()]);
   }
+
+  // 位置
+  void stopLocationUpdate() {
+    context.callMethod('stopLocationUpdate', []);
+  }
+
+  void startLocationUpdateBackground() {
+    context.callMethod('startLocationUpdateBackground', []);
+  }
+
+  void startLocationUpdate() {
+    context.callMethod('startLocationUpdate', []);
+  }
+
+  void openLocation(OpenLocationOption option) {
+    context.callMethod('openLocation', [option.toJson()]);
+  }
+
+  void onLocationChange(
+      void Function(OnLocationChangeCallbackResult) callback) {
+    final cb =
+        WechatRequestObject().wrapOnLocationChangeCallbackResult(callback);
+    context.callMethod('onLocationChange', [cb]);
+  }
+
+  void getLocation(GetLocationOption option) {
+    context.callMethod('getLocation', [option.toJson()]);
+  }
+
+  void choosePoi(ChoosePoiOption option) {
+    context.callMethod('choosePoi', [option.toJson()]);
+  }
+
+  void chooseLocation(ChooseLocationOption option) {
+    context.callMethod('chooseLocation', [option.toJson()]);
+  }
+
+  // 开放接口.登录
+
+  void login(LoginOption option) {
+    context.callMethod('login', [option.toJson()]);
+  }
+
+  void checkSession(CheckSessionOption option) {
+    context.callMethod('checkSession', [option.toJson()]);
+  }
+
+  // 开放接口.帐号信息
+
+  Future<AccountInfo> getAccountInfoSync() async {
+    final result = await context.callMethod('getAccountInfoSync');
+    if (result is! mpjs.JsObject) throw 'Fail to getAccountInfoSync result.';
+    return AccountInfo(result);
+  }
+
+  // 开放接口.用户信息
+
+  void getUserProfile(GetUserProfileOption option) {
+    context.callMethod('getUserProfile', [option.toJson()]);
+  }
+
+  // 开放接口.授权
+
+  void authorizeForMiniProgram(AuthorizeForMiniProgramOption option) {
+    context.callMethod('authorizeForMiniProgram', [option.toJson()]);
+  }
+
+  void authorize(AuthorizeOption option) {
+    context.callMethod('authorize', [option.toJson()]);
+  }
 }
 
 class WechatResponseObject {
@@ -329,6 +399,42 @@ class WechatRequestObject {
       void Function(ChooseMessageFileSuccessCallbackResult)? callback) {
     if (callback == null) return null;
     return (e) => callback(ChooseMessageFileSuccessCallbackResult(e));
+  }
+
+  dynamic wrapChooseLocationSuccessCallback(
+      void Function(ChooseLocationSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChooseLocationSuccessCallbackResult(e));
+  }
+
+  dynamic wrapChoosePoiSuccessCallback(
+      void Function(ChoosePoiSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChoosePoiSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetLocationSuccessCallback(
+      void Function(GetLocationSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetLocationSuccessCallbackResult(e));
+  }
+
+  dynamic wrapOnLocationChangeCallbackResult(
+      void Function(OnLocationChangeCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(OnLocationChangeCallbackResult(e));
+  }
+
+  dynamic wrapGetUserProfileSuccessCallback(
+      void Function(GetUserProfileSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetUserProfileSuccessCallbackResult(e));
+  }
+
+  dynamic wrapLoginSuccessCallback(
+      void Function(LoginSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(LoginSuccessCallbackResult(e));
   }
 }
 
