@@ -134,13 +134,6 @@ class Wx {
   void hideShareMenu(HideShareMenuOption option) {
     context.callMethod('hideShareMenu', [option.toJson()]);
   }
-  // 基础.电池
-
-  Future<GetBatteryInfoSyncResult> getBatteryInfoSync() async {
-    final result = await context.callMethod('getBatteryInfoSync');
-    if (result is! mpjs.JsObject) throw 'Fail to getBatteryInfoSync result.';
-    return GetBatteryInfoSyncResult(result);
-  }
 
   // 界面.交互
 
@@ -332,6 +325,113 @@ class Wx {
   void authorize(AuthorizeOption option) {
     context.callMethod('authorize', [option.toJson()]);
   }
+
+  // 开放接口.设置
+
+  void openSetting(OpenSettingOption option) {
+    context.callMethod('openSetting', [option.toJson()]);
+  }
+
+  void getSetting(GetSettingOption option) {
+    context.callMethod('getSetting', [option.toJson()]);
+  }
+
+  // 开放接口.收货地址
+
+  void chooseAddress(ChooseAddressOption option) {
+    context.callMethod('chooseAddress', [option.toJson()]);
+  }
+
+  // 开放接口.订阅消息
+
+  void requestSubscribeMessage(RequestSubscribeMessageOption option) {
+    context.callMethod('requestSubscribeMessage', [option.toJson()]);
+  }
+
+  // 设备.日历
+  void addPhoneRepeatCalendar(AddPhoneRepeatCalendarOption option) {
+    context.callMethod('addPhoneRepeatCalendar', [option.toJson()]);
+  }
+
+  void addPhoneCalendar(AddPhoneCalendarOption option) {
+    context.callMethod('addPhoneCalendar', [option.toJson()]);
+  }
+
+  // 设备.联系人
+  void searchContacts(SearchContactsOption option) {
+    context.callMethod('searchContacts', [option.toJson()]);
+  }
+
+  void chooseContact(ChooseContactOption option) {
+    context.callMethod('chooseContact', [option.toJson()]);
+  }
+
+  void addPhoneContact(AddPhoneContactOption option) {
+    context.callMethod('addPhoneContact', [option.toJson()]);
+  }
+
+  // 设备.无障碍
+
+  void checkIsOpenAccessibility(CheckIsOpenAccessibilityOption option) {
+    context.callMethod('checkIsOpenAccessibility', [option.toJson()]);
+  }
+
+  // 设备.电量
+
+  Future<GetBatteryInfoSyncResult> getBatteryInfoSync() async {
+    final result = await context.callMethod('getBatteryInfoSync');
+    if (result is! mpjs.JsObject) throw 'Fail to getBatteryInfoSync result.';
+    return GetBatteryInfoSyncResult(result);
+  }
+
+  // 设备.剪贴板
+
+  void setClipboardData(SetClipboardDataOption option) {
+    context.callMethod('setClipboardData', [option.toJson()]);
+  }
+
+  void getClipboardData(GetClipboardDataOption option) {
+    context.callMethod('getClipboardData', [option.toJson()]);
+  }
+
+  // 设备.网络
+  void getNetworkType(GetNetworkTypeOption option) {
+    context.callMethod('getNetworkType', [option.toJson()]);
+  }
+
+  // 设备.屏幕
+
+  void setScreenBrightness(SetScreenBrightnessOption option) {
+    context.callMethod('setScreenBrightness', [option.toJson()]);
+  }
+
+  void setKeepScreenOn(SetKeepScreenOnOption option) {
+    context.callMethod('setKeepScreenOn', [option.toJson()]);
+  }
+
+  void getScreenBrightness(GetScreenBrightnessOption option) {
+    context.callMethod('getScreenBrightness', [option.toJson()]);
+  }
+
+  // 设备.电话
+  void makePhoneCall(MakePhoneCallOption option) {
+    context.callMethod('makePhoneCall', [option.toJson()]);
+  }
+
+  // 设备.扫码
+  void scanCode(ScanCodeOption option) {
+    context.callMethod('scanCode', [option.toJson()]);
+  }
+
+  // 设备.振动
+
+  void vibrateShort(VibrateShortOption option) {
+    context.callMethod('vibrateShort', [option.toJson()]);
+  }
+
+  void vibrateLong(VibrateLongOption option) {
+    context.callMethod('vibrateLong', [option.toJson()]);
+  }
 }
 
 class WechatResponseObject {
@@ -435,6 +535,84 @@ class WechatRequestObject {
       void Function(LoginSuccessCallbackResult)? callback) {
     if (callback == null) return null;
     return (e) => callback(LoginSuccessCallbackResult(e));
+  }
+
+  dynamic wrapOpenSettingSuccessCallback(
+      void Function(OpenSettingSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(OpenSettingSuccessCallbackResult(e));
+  }
+
+  dynamic wrapRequestSubscribeMessageFailCallback(
+      void Function(RequestSubscribeMessageFailCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(RequestSubscribeMessageFailCallbackResult(e));
+  }
+
+  dynamic wrapRequestSubscribeMessageSuccessCallback(
+      void Function(RequestSubscribeMessageSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(RequestSubscribeMessageSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetSettingSuccessCallback(
+      void Function(GetSettingSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetSettingSuccessCallbackResult(e));
+  }
+
+  dynamic wrapChooseAddressSuccessCallback(
+      void Function(ChooseAddressSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChooseAddressSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetScreenBrightnessSuccessCallback(
+      void Function(GetScreenBrightnessSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetScreenBrightnessSuccessCallbackResult(e));
+  }
+
+  dynamic wrapScanCodeSuccessCallback(
+      void Function(ScanCodeSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ScanCodeSuccessCallbackResult(e));
+  }
+
+  dynamic wrapCheckIsOpenAccessibilitySuccessCallback(
+      void Function(CheckIsOpenAccessibilitySuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(CheckIsOpenAccessibilitySuccessCallbackResult(e));
+  }
+
+  dynamic wrapChooseContactSuccessCallback(
+      void Function(ChooseContactSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ChooseContactSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetBatteryInfoSuccessCallback(
+      void Function(GetBatteryInfoSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetBatteryInfoSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetClipboardDataSuccessCallback(
+      void Function(GetClipboardDataSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetClipboardDataSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetNetworkTypeSuccessCallback(
+      void Function(GetNetworkTypeSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetNetworkTypeSuccessCallbackResult(e));
+  }
+
+  dynamic wrapSearchContactsSuccessCallback(
+      void Function(SearchContactsSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(SearchContactsSuccessCallbackResult(e));
   }
 }
 

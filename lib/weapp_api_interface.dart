@@ -6,6 +6,216 @@ class AccountInfo extends WechatResponseObject {
   Future<Plugin> get plugin => getValue<Plugin>('plugin');
 }
 
+class AddPhoneCalendarOption extends WechatRequestObject {
+  AddPhoneCalendarOption({
+    required this.startTime,
+    required this.title,
+    this.alarm,
+    this.alarmOffset,
+    this.allDay,
+    this.complete,
+    this.description,
+    this.endTime,
+    this.fail,
+    this.location,
+    this.success,
+  }) : super();
+
+  num startTime;
+  String title;
+  bool? alarm;
+  num? alarmOffset;
+  bool? allDay;
+  AddPhoneCalendarCompleteCallback? complete;
+  String? description;
+  String? endTime;
+  AddPhoneCalendarFailCallback? fail;
+  String? location;
+  AddPhoneCalendarSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'startTime': startTime,
+      'title': title,
+      'alarm': alarm,
+      'alarmOffset': alarmOffset,
+      'allDay': allDay,
+      'complete': wrapGeneralCallbackResult(complete),
+      'description': description,
+      'endTime': endTime,
+      'fail': wrapGeneralCallbackResult(fail),
+      'location': location,
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class AddPhoneContactOption extends WechatRequestObject {
+  AddPhoneContactOption({
+    required this.firstName,
+    this.addressCity,
+    this.addressCountry,
+    this.addressPostalCode,
+    this.addressState,
+    this.addressStreet,
+    this.complete,
+    this.email,
+    this.fail,
+    this.homeAddressCity,
+    this.homeAddressCountry,
+    this.homeAddressPostalCode,
+    this.homeAddressState,
+    this.homeAddressStreet,
+    this.homeFaxNumber,
+    this.homePhoneNumber,
+    this.hostNumber,
+    this.lastName,
+    this.middleName,
+    this.mobilePhoneNumber,
+    this.nickName,
+    this.organization,
+    this.photoFilePath,
+    this.remark,
+    this.success,
+    this.title,
+    this.url,
+    this.weChatNumber,
+    this.workAddressCity,
+    this.workAddressCountry,
+    this.workAddressPostalCode,
+    this.workAddressState,
+    this.workAddressStreet,
+    this.workFaxNumber,
+    this.workPhoneNumber,
+  }) : super();
+
+  String firstName;
+  String? addressCity;
+  String? addressCountry;
+  String? addressPostalCode;
+  String? addressState;
+  String? addressStreet;
+  AddPhoneContactCompleteCallback? complete;
+  String? email;
+  AddPhoneContactFailCallback? fail;
+  String? homeAddressCity;
+  String? homeAddressCountry;
+  String? homeAddressPostalCode;
+  String? homeAddressState;
+  String? homeAddressStreet;
+  String? homeFaxNumber;
+  String? homePhoneNumber;
+  String? hostNumber;
+  String? lastName;
+  String? middleName;
+  String? mobilePhoneNumber;
+  String? nickName;
+  String? organization;
+  String? photoFilePath;
+  String? remark;
+  AddPhoneContactSuccessCallback? success;
+  String? title;
+  String? url;
+  String? weChatNumber;
+  String? workAddressCity;
+  String? workAddressCountry;
+  String? workAddressPostalCode;
+  String? workAddressState;
+  String? workAddressStreet;
+  String? workFaxNumber;
+  String? workPhoneNumber;
+
+  Map toJson() {
+    return {
+      'firstName': firstName,
+      'addressCity': addressCity,
+      'addressCountry': addressCountry,
+      'addressPostalCode': addressPostalCode,
+      'addressState': addressState,
+      'addressStreet': addressStreet,
+      'complete': wrapGeneralCallbackResult(complete),
+      'email': email,
+      'fail': wrapGeneralCallbackResult(fail),
+      'homeAddressCity': homeAddressCity,
+      'homeAddressCountry': homeAddressCountry,
+      'homeAddressPostalCode': homeAddressPostalCode,
+      'homeAddressState': homeAddressState,
+      'homeAddressStreet': homeAddressStreet,
+      'homeFaxNumber': homeFaxNumber,
+      'homePhoneNumber': homePhoneNumber,
+      'hostNumber': hostNumber,
+      'lastName': lastName,
+      'middleName': middleName,
+      'mobilePhoneNumber': mobilePhoneNumber,
+      'nickName': nickName,
+      'organization': organization,
+      'photoFilePath': photoFilePath,
+      'remark': remark,
+      'success': wrapGeneralCallbackResult(success),
+      'title': title,
+      'url': url,
+      'weChatNumber': weChatNumber,
+      'workAddressCity': workAddressCity,
+      'workAddressCountry': workAddressCountry,
+      'workAddressPostalCode': workAddressPostalCode,
+      'workAddressState': workAddressState,
+      'workAddressStreet': workAddressStreet,
+      'workFaxNumber': workFaxNumber,
+      'workPhoneNumber': workPhoneNumber,
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class AddPhoneRepeatCalendarOption extends WechatRequestObject {
+  AddPhoneRepeatCalendarOption({
+    required this.startTime,
+    required this.title,
+    this.alarm,
+    this.alarmOffset,
+    this.allDay,
+    this.complete,
+    this.description,
+    this.endTime,
+    this.fail,
+    this.location,
+    this.repeatEndTime,
+    this.repeatInterval,
+    this.success,
+  }) : super();
+
+  num startTime;
+  String title;
+  bool? alarm;
+  num? alarmOffset;
+  bool? allDay;
+  AddPhoneRepeatCalendarCompleteCallback? complete;
+  String? description;
+  String? endTime;
+  AddPhoneRepeatCalendarFailCallback? fail;
+  String? location;
+  num? repeatEndTime;
+  String? repeatInterval;
+  AddPhoneRepeatCalendarSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'startTime': startTime,
+      'title': title,
+      'alarm': alarm,
+      'alarmOffset': alarmOffset,
+      'allDay': allDay,
+      'complete': wrapGeneralCallbackResult(complete),
+      'description': description,
+      'endTime': endTime,
+      'fail': wrapGeneralCallbackResult(fail),
+      'location': location,
+      'repeatEndTime': repeatEndTime,
+      'repeatInterval': repeatInterval,
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class AnimationOption extends WechatRequestObject {
   AnimationOption({
     this.duration,
@@ -21,6 +231,20 @@ class AnimationOption extends WechatRequestObject {
       'timingFunc': timingFunc,
     }..removeWhere((key, value) => value == null);
   }
+}
+
+class AuthSetting extends WechatResponseObject {
+  AuthSetting(mpjs.JsObject context) : super(context);
+  Future<bool> get scope_address => getValue<bool>('scope.address');
+  Future<bool> get scope_camera => getValue<bool>('scope.camera');
+  Future<bool> get scope_invoice => getValue<bool>('scope.invoice');
+  Future<bool> get scope_invoiceTitle => getValue<bool>('scope.invoiceTitle');
+  Future<bool> get scope_record => getValue<bool>('scope.record');
+  Future<bool> get scope_userInfo => getValue<bool>('scope.userInfo');
+  Future<bool> get scope_userLocation => getValue<bool>('scope.userLocation');
+  Future<bool> get scope_werun => getValue<bool>('scope.werun');
+  Future<bool> get scope_writePhotosAlbum =>
+      getValue<bool>('scope.writePhotosAlbum');
 }
 
 class AuthorizeForMiniProgramOption extends WechatRequestObject {
@@ -69,6 +293,33 @@ class AuthorizeOption extends WechatRequestObject {
   }
 }
 
+class CheckIsOpenAccessibilityOption extends WechatRequestObject {
+  CheckIsOpenAccessibilityOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  CheckIsOpenAccessibilityCompleteCallback? complete;
+  CheckIsOpenAccessibilityFailCallback? fail;
+  CheckIsOpenAccessibilitySuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapCheckIsOpenAccessibilitySuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class CheckIsOpenAccessibilitySuccessCallbackResult
+    extends WechatResponseObject {
+  CheckIsOpenAccessibilitySuccessCallbackResult(mpjs.JsObject context)
+      : super(context);
+  Future<bool> get open => getValue<bool>('open');
+}
+
 class CheckSessionOption extends WechatRequestObject {
   CheckSessionOption({
     this.complete,
@@ -87,6 +338,66 @@ class CheckSessionOption extends WechatRequestObject {
       'success': wrapGeneralCallbackResult(success),
     }..removeWhere((key, value) => value == null);
   }
+}
+
+class ChooseAddressOption extends WechatRequestObject {
+  ChooseAddressOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  ChooseAddressCompleteCallback? complete;
+  ChooseAddressFailCallback? fail;
+  ChooseAddressSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapChooseAddressSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ChooseAddressSuccessCallbackResult extends WechatResponseObject {
+  ChooseAddressSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get cityName => getValue<String>('cityName');
+  Future<String> get countyName => getValue<String>('countyName');
+  Future<String> get detailInfo => getValue<String>('detailInfo');
+  Future<String> get errMsg => getValue<String>('errMsg');
+  Future<String> get nationalCode => getValue<String>('nationalCode');
+  Future<String> get postalCode => getValue<String>('postalCode');
+  Future<String> get provinceName => getValue<String>('provinceName');
+  Future<String> get telNumber => getValue<String>('telNumber');
+  Future<String> get userName => getValue<String>('userName');
+}
+
+class ChooseContactOption extends WechatRequestObject {
+  ChooseContactOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  ChooseContactCompleteCallback? complete;
+  ChooseContactFailCallback? fail;
+  ChooseContactSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapChooseContactSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ChooseContactSuccessCallbackResult extends WechatResponseObject {
+  ChooseContactSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get displayName => getValue<String>('displayName');
+  Future<String> get phoneNumber => getValue<String>('phoneNumber');
+  Future<String> get phoneNumberList => getValue<String>('phoneNumberList');
 }
 
 class ChooseFile extends WechatResponseObject {
@@ -301,10 +612,62 @@ class ForwardMaterials extends WechatResponseObject {
   Future<String> get type => getValue<String>('type');
 }
 
+class GetBatteryInfoOption extends WechatRequestObject {
+  GetBatteryInfoOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  GetBatteryInfoCompleteCallback? complete;
+  GetBatteryInfoFailCallback? fail;
+  GetBatteryInfoSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGetBatteryInfoSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetBatteryInfoSuccessCallbackResult extends WechatResponseObject {
+  GetBatteryInfoSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<bool> get isCharging => getValue<bool>('isCharging');
+  Future<String> get level => getValue<String>('level');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
 class GetBatteryInfoSyncResult extends WechatResponseObject {
   GetBatteryInfoSyncResult(mpjs.JsObject context) : super(context);
   Future<bool> get isCharging => getValue<bool>('isCharging');
   Future<String> get level => getValue<String>('level');
+}
+
+class GetClipboardDataOption extends WechatRequestObject {
+  GetClipboardDataOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  GetClipboardDataCompleteCallback? complete;
+  GetClipboardDataFailCallback? fail;
+  GetClipboardDataSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGetClipboardDataSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetClipboardDataSuccessCallbackResult extends WechatResponseObject {
+  GetClipboardDataSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get data => getValue<String>('data');
 }
 
 class GetImageInfoOption extends WechatRequestObject {
@@ -381,6 +744,92 @@ class GetLocationSuccessCallbackResult extends WechatResponseObject {
   Future<num> get longitude => getValue<num>('longitude');
   Future<num> get speed => getValue<num>('speed');
   Future<num> get verticalAccuracy => getValue<num>('verticalAccuracy');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class GetNetworkTypeOption extends WechatRequestObject {
+  GetNetworkTypeOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  GetNetworkTypeCompleteCallback? complete;
+  GetNetworkTypeFailCallback? fail;
+  GetNetworkTypeSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGetNetworkTypeSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetNetworkTypeSuccessCallbackResult extends WechatResponseObject {
+  GetNetworkTypeSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get networkType => getValue<String>('networkType');
+  Future<num> get signalStrength => getValue<num>('signalStrength');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class GetScreenBrightnessOption extends WechatRequestObject {
+  GetScreenBrightnessOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  GetScreenBrightnessCompleteCallback? complete;
+  GetScreenBrightnessFailCallback? fail;
+  GetScreenBrightnessSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGetScreenBrightnessSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetScreenBrightnessSuccessCallbackResult extends WechatResponseObject {
+  GetScreenBrightnessSuccessCallbackResult(mpjs.JsObject context)
+      : super(context);
+  Future<num> get value => getValue<num>('value');
+}
+
+class GetSettingOption extends WechatRequestObject {
+  GetSettingOption({
+    this.complete,
+    this.fail,
+    this.success,
+    this.withSubscriptions,
+  }) : super();
+
+  GetSettingCompleteCallback? complete;
+  GetSettingFailCallback? fail;
+  GetSettingSuccessCallback? success;
+  bool? withSubscriptions;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGetSettingSuccessCallback(success),
+      'withSubscriptions': withSubscriptions,
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetSettingSuccessCallbackResult extends WechatResponseObject {
+  GetSettingSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<AuthSetting> get authSetting => getValue<AuthSetting>('authSetting');
+  Future<SubscriptionsSetting> get subscriptionsSetting =>
+      getValue<SubscriptionsSetting>('subscriptionsSetting');
+  Future<AuthSetting> get miniprogramAuthSetting =>
+      getValue<AuthSetting>('miniprogramAuthSetting');
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
@@ -494,6 +943,29 @@ class LoginSuccessCallbackResult extends WechatResponseObject {
   LoginSuccessCallbackResult(mpjs.JsObject context) : super(context);
   Future<String> get code => getValue<String>('code');
   Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class MakePhoneCallOption extends WechatRequestObject {
+  MakePhoneCallOption({
+    required this.phoneNumber,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  String phoneNumber;
+  MakePhoneCallCompleteCallback? complete;
+  MakePhoneCallFailCallback? fail;
+  MakePhoneCallSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'phoneNumber': phoneNumber,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
 }
 
 class MediaSource extends WechatRequestObject {
@@ -679,6 +1151,37 @@ class OpenLocationOption extends WechatRequestObject {
       'success': wrapGeneralCallbackResult(success),
     }..removeWhere((key, value) => value == null);
   }
+}
+
+class OpenSettingOption extends WechatRequestObject {
+  OpenSettingOption({
+    this.complete,
+    this.fail,
+    this.success,
+    this.withSubscriptions,
+  }) : super();
+
+  OpenSettingCompleteCallback? complete;
+  OpenSettingFailCallback? fail;
+  OpenSettingSuccessCallback? success;
+  bool? withSubscriptions;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapOpenSettingSuccessCallback(success),
+      'withSubscriptions': withSubscriptions,
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class OpenSettingSuccessCallbackResult extends WechatResponseObject {
+  OpenSettingSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<AuthSetting> get authSetting => getValue<AuthSetting>('authSetting');
+  Future<SubscriptionsSetting> get subscriptionsSetting =>
+      getValue<SubscriptionsSetting>('subscriptionsSetting');
+  Future<String> get errMsg => getValue<String>('errMsg');
 }
 
 class Plugin extends WechatResponseObject {
@@ -883,6 +1386,43 @@ class RequestPaymentOption extends WechatRequestObject {
   }
 }
 
+class RequestSubscribeMessageFailCallbackResult extends WechatResponseObject {
+  RequestSubscribeMessageFailCallbackResult(mpjs.JsObject context)
+      : super(context);
+  Future<num> get errCode => getValue<num>('errCode');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class RequestSubscribeMessageOption extends WechatRequestObject {
+  RequestSubscribeMessageOption({
+    required this.tmplIds,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  List<String> tmplIds;
+  RequestSubscribeMessageCompleteCallback? complete;
+  RequestSubscribeMessageFailCallback? fail;
+  RequestSubscribeMessageSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'tmplIds': tmplIds,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapRequestSubscribeMessageFailCallback(fail),
+      'success': wrapRequestSubscribeMessageSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class RequestSubscribeMessageSuccessCallbackResult
+    extends WechatResponseObject {
+  RequestSubscribeMessageSuccessCallbackResult(mpjs.JsObject context)
+      : super(context);
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
 class SafeArea extends WechatResponseObject {
   SafeArea(mpjs.JsObject context) : super(context);
   Future<num> get bottom => getValue<num>('bottom');
@@ -909,6 +1449,123 @@ class SaveImageToPhotosAlbumOption extends WechatRequestObject {
   Map toJson() {
     return {
       'filePath': filePath,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ScanCodeOption extends WechatRequestObject {
+  ScanCodeOption({
+    this.complete,
+    this.fail,
+    this.onlyFromCamera,
+    this.scanType,
+    this.success,
+  }) : super();
+
+  ScanCodeCompleteCallback? complete;
+  ScanCodeFailCallback? fail;
+  bool? onlyFromCamera;
+  List<String>? scanType;
+  ScanCodeSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'onlyFromCamera': onlyFromCamera,
+      'scanType': scanType,
+      'success': wrapScanCodeSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ScanCodeSuccessCallbackResult extends WechatResponseObject {
+  ScanCodeSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get charSet => getValue<String>('charSet');
+  Future<String> get path => getValue<String>('path');
+  Future<String> get rawData => getValue<String>('rawData');
+  Future<String> get result => getValue<String>('result');
+  Future<String> get scanType => getValue<String>('scanType');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class SearchContactsOption extends WechatRequestObject {
+  SearchContactsOption({
+    required this.phoneNumber,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  String phoneNumber;
+  SearchContactsCompleteCallback? complete;
+  SearchContactsFailCallback? fail;
+  SearchContactsSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'phoneNumber': phoneNumber,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapSearchContactsSuccessCallback(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SearchContactsResult extends WechatResponseObject {
+  SearchContactsResult(mpjs.JsObject context) : super(context);
+  Future<String> get name => getValue<String>('name');
+  Future<String> get phoneNumber => getValue<String>('phoneNumber');
+}
+
+class SearchContactsSuccessCallbackResult extends WechatResponseObject {
+  SearchContactsSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<SearchContactsResult> get result =>
+      getValue<SearchContactsResult>('result');
+}
+
+class SetClipboardDataOption extends WechatRequestObject {
+  SetClipboardDataOption({
+    required this.data,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  String data;
+  SetClipboardDataCompleteCallback? complete;
+  SetClipboardDataFailCallback? fail;
+  SetClipboardDataSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'data': data,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SetKeepScreenOnOption extends WechatRequestObject {
+  SetKeepScreenOnOption({
+    required this.keepScreenOn,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  bool keepScreenOn;
+  SetKeepScreenOnCompleteCallback? complete;
+  SetKeepScreenOnFailCallback? fail;
+  SetKeepScreenOnSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'keepScreenOn': keepScreenOn,
       'complete': wrapGeneralCallbackResult(complete),
       'fail': wrapGeneralCallbackResult(fail),
       'success': wrapGeneralCallbackResult(success),
@@ -961,6 +1618,29 @@ class SetNavigationBarTitleOption extends WechatRequestObject {
   Map toJson() {
     return {
       'title': title,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SetScreenBrightnessOption extends WechatRequestObject {
+  SetScreenBrightnessOption({
+    required this.value,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  num value;
+  SetScreenBrightnessCompleteCallback? complete;
+  SetScreenBrightnessFailCallback? fail;
+  SetScreenBrightnessSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'value': value,
       'complete': wrapGeneralCallbackResult(complete),
       'fail': wrapGeneralCallbackResult(fail),
       'success': wrapGeneralCallbackResult(success),
@@ -1243,6 +1923,12 @@ class ShowToastOption extends WechatRequestObject {
   }
 }
 
+class SubscriptionsSetting extends WechatResponseObject {
+  SubscriptionsSetting(mpjs.JsObject context) : super(context);
+  Future<bool> get mainSwitch => getValue<bool>('mainSwitch');
+  Future<dynamic> get itemSettings => getValue<dynamic>('itemSettings');
+}
+
 class SwitchTabOption extends WechatRequestObject {
   SwitchTabOption({
     required this.url,
@@ -1357,11 +2043,70 @@ class UserInfo extends WechatResponseObject {
   Future<String> get province => getValue<String>('province');
 }
 
+class VibrateLongOption extends WechatRequestObject {
+  VibrateLongOption({
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  VibrateLongCompleteCallback? complete;
+  VibrateLongFailCallback? fail;
+  VibrateLongSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VibrateShortOption extends WechatRequestObject {
+  VibrateShortOption({
+    required this.type,
+    this.complete,
+    this.fail,
+    this.success,
+  }) : super();
+
+  String type;
+  VibrateShortCompleteCallback? complete;
+  VibrateShortFailCallback? fail;
+  VibrateShortSuccessCallback? success;
+
+  Map toJson() {
+    return {
+      'type': type,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'success': wrapGeneralCallbackResult(success),
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class GeneralCallbackResult extends WechatResponseObject {
   GeneralCallbackResult(mpjs.JsObject context) : super(context);
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
+typedef AddPhoneCalendarCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneCalendarFailCallback = void Function(GeneralCallbackResult res);
+typedef AddPhoneCalendarSuccessCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneContactCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneContactFailCallback = void Function(GeneralCallbackResult res);
+typedef AddPhoneContactSuccessCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneRepeatCalendarCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneRepeatCalendarFailCallback = void Function(
+    GeneralCallbackResult res);
+typedef AddPhoneRepeatCalendarSuccessCallback = void Function(
+    GeneralCallbackResult res);
 typedef AuthorizeCompleteCallback = void Function(GeneralCallbackResult res);
 typedef AuthorizeFailCallback = void Function(GeneralCallbackResult res);
 typedef AuthorizeForMiniProgramCompleteCallback = void Function(
@@ -1371,9 +2116,25 @@ typedef AuthorizeForMiniProgramFailCallback = void Function(
 typedef AuthorizeForMiniProgramSuccessCallback = void Function(
     GeneralCallbackResult res);
 typedef AuthorizeSuccessCallback = void Function(GeneralCallbackResult res);
+typedef CheckIsOpenAccessibilityCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef CheckIsOpenAccessibilityFailCallback = void Function(
+    GeneralCallbackResult res);
+typedef CheckIsOpenAccessibilitySuccessCallback = void Function(
+    CheckIsOpenAccessibilitySuccessCallbackResult option);
 typedef CheckSessionCompleteCallback = void Function(GeneralCallbackResult res);
 typedef CheckSessionFailCallback = void Function(GeneralCallbackResult res);
 typedef CheckSessionSuccessCallback = void Function(GeneralCallbackResult res);
+typedef ChooseAddressCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef ChooseAddressFailCallback = void Function(GeneralCallbackResult res);
+typedef ChooseAddressSuccessCallback = void Function(
+    ChooseAddressSuccessCallbackResult result);
+typedef ChooseContactCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef ChooseContactFailCallback = void Function(GeneralCallbackResult res);
+typedef ChooseContactSuccessCallback = void Function(
+    ChooseContactSuccessCallbackResult option);
 typedef ChooseImageCompleteCallback = void Function(GeneralCallbackResult res);
 typedef ChooseImageFailCallback = void Function(GeneralCallbackResult res);
 typedef ChooseImageSuccessCallback = void Function(
@@ -1404,6 +2165,16 @@ typedef EnableAlertBeforeUnloadFailCallback = void Function(
     GeneralCallbackResult res);
 typedef EnableAlertBeforeUnloadSuccessCallback = void Function(
     GeneralCallbackResult res);
+typedef GetBatteryInfoCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef GetBatteryInfoFailCallback = void Function(GeneralCallbackResult res);
+typedef GetBatteryInfoSuccessCallback = void Function(
+    GetBatteryInfoSuccessCallbackResult result);
+typedef GetClipboardDataCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef GetClipboardDataFailCallback = void Function(GeneralCallbackResult res);
+typedef GetClipboardDataSuccessCallback = void Function(
+    GetClipboardDataSuccessCallbackResult option);
 typedef GetImageInfoCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetImageInfoFailCallback = void Function(GeneralCallbackResult res);
 typedef GetImageInfoSuccessCallback = void Function(
@@ -1412,6 +2183,21 @@ typedef GetLocationCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetLocationFailCallback = void Function(GeneralCallbackResult res);
 typedef GetLocationSuccessCallback = void Function(
     GetLocationSuccessCallbackResult result);
+typedef GetNetworkTypeCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef GetNetworkTypeFailCallback = void Function(GeneralCallbackResult res);
+typedef GetNetworkTypeSuccessCallback = void Function(
+    GetNetworkTypeSuccessCallbackResult result);
+typedef GetScreenBrightnessCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef GetScreenBrightnessFailCallback = void Function(
+    GeneralCallbackResult res);
+typedef GetScreenBrightnessSuccessCallback = void Function(
+    GetScreenBrightnessSuccessCallbackResult option);
+typedef GetSettingCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetSettingFailCallback = void Function(GeneralCallbackResult res);
+typedef GetSettingSuccessCallback = void Function(
+    GetSettingSuccessCallbackResult result);
 typedef GetUserProfileCompleteCallback = void Function(
     GeneralCallbackResult res);
 typedef GetUserProfileFailCallback = void Function(GeneralCallbackResult res);
@@ -1424,6 +2210,10 @@ typedef HideShareMenuSuccessCallback = void Function(GeneralCallbackResult res);
 typedef LoginCompleteCallback = void Function(GeneralCallbackResult res);
 typedef LoginFailCallback = void Function(GeneralCallbackResult res);
 typedef LoginSuccessCallback = void Function(LoginSuccessCallbackResult result);
+typedef MakePhoneCallCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef MakePhoneCallFailCallback = void Function(GeneralCallbackResult res);
+typedef MakePhoneCallSuccessCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackCompleteCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackFailCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackMiniProgramCompleteCallback = void Function(
@@ -1447,6 +2237,10 @@ typedef OnLocationChangeCallback = void Function(
 typedef OpenLocationCompleteCallback = void Function(GeneralCallbackResult res);
 typedef OpenLocationFailCallback = void Function(GeneralCallbackResult res);
 typedef OpenLocationSuccessCallback = void Function(GeneralCallbackResult res);
+typedef OpenSettingCompleteCallback = void Function(GeneralCallbackResult res);
+typedef OpenSettingFailCallback = void Function(GeneralCallbackResult res);
+typedef OpenSettingSuccessCallback = void Function(
+    OpenSettingSuccessCallbackResult result);
 typedef PreviewImageCompleteCallback = void Function(GeneralCallbackResult res);
 typedef PreviewImageFailCallback = void Function(GeneralCallbackResult res);
 typedef PreviewImageSuccessCallback = void Function(GeneralCallbackResult res);
@@ -1470,11 +2264,36 @@ typedef RequestPaymentCompleteCallback = void Function(
 typedef RequestPaymentFailCallback = void Function(GeneralCallbackResult res);
 typedef RequestPaymentSuccessCallback = void Function(
     GeneralCallbackResult res);
+typedef RequestSubscribeMessageCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef RequestSubscribeMessageFailCallback = void Function(
+    RequestSubscribeMessageFailCallbackResult result);
+typedef RequestSubscribeMessageSuccessCallback = void Function(
+    RequestSubscribeMessageSuccessCallbackResult result);
 typedef SaveImageToPhotosAlbumCompleteCallback = void Function(
     GeneralCallbackResult res);
 typedef SaveImageToPhotosAlbumFailCallback = void Function(
     GeneralCallbackResult res);
 typedef SaveImageToPhotosAlbumSuccessCallback = void Function(
+    GeneralCallbackResult res);
+typedef ScanCodeCompleteCallback = void Function(GeneralCallbackResult res);
+typedef ScanCodeFailCallback = void Function(GeneralCallbackResult res);
+typedef ScanCodeSuccessCallback = void Function(
+    ScanCodeSuccessCallbackResult result);
+typedef SearchContactsCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef SearchContactsFailCallback = void Function(GeneralCallbackResult res);
+typedef SearchContactsSuccessCallback = void Function(
+    SearchContactsSuccessCallbackResult option);
+typedef SetClipboardDataCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetClipboardDataFailCallback = void Function(GeneralCallbackResult res);
+typedef SetClipboardDataSuccessCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetKeepScreenOnCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetKeepScreenOnFailCallback = void Function(GeneralCallbackResult res);
+typedef SetKeepScreenOnSuccessCallback = void Function(
     GeneralCallbackResult res);
 typedef SetNavigationBarColorCompleteCallback = void Function(
     GeneralCallbackResult res);
@@ -1487,6 +2306,12 @@ typedef SetNavigationBarTitleCompleteCallback = void Function(
 typedef SetNavigationBarTitleFailCallback = void Function(
     GeneralCallbackResult res);
 typedef SetNavigationBarTitleSuccessCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetScreenBrightnessCompleteCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetScreenBrightnessFailCallback = void Function(
+    GeneralCallbackResult res);
+typedef SetScreenBrightnessSuccessCallback = void Function(
     GeneralCallbackResult res);
 typedef SetTopBarTextCompleteCallback = void Function(
     GeneralCallbackResult res);
@@ -1536,3 +2361,9 @@ typedef UpdateShareMenuCompleteCallback = void Function(
 typedef UpdateShareMenuFailCallback = void Function(GeneralCallbackResult res);
 typedef UpdateShareMenuSuccessCallback = void Function(
     GeneralCallbackResult res);
+typedef VibrateLongCompleteCallback = void Function(GeneralCallbackResult res);
+typedef VibrateLongFailCallback = void Function(GeneralCallbackResult res);
+typedef VibrateLongSuccessCallback = void Function(GeneralCallbackResult res);
+typedef VibrateShortCompleteCallback = void Function(GeneralCallbackResult res);
+typedef VibrateShortFailCallback = void Function(GeneralCallbackResult res);
+typedef VibrateShortSuccessCallback = void Function(GeneralCallbackResult res);

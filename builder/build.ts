@@ -91,6 +91,43 @@ let wxExportInterfaces = [
   "Plugin",
   "GetUserProfileSuccessCallbackResult",
   "LoginSuccessCallbackResult",
+  "OpenSettingOption",
+  "GetSettingOption",
+  "GetSettingSuccessCallbackResult",
+  "AuthSetting",
+  "SubscriptionsSetting",
+  "ChooseAddressOption",
+  "ChooseAddressSuccessCallbackResult",
+  "RequestSubscribeMessageOption",
+  "OpenSettingSuccessCallbackResult",
+  "RequestSubscribeMessageFailCallbackResult",
+  "RequestSubscribeMessageSuccessCallbackResult",
+  "AddPhoneRepeatCalendarOption",
+  "AddPhoneCalendarOption",
+  "SearchContactsOption",
+  "SearchContactsSuccessCallbackResult",
+  "ChooseContactOption",
+  "ChooseContactSuccessCallbackResult",
+  "AddPhoneContactOption",
+  "CheckIsOpenAccessibilityOption",
+  "CheckIsOpenAccessibilitySuccessCallbackResult",
+  "GetBatteryInfoOption",
+  "GetBatteryInfoSuccessCallbackResult",
+  "SetClipboardDataOption",
+  "GetClipboardDataOption",
+  "GetClipboardDataSuccessCallbackResult",
+  "GetNetworkTypeOption",
+  "GetNetworkTypeSuccessCallbackResult",
+  "SetScreenBrightnessOption",
+  "SetKeepScreenOnOption",
+  "GetScreenBrightnessOption",
+  "MakePhoneCallOption",
+  "ScanCodeOption",
+  "VibrateShortOption",
+  "VibrateLongOption",
+  "SearchContactsResult",
+  "GetScreenBrightnessSuccessCallbackResult",
+  "ScanCodeSuccessCallbackResult",
 ];
 let wxExportTypeAlias = [
   "ShowToastCompleteCallback",
@@ -211,6 +248,70 @@ let wxExportTypeAlias = [
   "AuthorizeCompleteCallback",
   "AuthorizeFailCallback",
   "AuthorizeSuccessCallback",
+  "OpenSettingCompleteCallback",
+  "OpenSettingFailCallback",
+  "OpenSettingSuccessCallback",
+  "GetSettingCompleteCallback",
+  "GetSettingFailCallback",
+  "GetSettingSuccessCallback",
+  "ChooseAddressCompleteCallback",
+  "ChooseAddressFailCallback",
+  "ChooseAddressSuccessCallback",
+  "RequestSubscribeMessageCompleteCallback",
+  "RequestSubscribeMessageFailCallback",
+  "RequestSubscribeMessageSuccessCallback",
+  "wrapRequestSubscribeMessageSuccessCallback",
+  "AddPhoneRepeatCalendarCompleteCallback",
+  "AddPhoneRepeatCalendarFailCallback",
+  "AddPhoneRepeatCalendarSuccessCallback",
+  "AddPhoneCalendarCompleteCallback",
+  "AddPhoneCalendarFailCallback",
+  "AddPhoneCalendarSuccessCallback",
+  "SearchContactsCompleteCallback",
+  "SearchContactsFailCallback",
+  "SearchContactsSuccessCallback",
+  "ChooseContactCompleteCallback",
+  "ChooseContactFailCallback",
+  "ChooseContactSuccessCallback",
+  "AddPhoneContactCompleteCallback",
+  "AddPhoneContactFailCallback",
+  "AddPhoneContactSuccessCallback",
+  "CheckIsOpenAccessibilityCompleteCallback",
+  "CheckIsOpenAccessibilityFailCallback",
+  "CheckIsOpenAccessibilitySuccessCallback",
+  "GetBatteryInfoCompleteCallback",
+  "GetBatteryInfoFailCallback",
+  "GetBatteryInfoSuccessCallback",
+  "SetClipboardDataCompleteCallback",
+  "SetClipboardDataFailCallback",
+  "SetClipboardDataSuccessCallback",
+  "GetClipboardDataCompleteCallback",
+  "GetClipboardDataFailCallback",
+  "GetClipboardDataSuccessCallback",
+  "GetNetworkTypeCompleteCallback",
+  "GetNetworkTypeFailCallback",
+  "GetNetworkTypeSuccessCallback",
+  "SetScreenBrightnessCompleteCallback",
+  "SetScreenBrightnessFailCallback",
+  "SetScreenBrightnessSuccessCallback",
+  "SetKeepScreenOnCompleteCallback",
+  "SetKeepScreenOnFailCallback",
+  "SetKeepScreenOnSuccessCallback",
+  "GetScreenBrightnessCompleteCallback",
+  "GetScreenBrightnessFailCallback",
+  "GetScreenBrightnessSuccessCallback",
+  "MakePhoneCallCompleteCallback",
+  "MakePhoneCallFailCallback",
+  "MakePhoneCallSuccessCallback",
+  "ScanCodeCompleteCallback",
+  "ScanCodeFailCallback",
+  "ScanCodeSuccessCallback",
+  "VibrateShortCompleteCallback",
+  "VibrateShortFailCallback",
+  "VibrateShortSuccessCallback",
+  "VibrateLongCompleteCallback",
+  "VibrateLongFailCallback",
+  "VibrateLongSuccessCallback",
 ];
 let wxWrapCallbacks: any = [
   "wrapShowModalSuccessCallback",
@@ -225,6 +326,19 @@ let wxWrapCallbacks: any = [
   "wrapGetLocationSuccessCallback",
   "wrapGetUserProfileSuccessCallback",
   "wrapLoginSuccessCallback",
+  "wrapOpenSettingSuccessCallback",
+  "wrapRequestSubscribeMessageFailCallback",
+  "wrapRequestSubscribeMessageSuccessCallback",
+  "wrapGetSettingSuccessCallback",
+  "wrapChooseAddressSuccessCallback",
+  "wrapGetScreenBrightnessSuccessCallback",
+  "wrapScanCodeSuccessCallback",
+  "wrapCheckIsOpenAccessibilitySuccessCallback",
+  "wrapChooseContactSuccessCallback",
+  "wrapGetBatteryInfoSuccessCallback",
+  "wrapGetClipboardDataSuccessCallback",
+  "wrapGetNetworkTypeSuccessCallback",
+  "wrapSearchContactsSuccessCallback",
 ];
 let typeRewrite: any = {
   "SystemInfo.deviceOrientation": "string",
@@ -256,6 +370,10 @@ let typeRewrite: any = {
   "AuthorizeForMiniProgramOption.scope": "string",
   "UserInfo.gender": "number",
   "UserInfo.language": "string",
+  "RequestSubscribeMessageOption.tmplIds": "List<String>",
+  "ScanCodeOption.scanType": "List<String>",
+  "ScanCodeSuccessCallbackResult.scanType": "string",
+  "GetNetworkTypeSuccessCallbackResult.networkType": "string",
 };
 
 let requestObjects = ["MediaSource"];
@@ -344,7 +462,9 @@ const main = () => {
       let membersCode = "";
       interfaceDeclaration.members.forEach((member) => {
         if (!member.name) return;
-        const memberName = (member.name as Identifier).escapedText;
+        const memberName =
+          (member.name as Identifier).escapedText ??
+          (member.name as Identifier).text;
         let memberTypeName = "";
         if ((member as any)?.type?.kind === SyntaxKind.StringKeyword) {
           memberTypeName = "string";
@@ -361,7 +481,7 @@ const main = () => {
         }
         membersCode += `Future<${transformType(
           memberTypeName
-        )}> get ${memberName} => getValue<${transformType(
+        )}> get ${memberName.replace(/\./g, "_")} => getValue<${transformType(
           memberTypeName
         )}>('${memberName}');\n`;
       });

@@ -870,7 +870,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
     /** 接口调用成功的回调函数 */
     success?: CheckIsOpenAccessibilitySuccessCallback;
   }
-  interface CheckIsOpenAccessibilitySuccessCallbackOption {
+  interface CheckIsOpenAccessibilitySuccessCallbackResult {
     /** iOS 上开启辅助功能旁白，安卓开启 talkback 时返回 true */
     open: boolean;
   }
@@ -957,7 +957,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
     /** 接口调用成功的回调函数 */
     success?: ChooseContactSuccessCallback;
   }
-  interface ChooseContactSuccessCallbackOption {
+  interface ChooseContactSuccessCallbackResult {
     /** 联系人姓名 */
     displayName: string;
     /** 手机号 */
@@ -2396,7 +2396,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
     /** 接口调用成功的回调函数 */
     success?: GetClipboardDataSuccessCallback;
   }
-  interface GetClipboardDataSuccessCallbackOption {
+  interface GetClipboardDataSuccessCallbackResult {
     /** 剪贴板的内容 */
     data: string;
   }
@@ -2754,7 +2754,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
     /** 接口调用成功的回调函数 */
     success?: GetScreenBrightnessSuccessCallback;
   }
-  interface GetScreenBrightnessSuccessCallbackOption {
+  interface GetScreenBrightnessSuccessCallbackResult {
     /** 屏幕亮度值，范围 0 ~ 1，0 最暗，1 最亮 */
     value: number;
   }
@@ -5553,7 +5553,7 @@ wx.createSelectorQuery()
     /** 手机号 */
     phoneNumber: string;
   }
-  interface SearchContactsSuccessCallbackOption {
+  interface SearchContactsSuccessCallbackResult {
     /** 手机号 */
     result: SearchContactsResult[];
   }
@@ -21496,7 +21496,7 @@ wx.writeBLECharacteristicValue({
   ) => void;
   /** 接口调用成功的回调函数 */
   type CheckIsOpenAccessibilitySuccessCallback = (
-    option: CheckIsOpenAccessibilitySuccessCallbackOption
+    option: CheckIsOpenAccessibilitySuccessCallbackResult
   ) => void;
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type CheckIsSoterEnrolledInDeviceCompleteCallback = (
@@ -21542,7 +21542,7 @@ wx.writeBLECharacteristicValue({
   type ChooseContactFailCallback = (res: GeneralCallbackResult) => void;
   /** 接口调用成功的回调函数 */
   type ChooseContactSuccessCallback = (
-    option: ChooseContactSuccessCallbackOption
+    option: ChooseContactSuccessCallbackResult
   ) => void;
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type ChooseImageCompleteCallback = (res: GeneralCallbackResult) => void;
@@ -21998,7 +21998,7 @@ wx.writeBLECharacteristicValue({
   type GetClipboardDataFailCallback = (res: GeneralCallbackResult) => void;
   /** 接口调用成功的回调函数 */
   type GetClipboardDataSuccessCallback = (
-    option: GetClipboardDataSuccessCallbackOption
+    option: GetClipboardDataSuccessCallbackResult
   ) => void;
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type GetConnectedBluetoothDevicesCompleteCallback = (
@@ -22156,7 +22156,7 @@ wx.writeBLECharacteristicValue({
   type GetScreenBrightnessFailCallback = (res: GeneralCallbackResult) => void;
   /** 接口调用成功的回调函数 */
   type GetScreenBrightnessSuccessCallback = (
-    option: GetScreenBrightnessSuccessCallbackOption
+    option: GetScreenBrightnessSuccessCallbackResult
   ) => void;
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type GetSelectedTextRangeCompleteCallback = (
@@ -23239,7 +23239,7 @@ wx.writeBLECharacteristicValue({
   type SearchContactsFailCallback = (res: GeneralCallbackResult) => void;
   /** 接口调用成功的回调函数 */
   type SearchContactsSuccessCallback = (
-    option: SearchContactsSuccessCallbackOption
+    option: SearchContactsSuccessCallbackResult
   ) => void;
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type SeekBackgroundAudioCompleteCallback = (
