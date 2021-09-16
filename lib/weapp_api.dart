@@ -5,11 +5,8 @@ import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 part 'weapp_api_interface.dart';
 
 class WechatMiniProgramApi {
-  static Future<Wx> get wx async {
-    dynamic handler = await mpjs.context.getPropertyValue('wx');
-    if (handler is! mpjs.JsObject)
-      throw "Not in Wechat MiniProgram, wx not found.";
-    return Wx(handler);
+  static Wx get wx {
+    return Wx(mpjs.context['wx']);
   }
 }
 
