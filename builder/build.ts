@@ -128,6 +128,11 @@ let wxExportInterfaces = [
   "SearchContactsResult",
   "GetScreenBrightnessSuccessCallbackResult",
   "ScanCodeSuccessCallbackResult",
+  "DownloadFileOption",
+  "DownloadFileSuccessCallbackResult",
+  "DownloadProfile",
+  "UploadFileOption",
+  "UploadFileSuccessCallbackResult",
 ];
 let wxExportTypeAlias = [
   "ShowToastCompleteCallback",
@@ -312,6 +317,12 @@ let wxExportTypeAlias = [
   "VibrateLongCompleteCallback",
   "VibrateLongFailCallback",
   "VibrateLongSuccessCallback",
+  "DownloadFileCompleteCallback",
+  "DownloadFileFailCallback",
+  "DownloadFileSuccessCallback",
+  "UploadFileCompleteCallback",
+  "UploadFileFailCallback",
+  "UploadFileSuccessCallback",
 ];
 let wxWrapCallbacks: any = [
   "wrapShowModalSuccessCallback",
@@ -339,6 +350,8 @@ let wxWrapCallbacks: any = [
   "wrapGetClipboardDataSuccessCallback",
   "wrapGetNetworkTypeSuccessCallback",
   "wrapSearchContactsSuccessCallback",
+  "wrapDownloadFileSuccessCallback",
+  "wrapUploadFileSuccessCallback",
 ];
 let typeRewrite: any = {
   "SystemInfo.deviceOrientation": "string",

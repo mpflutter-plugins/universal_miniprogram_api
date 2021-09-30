@@ -590,6 +590,77 @@ class CompressImageSuccessCallbackResult extends WechatResponseObject {
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
+class DownloadFileOption extends WechatRequestObject {
+  DownloadFileOption({
+    required this.url,
+    this.complete,
+    this.fail,
+    this.filePath,
+    this.header,
+    this.success,
+    this.timeout,
+  }) : super();
+
+  String url;
+  DownloadFileCompleteCallback? complete;
+  DownloadFileFailCallback? fail;
+  String? filePath;
+  dynamic? header;
+  DownloadFileSuccessCallback? success;
+  num? timeout;
+
+  Map toJson() {
+    return {
+      'url': url,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'filePath': filePath,
+      'header': header,
+      'success': wrapDownloadFileSuccessCallback(success),
+      'timeout': timeout,
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class DownloadFileSuccessCallbackResult extends WechatResponseObject {
+  DownloadFileSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get filePath => getValue<String>('filePath');
+  Future<DownloadProfile> get profile => getValue<DownloadProfile>('profile');
+  Future<num> get statusCode => getValue<num>('statusCode');
+  Future<String> get tempFilePath => getValue<String>('tempFilePath');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
+class DownloadProfile extends WechatResponseObject {
+  DownloadProfile(mpjs.JsObject context) : super(context);
+  Future<num> get SSLconnectionEnd => getValue<num>('SSLconnectionEnd');
+  Future<num> get SSLconnectionStart => getValue<num>('SSLconnectionStart');
+  Future<num> get connectEnd => getValue<num>('connectEnd');
+  Future<num> get connectStart => getValue<num>('connectStart');
+  Future<num> get domainLookupEnd => getValue<num>('domainLookupEnd');
+  Future<num> get domainLookupStart => getValue<num>('domainLookupStart');
+  Future<num> get downstreamThroughputKbpsEstimate =>
+      getValue<num>('downstreamThroughputKbpsEstimate');
+  Future<String> get estimate_nettype => getValue<String>('estimate_nettype');
+  Future<num> get fetchStart => getValue<num>('fetchStart');
+  Future<num> get httpRttEstimate => getValue<num>('httpRttEstimate');
+  Future<String> get peerIP => getValue<String>('peerIP');
+  Future<num> get port => getValue<num>('port');
+  Future<String> get protocol => getValue<String>('protocol');
+  Future<num> get receivedBytedCount => getValue<num>('receivedBytedCount');
+  Future<num> get redirectEnd => getValue<num>('redirectEnd');
+  Future<num> get redirectStart => getValue<num>('redirectStart');
+  Future<num> get requestEnd => getValue<num>('requestEnd');
+  Future<num> get requestStart => getValue<num>('requestStart');
+  Future<num> get responseEnd => getValue<num>('responseEnd');
+  Future<num> get responseStart => getValue<num>('responseStart');
+  Future<num> get rtt => getValue<num>('rtt');
+  Future<num> get sendBytesCount => getValue<num>('sendBytesCount');
+  Future<bool> get socketReused => getValue<bool>('socketReused');
+  Future<num> get throughputKbps => getValue<num>('throughputKbps');
+  Future<num> get transportRttEstimate => getValue<num>('transportRttEstimate');
+}
+
 class EnableAlertBeforeUnloadOption extends WechatRequestObject {
   EnableAlertBeforeUnloadOption({
     required this.message,
@@ -2041,6 +2112,51 @@ class UpdateShareMenuOption extends WechatRequestObject {
   }
 }
 
+class UploadFileOption extends WechatRequestObject {
+  UploadFileOption({
+    required this.filePath,
+    required this.name,
+    required this.url,
+    this.complete,
+    this.fail,
+    this.formData,
+    this.header,
+    this.success,
+    this.timeout,
+  }) : super();
+
+  String filePath;
+  String name;
+  String url;
+  UploadFileCompleteCallback? complete;
+  UploadFileFailCallback? fail;
+  dynamic? formData;
+  dynamic? header;
+  UploadFileSuccessCallback? success;
+  num? timeout;
+
+  Map toJson() {
+    return {
+      'filePath': filePath,
+      'name': name,
+      'url': url,
+      'complete': wrapGeneralCallbackResult(complete),
+      'fail': wrapGeneralCallbackResult(fail),
+      'formData': formData,
+      'header': header,
+      'success': wrapUploadFileSuccessCallback(success),
+      'timeout': timeout,
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class UploadFileSuccessCallbackResult extends WechatResponseObject {
+  UploadFileSuccessCallbackResult(mpjs.JsObject context) : super(context);
+  Future<String> get data => getValue<String>('data');
+  Future<num> get statusCode => getValue<num>('statusCode');
+  Future<String> get errMsg => getValue<String>('errMsg');
+}
+
 class UserInfo extends WechatResponseObject {
   UserInfo(mpjs.JsObject context) : super(context);
   Future<String> get avatarUrl => getValue<String>('avatarUrl');
@@ -2168,6 +2284,10 @@ typedef CompressImageCompleteCallback = void Function(
 typedef CompressImageFailCallback = void Function(GeneralCallbackResult res);
 typedef CompressImageSuccessCallback = void Function(
     CompressImageSuccessCallbackResult result);
+typedef DownloadFileCompleteCallback = void Function(GeneralCallbackResult res);
+typedef DownloadFileFailCallback = void Function(GeneralCallbackResult res);
+typedef DownloadFileSuccessCallback = void Function(
+    DownloadFileSuccessCallbackResult result);
 typedef EnableAlertBeforeUnloadCompleteCallback = void Function(
     GeneralCallbackResult res);
 typedef EnableAlertBeforeUnloadFailCallback = void Function(
@@ -2370,6 +2490,10 @@ typedef UpdateShareMenuCompleteCallback = void Function(
 typedef UpdateShareMenuFailCallback = void Function(GeneralCallbackResult res);
 typedef UpdateShareMenuSuccessCallback = void Function(
     GeneralCallbackResult res);
+typedef UploadFileCompleteCallback = void Function(GeneralCallbackResult res);
+typedef UploadFileFailCallback = void Function(GeneralCallbackResult res);
+typedef UploadFileSuccessCallback = void Function(
+    UploadFileSuccessCallbackResult result);
 typedef VibrateLongCompleteCallback = void Function(GeneralCallbackResult res);
 typedef VibrateLongFailCallback = void Function(GeneralCallbackResult res);
 typedef VibrateLongSuccessCallback = void Function(GeneralCallbackResult res);

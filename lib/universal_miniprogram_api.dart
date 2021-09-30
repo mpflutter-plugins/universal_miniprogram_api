@@ -1,5 +1,7 @@
 library weapp_api;
 
+import 'dart:convert';
+
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
 part 'universal_miniprogram_api_interface.dart';
@@ -211,6 +213,18 @@ class Uni {
     if (result is! mpjs.JsObject)
       throw 'Fail to getMenuButtonBoundingClientRect result.';
     return Rect(result);
+  }
+
+  // 网络
+
+  Future<DownloadTask> downloadFile(DownloadFileOption option) async {
+    return DownloadTask(
+        await context.callMethod('downloadFile', [option.toJson()]));
+  }
+
+  Future<DownloadTask> uploadFile(UploadFileOption option) async {
+    return DownloadTask(
+        await context.callMethod('uploadFile', [option.toJson()]));
   }
 
   // 支付
@@ -623,6 +637,18 @@ class WechatRequestObject {
     if (callback == null) return null;
     return (e) => callback(SearchContactsSuccessCallbackResult(e));
   }
+
+  dynamic wrapDownloadFileSuccessCallback(
+      void Function(DownloadFileSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(DownloadFileSuccessCallbackResult(e));
+  }
+
+  dynamic wrapUploadFileSuccessCallback(
+      void Function(UploadFileSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(UploadFileSuccessCallbackResult(e));
+  }
 }
 
 class UpdateManager extends WechatResponseObject {
@@ -648,4 +674,78 @@ class UpdateManager extends WechatResponseObject {
     final cb = WechatRequestObject().wrapGeneralCallbackResult(callback);
     context.callMethod('onUpdateReady', [cb]);
   }
+}
+
+class DownloadTask extends WechatResponseObject {
+  DownloadTask(mpjs.JsObject context) : super(context);
+
+  void abort() {
+    context.callMethod('abort', []);
+  }
+
+  void onHeadersReceived(void Function(Map) callback) {
+    context.callMethod('onHeadersReceived', [
+      (mpjs.JsObject res) async {
+        callback(json
+            .decode(await mpjs.context['JSON'].callMethod('stringify', [res])));
+      }
+    ]);
+  }
+
+  void onProgressUpdate(
+      void Function(DownloadTaskProgressUpdateCallbackResult) callback) {
+    context.callMethod('onProgressUpdate', [
+      (mpjs.JsObject res) {
+        callback(DownloadTaskProgressUpdateCallbackResult(res));
+      }
+    ]);
+  }
+}
+
+class DownloadTaskProgressUpdateCallbackResult extends WechatResponseObject {
+  DownloadTaskProgressUpdateCallbackResult(mpjs.JsObject context)
+      : super(context);
+
+  Future<num?> get progress => context.getPropertyValue<num>('progress');
+  Future<num?> get totalBytesWritten =>
+      context.getPropertyValue<num>('totalBytesWritten');
+  Future<num?> get totalBytesExpectedToWrite =>
+      context.getPropertyValue<num>('totalBytesExpectedToWrite');
+}
+
+class UploadTask extends WechatResponseObject {
+  UploadTask(mpjs.JsObject context) : super(context);
+
+  void abort() {
+    context.callMethod('abort', []);
+  }
+
+  void onHeadersReceived(void Function(Map) callback) {
+    context.callMethod('onHeadersReceived', [
+      (mpjs.JsObject res) async {
+        callback(json
+            .decode(await mpjs.context['JSON'].callMethod('stringify', [res])));
+      }
+    ]);
+  }
+
+  void onProgressUpdate(
+      void Function(UploadTaskProgressUpdateCallbackResult) callback) {
+    context.callMethod('onProgressUpdate', [
+      (mpjs.JsObject res) {
+        callback(UploadTaskProgressUpdateCallbackResult(res));
+      }
+    ]);
+  }
+}
+
+class UploadTaskProgressUpdateCallbackResult extends WechatResponseObject {
+  UploadTaskProgressUpdateCallbackResult(mpjs.JsObject context)
+      : super(context);
+
+  Future<num?> get progress => context.getPropertyValue<num>('progress');
+  Future<num?> get totalBytesWritten =>
+      context.getPropertyValue<num>('totalBytesWritten');
+  Future<num?> get totalBytesExpectedToWrite =>
+      context.getPropertyValue<num>('totalBytesExpectedToWrite');
 }
