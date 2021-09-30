@@ -398,7 +398,7 @@ const main = () => {
   ) as TypeAliasDeclaration[];
 
   // Interface code begin
-  let interfaceCode = "part of 'weapp_api.dart';\n\n";
+  let interfaceCode = "part of 'universal_miniprogram_api.dart';\n\n";
 
   interfaceDeclarations.forEach((interfaceDeclaration) => {
     const className = (interfaceDeclaration.name as Identifier).escapedText;
@@ -511,7 +511,7 @@ const main = () => {
   });
 
   writeFileSync(
-    "lib/weapp_api_interface.dart",
+    "lib/universal_miniprogram_api_interface.dart",
     `
     ${interfaceCode}
     ${typeCode}

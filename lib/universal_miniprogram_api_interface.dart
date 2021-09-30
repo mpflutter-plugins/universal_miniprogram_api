@@ -1,4 +1,4 @@
-part of 'weapp_api.dart';
+part of 'universal_miniprogram_api.dart';
 
 class AccountInfo extends WechatResponseObject {
   AccountInfo(mpjs.JsObject context) : super(context);

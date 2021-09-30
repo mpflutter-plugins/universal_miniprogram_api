@@ -1,8 +1,7 @@
-name: weapp_api
-description: The MPFlutter weapp api.
+name: universal_miniprogram_api
+description: The MPFlutter universal miniprogram api.
 publish_to: none
 version: 0.0.1
-author: /
 homepage: /
 
 environment:

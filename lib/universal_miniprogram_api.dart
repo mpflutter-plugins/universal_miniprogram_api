@@ -2,18 +2,18 @@ library weapp_api;
 
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
-part 'weapp_api_interface.dart';
+part 'universal_miniprogram_api_interface.dart';
 
-class WechatMiniProgramApi {
-  static Wx get wx {
-    return Wx(mpjs.context['wx']);
+class UniversalMiniProgramApi {
+  static Uni get uni {
+    return Uni(mpjs.context['uni']);
   }
 }
 
-class Wx {
+class Uni {
   mpjs.JsObject context;
 
-  Wx(this.context);
+  Uni(this.context);
 
   // 基础
 
