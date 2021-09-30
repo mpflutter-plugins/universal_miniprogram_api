@@ -440,6 +440,18 @@ class WechatResponseObject {
     dynamic result = await context.getPropertyValue(valueKey);
     if (result is T) {
       return result;
+    } else if (result is List) {
+      if (result.isEmpty) {
+        return [] as T;
+      } else if (result.length > 0 && result.first is String) {
+        return result.cast<String>() as T;
+      } else if (result.length > 0 && result.first is num) {
+        return result.cast<num>() as T;
+      } else if (result.length > 0 && result.first is mpjs.JsObject) {
+        return result.cast<mpjs.JsObject>() as T;
+      } else {
+        return result as T;
+      }
     } else {
       if (T == String && result is num) {
         return result.toString() as T;

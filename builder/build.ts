@@ -362,6 +362,7 @@ let typeRewrite: any = {
   "MediaSource.type": "string",
   "PreviewImageOption.urls": "List<String>",
   "ChooseImageSuccessCallbackResult.tempFilePaths": "List<String>",
+  "ChooseImageSuccessCallbackResult.tempFiles": "List<ImageFile>",
   "ChooseMessageFileSuccessCallbackResult.tempFiles": "List<ChooseFile>",
   "ChooseFile.type": "string",
   "GetImageInfoSuccessCallbackResult.orientation": "string",
@@ -479,11 +480,35 @@ const main = () => {
             (member as any)?.type?.typeName?.escapedText ??
             (member as any)?.type?.elementType?.typeName?.escapedText;
         }
-        membersCode += `Future<${transformType(
-          memberTypeName
-        )}> get ${memberName.replace(/\./g, "_")} => getValue<${transformType(
-          memberTypeName
-        )}>('${memberName}');\n`;
+        if (transformType(memberTypeName).startsWith("List<")) {
+          let tMemberTypeName = transformType(memberTypeName);
+          if (
+            tMemberTypeName === "List<String>" ||
+            tMemberTypeName === "List<num>"
+          ) {
+            membersCode += `Future<${tMemberTypeName}> get ${memberName.replace(
+              /\./g,
+              "_"
+            )} => getValue<${tMemberTypeName}>('${memberName}');\n`;
+          } else {
+            membersCode += `Future<${tMemberTypeName}> get ${memberName.replace(
+              /\./g,
+              "_"
+            )} async {
+              return (await getValue<List<mpjs.JsObject>>('tempFiles'))
+                  .map((e) => ${tMemberTypeName
+                    .replace("List<", "")
+                    .replace(">", "")}(e))
+                  .toList();
+            }\n`;
+          }
+        } else {
+          membersCode += `Future<${transformType(
+            memberTypeName
+          )}> get ${memberName.replace(/\./g, "_")} => getValue<${transformType(
+            memberTypeName
+          )}>('${memberName}');\n`;
+        }
       });
       interfaceCode += `
     class ${className} extends WechatResponseObject {

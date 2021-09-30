@@ -442,7 +442,12 @@ class ChooseImageSuccessCallbackResult extends WechatResponseObject {
   ChooseImageSuccessCallbackResult(mpjs.JsObject context) : super(context);
   Future<List<String>> get tempFilePaths =>
       getValue<List<String>>('tempFilePaths');
-  Future<ImageFile> get tempFiles => getValue<ImageFile>('tempFiles');
+  Future<List<ImageFile>> get tempFiles async {
+    return (await getValue<List<mpjs.JsObject>>('tempFiles'))
+        .map((e) => ImageFile(e))
+        .toList();
+  }
+
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
@@ -513,8 +518,12 @@ class ChooseMessageFileOption extends WechatRequestObject {
 class ChooseMessageFileSuccessCallbackResult extends WechatResponseObject {
   ChooseMessageFileSuccessCallbackResult(mpjs.JsObject context)
       : super(context);
-  Future<List<ChooseFile>> get tempFiles =>
-      getValue<List<ChooseFile>>('tempFiles');
+  Future<List<ChooseFile>> get tempFiles async {
+    return (await getValue<List<mpjs.JsObject>>('tempFiles'))
+        .map((e) => ChooseFile(e))
+        .toList();
+  }
+
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
