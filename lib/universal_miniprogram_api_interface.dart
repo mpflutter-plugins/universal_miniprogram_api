@@ -2,8 +2,13 @@ part of 'universal_miniprogram_api.dart';
 
 class AccountInfo extends WechatResponseObject {
   AccountInfo(mpjs.JsObject context) : super(context);
-  Future<MiniProgram> get miniProgram => getValue<MiniProgram>('miniProgram');
-  Future<Plugin> get plugin => getValue<Plugin>('plugin');
+  Future<MiniProgram> get miniProgram async {
+    return MiniProgram(await getValue<mpjs.JsObject>('miniProgram'));
+  }
+
+  Future<Plugin> get plugin async {
+    return Plugin(await getValue<mpjs.JsObject>('plugin'));
+  }
 }
 
 class AddPhoneCalendarOption extends WechatRequestObject {
@@ -625,7 +630,10 @@ class DownloadFileOption extends WechatRequestObject {
 class DownloadFileSuccessCallbackResult extends WechatResponseObject {
   DownloadFileSuccessCallbackResult(mpjs.JsObject context) : super(context);
   Future<String> get filePath => getValue<String>('filePath');
-  Future<DownloadProfile> get profile => getValue<DownloadProfile>('profile');
+  Future<DownloadProfile> get profile async {
+    return DownloadProfile(await getValue<mpjs.JsObject>('profile'));
+  }
+
   Future<num> get statusCode => getValue<num>('statusCode');
   Future<String> get tempFilePath => getValue<String>('tempFilePath');
   Future<String> get errMsg => getValue<String>('errMsg');
@@ -905,11 +913,19 @@ class GetSettingOption extends WechatRequestObject {
 
 class GetSettingSuccessCallbackResult extends WechatResponseObject {
   GetSettingSuccessCallbackResult(mpjs.JsObject context) : super(context);
-  Future<AuthSetting> get authSetting => getValue<AuthSetting>('authSetting');
-  Future<SubscriptionsSetting> get subscriptionsSetting =>
-      getValue<SubscriptionsSetting>('subscriptionsSetting');
-  Future<AuthSetting> get miniprogramAuthSetting =>
-      getValue<AuthSetting>('miniprogramAuthSetting');
+  Future<AuthSetting> get authSetting async {
+    return AuthSetting(await getValue<mpjs.JsObject>('authSetting'));
+  }
+
+  Future<SubscriptionsSetting> get subscriptionsSetting async {
+    return SubscriptionsSetting(
+        await getValue<mpjs.JsObject>('subscriptionsSetting'));
+  }
+
+  Future<AuthSetting> get miniprogramAuthSetting async {
+    return AuthSetting(await getValue<mpjs.JsObject>('miniprogramAuthSetting'));
+  }
+
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
@@ -946,7 +962,10 @@ class GetUserProfileSuccessCallbackResult extends WechatResponseObject {
   Future<String> get iv => getValue<String>('iv');
   Future<String> get rawData => getValue<String>('rawData');
   Future<String> get signature => getValue<String>('signature');
-  Future<UserInfo> get userInfo => getValue<UserInfo>('userInfo');
+  Future<UserInfo> get userInfo async {
+    return UserInfo(await getValue<mpjs.JsObject>('userInfo'));
+  }
+
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
@@ -989,8 +1008,10 @@ class LaunchOptionsApp extends WechatResponseObject {
   Future<dynamic> get forwardMaterials => getValue<dynamic>('forwardMaterials');
   Future<String> get path => getValue<String>('path');
   Future<dynamic> get query => getValue<dynamic>('query');
-  Future<ReferrerInfo> get referrerInfo =>
-      getValue<ReferrerInfo>('referrerInfo');
+  Future<ReferrerInfo> get referrerInfo async {
+    return ReferrerInfo(await getValue<mpjs.JsObject>('referrerInfo'));
+  }
+
   Future<num> get scene => getValue<num>('scene');
   Future<num> get chatType => getValue<num>('chatType');
   Future<String> get shareTicket => getValue<String>('shareTicket');
@@ -1258,9 +1279,15 @@ class OpenSettingOption extends WechatRequestObject {
 
 class OpenSettingSuccessCallbackResult extends WechatResponseObject {
   OpenSettingSuccessCallbackResult(mpjs.JsObject context) : super(context);
-  Future<AuthSetting> get authSetting => getValue<AuthSetting>('authSetting');
-  Future<SubscriptionsSetting> get subscriptionsSetting =>
-      getValue<SubscriptionsSetting>('subscriptionsSetting');
+  Future<AuthSetting> get authSetting async {
+    return AuthSetting(await getValue<mpjs.JsObject>('authSetting'));
+  }
+
+  Future<SubscriptionsSetting> get subscriptionsSetting async {
+    return SubscriptionsSetting(
+        await getValue<mpjs.JsObject>('subscriptionsSetting'));
+  }
+
   Future<String> get errMsg => getValue<String>('errMsg');
 }
 
@@ -1603,8 +1630,9 @@ class SearchContactsResult extends WechatResponseObject {
 
 class SearchContactsSuccessCallbackResult extends WechatResponseObject {
   SearchContactsSuccessCallbackResult(mpjs.JsObject context) : super(context);
-  Future<SearchContactsResult> get result =>
-      getValue<SearchContactsResult>('result');
+  Future<SearchContactsResult> get result async {
+    return SearchContactsResult(await getValue<mpjs.JsObject>('result'));
+  }
 }
 
 class SetClipboardDataOption extends WechatRequestObject {
@@ -2043,7 +2071,10 @@ class SystemInfo extends WechatResponseObject {
   Future<String> get deviceOrientation => getValue<String>('deviceOrientation');
   Future<bool> get enableDebug => getValue<bool>('enableDebug');
   Future<num> get fontSizeSetting => getValue<num>('fontSizeSetting');
-  Future<Host> get host => getValue<Host>('host');
+  Future<Host> get host async {
+    return Host(await getValue<mpjs.JsObject>('host'));
+  }
+
   Future<String> get language => getValue<String>('language');
   Future<bool> get locationAuthorized => getValue<bool>('locationAuthorized');
   Future<bool> get locationEnabled => getValue<bool>('locationEnabled');
@@ -2062,7 +2093,10 @@ class SystemInfo extends WechatResponseObject {
       getValue<bool>('notificationSoundAuthorized');
   Future<num> get pixelRatio => getValue<num>('pixelRatio');
   Future<String> get platform => getValue<String>('platform');
-  Future<SafeArea> get safeArea => getValue<SafeArea>('safeArea');
+  Future<SafeArea> get safeArea async {
+    return SafeArea(await getValue<mpjs.JsObject>('safeArea'));
+  }
+
   Future<num> get screenHeight => getValue<num>('screenHeight');
   Future<num> get screenWidth => getValue<num>('screenWidth');
   Future<num> get statusBarHeight => getValue<num>('statusBarHeight');

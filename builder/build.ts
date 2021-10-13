@@ -19,6 +19,7 @@ const dartTypeMapping: { [key: string]: string } = {
   boolean: "bool",
   number: "num",
   IAnyObject: "dynamic",
+  dynamic: "dynamic",
 };
 
 let wxExportInterfaces = [
@@ -508,13 +509,27 @@ const main = () => {
               /\./g,
               "_"
             )} async {
-              return (await getValue<List<mpjs.JsObject>>('tempFiles'))
+              return (await getValue<List<mpjs.JsObject>>('${memberName.replace(
+                /\./g,
+                "_"
+              )}'))
                   .map((e) => ${tMemberTypeName
                     .replace("List<", "")
                     .replace(">", "")}(e))
                   .toList();
             }\n`;
           }
+        } else if (dartTypeMapping[memberTypeName] === undefined) {
+          membersCode += `Future<${transformType(
+            memberTypeName
+          )}> get ${memberName.replace(/\./g, "_")} async {
+            return ${transformType(
+              memberTypeName
+            )}(await getValue<mpjs.JsObject>('${memberName.replace(
+            /\./g,
+            "_"
+          )}'));
+          }\n`;
         } else {
           membersCode += `Future<${transformType(
             memberTypeName
