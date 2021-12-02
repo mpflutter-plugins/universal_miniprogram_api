@@ -8,6 +8,6 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  flutter: ^0.8.0
-  mpcore: ^0.8.0
+  flutter: ">=0.8.0"
+  mpcore: ">=0.8.0"
   
