@@ -1,5 +1,8 @@
 import 'package:mpcore/mpcore.dart';
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
+import 'package:universal_miniprogram_api/universal_miniprogram_api.dart';
+
+export 'package:universal_miniprogram_api/universal_miniprogram_api.dart';
 
 class WechatMiniProgramMapViewController extends MPMiniProgramController {
   mpjs.JsObject? context;
@@ -11,16 +14,92 @@ class WechatMiniProgramMapViewController extends MPMiniProgramController {
     return context!;
   }
 
-  moveToLocation({
-    required double longitude,
-    required double latitude,
-  }) async {
-    (await _getContext()).callMethod('moveToLocation', [
-      {
-        'longitude': longitude,
-        'latitude': latitude,
-      }
-    ]);
+  addCustomLayer(AddCustomLayerOption option) async {
+    (await _getContext()).callMethod('addCustomLayer', [option.toJson()]);
+  }
+
+  addGroundOverlay(AddGroundOverlayOption option) async {
+    (await _getContext()).callMethod('addGroundOverlay', [option.toJson()]);
+  }
+
+  addMarkers(AddMarkersOption option) async {
+    (await _getContext()).callMethod('addMarkers', [option.toJson()]);
+  }
+
+  fromScreenLocation(FromScreenLocationOption option) async {
+    (await _getContext()).callMethod('fromScreenLocation', [option.toJson()]);
+  }
+
+  getCenterLocation(GetCenterLocationOption option) async {
+    (await _getContext()).callMethod('getCenterLocation', [option.toJson()]);
+  }
+
+  getRegion(GetRegionOption option) async {
+    (await _getContext()).callMethod('getRegion', [option.toJson()]);
+  }
+
+  getRotate(GetRotateOption option) async {
+    (await _getContext()).callMethod('getRotate', [option.toJson()]);
+  }
+
+  getScale(GetScaleOption option) async {
+    (await _getContext()).callMethod('getScale', [option.toJson()]);
+  }
+
+  getSkew(GetSkewOption option) async {
+    (await _getContext()).callMethod('getSkew', [option.toJson()]);
+  }
+
+  includePoints(IncludePointsOption option) async {
+    (await _getContext()).callMethod('includePoints', [option.toJson()]);
+  }
+
+  initMarkerCluster(InitMarkerClusterOption option) async {
+    (await _getContext()).callMethod('initMarkerCluster', [option.toJson()]);
+  }
+
+  moveAlong(MoveAlongOption option) async {
+    (await _getContext()).callMethod('moveAlong', [option.toJson()]);
+  }
+
+  openMapApp(OpenMapAppOption option) async {
+    (await _getContext()).callMethod('openMapApp', [option.toJson()]);
+  }
+
+  removeCustomLayer(RemoveCustomLayerOption option) async {
+    (await _getContext()).callMethod('removeCustomLayer', [option.toJson()]);
+  }
+
+  removeGroundOverlay(RemoveGroundOverlayOption option) async {
+    (await _getContext()).callMethod('removeGroundOverlay', [option.toJson()]);
+  }
+
+  removeMarkers(RemoveMarkersOption option) async {
+    (await _getContext()).callMethod('removeMarkers', [option.toJson()]);
+  }
+
+  setCenterOffset(SetCenterOffsetOption option) async {
+    (await _getContext()).callMethod('setCenterOffset', [option.toJson()]);
+  }
+
+  setLocMarkerIcon(SetLocMarkerIconOption option) async {
+    (await _getContext()).callMethod('setLocMarkerIcon', [option.toJson()]);
+  }
+
+  toScreenLocation(ToScreenLocationOption option) async {
+    (await _getContext()).callMethod('toScreenLocation', [option.toJson()]);
+  }
+
+  translateMarker(TranslateMarkerOption option) async {
+    (await _getContext()).callMethod('translateMarker', [option.toJson()]);
+  }
+
+  updateGroundOverlay(UpdateGroundOverlayOption option) async {
+    (await _getContext()).callMethod('updateGroundOverlay', [option.toJson()]);
+  }
+
+  moveToLocation(MoveToLocationOption option) async {
+    (await _getContext()).callMethod('moveToLocation', [option.toJson()]);
   }
 }
 

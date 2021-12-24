@@ -3,6 +3,7 @@ library weapp_api;
 import 'dart:convert';
 
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
+import './wechat_mini_program/map_view.dart' show WechatMiniProgramMapMarker;
 
 part 'universal_miniprogram_api_interface.dart';
 
@@ -648,6 +649,48 @@ class WechatRequestObject {
       void Function(UploadFileSuccessCallbackResult)? callback) {
     if (callback == null) return null;
     return (e) => callback(UploadFileSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetCenterLocationSuccessCallback(
+      void Function(GetCenterLocationSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetCenterLocationSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetRegionSuccessCallback(
+      void Function(GetRegionSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetRegionSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetRotateSuccessCallback(
+      void Function(GetRotateSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetRotateSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetScaleSuccessCallback(
+      void Function(GetScaleSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetScaleSuccessCallbackResult(e));
+  }
+
+  dynamic wrapGetSkewSuccessCallback(
+      void Function(GetSkewSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetSkewSuccessCallbackResult(e));
+  }
+
+  dynamic wrapToScreenLocationSuccessCallback(
+      void Function(ToScreenLocationSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(ToScreenLocationSuccessCallbackResult(e));
+  }
+
+  dynamic wrapFromScreenLocationSuccessCallback(
+      void Function(GetCenterLocationSuccessCallbackResult)? callback) {
+    if (callback == null) return null;
+    return (e) => callback(GetCenterLocationSuccessCallbackResult(e));
   }
 }
 

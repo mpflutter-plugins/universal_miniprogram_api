@@ -13,6 +13,63 @@ Future<Plugin> get plugin async {
 
     }
 
+    class AddCustomLayerOption extends WechatRequestObject {
+        AddCustomLayerOption({required  this.layerId, this.complete, this.fail, this.success,}) : super();
+
+        String layerId;
+AddCustomLayerCompleteCallback? complete;
+AddCustomLayerFailCallback? fail;
+AddCustomLayerSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'layerId': layerId,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class AddGroundOverlayOption extends WechatRequestObject {
+        AddGroundOverlayOption({required  this.bounds,required  this.id,required  this.src, this.complete, this.fail, this.opacity, this.success, this.visible, this.zIndex,}) : super();
+
+        MapBounds bounds;
+String id;
+String src;
+AddGroundOverlayCompleteCallback? complete;
+AddGroundOverlayFailCallback? fail;
+num? opacity;
+AddGroundOverlaySuccessCallback? success;
+bool? visible;
+num? zIndex;
+
+
+        Map toJson() {
+            return {
+                'bounds': bounds,'id': id,'src': src,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'opacity': opacity,'success': wrapGeneralCallbackResult(success),'visible': visible,'zIndex': zIndex,
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class AddMarkersOption extends WechatRequestObject {
+        AddMarkersOption({required  this.markers, this.clear, this.complete, this.fail, this.success,}) : super();
+
+        List<WechatMiniProgramMapMarker> markers;
+bool? clear;
+AddMarkersCompleteCallback? complete;
+AddMarkersFailCallback? fail;
+AddMarkersSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'markers': markers,'clear': clear,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class AddPhoneCalendarOption extends WechatRequestObject {
         AddPhoneCalendarOption({required  this.startTime,required  this.title, this.alarm, this.alarmOffset, this.allDay, this.complete, this.description, this.endTime, this.fail, this.location, this.success,}) : super();
 
@@ -418,6 +475,21 @@ Future<String> get errMsg => getValue<String>('errMsg');
 
     }
 
+    class DestinationOption extends WechatRequestObject {
+        DestinationOption({required  this.latitude,required  this.longitude,}) : super();
+
+        num latitude;
+num longitude;
+
+
+        Map toJson() {
+            return {
+                'latitude': latitude,'longitude': longitude,
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class DownloadFileOption extends WechatRequestObject {
         DownloadFileOption({required  this.url, this.complete, this.fail, this.filePath, this.header, this.success, this.timeout,}) : super();
 
@@ -506,6 +578,22 @@ Future<String> get type => getValue<String>('type');
 
     }
 
+    class FromScreenLocationOption extends WechatRequestObject {
+        FromScreenLocationOption({ this.complete, this.fail, this.success,}) : super();
+
+        FromScreenLocationCompleteCallback? complete;
+FromScreenLocationFailCallback? fail;
+FromScreenLocationSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapFromScreenLocationSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class GetBatteryInfoOption extends WechatRequestObject {
         GetBatteryInfoOption({ this.complete, this.fail, this.success,}) : super();
 
@@ -534,6 +622,31 @@ Future<String> get errMsg => getValue<String>('errMsg');
         GetBatteryInfoSyncResult(mpjs.JsObject context) : super(context);
         Future<bool> get isCharging => getValue<bool>('isCharging');
 Future<String> get level => getValue<String>('level');
+
+    }
+
+    class GetCenterLocationOption extends WechatRequestObject {
+        GetCenterLocationOption({ this.complete, this.fail, this.iconPath, this.success,}) : super();
+
+        GetCenterLocationCompleteCallback? complete;
+GetCenterLocationFailCallback? fail;
+String? iconPath;
+GetCenterLocationSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'iconPath': iconPath,'success': wrapGetCenterLocationSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class GetCenterLocationSuccessCallbackResult extends WechatResponseObject {
+        GetCenterLocationSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<num> get latitude => getValue<num>('latitude');
+Future<num> get longitude => getValue<num>('longitude');
+Future<String> get errMsg => getValue<String>('errMsg');
 
     }
 
@@ -644,6 +757,80 @@ Future<String> get errMsg => getValue<String>('errMsg');
 
     }
 
+    class GetRegionOption extends WechatRequestObject {
+        GetRegionOption({ this.complete, this.fail, this.success,}) : super();
+
+        GetRegionCompleteCallback? complete;
+GetRegionFailCallback? fail;
+GetRegionSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGetRegionSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class GetRegionSuccessCallbackResult extends WechatResponseObject {
+        GetRegionSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<MapPostion> get northeast async {
+            return MapPostion(await getValue<mpjs.JsObject>('northeast'));
+          }
+Future<MapPostion> get southwest async {
+            return MapPostion(await getValue<mpjs.JsObject>('southwest'));
+          }
+Future<String> get errMsg => getValue<String>('errMsg');
+
+    }
+
+    class GetRotateOption extends WechatRequestObject {
+        GetRotateOption({ this.complete, this.fail, this.success,}) : super();
+
+        GetRotateCompleteCallback? complete;
+GetRotateFailCallback? fail;
+GetRotateSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGetRotateSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class GetRotateSuccessCallbackResult extends WechatResponseObject {
+        GetRotateSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<num> get rotate => getValue<num>('rotate');
+Future<String> get errMsg => getValue<String>('errMsg');
+
+    }
+
+    class GetScaleOption extends WechatRequestObject {
+        GetScaleOption({ this.complete, this.fail, this.success,}) : super();
+
+        GetScaleCompleteCallback? complete;
+GetScaleFailCallback? fail;
+GetScaleSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGetScaleSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class GetScaleSuccessCallbackResult extends WechatResponseObject {
+        GetScaleSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<num> get scale => getValue<num>('scale');
+Future<String> get errMsg => getValue<String>('errMsg');
+
+    }
+
     class GetScreenBrightnessOption extends WechatRequestObject {
         GetScreenBrightnessOption({ this.complete, this.fail, this.success,}) : super();
 
@@ -694,6 +881,29 @@ Future<SubscriptionsSetting> get subscriptionsSetting async {
 Future<AuthSetting> get miniprogramAuthSetting async {
             return AuthSetting(await getValue<mpjs.JsObject>('miniprogramAuthSetting'));
           }
+Future<String> get errMsg => getValue<String>('errMsg');
+
+    }
+
+    class GetSkewOption extends WechatRequestObject {
+        GetSkewOption({ this.complete, this.fail, this.success,}) : super();
+
+        GetSkewCompleteCallback? complete;
+GetSkewFailCallback? fail;
+GetSkewSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGetSkewSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class GetSkewSuccessCallbackResult extends WechatResponseObject {
+        GetSkewSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<num> get skew => getValue<num>('skew');
 Future<String> get errMsg => getValue<String>('errMsg');
 
     }
@@ -760,6 +970,43 @@ Future<num> get size => getValue<num>('size');
 
     }
 
+    class IncludePointsOption extends WechatRequestObject {
+        IncludePointsOption({required  this.points, this.complete, this.fail, this.padding, this.success,}) : super();
+
+        MapPostion points;
+IncludePointsCompleteCallback? complete;
+IncludePointsFailCallback? fail;
+List<double>? padding;
+IncludePointsSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'points': points,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'padding': padding,'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class InitMarkerClusterOption extends WechatRequestObject {
+        InitMarkerClusterOption({ this.complete, this.enableDefaultStyle, this.fail, this.gridSize, this.success, this.zoomOnClick,}) : super();
+
+        InitMarkerClusterCompleteCallback? complete;
+bool? enableDefaultStyle;
+InitMarkerClusterFailCallback? fail;
+bool? gridSize;
+InitMarkerClusterSuccessCallback? success;
+bool? zoomOnClick;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'enableDefaultStyle': enableDefaultStyle,'fail': wrapGeneralCallbackResult(fail),'gridSize': gridSize,'success': wrapGeneralCallbackResult(success),'zoomOnClick': zoomOnClick,
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class LaunchOptionsApp extends WechatResponseObject {
         LaunchOptionsApp(mpjs.JsObject context) : super(context);
         Future<dynamic> get forwardMaterials => getValue<dynamic>('forwardMaterials');
@@ -815,6 +1062,24 @@ MakePhoneCallSuccessCallback? success;
 
     }
 
+    class MapBounds extends WechatResponseObject {
+        MapBounds(mpjs.JsObject context) : super(context);
+        Future<MapPostion> get northeast async {
+            return MapPostion(await getValue<mpjs.JsObject>('northeast'));
+          }
+Future<MapPostion> get southwest async {
+            return MapPostion(await getValue<mpjs.JsObject>('southwest'));
+          }
+
+    }
+
+    class MapPostion extends WechatResponseObject {
+        MapPostion(mpjs.JsObject context) : super(context);
+        Future<num> get latitude => getValue<num>('latitude');
+Future<num> get longitude => getValue<num>('longitude');
+
+    }
+
     class MediaSource extends WechatRequestObject {
         MediaSource({required  this.url, this.poster, this.type,}) : super();
 
@@ -836,6 +1101,44 @@ String? type;
         Future<String> get appId => getValue<String>('appId');
 Future<String> get envVersion => getValue<String>('envVersion');
 Future<String> get version => getValue<String>('version');
+
+    }
+
+    class MoveAlongOption extends WechatRequestObject {
+        MoveAlongOption({required  this.duration,required  this.markerId,required  this.path, this.autoRotate, this.complete, this.fail, this.success,}) : super();
+
+        num duration;
+num markerId;
+List<Map> path;
+bool? autoRotate;
+MoveAlongCompleteCallback? complete;
+MoveAlongFailCallback? fail;
+MoveAlongSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'duration': duration,'markerId': markerId,'path': path,'autoRotate': autoRotate,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class MoveToLocationOption extends WechatRequestObject {
+        MoveToLocationOption({ this.complete, this.fail, this.latitude, this.longitude, this.success,}) : super();
+
+        MoveToLocationCompleteCallback? complete;
+MoveToLocationFailCallback? fail;
+num? latitude;
+num? longitude;
+MoveToLocationSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'latitude': latitude,'longitude': longitude,'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
 
     }
 
@@ -946,6 +1249,25 @@ OpenLocationSuccessCallback? success;
         Map toJson() {
             return {
                 'latitude': latitude,'longitude': longitude,'address': address,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'name': name,'scale': scale,'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class OpenMapAppOption extends WechatRequestObject {
+        OpenMapAppOption({required  this.destination,required  this.latitude,required  this.longitude, this.complete, this.fail, this.success,}) : super();
+
+        String destination;
+num latitude;
+num longitude;
+OpenMapAppCompleteCallback? complete;
+OpenMapAppFailCallback? fail;
+OpenMapAppSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'destination': destination,'latitude': latitude,'longitude': longitude,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
             }..removeWhere((key, value) => value == null);
         }
 
@@ -1074,6 +1396,57 @@ RedirectToSuccessCallback? success;
         ReferrerInfo(mpjs.JsObject context) : super(context);
         Future<String> get appId => getValue<String>('appId');
 Future<dynamic> get extraData => getValue<dynamic>('extraData');
+
+    }
+
+    class RemoveCustomLayerOption extends WechatRequestObject {
+        RemoveCustomLayerOption({required  this.layerId, this.complete, this.fail, this.success,}) : super();
+
+        String layerId;
+RemoveCustomLayerCompleteCallback? complete;
+RemoveCustomLayerFailCallback? fail;
+RemoveCustomLayerSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'layerId': layerId,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class RemoveGroundOverlayOption extends WechatRequestObject {
+        RemoveGroundOverlayOption({required  this.id, this.complete, this.fail, this.success,}) : super();
+
+        String id;
+RemoveGroundOverlayCompleteCallback? complete;
+RemoveGroundOverlayFailCallback? fail;
+RemoveGroundOverlaySuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'id': id,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class RemoveMarkersOption extends WechatRequestObject {
+        RemoveMarkersOption({required  this.markerIds, this.complete, this.fail, this.success,}) : super();
+
+        List<dynamic> markerIds;
+RemoveMarkersCompleteCallback? complete;
+RemoveMarkersFailCallback? fail;
+RemoveMarkersSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'markerIds': markerIds,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
 
     }
 
@@ -1240,6 +1613,23 @@ Future<String> get phoneNumber => getValue<String>('phoneNumber');
 
     }
 
+    class SetCenterOffsetOption extends WechatRequestObject {
+        SetCenterOffsetOption({required  this.offset, this.complete, this.fail, this.success,}) : super();
+
+        List<num> offset;
+SetCenterOffsetCompleteCallback? complete;
+SetCenterOffsetFailCallback? fail;
+SetCenterOffsetSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'offset': offset,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class SetClipboardDataOption extends WechatRequestObject {
         SetClipboardDataOption({required  this.data, this.complete, this.fail, this.success,}) : super();
 
@@ -1269,6 +1659,23 @@ SetKeepScreenOnSuccessCallback? success;
         Map toJson() {
             return {
                 'keepScreenOn': keepScreenOn,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class SetLocMarkerIconOption extends WechatRequestObject {
+        SetLocMarkerIconOption({ this.complete, this.fail, this.iconPath, this.success,}) : super();
+
+        SetLocMarkerIconCompleteCallback? complete;
+SetLocMarkerIconFailCallback? fail;
+String? iconPath;
+SetLocMarkerIconSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'iconPath': iconPath,'success': wrapGeneralCallbackResult(success),
             }..removeWhere((key, value) => value == null);
         }
 
@@ -1579,6 +1986,75 @@ Future<String> get theme => getValue<String>('theme');
 
     }
 
+    class ToScreenLocationOption extends WechatRequestObject {
+        ToScreenLocationOption({ this.complete, this.fail, this.success,}) : super();
+
+        ToScreenLocationCompleteCallback? complete;
+ToScreenLocationFailCallback? fail;
+ToScreenLocationSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'success': wrapToScreenLocationSuccessCallback(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class ToScreenLocationSuccessCallbackResult extends WechatResponseObject {
+        ToScreenLocationSuccessCallbackResult(mpjs.JsObject context) : super(context);
+        Future<num> get x => getValue<num>('x');
+Future<num> get y => getValue<num>('y');
+Future<String> get errMsg => getValue<String>('errMsg');
+
+    }
+
+    class TranslateMarkerOption extends WechatRequestObject {
+        TranslateMarkerOption({required  this.autoRotate,required  this.destination,required  this.markerId,required  this.rotate, this.animationEnd, this.complete, this.duration, this.fail, this.moveWithRotate, this.success,}) : super();
+
+        bool autoRotate;
+DestinationOption destination;
+num markerId;
+num rotate;
+dynamic? animationEnd;
+TranslateMarkerCompleteCallback? complete;
+num? duration;
+TranslateMarkerFailCallback? fail;
+bool? moveWithRotate;
+TranslateMarkerSuccessCallback? success;
+
+
+        Map toJson() {
+            return {
+                'autoRotate': autoRotate,'destination': destination,'markerId': markerId,'rotate': rotate,'animationEnd': animationEnd,'complete': wrapGeneralCallbackResult(complete),'duration': duration,'fail': wrapGeneralCallbackResult(fail),'moveWithRotate': moveWithRotate,'success': wrapGeneralCallbackResult(success),
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
+    class UpdateGroundOverlayOption extends WechatRequestObject {
+        UpdateGroundOverlayOption({required  this.bounds,required  this.id,required  this.src, this.complete, this.fail, this.opacity, this.success, this.visible, this.zIndex,}) : super();
+
+        MapBounds bounds;
+String id;
+String src;
+UpdateGroundOverlayCompleteCallback? complete;
+UpdateGroundOverlayFailCallback? fail;
+num? opacity;
+UpdateGroundOverlaySuccessCallback? success;
+bool? visible;
+num? zIndex;
+
+
+        Map toJson() {
+            return {
+                'bounds': bounds,'id': id,'src': src,'complete': wrapGeneralCallbackResult(complete),'fail': wrapGeneralCallbackResult(fail),'opacity': opacity,'success': wrapGeneralCallbackResult(success),'visible': visible,'zIndex': zIndex,
+            }..removeWhere((key, value) => value == null);
+        }
+
+    }
+
     class UpdateShareMenuOption extends WechatRequestObject {
         UpdateShareMenuOption({ this.activityId, this.complete, this.fail, this.isPrivateMessage, this.isUpdatableMessage, this.success, this.templateInfo, this.toDoActivityId, this.withShareTicket,}) : super();
 
@@ -1682,7 +2158,16 @@ VibrateShortSuccessCallback? success;
 
     }
 
-    typedef AddPhoneCalendarCompleteCallback = void Function(GeneralCallbackResult res);
+    typedef AddCustomLayerCompleteCallback = void Function(GeneralCallbackResult res);
+typedef AddCustomLayerFailCallback = void Function(GeneralCallbackResult res);
+typedef AddCustomLayerSuccessCallback = void Function(GeneralCallbackResult res);
+typedef AddGroundOverlayCompleteCallback = void Function(GeneralCallbackResult res);
+typedef AddGroundOverlayFailCallback = void Function(GeneralCallbackResult res);
+typedef AddGroundOverlaySuccessCallback = void Function(GeneralCallbackResult res);
+typedef AddMarkersCompleteCallback = void Function(GeneralCallbackResult res);
+typedef AddMarkersFailCallback = void Function(GeneralCallbackResult res);
+typedef AddMarkersSuccessCallback = void Function(GeneralCallbackResult res);
+typedef AddPhoneCalendarCompleteCallback = void Function(GeneralCallbackResult res);
 typedef AddPhoneCalendarFailCallback = void Function(GeneralCallbackResult res);
 typedef AddPhoneCalendarSuccessCallback = void Function(GeneralCallbackResult res);
 typedef AddPhoneContactCompleteCallback = void Function(GeneralCallbackResult res);
@@ -1730,9 +2215,15 @@ typedef DownloadFileSuccessCallback = void Function(DownloadFileSuccessCallbackR
 typedef EnableAlertBeforeUnloadCompleteCallback = void Function(GeneralCallbackResult res);
 typedef EnableAlertBeforeUnloadFailCallback = void Function(GeneralCallbackResult res);
 typedef EnableAlertBeforeUnloadSuccessCallback = void Function(GeneralCallbackResult res);
+typedef FromScreenLocationCompleteCallback = void Function(GeneralCallbackResult res);
+typedef FromScreenLocationFailCallback = void Function(GeneralCallbackResult res);
+typedef FromScreenLocationSuccessCallback = void Function(GetCenterLocationSuccessCallbackResult result);
 typedef GetBatteryInfoCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetBatteryInfoFailCallback = void Function(GeneralCallbackResult res);
 typedef GetBatteryInfoSuccessCallback = void Function(GetBatteryInfoSuccessCallbackResult result);
+typedef GetCenterLocationCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetCenterLocationFailCallback = void Function(GeneralCallbackResult res);
+typedef GetCenterLocationSuccessCallback = void Function(GetCenterLocationSuccessCallbackResult result);
 typedef GetClipboardDataCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetClipboardDataFailCallback = void Function(GeneralCallbackResult res);
 typedef GetClipboardDataSuccessCallback = void Function(GetClipboardDataSuccessCallbackResult option);
@@ -1745,24 +2236,48 @@ typedef GetLocationSuccessCallback = void Function(GetLocationSuccessCallbackRes
 typedef GetNetworkTypeCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetNetworkTypeFailCallback = void Function(GeneralCallbackResult res);
 typedef GetNetworkTypeSuccessCallback = void Function(GetNetworkTypeSuccessCallbackResult result);
+typedef GetRegionCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetRegionFailCallback = void Function(GeneralCallbackResult res);
+typedef GetRegionSuccessCallback = void Function(GetRegionSuccessCallbackResult result);
+typedef GetRotateCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetRotateFailCallback = void Function(GeneralCallbackResult res);
+typedef GetRotateSuccessCallback = void Function(GetRotateSuccessCallbackResult result);
+typedef GetScaleCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetScaleFailCallback = void Function(GeneralCallbackResult res);
+typedef GetScaleSuccessCallback = void Function(GetScaleSuccessCallbackResult result);
 typedef GetScreenBrightnessCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetScreenBrightnessFailCallback = void Function(GeneralCallbackResult res);
 typedef GetScreenBrightnessSuccessCallback = void Function(GetScreenBrightnessSuccessCallbackResult option);
 typedef GetSettingCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetSettingFailCallback = void Function(GeneralCallbackResult res);
 typedef GetSettingSuccessCallback = void Function(GetSettingSuccessCallbackResult result);
+typedef GetSkewCompleteCallback = void Function(GeneralCallbackResult res);
+typedef GetSkewFailCallback = void Function(GeneralCallbackResult res);
+typedef GetSkewSuccessCallback = void Function(GetSkewSuccessCallbackResult result);
 typedef GetUserProfileCompleteCallback = void Function(GeneralCallbackResult res);
 typedef GetUserProfileFailCallback = void Function(GeneralCallbackResult res);
 typedef GetUserProfileSuccessCallback = void Function(GetUserProfileSuccessCallbackResult result);
 typedef HideShareMenuCompleteCallback = void Function(GeneralCallbackResult res);
 typedef HideShareMenuFailCallback = void Function(GeneralCallbackResult res);
 typedef HideShareMenuSuccessCallback = void Function(GeneralCallbackResult res);
+typedef IncludePointsCompleteCallback = void Function(GeneralCallbackResult res);
+typedef IncludePointsFailCallback = void Function(GeneralCallbackResult res);
+typedef IncludePointsSuccessCallback = void Function(GeneralCallbackResult res);
+typedef InitMarkerClusterCompleteCallback = void Function(GeneralCallbackResult res);
+typedef InitMarkerClusterFailCallback = void Function(GeneralCallbackResult res);
+typedef InitMarkerClusterSuccessCallback = void Function(GeneralCallbackResult res);
 typedef LoginCompleteCallback = void Function(GeneralCallbackResult res);
 typedef LoginFailCallback = void Function(GeneralCallbackResult res);
 typedef LoginSuccessCallback = void Function(LoginSuccessCallbackResult result);
 typedef MakePhoneCallCompleteCallback = void Function(GeneralCallbackResult res);
 typedef MakePhoneCallFailCallback = void Function(GeneralCallbackResult res);
 typedef MakePhoneCallSuccessCallback = void Function(GeneralCallbackResult res);
+typedef MoveAlongCompleteCallback = void Function(GeneralCallbackResult res);
+typedef MoveAlongFailCallback = void Function(GeneralCallbackResult res);
+typedef MoveAlongSuccessCallback = void Function(GeneralCallbackResult res);
+typedef MoveToLocationCompleteCallback = void Function(GeneralCallbackResult res);
+typedef MoveToLocationFailCallback = void Function(GeneralCallbackResult res);
+typedef MoveToLocationSuccessCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackCompleteCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackFailCallback = void Function(GeneralCallbackResult res);
 typedef NavigateBackMiniProgramCompleteCallback = void Function(GeneralCallbackResult res);
@@ -1779,6 +2294,9 @@ typedef OnLocationChangeCallback = void Function(OnLocationChangeCallbackResult 
 typedef OpenLocationCompleteCallback = void Function(GeneralCallbackResult res);
 typedef OpenLocationFailCallback = void Function(GeneralCallbackResult res);
 typedef OpenLocationSuccessCallback = void Function(GeneralCallbackResult res);
+typedef OpenMapAppCompleteCallback = void Function(GeneralCallbackResult res);
+typedef OpenMapAppFailCallback = void Function(GeneralCallbackResult res);
+typedef OpenMapAppSuccessCallback = void Function(GeneralCallbackResult res);
 typedef OpenSettingCompleteCallback = void Function(GeneralCallbackResult res);
 typedef OpenSettingFailCallback = void Function(GeneralCallbackResult res);
 typedef OpenSettingSuccessCallback = void Function(OpenSettingSuccessCallbackResult result);
@@ -1794,6 +2312,15 @@ typedef ReLaunchSuccessCallback = void Function(GeneralCallbackResult res);
 typedef RedirectToCompleteCallback = void Function(GeneralCallbackResult res);
 typedef RedirectToFailCallback = void Function(GeneralCallbackResult res);
 typedef RedirectToSuccessCallback = void Function(GeneralCallbackResult res);
+typedef RemoveCustomLayerCompleteCallback = void Function(GeneralCallbackResult res);
+typedef RemoveCustomLayerFailCallback = void Function(GeneralCallbackResult res);
+typedef RemoveCustomLayerSuccessCallback = void Function(GeneralCallbackResult res);
+typedef RemoveGroundOverlayCompleteCallback = void Function(GeneralCallbackResult res);
+typedef RemoveGroundOverlayFailCallback = void Function(GeneralCallbackResult res);
+typedef RemoveGroundOverlaySuccessCallback = void Function(GeneralCallbackResult res);
+typedef RemoveMarkersCompleteCallback = void Function(GeneralCallbackResult res);
+typedef RemoveMarkersFailCallback = void Function(GeneralCallbackResult res);
+typedef RemoveMarkersSuccessCallback = void Function(GeneralCallbackResult res);
 typedef RequestOrderPaymentCompleteCallback = void Function(GeneralCallbackResult res);
 typedef RequestOrderPaymentFailCallback = void Function(GeneralCallbackResult res);
 typedef RequestOrderPaymentSuccessCallback = void Function(GeneralCallbackResult res);
@@ -1812,12 +2339,18 @@ typedef ScanCodeSuccessCallback = void Function(ScanCodeSuccessCallbackResult re
 typedef SearchContactsCompleteCallback = void Function(GeneralCallbackResult res);
 typedef SearchContactsFailCallback = void Function(GeneralCallbackResult res);
 typedef SearchContactsSuccessCallback = void Function(SearchContactsSuccessCallbackResult option);
+typedef SetCenterOffsetCompleteCallback = void Function(GeneralCallbackResult res);
+typedef SetCenterOffsetFailCallback = void Function(GeneralCallbackResult res);
+typedef SetCenterOffsetSuccessCallback = void Function(GeneralCallbackResult res);
 typedef SetClipboardDataCompleteCallback = void Function(GeneralCallbackResult res);
 typedef SetClipboardDataFailCallback = void Function(GeneralCallbackResult res);
 typedef SetClipboardDataSuccessCallback = void Function(GeneralCallbackResult res);
 typedef SetKeepScreenOnCompleteCallback = void Function(GeneralCallbackResult res);
 typedef SetKeepScreenOnFailCallback = void Function(GeneralCallbackResult res);
 typedef SetKeepScreenOnSuccessCallback = void Function(GeneralCallbackResult res);
+typedef SetLocMarkerIconCompleteCallback = void Function(GeneralCallbackResult res);
+typedef SetLocMarkerIconFailCallback = void Function(GeneralCallbackResult res);
+typedef SetLocMarkerIconSuccessCallback = void Function(GeneralCallbackResult res);
 typedef SetNavigationBarColorCompleteCallback = void Function(GeneralCallbackResult res);
 typedef SetNavigationBarColorFailCallback = void Function(GeneralCallbackResult res);
 typedef SetNavigationBarColorSuccessCallback = void Function(GeneralCallbackResult res);
@@ -1857,6 +2390,15 @@ typedef ShowToastSuccessCallback = void Function(GeneralCallbackResult res);
 typedef SwitchTabCompleteCallback = void Function(GeneralCallbackResult res);
 typedef SwitchTabFailCallback = void Function(GeneralCallbackResult res);
 typedef SwitchTabSuccessCallback = void Function(GeneralCallbackResult res);
+typedef ToScreenLocationCompleteCallback = void Function(GeneralCallbackResult res);
+typedef ToScreenLocationFailCallback = void Function(GeneralCallbackResult res);
+typedef ToScreenLocationSuccessCallback = void Function(ToScreenLocationSuccessCallbackResult result);
+typedef TranslateMarkerCompleteCallback = void Function(GeneralCallbackResult res);
+typedef TranslateMarkerFailCallback = void Function(GeneralCallbackResult res);
+typedef TranslateMarkerSuccessCallback = void Function(GeneralCallbackResult res);
+typedef UpdateGroundOverlayCompleteCallback = void Function(GeneralCallbackResult res);
+typedef UpdateGroundOverlayFailCallback = void Function(GeneralCallbackResult res);
+typedef UpdateGroundOverlaySuccessCallback = void Function(GeneralCallbackResult res);
 typedef UpdateShareMenuCompleteCallback = void Function(GeneralCallbackResult res);
 typedef UpdateShareMenuFailCallback = void Function(GeneralCallbackResult res);
 typedef UpdateShareMenuSuccessCallback = void Function(GeneralCallbackResult res);
