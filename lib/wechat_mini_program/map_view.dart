@@ -32,7 +32,7 @@ class WechatMiniProgramMapMarker {
   final double longitude;
   final String? title;
   final int? zIndex;
-  final String iconPath;
+  final String? iconPath;
   final double? rotate;
   final double? alpha;
   final double? width;
@@ -50,7 +50,7 @@ class WechatMiniProgramMapMarker {
     required this.longitude,
     this.title,
     this.zIndex,
-    required this.iconPath,
+    this.iconPath,
     this.rotate,
     this.alpha,
     this.width,
@@ -337,6 +337,16 @@ class WechatMiniProgramMapView extends MPMiniProgramView {
   final bool? enableTraffic;
   final bool? enablePoi;
   final bool? enableBuilding;
+  final Map? setting;
+  final Function(Map details)? onTap;
+  final Function(Map details)? onMarkerTap;
+  final Function(Map details)? onLabelTap;
+  final Function(Map details)? onControlTap;
+  final Function(Map details)? onCalloutTap;
+  final Function(Map details)? onUpdated;
+  final Function(Map details)? onRegionChange;
+  final Function(Map details)? onPoiTap;
+  final Function(Map details)? onAnchorPointTap;
 
   WechatMiniProgramMapView({
     required this.longitude,
@@ -365,6 +375,16 @@ class WechatMiniProgramMapView extends MPMiniProgramView {
     this.enableTraffic,
     this.enablePoi,
     this.enableBuilding,
+    this.setting,
+    this.onTap,
+    this.onMarkerTap,
+    this.onLabelTap,
+    this.onControlTap,
+    this.onCalloutTap,
+    this.onUpdated,
+    this.onRegionChange,
+    this.onPoiTap,
+    this.onAnchorPointTap,
   }) : super(
           tag: 'map',
           attributes: {
@@ -378,7 +398,77 @@ class WechatMiniProgramMapView extends MPMiniProgramView {
             'circles': circles,
             'include-points': includePoints,
             'polygons': polygons,
+            'setting': setting,
           }..removeWhere((key, value) => value == null),
           controller: controller,
+          eventListeners: (() {
+            final values = [
+              onTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'tap',
+                      callback: (params) {
+                        onTap.call(params ?? {});
+                      })
+                  : null,
+              onMarkerTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'markertap',
+                      callback: (params) {
+                        onMarkerTap.call(params ?? {});
+                      })
+                  : null,
+              onLabelTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'labeltap',
+                      callback: (params) {
+                        onLabelTap.call(params ?? {});
+                      })
+                  : null,
+              onControlTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'controltap',
+                      callback: (params) {
+                        onControlTap.call(params ?? {});
+                      })
+                  : null,
+              onCalloutTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'callouttap',
+                      callback: (params) {
+                        onCalloutTap.call(params ?? {});
+                      })
+                  : null,
+              onUpdated != null
+                  ? MPMiniProgramEvent(
+                      event: 'updated',
+                      callback: (params) {
+                        onUpdated.call(params ?? {});
+                      })
+                  : null,
+              onRegionChange != null
+                  ? MPMiniProgramEvent(
+                      event: 'regionchange',
+                      callback: (params) {
+                        onRegionChange.call(params ?? {});
+                      })
+                  : null,
+              onPoiTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'poitap',
+                      callback: (params) {
+                        onPoiTap.call(params ?? {});
+                      })
+                  : null,
+              onAnchorPointTap != null
+                  ? MPMiniProgramEvent(
+                      event: 'anchorpointtap',
+                      callback: (params) {
+                        onAnchorPointTap.call(params ?? {});
+                      })
+                  : null,
+            ];
+            values.removeWhere((element) => element == null);
+            return values.cast<MPMiniProgramEvent>();
+          })(),
         );
 }
