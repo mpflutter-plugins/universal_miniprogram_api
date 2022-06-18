@@ -39,10 +39,10 @@ packages:
   flutter:
     dependency: "direct main"
     description:
-      path: "/Users/ydt/Documents/mpflutter/mpflutter/packages/flutter"
-      relative: false
-    source: path
-    version: "0.0.0"
+      name: flutter
+      url: "https://pub.mpflutter.com"
+    source: hosted
+    version: "0.16.3"
   glob:
     dependency: transitive
     description:
@@ -74,10 +74,10 @@ packages:
   mpcore:
     dependency: "direct main"
     description:
-      path: "/Users/ydt/Documents/mpflutter/mpflutter/packages/mpcore"
-      relative: false
-    source: path
-    version: "0.0.1"
+      name: mpcore
+      url: "https://pub.mpflutter.com"
+    source: hosted
+    version: "0.16.3"
   path:
     dependency: transitive
     description:
