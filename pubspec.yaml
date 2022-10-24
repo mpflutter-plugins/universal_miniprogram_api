@@ -1,7 +1,7 @@
 name: universal_miniprogram_api
 description: The MPFlutter universal miniprogram api.
 publish_to: none
-version: 0.0.4
+version: 0.0.5
 homepage: /
 
 environment:

@@ -12,7 +12,7 @@ class WechatAdCustom extends MPMiniProgramView {
     this.onLoad,
     this.onError,
   }) : super(
-          tag: 'ad',
+          tag: 'ad-custom',
           attributes: {
             'unit-id': unitId,
             'ad-intervals': adIntervals,
