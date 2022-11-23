@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "args": [
-              "${workspaceRoot}/builder/build.ts"
+              "${workspaceRoot}/builder/foo.ts"
             ],
             "runtimeArgs": [
               "--nolazy",
