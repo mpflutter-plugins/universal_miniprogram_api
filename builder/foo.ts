@@ -306,6 +306,16 @@ class CGMethodInstance extends CGCodeNode {
     );
   }
 
+  codeDartType(): string {
+    return CGUtils.tsToDartType(this.methodSignature.type);
+  }
+
+  isClassType(): boolean {
+    return (
+      CGModuleInstance.interfaceInstances[this.codeDartType()] !== undefined
+    );
+  }
+
   code(): string {
     return `
       Future<${CGUtils.tsToDartType(this.methodSignature.type)}${
@@ -313,9 +323,16 @@ class CGMethodInstance extends CGCodeNode {
     }> ${this.nameOfNode()}(${this.parameters
       .map((it) => it.code())
       .join(",")}) async {
-        return await context?.callMethod('${this.nameOfNode()}', [${this.parameters
-      .map((it) => it.nameOfNode())
+        final result = await context?.callMethod('${this.nameOfNode()}', [${this.parameters
+      .map((it) => it.codeOfCallArgs())
       .join(",")}]);
+        ${
+          this.isClassType()
+            ? `
+        return ${this.codeDartType()}(context: result);
+        `
+            : `return result;`
+        }
       }
       `;
   }
@@ -345,6 +362,18 @@ class CGParameterInstance extends CGCodeNode {
 
   nameOfNode(): string {
     return CGUtils.instanceName(this.parameter.name);
+  }
+
+  codeOfCallArgs(): string {
+    if (
+      CGModuleInstance.interfaceInstances[
+        CGUtils.tsToDartType(this.parameter.type)
+      ] !== undefined
+    ) {
+      return `${this.nameOfNode()}.toJson()`;
+    } else {
+      return `${this.nameOfNode()}`;
+    }
   }
 
   code(): string {

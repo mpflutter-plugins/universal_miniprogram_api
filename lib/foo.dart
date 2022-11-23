@@ -171,15 +171,18 @@ class RequestTask {
   }
 
   Future<void> abort() async {
-    return await context?.callMethod('abort', []);
+    final result = await context?.callMethod('abort', []);
+    return result;
   }
 
   Future<void> offHeadersReceived(OffHeadersReceivedCallback? callback) async {
-    return await context?.callMethod('offHeadersReceived', [callback]);
+    final result = await context?.callMethod('offHeadersReceived', [callback]);
+    return result;
   }
 
   Future<void> onHeadersReceived(OnHeadersReceivedCallback callback) async {
-    return await context?.callMethod('onHeadersReceived', [callback]);
+    final result = await context?.callMethod('onHeadersReceived', [callback]);
+    return result;
   }
 }
 
@@ -555,6 +558,8 @@ class Wx {
   }
 
   Future<RequestTask> request(RequestOption option) async {
-    return await context?.callMethod('request', [option]);
+    final result = await context?.callMethod('request', [option.toJson()]);
+
+    return RequestTask(context: result);
   }
 }
