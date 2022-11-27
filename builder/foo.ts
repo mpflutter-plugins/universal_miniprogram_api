@@ -4,10 +4,8 @@ import {
   ScriptTarget,
   Node,
   isModuleBlock,
-  ModuleBlock,
   isInterfaceDeclaration,
   InterfaceDeclaration,
-  Identifier,
   SyntaxKind,
   isTypeAliasDeclaration,
   TypeAliasDeclaration,
@@ -25,6 +23,8 @@ import {
   MethodSignature,
   isMethodSignature,
   ParameterDeclaration,
+  TypeParameterDeclaration,
+  isStringLiteral,
 } from "typescript";
 import { readFileSync, writeFileSync } from "fs";
 
@@ -53,7 +53,7 @@ class CGModuleInstance {
     if (isIdentifier(node.name)) {
       return node.name.escapedText.toString();
     }
-    throw "no name";
+    return "$$noname$$";
   }
 
   static interfaceInstances: { [key: string]: CGInterfaceInstance } = {};
@@ -67,10 +67,17 @@ class CGModuleInstance {
 
   processChildren() {
     const body = this.moduleDeclaration.body;
+    const interfaceCache: { [key: string]: CGInterfaceInstance } = {};
     if (body && isModuleBlock(body)) {
       body.forEachChild((childNode) => {
         if (isInterfaceDeclaration(childNode)) {
-          this.codeNodes.push(new CGInterfaceInstance(childNode));
+          const instance = new CGInterfaceInstance(childNode);
+          if (interfaceCache[instance.nameOfNode()]) {
+            interfaceCache[instance.nameOfNode()].merge(instance);
+          } else {
+            interfaceCache[instance.nameOfNode()] = instance;
+            this.codeNodes.push(instance);
+          }
         } else if (isTypeAliasDeclaration(childNode)) {
           this.codeNodes.push(new CGTypeAliasInstance(childNode));
         }
@@ -108,6 +115,11 @@ class CGInterfaceInstance extends CGCodeNode {
     this.processChildren();
   }
 
+  merge(instance: CGInterfaceInstance) {
+    this.properties.push(...instance.properties);
+    this.methods.push(...instance.methods);
+  }
+
   nameOfNode(): string {
     return CGUtils.instanceName(this.interfaceDeclaration.name);
   }
@@ -137,7 +149,7 @@ class CGInterfaceInstance extends CGCodeNode {
       this.interfaceDeclaration.typeParameters.length
     ) {
       return `<${this.interfaceDeclaration.typeParameters
-        .map((it) => CGUtils.instanceName(it.name))
+        .map((it) => CGUtils.tsTypeParameterToDart(it))
         .join(",")}>`;
     }
     return "";
@@ -148,11 +160,11 @@ class CGInterfaceInstance extends CGCodeNode {
     return `
 class ${className}${this.codeOfGeneric()} {
     
-    mpjs.JsObject? context;
+    mpjs.JsObject? $$context$$;
 
     ${this.properties.map((it) => it.codeOfVars()).join("\n")}
 
-    ${className}({this.context});
+    ${className}({this.$$context$$});
 
     ${
       this.properties.length > 0
@@ -210,6 +222,14 @@ class CGPropertyInstance extends CGCodeNode {
     return CGUtils.instanceName(this.propertySignature.name);
   }
 
+  nameOfProp(): string {
+    if (isStringLiteral(this.propertySignature.name)) {
+      const text = this.propertySignature.name.text;
+      return text.replace(/[\.]/g, "_");
+    }
+    return CGUtils.instanceName(this.propertySignature.name);
+  }
+
   codeDartType(): string {
     return CGUtils.tsToDartType(this.propertySignature.type);
   }
@@ -221,21 +241,21 @@ class CGPropertyInstance extends CGCodeNode {
       this.genericTypes.indexOf(this.codeDartType()) < 0;
     return `${this.codeDartType()}${
       this.isOptional() ? "?" : ""
-    } $${this.nameOfNode()}${
+    } $${this.nameOfProp()}${
       this.isOptional() ? "" : `= ${this.codeOfDefaultValue()}`
     };
     
     Future<${this.codeDartType()}${
       this.isOptional() ? "?" : ""
-    }> get ${this.nameOfNode()} async {
+    }> get ${this.nameOfProp()} async {
         ${(() => {
           if ($isTypeReferenceNode) {
             if (!this.isClassType()) {
               return `return $${this.nameOfNode()};`;
             }
-            return `return ${this.codeDartType()}(context: context?.getProperty('${this.nameOfNode()}'));`;
+            return `return ${this.codeDartType()}($$context$$: $$context$$?.getProperty('${this.nameOfNode()}'));`;
           } else {
-            return `return await context?.getPropertyValue('${this.nameOfNode()}') ?? $${this.nameOfNode()};`;
+            return `return await $$context$$?.getPropertyValue('${this.nameOfNode()}') ?? $${this.nameOfProp()};`;
           }
         })()}
           
@@ -244,15 +264,15 @@ class CGPropertyInstance extends CGCodeNode {
   }
 
   codeOfPlainSetter(): string {
-    return `${this.codeDartType()}? ${this.nameOfNode()}`;
+    return `${this.codeDartType()}? ${this.nameOfProp()}`;
   }
 
   codeOfPlainSetterBlock(): string {
-    return `if (${this.nameOfNode()} != null) $${this.nameOfNode()} = ${this.nameOfNode()};`;
+    return `if (${this.nameOfProp()} != null) $${this.nameOfProp()} = ${this.nameOfProp()};`;
   }
 
   codeOfToJSON(): string {
-    return `'${this.nameOfNode()}': $${this.nameOfNode()}`;
+    return `'${this.nameOfNode()}': $${this.nameOfProp()}`;
   }
 
   codeOfDefaultValue(): string {
@@ -284,11 +304,23 @@ class CGMethodInstance extends CGCodeNode {
     });
   }
 
+  codeOfGeneric(): string {
+    if (
+      this.methodSignature.typeParameters &&
+      this.methodSignature.typeParameters.length
+    ) {
+      return `<${this.methodSignature.typeParameters
+        .map((it) => CGUtils.tsTypeParameterToDart(it))
+        .join(",")}>`;
+    }
+    return "";
+  }
+
   nameOfNode(): string {
     return CGUtils.instanceName(this.methodSignature.name);
   }
 
-  isOptionalType(): boolean {
+  isOptionalReturnType(): boolean {
     if (
       this.genericTypes.indexOf(
         CGUtils.tsToDartType(this.methodSignature.type)
@@ -306,30 +338,38 @@ class CGMethodInstance extends CGCodeNode {
     );
   }
 
-  codeDartType(): string {
-    return CGUtils.tsToDartType(this.methodSignature.type);
+  codeOfReturnValue(): string {
+    let gType = CGUtils.tsToDartType(this.returnType());
+    if (gType.startsWith("Promise<")) {
+      gType = gType.substring(8, gType.length - 1);
+    }
+    return `Future<${gType}${this.isOptionalReturnType() ? "?" : ""}>`;
+  }
+
+  returnType() {
+    return this.methodSignature.type;
   }
 
   isClassType(): boolean {
     return (
-      CGModuleInstance.interfaceInstances[this.codeDartType()] !== undefined
+      CGModuleInstance.interfaceInstances[
+        CGUtils.tsToDartType(this.returnType())
+      ] !== undefined
     );
   }
 
   code(): string {
     return `
-      Future<${CGUtils.tsToDartType(this.methodSignature.type)}${
-      this.isOptionalType() ? "?" : ""
-    }> ${this.nameOfNode()}(${this.parameters
+      ${this.codeOfReturnValue()} ${this.nameOfNode()}${this.codeOfGeneric()}(${this.parameters
       .map((it) => it.code())
       .join(",")}) async {
-        final result = await context?.callMethod('${this.nameOfNode()}', [${this.parameters
+        final result = await $$context$$?.callMethod('${this.nameOfNode()}', [${this.parameters
       .map((it) => it.codeOfCallArgs())
       .join(",")}]);
         ${
           this.isClassType()
             ? `
-        return ${this.codeDartType()}(context: result);
+        return ${CGUtils.tsToDartType(this.returnType())}($$context$$: result);
         `
             : `return result;`
         }
@@ -370,7 +410,7 @@ class CGParameterInstance extends CGCodeNode {
         CGUtils.tsToDartType(this.parameter.type)
       ] !== undefined
     ) {
-      return `${this.nameOfNode()}.toJson()`;
+      return `${this.nameOfNode()}${this.isOptionalType() ? "?" : ""}.toJson()`;
     } else {
       return `${this.nameOfNode()}`;
     }
@@ -416,13 +456,35 @@ class CGUtils {
   static instanceName(node: Node): string {
     if (isIdentifier(node)) {
       return node.escapedText.toString();
+    } else if (isStringLiteral(node)) {
+      return node.text;
     }
-    throw "no name";
+    return "$$noname$$";
+  }
+
+  static tsTypeParameterToDart(node?: TypeParameterDeclaration): string {
+    if (!node) return "";
+    const name = this.instanceName(node.name);
+    let typeExtends = ``;
+    if (node.constraint) {
+      typeExtends = ` extends ${this.tsToDartType(node.constraint)}`;
+    } else if (node.default?.kind === SyntaxKind.AnyKeyword) {
+      typeExtends = ` extends dynamic`;
+    }
+    return `${name}${typeExtends}`;
   }
 
   static tsToDartType(node?: TypeNode): string {
     if (node && isTypeReferenceNode(node)) {
-      return this.instanceName(node.typeName);
+      const typeArgumentsCode = (() => {
+        if (node.typeArguments && node.typeArguments.length) {
+          return `<${node.typeArguments
+            .map((it) => CGUtils.tsToDartType(it))
+            .join(",")}>`;
+        }
+        return "";
+      })();
+      return this.instanceName(node.typeName) + typeArgumentsCode;
     } else if (node && isTypeNode(node)) {
       if (isArrayTypeNode(node)) {
         return `List<${this.tsToDartType(node.elementType)}>`;
@@ -431,6 +493,8 @@ class CGUtils {
         return "String";
       } else if (node.kind === SyntaxKind.NumberKeyword) {
         return "num";
+      } else if (node.kind === SyntaxKind.BooleanKeyword) {
+        return "bool";
       } else if (node.kind === SyntaxKind.VoidKeyword) {
         return "void";
       }
@@ -449,6 +513,8 @@ class CGUtils {
         return `""`;
       } else if (node.kind === SyntaxKind.NumberKeyword) {
         return "0";
+      } else if (node.kind === SyntaxKind.BooleanKeyword) {
+        return "false";
       }
     }
     return "null";
