@@ -21,6 +21,14 @@ SOFTWARE.
 ***************************************************************************** */
 
 declare namespace WechatMiniprogram {
+  interface IAnyObject {}
+  interface PromisifySuccessResult<T, U> {}
+  interface ArrayBuffer {}
+  interface Array<T> {}
+  interface Uint8ClampedArray {}
+  interface Float32Array {}
+  interface Record {}
+
   interface AccessFailCallbackResult {
     /** 错误信息
      *
