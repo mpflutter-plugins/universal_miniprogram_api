@@ -41090,3 +41090,9 @@ typedef WxStartRecordSuccessCallback = void Function(
     StartRecordSuccessCallbackResult);
 
 typedef WxStopRecordSuccessCallback = void Function(GeneralCallbackResult);
+
+class UniversalMiniProgramApi {
+  static Wx get uni {
+    return Wx($$context$$: mpjs.context['uni']);
+  }
+}
