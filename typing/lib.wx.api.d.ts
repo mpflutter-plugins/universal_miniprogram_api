@@ -1450,7 +1450,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
    * | WhiteSmoke           | #F5F5F5 |
    * | Yellow               | #FFFF00 |
    * | YellowGreen          | #9ACD32 | */
-  interface Color {}
+  interface UniColor {}
   interface CompressImageOption {
     /** 图片路径，图片的路径，支持本地路径、代码包路径 */
     src: string;
