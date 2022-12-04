@@ -74,10 +74,10 @@ packages:
   mpcore:
     dependency: "direct main"
     description:
-      name: mpcore
-      url: "https://pub.mpflutter.com"
-    source: hosted
-    version: "0.16.3"
+      path: "/Users/saiakirahui/Documents/mpflutter/mpflutter/packages/mpcore"
+      relative: false
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:

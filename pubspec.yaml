@@ -10,3 +10,7 @@ environment:
 dependencies:
   flutter: ">=0.11.0"
   mpcore: ">=0.11.0"
+
+dependency_overrides:
+  mpcore: 
+    path: "/Users/saiakirahui/Documents/mpflutter/mpflutter/packages/mpcore"

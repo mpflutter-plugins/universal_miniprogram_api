@@ -27,7 +27,7 @@ declare namespace WechatMiniprogram {
   interface Array<T> {}
   interface Uint8ClampedArray {}
   interface Float32Array {}
-  interface Record {}
+  interface Record<T, U> {}
 
   interface AccessFailCallbackResult {
     /** 错误信息
@@ -4145,7 +4145,7 @@ innerAudioContext.onError((res) => {
   }
   interface OnUnhandledRejectionCallbackResult {
     /** 被拒绝的 Promise 对象 */
-    promise: Promise<any>;
+    // promise: Promise<any>;
     /** 拒绝原因，一般是一个 Error 对象 */
     reason: string;
   }
@@ -8878,7 +8878,7 @@ wx.chooseImage({
 
 ```
 * ![](@program/dev/image/canvas/draw-image.png) */
-    drawImage(
+    drawImageRect(
       /** 所要绘制的图片资源（网络图片要通过 getImageInfo / downloadFile 先下载） */
       imageResource: string,
       /** imageResource的左上角在目标 canvas 上 x 轴的位置 */
@@ -8916,7 +8916,7 @@ wx.chooseImage({
 
 ```
 * ![](@program/dev/image/canvas/draw-image.png) */
-    drawImage(
+    drawImageRect2(
       /** 所要绘制的图片资源（网络图片要通过 getImageInfo / downloadFile 先下载） */
       imageResource: string,
       /** 需要绘制到画布中的，imageResource的矩形（裁剪）选择框的左上角 x 坐标 */
@@ -13534,7 +13534,7 @@ Page({
      * 在插件中使用：不支持
      *
      * 设置实时日志page参数所在的页面，暂不支持在插件使用 */
-    in(
+    $in(
       /** page实例 */
       pageInstance: Page.TrivialInstance
     ): void;
@@ -13986,7 +13986,7 @@ Component({
   }
 })
 ``` */
-    in(
+    $in(
       /** 自定义组件实例 */
       component: Component.TrivialInstance | Page.TrivialInstance
     ): SelectorQuery;

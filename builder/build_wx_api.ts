@@ -7,5 +7,5 @@ const fooSource = new CGSource(
 
 Object.keys(fooSource.modules).forEach((key) => {
   const code = fooSource.modules[key].code();
-  writeFileSync("lib/universal_miniprogram_api_new.dart", code);
+  writeFileSync("lib/universal_miniprogram_api.dart", code);
 });
