@@ -1462,15 +1462,15 @@ class AnimationOption {
     return await $$context$$?.getPropertyValue('duration') ?? $duration;
   }
 
-  dynamic? $timingFunc;
+  dynamic $timingFunc;
 
-  Future<dynamic?> get timingFunc async {
+  Future<dynamic> get timingFunc async {
     return await $$context$$?.getPropertyValue('timingFunc') ?? $timingFunc;
   }
 
   AnimationOption({this.$$context$$});
 
-  void setValues({num? duration, dynamic? timingFunc}) {
+  void setValues({num? duration, dynamic timingFunc}) {
     if (duration != null) $duration = duration;
     if (timingFunc != null) $timingFunc = timingFunc;
   }
@@ -1504,7 +1504,7 @@ class AppendFileFailCallbackResult {
 class AppendFileOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -1522,9 +1522,9 @@ class AppendFileOption {
     return $complete;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -1543,10 +1543,10 @@ class AppendFileOption {
   AppendFileOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       String? filePath,
       AppendFileCompleteCallback? complete,
-      dynamic? encoding,
+      dynamic encoding,
       AppendFileFailCallback? fail,
       AppendFileSuccessCallback? success}) {
     if (data != null) $data = data;
@@ -1856,7 +1856,7 @@ class AuthSetting {
 class AuthorizeForMiniProgramOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $scope = null;
+  dynamic $scope;
 
   Future<dynamic> get scope async {
     return await $$context$$?.getPropertyValue('scope') ?? $scope;
@@ -1883,7 +1883,7 @@ class AuthorizeForMiniProgramOption {
   AuthorizeForMiniProgramOption({this.$$context$$});
 
   void setValues(
-      {dynamic? scope,
+      {dynamic scope,
       AuthorizeForMiniProgramCompleteCallback? complete,
       AuthorizeForMiniProgramFailCallback? fail,
       AuthorizeForMiniProgramSuccessCallback? success}) {
@@ -2385,7 +2385,7 @@ class BeaconInfo {
     return await $$context$$?.getPropertyValue('minor') ?? $minor;
   }
 
-  dynamic $proximity = null;
+  dynamic $proximity;
 
   Future<dynamic> get proximity async {
     return await $$context$$?.getPropertyValue('proximity') ?? $proximity;
@@ -2409,7 +2409,7 @@ class BeaconInfo {
       {num? accuracy,
       num? major,
       num? minor,
-      dynamic? proximity,
+      dynamic proximity,
       num? rssi,
       String? uuid}) {
     if (accuracy != null) $accuracy = accuracy;
@@ -2982,7 +2982,7 @@ class Canvas {
 class CanvasContext {
   mpjs.JsObject? $$context$$;
 
-  dynamic $fillStyle = null;
+  dynamic $fillStyle;
 
   Future<dynamic> get fillStyle async {
     return await $$context$$?.getPropertyValue('fillStyle') ?? $fillStyle;
@@ -3020,7 +3020,7 @@ class CanvasContext {
         $lineDashOffset;
   }
 
-  dynamic $lineJoin = null;
+  dynamic $lineJoin;
 
   Future<dynamic> get lineJoin async {
     return await $$context$$?.getPropertyValue('lineJoin') ?? $lineJoin;
@@ -3064,7 +3064,7 @@ class CanvasContext {
         $shadowOffsetY;
   }
 
-  dynamic $strokeStyle = null;
+  dynamic $strokeStyle;
 
   Future<dynamic> get strokeStyle async {
     return await $$context$$?.getPropertyValue('strokeStyle') ?? $strokeStyle;
@@ -3073,20 +3073,20 @@ class CanvasContext {
   CanvasContext({this.$$context$$});
 
   void setValues(
-      {dynamic? fillStyle,
+      {dynamic fillStyle,
       String? font,
       num? globalAlpha,
       String? globalCompositeOperation,
       String? lineCap,
       num? lineDashOffset,
-      dynamic? lineJoin,
+      dynamic lineJoin,
       num? lineWidth,
       num? miterLimit,
       num? shadowBlur,
       num? shadowColor,
       num? shadowOffsetX,
       num? shadowOffsetY,
-      dynamic? strokeStyle}) {
+      dynamic strokeStyle}) {
     if (fillStyle != null) $fillStyle = fillStyle;
     if (font != null) $font = font;
     if (globalAlpha != null) $globalAlpha = globalAlpha;
@@ -3170,7 +3170,7 @@ class CanvasContext {
     return result;
   }
 
-  Future<void> draw([bool? reserve, dynamic? callback]) async {
+  Future<void> draw([bool? reserve, dynamic callback]) async {
     final result = await $$context$$?.callMethod('draw', [reserve, callback]);
     return result;
   }
@@ -3661,9 +3661,9 @@ class CanvasToTempFilePathOption {
     return $fail;
   }
 
-  dynamic? $fileType;
+  dynamic $fileType;
 
-  Future<dynamic?> get fileType async {
+  Future<dynamic> get fileType async {
     return await $$context$$?.getPropertyValue('fileType') ?? $fileType;
   }
 
@@ -3712,7 +3712,7 @@ class CanvasToTempFilePathOption {
       num? destHeight,
       num? destWidth,
       CanvasToTempFilePathFailCallback? fail,
-      dynamic? fileType,
+      dynamic fileType,
       num? height,
       num? quality,
       CanvasToTempFilePathSuccessCallback? success,
@@ -4078,7 +4078,7 @@ class CheckIsOpenAccessibilitySuccessCallbackResult {
 class CheckIsSoterEnrolledInDeviceOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $checkAuthMode = null;
+  dynamic $checkAuthMode;
 
   Future<dynamic> get checkAuthMode async {
     return await $$context$$?.getPropertyValue('checkAuthMode') ??
@@ -4106,7 +4106,7 @@ class CheckIsSoterEnrolledInDeviceOption {
   CheckIsSoterEnrolledInDeviceOption({this.$$context$$});
 
   void setValues(
-      {dynamic? checkAuthMode,
+      {dynamic checkAuthMode,
       CheckIsSoterEnrolledInDeviceCompleteCallback? complete,
       CheckIsSoterEnrolledInDeviceFailCallback? fail,
       CheckIsSoterEnrolledInDeviceSuccessCallback? success}) {
@@ -4558,7 +4558,7 @@ class ChooseFile {
     return await $$context$$?.getPropertyValue('time') ?? $time;
   }
 
-  dynamic $type = null;
+  dynamic $type;
 
   Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
@@ -4567,7 +4567,7 @@ class ChooseFile {
   ChooseFile({this.$$context$$});
 
   void setValues(
-      {String? name, String? path, num? size, num? time, dynamic? type}) {
+      {String? name, String? path, num? size, num? time, dynamic type}) {
     if (name != null) $name = name;
     if (path != null) $path = path;
     if (size != null) $size = size;
@@ -4879,7 +4879,7 @@ class ChooseInvoiceTitleSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('title') ?? $title;
   }
 
-  dynamic $type = null;
+  dynamic $type;
 
   Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
@@ -4895,7 +4895,7 @@ class ChooseInvoiceTitleSuccessCallbackResult {
       String? taxNumber,
       String? telephone,
       String? title,
-      dynamic? type}) {
+      dynamic type}) {
     if (bankAccount != null) $bankAccount = bankAccount;
     if (bankName != null) $bankName = bankName;
     if (companyAddress != null) $companyAddress = companyAddress;
@@ -5128,9 +5128,9 @@ class ChooseLocationSuccessCallbackResult {
 class ChooseMediaOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic? $camera;
+  dynamic $camera;
 
-  Future<dynamic?> get camera async {
+  Future<dynamic> get camera async {
     return await $$context$$?.getPropertyValue('camera') ?? $camera;
   }
 
@@ -5185,7 +5185,7 @@ class ChooseMediaOption {
   ChooseMediaOption({this.$$context$$});
 
   void setValues(
-      {dynamic? camera,
+      {dynamic camera,
       ChooseMediaCompleteCallback? complete,
       num? count,
       ChooseMediaFailCallback? fail,
@@ -5297,9 +5297,9 @@ class ChooseMessageFileOption {
     return $success;
   }
 
-  dynamic? $type;
+  dynamic $type;
 
-  Future<dynamic?> get type async {
+  Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
   }
 
@@ -5311,7 +5311,7 @@ class ChooseMessageFileOption {
       List<String>? extension,
       ChooseMessageFileFailCallback? fail,
       ChooseMessageFileSuccessCallback? success,
-      dynamic? type}) {
+      dynamic type}) {
     if (count != null) $count = count;
     if (complete != null) $complete = complete;
     if (extension != null) $extension = extension;
@@ -5499,9 +5499,9 @@ class ChoosePoiSuccessCallbackResult {
 class ChooseVideoOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic? $camera;
+  dynamic $camera;
 
-  Future<dynamic?> get camera async {
+  Future<dynamic> get camera async {
     return await $$context$$?.getPropertyValue('camera') ?? $camera;
   }
 
@@ -5544,7 +5544,7 @@ class ChooseVideoOption {
   ChooseVideoOption({this.$$context$$});
 
   void setValues(
-      {dynamic? camera,
+      {dynamic camera,
       ChooseVideoCompleteCallback? complete,
       bool? compressed,
       ChooseVideoFailCallback? fail,
@@ -6082,7 +6082,7 @@ class CompressVideoOption {
     return await $$context$$?.getPropertyValue('fps') ?? $fps;
   }
 
-  dynamic $quality = null;
+  dynamic $quality;
 
   Future<dynamic> get quality async {
     return await $$context$$?.getPropertyValue('quality') ?? $quality;
@@ -6123,7 +6123,7 @@ class CompressVideoOption {
   void setValues(
       {num? bitrate,
       num? fps,
-      dynamic? quality,
+      dynamic quality,
       num? resolution,
       String? src,
       CompressVideoCompleteCallback? complete,
@@ -6792,9 +6792,9 @@ class CreateMediaRecorderOption {
 class CreateOffscreenCanvasOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic? $compInst;
+  dynamic $compInst;
 
-  Future<dynamic?> get compInst async {
+  Future<dynamic> get compInst async {
     return await $$context$$?.getPropertyValue('compInst') ?? $compInst;
   }
 
@@ -6804,9 +6804,9 @@ class CreateOffscreenCanvasOption {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
-  dynamic? $type;
+  dynamic $type;
 
-  Future<dynamic?> get type async {
+  Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
   }
 
@@ -6818,7 +6818,7 @@ class CreateOffscreenCanvasOption {
 
   CreateOffscreenCanvasOption({this.$$context$$});
 
-  void setValues({dynamic? compInst, num? height, dynamic? type, num? width}) {
+  void setValues({dynamic compInst, num? height, dynamic type, num? width}) {
     if (compInst != null) $compInst = compInst;
     if (height != null) $height = height;
     if (type != null) $type = type;
@@ -7575,9 +7575,9 @@ class EntryItem {
     return await $$context$$?.getPropertyValue('path') ?? $path;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -7595,8 +7595,7 @@ class EntryItem {
 
   EntryItem({this.$$context$$});
 
-  void setValues(
-      {String? path, dynamic? encoding, num? length, num? position}) {
+  void setValues({String? path, dynamic encoding, num? length, num? position}) {
     if (path != null) $path = path;
     if (encoding != null) $encoding = encoding;
     if (length != null) $length = length;
@@ -9535,7 +9534,7 @@ class GetBackgroundAudioPlayerStateSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('duration') ?? $duration;
   }
 
-  dynamic $status = null;
+  dynamic $status;
 
   Future<dynamic> get status async {
     return await $$context$$?.getPropertyValue('status') ?? $status;
@@ -9554,7 +9553,7 @@ class GetBackgroundAudioPlayerStateSuccessCallbackResult {
       String? dataUrl,
       num? downloadPercent,
       num? duration,
-      dynamic? status,
+      dynamic status,
       String? errMsg}) {
     if (currentPosition != null) $currentPosition = currentPosition;
     if (dataUrl != null) $dataUrl = dataUrl;
@@ -11121,7 +11120,7 @@ class GetImageInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
-  dynamic $orientation = null;
+  dynamic $orientation;
 
   Future<dynamic> get orientation async {
     return await $$context$$?.getPropertyValue('orientation') ?? $orientation;
@@ -11155,7 +11154,7 @@ class GetImageInfoSuccessCallbackResult {
 
   void setValues(
       {num? height,
-      dynamic? orientation,
+      dynamic orientation,
       String? path,
       String? type,
       num? width,
@@ -11616,7 +11615,7 @@ class GetNetworkTypeOption {
 class GetNetworkTypeSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $networkType = null;
+  dynamic $networkType;
 
   Future<dynamic> get networkType async {
     return await $$context$$?.getPropertyValue('networkType') ?? $networkType;
@@ -11637,7 +11636,7 @@ class GetNetworkTypeSuccessCallbackResult {
 
   GetNetworkTypeSuccessCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? networkType, num? signalStrength, String? errMsg}) {
+  void setValues({dynamic networkType, num? signalStrength, String? errMsg}) {
     if (networkType != null) $networkType = networkType;
     if (signalStrength != null) $signalStrength = signalStrength;
     if (errMsg != null) $errMsg = errMsg;
@@ -12958,9 +12957,9 @@ class GetUserInfoOption {
     return $fail;
   }
 
-  dynamic? $lang;
+  dynamic $lang;
 
-  Future<dynamic?> get lang async {
+  Future<dynamic> get lang async {
     return await $$context$$?.getPropertyValue('lang') ?? $lang;
   }
 
@@ -12982,7 +12981,7 @@ class GetUserInfoOption {
   void setValues(
       {GetUserInfoCompleteCallback? complete,
       GetUserInfoFailCallback? fail,
-      dynamic? lang,
+      dynamic lang,
       GetUserInfoSuccessCallback? success,
       bool? withCredentials}) {
     if (complete != null) $complete = complete;
@@ -13111,9 +13110,9 @@ class GetUserProfileOption {
     return $fail;
   }
 
-  dynamic? $lang;
+  dynamic $lang;
 
-  Future<dynamic?> get lang async {
+  Future<dynamic> get lang async {
     return await $$context$$?.getPropertyValue('lang') ?? $lang;
   }
 
@@ -13129,7 +13128,7 @@ class GetUserProfileOption {
       {String? desc,
       GetUserProfileCompleteCallback? complete,
       GetUserProfileFailCallback? fail,
-      dynamic? lang,
+      dynamic lang,
       GetUserProfileSuccessCallback? success}) {
     if (desc != null) $desc = desc;
     if (complete != null) $complete = complete;
@@ -13322,7 +13321,7 @@ class GetVideoInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
-  dynamic $orientation = null;
+  dynamic $orientation;
 
   Future<dynamic> get orientation async {
     return await $$context$$?.getPropertyValue('orientation') ?? $orientation;
@@ -13359,7 +13358,7 @@ class GetVideoInfoSuccessCallbackResult {
       num? duration,
       num? fps,
       num? height,
-      dynamic? orientation,
+      dynamic orientation,
       num? size,
       String? type,
       num? width,
@@ -13991,13 +13990,13 @@ class Image {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
-  dynamic $onerror = null;
+  dynamic $onerror;
 
   Future<dynamic> get onerror async {
     return await $$context$$?.getPropertyValue('onerror') ?? $onerror;
   }
 
-  dynamic $onload = null;
+  dynamic $onload;
 
   Future<dynamic> get onload async {
     return await $$context$$?.getPropertyValue('onload') ?? $onload;
@@ -14018,11 +14017,7 @@ class Image {
   Image({this.$$context$$});
 
   void setValues(
-      {num? height,
-      dynamic? onerror,
-      dynamic? onload,
-      String? src,
-      num? width}) {
+      {num? height, dynamic onerror, dynamic onload, String? src, num? width}) {
     if (height != null) $height = height;
     if (onerror != null) $onerror = onerror;
     if (onload != null) $onload = onload;
@@ -14542,7 +14537,7 @@ class InnerAudioContext {
 class InnerAudioContextOnErrorCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $errCode = null;
+  dynamic $errCode;
 
   Future<dynamic> get errCode async {
     return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
@@ -14556,7 +14551,7 @@ class InnerAudioContextOnErrorCallbackResult {
 
   InnerAudioContextOnErrorCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? errCode, String? errMsg}) {
+  void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -14927,7 +14922,7 @@ class IntersectionRectResult {
 class InterstitialAdOnErrorCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $errCode = null;
+  dynamic $errCode;
 
   Future<dynamic> get errCode async {
     return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
@@ -14941,7 +14936,7 @@ class InterstitialAdOnErrorCallbackResult {
 
   InterstitialAdOnErrorCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? errCode, String? errMsg}) {
+  void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -15044,9 +15039,9 @@ class JoinVoIPChatOption {
     return MuteConfig($$context$$: $$context$$?.getProperty('muteConfig'));
   }
 
-  dynamic? $roomType;
+  dynamic $roomType;
 
-  Future<dynamic?> get roomType async {
+  Future<dynamic> get roomType async {
     return await $$context$$?.getPropertyValue('roomType') ?? $roomType;
   }
 
@@ -15066,7 +15061,7 @@ class JoinVoIPChatOption {
       JoinVoIPChatCompleteCallback? complete,
       JoinVoIPChatFailCallback? fail,
       MuteConfig? muteConfig,
-      dynamic? roomType,
+      dynamic roomType,
       JoinVoIPChatSuccessCallback? success}) {
     if (groupId != null) $groupId = groupId;
     if (nonceStr != null) $nonceStr = nonceStr;
@@ -15171,9 +15166,9 @@ class LaunchOptionsApp {
     return await $$context$$?.getPropertyValue('scene') ?? $scene;
   }
 
-  dynamic? $chatType;
+  dynamic $chatType;
 
-  Future<dynamic?> get chatType async {
+  Future<dynamic> get chatType async {
     return await $$context$$?.getPropertyValue('chatType') ?? $chatType;
   }
 
@@ -15191,7 +15186,7 @@ class LaunchOptionsApp {
       IAnyObject? query,
       ReferrerInfo? referrerInfo,
       num? scene,
-      dynamic? chatType,
+      dynamic chatType,
       String? shareTicket}) {
     if (forwardMaterials != null) $forwardMaterials = forwardMaterials;
     if (path != null) $path = path;
@@ -15224,9 +15219,9 @@ class LivePlayerContextRequestFullScreenOption {
     return $complete;
   }
 
-  dynamic? $direction;
+  dynamic $direction;
 
-  Future<dynamic?> get direction async {
+  Future<dynamic> get direction async {
     return await $$context$$?.getPropertyValue('direction') ?? $direction;
   }
 
@@ -15246,7 +15241,7 @@ class LivePlayerContextRequestFullScreenOption {
 
   void setValues(
       {RequestFullScreenCompleteCallback? complete,
-      dynamic? direction,
+      dynamic direction,
       RequestFullScreenFailCallback? fail,
       RequestFullScreenSuccessCallback? success}) {
     if (complete != null) $complete = complete;
@@ -16148,15 +16143,15 @@ class MediaSource {
     return await $$context$$?.getPropertyValue('poster') ?? $poster;
   }
 
-  dynamic? $type;
+  dynamic $type;
 
-  Future<dynamic?> get type async {
+  Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
   }
 
   MediaSource({this.$$context$$});
 
-  void setValues({String? url, String? poster, dynamic? type}) {
+  void setValues({String? url, String? poster, dynamic type}) {
     if (url != null) $url = url;
     if (poster != null) $poster = poster;
     if (type != null) $type = type;
@@ -16177,7 +16172,7 @@ class MediaTrack {
     return await $$context$$?.getPropertyValue('duration') ?? $duration;
   }
 
-  dynamic $kind = null;
+  dynamic $kind;
 
   Future<dynamic> get kind async {
     return await $$context$$?.getPropertyValue('kind') ?? $kind;
@@ -16191,7 +16186,7 @@ class MediaTrack {
 
   MediaTrack({this.$$context$$});
 
-  void setValues({num? duration, dynamic? kind, num? volume}) {
+  void setValues({num? duration, dynamic kind, num? volume}) {
     if (duration != null) $duration = duration;
     if (kind != null) $kind = kind;
     if (volume != null) $volume = volume;
@@ -16212,7 +16207,7 @@ class MiniProgram {
     return await $$context$$?.getPropertyValue('appId') ?? $appId;
   }
 
-  dynamic $envVersion = null;
+  dynamic $envVersion;
 
   Future<dynamic> get envVersion async {
     return await $$context$$?.getPropertyValue('envVersion') ?? $envVersion;
@@ -16226,7 +16221,7 @@ class MiniProgram {
 
   MiniProgram({this.$$context$$});
 
-  void setValues({String? appId, dynamic? envVersion, String? version}) {
+  void setValues({String? appId, dynamic envVersion, String? version}) {
     if (appId != null) $appId = appId;
     if (envVersion != null) $envVersion = envVersion;
     if (version != null) $version = version;
@@ -16782,9 +16777,9 @@ class NavigateToMiniProgramOption {
     return $complete;
   }
 
-  dynamic? $envVersion;
+  dynamic $envVersion;
 
-  Future<dynamic?> get envVersion async {
+  Future<dynamic> get envVersion async {
     return await $$context$$?.getPropertyValue('envVersion') ?? $envVersion;
   }
 
@@ -16823,7 +16818,7 @@ class NavigateToMiniProgramOption {
   void setValues(
       {String? appId,
       NavigateToMiniProgramCompleteCallback? complete,
-      dynamic? envVersion,
+      dynamic envVersion,
       IAnyObject? extraData,
       NavigateToMiniProgramFailCallback? fail,
       String? path,
@@ -17816,7 +17811,7 @@ class OnCheckForUpdateCallbackResult {
 class OnCompassChangeCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $accuracy = null;
+  dynamic $accuracy;
 
   Future<dynamic> get accuracy async {
     return await $$context$$?.getPropertyValue('accuracy') ?? $accuracy;
@@ -17830,7 +17825,7 @@ class OnCompassChangeCallbackResult {
 
   OnCompassChangeCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? accuracy, num? direction}) {
+  void setValues({dynamic accuracy, num? direction}) {
     if (accuracy != null) $accuracy = accuracy;
     if (direction != null) $direction = direction;
   }
@@ -18016,7 +18011,7 @@ class OnHCEMessageCallbackResult {
     return ArrayBuffer($$context$$: $$context$$?.getProperty('data'));
   }
 
-  dynamic $messageType = null;
+  dynamic $messageType;
 
   Future<dynamic> get messageType async {
     return await $$context$$?.getPropertyValue('messageType') ?? $messageType;
@@ -18030,7 +18025,7 @@ class OnHCEMessageCallbackResult {
 
   OnHCEMessageCallbackResult({this.$$context$$});
 
-  void setValues({ArrayBuffer? data, dynamic? messageType, num? reason}) {
+  void setValues({ArrayBuffer? data, dynamic messageType, num? reason}) {
     if (data != null) $data = data;
     if (messageType != null) $messageType = messageType;
     if (reason != null) $reason = reason;
@@ -18239,7 +18234,7 @@ class OnLocationChangeCallbackResult {
 class OnMemoryWarningCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $level = null;
+  dynamic $level;
 
   Future<dynamic> get level async {
     return await $$context$$?.getPropertyValue('level') ?? $level;
@@ -18247,7 +18242,7 @@ class OnMemoryWarningCallbackResult {
 
   OnMemoryWarningCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? level}) {
+  void setValues({dynamic level}) {
     if (level != null) $level = level;
   }
 
@@ -18265,7 +18260,7 @@ class OnNetworkStatusChangeCallbackResult {
     return await $$context$$?.getPropertyValue('isConnected') ?? $isConnected;
   }
 
-  dynamic $networkType = null;
+  dynamic $networkType;
 
   Future<dynamic> get networkType async {
     return await $$context$$?.getPropertyValue('networkType') ?? $networkType;
@@ -18273,7 +18268,7 @@ class OnNetworkStatusChangeCallbackResult {
 
   OnNetworkStatusChangeCallbackResult({this.$$context$$});
 
-  void setValues({bool? isConnected, dynamic? networkType}) {
+  void setValues({bool? isConnected, dynamic networkType}) {
     if (isConnected != null) $isConnected = isConnected;
     if (networkType != null) $networkType = networkType;
   }
@@ -18408,7 +18403,7 @@ class OnStopCallbackResult {
 class OnThemeChangeCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $theme = null;
+  dynamic $theme;
 
   Future<dynamic> get theme async {
     return await $$context$$?.getPropertyValue('theme') ?? $theme;
@@ -18416,7 +18411,7 @@ class OnThemeChangeCallbackResult {
 
   OnThemeChangeCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? theme}) {
+  void setValues({dynamic theme}) {
     if (theme != null) $theme = theme;
   }
 
@@ -18679,9 +18674,9 @@ class OpenBluetoothAdapterOption {
     return $fail;
   }
 
-  dynamic? $mode;
+  dynamic $mode;
 
-  Future<dynamic?> get mode async {
+  Future<dynamic> get mode async {
     return await $$context$$?.getPropertyValue('mode') ?? $mode;
   }
 
@@ -18696,7 +18691,7 @@ class OpenBluetoothAdapterOption {
   void setValues(
       {OpenBluetoothAdapterCompleteCallback? complete,
       OpenBluetoothAdapterFailCallback? fail,
-      dynamic? mode,
+      dynamic mode,
       OpenBluetoothAdapterSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
@@ -19083,9 +19078,9 @@ class OpenDocumentOption {
     return $fail;
   }
 
-  dynamic? $fileType;
+  dynamic $fileType;
 
-  Future<dynamic?> get fileType async {
+  Future<dynamic> get fileType async {
     return await $$context$$?.getPropertyValue('fileType') ?? $fileType;
   }
 
@@ -19107,7 +19102,7 @@ class OpenDocumentOption {
       {String? filePath,
       OpenDocumentCompleteCallback? complete,
       OpenDocumentFailCallback? fail,
-      dynamic? fileType,
+      dynamic fileType,
       bool? showMenu,
       OpenDocumentSuccessCallback? success}) {
     if (filePath != null) $filePath = filePath;
@@ -19352,9 +19347,9 @@ class OpenOption {
     return $fail;
   }
 
-  dynamic? $flag;
+  dynamic $flag;
 
-  Future<dynamic?> get flag async {
+  Future<dynamic> get flag async {
     return await $$context$$?.getPropertyValue('flag') ?? $flag;
   }
 
@@ -19370,7 +19365,7 @@ class OpenOption {
       {String? filePath,
       OpenCompleteCallback? complete,
       OpenFailCallback? fail,
-      dynamic? flag,
+      dynamic flag,
       OpenSuccessCallback? success}) {
     if (filePath != null) $filePath = filePath;
     if (complete != null) $complete = complete;
@@ -19539,15 +19534,15 @@ class OpenSyncOption {
     return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
   }
 
-  dynamic? $flag;
+  dynamic $flag;
 
-  Future<dynamic?> get flag async {
+  Future<dynamic> get flag async {
     return await $$context$$?.getPropertyValue('flag') ?? $flag;
   }
 
   OpenSyncOption({this.$$context$$});
 
-  void setValues({String? filePath, dynamic? flag}) {
+  void setValues({String? filePath, dynamic flag}) {
     if (filePath != null) $filePath = filePath;
     if (flag != null) $flag = flag;
   }
@@ -20621,9 +20616,9 @@ class ReadFileOption {
     return $complete;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -20656,7 +20651,7 @@ class ReadFileOption {
   void setValues(
       {String? filePath,
       ReadFileCompleteCallback? complete,
-      dynamic? encoding,
+      dynamic encoding,
       ReadFileFailCallback? fail,
       num? length,
       num? position,
@@ -20695,7 +20690,7 @@ class ReadFileOption {
 class ReadFileSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -20709,7 +20704,7 @@ class ReadFileSuccessCallbackResult {
 
   ReadFileSuccessCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? data, String? errMsg}) {
+  void setValues({dynamic data, String? errMsg}) {
     if (data != null) $data = data;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -20943,7 +20938,7 @@ class ReadSyncOption {
 class ReadZipEntryOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $entries = null;
+  dynamic $entries;
 
   Future<dynamic> get entries async {
     return await $$context$$?.getPropertyValue('entries') ?? $entries;
@@ -20961,9 +20956,9 @@ class ReadZipEntryOption {
     return $complete;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -20982,10 +20977,10 @@ class ReadZipEntryOption {
   ReadZipEntryOption({this.$$context$$});
 
   void setValues(
-      {dynamic? entries,
+      {dynamic entries,
       String? filePath,
       ReadZipEntryCompleteCallback? complete,
-      dynamic? encoding,
+      dynamic encoding,
       ReadZipEntryFailCallback? fail,
       ReadZipEntrySuccessCallback? success}) {
     if (entries != null) $entries = entries;
@@ -21155,9 +21150,9 @@ class ReaddirSuccessCallbackResult {
 class RecorderManagerStartOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic? $audioSource;
+  dynamic $audioSource;
 
-  Future<dynamic?> get audioSource async {
+  Future<dynamic> get audioSource async {
     return await $$context$$?.getPropertyValue('audioSource') ?? $audioSource;
   }
 
@@ -21174,9 +21169,9 @@ class RecorderManagerStartOption {
         $encodeBitRate;
   }
 
-  dynamic? $format;
+  dynamic $format;
 
-  Future<dynamic?> get format async {
+  Future<dynamic> get format async {
     return await $$context$$?.getPropertyValue('format') ?? $format;
   }
 
@@ -21186,29 +21181,29 @@ class RecorderManagerStartOption {
     return await $$context$$?.getPropertyValue('frameSize') ?? $frameSize;
   }
 
-  dynamic? $numberOfChannels;
+  dynamic $numberOfChannels;
 
-  Future<dynamic?> get numberOfChannels async {
+  Future<dynamic> get numberOfChannels async {
     return await $$context$$?.getPropertyValue('numberOfChannels') ??
         $numberOfChannels;
   }
 
-  dynamic? $sampleRate;
+  dynamic $sampleRate;
 
-  Future<dynamic?> get sampleRate async {
+  Future<dynamic> get sampleRate async {
     return await $$context$$?.getPropertyValue('sampleRate') ?? $sampleRate;
   }
 
   RecorderManagerStartOption({this.$$context$$});
 
   void setValues(
-      {dynamic? audioSource,
+      {dynamic audioSource,
       num? duration,
       num? encodeBitRate,
-      dynamic? format,
+      dynamic format,
       num? frameSize,
-      dynamic? numberOfChannels,
-      dynamic? sampleRate}) {
+      dynamic numberOfChannels,
+      dynamic sampleRate}) {
     if (audioSource != null) $audioSource = audioSource;
     if (duration != null) $duration = duration;
     if (encodeBitRate != null) $encodeBitRate = encodeBitRate;
@@ -22056,15 +22051,15 @@ class RequestOption<T extends dynamic> {
     return $complete;
   }
 
-  dynamic? $data;
+  dynamic $data;
 
-  Future<dynamic?> get data async {
+  Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
   }
 
-  dynamic? $dataType;
+  dynamic $dataType;
 
-  Future<dynamic?> get dataType async {
+  Future<dynamic> get dataType async {
     return await $$context$$?.getPropertyValue('dataType') ?? $dataType;
   }
 
@@ -22112,15 +22107,15 @@ class RequestOption<T extends dynamic> {
         $httpDNSServiceId;
   }
 
-  dynamic? $method;
+  dynamic $method;
 
-  Future<dynamic?> get method async {
+  Future<dynamic> get method async {
     return await $$context$$?.getPropertyValue('method') ?? $method;
   }
 
-  dynamic? $responseType;
+  dynamic $responseType;
 
-  Future<dynamic?> get responseType async {
+  Future<dynamic> get responseType async {
     return await $$context$$?.getPropertyValue('responseType') ?? $responseType;
   }
 
@@ -22137,8 +22132,8 @@ class RequestOption<T extends dynamic> {
   void setValues(
       {String? url,
       RequestCompleteCallback? complete,
-      dynamic? data,
-      dynamic? dataType,
+      dynamic data,
+      dynamic dataType,
       bool? enableCache,
       bool? enableHttp2,
       bool? enableHttpDNS,
@@ -22146,8 +22141,8 @@ class RequestOption<T extends dynamic> {
       RequestFailCallback? fail,
       IAnyObject? header,
       bool? httpDNSServiceId,
-      dynamic? method,
-      dynamic? responseType,
+      dynamic method,
+      dynamic responseType,
       RequestSuccessCallback<T>? success,
       num? timeout}) {
     if (url != null) $url = url;
@@ -22245,9 +22240,9 @@ class RequestOrderPaymentOption {
     return IAnyObject($$context$$: $$context$$?.getProperty('orderInfo'));
   }
 
-  dynamic? $signType;
+  dynamic $signType;
 
-  Future<dynamic?> get signType async {
+  Future<dynamic> get signType async {
     return await $$context$$?.getPropertyValue('signType') ?? $signType;
   }
 
@@ -22268,7 +22263,7 @@ class RequestOrderPaymentOption {
       String? extUserUin,
       RequestOrderPaymentFailCallback? fail,
       IAnyObject? orderInfo,
-      dynamic? signType,
+      dynamic signType,
       RequestOrderPaymentSuccessCallback? success}) {
     if (nonceStr != null) $nonceStr = nonceStr;
     if (package != null) $package = package;
@@ -22346,9 +22341,9 @@ class RequestPaymentOption {
     return $fail;
   }
 
-  dynamic? $signType;
+  dynamic $signType;
 
-  Future<dynamic?> get signType async {
+  Future<dynamic> get signType async {
     return await $$context$$?.getPropertyValue('signType') ?? $signType;
   }
 
@@ -22367,7 +22362,7 @@ class RequestPaymentOption {
       String? timeStamp,
       RequestPaymentCompleteCallback? complete,
       RequestPaymentFailCallback? fail,
-      dynamic? signType,
+      dynamic signType,
       RequestPaymentSuccessCallback? success}) {
     if (nonceStr != null) $nonceStr = nonceStr;
     if (package != null) $package = package;
@@ -23028,7 +23023,7 @@ class RewardedVideoAdOnCloseCallbackResult {
 class RewardedVideoAdOnErrorCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $errCode = null;
+  dynamic $errCode;
 
   Future<dynamic> get errCode async {
     return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
@@ -23042,7 +23037,7 @@ class RewardedVideoAdOnErrorCallbackResult {
 
   RewardedVideoAdOnErrorCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? errCode, String? errMsg}) {
+  void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -23526,7 +23521,7 @@ class ScanCodeSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('result') ?? $result;
   }
 
-  dynamic $scanType = null;
+  dynamic $scanType;
 
   Future<dynamic> get scanType async {
     return await $$context$$?.getPropertyValue('scanType') ?? $scanType;
@@ -23545,7 +23540,7 @@ class ScanCodeSuccessCallbackResult {
       String? path,
       String? rawData,
       String? result,
-      dynamic? scanType,
+      dynamic scanType,
       String? errMsg}) {
     if (charSet != null) $charSet = charSet;
     if (path != null) $path = path;
@@ -24028,7 +24023,7 @@ class SendMessageOption {
 class SendSocketMessageOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -24055,7 +24050,7 @@ class SendSocketMessageOption {
   SendSocketMessageOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       SendSocketMessageCompleteCallback? complete,
       SendSocketMessageFailCallback? fail,
       SendSocketMessageSuccessCallback? success}) {
@@ -24402,7 +24397,7 @@ class SetBackgroundFetchTokenOption {
 class SetBackgroundTextStyleOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $textStyle = null;
+  dynamic $textStyle;
 
   Future<dynamic> get textStyle async {
     return await $$context$$?.getPropertyValue('textStyle') ?? $textStyle;
@@ -24429,7 +24424,7 @@ class SetBackgroundTextStyleOption {
   SetBackgroundTextStyleOption({this.$$context$$});
 
   void setValues(
-      {dynamic? textStyle,
+      {dynamic textStyle,
       SetBackgroundTextStyleCompleteCallback? complete,
       SetBackgroundTextStyleFailCallback? fail,
       SetBackgroundTextStyleSuccessCallback? success}) {
@@ -26720,9 +26715,9 @@ class ShowToastOption {
     return $fail;
   }
 
-  dynamic? $icon;
+  dynamic $icon;
 
-  Future<dynamic?> get icon async {
+  Future<dynamic> get icon async {
     return await $$context$$?.getPropertyValue('icon') ?? $icon;
   }
 
@@ -26751,7 +26746,7 @@ class ShowToastOption {
       ShowToastCompleteCallback? complete,
       num? duration,
       ShowToastFailCallback? fail,
-      dynamic? icon,
+      dynamic icon,
       String? image,
       bool? mask,
       ShowToastSuccessCallback? success}) {
@@ -27004,7 +26999,7 @@ class SocketTaskOnCloseCallbackResult {
 class SocketTaskOnMessageCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -27012,7 +27007,7 @@ class SocketTaskOnMessageCallbackResult {
 
   SocketTaskOnMessageCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? data}) {
+  void setValues({dynamic data}) {
     if (data != null) $data = data;
   }
 
@@ -27024,7 +27019,7 @@ class SocketTaskOnMessageCallbackResult {
 class SocketTaskSendOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -27051,7 +27046,7 @@ class SocketTaskSendOption {
   SocketTaskSendOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       SendCompleteCallback? complete,
       SendFailCallback? fail,
       SendSuccessCallback? success}) {
@@ -27095,9 +27090,9 @@ class StartAccelerometerOption {
     return $fail;
   }
 
-  dynamic? $interval;
+  dynamic $interval;
 
-  Future<dynamic?> get interval async {
+  Future<dynamic> get interval async {
     return await $$context$$?.getPropertyValue('interval') ?? $interval;
   }
 
@@ -27112,7 +27107,7 @@ class StartAccelerometerOption {
   void setValues(
       {StartAccelerometerCompleteCallback? complete,
       StartAccelerometerFailCallback? fail,
-      dynamic? interval,
+      dynamic interval,
       StartAccelerometerSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
@@ -27161,9 +27156,9 @@ class StartAdvertisingObject {
     return $fail;
   }
 
-  dynamic? $powerLevel;
+  dynamic $powerLevel;
 
-  Future<dynamic?> get powerLevel async {
+  Future<dynamic> get powerLevel async {
     return await $$context$$?.getPropertyValue('powerLevel') ?? $powerLevel;
   }
 
@@ -27179,7 +27174,7 @@ class StartAdvertisingObject {
       {AdvertiseReqObj? advertiseRequest,
       StartAdvertisingCompleteCallback? complete,
       StartAdvertisingFailCallback? fail,
-      dynamic? powerLevel,
+      dynamic powerLevel,
       StartAdvertisingSuccessCallback? success}) {
     if (advertiseRequest != null) $advertiseRequest = advertiseRequest;
     if (complete != null) $complete = complete;
@@ -27303,9 +27298,9 @@ class StartBluetoothDevicesDiscoveryOption {
     return await $$context$$?.getPropertyValue('interval') ?? $interval;
   }
 
-  dynamic? $powerLevel;
+  dynamic $powerLevel;
 
-  Future<dynamic?> get powerLevel async {
+  Future<dynamic> get powerLevel async {
     return await $$context$$?.getPropertyValue('powerLevel') ?? $powerLevel;
   }
 
@@ -27328,7 +27323,7 @@ class StartBluetoothDevicesDiscoveryOption {
       StartBluetoothDevicesDiscoveryCompleteCallback? complete,
       StartBluetoothDevicesDiscoveryFailCallback? fail,
       num? interval,
-      dynamic? powerLevel,
+      dynamic powerLevel,
       List<String>? services,
       StartBluetoothDevicesDiscoverySuccessCallback? success}) {
     if (allowDuplicatesKey != null) $allowDuplicatesKey = allowDuplicatesKey;
@@ -27424,9 +27419,9 @@ class StartDeviceMotionListeningOption {
     return $fail;
   }
 
-  dynamic? $interval;
+  dynamic $interval;
 
-  Future<dynamic?> get interval async {
+  Future<dynamic> get interval async {
     return await $$context$$?.getPropertyValue('interval') ?? $interval;
   }
 
@@ -27441,7 +27436,7 @@ class StartDeviceMotionListeningOption {
   void setValues(
       {StartDeviceMotionListeningCompleteCallback? complete,
       StartDeviceMotionListeningFailCallback? fail,
-      dynamic? interval,
+      dynamic interval,
       StartDeviceMotionListeningSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
@@ -27530,9 +27525,9 @@ class StartGyroscopeOption {
     return $fail;
   }
 
-  dynamic? $interval;
+  dynamic $interval;
 
-  Future<dynamic?> get interval async {
+  Future<dynamic> get interval async {
     return await $$context$$?.getPropertyValue('interval') ?? $interval;
   }
 
@@ -27547,7 +27542,7 @@ class StartGyroscopeOption {
   void setValues(
       {StartGyroscopeCompleteCallback? complete,
       StartGyroscopeFailCallback? fail,
-      dynamic? interval,
+      dynamic interval,
       StartGyroscopeSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
@@ -28246,7 +28241,7 @@ class StatOption {
 class StatSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  dynamic $stats = null;
+  dynamic $stats;
 
   Future<dynamic> get stats async {
     return await $$context$$?.getPropertyValue('stats') ?? $stats;
@@ -28260,7 +28255,7 @@ class StatSuccessCallbackResult {
 
   StatSuccessCallbackResult({this.$$context$$});
 
-  void setValues({dynamic? stats, String? errMsg}) {
+  void setValues({dynamic stats, String? errMsg}) {
     if (stats != null) $stats = stats;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -28345,9 +28340,9 @@ class StepOption {
     return await $$context$$?.getPropertyValue('duration') ?? $duration;
   }
 
-  dynamic? $timingFunction;
+  dynamic $timingFunction;
 
-  Future<dynamic?> get timingFunction async {
+  Future<dynamic> get timingFunction async {
     return await $$context$$?.getPropertyValue('timingFunction') ??
         $timingFunction;
   }
@@ -28364,7 +28359,7 @@ class StepOption {
   void setValues(
       {num? delay,
       num? duration,
-      dynamic? timingFunction,
+      dynamic timingFunction,
       String? transformOrigin}) {
     if (delay != null) $delay = delay;
     if (duration != null) $duration = duration;
@@ -29618,7 +29613,7 @@ class SystemInfo {
         $cameraAuthorized;
   }
 
-  dynamic $deviceOrientation = null;
+  dynamic $deviceOrientation;
 
   Future<dynamic> get deviceOrientation async {
     return await $$context$$?.getPropertyValue('deviceOrientation') ??
@@ -29779,9 +29774,9 @@ class SystemInfo {
     return await $$context$$?.getPropertyValue('windowWidth') ?? $windowWidth;
   }
 
-  dynamic? $theme;
+  dynamic $theme;
 
-  Future<dynamic?> get theme async {
+  Future<dynamic> get theme async {
     return await $$context$$?.getPropertyValue('theme') ?? $theme;
   }
 
@@ -29794,7 +29789,7 @@ class SystemInfo {
       bool? bluetoothEnabled,
       String? brand,
       bool? cameraAuthorized,
-      dynamic? deviceOrientation,
+      dynamic deviceOrientation,
       bool? enableDebug,
       num? fontSizeSetting,
       Host? host,
@@ -29819,7 +29814,7 @@ class SystemInfo {
       bool? wifiEnabled,
       num? windowHeight,
       num? windowWidth,
-      dynamic? theme}) {
+      dynamic theme}) {
     if (SDKVersion != null) $SDKVersion = SDKVersion;
     if (albumAuthorized != null) $albumAuthorized = albumAuthorized;
     if (benchmarkLevel != null) $benchmarkLevel = benchmarkLevel;
@@ -29980,9 +29975,9 @@ class TakePhotoOption {
     return $fail;
   }
 
-  dynamic? $quality;
+  dynamic $quality;
 
-  Future<dynamic?> get quality async {
+  Future<dynamic> get quality async {
     return await $$context$$?.getPropertyValue('quality') ?? $quality;
   }
 
@@ -29997,7 +29992,7 @@ class TakePhotoOption {
   void setValues(
       {TakePhotoCompleteCallback? complete,
       TakePhotoFailCallback? fail,
-      dynamic? quality,
+      dynamic quality,
       TakePhotoSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
@@ -30409,9 +30404,9 @@ class TranslateMarkerOption {
     return await $$context$$?.getPropertyValue('rotate') ?? $rotate;
   }
 
-  dynamic? $animationEnd;
+  dynamic $animationEnd;
 
-  Future<dynamic?> get animationEnd async {
+  Future<dynamic> get animationEnd async {
     return await $$context$$?.getPropertyValue('animationEnd') ?? $animationEnd;
   }
 
@@ -30453,7 +30448,7 @@ class TranslateMarkerOption {
       DestinationOption? destination,
       num? markerId,
       num? rotate,
-      dynamic? animationEnd,
+      dynamic animationEnd,
       TranslateMarkerCompleteCallback? complete,
       num? duration,
       TranslateMarkerFailCallback? fail,
@@ -30710,7 +30705,7 @@ class UDPSocketSendOption {
     return await $$context$$?.getPropertyValue('address') ?? $address;
   }
 
-  dynamic $message = null;
+  dynamic $message;
 
   Future<dynamic> get message async {
     return await $$context$$?.getPropertyValue('message') ?? $message;
@@ -30737,11 +30732,7 @@ class UDPSocketSendOption {
   UDPSocketSendOption({this.$$context$$});
 
   void setValues(
-      {String? address,
-      dynamic? message,
-      num? port,
-      num? length,
-      num? offset}) {
+      {String? address, dynamic message, num? port, num? length, num? offset}) {
     if (address != null) $address = address;
     if (message != null) $message = message;
     if (port != null) $port = port;
@@ -31552,13 +31543,13 @@ class UserInfo {
     return await $$context$$?.getPropertyValue('country') ?? $country;
   }
 
-  dynamic $gender = null;
+  dynamic $gender;
 
   Future<dynamic> get gender async {
     return await $$context$$?.getPropertyValue('gender') ?? $gender;
   }
 
-  dynamic $language = null;
+  dynamic $language;
 
   Future<dynamic> get language async {
     return await $$context$$?.getPropertyValue('language') ?? $language;
@@ -31582,8 +31573,8 @@ class UserInfo {
       {String? avatarUrl,
       String? city,
       String? country,
-      dynamic? gender,
-      dynamic? language,
+      dynamic gender,
+      dynamic language,
       String? nickName,
       String? province}) {
     if (avatarUrl != null) $avatarUrl = avatarUrl;
@@ -31720,15 +31711,15 @@ class VibrateShortOption {
 class VideoContextRequestFullScreenOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic? $direction;
+  dynamic $direction;
 
-  Future<dynamic?> get direction async {
+  Future<dynamic> get direction async {
     return await $$context$$?.getPropertyValue('direction') ?? $direction;
   }
 
   VideoContextRequestFullScreenOption({this.$$context$$});
 
-  void setValues({dynamic? direction}) {
+  void setValues({dynamic direction}) {
     if (direction != null) $direction = direction;
   }
 
@@ -31789,7 +31780,7 @@ class WebAudioContext {
 
 //         }
 
-  dynamic $onstatechange = null;
+  dynamic $onstatechange;
 
   Future<dynamic> get onstatechange async {
     return await $$context$$?.getPropertyValue('onstatechange') ??
@@ -31813,7 +31804,7 @@ class WebAudioContext {
   void setValues(
       {num? currentTime,
       WebAudioContextNode? destination,
-      dynamic? onstatechange,
+      dynamic onstatechange,
       num? sampleRate,
       String? state}) {
     if (currentTime != null) $currentTime = currentTime;
@@ -31976,14 +31967,14 @@ class WebAudioContextNode {
     return await $$context$$?.getPropertyValue('positionZ') ?? $positionZ;
   }
 
-  dynamic $setOrientation = null;
+  dynamic $setOrientation;
 
   Future<dynamic> get setOrientation async {
     return await $$context$$?.getPropertyValue('setOrientation') ??
         $setOrientation;
   }
 
-  dynamic $setPosition = null;
+  dynamic $setPosition;
 
   Future<dynamic> get setPosition async {
     return await $$context$$?.getPropertyValue('setPosition') ?? $setPosition;
@@ -32016,8 +32007,8 @@ class WebAudioContextNode {
       num? positionX,
       num? positionY,
       num? positionZ,
-      dynamic? setOrientation,
-      dynamic? setPosition,
+      dynamic setOrientation,
+      dynamic setPosition,
       num? upX,
       num? upY,
       num? upZ}) {
@@ -32392,7 +32383,7 @@ class WriteFileFailCallbackResult {
 class WriteFileOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -32410,9 +32401,9 @@ class WriteFileOption {
     return $complete;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -32431,10 +32422,10 @@ class WriteFileOption {
   WriteFileOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       String? filePath,
       WriteFileCompleteCallback? complete,
-      dynamic? encoding,
+      dynamic encoding,
       WriteFileFailCallback? fail,
       WriteFileSuccessCallback? success}) {
     if (data != null) $data = data;
@@ -32543,7 +32534,7 @@ class WriteNdefMessageOption {
 class WriteOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -32561,9 +32552,9 @@ class WriteOption {
     return $complete;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -32600,10 +32591,10 @@ class WriteOption {
   WriteOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       String? fd,
       WriteCompleteCallback? complete,
-      dynamic? encoding,
+      dynamic encoding,
       WriteFailCallback? fail,
       num? length,
       num? offset,
@@ -32696,7 +32687,7 @@ class WriteSuccessCallbackResult {
 class WriteSyncOption {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -32708,9 +32699,9 @@ class WriteSyncOption {
     return await $$context$$?.getPropertyValue('fd') ?? $fd;
   }
 
-  dynamic? $encoding;
+  dynamic $encoding;
 
-  Future<dynamic?> get encoding async {
+  Future<dynamic> get encoding async {
     return await $$context$$?.getPropertyValue('encoding') ?? $encoding;
   }
 
@@ -32735,9 +32726,9 @@ class WriteSyncOption {
   WriteSyncOption({this.$$context$$});
 
   void setValues(
-      {dynamic? data,
+      {dynamic data,
       String? fd,
-      dynamic? encoding,
+      dynamic encoding,
       num? length,
       num? offset,
       num? position}) {
@@ -32776,9 +32767,9 @@ class WxGetFileInfoOption {
     return $complete;
   }
 
-  dynamic? $digestAlgorithm;
+  dynamic $digestAlgorithm;
 
-  Future<dynamic?> get digestAlgorithm async {
+  Future<dynamic> get digestAlgorithm async {
     return await $$context$$?.getPropertyValue('digestAlgorithm') ??
         $digestAlgorithm;
   }
@@ -32800,7 +32791,7 @@ class WxGetFileInfoOption {
   void setValues(
       {String? filePath,
       GetFileInfoCompleteCallback? complete,
-      dynamic? digestAlgorithm,
+      dynamic digestAlgorithm,
       WxGetFileInfoFailCallback? fail,
       WxGetFileInfoSuccessCallback? success}) {
     if (filePath != null) $filePath = filePath;
@@ -33210,7 +33201,7 @@ class WxaSportRecord {
 class ZipFileItem {
   mpjs.JsObject? $$context$$;
 
-  dynamic $data = null;
+  dynamic $data;
 
   Future<dynamic> get data async {
     return await $$context$$?.getPropertyValue('data') ?? $data;
@@ -33224,7 +33215,7 @@ class ZipFileItem {
 
   ZipFileItem({this.$$context$$});
 
-  void setValues({dynamic? data, String? errMsg}) {
+  void setValues({dynamic data, String? errMsg}) {
     if (data != null) $data = data;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -33957,7 +33948,7 @@ class FileSystemManager {
   }
 
   Future<void> appendFileSync(String filePath, dynamic data,
-      [dynamic? encoding]) async {
+      [dynamic encoding]) async {
     final result = await $$context$$
         ?.callMethod('appendFileSync', [filePath, data, encoding]);
     return result;
@@ -34111,7 +34102,7 @@ class FileSystemManager {
   }
 
   Future<void> writeFileSync(String filePath, dynamic data,
-      [dynamic? encoding]) async {
+      [dynamic encoding]) async {
     final result = await $$context$$
         ?.callMethod('writeFileSync', [filePath, data, encoding]);
     return result;
@@ -34154,7 +34145,7 @@ class FileSystemManager {
   }
 
   Future<dynamic> readFileSync(String filePath,
-      [dynamic? encoding, num? position, num? length]) async {
+      [dynamic encoding, num? position, num? length]) async {
     final result = await $$context$$
         ?.callMethod('readFileSync', [filePath, encoding, position, length]);
     return result;
@@ -35645,7 +35636,7 @@ class SelectorQuery {
     return {}..removeWhere((key, value) => value == null);
   }
 
-  Future<NodesRef> exec([dynamic? callback]) async {
+  Future<NodesRef> exec([dynamic callback]) async {
     final result = await $$context$$?.callMethod('exec', [callback]);
 
     return NodesRef($$context$$: result);
@@ -36207,7 +36198,7 @@ class Wx {
 
   //     }
 
-  dynamic $env = null;
+  dynamic $env;
 
   Future<dynamic> get env async {
     return await $$context$$?.getPropertyValue('env') ?? $env;
@@ -36215,7 +36206,7 @@ class Wx {
 
   Wx({this.$$context$$});
 
-  void setValues({dynamic? env}) {
+  void setValues({dynamic env}) {
     // if (cloud != null) $cloud = cloud;
     if (env != null) $env = env;
   }
@@ -36297,7 +36288,7 @@ class Wx {
   }
 
   Future<AudioContext> createAudioContext(String id,
-      [dynamic? component]) async {
+      [dynamic component]) async {
     final result =
         await $$context$$?.callMethod('createAudioContext', [id, component]);
 
@@ -36318,7 +36309,7 @@ class Wx {
   }
 
   Future<CanvasContext> createCanvasContext(String canvasId,
-      [dynamic? component]) async {
+      [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('createCanvasContext', [canvasId, component]);
 
@@ -36363,7 +36354,7 @@ class Wx {
   }
 
   Future<LivePlayerContext> createLivePlayerContext(String id,
-      [dynamic? component]) async {
+      [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('createLivePlayerContext', [id, component]);
 
@@ -36383,8 +36374,7 @@ class Wx {
     return LogManager($$context$$: result);
   }
 
-  Future<MapContext> createMapContext(String mapId,
-      [dynamic? component]) async {
+  Future<MapContext> createMapContext(String mapId, [dynamic component]) async {
     final result =
         await $$context$$?.callMethod('createMapContext', [mapId, component]);
 
@@ -36418,7 +36408,7 @@ class Wx {
   }
 
   Future<OffscreenCanvas> createOffscreenCanvas(num width, num height,
-      [dynamic? component]) async {
+      [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('createOffscreenCanvas', [width, height, component]);
 
@@ -36511,7 +36501,7 @@ class Wx {
   }
 
   Future<VideoContext> createVideoContext(String id,
-      [dynamic? component]) async {
+      [dynamic component]) async {
     final result =
         await $$context$$?.callMethod('createVideoContext', [id, component]);
 
@@ -36615,7 +36605,7 @@ class Wx {
 
   Future<PromisifySuccessResult<T, CanvasGetImageDataOption>>
       canvasGetImageData<T extends CanvasGetImageDataOption>(T option,
-          [dynamic? component]) async {
+          [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasGetImageData', [option, component]);
     return result;
@@ -36623,7 +36613,7 @@ class Wx {
 
   Future<PromisifySuccessResult<T, CanvasPutImageDataOption>>
       canvasPutImageData<T extends CanvasPutImageDataOption>(T option,
-          [dynamic? component]) async {
+          [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasPutImageData', [option, component]);
     return result;
@@ -36631,7 +36621,7 @@ class Wx {
 
   Future<PromisifySuccessResult<T, CanvasToTempFilePathOption>>
       canvasToTempFilePath<T extends CanvasToTempFilePathOption>(T option,
-          [dynamic? component]) async {
+          [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasToTempFilePath', [option, component]);
     return result;
@@ -37405,7 +37395,7 @@ class Wx {
     return result;
   }
 
-  Future<void> offUserCaptureScreen([dynamic? callback]) async {
+  Future<void> offUserCaptureScreen([dynamic callback]) async {
     final result =
         await $$context$$?.callMethod('offUserCaptureScreen', [callback]);
     return result;
@@ -37895,7 +37885,7 @@ class Wx {
   }
 
   Future<void> reportPerformance(num id, num value,
-      [dynamic? dimensions]) async {
+      [dynamic dimensions]) async {
     final result = await $$context$$
         ?.callMethod('reportPerformance', [id, value, dimensions]);
     return result;
