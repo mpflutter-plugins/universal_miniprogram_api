@@ -31,15 +31,7 @@ class ArrayBuffer {
   }
 }
 
-class Array<T> {
-  mpjs.JsObject? $$context$$;
-
-  Array({this.$$context$$});
-
-  Map toJson() {
-    return {}..removeWhere((key, value) => value == null);
-  }
-}
+typedef Array<T> = List<T>;
 
 class Uint8ClampedArray {
   mpjs.JsObject? $$context$$;
