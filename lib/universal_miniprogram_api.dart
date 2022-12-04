@@ -31,7 +31,15 @@ class ArrayBuffer {
   }
 }
 
-typedef Array<T> = List<T>;
+class Array<T> {
+  mpjs.JsObject? $$context$$;
+
+  Array({this.$$context$$});
+
+  Map toJson() {
+    return {}..removeWhere((key, value) => value == null);
+  }
+}
 
 class Uint8ClampedArray {
   mpjs.JsObject? $$context$$;
@@ -4221,7 +4229,7 @@ class CheckIsSupportSoterAuthenticationOption {
 class CheckIsSupportSoterAuthenticationSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $supportMode = [];
+  Array<dynamic> $supportMode = Array();
 
   Future<Array<dynamic>> get supportMode async {
     return $supportMode;
@@ -9158,7 +9166,7 @@ class GetAvailableAudioSourcesOption {
 class GetAvailableAudioSourcesSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $audioSources = [];
+  Array<dynamic> $audioSources = Array();
 
   Future<Array<dynamic>> get audioSources async {
     return $audioSources;
@@ -27973,7 +27981,7 @@ class StartSoterAuthenticationOption {
     return await $$context$$?.getPropertyValue('challenge') ?? $challenge;
   }
 
-  Array<dynamic> $requestAuthModes = [];
+  Array<dynamic> $requestAuthModes = Array();
 
   Future<Array<dynamic>> get requestAuthModes async {
     return $requestAuthModes;
@@ -36544,44 +36552,50 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, AddCardOption>>
-      addCard<T extends AddCardOption>(T option) async {
+  Future<AddCardSuccessCallbackResult> addCard<T extends AddCardOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('addCard', [option]);
-    return result;
+
+    return AddCardSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, AddFileToFavoritesOption>>
+  Future<GeneralCallbackResult>
       addFileToFavorites<T extends AddFileToFavoritesOption>(T option) async {
     final result =
         await $$context$$?.callMethod('addFileToFavorites', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, AddPhoneCalendarOption>>
+  Future<GeneralCallbackResult>
       addPhoneCalendar<T extends AddPhoneCalendarOption>(T option) async {
     final result = await $$context$$?.callMethod('addPhoneCalendar', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, AddPhoneContactOption>>
+  Future<GeneralCallbackResult>
       addPhoneContact<T extends AddPhoneContactOption>(T option) async {
     final result = await $$context$$?.callMethod('addPhoneContact', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, AddPhoneRepeatCalendarOption>>
+  Future<GeneralCallbackResult>
       addPhoneRepeatCalendar<T extends AddPhoneRepeatCalendarOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('addPhoneRepeatCalendar', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, AddVideoToFavoritesOption>>
+  Future<GeneralCallbackResult>
       addVideoToFavorites<T extends AddVideoToFavoritesOption>(T option) async {
     final result =
         await $$context$$?.callMethod('addVideoToFavorites', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> authPrivateMessage([AuthPrivateMessageOption? option]) async {
@@ -36590,10 +36604,11 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, AuthorizeOption>>
-      authorize<T extends AuthorizeOption>(T option) async {
+  Future<GeneralCallbackResult> authorize<T extends AuthorizeOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('authorize', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> authorizeForMiniProgram(
@@ -36603,65 +36618,75 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, CanvasGetImageDataOption>>
+  Future<CanvasGetImageDataSuccessCallbackResult>
       canvasGetImageData<T extends CanvasGetImageDataOption>(T option,
           [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasGetImageData', [option, component]);
-    return result;
+
+    return CanvasGetImageDataSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CanvasPutImageDataOption>>
+  Future<GeneralCallbackResult>
       canvasPutImageData<T extends CanvasPutImageDataOption>(T option,
           [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasPutImageData', [option, component]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CanvasToTempFilePathOption>>
+  Future<CanvasToTempFilePathSuccessCallbackResult>
       canvasToTempFilePath<T extends CanvasToTempFilePathOption>(T option,
           [dynamic component]) async {
     final result = await $$context$$
         ?.callMethod('canvasToTempFilePath', [option, component]);
-    return result;
+
+    return CanvasToTempFilePathSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CheckIsOpenAccessibilityOption>>
+  Future<CheckIsOpenAccessibilitySuccessCallbackResult>
       checkIsOpenAccessibility<T extends CheckIsOpenAccessibilityOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('checkIsOpenAccessibility', [option]);
-    return result;
+
+    return CheckIsOpenAccessibilitySuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CheckIsSoterEnrolledInDeviceOption>>
+  Future<CheckIsSoterEnrolledInDeviceSuccessCallbackResult>
       checkIsSoterEnrolledInDevice<
           T extends CheckIsSoterEnrolledInDeviceOption>(T option) async {
     final result =
         await $$context$$?.callMethod('checkIsSoterEnrolledInDevice', [option]);
-    return result;
+
+    return CheckIsSoterEnrolledInDeviceSuccessCallbackResult(
+        $$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CheckIsSupportSoterAuthenticationOption>>
+  Future<CheckIsSupportSoterAuthenticationSuccessCallbackResult>
       checkIsSupportSoterAuthentication<
               T extends CheckIsSupportSoterAuthenticationOption>(
           [T? option]) async {
     final result = await $$context$$
         ?.callMethod('checkIsSupportSoterAuthentication', [option]);
-    return result;
+
+    return CheckIsSupportSoterAuthenticationSuccessCallbackResult(
+        $$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CheckSessionOption>>
-      checkSession<T extends CheckSessionOption>([T? option]) async {
+  Future<GeneralCallbackResult> checkSession<T extends CheckSessionOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('checkSession', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseAddressOption>>
+  Future<ChooseAddressSuccessCallbackResult>
       chooseAddress<T extends ChooseAddressOption>([T? option]) async {
     final result = await $$context$$?.callMethod('chooseAddress', [option]);
-    return result;
+
+    return ChooseAddressSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> chooseContact([ChooseContactOption? option]) async {
@@ -36670,68 +36695,78 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, ChooseImageOption>>
+  Future<ChooseImageSuccessCallbackResult>
       chooseImage<T extends ChooseImageOption>([T? option]) async {
     final result = await $$context$$?.callMethod('chooseImage', [option]);
-    return result;
+
+    return ChooseImageSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseInvoiceOption>>
+  Future<ChooseInvoiceSuccessCallbackResult>
       chooseInvoice<T extends ChooseInvoiceOption>([T? option]) async {
     final result = await $$context$$?.callMethod('chooseInvoice', [option]);
-    return result;
+
+    return ChooseInvoiceSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseInvoiceTitleOption>>
+  Future<ChooseInvoiceTitleSuccessCallbackResult>
       chooseInvoiceTitle<T extends ChooseInvoiceTitleOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('chooseInvoiceTitle', [option]);
-    return result;
+
+    return ChooseInvoiceTitleSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseLicensePlateOption>>
+  Future<ChooseLicensePlateSuccessCallbackResult>
       chooseLicensePlate<T extends ChooseLicensePlateOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('chooseLicensePlate', [option]);
-    return result;
+
+    return ChooseLicensePlateSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseLocationOption>>
+  Future<ChooseLocationSuccessCallbackResult>
       chooseLocation<T extends ChooseLocationOption>(T option) async {
     final result = await $$context$$?.callMethod('chooseLocation', [option]);
-    return result;
+
+    return ChooseLocationSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseMediaOption>>
+  Future<ChooseMediaSuccessCallbackResult>
       chooseMedia<T extends ChooseMediaOption>(T option) async {
     final result = await $$context$$?.callMethod('chooseMedia', [option]);
-    return result;
+
+    return ChooseMediaSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseMessageFileOption>>
+  Future<ChooseMessageFileSuccessCallbackResult>
       chooseMessageFile<T extends ChooseMessageFileOption>(T option) async {
     final result = await $$context$$?.callMethod('chooseMessageFile', [option]);
-    return result;
+
+    return ChooseMessageFileSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChoosePoiOption>>
-      choosePoi<T extends ChoosePoiOption>(T option) async {
+  Future<ChoosePoiSuccessCallbackResult> choosePoi<T extends ChoosePoiOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('choosePoi', [option]);
-    return result;
+
+    return ChoosePoiSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ChooseVideoOption>>
+  Future<ChooseVideoSuccessCallbackResult>
       chooseVideo<T extends ChooseVideoOption>(T option) async {
     final result = await $$context$$?.callMethod('chooseVideo', [option]);
-    return result;
+
+    return ChooseVideoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ClearStorageOption>>
-      clearStorage<T extends ClearStorageOption>([T? option]) async {
+  Future<GeneralCallbackResult> clearStorage<T extends ClearStorageOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('clearStorage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> clearStorageSync() async {
@@ -36739,58 +36774,65 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, CloseBLEConnectionOption>>
-      closeBLEConnection<T extends CloseBLEConnectionOption>(T option) async {
+  Future<BluetoothError> closeBLEConnection<T extends CloseBLEConnectionOption>(
+      T option) async {
     final result =
         await $$context$$?.callMethod('closeBLEConnection', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CloseBluetoothAdapterOption>>
+  Future<BluetoothError>
       closeBluetoothAdapter<T extends CloseBluetoothAdapterOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('closeBluetoothAdapter', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CloseSocketOption>>
-      closeSocket<T extends CloseSocketOption>([T? option]) async {
+  Future<GeneralCallbackResult> closeSocket<T extends CloseSocketOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('closeSocket', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CompressImageOption>>
+  Future<CompressImageSuccessCallbackResult>
       compressImage<T extends CompressImageOption>(T option) async {
     final result = await $$context$$?.callMethod('compressImage', [option]);
-    return result;
+
+    return CompressImageSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CompressVideoOption>>
+  Future<CompressVideoSuccessCallbackResult>
       compressVideo<T extends CompressVideoOption>(T option) async {
     final result = await $$context$$?.callMethod('compressVideo', [option]);
-    return result;
+
+    return CompressVideoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ConnectWifiOption>>
-      connectWifi<T extends ConnectWifiOption>(T option) async {
+  Future<WifiError> connectWifi<T extends ConnectWifiOption>(T option) async {
     final result = await $$context$$?.callMethod('connectWifi', [option]);
-    return result;
+
+    return WifiError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CreateBLEConnectionOption>>
+  Future<BluetoothError>
       createBLEConnection<T extends CreateBLEConnectionOption>(T option) async {
     final result =
         await $$context$$?.callMethod('createBLEConnection', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, CreateBLEPeripheralServerOption>>
+  Future<CreateBLEPeripheralServerSuccessCallbackResult>
       createBLEPeripheralServer<T extends CreateBLEPeripheralServerOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('createBLEPeripheralServer', [option]);
-    return result;
+
+    return CreateBLEPeripheralServerSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> createBufferURL(dynamic buffer) async {
@@ -36812,16 +36854,18 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, ExitMiniProgramOption>>
+  Future<GeneralCallbackResult>
       exitMiniProgram<T extends ExitMiniProgramOption>([T? option]) async {
     final result = await $$context$$?.callMethod('exitMiniProgram', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ExitVoIPChatOption>>
-      exitVoIPChat<T extends ExitVoIPChatOption>([T? option]) async {
+  Future<GeneralCallbackResult> exitVoIPChat<T extends ExitVoIPChatOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('exitVoIPChat', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> faceDetect(FaceDetectOption option) async {
@@ -36830,86 +36874,99 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, GetAvailableAudioSourcesOption>>
+  Future<GetAvailableAudioSourcesSuccessCallbackResult>
       getAvailableAudioSources<T extends GetAvailableAudioSourcesOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getAvailableAudioSources', [option]);
-    return result;
+
+    return GetAvailableAudioSourcesSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBLEDeviceCharacteristicsOption>>
+  Future<GetBLEDeviceCharacteristicsSuccessCallbackResult>
       getBLEDeviceCharacteristics<T extends GetBLEDeviceCharacteristicsOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('getBLEDeviceCharacteristics', [option]);
-    return result;
+
+    return GetBLEDeviceCharacteristicsSuccessCallbackResult(
+        $$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBLEDeviceRSSIOption>>
+  Future<GetBLEDeviceRSSISuccessCallbackResult>
       getBLEDeviceRSSI<T extends GetBLEDeviceRSSIOption>(T option) async {
     final result = await $$context$$?.callMethod('getBLEDeviceRSSI', [option]);
-    return result;
+
+    return GetBLEDeviceRSSISuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBLEDeviceServicesOption>>
+  Future<GetBLEDeviceServicesSuccessCallbackResult>
       getBLEDeviceServices<T extends GetBLEDeviceServicesOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('getBLEDeviceServices', [option]);
-    return result;
+
+    return GetBLEDeviceServicesSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBackgroundAudioPlayerStateOption>>
+  Future<GetBackgroundAudioPlayerStateSuccessCallbackResult>
       getBackgroundAudioPlayerState<
           T extends GetBackgroundAudioPlayerStateOption>([T? option]) async {
     final result = await $$context$$
         ?.callMethod('getBackgroundAudioPlayerState', [option]);
-    return result;
+
+    return GetBackgroundAudioPlayerStateSuccessCallbackResult(
+        $$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBackgroundFetchDataOption>>
+  Future<GeneralCallbackResult>
       getBackgroundFetchData<T extends GetBackgroundFetchDataOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('getBackgroundFetchData', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBackgroundFetchTokenOption>>
+  Future<GeneralCallbackResult>
       getBackgroundFetchToken<T extends GetBackgroundFetchTokenOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getBackgroundFetchToken', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBatteryInfoOption>>
+  Future<GetBatteryInfoSuccessCallbackResult>
       getBatteryInfo<T extends GetBatteryInfoOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getBatteryInfo', [option]);
-    return result;
+
+    return GetBatteryInfoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBeaconsOption>>
+  Future<GetBeaconsSuccessCallbackResult>
       getBeacons<T extends GetBeaconsOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getBeacons', [option]);
-    return result;
+
+    return GetBeaconsSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBluetoothAdapterStateOption>>
+  Future<GetBluetoothAdapterStateSuccessCallbackResult>
       getBluetoothAdapterState<T extends GetBluetoothAdapterStateOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getBluetoothAdapterState', [option]);
-    return result;
+
+    return GetBluetoothAdapterStateSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetBluetoothDevicesOption>>
+  Future<GetBluetoothDevicesSuccessCallbackResult>
       getBluetoothDevices<T extends GetBluetoothDevicesOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getBluetoothDevices', [option]);
-    return result;
+
+    return GetBluetoothDevicesSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> getChannelsLiveInfo(GetChannelsLiveInfoOption option) async {
@@ -36925,36 +36982,42 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, GetClipboardDataOption>>
+  Future<GetClipboardDataSuccessCallbackResult>
       getClipboardData<T extends GetClipboardDataOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getClipboardData', [option]);
-    return result;
+
+    return GetClipboardDataSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetConnectedBluetoothDevicesOption>>
+  Future<GetConnectedBluetoothDevicesSuccessCallbackResult>
       getConnectedBluetoothDevices<
           T extends GetConnectedBluetoothDevicesOption>(T option) async {
     final result =
         await $$context$$?.callMethod('getConnectedBluetoothDevices', [option]);
-    return result;
+
+    return GetConnectedBluetoothDevicesSuccessCallbackResult(
+        $$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetConnectedWifiOption>>
+  Future<GetConnectedWifiSuccessCallbackResult>
       getConnectedWifi<T extends GetConnectedWifiOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getConnectedWifi', [option]);
-    return result;
+
+    return GetConnectedWifiSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetExtConfigOption>>
+  Future<GetExtConfigSuccessCallbackResult>
       getExtConfig<T extends GetExtConfigOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getExtConfig', [option]);
-    return result;
+
+    return GetExtConfigSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WxGetFileInfoOption>>
+  Future<WxGetFileInfoSuccessCallbackResult>
       getFileInfo<T extends WxGetFileInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getFileInfo', [option]);
-    return result;
+
+    return WxGetFileInfoSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> getGroupEnterInfo(GetGroupEnterInfoOption option) async {
@@ -36963,74 +37026,84 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, GetHCEStateOption>>
-      getHCEState<T extends GetHCEStateOption>([T? option]) async {
+  Future<NFCError> getHCEState<T extends GetHCEStateOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getHCEState', [option]);
-    return result;
+
+    return NFCError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetImageInfoOption>>
+  Future<GetImageInfoSuccessCallbackResult>
       getImageInfo<T extends GetImageInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getImageInfo', [option]);
-    return result;
+
+    return GetImageInfoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetLocationOption>>
+  Future<GetLocationSuccessCallbackResult>
       getLocation<T extends GetLocationOption>(T option) async {
     final result = await $$context$$?.callMethod('getLocation', [option]);
-    return result;
+
+    return GetLocationSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetNetworkTypeOption>>
+  Future<GetNetworkTypeSuccessCallbackResult>
       getNetworkType<T extends GetNetworkTypeOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getNetworkType', [option]);
-    return result;
+
+    return GetNetworkTypeSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetRandomValuesOption>>
+  Future<GetRandomValuesSuccessCallbackResult>
       getRandomValues<T extends GetRandomValuesOption>(T option) async {
     final result = await $$context$$?.callMethod('getRandomValues', [option]);
-    return result;
+
+    return GetRandomValuesSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetSavedFileInfoOption>>
+  Future<GetSavedFileInfoSuccessCallbackResult>
       getSavedFileInfo<T extends GetSavedFileInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getSavedFileInfo', [option]);
-    return result;
+
+    return GetSavedFileInfoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WxGetSavedFileListOption>>
+  Future<WxGetSavedFileListSuccessCallbackResult>
       getSavedFileList<T extends WxGetSavedFileListOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getSavedFileList', [option]);
-    return result;
+
+    return WxGetSavedFileListSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetScreenBrightnessOption>>
+  Future<GetScreenBrightnessSuccessCallbackResult>
       getScreenBrightness<T extends GetScreenBrightnessOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getScreenBrightness', [option]);
-    return result;
+
+    return GetScreenBrightnessSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetSelectedTextRangeOption>>
+  Future<GetSelectedTextRangeSuccessCallbackResult>
       getSelectedTextRange<T extends GetSelectedTextRangeOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getSelectedTextRange', [option]);
-    return result;
+
+    return GetSelectedTextRangeSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetSettingOption>>
+  Future<GetSettingSuccessCallbackResult>
       getSetting<T extends GetSettingOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getSetting', [option]);
-    return result;
+
+    return GetSettingSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetShareInfoOption>>
+  Future<GetGroupEnterInfoSuccessCallbackResult>
       getShareInfo<T extends GetShareInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getShareInfo', [option]);
-    return result;
+
+    return GetGroupEnterInfoSuccessCallbackResult($$context$$: result);
   }
 
   Future<PromisifySuccessResult<U, GetStorageOption<T>>>
@@ -37040,16 +37113,18 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, GetStorageInfoOption>>
+  Future<GetStorageInfoSuccessCallbackOption>
       getStorageInfo<T extends GetStorageInfoOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getStorageInfo', [option]);
-    return result;
+
+    return GetStorageInfoSuccessCallbackOption($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetSystemInfoOption>>
-      getSystemInfo<T extends GetSystemInfoOption>([T? option]) async {
+  Future<SystemInfo> getSystemInfo<T extends GetSystemInfoOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('getSystemInfo', [option]);
-    return result;
+
+    return SystemInfo($$context$$: result);
   }
 
   Future<void> getSystemInfoAsync([GetSystemInfoAsyncOption? option]) async {
@@ -37058,84 +37133,97 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, GetUserInfoOption>>
+  Future<GetUserInfoSuccessCallbackResult>
       getUserInfo<T extends GetUserInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getUserInfo', [option]);
-    return result;
+
+    return GetUserInfoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetUserProfileOption>>
+  Future<GetUserProfileSuccessCallbackResult>
       getUserProfile<T extends GetUserProfileOption>(T option) async {
     final result = await $$context$$?.callMethod('getUserProfile', [option]);
-    return result;
+
+    return GetUserProfileSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetVideoInfoOption>>
+  Future<GetVideoInfoSuccessCallbackResult>
       getVideoInfo<T extends GetVideoInfoOption>(T option) async {
     final result = await $$context$$?.callMethod('getVideoInfo', [option]);
-    return result;
+
+    return GetVideoInfoSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetWeRunDataOption>>
+  Future<GetWeRunDataSuccessCallbackResult>
       getWeRunData<T extends GetWeRunDataOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getWeRunData', [option]);
-    return result;
+
+    return GetWeRunDataSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, GetWifiListOption>>
-      getWifiList<T extends GetWifiListOption>([T? option]) async {
+  Future<WifiError> getWifiList<T extends GetWifiListOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('getWifiList', [option]);
-    return result;
+
+    return WifiError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideHomeButtonOption>>
-      hideHomeButton<T extends HideHomeButtonOption>([T? option]) async {
+  Future<GeneralCallbackResult> hideHomeButton<T extends HideHomeButtonOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('hideHomeButton', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideKeyboardOption>>
-      hideKeyboard<T extends HideKeyboardOption>([T? option]) async {
+  Future<GeneralCallbackResult> hideKeyboard<T extends HideKeyboardOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('hideKeyboard', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideLoadingOption>>
-      hideLoading<T extends HideLoadingOption>([T? option]) async {
+  Future<GeneralCallbackResult> hideLoading<T extends HideLoadingOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('hideLoading', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideNavigationBarLoadingOption>>
+  Future<GeneralCallbackResult>
       hideNavigationBarLoading<T extends HideNavigationBarLoadingOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('hideNavigationBarLoading', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideShareMenuOption>>
-      hideShareMenu<T extends HideShareMenuOption>([T? option]) async {
+  Future<GeneralCallbackResult> hideShareMenu<T extends HideShareMenuOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('hideShareMenu', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideTabBarOption>>
-      hideTabBar<T extends HideTabBarOption>(T option) async {
+  Future<GeneralCallbackResult> hideTabBar<T extends HideTabBarOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('hideTabBar', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideTabBarRedDotOption>>
+  Future<GeneralCallbackResult>
       hideTabBarRedDot<T extends HideTabBarRedDotOption>(T option) async {
     final result = await $$context$$?.callMethod('hideTabBarRedDot', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, HideToastOption>>
-      hideToast<T extends HideToastOption>([T? option]) async {
+  Future<GeneralCallbackResult> hideToast<T extends HideToastOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('hideToast', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> initFaceDetect([InitFaceDetectOption? option]) async {
@@ -37144,62 +37232,71 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, JoinVoIPChatOption>>
+  Future<JoinVoIPChatSuccessCallbackResult>
       joinVoIPChat<T extends JoinVoIPChatOption>(T option) async {
     final result = await $$context$$?.callMethod('joinVoIPChat', [option]);
-    return result;
+
+    return JoinVoIPChatSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, LoadFontFaceOption>>
+  Future<LoadFontFaceCompleteCallbackResult>
       loadFontFace<T extends LoadFontFaceOption>(T option) async {
     final result = await $$context$$?.callMethod('loadFontFace', [option]);
-    return result;
+
+    return LoadFontFaceCompleteCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, LoginOption>> login<T extends LoginOption>(
+  Future<LoginSuccessCallbackResult> login<T extends LoginOption>(
       [T? option]) async {
     final result = await $$context$$?.callMethod('login', [option]);
-    return result;
+
+    return LoginSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, MakeBluetoothPairOption>>
+  Future<GeneralCallbackResult>
       makeBluetoothPair<T extends MakeBluetoothPairOption>(T option) async {
     final result = await $$context$$?.callMethod('makeBluetoothPair', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, MakePhoneCallOption>>
-      makePhoneCall<T extends MakePhoneCallOption>(T option) async {
+  Future<GeneralCallbackResult> makePhoneCall<T extends MakePhoneCallOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('makePhoneCall', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, NavigateBackOption>>
-      navigateBack<T extends NavigateBackOption>([T? option]) async {
+  Future<GeneralCallbackResult> navigateBack<T extends NavigateBackOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('navigateBack', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, NavigateBackMiniProgramOption>>
+  Future<GeneralCallbackResult>
       navigateBackMiniProgram<T extends NavigateBackMiniProgramOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('navigateBackMiniProgram', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, NavigateToOption>>
-      navigateTo<T extends NavigateToOption>(T option) async {
+  Future<GeneralCallbackResult> navigateTo<T extends NavigateToOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('navigateTo', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, NavigateToMiniProgramOption>>
+  Future<GeneralCallbackResult>
       navigateToMiniProgram<T extends NavigateToMiniProgramOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('navigateToMiniProgram', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> nextTick(dynamic callback) async {
@@ -37207,12 +37304,12 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, NotifyBLECharacteristicValueChangeOption>>
-      notifyBLECharacteristicValueChange<
-          T extends NotifyBLECharacteristicValueChangeOption>(T option) async {
+  Future<BluetoothError> notifyBLECharacteristicValueChange<
+      T extends NotifyBLECharacteristicValueChangeOption>(T option) async {
     final result = await $$context$$
         ?.callMethod('notifyBLECharacteristicValueChange', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
   Future<void> offAccelerometerChange(dynamic callback) async {
@@ -37721,18 +37818,20 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, OpenBluetoothAdapterOption>>
+  Future<BluetoothError>
       openBluetoothAdapter<T extends OpenBluetoothAdapterOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('openBluetoothAdapter', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, OpenCardOption>>
-      openCard<T extends OpenCardOption>(T option) async {
+  Future<GeneralCallbackResult> openCard<T extends OpenCardOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('openCard', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> openChannelsActivity(OpenChannelsActivityOption option) async {
@@ -37754,22 +37853,25 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, OpenDocumentOption>>
-      openDocument<T extends OpenDocumentOption>(T option) async {
+  Future<GeneralCallbackResult> openDocument<T extends OpenDocumentOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('openDocument', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, OpenLocationOption>>
-      openLocation<T extends OpenLocationOption>(T option) async {
+  Future<GeneralCallbackResult> openLocation<T extends OpenLocationOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('openLocation', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, OpenSettingOption>>
+  Future<OpenSettingSuccessCallbackResult>
       openSetting<T extends OpenSettingOption>([T? option]) async {
     final result = await $$context$$?.callMethod('openSetting', [option]);
-    return result;
+
+    return OpenSettingSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> openVideoEditor(OpenVideoEditorOption option) async {
@@ -37778,81 +37880,93 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, PageScrollToOption>>
-      pageScrollTo<T extends PageScrollToOption>(T option) async {
+  Future<GeneralCallbackResult> pageScrollTo<T extends PageScrollToOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('pageScrollTo', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PauseBackgroundAudioOption>>
+  Future<GeneralCallbackResult>
       pauseBackgroundAudio<T extends PauseBackgroundAudioOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('pauseBackgroundAudio', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PauseVoiceOption>>
-      pauseVoice<T extends PauseVoiceOption>([T? option]) async {
+  Future<GeneralCallbackResult> pauseVoice<T extends PauseVoiceOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('pauseVoice', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PlayBackgroundAudioOption>>
+  Future<GeneralCallbackResult>
       playBackgroundAudio<T extends PlayBackgroundAudioOption>(T option) async {
     final result =
         await $$context$$?.callMethod('playBackgroundAudio', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PlayVoiceOption>>
-      playVoice<T extends PlayVoiceOption>(T option) async {
+  Future<GeneralCallbackResult> playVoice<T extends PlayVoiceOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('playVoice', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PreviewImageOption>>
-      previewImage<T extends PreviewImageOption>(T option) async {
+  Future<GeneralCallbackResult> previewImage<T extends PreviewImageOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('previewImage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, PreviewMediaOption>>
-      previewMedia<T extends PreviewMediaOption>(T option) async {
+  Future<GeneralCallbackResult> previewMedia<T extends PreviewMediaOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('previewMedia', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ReLaunchOption>>
-      reLaunch<T extends ReLaunchOption>(T option) async {
+  Future<GeneralCallbackResult> reLaunch<T extends ReLaunchOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('reLaunch', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ReadBLECharacteristicValueOption>>
+  Future<BluetoothError>
       readBLECharacteristicValue<T extends ReadBLECharacteristicValueOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('readBLECharacteristicValue', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, RedirectToOption>>
-      redirectTo<T extends RedirectToOption>(T option) async {
+  Future<GeneralCallbackResult> redirectTo<T extends RedirectToOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('redirectTo', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WxRemoveSavedFileOption>>
+  Future<GeneralCallbackResult>
       removeSavedFile<T extends WxRemoveSavedFileOption>(T option) async {
     final result = await $$context$$?.callMethod('removeSavedFile', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, RemoveStorageOption>>
-      removeStorage<T extends RemoveStorageOption>(T option) async {
+  Future<GeneralCallbackResult> removeStorage<T extends RemoveStorageOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('removeStorage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> removeStorageSync(String key) async {
@@ -37860,10 +37974,11 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, RemoveTabBarBadgeOption>>
+  Future<GeneralCallbackResult>
       removeTabBarBadge<T extends RemoveTabBarBadgeOption>(T option) async {
     final result = await $$context$$?.callMethod('removeTabBarBadge', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> reportAnalytics(String eventName, IAnyObject data) async {
@@ -37891,24 +38006,27 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, RequestOrderPaymentOption>>
+  Future<GeneralCallbackResult>
       requestOrderPayment<T extends RequestOrderPaymentOption>(T args) async {
     final result = await $$context$$?.callMethod('requestOrderPayment', [args]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, RequestPaymentOption>>
-      requestPayment<T extends RequestPaymentOption>(T option) async {
+  Future<GeneralCallbackResult> requestPayment<T extends RequestPaymentOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('requestPayment', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, RequestSubscribeMessageOption>>
+  Future<RequestSubscribeMessageSuccessCallbackResult>
       requestSubscribeMessage<T extends RequestSubscribeMessageOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('requestSubscribeMessage', [option]);
-    return result;
+
+    return RequestSubscribeMessageSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> reserveChannelsLive(ReserveChannelsLiveOption option) async {
@@ -37922,10 +38040,11 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, WxSaveFileOption>>
-      saveFile<T extends WxSaveFileOption>(T option) async {
+  Future<SaveFileSuccessCallbackResult> saveFile<T extends WxSaveFileOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('saveFile', [option]);
-    return result;
+
+    return SaveFileSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> saveFileToDisk(SaveFileToDiskOption option) async {
@@ -37934,128 +38053,146 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, SaveImageToPhotosAlbumOption>>
+  Future<GeneralCallbackResult>
       saveImageToPhotosAlbum<T extends SaveImageToPhotosAlbumOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('saveImageToPhotosAlbum', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SaveVideoToPhotosAlbumOption>>
+  Future<GeneralCallbackResult>
       saveVideoToPhotosAlbum<T extends SaveVideoToPhotosAlbumOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('saveVideoToPhotosAlbum', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ScanCodeOption>>
-      scanCode<T extends ScanCodeOption>(T option) async {
+  Future<ScanCodeSuccessCallbackResult> scanCode<T extends ScanCodeOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('scanCode', [option]);
-    return result;
+
+    return ScanCodeSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SearchContactsOption>>
+  Future<SearchContactsSuccessCallbackResult>
       searchContacts<T extends SearchContactsOption>(T option) async {
     final result = await $$context$$?.callMethod('searchContacts', [option]);
-    return result;
+
+    return SearchContactsSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SeekBackgroundAudioOption>>
+  Future<GeneralCallbackResult>
       seekBackgroundAudio<T extends SeekBackgroundAudioOption>(T option) async {
     final result =
         await $$context$$?.callMethod('seekBackgroundAudio', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SendHCEMessageOption>>
-      sendHCEMessage<T extends SendHCEMessageOption>(T option) async {
+  Future<NFCError> sendHCEMessage<T extends SendHCEMessageOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('sendHCEMessage', [option]);
-    return result;
+
+    return NFCError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SendSocketMessageOption>>
+  Future<GeneralCallbackResult>
       sendSocketMessage<T extends SendSocketMessageOption>(T option) async {
     final result = await $$context$$?.callMethod('sendSocketMessage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetBLEMTUOption>>
-      setBLEMTU<T extends SetBLEMTUOption>(T option) async {
+  Future<SetBLEMTUSuccessCallbackResult> setBLEMTU<T extends SetBLEMTUOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('setBLEMTU', [option]);
-    return result;
+
+    return SetBLEMTUSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetBackgroundColorOption>>
+  Future<GeneralCallbackResult>
       setBackgroundColor<T extends SetBackgroundColorOption>(T option) async {
     final result =
         await $$context$$?.callMethod('setBackgroundColor', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetBackgroundFetchTokenOption>>
+  Future<GeneralCallbackResult>
       setBackgroundFetchToken<T extends SetBackgroundFetchTokenOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('setBackgroundFetchToken', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetBackgroundTextStyleOption>>
+  Future<GeneralCallbackResult>
       setBackgroundTextStyle<T extends SetBackgroundTextStyleOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('setBackgroundTextStyle', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetClipboardDataOption>>
+  Future<GeneralCallbackResult>
       setClipboardData<T extends SetClipboardDataOption>(T option) async {
     final result = await $$context$$?.callMethod('setClipboardData', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetEnableDebugOption>>
-      setEnableDebug<T extends SetEnableDebugOption>(T option) async {
+  Future<GeneralCallbackResult> setEnableDebug<T extends SetEnableDebugOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('setEnableDebug', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetInnerAudioOption>>
+  Future<GeneralCallbackResult>
       setInnerAudioOption<T extends SetInnerAudioOption>(T option) async {
     final result =
         await $$context$$?.callMethod('setInnerAudioOption', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetKeepScreenOnOption>>
+  Future<GeneralCallbackResult>
       setKeepScreenOn<T extends SetKeepScreenOnOption>(T option) async {
     final result = await $$context$$?.callMethod('setKeepScreenOn', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetNavigationBarColorOption>>
+  Future<GeneralCallbackResult>
       setNavigationBarColor<T extends SetNavigationBarColorOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('setNavigationBarColor', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetNavigationBarTitleOption>>
+  Future<GeneralCallbackResult>
       setNavigationBarTitle<T extends SetNavigationBarTitleOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('setNavigationBarTitle', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetScreenBrightnessOption>>
+  Future<GeneralCallbackResult>
       setScreenBrightness<T extends SetScreenBrightnessOption>(T option) async {
     final result =
         await $$context$$?.callMethod('setScreenBrightness', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<PromisifySuccessResult<U, SetStorageOption<T>>>
@@ -38070,34 +38207,38 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, SetTabBarBadgeOption>>
-      setTabBarBadge<T extends SetTabBarBadgeOption>(T option) async {
+  Future<GeneralCallbackResult> setTabBarBadge<T extends SetTabBarBadgeOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('setTabBarBadge', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetTabBarItemOption>>
-      setTabBarItem<T extends SetTabBarItemOption>(T option) async {
+  Future<GeneralCallbackResult> setTabBarItem<T extends SetTabBarItemOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('setTabBarItem', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetTabBarStyleOption>>
-      setTabBarStyle<T extends SetTabBarStyleOption>([T? option]) async {
+  Future<GeneralCallbackResult> setTabBarStyle<T extends SetTabBarStyleOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('setTabBarStyle', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetTopBarTextOption>>
-      setTopBarText<T extends SetTopBarTextOption>(T option) async {
+  Future<GeneralCallbackResult> setTopBarText<T extends SetTopBarTextOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('setTopBarText', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SetWifiListOption>>
-      setWifiList<T extends SetWifiListOption>(T option) async {
+  Future<WifiError> setWifiList<T extends SetWifiListOption>(T option) async {
     final result = await $$context$$?.callMethod('setWifiList', [option]);
-    return result;
+
+    return WifiError($$context$$: result);
   }
 
   Future<void> setWindowSize(SetWindowSizeOption option) async {
@@ -38106,231 +38247,258 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, ShareFileMessageOption>>
+  Future<GeneralCallbackResult>
       shareFileMessage<T extends ShareFileMessageOption>(T option) async {
     final result = await $$context$$?.callMethod('shareFileMessage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShareToWeRunOption>>
-      shareToWeRun<T extends ShareToWeRunOption>(T option) async {
+  Future<GeneralCallbackResult> shareToWeRun<T extends ShareToWeRunOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('shareToWeRun', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShareVideoMessageOption>>
+  Future<GeneralCallbackResult>
       shareVideoMessage<T extends ShareVideoMessageOption>(T option) async {
     final result = await $$context$$?.callMethod('shareVideoMessage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowActionSheetOption>>
+  Future<ShowActionSheetSuccessCallbackResult>
       showActionSheet<T extends ShowActionSheetOption>(T option) async {
     final result = await $$context$$?.callMethod('showActionSheet', [option]);
-    return result;
+
+    return ShowActionSheetSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowLoadingOption>>
-      showLoading<T extends ShowLoadingOption>(T option) async {
+  Future<GeneralCallbackResult> showLoading<T extends ShowLoadingOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showLoading', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowModalOption>>
-      showModal<T extends ShowModalOption>(T option) async {
+  Future<ShowModalSuccessCallbackResult> showModal<T extends ShowModalOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showModal', [option]);
-    return result;
+
+    return ShowModalSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowNavigationBarLoadingOption>>
+  Future<GeneralCallbackResult>
       showNavigationBarLoading<T extends ShowNavigationBarLoadingOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('showNavigationBarLoading', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowRedPackageOption>>
-      showRedPackage<T extends ShowRedPackageOption>(T option) async {
+  Future<GeneralCallbackResult> showRedPackage<T extends ShowRedPackageOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showRedPackage', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowShareImageMenuOption>>
+  Future<GeneralCallbackResult>
       showShareImageMenu<T extends ShowShareImageMenuOption>(T option) async {
     final result =
         await $$context$$?.callMethod('showShareImageMenu', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowShareMenuOption>>
-      showShareMenu<T extends ShowShareMenuOption>(T option) async {
+  Future<GeneralCallbackResult> showShareMenu<T extends ShowShareMenuOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showShareMenu', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowTabBarOption>>
-      showTabBar<T extends ShowTabBarOption>(T option) async {
+  Future<GeneralCallbackResult> showTabBar<T extends ShowTabBarOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showTabBar', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowTabBarRedDotOption>>
+  Future<GeneralCallbackResult>
       showTabBarRedDot<T extends ShowTabBarRedDotOption>(T option) async {
     final result = await $$context$$?.callMethod('showTabBarRedDot', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, ShowToastOption>>
-      showToast<T extends ShowToastOption>(T option) async {
+  Future<GeneralCallbackResult> showToast<T extends ShowToastOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('showToast', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartAccelerometerOption>>
+  Future<GeneralCallbackResult>
       startAccelerometer<T extends StartAccelerometerOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('startAccelerometer', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartBeaconDiscoveryOption>>
+  Future<BeaconError>
       startBeaconDiscovery<T extends StartBeaconDiscoveryOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('startBeaconDiscovery', [option]);
-    return result;
+
+    return BeaconError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartBluetoothDevicesDiscoveryOption>>
-      startBluetoothDevicesDiscovery<
-          T extends StartBluetoothDevicesDiscoveryOption>(T option) async {
+  Future<BluetoothError> startBluetoothDevicesDiscovery<
+      T extends StartBluetoothDevicesDiscoveryOption>(T option) async {
     final result = await $$context$$
         ?.callMethod('startBluetoothDevicesDiscovery', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartCompassOption>>
-      startCompass<T extends StartCompassOption>([T? option]) async {
+  Future<GeneralCallbackResult> startCompass<T extends StartCompassOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('startCompass', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartDeviceMotionListeningOption>>
+  Future<GeneralCallbackResult>
       startDeviceMotionListening<T extends StartDeviceMotionListeningOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('startDeviceMotionListening', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartGyroscopeOption>>
-      startGyroscope<T extends StartGyroscopeOption>([T? option]) async {
+  Future<GeneralCallbackResult> startGyroscope<T extends StartGyroscopeOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('startGyroscope', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartHCEOption>>
-      startHCE<T extends StartHCEOption>(T option) async {
+  Future<NFCError> startHCE<T extends StartHCEOption>(T option) async {
     final result = await $$context$$?.callMethod('startHCE', [option]);
-    return result;
+
+    return NFCError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartLocalServiceDiscoveryOption>>
+  Future<GeneralCallbackResult>
       startLocalServiceDiscovery<T extends StartLocalServiceDiscoveryOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('startLocalServiceDiscovery', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartLocationUpdateOption>>
+  Future<GeneralCallbackResult>
       startLocationUpdate<T extends StartLocationUpdateOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('startLocationUpdate', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartLocationUpdateBackgroundOption>>
-      startLocationUpdateBackground<
-          T extends StartLocationUpdateBackgroundOption>([T? option]) async {
+  Future<GeneralCallbackResult> startLocationUpdateBackground<
+      T extends StartLocationUpdateBackgroundOption>([T? option]) async {
     final result = await $$context$$
         ?.callMethod('startLocationUpdateBackground', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartPullDownRefreshOption>>
+  Future<GeneralCallbackResult>
       startPullDownRefresh<T extends StartPullDownRefreshOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('startPullDownRefresh', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WxStartRecordOption>>
+  Future<StartRecordSuccessCallbackResult>
       startRecord<T extends WxStartRecordOption>([T? option]) async {
     final result = await $$context$$?.callMethod('startRecord', [option]);
-    return result;
+
+    return StartRecordSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartSoterAuthenticationOption>>
+  Future<StartSoterAuthenticationSuccessCallbackResult>
       startSoterAuthentication<T extends StartSoterAuthenticationOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('startSoterAuthentication', [option]);
-    return result;
+
+    return StartSoterAuthenticationSuccessCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StartWifiOption>>
-      startWifi<T extends StartWifiOption>([T? option]) async {
+  Future<WifiError> startWifi<T extends StartWifiOption>([T? option]) async {
     final result = await $$context$$?.callMethod('startWifi', [option]);
-    return result;
+
+    return WifiError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopAccelerometerOption>>
+  Future<GeneralCallbackResult>
       stopAccelerometer<T extends StopAccelerometerOption>([T? option]) async {
     final result = await $$context$$?.callMethod('stopAccelerometer', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopBackgroundAudioOption>>
+  Future<GeneralCallbackResult>
       stopBackgroundAudio<T extends StopBackgroundAudioOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopBackgroundAudio', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopBeaconDiscoveryOption>>
-      stopBeaconDiscovery<T extends StopBeaconDiscoveryOption>(
-          [T? option]) async {
+  Future<BeaconError> stopBeaconDiscovery<T extends StopBeaconDiscoveryOption>(
+      [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopBeaconDiscovery', [option]);
-    return result;
+
+    return BeaconError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopBluetoothDevicesDiscoveryOption>>
-      stopBluetoothDevicesDiscovery<
-          T extends StopBluetoothDevicesDiscoveryOption>([T? option]) async {
+  Future<BluetoothError> stopBluetoothDevicesDiscovery<
+      T extends StopBluetoothDevicesDiscoveryOption>([T? option]) async {
     final result = await $$context$$
         ?.callMethod('stopBluetoothDevicesDiscovery', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopCompassOption>>
-      stopCompass<T extends StopCompassOption>([T? option]) async {
+  Future<GeneralCallbackResult> stopCompass<T extends StopCompassOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('stopCompass', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopDeviceMotionListeningOption>>
+  Future<GeneralCallbackResult>
       stopDeviceMotionListening<T extends StopDeviceMotionListeningOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopDeviceMotionListening', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> stopFaceDetect([StopFaceDetectOption? option]) async {
@@ -38339,112 +38507,126 @@ class Wx {
     return result;
   }
 
-  Future<PromisifySuccessResult<T, StopGyroscopeOption>>
-      stopGyroscope<T extends StopGyroscopeOption>([T? option]) async {
+  Future<GeneralCallbackResult> stopGyroscope<T extends StopGyroscopeOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('stopGyroscope', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopHCEOption>>
-      stopHCE<T extends StopHCEOption>([T? option]) async {
+  Future<NFCError> stopHCE<T extends StopHCEOption>([T? option]) async {
     final result = await $$context$$?.callMethod('stopHCE', [option]);
-    return result;
+
+    return NFCError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopLocalServiceDiscoveryOption>>
+  Future<GeneralCallbackResult>
       stopLocalServiceDiscovery<T extends StopLocalServiceDiscoveryOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopLocalServiceDiscovery', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopLocationUpdateOption>>
+  Future<GeneralCallbackResult>
       stopLocationUpdate<T extends StopLocationUpdateOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopLocationUpdate', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopPullDownRefreshOption>>
+  Future<GeneralCallbackResult>
       stopPullDownRefresh<T extends StopPullDownRefreshOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('stopPullDownRefresh', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WxStopRecordOption>>
-      stopRecord<T extends WxStopRecordOption>([T? option]) async {
+  Future<GeneralCallbackResult> stopRecord<T extends WxStopRecordOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('stopRecord', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopVoiceOption>>
-      stopVoice<T extends StopVoiceOption>([T? option]) async {
+  Future<GeneralCallbackResult> stopVoice<T extends StopVoiceOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('stopVoice', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, StopWifiOption>>
-      stopWifi<T extends StopWifiOption>([T? option]) async {
+  Future<WifiError> stopWifi<T extends StopWifiOption>([T? option]) async {
     final result = await $$context$$?.callMethod('stopWifi', [option]);
-    return result;
+
+    return WifiError($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SubscribeVoIPVideoMembersOption>>
+  Future<GeneralCallbackResult>
       subscribeVoIPVideoMembers<T extends SubscribeVoIPVideoMembersOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('subscribeVoIPVideoMembers', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, SwitchTabOption>>
-      switchTab<T extends SwitchTabOption>(T option) async {
+  Future<GeneralCallbackResult> switchTab<T extends SwitchTabOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('switchTab', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, UpdateShareMenuOption>>
+  Future<GeneralCallbackResult>
       updateShareMenu<T extends UpdateShareMenuOption>(T option) async {
     final result = await $$context$$?.callMethod('updateShareMenu', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, UpdateVoIPChatMuteConfigOption>>
+  Future<GeneralCallbackResult>
       updateVoIPChatMuteConfig<T extends UpdateVoIPChatMuteConfigOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('updateVoIPChatMuteConfig', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, UpdateWeChatAppOption>>
+  Future<GeneralCallbackResult>
       updateWeChatApp<T extends UpdateWeChatAppOption>([T? option]) async {
     final result = await $$context$$?.callMethod('updateWeChatApp', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, VibrateLongOption>>
-      vibrateLong<T extends VibrateLongOption>([T? option]) async {
+  Future<GeneralCallbackResult> vibrateLong<T extends VibrateLongOption>(
+      [T? option]) async {
     final result = await $$context$$?.callMethod('vibrateLong', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, VibrateShortOption>>
-      vibrateShort<T extends VibrateShortOption>(T option) async {
+  Future<GeneralCallbackResult> vibrateShort<T extends VibrateShortOption>(
+      T option) async {
     final result = await $$context$$?.callMethod('vibrateShort', [option]);
-    return result;
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<PromisifySuccessResult<T, WriteBLECharacteristicValueOption>>
+  Future<BluetoothError>
       writeBLECharacteristicValue<T extends WriteBLECharacteristicValueOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('writeBLECharacteristicValue', [option]);
-    return result;
+
+    return BluetoothError($$context$$: result);
   }
 }
 
@@ -40908,9 +41090,3 @@ typedef WxStartRecordSuccessCallback = void Function(
     StartRecordSuccessCallbackResult);
 
 typedef WxStopRecordSuccessCallback = void Function(GeneralCallbackResult);
-
-class UniversalMiniProgramApi {
-  static Wx get uni {
-    return Wx($$context$$: mpjs.context['uni']);
-  }
-}
