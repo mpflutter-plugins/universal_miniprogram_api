@@ -9,6 +9,14 @@ class IAnyObject {
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
   }
+
+  Future<T?> getValue<T>(String key) async {
+    return $$context$$?.getPropertyValue(key);
+  }
+
+  Future setValue<T>(String key, dynamic value) async {
+    return await $$context$$?.setPropertyValue(key, value);
+  }
 }
 
 class PromisifySuccessResult<T, U> {
