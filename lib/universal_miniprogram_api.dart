@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
 class IAnyObject {
@@ -36,6 +37,11 @@ class ArrayBuffer {
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
+  }
+
+  Future<Uint8List> toUint8List() async {
+    return base64
+        .decode(await UniversalMiniProgramApi.uni.arrayBufferToBase64(this));
   }
 }
 
@@ -36199,32 +36205,12 @@ class WriteSyncError {
 class Wx {
   mpjs.JsObject? $$context$$;
 
-  // WxCloud $cloud= WxCloud();
-
-  //   Future<WxCloud> get cloud async {
-  //       return $cloud;
-
-  //     }
-
-  dynamic $env;
-
-  Future<dynamic> get env async {
-    return await $$context$$?.getPropertyValue('env') ?? $env;
+  Future<IAnyObject> get env async {
+    final result = await $$context$$?.getPropertyValue('env');
+    return IAnyObject($$context$$: result);
   }
 
   Wx({this.$$context$$});
-
-  void setValues({dynamic env}) {
-    // if (cloud != null) $cloud = cloud;
-    if (env != null) $env = env;
-  }
-
-  Map toJson() {
-    return {
-      // 'cloud': $cloud,
-      'env': $env
-    }..removeWhere((key, value) => value == null);
-  }
 
   Future<ArrayBuffer> base64ToArrayBuffer(String base64) async {
     final result =
@@ -36548,7 +36534,7 @@ class Wx {
 
   Future<String> arrayBufferToBase64(ArrayBuffer arrayBuffer) async {
     final result = await $$context$$
-        ?.callMethod('arrayBufferToBase64', [arrayBuffer.toJson()]);
+        ?.callMethod('arrayBufferToBase64', [arrayBuffer.$$context$$]);
     return result;
   }
 
