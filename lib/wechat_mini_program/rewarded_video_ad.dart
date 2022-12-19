@@ -24,11 +24,11 @@ class RewardedVideoAd {
     return _obj.callMethod('destroy');
   }
 
-  void onLoad(Function callback) {
+  void onLoad(Function(mpjs.JsObject res) callback) {
     _obj.callMethod('onLoad', [callback]);
   }
 
-  void offLoad(Function callback) {
+  void offLoad(Function(mpjs.JsObject res) callback) {
     _obj.callMethod('offLoad', [callback]);
   }
 
@@ -40,11 +40,11 @@ class RewardedVideoAd {
     _obj.callMethod('offError', [callback]);
   }
 
-  void onClose(Function callback) {
+  void onClose(Function(mpjs.JsObject res) callback) {
     _obj.callMethod('onClose', [callback]);
   }
 
-  void offClose(Function callback) {
+  void offClose(Function(mpjs.JsObject res) callback) {
     _obj.callMethod('offClose', [callback]);
   }
 }
