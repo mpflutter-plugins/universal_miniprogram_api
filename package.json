@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "build_wx_api": "ts-node builder/build_wx_api.ts",
+    "build_wx_api": "ts-node builder/pre_wx_api.ts && ts-node builder/build_wx_api.ts",
     "build_wx_cloud": "ts-node builder/build_wx_cloud.ts",
     "build_foo": "ts-node builder/build_foo.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

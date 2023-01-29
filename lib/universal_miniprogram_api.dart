@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
 class IAnyObject {
@@ -9,14 +8,6 @@ class IAnyObject {
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
-  }
-
-  Future<T?> getValue<T>(String key) async {
-    return $$context$$?.getPropertyValue(key);
-  }
-
-  Future setValue<T>(String key, dynamic value) async {
-    return await $$context$$?.setPropertyValue(key, value);
   }
 }
 
@@ -38,14 +29,17 @@ class ArrayBuffer {
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
   }
-
-  Future<Uint8List> toUint8List() async {
-    return base64
-        .decode(await UniversalMiniProgramApi.uni.arrayBufferToBase64(this));
-  }
 }
 
-typedef Array<T> = List<T>;
+class Array<T> {
+  mpjs.JsObject? $$context$$;
+
+  Array({this.$$context$$});
+
+  Map toJson() {
+    return {}..removeWhere((key, value) => value == null);
+  }
+}
 
 class Uint8ClampedArray {
   mpjs.JsObject? $$context$$;
@@ -181,6 +175,119 @@ class AccountInfo {
   Map toJson() {
     return {'miniProgram': $miniProgram, 'plugin': $plugin}
       ..removeWhere((key, value) => value == null);
+  }
+}
+
+class AddArcOption {
+  mpjs.JsObject? $$context$$;
+
+  MapPostion $end = MapPostion();
+
+  Future<MapPostion> get end async {
+    return MapPostion($$context$$: $$context$$?.getProperty('end'));
+  }
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  MapPostion $start = MapPostion();
+
+  Future<MapPostion> get start async {
+    return MapPostion($$context$$: $$context$$?.getProperty('start'));
+  }
+
+  num? $angle;
+
+  Future<num?> get angle async {
+    return await $$context$$?.getPropertyValue('angle') ?? $angle;
+  }
+
+  num? $color;
+
+  Future<num?> get color async {
+    return await $$context$$?.getPropertyValue('color') ?? $color;
+  }
+
+  AddArcCompleteCallback? $complete;
+
+  Future<AddArcCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  AddArcFailCallback? $fail;
+
+  Future<AddArcFailCallback?> get fail async {
+    return $fail;
+  }
+
+  MapPostion? $pass;
+
+  Future<MapPostion?> get pass async {
+    return MapPostion($$context$$: $$context$$?.getProperty('pass'));
+  }
+
+  AddArcSuccessCallback? $success;
+
+  Future<AddArcSuccessCallback?> get success async {
+    return $success;
+  }
+
+  num? $width;
+
+  Future<num?> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  AddArcOption({this.$$context$$});
+
+  void setValues(
+      {MapPostion? end,
+      num? id,
+      MapPostion? start,
+      num? angle,
+      num? color,
+      AddArcCompleteCallback? complete,
+      AddArcFailCallback? fail,
+      MapPostion? pass,
+      AddArcSuccessCallback? success,
+      num? width}) {
+    if (end != null) $end = end;
+    if (id != null) $id = id;
+    if (start != null) $start = start;
+    if (angle != null) $angle = angle;
+    if (color != null) $color = color;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (pass != null) $pass = pass;
+    if (success != null) $success = success;
+    if (width != null) $width = width;
+  }
+
+  Map toJson() {
+    return {
+      'end': $end,
+      'id': $id,
+      'start': $start,
+      'angle': $angle,
+      'color': $color,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'pass': $pass,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'width': $width
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -1196,9 +1303,9 @@ class AddPhoneRepeatCalendarOption {
         $repeatEndTime;
   }
 
-  String? $repeatInterval;
+  dynamic $repeatInterval;
 
-  Future<String?> get repeatInterval async {
+  Future<dynamic> get repeatInterval async {
     return await $$context$$?.getPropertyValue('repeatInterval') ??
         $repeatInterval;
   }
@@ -1223,7 +1330,7 @@ class AddPhoneRepeatCalendarOption {
       AddPhoneRepeatCalendarFailCallback? fail,
       String? location,
       num? repeatEndTime,
-      String? repeatInterval,
+      dynamic repeatInterval,
       AddPhoneRepeatCalendarSuccessCallback? success}) {
     if (startTime != null) $startTime = startTime;
     if (title != null) $title = title;
@@ -1396,8 +1503,100 @@ class AddVideoToFavoritesOption {
   }
 }
 
+class AddVisualLayerOption {
+  mpjs.JsObject? $$context$$;
+
+  String $layerId = "";
+
+  Future<String> get layerId async {
+    return await $$context$$?.getPropertyValue('layerId') ?? $layerId;
+  }
+
+  AddVisualLayerCompleteCallback? $complete;
+
+  Future<AddVisualLayerCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  AddVisualLayerFailCallback? $fail;
+
+  Future<AddVisualLayerFailCallback?> get fail async {
+    return $fail;
+  }
+
+  num? $interval;
+
+  Future<num?> get interval async {
+    return await $$context$$?.getPropertyValue('interval') ?? $interval;
+  }
+
+  num? $opacity;
+
+  Future<num?> get opacity async {
+    return await $$context$$?.getPropertyValue('opacity') ?? $opacity;
+  }
+
+  AddVisualLayerSuccessCallback? $success;
+
+  Future<AddVisualLayerSuccessCallback?> get success async {
+    return $success;
+  }
+
+  num? $zIndex;
+
+  Future<num?> get zIndex async {
+    return await $$context$$?.getPropertyValue('zIndex') ?? $zIndex;
+  }
+
+  AddVisualLayerOption({this.$$context$$});
+
+  void setValues(
+      {String? layerId,
+      AddVisualLayerCompleteCallback? complete,
+      AddVisualLayerFailCallback? fail,
+      num? interval,
+      num? opacity,
+      AddVisualLayerSuccessCallback? success,
+      num? zIndex}) {
+    if (layerId != null) $layerId = layerId;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (interval != null) $interval = interval;
+    if (opacity != null) $opacity = opacity;
+    if (success != null) $success = success;
+    if (zIndex != null) $zIndex = zIndex;
+  }
+
+  Map toJson() {
+    return {
+      'layerId': $layerId,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'interval': $interval,
+      'opacity': $opacity,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'zIndex': $zIndex
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class AdvertiseReqObj {
   mpjs.JsObject? $$context$$;
+
+  BeaconInfoObj? $beacon;
+
+  Future<BeaconInfoObj?> get beacon async {
+    return BeaconInfoObj($$context$$: $$context$$?.getProperty('beacon'));
+  }
 
   bool? $connectable;
 
@@ -1427,10 +1626,12 @@ class AdvertiseReqObj {
   AdvertiseReqObj({this.$$context$$});
 
   void setValues(
-      {bool? connectable,
+      {BeaconInfoObj? beacon,
+      bool? connectable,
       String? deviceName,
       List<ManufacturerData>? manufacturerData,
       List<String>? serviceUuids}) {
+    if (beacon != null) $beacon = beacon;
     if (connectable != null) $connectable = connectable;
     if (deviceName != null) $deviceName = deviceName;
     if (manufacturerData != null) $manufacturerData = manufacturerData;
@@ -1439,6 +1640,7 @@ class AdvertiseReqObj {
 
   Map toJson() {
     return {
+      'beacon': $beacon,
       'connectable': $connectable,
       'deviceName': $deviceName,
       'manufacturerData': $manufacturerData,
@@ -1492,6 +1694,225 @@ class AnimationOption {
   Map toJson() {
     return {'duration': $duration, 'timingFunc': $timingFunc}
       ..removeWhere((key, value) => value == null);
+  }
+}
+
+class AppAuthorizeSetting {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $albumAuthorized;
+
+  Future<dynamic> get albumAuthorized async {
+    return await $$context$$?.getPropertyValue('albumAuthorized') ??
+        $albumAuthorized;
+  }
+
+  dynamic $bluetoothAuthorized;
+
+  Future<dynamic> get bluetoothAuthorized async {
+    return await $$context$$?.getPropertyValue('bluetoothAuthorized') ??
+        $bluetoothAuthorized;
+  }
+
+  dynamic $cameraAuthorized;
+
+  Future<dynamic> get cameraAuthorized async {
+    return await $$context$$?.getPropertyValue('cameraAuthorized') ??
+        $cameraAuthorized;
+  }
+
+  dynamic $locationAuthorized;
+
+  Future<dynamic> get locationAuthorized async {
+    return await $$context$$?.getPropertyValue('locationAuthorized') ??
+        $locationAuthorized;
+  }
+
+  bool $locationReducedAccuracy = false;
+
+  Future<bool> get locationReducedAccuracy async {
+    return await $$context$$?.getPropertyValue('locationReducedAccuracy') ??
+        $locationReducedAccuracy;
+  }
+
+  dynamic $microphoneAuthorized;
+
+  Future<dynamic> get microphoneAuthorized async {
+    return await $$context$$?.getPropertyValue('microphoneAuthorized') ??
+        $microphoneAuthorized;
+  }
+
+  dynamic $notificationAlertAuthorized;
+
+  Future<dynamic> get notificationAlertAuthorized async {
+    return await $$context$$?.getPropertyValue('notificationAlertAuthorized') ??
+        $notificationAlertAuthorized;
+  }
+
+  dynamic $notificationAuthorized;
+
+  Future<dynamic> get notificationAuthorized async {
+    return await $$context$$?.getPropertyValue('notificationAuthorized') ??
+        $notificationAuthorized;
+  }
+
+  dynamic $notificationBadgeAuthorized;
+
+  Future<dynamic> get notificationBadgeAuthorized async {
+    return await $$context$$?.getPropertyValue('notificationBadgeAuthorized') ??
+        $notificationBadgeAuthorized;
+  }
+
+  dynamic $notificationSoundAuthorized;
+
+  Future<dynamic> get notificationSoundAuthorized async {
+    return await $$context$$?.getPropertyValue('notificationSoundAuthorized') ??
+        $notificationSoundAuthorized;
+  }
+
+  dynamic $phoneCalendarAuthorized;
+
+  Future<dynamic> get phoneCalendarAuthorized async {
+    return await $$context$$?.getPropertyValue('phoneCalendarAuthorized') ??
+        $phoneCalendarAuthorized;
+  }
+
+  AppAuthorizeSetting({this.$$context$$});
+
+  void setValues(
+      {dynamic albumAuthorized,
+      dynamic bluetoothAuthorized,
+      dynamic cameraAuthorized,
+      dynamic locationAuthorized,
+      bool? locationReducedAccuracy,
+      dynamic microphoneAuthorized,
+      dynamic notificationAlertAuthorized,
+      dynamic notificationAuthorized,
+      dynamic notificationBadgeAuthorized,
+      dynamic notificationSoundAuthorized,
+      dynamic phoneCalendarAuthorized}) {
+    if (albumAuthorized != null) $albumAuthorized = albumAuthorized;
+    if (bluetoothAuthorized != null) $bluetoothAuthorized = bluetoothAuthorized;
+    if (cameraAuthorized != null) $cameraAuthorized = cameraAuthorized;
+    if (locationAuthorized != null) $locationAuthorized = locationAuthorized;
+    if (locationReducedAccuracy != null)
+      $locationReducedAccuracy = locationReducedAccuracy;
+    if (microphoneAuthorized != null)
+      $microphoneAuthorized = microphoneAuthorized;
+    if (notificationAlertAuthorized != null)
+      $notificationAlertAuthorized = notificationAlertAuthorized;
+    if (notificationAuthorized != null)
+      $notificationAuthorized = notificationAuthorized;
+    if (notificationBadgeAuthorized != null)
+      $notificationBadgeAuthorized = notificationBadgeAuthorized;
+    if (notificationSoundAuthorized != null)
+      $notificationSoundAuthorized = notificationSoundAuthorized;
+    if (phoneCalendarAuthorized != null)
+      $phoneCalendarAuthorized = phoneCalendarAuthorized;
+  }
+
+  Map toJson() {
+    return {
+      'albumAuthorized': $albumAuthorized,
+      'bluetoothAuthorized': $bluetoothAuthorized,
+      'cameraAuthorized': $cameraAuthorized,
+      'locationAuthorized': $locationAuthorized,
+      'locationReducedAccuracy': $locationReducedAccuracy,
+      'microphoneAuthorized': $microphoneAuthorized,
+      'notificationAlertAuthorized': $notificationAlertAuthorized,
+      'notificationAuthorized': $notificationAuthorized,
+      'notificationBadgeAuthorized': $notificationBadgeAuthorized,
+      'notificationSoundAuthorized': $notificationSoundAuthorized,
+      'phoneCalendarAuthorized': $phoneCalendarAuthorized
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class AppBaseInfo {
+  mpjs.JsObject? $$context$$;
+
+  String $SDKVersion = "";
+
+  Future<String> get SDKVersion async {
+    return await $$context$$?.getPropertyValue('SDKVersion') ?? $SDKVersion;
+  }
+
+  bool $enableDebug = false;
+
+  Future<bool> get enableDebug async {
+    return await $$context$$?.getPropertyValue('enableDebug') ?? $enableDebug;
+  }
+
+  AppBaseInfoHost $host = AppBaseInfoHost();
+
+  Future<AppBaseInfoHost> get host async {
+    return AppBaseInfoHost($$context$$: $$context$$?.getProperty('host'));
+  }
+
+  String $language = "";
+
+  Future<String> get language async {
+    return await $$context$$?.getPropertyValue('language') ?? $language;
+  }
+
+  String $version = "";
+
+  Future<String> get version async {
+    return await $$context$$?.getPropertyValue('version') ?? $version;
+  }
+
+  dynamic $theme;
+
+  Future<dynamic> get theme async {
+    return await $$context$$?.getPropertyValue('theme') ?? $theme;
+  }
+
+  AppBaseInfo({this.$$context$$});
+
+  void setValues(
+      {String? SDKVersion,
+      bool? enableDebug,
+      AppBaseInfoHost? host,
+      String? language,
+      String? version,
+      dynamic theme}) {
+    if (SDKVersion != null) $SDKVersion = SDKVersion;
+    if (enableDebug != null) $enableDebug = enableDebug;
+    if (host != null) $host = host;
+    if (language != null) $language = language;
+    if (version != null) $version = version;
+    if (theme != null) $theme = theme;
+  }
+
+  Map toJson() {
+    return {
+      'SDKVersion': $SDKVersion,
+      'enableDebug': $enableDebug,
+      'host': $host,
+      'language': $language,
+      'version': $version,
+      'theme': $theme
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class AppBaseInfoHost {
+  mpjs.JsObject? $$context$$;
+
+  String $appId = "";
+
+  Future<String> get appId async {
+    return await $$context$$?.getPropertyValue('appId') ?? $appId;
+  }
+
+  AppBaseInfoHost({this.$$context$$});
+
+  void setValues({String? appId}) {
+    if (appId != null) $appId = appId;
+  }
+
+  Map toJson() {
+    return {'appId': $appId}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -1589,6 +2010,621 @@ class AppendFileOption {
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyBlusherStickMakeupOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $blendMode = "";
+
+  Future<String> get blendMode async {
+    return await $$context$$?.getPropertyValue('blendMode') ?? $blendMode;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  ApplyBlusherStickMakeupCompleteCallback? $complete;
+
+  Future<ApplyBlusherStickMakeupCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyBlusherStickMakeupFailCallback? $fail;
+
+  Future<ApplyBlusherStickMakeupFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ApplyBlusherStickMakeupSuccessCallback? $success;
+
+  Future<ApplyBlusherStickMakeupSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyBlusherStickMakeupOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? blendMode,
+      String? path,
+      ApplyBlusherStickMakeupCompleteCallback? complete,
+      ApplyBlusherStickMakeupFailCallback? fail,
+      ApplyBlusherStickMakeupSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (blendMode != null) $blendMode = blendMode;
+    if (path != null) $path = path;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'blendMode': $blendMode,
+      'path': $path,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyEyeBrowMakeupOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $blendMode = "";
+
+  Future<String> get blendMode async {
+    return await $$context$$?.getPropertyValue('blendMode') ?? $blendMode;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  num $shrinkRate = 0;
+
+  Future<num> get shrinkRate async {
+    return await $$context$$?.getPropertyValue('shrinkRate') ?? $shrinkRate;
+  }
+
+  ApplyEyeBrowMakeupCompleteCallback? $complete;
+
+  Future<ApplyEyeBrowMakeupCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyEyeBrowMakeupFailCallback? $fail;
+
+  Future<ApplyEyeBrowMakeupFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ApplyEyeBrowMakeupSuccessCallback? $success;
+
+  Future<ApplyEyeBrowMakeupSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyEyeBrowMakeupOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? blendMode,
+      String? path,
+      num? shrinkRate,
+      ApplyEyeBrowMakeupCompleteCallback? complete,
+      ApplyEyeBrowMakeupFailCallback? fail,
+      ApplyEyeBrowMakeupSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (blendMode != null) $blendMode = blendMode;
+    if (path != null) $path = path;
+    if (shrinkRate != null) $shrinkRate = shrinkRate;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'blendMode': $blendMode,
+      'path': $path,
+      'shrinkRate': $shrinkRate,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyEyeShadowMakeupOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $blendMode = "";
+
+  Future<String> get blendMode async {
+    return await $$context$$?.getPropertyValue('blendMode') ?? $blendMode;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  ApplyEyeShadowMakeupCompleteCallback? $complete;
+
+  Future<ApplyEyeShadowMakeupCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyEyeShadowMakeupFailCallback? $fail;
+
+  Future<ApplyEyeShadowMakeupFailCallback?> get fail async {
+    return $fail;
+  }
+
+  String? $shimmerPosition;
+
+  Future<String?> get shimmerPosition async {
+    return await $$context$$?.getPropertyValue('shimmerPosition') ??
+        $shimmerPosition;
+  }
+
+  String? $shimmerPositionMD5;
+
+  Future<String?> get shimmerPositionMD5 async {
+    return await $$context$$?.getPropertyValue('shimmerPositionMD5') ??
+        $shimmerPositionMD5;
+  }
+
+  ApplyEyeShadowMakeupSuccessCallback? $success;
+
+  Future<ApplyEyeShadowMakeupSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyEyeShadowMakeupOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? blendMode,
+      String? path,
+      ApplyEyeShadowMakeupCompleteCallback? complete,
+      ApplyEyeShadowMakeupFailCallback? fail,
+      String? shimmerPosition,
+      String? shimmerPositionMD5,
+      ApplyEyeShadowMakeupSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (blendMode != null) $blendMode = blendMode;
+    if (path != null) $path = path;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (shimmerPosition != null) $shimmerPosition = shimmerPosition;
+    if (shimmerPositionMD5 != null) $shimmerPositionMD5 = shimmerPositionMD5;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'blendMode': $blendMode,
+      'path': $path,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'shimmerPosition': $shimmerPosition,
+      'shimmerPositionMD5': $shimmerPositionMD5,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyFaceContourMakeupOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  ApplyFaceContourMakeupCompleteCallback? $complete;
+
+  Future<ApplyFaceContourMakeupCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyFaceContourMakeupFailCallback? $fail;
+
+  Future<ApplyFaceContourMakeupFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ApplyFaceContourMakeupSuccessCallback? $success;
+
+  Future<ApplyFaceContourMakeupSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyFaceContourMakeupOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? path,
+      ApplyFaceContourMakeupCompleteCallback? complete,
+      ApplyFaceContourMakeupFailCallback? fail,
+      ApplyFaceContourMakeupSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (path != null) $path = path;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'path': $path,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyFilterOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  ApplyFilterCompleteCallback? $complete;
+
+  Future<ApplyFilterCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyFilterFailCallback? $fail;
+
+  Future<ApplyFilterFailCallback?> get fail async {
+    return $fail;
+  }
+
+  String? $md5;
+
+  Future<String?> get md5 async {
+    return await $$context$$?.getPropertyValue('md5') ?? $md5;
+  }
+
+  ApplyFilterSuccessCallback? $success;
+
+  Future<ApplyFilterSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyFilterOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? path,
+      ApplyFilterCompleteCallback? complete,
+      ApplyFilterFailCallback? fail,
+      String? md5,
+      ApplyFilterSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (path != null) $path = path;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (md5 != null) $md5 = md5;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'path': $path,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'md5': $md5,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyLipStickMakeupOption {
+  mpjs.JsObject? $$context$$;
+
+  num $alpha = 0;
+
+  Future<num> get alpha async {
+    return await $$context$$?.getPropertyValue('alpha') ?? $alpha;
+  }
+
+  String $blendMode = "";
+
+  Future<String> get blendMode async {
+    return await $$context$$?.getPropertyValue('blendMode') ?? $blendMode;
+  }
+
+  String $faceModel = "";
+
+  Future<String> get faceModel async {
+    return await $$context$$?.getPropertyValue('faceModel') ?? $faceModel;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  String $shimmerPath = "";
+
+  Future<String> get shimmerPath async {
+    return await $$context$$?.getPropertyValue('shimmerPath') ?? $shimmerPath;
+  }
+
+  String $shimmerType = "";
+
+  Future<String> get shimmerType async {
+    return await $$context$$?.getPropertyValue('shimmerType') ?? $shimmerType;
+  }
+
+  ApplyLipStickMakeupCompleteCallback? $complete;
+
+  Future<ApplyLipStickMakeupCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyLipStickMakeupFailCallback? $fail;
+
+  Future<ApplyLipStickMakeupFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ApplyLipStickMakeupSuccessCallback? $success;
+
+  Future<ApplyLipStickMakeupSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ApplyLipStickMakeupOption({this.$$context$$});
+
+  void setValues(
+      {num? alpha,
+      String? blendMode,
+      String? faceModel,
+      String? path,
+      String? shimmerPath,
+      String? shimmerType,
+      ApplyLipStickMakeupCompleteCallback? complete,
+      ApplyLipStickMakeupFailCallback? fail,
+      ApplyLipStickMakeupSuccessCallback? success}) {
+    if (alpha != null) $alpha = alpha;
+    if (blendMode != null) $blendMode = blendMode;
+    if (faceModel != null) $faceModel = faceModel;
+    if (path != null) $path = path;
+    if (shimmerPath != null) $shimmerPath = shimmerPath;
+    if (shimmerType != null) $shimmerType = shimmerType;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'alpha': $alpha,
+      'blendMode': $blendMode,
+      'faceModel': $faceModel,
+      'path': $path,
+      'shimmerPath': $shimmerPath,
+      'shimmerType': $shimmerType,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ApplyStickerOption {
+  mpjs.JsObject? $$context$$;
+
+  List<Sticker> $stickers = <Sticker>[];
+
+  Future<List<Sticker>> get stickers async {
+    return await $$context$$?.getPropertyValue('stickers') ?? $stickers;
+  }
+
+  String $type = "";
+
+  Future<String> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  ApplyStickerCompleteCallback? $complete;
+
+  Future<ApplyStickerCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ApplyStickerFailCallback? $fail;
+
+  Future<ApplyStickerFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ApplyStickerSuccessCallback? $success;
+
+  Future<ApplyStickerSuccessCallback?> get success async {
+    return $success;
+  }
+
+  IAnyObject? $templateTransSet;
+
+  Future<IAnyObject?> get templateTransSet async {
+    return IAnyObject(
+        $$context$$: $$context$$?.getProperty('templateTransSet'));
+  }
+
+  ApplyStickerOption({this.$$context$$});
+
+  void setValues(
+      {List<Sticker>? stickers,
+      String? type,
+      ApplyStickerCompleteCallback? complete,
+      ApplyStickerFailCallback? fail,
+      ApplyStickerSuccessCallback? success,
+      IAnyObject? templateTransSet}) {
+    if (stickers != null) $stickers = stickers;
+    if (type != null) $type = type;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+    if (templateTransSet != null) $templateTransSet = templateTransSet;
+  }
+
+  Map toJson() {
+    return {
+      'stickers': $stickers,
+      'type': $type,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'templateTransSet': $templateTransSet
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class Asset {
+  mpjs.JsObject? $$context$$;
+
+  String $src = "";
+
+  Future<String> get src async {
+    return await $$context$$?.getPropertyValue('src') ?? $src;
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  Asset({this.$$context$$});
+
+  void setValues({String? src, dynamic type}) {
+    if (src != null) $src = src;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {'src': $src, 'type': $type}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -1768,11 +2804,32 @@ class AuthPrivateMessageSuccessCallbackResult {
 class AuthSetting {
   mpjs.JsObject? $$context$$;
 
+  bool? $scope_addPhoneCalendar;
+
+  Future<bool?> get scope_addPhoneCalendar async {
+    return await $$context$$?.getPropertyValue('scope.addPhoneCalendar') ??
+        $scope_addPhoneCalendar;
+  }
+
+  bool? $scope_addPhoneContact;
+
+  Future<bool?> get scope_addPhoneContact async {
+    return await $$context$$?.getPropertyValue('scope.addPhoneContact') ??
+        $scope_addPhoneContact;
+  }
+
   bool? $scope_address;
 
   Future<bool?> get scope_address async {
     return await $$context$$?.getPropertyValue('scope.address') ??
         $scope_address;
+  }
+
+  bool? $scope_bluetooth;
+
+  Future<bool?> get scope_bluetooth async {
+    return await $$context$$?.getPropertyValue('scope.bluetooth') ??
+        $scope_bluetooth;
   }
 
   bool? $scope_camera;
@@ -1831,7 +2888,10 @@ class AuthSetting {
   AuthSetting({this.$$context$$});
 
   void setValues(
-      {bool? scope_address,
+      {bool? scope_addPhoneCalendar,
+      bool? scope_addPhoneContact,
+      bool? scope_address,
+      bool? scope_bluetooth,
       bool? scope_camera,
       bool? scope_invoice,
       bool? scope_invoiceTitle,
@@ -1840,7 +2900,12 @@ class AuthSetting {
       bool? scope_userLocation,
       bool? scope_werun,
       bool? scope_writePhotosAlbum}) {
+    if (scope_addPhoneCalendar != null)
+      $scope_addPhoneCalendar = scope_addPhoneCalendar;
+    if (scope_addPhoneContact != null)
+      $scope_addPhoneContact = scope_addPhoneContact;
     if (scope_address != null) $scope_address = scope_address;
+    if (scope_bluetooth != null) $scope_bluetooth = scope_bluetooth;
     if (scope_camera != null) $scope_camera = scope_camera;
     if (scope_invoice != null) $scope_invoice = scope_invoice;
     if (scope_invoiceTitle != null) $scope_invoiceTitle = scope_invoiceTitle;
@@ -1854,7 +2919,10 @@ class AuthSetting {
 
   Map toJson() {
     return {
+      'scope.addPhoneCalendar': $scope_addPhoneCalendar,
+      'scope.addPhoneContact': $scope_addPhoneContact,
       'scope.address': $scope_address,
+      'scope.bluetooth': $scope_bluetooth,
       'scope.camera': $scope_camera,
       'scope.invoice': $scope_invoice,
       'scope.invoiceTitle': $scope_invoiceTitle,
@@ -2041,13 +3109,34 @@ class BLECharacteristicProperties {
     return await $$context$$?.getPropertyValue('write') ?? $write;
   }
 
+  bool $writeDefault = false;
+
+  Future<bool> get writeDefault async {
+    return await $$context$$?.getPropertyValue('writeDefault') ?? $writeDefault;
+  }
+
+  bool $writeNoResponse = false;
+
+  Future<bool> get writeNoResponse async {
+    return await $$context$$?.getPropertyValue('writeNoResponse') ??
+        $writeNoResponse;
+  }
+
   BLECharacteristicProperties({this.$$context$$});
 
-  void setValues({bool? indicate, bool? notify, bool? read, bool? write}) {
+  void setValues(
+      {bool? indicate,
+      bool? notify,
+      bool? read,
+      bool? write,
+      bool? writeDefault,
+      bool? writeNoResponse}) {
     if (indicate != null) $indicate = indicate;
     if (notify != null) $notify = notify;
     if (read != null) $read = read;
     if (write != null) $write = write;
+    if (writeDefault != null) $writeDefault = writeDefault;
+    if (writeNoResponse != null) $writeNoResponse = writeNoResponse;
   }
 
   Map toJson() {
@@ -2055,7 +3144,9 @@ class BLECharacteristicProperties {
       'indicate': $indicate,
       'notify': $notify,
       'read': $read,
-      'write': $write
+      'write': $write,
+      'writeDefault': $writeDefault,
+      'writeNoResponse': $writeNoResponse
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -2218,6 +3309,13 @@ class BackgroundAudioManager {
     return await $$context$$?.getPropertyValue('protocol') ?? $protocol;
   }
 
+  String $referrerPolicy = "";
+
+  Future<String> get referrerPolicy async {
+    return await $$context$$?.getPropertyValue('referrerPolicy') ??
+        $referrerPolicy;
+  }
+
   String $singer = "";
 
   Future<String> get singer async {
@@ -2259,6 +3357,7 @@ class BackgroundAudioManager {
       bool? paused,
       num? playbackRate,
       String? protocol,
+      String? referrerPolicy,
       String? singer,
       String? src,
       num? startTime,
@@ -2272,6 +3371,7 @@ class BackgroundAudioManager {
     if (paused != null) $paused = paused;
     if (playbackRate != null) $playbackRate = playbackRate;
     if (protocol != null) $protocol = protocol;
+    if (referrerPolicy != null) $referrerPolicy = referrerPolicy;
     if (singer != null) $singer = singer;
     if (src != null) $src = src;
     if (startTime != null) $startTime = startTime;
@@ -2289,6 +3389,7 @@ class BackgroundAudioManager {
       'paused': $paused,
       'playbackRate': $playbackRate,
       'protocol': $protocol,
+      'referrerPolicy': $referrerPolicy,
       'singer': $singer,
       'src': $src,
       'startTime': $startTime,
@@ -2297,63 +3398,63 @@ class BackgroundAudioManager {
     }..removeWhere((key, value) => value == null);
   }
 
-  Future<void> onCanplay(OnCanplayCallback callback) async {
-    final result = await $$context$$?.callMethod('onCanplay', [callback]);
+  Future<void> onCanplay(OnCanplayCallback listener) async {
+    final result = await $$context$$?.callMethod('onCanplay', [listener]);
     return result;
   }
 
-  Future<void> onEnded(OnEndedCallback callback) async {
-    final result = await $$context$$?.callMethod('onEnded', [callback]);
+  Future<void> onEnded(OnEndedCallback listener) async {
+    final result = await $$context$$?.callMethod('onEnded', [listener]);
     return result;
   }
 
-  Future<void> onError(BackgroundAudioManagerOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(BackgroundAudioManagerOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onNext(OnNextCallback callback) async {
-    final result = await $$context$$?.callMethod('onNext', [callback]);
+  Future<void> onNext(OnNextCallback listener) async {
+    final result = await $$context$$?.callMethod('onNext', [listener]);
     return result;
   }
 
-  Future<void> onPause(OnPauseCallback callback) async {
-    final result = await $$context$$?.callMethod('onPause', [callback]);
+  Future<void> onPause(OnPauseCallback listener) async {
+    final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
-  Future<void> onPlay(OnPlayCallback callback) async {
-    final result = await $$context$$?.callMethod('onPlay', [callback]);
+  Future<void> onPlay(OnPlayCallback listener) async {
+    final result = await $$context$$?.callMethod('onPlay', [listener]);
     return result;
   }
 
-  Future<void> onPrev(OnPrevCallback callback) async {
-    final result = await $$context$$?.callMethod('onPrev', [callback]);
+  Future<void> onPrev(OnPrevCallback listener) async {
+    final result = await $$context$$?.callMethod('onPrev', [listener]);
     return result;
   }
 
-  Future<void> onSeeked(OnSeekedCallback callback) async {
-    final result = await $$context$$?.callMethod('onSeeked', [callback]);
+  Future<void> onSeeked(OnSeekedCallback listener) async {
+    final result = await $$context$$?.callMethod('onSeeked', [listener]);
     return result;
   }
 
-  Future<void> onSeeking(OnSeekingCallback callback) async {
-    final result = await $$context$$?.callMethod('onSeeking', [callback]);
+  Future<void> onSeeking(OnSeekingCallback listener) async {
+    final result = await $$context$$?.callMethod('onSeeking', [listener]);
     return result;
   }
 
-  Future<void> onStop(InnerAudioContextOnStopCallback callback) async {
-    final result = await $$context$$?.callMethod('onStop', [callback]);
+  Future<void> onStop(InnerAudioContextOnStopCallback listener) async {
+    final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
 
-  Future<void> onTimeUpdate(OnTimeUpdateCallback callback) async {
-    final result = await $$context$$?.callMethod('onTimeUpdate', [callback]);
+  Future<void> onTimeUpdate(OnTimeUpdateCallback listener) async {
+    final result = await $$context$$?.callMethod('onTimeUpdate', [listener]);
     return result;
   }
 
-  Future<void> onWaiting(OnWaitingCallback callback) async {
-    final result = await $$context$$?.callMethod('onWaiting', [callback]);
+  Future<void> onWaiting(OnWaitingCallback listener) async {
+    final result = await $$context$$?.callMethod('onWaiting', [listener]);
     return result;
   }
 
@@ -2375,6 +3476,124 @@ class BackgroundAudioManager {
   Future<void> stop() async {
     final result = await $$context$$?.callMethod('stop', []);
     return result;
+  }
+}
+
+class BatchGetStorageOption {
+  mpjs.JsObject? $$context$$;
+
+  List<String> $keyList = <String>[];
+
+  Future<List<String>> get keyList async {
+    return await $$context$$?.getPropertyValue('keyList') ?? $keyList;
+  }
+
+  BatchGetStorageCompleteCallback? $complete;
+
+  Future<BatchGetStorageCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  BatchGetStorageFailCallback? $fail;
+
+  Future<BatchGetStorageFailCallback?> get fail async {
+    return $fail;
+  }
+
+  BatchGetStorageSuccessCallback? $success;
+
+  Future<BatchGetStorageSuccessCallback?> get success async {
+    return $success;
+  }
+
+  BatchGetStorageOption({this.$$context$$});
+
+  void setValues(
+      {List<String>? keyList,
+      BatchGetStorageCompleteCallback? complete,
+      BatchGetStorageFailCallback? fail,
+      BatchGetStorageSuccessCallback? success}) {
+    if (keyList != null) $keyList = keyList;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'keyList': $keyList,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class BatchSetStorageOption {
+  mpjs.JsObject? $$context$$;
+
+  List<dynamic> $kvList = <dynamic>[];
+
+  Future<List<dynamic>> get kvList async {
+    return await $$context$$?.getPropertyValue('kvList') ?? $kvList;
+  }
+
+  BatchSetStorageCompleteCallback? $complete;
+
+  Future<BatchSetStorageCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  BatchSetStorageFailCallback? $fail;
+
+  Future<BatchSetStorageFailCallback?> get fail async {
+    return $fail;
+  }
+
+  BatchSetStorageSuccessCallback? $success;
+
+  Future<BatchSetStorageSuccessCallback?> get success async {
+    return $success;
+  }
+
+  BatchSetStorageOption({this.$$context$$});
+
+  void setValues(
+      {List<dynamic>? kvList,
+      BatchSetStorageCompleteCallback? complete,
+      BatchSetStorageFailCallback? fail,
+      BatchSetStorageSuccessCallback? success}) {
+    if (kvList != null) $kvList = kvList;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'kvList': $kvList,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -2446,6 +3665,73 @@ class BeaconInfo {
   }
 }
 
+class BeaconInfoObj {
+  mpjs.JsObject? $$context$$;
+
+  num $major = 0;
+
+  Future<num> get major async {
+    return await $$context$$?.getPropertyValue('major') ?? $major;
+  }
+
+  num $minor = 0;
+
+  Future<num> get minor async {
+    return await $$context$$?.getPropertyValue('minor') ?? $minor;
+  }
+
+  String $uuid = "";
+
+  Future<String> get uuid async {
+    return await $$context$$?.getPropertyValue('uuid') ?? $uuid;
+  }
+
+  num? $measuredPower;
+
+  Future<num?> get measuredPower async {
+    return await $$context$$?.getPropertyValue('measuredPower') ??
+        $measuredPower;
+  }
+
+  BeaconInfoObj({this.$$context$$});
+
+  void setValues({num? major, num? minor, String? uuid, num? measuredPower}) {
+    if (major != null) $major = major;
+    if (minor != null) $minor = minor;
+    if (uuid != null) $uuid = uuid;
+    if (measuredPower != null) $measuredPower = measuredPower;
+  }
+
+  Map toJson() {
+    return {
+      'major': $major,
+      'minor': $minor,
+      'uuid': $uuid,
+      'measuredPower': $measuredPower
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class BindWifiOption {
+  mpjs.JsObject? $$context$$;
+
+  String $BSSID = "";
+
+  Future<String> get BSSID async {
+    return await $$context$$?.getPropertyValue('BSSID') ?? $BSSID;
+  }
+
+  BindWifiOption({this.$$context$$});
+
+  void setValues({String? BSSID}) {
+    if (BSSID != null) $BSSID = BSSID;
+  }
+
+  Map toJson() {
+    return {'BSSID': $BSSID}..removeWhere((key, value) => value == null);
+  }
+}
+
 class BlueToothDevice {
   mpjs.JsObject? $$context$$;
 
@@ -2466,6 +3752,12 @@ class BlueToothDevice {
   Future<List<String>> get advertisServiceUUIDs async {
     return await $$context$$?.getPropertyValue('advertisServiceUUIDs') ??
         $advertisServiceUUIDs;
+  }
+
+  bool $connectable = false;
+
+  Future<bool> get connectable async {
+    return await $$context$$?.getPropertyValue('connectable') ?? $connectable;
   }
 
   String $deviceId = "";
@@ -2498,6 +3790,7 @@ class BlueToothDevice {
       {num? RSSI,
       ArrayBuffer? advertisData,
       List<String>? advertisServiceUUIDs,
+      bool? connectable,
       String? deviceId,
       String? localName,
       String? name,
@@ -2506,6 +3799,7 @@ class BlueToothDevice {
     if (advertisData != null) $advertisData = advertisData;
     if (advertisServiceUUIDs != null)
       $advertisServiceUUIDs = advertisServiceUUIDs;
+    if (connectable != null) $connectable = connectable;
     if (deviceId != null) $deviceId = deviceId;
     if (localName != null) $localName = localName;
     if (name != null) $name = name;
@@ -2517,6 +3811,7 @@ class BlueToothDevice {
       'RSSI': $RSSI,
       'advertisData': $advertisData,
       'advertisServiceUUIDs': $advertisServiceUUIDs,
+      'connectable': $connectable,
       'deviceId': $deviceId,
       'localName': $localName,
       'name': $name,
@@ -2600,6 +3895,26 @@ class BlurOption {
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class BodyTrack {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  BodyTrack({this.$$context$$});
+
+  void setValues({dynamic mode}) {
+    if (mode != null) $mode = mode;
+  }
+
+  Map toJson() {
+    return {'mode': $mode}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -2752,6 +4067,119 @@ class BoundingClientRectResult {
   }
 }
 
+class CacheManager {
+  mpjs.JsObject? $$context$$;
+
+  String $maxAge = "";
+
+  Future<String> get maxAge async {
+    return await $$context$$?.getPropertyValue('maxAge') ?? $maxAge;
+  }
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  String $origin = "";
+
+  Future<String> get origin async {
+    return await $$context$$?.getPropertyValue('origin') ?? $origin;
+  }
+
+  dynamic $state;
+
+  Future<dynamic> get state async {
+    return await $$context$$?.getPropertyValue('state') ?? $state;
+  }
+
+  CacheManager({this.$$context$$});
+
+  void setValues(
+      {String? maxAge, dynamic mode, String? origin, dynamic state}) {
+    if (maxAge != null) $maxAge = maxAge;
+    if (mode != null) $mode = mode;
+    if (origin != null) $origin = origin;
+    if (state != null) $state = state;
+  }
+
+  Map toJson() {
+    return {
+      'maxAge': $maxAge,
+      'mode': $mode,
+      'origin': $origin,
+      'state': $state
+    }..removeWhere((key, value) => value == null);
+  }
+
+  Future<List<String>> addRules(IAnyObject rules) async {
+    final result = await $$context$$?.callMethod('addRules', [rules.toJson()]);
+    return result;
+  }
+
+  Future<void> clearCaches() async {
+    final result = await $$context$$?.callMethod('clearCaches', []);
+    return result;
+  }
+
+  Future<void> clearRules() async {
+    final result = await $$context$$?.callMethod('clearRules', []);
+    return result;
+  }
+
+  Future<void> deleteCache(String id) async {
+    final result = await $$context$$?.callMethod('deleteCache', [id]);
+    return result;
+  }
+
+  Future<void> deleteCaches(List<String> ids) async {
+    final result = await $$context$$?.callMethod('deleteCaches', [ids]);
+    return result;
+  }
+
+  Future<void> deleteRule(String id) async {
+    final result = await $$context$$?.callMethod('deleteRule', [id]);
+    return result;
+  }
+
+  Future<void> deleteRules(List<String> ids) async {
+    final result = await $$context$$?.callMethod('deleteRules', [ids]);
+    return result;
+  }
+
+  Future<void> off(String eventName, dynamic handler) async {
+    final result = await $$context$$?.callMethod('off', [eventName, handler]);
+    return result;
+  }
+
+  Future<void> on(dynamic eventName, dynamic handler) async {
+    final result = await $$context$$?.callMethod('on', [eventName, handler]);
+    return result;
+  }
+
+  Future<void> start() async {
+    final result = await $$context$$?.callMethod('start', []);
+    return result;
+  }
+
+  Future<void> stop() async {
+    final result = await $$context$$?.callMethod('stop', []);
+    return result;
+  }
+
+  Future<MatchCache> match(IAnyObject evt) async {
+    final result = await $$context$$?.callMethod('match', [evt.toJson()]);
+
+    return MatchCache($$context$$: result);
+  }
+
+  Future<String> addRule(IAnyObject rule) async {
+    final result = await $$context$$?.callMethod('addRule', [rule.toJson()]);
+    return result;
+  }
+}
+
 class CameraContextStartRecordOption {
   mpjs.JsObject? $$context$$;
 
@@ -2767,10 +4195,22 @@ class CameraContextStartRecordOption {
     return $fail;
   }
 
+  bool? $selfieMirror;
+
+  Future<bool?> get selfieMirror async {
+    return await $$context$$?.getPropertyValue('selfieMirror') ?? $selfieMirror;
+  }
+
   CameraContextStartRecordSuccessCallback? $success;
 
   Future<CameraContextStartRecordSuccessCallback?> get success async {
     return $success;
+  }
+
+  num? $timeout;
+
+  Future<num?> get timeout async {
+    return await $$context$$?.getPropertyValue('timeout') ?? $timeout;
   }
 
   StartRecordTimeoutCallback? $timeoutCallback;
@@ -2784,11 +4224,15 @@ class CameraContextStartRecordOption {
   void setValues(
       {StartRecordCompleteCallback? complete,
       StartRecordFailCallback? fail,
+      bool? selfieMirror,
       CameraContextStartRecordSuccessCallback? success,
+      num? timeout,
       StartRecordTimeoutCallback? timeoutCallback}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (selfieMirror != null) $selfieMirror = selfieMirror;
     if (success != null) $success = success;
+    if (timeout != null) $timeout = timeout;
     if (timeoutCallback != null) $timeoutCallback = timeoutCallback;
   }
 
@@ -2802,10 +4246,12 @@ class CameraContextStartRecordOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'selfieMirror': $selfieMirror,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'timeout': $timeout,
       'timeoutCallback': $timeoutCallback != null
           ? mpjs.JsFunction($timeoutCallback!,
               [(e) => StartRecordTimeoutCallbackResult($$context$$: e)])
@@ -2894,15 +4340,23 @@ class CameraFrameListenerStartOption {
     return $success;
   }
 
+  Worker? $worker;
+
+  Future<Worker?> get worker async {
+    return Worker($$context$$: $$context$$?.getProperty('worker'));
+  }
+
   CameraFrameListenerStartOption({this.$$context$$});
 
   void setValues(
       {StartCompleteCallback? complete,
       StartFailCallback? fail,
-      StartSuccessCallback? success}) {
+      StartSuccessCallback? success,
+      Worker? worker}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
+    if (worker != null) $worker = worker;
   }
 
   Map toJson() {
@@ -2918,7 +4372,8 @@ class CameraFrameListenerStartOption {
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
+          : null,
+      'worker': $worker
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -4017,6 +5472,86 @@ class CharacteristicProperties {
   }
 }
 
+class CheckIsAddedToMyMiniProgramOption {
+  mpjs.JsObject? $$context$$;
+
+  CheckIsAddedToMyMiniProgramCompleteCallback? $complete;
+
+  Future<CheckIsAddedToMyMiniProgramCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  CheckIsAddedToMyMiniProgramFailCallback? $fail;
+
+  Future<CheckIsAddedToMyMiniProgramFailCallback?> get fail async {
+    return $fail;
+  }
+
+  CheckIsAddedToMyMiniProgramSuccessCallback? $success;
+
+  Future<CheckIsAddedToMyMiniProgramSuccessCallback?> get success async {
+    return $success;
+  }
+
+  CheckIsAddedToMyMiniProgramOption({this.$$context$$});
+
+  void setValues(
+      {CheckIsAddedToMyMiniProgramCompleteCallback? complete,
+      CheckIsAddedToMyMiniProgramFailCallback? fail,
+      CheckIsAddedToMyMiniProgramSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!, [
+              (e) => CheckIsAddedToMyMiniProgramSuccessCallbackResult(
+                  $$context$$: e)
+            ])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class CheckIsAddedToMyMiniProgramSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  bool $added = false;
+
+  Future<bool> get added async {
+    return await $$context$$?.getPropertyValue('added') ?? $added;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  CheckIsAddedToMyMiniProgramSuccessCallbackResult({this.$$context$$});
+
+  void setValues({bool? added, String? errMsg}) {
+    if (added != null) $added = added;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'added': $added, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class CheckIsOpenAccessibilityOption {
   mpjs.JsObject? $$context$$;
 
@@ -4062,14 +5597,14 @@ class CheckIsOpenAccessibilityOption {
       'success': $success != null
           ? mpjs.JsFunction($success!, [
               (e) =>
-                  CheckIsOpenAccessibilitySuccessCallbackResult($$context$$: e)
+                  CheckIsOpenAccessibilitySuccessCallbackOption($$context$$: e)
             ])
           : null
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class CheckIsOpenAccessibilitySuccessCallbackResult {
+class CheckIsOpenAccessibilitySuccessCallbackOption {
   mpjs.JsObject? $$context$$;
 
   bool $open = false;
@@ -4078,7 +5613,7 @@ class CheckIsOpenAccessibilitySuccessCallbackResult {
     return await $$context$$?.getPropertyValue('open') ?? $open;
   }
 
-  CheckIsOpenAccessibilitySuccessCallbackResult({this.$$context$$});
+  CheckIsOpenAccessibilitySuccessCallbackOption({this.$$context$$});
 
   void setValues({bool? open}) {
     if (open != null) $open = open;
@@ -4235,7 +5770,7 @@ class CheckIsSupportSoterAuthenticationOption {
 class CheckIsSupportSoterAuthenticationSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $supportMode = [];
+  Array<dynamic> $supportMode = Array();
 
   Future<Array<dynamic>> get supportMode async {
     return $supportMode;
@@ -4381,6 +5916,13 @@ class ChooseAddressSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('detailInfo') ?? $detailInfo;
   }
 
+  String $detailInfoNew = "";
+
+  Future<String> get detailInfoNew async {
+    return await $$context$$?.getPropertyValue('detailInfoNew') ??
+        $detailInfoNew;
+  }
+
   String $errMsg = "";
 
   Future<String> get errMsg async {
@@ -4405,6 +5947,12 @@ class ChooseAddressSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('provinceName') ?? $provinceName;
   }
 
+  String $streetName = "";
+
+  Future<String> get streetName async {
+    return await $$context$$?.getPropertyValue('streetName') ?? $streetName;
+  }
+
   String $telNumber = "";
 
   Future<String> get telNumber async {
@@ -4423,19 +5971,23 @@ class ChooseAddressSuccessCallbackResult {
       {String? cityName,
       String? countyName,
       String? detailInfo,
+      String? detailInfoNew,
       String? errMsg,
       String? nationalCode,
       String? postalCode,
       String? provinceName,
+      String? streetName,
       String? telNumber,
       String? userName}) {
     if (cityName != null) $cityName = cityName;
     if (countyName != null) $countyName = countyName;
     if (detailInfo != null) $detailInfo = detailInfo;
+    if (detailInfoNew != null) $detailInfoNew = detailInfoNew;
     if (errMsg != null) $errMsg = errMsg;
     if (nationalCode != null) $nationalCode = nationalCode;
     if (postalCode != null) $postalCode = postalCode;
     if (provinceName != null) $provinceName = provinceName;
+    if (streetName != null) $streetName = streetName;
     if (telNumber != null) $telNumber = telNumber;
     if (userName != null) $userName = userName;
   }
@@ -4445,10 +5997,12 @@ class ChooseAddressSuccessCallbackResult {
       'cityName': $cityName,
       'countyName': $countyName,
       'detailInfo': $detailInfo,
+      'detailInfoNew': $detailInfoNew,
       'errMsg': $errMsg,
       'nationalCode': $nationalCode,
       'postalCode': $postalCode,
       'provinceName': $provinceName,
+      'streetName': $streetName,
       'telNumber': $telNumber,
       'userName': $userName
     }..removeWhere((key, value) => value == null);
@@ -4499,13 +6053,13 @@ class ChooseContactOption {
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!,
-              [(e) => ChooseContactSuccessCallbackResult($$context$$: e)])
+              [(e) => ChooseContactSuccessCallbackOption($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class ChooseContactSuccessCallbackResult {
+class ChooseContactSuccessCallbackOption {
   mpjs.JsObject? $$context$$;
 
   String $displayName = "";
@@ -4527,7 +6081,7 @@ class ChooseContactSuccessCallbackResult {
         $phoneNumberList;
   }
 
-  ChooseContactSuccessCallbackResult({this.$$context$$});
+  ChooseContactSuccessCallbackOption({this.$$context$$});
 
   void setValues(
       {String? displayName, String? phoneNumber, String? phoneNumberList}) {
@@ -5664,6 +7218,106 @@ class ChooseVideoSuccessCallbackResult {
   }
 }
 
+class ClearFiltersOption {
+  mpjs.JsObject? $$context$$;
+
+  ClearFiltersCompleteCallback? $complete;
+
+  Future<ClearFiltersCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ClearFiltersFailCallback? $fail;
+
+  Future<ClearFiltersFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ClearFiltersSuccessCallback? $success;
+
+  Future<ClearFiltersSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ClearFiltersOption({this.$$context$$});
+
+  void setValues(
+      {ClearFiltersCompleteCallback? complete,
+      ClearFiltersFailCallback? fail,
+      ClearFiltersSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ClearMakeupsOption {
+  mpjs.JsObject? $$context$$;
+
+  ClearMakeupsCompleteCallback? $complete;
+
+  Future<ClearMakeupsCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ClearMakeupsFailCallback? $fail;
+
+  Future<ClearMakeupsFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ClearMakeupsSuccessCallback? $success;
+
+  Future<ClearMakeupsSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ClearMakeupsOption({this.$$context$$});
+
+  void setValues(
+      {ClearMakeupsCompleteCallback? complete,
+      ClearMakeupsFailCallback? fail,
+      ClearMakeupsSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class ClearOption {
   mpjs.JsObject? $$context$$;
 
@@ -5691,6 +7345,56 @@ class ClearOption {
       {ClearCompleteCallback? complete,
       ClearFailCallback? fail,
       ClearSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ClearStickersOption {
+  mpjs.JsObject? $$context$$;
+
+  ClearStickersCompleteCallback? $complete;
+
+  Future<ClearStickersCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ClearStickersFailCallback? $fail;
+
+  Future<ClearStickersFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ClearStickersSuccessCallback? $success;
+
+  Future<ClearStickersSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ClearStickersOption({this.$$context$$});
+
+  void setValues(
+      {ClearStickersCompleteCallback? complete,
+      ClearStickersFailCallback? fail,
+      ClearStickersSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
@@ -5760,6 +7464,69 @@ class ClearStorageOption {
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ClientRect {
+  mpjs.JsObject? $$context$$;
+
+  num $bottom = 0;
+
+  Future<num> get bottom async {
+    return await $$context$$?.getPropertyValue('bottom') ?? $bottom;
+  }
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $left = 0;
+
+  Future<num> get left async {
+    return await $$context$$?.getPropertyValue('left') ?? $left;
+  }
+
+  num $right = 0;
+
+  Future<num> get right async {
+    return await $$context$$?.getPropertyValue('right') ?? $right;
+  }
+
+  num $top = 0;
+
+  Future<num> get top async {
+    return await $$context$$?.getPropertyValue('top') ?? $top;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  ClientRect({this.$$context$$});
+
+  void setValues(
+      {num? bottom, num? height, num? left, num? right, num? top, num? width}) {
+    if (bottom != null) $bottom = bottom;
+    if (height != null) $height = height;
+    if (left != null) $left = left;
+    if (right != null) $right = right;
+    if (top != null) $top = top;
+    if (width != null) $width = width;
+  }
+
+  Map toJson() {
+    return {
+      'bottom': $bottom,
+      'height': $height,
+      'left': $left,
+      'right': $right,
+      'top': $top,
+      'width': $width
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -5975,10 +7742,10 @@ class CloseSyncOption {
   }
 }
 
-class UniColor {
+class Color {
   mpjs.JsObject? $$context$$;
 
-  UniColor({this.$$context$$});
+  Color({this.$$context$$});
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
@@ -5998,6 +7765,20 @@ class CompressImageOption {
 
   Future<CompressImageCompleteCallback?> get complete async {
     return $complete;
+  }
+
+  num? $compressHeight;
+
+  Future<num?> get compressHeight async {
+    return await $$context$$?.getPropertyValue('compressHeight') ??
+        $compressHeight;
+  }
+
+  num? $compressedWidth;
+
+  Future<num?> get compressedWidth async {
+    return await $$context$$?.getPropertyValue('compressedWidth') ??
+        $compressedWidth;
   }
 
   CompressImageFailCallback? $fail;
@@ -6023,11 +7804,15 @@ class CompressImageOption {
   void setValues(
       {String? src,
       CompressImageCompleteCallback? complete,
+      num? compressHeight,
+      num? compressedWidth,
       CompressImageFailCallback? fail,
       num? quality,
       CompressImageSuccessCallback? success}) {
     if (src != null) $src = src;
     if (complete != null) $complete = complete;
+    if (compressHeight != null) $compressHeight = compressHeight;
+    if (compressedWidth != null) $compressedWidth = compressedWidth;
     if (fail != null) $fail = fail;
     if (quality != null) $quality = quality;
     if (success != null) $success = success;
@@ -6040,6 +7825,8 @@ class CompressImageOption {
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'compressHeight': $compressHeight,
+      'compressedWidth': $compressedWidth,
       'fail': $fail != null
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -6232,6 +8019,13 @@ class ConnectSocketOption {
     return $fail;
   }
 
+  bool? $forceCellularNetwork;
+
+  Future<bool?> get forceCellularNetwork async {
+    return await $$context$$?.getPropertyValue('forceCellularNetwork') ??
+        $forceCellularNetwork;
+  }
+
   IAnyObject? $header;
 
   Future<IAnyObject?> get header async {
@@ -6275,6 +8069,7 @@ class ConnectSocketOption {
       {String? url,
       ConnectSocketCompleteCallback? complete,
       ConnectSocketFailCallback? fail,
+      bool? forceCellularNetwork,
       IAnyObject? header,
       bool? perMessageDeflate,
       List<String>? protocols,
@@ -6284,6 +8079,8 @@ class ConnectSocketOption {
     if (url != null) $url = url;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (forceCellularNetwork != null)
+      $forceCellularNetwork = forceCellularNetwork;
     if (header != null) $header = header;
     if (perMessageDeflate != null) $perMessageDeflate = perMessageDeflate;
     if (protocols != null) $protocols = protocols;
@@ -6303,6 +8100,7 @@ class ConnectSocketOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'forceCellularNetwork': $forceCellularNetwork,
       'header': $header,
       'perMessageDeflate': $perMessageDeflate,
       'protocols': $protocols,
@@ -6355,6 +8153,12 @@ class ConnectWifiOption {
     return await $$context$$?.getPropertyValue('maunal') ?? $maunal;
   }
 
+  bool? $partialInfo;
+
+  Future<bool?> get partialInfo async {
+    return await $$context$$?.getPropertyValue('partialInfo') ?? $partialInfo;
+  }
+
   ConnectWifiSuccessCallback? $success;
 
   Future<ConnectWifiSuccessCallback?> get success async {
@@ -6370,6 +8174,7 @@ class ConnectWifiOption {
       ConnectWifiCompleteCallback? complete,
       ConnectWifiFailCallback? fail,
       bool? maunal,
+      bool? partialInfo,
       ConnectWifiSuccessCallback? success}) {
     if (SSID != null) $SSID = SSID;
     if (password != null) $password = password;
@@ -6377,6 +8182,7 @@ class ConnectWifiOption {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (maunal != null) $maunal = maunal;
+    if (partialInfo != null) $partialInfo = partialInfo;
     if (success != null) $success = success;
   }
 
@@ -6392,6 +8198,7 @@ class ConnectWifiOption {
           ? mpjs.JsFunction($fail!, [(e) => WifiError($$context$$: e)])
           : null,
       'maunal': $maunal,
+      'partialInfo': $partialInfo,
       'success': $success != null
           ? mpjs.JsFunction($success!, [(e) => WifiError($$context$$: e)])
           : null
@@ -6675,6 +8482,53 @@ class CreateBLEPeripheralServerSuccessCallbackResult {
   }
 }
 
+class CreateCacheManagerOption {
+  mpjs.JsObject? $$context$$;
+
+  ExtraOption? $extra;
+
+  Future<ExtraOption?> get extra async {
+    return ExtraOption($$context$$: $$context$$?.getProperty('extra'));
+  }
+
+  num? $maxAge;
+
+  Future<num?> get maxAge async {
+    return await $$context$$?.getPropertyValue('maxAge') ?? $maxAge;
+  }
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  String? $origin;
+
+  Future<String?> get origin async {
+    return await $$context$$?.getPropertyValue('origin') ?? $origin;
+  }
+
+  CreateCacheManagerOption({this.$$context$$});
+
+  void setValues(
+      {ExtraOption? extra, num? maxAge, dynamic mode, String? origin}) {
+    if (extra != null) $extra = extra;
+    if (maxAge != null) $maxAge = maxAge;
+    if (mode != null) $mode = mode;
+    if (origin != null) $origin = origin;
+  }
+
+  Map toJson() {
+    return {
+      'extra': $extra,
+      'maxAge': $maxAge,
+      'mode': $mode,
+      'origin': $origin
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class CreateInnerAudioContextOption {
   mpjs.JsObject? $$context$$;
 
@@ -6900,6 +8754,120 @@ class CreateWorkerOption {
   }
 }
 
+class CropImageOption {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $cropScale;
+
+  Future<dynamic> get cropScale async {
+    return await $$context$$?.getPropertyValue('cropScale') ?? $cropScale;
+  }
+
+  String $src = "";
+
+  Future<String> get src async {
+    return await $$context$$?.getPropertyValue('src') ?? $src;
+  }
+
+  CropImageCompleteCallback? $complete;
+
+  Future<CropImageCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  CropImageFailCallback? $fail;
+
+  Future<CropImageFailCallback?> get fail async {
+    return $fail;
+  }
+
+  CropImageSuccessCallback? $success;
+
+  Future<CropImageSuccessCallback?> get success async {
+    return $success;
+  }
+
+  CropImageOption({this.$$context$$});
+
+  void setValues(
+      {dynamic cropScale,
+      String? src,
+      CropImageCompleteCallback? complete,
+      CropImageFailCallback? fail,
+      CropImageSuccessCallback? success}) {
+    if (cropScale != null) $cropScale = cropScale;
+    if (src != null) $src = src;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'cropScale': $cropScale,
+      'src': $src,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => EditImageSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class CurrentState {
+  mpjs.JsObject? $$context$$;
+
+  num $logCount = 0;
+
+  Future<num> get logCount async {
+    return await $$context$$?.getPropertyValue('logCount') ?? $logCount;
+  }
+
+  num $maxLogCount = 0;
+
+  Future<num> get maxLogCount async {
+    return await $$context$$?.getPropertyValue('maxLogCount') ?? $maxLogCount;
+  }
+
+  num $maxSize = 0;
+
+  Future<num> get maxSize async {
+    return await $$context$$?.getPropertyValue('maxSize') ?? $maxSize;
+  }
+
+  num $size = 0;
+
+  Future<num> get size async {
+    return await $$context$$?.getPropertyValue('size') ?? $size;
+  }
+
+  CurrentState({this.$$context$$});
+
+  void setValues({num? logCount, num? maxLogCount, num? maxSize, num? size}) {
+    if (logCount != null) $logCount = logCount;
+    if (maxLogCount != null) $maxLogCount = maxLogCount;
+    if (maxSize != null) $maxSize = maxSize;
+    if (size != null) $size = size;
+  }
+
+  Map toJson() {
+    return {
+      'logCount': $logCount,
+      'maxLogCount': $maxLogCount,
+      'maxSize': $maxSize,
+      'size': $size
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class Danmu {
   mpjs.JsObject? $$context$$;
 
@@ -6925,6 +8893,57 @@ class Danmu {
   Map toJson() {
     return {'text': $text, 'color': $color}
       ..removeWhere((key, value) => value == null);
+  }
+}
+
+class DecayOption {
+  mpjs.JsObject? $$context$$;
+
+  List<dynamic>? $clamp;
+
+  Future<List<dynamic>?> get clamp async {
+    return await $$context$$?.getPropertyValue('clamp') ?? $clamp;
+  }
+
+  num? $deceleration;
+
+  Future<num?> get deceleration async {
+    return await $$context$$?.getPropertyValue('deceleration') ?? $deceleration;
+  }
+
+  num? $velocity;
+
+  Future<num?> get velocity async {
+    return await $$context$$?.getPropertyValue('velocity') ?? $velocity;
+  }
+
+  num? $velocityFactor;
+
+  Future<num?> get velocityFactor async {
+    return await $$context$$?.getPropertyValue('velocityFactor') ??
+        $velocityFactor;
+  }
+
+  DecayOption({this.$$context$$});
+
+  void setValues(
+      {List<dynamic>? clamp,
+      num? deceleration,
+      num? velocity,
+      num? velocityFactor}) {
+    if (clamp != null) $clamp = clamp;
+    if (deceleration != null) $deceleration = deceleration;
+    if (velocity != null) $velocity = velocity;
+    if (velocityFactor != null) $velocityFactor = velocityFactor;
+  }
+
+  Map toJson() {
+    return {
+      'clamp': $clamp,
+      'deceleration': $deceleration,
+      'velocity': $velocity,
+      'velocityFactor': $velocityFactor
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -7016,6 +9035,282 @@ class DestinationOption {
   Map toJson() {
     return {'latitude': $latitude, 'longitude': $longitude}
       ..removeWhere((key, value) => value == null);
+  }
+}
+
+class DetectBodyOption {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $frameBuffer = ArrayBuffer();
+
+  Future<ArrayBuffer> get frameBuffer async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('frameBuffer'));
+  }
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  num? $scoreThreshold;
+
+  Future<num?> get scoreThreshold async {
+    return await $$context$$?.getPropertyValue('scoreThreshold') ??
+        $scoreThreshold;
+  }
+
+  dynamic $sourceType;
+
+  Future<dynamic> get sourceType async {
+    return await $$context$$?.getPropertyValue('sourceType') ?? $sourceType;
+  }
+
+  DetectBodyOption({this.$$context$$});
+
+  void setValues(
+      {ArrayBuffer? frameBuffer,
+      num? height,
+      num? width,
+      num? scoreThreshold,
+      dynamic sourceType}) {
+    if (frameBuffer != null) $frameBuffer = frameBuffer;
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+    if (scoreThreshold != null) $scoreThreshold = scoreThreshold;
+    if (sourceType != null) $sourceType = sourceType;
+  }
+
+  Map toJson() {
+    return {
+      'frameBuffer': $frameBuffer,
+      'height': $height,
+      'width': $width,
+      'scoreThreshold': $scoreThreshold,
+      'sourceType': $sourceType
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class DetectFaceOption {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $frameBuffer = ArrayBuffer();
+
+  Future<ArrayBuffer> get frameBuffer async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('frameBuffer'));
+  }
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  dynamic $modelModel;
+
+  Future<dynamic> get modelModel async {
+    return await $$context$$?.getPropertyValue('modelModel') ?? $modelModel;
+  }
+
+  num? $scoreThreshold;
+
+  Future<num?> get scoreThreshold async {
+    return await $$context$$?.getPropertyValue('scoreThreshold') ??
+        $scoreThreshold;
+  }
+
+  dynamic $sourceType;
+
+  Future<dynamic> get sourceType async {
+    return await $$context$$?.getPropertyValue('sourceType') ?? $sourceType;
+  }
+
+  DetectFaceOption({this.$$context$$});
+
+  void setValues(
+      {ArrayBuffer? frameBuffer,
+      num? height,
+      num? width,
+      dynamic modelModel,
+      num? scoreThreshold,
+      dynamic sourceType}) {
+    if (frameBuffer != null) $frameBuffer = frameBuffer;
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+    if (modelModel != null) $modelModel = modelModel;
+    if (scoreThreshold != null) $scoreThreshold = scoreThreshold;
+    if (sourceType != null) $sourceType = sourceType;
+  }
+
+  Map toJson() {
+    return {
+      'frameBuffer': $frameBuffer,
+      'height': $height,
+      'width': $width,
+      'modelModel': $modelModel,
+      'scoreThreshold': $scoreThreshold,
+      'sourceType': $sourceType
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class DetectHandOption {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $frameBuffer = ArrayBuffer();
+
+  Future<ArrayBuffer> get frameBuffer async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('frameBuffer'));
+  }
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  dynamic $algoMode;
+
+  Future<dynamic> get algoMode async {
+    return await $$context$$?.getPropertyValue('algoMode') ?? $algoMode;
+  }
+
+  num? $scoreThreshold;
+
+  Future<num?> get scoreThreshold async {
+    return await $$context$$?.getPropertyValue('scoreThreshold') ??
+        $scoreThreshold;
+  }
+
+  DetectHandOption({this.$$context$$});
+
+  void setValues(
+      {ArrayBuffer? frameBuffer,
+      num? height,
+      num? width,
+      dynamic algoMode,
+      num? scoreThreshold}) {
+    if (frameBuffer != null) $frameBuffer = frameBuffer;
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+    if (algoMode != null) $algoMode = algoMode;
+    if (scoreThreshold != null) $scoreThreshold = scoreThreshold;
+  }
+
+  Map toJson() {
+    return {
+      'frameBuffer': $frameBuffer,
+      'height': $height,
+      'width': $width,
+      'algoMode': $algoMode,
+      'scoreThreshold': $scoreThreshold
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class DeviceInfo {
+  mpjs.JsObject? $$context$$;
+
+  String $CPUType = "";
+
+  Future<String> get CPUType async {
+    return await $$context$$?.getPropertyValue('CPUType') ?? $CPUType;
+  }
+
+  String $abi = "";
+
+  Future<String> get abi async {
+    return await $$context$$?.getPropertyValue('abi') ?? $abi;
+  }
+
+  num $benchmarkLevel = 0;
+
+  Future<num> get benchmarkLevel async {
+    return await $$context$$?.getPropertyValue('benchmarkLevel') ??
+        $benchmarkLevel;
+  }
+
+  String $brand = "";
+
+  Future<String> get brand async {
+    return await $$context$$?.getPropertyValue('brand') ?? $brand;
+  }
+
+  String $deviceAbi = "";
+
+  Future<String> get deviceAbi async {
+    return await $$context$$?.getPropertyValue('deviceAbi') ?? $deviceAbi;
+  }
+
+  String $model = "";
+
+  Future<String> get model async {
+    return await $$context$$?.getPropertyValue('model') ?? $model;
+  }
+
+  String $platform = "";
+
+  Future<String> get platform async {
+    return await $$context$$?.getPropertyValue('platform') ?? $platform;
+  }
+
+  String $system = "";
+
+  Future<String> get system async {
+    return await $$context$$?.getPropertyValue('system') ?? $system;
+  }
+
+  DeviceInfo({this.$$context$$});
+
+  void setValues(
+      {String? CPUType,
+      String? abi,
+      num? benchmarkLevel,
+      String? brand,
+      String? deviceAbi,
+      String? model,
+      String? platform,
+      String? system}) {
+    if (CPUType != null) $CPUType = CPUType;
+    if (abi != null) $abi = abi;
+    if (benchmarkLevel != null) $benchmarkLevel = benchmarkLevel;
+    if (brand != null) $brand = brand;
+    if (deviceAbi != null) $deviceAbi = deviceAbi;
+    if (model != null) $model = model;
+    if (platform != null) $platform = platform;
+    if (system != null) $system = system;
+  }
+
+  Map toJson() {
+    return {
+      'CPUType': $CPUType,
+      'abi': $abi,
+      'benchmarkLevel': $benchmarkLevel,
+      'brand': $brand,
+      'deviceAbi': $deviceAbi,
+      'model': $model,
+      'platform': $platform,
+      'system': $system
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -7164,10 +9459,10 @@ class DownloadFileSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
   }
 
-  DownloadProfile $profile = DownloadProfile();
+  RequestProfile $profile = RequestProfile();
 
-  Future<DownloadProfile> get profile async {
-    return DownloadProfile($$context$$: $$context$$?.getProperty('profile'));
+  Future<RequestProfile> get profile async {
+    return RequestProfile($$context$$: $$context$$?.getProperty('profile'));
   }
 
   num $statusCode = 0;
@@ -7192,7 +9487,7 @@ class DownloadFileSuccessCallbackResult {
 
   void setValues(
       {String? filePath,
-      DownloadProfile? profile,
+      RequestProfile? profile,
       num? statusCode,
       String? tempFilePath,
       String? errMsg}) {
@@ -7214,262 +9509,7 @@ class DownloadFileSuccessCallbackResult {
   }
 }
 
-class DownloadProfile {
-  mpjs.JsObject? $$context$$;
-
-  num $SSLconnectionEnd = 0;
-
-  Future<num> get SSLconnectionEnd async {
-    return await $$context$$?.getPropertyValue('SSLconnectionEnd') ??
-        $SSLconnectionEnd;
-  }
-
-  num $SSLconnectionStart = 0;
-
-  Future<num> get SSLconnectionStart async {
-    return await $$context$$?.getPropertyValue('SSLconnectionStart') ??
-        $SSLconnectionStart;
-  }
-
-  num $connectEnd = 0;
-
-  Future<num> get connectEnd async {
-    return await $$context$$?.getPropertyValue('connectEnd') ?? $connectEnd;
-  }
-
-  num $connectStart = 0;
-
-  Future<num> get connectStart async {
-    return await $$context$$?.getPropertyValue('connectStart') ?? $connectStart;
-  }
-
-  num $domainLookupEnd = 0;
-
-  Future<num> get domainLookupEnd async {
-    return await $$context$$?.getPropertyValue('domainLookupEnd') ??
-        $domainLookupEnd;
-  }
-
-  num $domainLookupStart = 0;
-
-  Future<num> get domainLookupStart async {
-    return await $$context$$?.getPropertyValue('domainLookupStart') ??
-        $domainLookupStart;
-  }
-
-  num $downstreamThroughputKbpsEstimate = 0;
-
-  Future<num> get downstreamThroughputKbpsEstimate async {
-    return await $$context$$
-            ?.getPropertyValue('downstreamThroughputKbpsEstimate') ??
-        $downstreamThroughputKbpsEstimate;
-  }
-
-  String $estimate_nettype = "";
-
-  Future<String> get estimate_nettype async {
-    return await $$context$$?.getPropertyValue('estimate_nettype') ??
-        $estimate_nettype;
-  }
-
-  num $fetchStart = 0;
-
-  Future<num> get fetchStart async {
-    return await $$context$$?.getPropertyValue('fetchStart') ?? $fetchStart;
-  }
-
-  num $httpRttEstimate = 0;
-
-  Future<num> get httpRttEstimate async {
-    return await $$context$$?.getPropertyValue('httpRttEstimate') ??
-        $httpRttEstimate;
-  }
-
-  String $peerIP = "";
-
-  Future<String> get peerIP async {
-    return await $$context$$?.getPropertyValue('peerIP') ?? $peerIP;
-  }
-
-  num $port = 0;
-
-  Future<num> get port async {
-    return await $$context$$?.getPropertyValue('port') ?? $port;
-  }
-
-  String $protocol = "";
-
-  Future<String> get protocol async {
-    return await $$context$$?.getPropertyValue('protocol') ?? $protocol;
-  }
-
-  num $receivedBytedCount = 0;
-
-  Future<num> get receivedBytedCount async {
-    return await $$context$$?.getPropertyValue('receivedBytedCount') ??
-        $receivedBytedCount;
-  }
-
-  num $redirectEnd = 0;
-
-  Future<num> get redirectEnd async {
-    return await $$context$$?.getPropertyValue('redirectEnd') ?? $redirectEnd;
-  }
-
-  num $redirectStart = 0;
-
-  Future<num> get redirectStart async {
-    return await $$context$$?.getPropertyValue('redirectStart') ??
-        $redirectStart;
-  }
-
-  num $requestEnd = 0;
-
-  Future<num> get requestEnd async {
-    return await $$context$$?.getPropertyValue('requestEnd') ?? $requestEnd;
-  }
-
-  num $requestStart = 0;
-
-  Future<num> get requestStart async {
-    return await $$context$$?.getPropertyValue('requestStart') ?? $requestStart;
-  }
-
-  num $responseEnd = 0;
-
-  Future<num> get responseEnd async {
-    return await $$context$$?.getPropertyValue('responseEnd') ?? $responseEnd;
-  }
-
-  num $responseStart = 0;
-
-  Future<num> get responseStart async {
-    return await $$context$$?.getPropertyValue('responseStart') ??
-        $responseStart;
-  }
-
-  num $rtt = 0;
-
-  Future<num> get rtt async {
-    return await $$context$$?.getPropertyValue('rtt') ?? $rtt;
-  }
-
-  num $sendBytesCount = 0;
-
-  Future<num> get sendBytesCount async {
-    return await $$context$$?.getPropertyValue('sendBytesCount') ??
-        $sendBytesCount;
-  }
-
-  bool $socketReused = false;
-
-  Future<bool> get socketReused async {
-    return await $$context$$?.getPropertyValue('socketReused') ?? $socketReused;
-  }
-
-  num $throughputKbps = 0;
-
-  Future<num> get throughputKbps async {
-    return await $$context$$?.getPropertyValue('throughputKbps') ??
-        $throughputKbps;
-  }
-
-  num $transportRttEstimate = 0;
-
-  Future<num> get transportRttEstimate async {
-    return await $$context$$?.getPropertyValue('transportRttEstimate') ??
-        $transportRttEstimate;
-  }
-
-  DownloadProfile({this.$$context$$});
-
-  void setValues(
-      {num? SSLconnectionEnd,
-      num? SSLconnectionStart,
-      num? connectEnd,
-      num? connectStart,
-      num? domainLookupEnd,
-      num? domainLookupStart,
-      num? downstreamThroughputKbpsEstimate,
-      String? estimate_nettype,
-      num? fetchStart,
-      num? httpRttEstimate,
-      String? peerIP,
-      num? port,
-      String? protocol,
-      num? receivedBytedCount,
-      num? redirectEnd,
-      num? redirectStart,
-      num? requestEnd,
-      num? requestStart,
-      num? responseEnd,
-      num? responseStart,
-      num? rtt,
-      num? sendBytesCount,
-      bool? socketReused,
-      num? throughputKbps,
-      num? transportRttEstimate}) {
-    if (SSLconnectionEnd != null) $SSLconnectionEnd = SSLconnectionEnd;
-    if (SSLconnectionStart != null) $SSLconnectionStart = SSLconnectionStart;
-    if (connectEnd != null) $connectEnd = connectEnd;
-    if (connectStart != null) $connectStart = connectStart;
-    if (domainLookupEnd != null) $domainLookupEnd = domainLookupEnd;
-    if (domainLookupStart != null) $domainLookupStart = domainLookupStart;
-    if (downstreamThroughputKbpsEstimate != null)
-      $downstreamThroughputKbpsEstimate = downstreamThroughputKbpsEstimate;
-    if (estimate_nettype != null) $estimate_nettype = estimate_nettype;
-    if (fetchStart != null) $fetchStart = fetchStart;
-    if (httpRttEstimate != null) $httpRttEstimate = httpRttEstimate;
-    if (peerIP != null) $peerIP = peerIP;
-    if (port != null) $port = port;
-    if (protocol != null) $protocol = protocol;
-    if (receivedBytedCount != null) $receivedBytedCount = receivedBytedCount;
-    if (redirectEnd != null) $redirectEnd = redirectEnd;
-    if (redirectStart != null) $redirectStart = redirectStart;
-    if (requestEnd != null) $requestEnd = requestEnd;
-    if (requestStart != null) $requestStart = requestStart;
-    if (responseEnd != null) $responseEnd = responseEnd;
-    if (responseStart != null) $responseStart = responseStart;
-    if (rtt != null) $rtt = rtt;
-    if (sendBytesCount != null) $sendBytesCount = sendBytesCount;
-    if (socketReused != null) $socketReused = socketReused;
-    if (throughputKbps != null) $throughputKbps = throughputKbps;
-    if (transportRttEstimate != null)
-      $transportRttEstimate = transportRttEstimate;
-  }
-
-  Map toJson() {
-    return {
-      'SSLconnectionEnd': $SSLconnectionEnd,
-      'SSLconnectionStart': $SSLconnectionStart,
-      'connectEnd': $connectEnd,
-      'connectStart': $connectStart,
-      'domainLookupEnd': $domainLookupEnd,
-      'domainLookupStart': $domainLookupStart,
-      'downstreamThroughputKbpsEstimate': $downstreamThroughputKbpsEstimate,
-      'estimate_nettype': $estimate_nettype,
-      'fetchStart': $fetchStart,
-      'httpRttEstimate': $httpRttEstimate,
-      'peerIP': $peerIP,
-      'port': $port,
-      'protocol': $protocol,
-      'receivedBytedCount': $receivedBytedCount,
-      'redirectEnd': $redirectEnd,
-      'redirectStart': $redirectStart,
-      'requestEnd': $requestEnd,
-      'requestStart': $requestStart,
-      'responseEnd': $responseEnd,
-      'responseStart': $responseStart,
-      'rtt': $rtt,
-      'sendBytesCount': $sendBytesCount,
-      'socketReused': $socketReused,
-      'throughputKbps': $throughputKbps,
-      'transportRttEstimate': $transportRttEstimate
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class DownloadTaskOnProgressUpdateCallbackResult {
+class DownloadTaskOnProgressUpdateListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $progress = 0;
@@ -7492,7 +9532,7 @@ class DownloadTaskOnProgressUpdateCallbackResult {
         $totalBytesWritten;
   }
 
-  DownloadTaskOnProgressUpdateCallbackResult({this.$$context$$});
+  DownloadTaskOnProgressUpdateListenerResult({this.$$context$$});
 
   void setValues(
       {num? progress, num? totalBytesExpectedToWrite, num? totalBytesWritten}) {
@@ -7508,6 +9548,93 @@ class DownloadTaskOnProgressUpdateCallbackResult {
       'totalBytesExpectedToWrite': $totalBytesExpectedToWrite,
       'totalBytesWritten': $totalBytesWritten
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class EditImageOption {
+  mpjs.JsObject? $$context$$;
+
+  String $src = "";
+
+  Future<String> get src async {
+    return await $$context$$?.getPropertyValue('src') ?? $src;
+  }
+
+  EditImageCompleteCallback? $complete;
+
+  Future<EditImageCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  EditImageFailCallback? $fail;
+
+  Future<EditImageFailCallback?> get fail async {
+    return $fail;
+  }
+
+  EditImageSuccessCallback? $success;
+
+  Future<EditImageSuccessCallback?> get success async {
+    return $success;
+  }
+
+  EditImageOption({this.$$context$$});
+
+  void setValues(
+      {String? src,
+      EditImageCompleteCallback? complete,
+      EditImageFailCallback? fail,
+      EditImageSuccessCallback? success}) {
+    if (src != null) $src = src;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'src': $src,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => EditImageSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class EditImageSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $tempFilePath = "";
+
+  Future<String> get tempFilePath async {
+    return await $$context$$?.getPropertyValue('tempFilePath') ?? $tempFilePath;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  EditImageSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? tempFilePath, String? errMsg}) {
+    if (tempFilePath != null) $tempFilePath = tempFilePath;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'tempFilePath': $tempFilePath, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -7623,6 +9750,132 @@ class EntryItem {
       'length': $length,
       'position': $position
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class Err {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  num $errno = 0;
+
+  Future<num> get errno async {
+    return await $$context$$?.getPropertyValue('errno') ?? $errno;
+  }
+
+  Err({this.$$context$$});
+
+  void setValues({String? errMsg, num? errno}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (errno != null) $errno = errno;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'errno': $errno}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class ExecuteVisualLayerCommandOption {
+  mpjs.JsObject? $$context$$;
+
+  String $command = "";
+
+  Future<String> get command async {
+    return await $$context$$?.getPropertyValue('command') ?? $command;
+  }
+
+  String $layerId = "";
+
+  Future<String> get layerId async {
+    return await $$context$$?.getPropertyValue('layerId') ?? $layerId;
+  }
+
+  ExecuteVisualLayerCommandCompleteCallback? $complete;
+
+  Future<ExecuteVisualLayerCommandCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ExecuteVisualLayerCommandFailCallback? $fail;
+
+  Future<ExecuteVisualLayerCommandFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ExecuteVisualLayerCommandSuccessCallback? $success;
+
+  Future<ExecuteVisualLayerCommandSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ExecuteVisualLayerCommandOption({this.$$context$$});
+
+  void setValues(
+      {String? command,
+      String? layerId,
+      ExecuteVisualLayerCommandCompleteCallback? complete,
+      ExecuteVisualLayerCommandFailCallback? fail,
+      ExecuteVisualLayerCommandSuccessCallback? success}) {
+    if (command != null) $command = command;
+    if (layerId != null) $layerId = layerId;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'command': $command,
+      'layerId': $layerId,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!, [
+              (e) =>
+                  ExecuteVisualLayerCommandSuccessCallbackResult($$context$$: e)
+            ])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ExecuteVisualLayerCommandSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $data = "";
+
+  Future<String> get data async {
+    return await $$context$$?.getPropertyValue('data') ?? $data;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  ExecuteVisualLayerCommandSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? data, String? errMsg}) {
+    if (data != null) $data = data;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'data': $data, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -7843,6 +10096,26 @@ class ExtInfoOption {
 
   Map toJson() {
     return {'url': $url}..removeWhere((key, value) => value == null);
+  }
+}
+
+class ExtraOption {
+  mpjs.JsObject? $$context$$;
+
+  Array<dynamic>? $apiList;
+
+  Future<Array<dynamic>?> get apiList async {
+    return $apiList;
+  }
+
+  ExtraOption({this.$$context$$});
+
+  void setValues({Array<dynamic>? apiList}) {
+    if (apiList != null) $apiList = apiList;
+  }
+
+  Map toJson() {
+    return {'apiList': $apiList}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -8156,6 +10429,26 @@ class FaceDetectSuccessCallbackResult {
   }
 }
 
+class FaceTrack {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  FaceTrack({this.$$context$$});
+
+  void setValues({dynamic mode}) {
+    if (mode != null) $mode = mode;
+  }
+
+  Map toJson() {
+    return {'mode': $mode}..removeWhere((key, value) => value == null);
+  }
+}
+
 class Fields {
   mpjs.JsObject? $$context$$;
 
@@ -8355,302 +10648,6 @@ class FileSystemManagerCloseOption {
   }
 }
 
-class FileSystemManagerGetFileInfoOption {
-  mpjs.JsObject? $$context$$;
-
-  String $filePath = "";
-
-  Future<String> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  GetFileInfoCompleteCallback? $complete;
-
-  Future<GetFileInfoCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  FileSystemManagerGetFileInfoFailCallback? $fail;
-
-  Future<FileSystemManagerGetFileInfoFailCallback?> get fail async {
-    return $fail;
-  }
-
-  FileSystemManagerGetFileInfoSuccessCallback? $success;
-
-  Future<FileSystemManagerGetFileInfoSuccessCallback?> get success async {
-    return $success;
-  }
-
-  FileSystemManagerGetFileInfoOption({this.$$context$$});
-
-  void setValues(
-      {String? filePath,
-      GetFileInfoCompleteCallback? complete,
-      FileSystemManagerGetFileInfoFailCallback? fail,
-      FileSystemManagerGetFileInfoSuccessCallback? success}) {
-    if (filePath != null) $filePath = filePath;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'filePath': $filePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GetFileInfoFailCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction($success!, [
-              (e) => FileSystemManagerGetFileInfoSuccessCallbackResult(
-                  $$context$$: e)
-            ])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class FileSystemManagerGetFileInfoSuccessCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  num $size = 0;
-
-  Future<num> get size async {
-    return await $$context$$?.getPropertyValue('size') ?? $size;
-  }
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  FileSystemManagerGetFileInfoSuccessCallbackResult({this.$$context$$});
-
-  void setValues({num? size, String? errMsg}) {
-    if (size != null) $size = size;
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'size': $size, 'errMsg': $errMsg}
-      ..removeWhere((key, value) => value == null);
-  }
-}
-
-class FileSystemManagerGetSavedFileListOption {
-  mpjs.JsObject? $$context$$;
-
-  GetSavedFileListCompleteCallback? $complete;
-
-  Future<GetSavedFileListCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  GetSavedFileListFailCallback? $fail;
-
-  Future<GetSavedFileListFailCallback?> get fail async {
-    return $fail;
-  }
-
-  FileSystemManagerGetSavedFileListSuccessCallback? $success;
-
-  Future<FileSystemManagerGetSavedFileListSuccessCallback?> get success async {
-    return $success;
-  }
-
-  FileSystemManagerGetSavedFileListOption({this.$$context$$});
-
-  void setValues(
-      {GetSavedFileListCompleteCallback? complete,
-      GetSavedFileListFailCallback? fail,
-      FileSystemManagerGetSavedFileListSuccessCallback? success}) {
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction($success!, [
-              (e) => FileSystemManagerGetSavedFileListSuccessCallbackResult(
-                  $$context$$: e)
-            ])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class FileSystemManagerGetSavedFileListSuccessCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  List<FileItem> $fileList = <FileItem>[];
-
-  Future<List<FileItem>> get fileList async {
-    return await $$context$$?.getPropertyValue('fileList') ?? $fileList;
-  }
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  FileSystemManagerGetSavedFileListSuccessCallbackResult({this.$$context$$});
-
-  void setValues({List<FileItem>? fileList, String? errMsg}) {
-    if (fileList != null) $fileList = fileList;
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'fileList': $fileList, 'errMsg': $errMsg}
-      ..removeWhere((key, value) => value == null);
-  }
-}
-
-class FileSystemManagerRemoveSavedFileOption {
-  mpjs.JsObject? $$context$$;
-
-  String $filePath = "";
-
-  Future<String> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  RemoveSavedFileCompleteCallback? $complete;
-
-  Future<RemoveSavedFileCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  FileSystemManagerRemoveSavedFileFailCallback? $fail;
-
-  Future<FileSystemManagerRemoveSavedFileFailCallback?> get fail async {
-    return $fail;
-  }
-
-  RemoveSavedFileSuccessCallback? $success;
-
-  Future<RemoveSavedFileSuccessCallback?> get success async {
-    return $success;
-  }
-
-  FileSystemManagerRemoveSavedFileOption({this.$$context$$});
-
-  void setValues(
-      {String? filePath,
-      RemoveSavedFileCompleteCallback? complete,
-      FileSystemManagerRemoveSavedFileFailCallback? fail,
-      RemoveSavedFileSuccessCallback? success}) {
-    if (filePath != null) $filePath = filePath;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'filePath': $filePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction($fail!,
-              [(e) => RemoveSavedFileFailCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class FileSystemManagerSaveFileOption {
-  mpjs.JsObject? $$context$$;
-
-  String $tempFilePath = "";
-
-  Future<String> get tempFilePath async {
-    return await $$context$$?.getPropertyValue('tempFilePath') ?? $tempFilePath;
-  }
-
-  SaveFileCompleteCallback? $complete;
-
-  Future<SaveFileCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  FileSystemManagerSaveFileFailCallback? $fail;
-
-  Future<FileSystemManagerSaveFileFailCallback?> get fail async {
-    return $fail;
-  }
-
-  String? $filePath;
-
-  Future<String?> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  SaveFileSuccessCallback? $success;
-
-  Future<SaveFileSuccessCallback?> get success async {
-    return $success;
-  }
-
-  FileSystemManagerSaveFileOption({this.$$context$$});
-
-  void setValues(
-      {String? tempFilePath,
-      SaveFileCompleteCallback? complete,
-      FileSystemManagerSaveFileFailCallback? fail,
-      String? filePath,
-      SaveFileSuccessCallback? success}) {
-    if (tempFilePath != null) $tempFilePath = tempFilePath;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (filePath != null) $filePath = filePath;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'tempFilePath': $tempFilePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => SaveFileFailCallbackResult($$context$$: e)])
-          : null,
-      'filePath': $filePath,
-      'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => SaveFileSuccessCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
 class ForwardMaterials {
   mpjs.JsObject? $$context$$;
 
@@ -8751,6 +10748,18 @@ class FrameDataOptions {
 class FromScreenLocationOption {
   mpjs.JsObject? $$context$$;
 
+  num $x = 0;
+
+  Future<num> get x async {
+    return await $$context$$?.getPropertyValue('x') ?? $x;
+  }
+
+  num $y = 0;
+
+  Future<num> get y async {
+    return await $$context$$?.getPropertyValue('y') ?? $y;
+  }
+
   FromScreenLocationCompleteCallback? $complete;
 
   Future<FromScreenLocationCompleteCallback?> get complete async {
@@ -8772,9 +10781,13 @@ class FromScreenLocationOption {
   FromScreenLocationOption({this.$$context$$});
 
   void setValues(
-      {FromScreenLocationCompleteCallback? complete,
+      {num? x,
+      num? y,
+      FromScreenLocationCompleteCallback? complete,
       FromScreenLocationFailCallback? fail,
       FromScreenLocationSuccessCallback? success}) {
+    if (x != null) $x = x;
+    if (y != null) $y = y;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
@@ -8782,6 +10795,8 @@ class FromScreenLocationOption {
 
   Map toJson() {
     return {
+      'x': $x,
+      'y': $y,
       'complete': $complete != null
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -9041,6 +11056,26 @@ class FtruncateSyncOption {
   }
 }
 
+class GeneralCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GeneralCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg}) {
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  }
+}
+
 class GetAtqaOption {
   mpjs.JsObject? $$context$$;
 
@@ -9172,7 +11207,7 @@ class GetAvailableAudioSourcesOption {
 class GetAvailableAudioSourcesSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $audioSources = [];
+  Array<dynamic> $audioSources = Array();
 
   Future<Array<dynamic>> get audioSources async {
     return $audioSources;
@@ -9467,6 +11502,100 @@ class GetBLEDeviceServicesSuccessCallbackResult {
   }
 }
 
+class GetBLEMTUOption {
+  mpjs.JsObject? $$context$$;
+
+  String $deviceId = "";
+
+  Future<String> get deviceId async {
+    return await $$context$$?.getPropertyValue('deviceId') ?? $deviceId;
+  }
+
+  GetBLEMTUCompleteCallback? $complete;
+
+  Future<GetBLEMTUCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetBLEMTUFailCallback? $fail;
+
+  Future<GetBLEMTUFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetBLEMTUSuccessCallback? $success;
+
+  Future<GetBLEMTUSuccessCallback?> get success async {
+    return $success;
+  }
+
+  dynamic $writeType;
+
+  Future<dynamic> get writeType async {
+    return await $$context$$?.getPropertyValue('writeType') ?? $writeType;
+  }
+
+  GetBLEMTUOption({this.$$context$$});
+
+  void setValues(
+      {String? deviceId,
+      GetBLEMTUCompleteCallback? complete,
+      GetBLEMTUFailCallback? fail,
+      GetBLEMTUSuccessCallback? success,
+      dynamic writeType}) {
+    if (deviceId != null) $deviceId = deviceId;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+    if (writeType != null) $writeType = writeType;
+  }
+
+  Map toJson() {
+    return {
+      'deviceId': $deviceId,
+      'complete': $complete != null
+          ? mpjs.JsFunction($complete!, [(e) => BluetoothError($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction($fail!, [(e) => BluetoothError($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => GetBLEMTUSuccessCallbackResult($$context$$: e)])
+          : null,
+      'writeType': $writeType
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetBLEMTUSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  num $mtu = 0;
+
+  Future<num> get mtu async {
+    return await $$context$$?.getPropertyValue('mtu') ?? $mtu;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetBLEMTUSuccessCallbackResult({this.$$context$$});
+
+  void setValues({num? mtu, String? errMsg}) {
+    if (mtu != null) $mtu = mtu;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'mtu': $mtu, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class GetBackgroundAudioPlayerStateOption {
   mpjs.JsObject? $$context$$;
 
@@ -9641,9 +11770,78 @@ class GetBackgroundFetchDataOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          ? mpjs.JsFunction($success!, [
+              (e) => GetBackgroundFetchDataSuccessCallbackResult($$context$$: e)
+            ])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetBackgroundFetchDataSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $fetchedData = "";
+
+  Future<String> get fetchedData async {
+    return await $$context$$?.getPropertyValue('fetchedData') ?? $fetchedData;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  String $query = "";
+
+  Future<String> get query async {
+    return await $$context$$?.getPropertyValue('query') ?? $query;
+  }
+
+  num $scene = 0;
+
+  Future<num> get scene async {
+    return await $$context$$?.getPropertyValue('scene') ?? $scene;
+  }
+
+  num $timeStamp = 0;
+
+  Future<num> get timeStamp async {
+    return await $$context$$?.getPropertyValue('timeStamp') ?? $timeStamp;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetBackgroundFetchDataSuccessCallbackResult({this.$$context$$});
+
+  void setValues(
+      {String? fetchedData,
+      String? path,
+      String? query,
+      num? scene,
+      num? timeStamp,
+      String? errMsg}) {
+    if (fetchedData != null) $fetchedData = fetchedData;
+    if (path != null) $path = path;
+    if (query != null) $query = query;
+    if (scene != null) $scene = scene;
+    if (timeStamp != null) $timeStamp = timeStamp;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {
+      'fetchedData': $fetchedData,
+      'path': $path,
+      'query': $query,
+      'scene': $scene,
+      'timeStamp': $timeStamp,
+      'errMsg': $errMsg
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -9691,10 +11889,40 @@ class GetBackgroundFetchTokenOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          ? mpjs.JsFunction($success!, [
+              (e) =>
+                  GetBackgroundFetchTokenSuccessCallbackResult($$context$$: e)
+            ])
           : null
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetBackgroundFetchTokenSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  num $token = 0;
+
+  Future<num> get token async {
+    return await $$context$$?.getPropertyValue('token') ?? $token;
+  }
+
+  GetBackgroundFetchTokenSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg, num? token}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (token != null) $token = token;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'token': $token}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -9757,9 +11985,9 @@ class GetBatteryInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('isCharging') ?? $isCharging;
   }
 
-  String $level = "";
+  num $level = 0;
 
-  Future<String> get level async {
+  Future<num> get level async {
     return await $$context$$?.getPropertyValue('level') ?? $level;
   }
 
@@ -9771,7 +11999,7 @@ class GetBatteryInfoSuccessCallbackResult {
 
   GetBatteryInfoSuccessCallbackResult({this.$$context$$});
 
-  void setValues({bool? isCharging, String? level, String? errMsg}) {
+  void setValues({bool? isCharging, num? level, String? errMsg}) {
     if (isCharging != null) $isCharging = isCharging;
     if (level != null) $level = level;
     if (errMsg != null) $errMsg = errMsg;
@@ -9792,15 +12020,15 @@ class GetBatteryInfoSyncResult {
     return await $$context$$?.getPropertyValue('isCharging') ?? $isCharging;
   }
 
-  String $level = "";
+  num $level = 0;
 
-  Future<String> get level async {
+  Future<num> get level async {
     return await $$context$$?.getPropertyValue('level') ?? $level;
   }
 
   GetBatteryInfoSyncResult({this.$$context$$});
 
-  void setValues({bool? isCharging, String? level}) {
+  void setValues({bool? isCharging, num? level}) {
     if (isCharging != null) $isCharging = isCharging;
     if (level != null) $level = level;
   }
@@ -10161,10 +12389,22 @@ class GetChannelsLiveInfoOption {
     return $complete;
   }
 
+  num? $endTime;
+
+  Future<num?> get endTime async {
+    return await $$context$$?.getPropertyValue('endTime') ?? $endTime;
+  }
+
   GetChannelsLiveInfoFailCallback? $fail;
 
   Future<GetChannelsLiveInfoFailCallback?> get fail async {
     return $fail;
+  }
+
+  num? $startTime;
+
+  Future<num?> get startTime async {
+    return await $$context$$?.getPropertyValue('startTime') ?? $startTime;
   }
 
   GetChannelsLiveInfoSuccessCallback? $success;
@@ -10178,11 +12418,15 @@ class GetChannelsLiveInfoOption {
   void setValues(
       {String? finderUserName,
       GetChannelsLiveInfoCompleteCallback? complete,
+      num? endTime,
       GetChannelsLiveInfoFailCallback? fail,
+      num? startTime,
       GetChannelsLiveInfoSuccessCallback? success}) {
     if (finderUserName != null) $finderUserName = finderUserName;
     if (complete != null) $complete = complete;
+    if (endTime != null) $endTime = endTime;
     if (fail != null) $fail = fail;
+    if (startTime != null) $startTime = startTime;
     if (success != null) $success = success;
   }
 
@@ -10193,10 +12437,12 @@ class GetChannelsLiveInfoOption {
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'endTime': $endTime,
       'fail': $fail != null
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'startTime': $startTime,
       'success': $success != null
           ? mpjs.JsFunction($success!,
               [(e) => GetChannelsLiveInfoSuccessCallbackResult($$context$$: e)])
@@ -10238,6 +12484,18 @@ class GetChannelsLiveInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('nonceId') ?? $nonceId;
   }
 
+  List<dynamic> $otherInfos = <dynamic>[];
+
+  Future<List<dynamic>> get otherInfos async {
+    return await $$context$$?.getPropertyValue('otherInfos') ?? $otherInfos;
+  }
+
+  String $replayStatus = "";
+
+  Future<String> get replayStatus async {
+    return await $$context$$?.getPropertyValue('replayStatus') ?? $replayStatus;
+  }
+
   num $status = 0;
 
   Future<num> get status async {
@@ -10258,6 +12516,8 @@ class GetChannelsLiveInfoSuccessCallbackResult {
       String? headUrl,
       String? nickname,
       String? nonceId,
+      List<dynamic>? otherInfos,
+      String? replayStatus,
       num? status,
       String? errMsg}) {
     if (description != null) $description = description;
@@ -10265,6 +12525,8 @@ class GetChannelsLiveInfoSuccessCallbackResult {
     if (headUrl != null) $headUrl = headUrl;
     if (nickname != null) $nickname = nickname;
     if (nonceId != null) $nonceId = nonceId;
+    if (otherInfos != null) $otherInfos = otherInfos;
+    if (replayStatus != null) $replayStatus = replayStatus;
     if (status != null) $status = status;
     if (errMsg != null) $errMsg = errMsg;
   }
@@ -10276,6 +12538,8 @@ class GetChannelsLiveInfoSuccessCallbackResult {
       'headUrl': $headUrl,
       'nickname': $nickname,
       'nonceId': $nonceId,
+      'otherInfos': $otherInfos,
+      'replayStatus': $replayStatus,
       'status': $status,
       'errMsg': $errMsg
     }..removeWhere((key, value) => value == null);
@@ -10365,6 +12629,12 @@ class GetChannelsLiveNoticeInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('noticeId') ?? $noticeId;
   }
 
+  List<dynamic> $otherInfos = <dynamic>[];
+
+  Future<List<dynamic>> get otherInfos async {
+    return await $$context$$?.getPropertyValue('otherInfos') ?? $otherInfos;
+  }
+
   bool $reservable = false;
 
   Future<bool> get reservable async {
@@ -10395,6 +12665,7 @@ class GetChannelsLiveNoticeInfoSuccessCallbackResult {
       {String? headUrl,
       String? nickname,
       String? noticeId,
+      List<dynamic>? otherInfos,
       bool? reservable,
       String? startTime,
       num? status,
@@ -10402,6 +12673,7 @@ class GetChannelsLiveNoticeInfoSuccessCallbackResult {
     if (headUrl != null) $headUrl = headUrl;
     if (nickname != null) $nickname = nickname;
     if (noticeId != null) $noticeId = noticeId;
+    if (otherInfos != null) $otherInfos = otherInfos;
     if (reservable != null) $reservable = reservable;
     if (startTime != null) $startTime = startTime;
     if (status != null) $status = status;
@@ -10413,9 +12685,99 @@ class GetChannelsLiveNoticeInfoSuccessCallbackResult {
       'headUrl': $headUrl,
       'nickname': $nickname,
       'noticeId': $noticeId,
+      'otherInfos': $otherInfos,
       'reservable': $reservable,
       'startTime': $startTime,
       'status': $status,
+      'errMsg': $errMsg
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetChannelsShareKeyOption {
+  mpjs.JsObject? $$context$$;
+
+  GetChannelsShareKeyCompleteCallback? $complete;
+
+  Future<GetChannelsShareKeyCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetChannelsShareKeyFailCallback? $fail;
+
+  Future<GetChannelsShareKeyFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetChannelsShareKeySuccessCallback? $success;
+
+  Future<GetChannelsShareKeySuccessCallback?> get success async {
+    return $success;
+  }
+
+  GetChannelsShareKeyOption({this.$$context$$});
+
+  void setValues(
+      {GetChannelsShareKeyCompleteCallback? complete,
+      GetChannelsShareKeyFailCallback? fail,
+      GetChannelsShareKeySuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => GetChannelsShareKeySuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetChannelsShareKeySuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  PromoterResult $promoter = PromoterResult();
+
+  Future<PromoterResult> get promoter async {
+    return PromoterResult($$context$$: $$context$$?.getProperty('promoter'));
+  }
+
+  String $sharerOpenId = "";
+
+  Future<String> get sharerOpenId async {
+    return await $$context$$?.getPropertyValue('sharerOpenId') ?? $sharerOpenId;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetChannelsShareKeySuccessCallbackResult({this.$$context$$});
+
+  void setValues(
+      {PromoterResult? promoter, String? sharerOpenId, String? errMsg}) {
+    if (promoter != null) $promoter = promoter;
+    if (sharerOpenId != null) $sharerOpenId = sharerOpenId;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {
+      'promoter': $promoter,
+      'sharerOpenId': $sharerOpenId,
       'errMsg': $errMsg
     }..removeWhere((key, value) => value == null);
   }
@@ -10465,13 +12827,13 @@ class GetClipboardDataOption {
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!,
-              [(e) => GetClipboardDataSuccessCallbackResult($$context$$: e)])
+              [(e) => GetClipboardDataSuccessCallbackOption($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class GetClipboardDataSuccessCallbackResult {
+class GetClipboardDataSuccessCallbackOption {
   mpjs.JsObject? $$context$$;
 
   String $data = "";
@@ -10480,7 +12842,7 @@ class GetClipboardDataSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('data') ?? $data;
   }
 
-  GetClipboardDataSuccessCallbackResult({this.$$context$$});
+  GetClipboardDataSuccessCallbackOption({this.$$context$$});
 
   void setValues({String? data}) {
     if (data != null) $data = data;
@@ -10593,6 +12955,12 @@ class GetConnectedWifiOption {
     return $fail;
   }
 
+  bool? $partialInfo;
+
+  Future<bool?> get partialInfo async {
+    return await $$context$$?.getPropertyValue('partialInfo') ?? $partialInfo;
+  }
+
   GetConnectedWifiSuccessCallback? $success;
 
   Future<GetConnectedWifiSuccessCallback?> get success async {
@@ -10604,9 +12972,11 @@ class GetConnectedWifiOption {
   void setValues(
       {GetConnectedWifiCompleteCallback? complete,
       GetConnectedWifiFailCallback? fail,
+      bool? partialInfo,
       GetConnectedWifiSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (partialInfo != null) $partialInfo = partialInfo;
     if (success != null) $success = success;
   }
 
@@ -10618,6 +12988,7 @@ class GetConnectedWifiOption {
       'fail': $fail != null
           ? mpjs.JsFunction($fail!, [(e) => WifiError($$context$$: e)])
           : null,
+      'partialInfo': $partialInfo,
       'success': $success != null
           ? mpjs.JsFunction($success!,
               [(e) => GetConnectedWifiSuccessCallbackResult($$context$$: e)])
@@ -10842,6 +13213,187 @@ class GetFileInfoFailCallbackResult {
 
   Map toJson() {
     return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetFileInfoOption {
+  mpjs.JsObject? $$context$$;
+
+  String $filePath = "";
+
+  Future<String> get filePath async {
+    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  GetFileInfoCompleteCallback? $complete;
+
+  Future<GetFileInfoCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetFileInfoFailCallback? $fail;
+
+  Future<GetFileInfoFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetFileInfoSuccessCallback? $success;
+
+  Future<GetFileInfoSuccessCallback?> get success async {
+    return $success;
+  }
+
+  GetFileInfoOption({this.$$context$$});
+
+  void setValues(
+      {String? filePath,
+      GetFileInfoCompleteCallback? complete,
+      GetFileInfoFailCallback? fail,
+      GetFileInfoSuccessCallback? success}) {
+    if (filePath != null) $filePath = filePath;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'filePath': $filePath,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GetFileInfoFailCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => GetFileInfoSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetFileInfoSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  num $size = 0;
+
+  Future<num> get size async {
+    return await $$context$$?.getPropertyValue('size') ?? $size;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetFileInfoSuccessCallbackResult({this.$$context$$});
+
+  void setValues({num? size, String? errMsg}) {
+    if (size != null) $size = size;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'size': $size, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetFuzzyLocationOption {
+  mpjs.JsObject? $$context$$;
+
+  GetFuzzyLocationCompleteCallback? $complete;
+
+  Future<GetFuzzyLocationCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetFuzzyLocationFailCallback? $fail;
+
+  Future<GetFuzzyLocationFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetFuzzyLocationSuccessCallback? $success;
+
+  Future<GetFuzzyLocationSuccessCallback?> get success async {
+    return $success;
+  }
+
+  String? $type;
+
+  Future<String?> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  GetFuzzyLocationOption({this.$$context$$});
+
+  void setValues(
+      {GetFuzzyLocationCompleteCallback? complete,
+      GetFuzzyLocationFailCallback? fail,
+      GetFuzzyLocationSuccessCallback? success,
+      String? type}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => GetFuzzyLocationSuccessCallbackResult($$context$$: e)])
+          : null,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetFuzzyLocationSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  num $latitude = 0;
+
+  Future<num> get latitude async {
+    return await $$context$$?.getPropertyValue('latitude') ?? $latitude;
+  }
+
+  num $longitude = 0;
+
+  Future<num> get longitude async {
+    return await $$context$$?.getPropertyValue('longitude') ?? $longitude;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetFuzzyLocationSuccessCallbackResult({this.$$context$$});
+
+  void setValues({num? latitude, num? longitude, String? errMsg}) {
+    if (latitude != null) $latitude = latitude;
+    if (longitude != null) $longitude = longitude;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'latitude': $latitude, 'longitude': $longitude, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -11146,9 +13698,9 @@ class GetImageInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('path') ?? $path;
   }
 
-  String $type = "";
+  dynamic $type;
 
-  Future<String> get type async {
+  Future<dynamic> get type async {
     return await $$context$$?.getPropertyValue('type') ?? $type;
   }
 
@@ -11170,7 +13722,7 @@ class GetImageInfoSuccessCallbackResult {
       {num? height,
       dynamic orientation,
       String? path,
-      String? type,
+      dynamic type,
       num? width,
       String? errMsg}) {
     if (height != null) $height = height;
@@ -11299,6 +13851,91 @@ class GetLatestUserKeySuccessCallbackResult {
       'version': $version,
       'errMsg': $errMsg
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetLocalIPAddressOption {
+  mpjs.JsObject? $$context$$;
+
+  GetLocalIPAddressCompleteCallback? $complete;
+
+  Future<GetLocalIPAddressCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetLocalIPAddressFailCallback? $fail;
+
+  Future<GetLocalIPAddressFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetLocalIPAddressSuccessCallback? $success;
+
+  Future<GetLocalIPAddressSuccessCallback?> get success async {
+    return $success;
+  }
+
+  GetLocalIPAddressOption({this.$$context$$});
+
+  void setValues(
+      {GetLocalIPAddressCompleteCallback? complete,
+      GetLocalIPAddressFailCallback? fail,
+      GetLocalIPAddressSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => GetLocalIPAddressSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetLocalIPAddressSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  String $localip = "";
+
+  Future<String> get localip async {
+    return await $$context$$?.getPropertyValue('localip') ?? $localip;
+  }
+
+  String $netmask = "";
+
+  Future<String> get netmask async {
+    return await $$context$$?.getPropertyValue('netmask') ?? $netmask;
+  }
+
+  GetLocalIPAddressSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg, String? localip, String? netmask}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (localip != null) $localip = localip;
+    if (netmask != null) $netmask = netmask;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'localip': $localip, 'netmask': $netmask}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -11629,6 +14266,13 @@ class GetNetworkTypeOption {
 class GetNetworkTypeSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
+  bool $hasSystemProxy = false;
+
+  Future<bool> get hasSystemProxy async {
+    return await $$context$$?.getPropertyValue('hasSystemProxy') ??
+        $hasSystemProxy;
+  }
+
   dynamic $networkType;
 
   Future<dynamic> get networkType async {
@@ -11650,7 +14294,12 @@ class GetNetworkTypeSuccessCallbackResult {
 
   GetNetworkTypeSuccessCallbackResult({this.$$context$$});
 
-  void setValues({dynamic networkType, num? signalStrength, String? errMsg}) {
+  void setValues(
+      {bool? hasSystemProxy,
+      dynamic networkType,
+      num? signalStrength,
+      String? errMsg}) {
+    if (hasSystemProxy != null) $hasSystemProxy = hasSystemProxy;
     if (networkType != null) $networkType = networkType;
     if (signalStrength != null) $signalStrength = signalStrength;
     if (errMsg != null) $errMsg = errMsg;
@@ -11658,6 +14307,7 @@ class GetNetworkTypeSuccessCallbackResult {
 
   Map toJson() {
     return {
+      'hasSystemProxy': $hasSystemProxy,
       'networkType': $networkType,
       'signalStrength': $signalStrength,
       'errMsg': $errMsg
@@ -11992,41 +14642,33 @@ class GetSakSuccessCallbackResult {
   }
 }
 
-class GetSavedFileInfoOption {
+class GetSavedFileListOption {
   mpjs.JsObject? $$context$$;
 
-  String $filePath = "";
+  GetSavedFileListCompleteCallback? $complete;
 
-  Future<String> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  GetSavedFileInfoCompleteCallback? $complete;
-
-  Future<GetSavedFileInfoCompleteCallback?> get complete async {
+  Future<GetSavedFileListCompleteCallback?> get complete async {
     return $complete;
   }
 
-  GetSavedFileInfoFailCallback? $fail;
+  GetSavedFileListFailCallback? $fail;
 
-  Future<GetSavedFileInfoFailCallback?> get fail async {
+  Future<GetSavedFileListFailCallback?> get fail async {
     return $fail;
   }
 
-  GetSavedFileInfoSuccessCallback? $success;
+  GetSavedFileListSuccessCallback? $success;
 
-  Future<GetSavedFileInfoSuccessCallback?> get success async {
+  Future<GetSavedFileListSuccessCallback?> get success async {
     return $success;
   }
 
-  GetSavedFileInfoOption({this.$$context$$});
+  GetSavedFileListOption({this.$$context$$});
 
   void setValues(
-      {String? filePath,
-      GetSavedFileInfoCompleteCallback? complete,
-      GetSavedFileInfoFailCallback? fail,
-      GetSavedFileInfoSuccessCallback? success}) {
-    if (filePath != null) $filePath = filePath;
+      {GetSavedFileListCompleteCallback? complete,
+      GetSavedFileListFailCallback? fail,
+      GetSavedFileListSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
@@ -12034,7 +14676,6 @@ class GetSavedFileInfoOption {
 
   Map toJson() {
     return {
-      'filePath': $filePath,
       'complete': $complete != null
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -12045,25 +14686,19 @@ class GetSavedFileInfoOption {
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!,
-              [(e) => GetSavedFileInfoSuccessCallbackResult($$context$$: e)])
+              [(e) => GetSavedFileListSuccessCallbackResult($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class GetSavedFileInfoSuccessCallbackResult {
+class GetSavedFileListSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  num $createTime = 0;
+  List<FileItem> $fileList = <FileItem>[];
 
-  Future<num> get createTime async {
-    return await $$context$$?.getPropertyValue('createTime') ?? $createTime;
-  }
-
-  num $size = 0;
-
-  Future<num> get size async {
-    return await $$context$$?.getPropertyValue('size') ?? $size;
+  Future<List<FileItem>> get fileList async {
+    return await $$context$$?.getPropertyValue('fileList') ?? $fileList;
   }
 
   String $errMsg = "";
@@ -12072,16 +14707,15 @@ class GetSavedFileInfoSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  GetSavedFileInfoSuccessCallbackResult({this.$$context$$});
+  GetSavedFileListSuccessCallbackResult({this.$$context$$});
 
-  void setValues({num? createTime, num? size, String? errMsg}) {
-    if (createTime != null) $createTime = createTime;
-    if (size != null) $size = size;
+  void setValues({List<FileItem>? fileList, String? errMsg}) {
+    if (fileList != null) $fileList = fileList;
     if (errMsg != null) $errMsg = errMsg;
   }
 
   Map toJson() {
-    return {'createTime': $createTime, 'size': $size, 'errMsg': $errMsg}
+    return {'fileList': $fileList, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -12208,13 +14842,13 @@ class GetScreenBrightnessOption {
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!,
-              [(e) => GetScreenBrightnessSuccessCallbackResult($$context$$: e)])
+              [(e) => GetScreenBrightnessSuccessCallbackOption($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class GetScreenBrightnessSuccessCallbackResult {
+class GetScreenBrightnessSuccessCallbackOption {
   mpjs.JsObject? $$context$$;
 
   num $value = 0;
@@ -12223,7 +14857,7 @@ class GetScreenBrightnessSuccessCallbackResult {
     return await $$context$$?.getPropertyValue('value') ?? $value;
   }
 
-  GetScreenBrightnessSuccessCallbackResult({this.$$context$$});
+  GetScreenBrightnessSuccessCallbackOption({this.$$context$$});
 
   void setValues({num? value}) {
     if (value != null) $value = value;
@@ -12231,6 +14865,86 @@ class GetScreenBrightnessSuccessCallbackResult {
 
   Map toJson() {
     return {'value': $value}..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetScreenRecordingStateOption {
+  mpjs.JsObject? $$context$$;
+
+  GetScreenRecordingStateCompleteCallback? $complete;
+
+  Future<GetScreenRecordingStateCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetScreenRecordingStateFailCallback? $fail;
+
+  Future<GetScreenRecordingStateFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetScreenRecordingStateSuccessCallback? $success;
+
+  Future<GetScreenRecordingStateSuccessCallback?> get success async {
+    return $success;
+  }
+
+  GetScreenRecordingStateOption({this.$$context$$});
+
+  void setValues(
+      {GetScreenRecordingStateCompleteCallback? complete,
+      GetScreenRecordingStateFailCallback? fail,
+      GetScreenRecordingStateSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!, [
+              (e) =>
+                  GetScreenRecordingStateSuccessCallbackResult($$context$$: e)
+            ])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class GetScreenRecordingStateSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $state;
+
+  Future<dynamic> get state async {
+    return await $$context$$?.getPropertyValue('state') ?? $state;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  GetScreenRecordingStateSuccessCallbackResult({this.$$context$$});
+
+  void setValues({dynamic state, String? errMsg}) {
+    if (state != null) $state = state;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'state': $state, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -12658,6 +15372,55 @@ class GetSkewSuccessCallbackResult {
   }
 }
 
+class GetSkylineInfoOption {
+  mpjs.JsObject? $$context$$;
+
+  GetSkylineInfoCompleteCallback? $complete;
+
+  Future<GetSkylineInfoCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  GetSkylineInfoFailCallback? $fail;
+
+  Future<GetSkylineInfoFailCallback?> get fail async {
+    return $fail;
+  }
+
+  GetSkylineInfoSuccessCallback? $success;
+
+  Future<GetSkylineInfoSuccessCallback?> get success async {
+    return $success;
+  }
+
+  GetSkylineInfoOption({this.$$context$$});
+
+  void setValues(
+      {GetSkylineInfoCompleteCallback? complete,
+      GetSkylineInfoFailCallback? fail,
+      GetSkylineInfoSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!, [(e) => SkylineInfo($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class GetStorageInfoOption {
   mpjs.JsObject? $$context$$;
 
@@ -12793,6 +15556,12 @@ class GetStorageOption<T extends dynamic> {
     return $complete;
   }
 
+  bool? $encrypt;
+
+  Future<bool?> get encrypt async {
+    return await $$context$$?.getPropertyValue('encrypt') ?? $encrypt;
+  }
+
   GetStorageFailCallback? $fail;
 
   Future<GetStorageFailCallback?> get fail async {
@@ -12801,15 +15570,21 @@ class GetStorageOption<T extends dynamic> {
 
   GetStorageSuccessCallback<T>? $success;
 
+  Future<GetStorageSuccessCallback<T>?> get success async {
+    return $success;
+  }
+
   GetStorageOption({this.$$context$$});
 
   void setValues(
       {String? key,
       GetStorageCompleteCallback? complete,
+      bool? encrypt,
       GetStorageFailCallback? fail,
       GetStorageSuccessCallback<T>? success}) {
     if (key != null) $key = key;
     if (complete != null) $complete = complete;
+    if (encrypt != null) $encrypt = encrypt;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
   }
@@ -12821,6 +15596,7 @@ class GetStorageOption<T extends dynamic> {
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'encrypt': $encrypt,
       'fail': $fail != null
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -13548,6 +16324,26 @@ class GetWifiListOption {
   }
 }
 
+class HandTrack {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  HandTrack({this.$$context$$});
+
+  void setValues({dynamic mode}) {
+    if (mode != null) $mode = mode;
+  }
+
+  Map toJson() {
+    return {'mode': $mode}..removeWhere((key, value) => value == null);
+  }
+}
+
 class HideHomeButtonOption {
   mpjs.JsObject? $$context$$;
 
@@ -13663,6 +16459,12 @@ class HideLoadingOption {
     return $fail;
   }
 
+  bool? $noConflict;
+
+  Future<bool?> get noConflict async {
+    return await $$context$$?.getPropertyValue('noConflict') ?? $noConflict;
+  }
+
   HideLoadingSuccessCallback? $success;
 
   Future<HideLoadingSuccessCallback?> get success async {
@@ -13674,9 +16476,11 @@ class HideLoadingOption {
   void setValues(
       {HideLoadingCompleteCallback? complete,
       HideLoadingFailCallback? fail,
+      bool? noConflict,
       HideLoadingSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (noConflict != null) $noConflict = noConflict;
     if (success != null) $success = success;
   }
 
@@ -13690,6 +16494,7 @@ class HideLoadingOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'noConflict': $noConflict,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -13940,6 +16745,12 @@ class HideToastOption {
     return $fail;
   }
 
+  num? $noConflict;
+
+  Future<num?> get noConflict async {
+    return await $$context$$?.getPropertyValue('noConflict') ?? $noConflict;
+  }
+
   HideToastSuccessCallback? $success;
 
   Future<HideToastSuccessCallback?> get success async {
@@ -13951,9 +16762,11 @@ class HideToastOption {
   void setValues(
       {HideToastCompleteCallback? complete,
       HideToastFailCallback? fail,
+      num? noConflict,
       HideToastSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (noConflict != null) $noConflict = noConflict;
     if (success != null) $success = success;
   }
 
@@ -13967,6 +16780,7 @@ class HideToastOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'noConflict': $noConflict,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -13975,23 +16789,24 @@ class HideToastOption {
   }
 }
 
-class Host {
+class HitTestRes {
   mpjs.JsObject? $$context$$;
 
-  String $appId = "";
+  Float32Array $transform = Float32Array();
 
-  Future<String> get appId async {
-    return await $$context$$?.getPropertyValue('appId') ?? $appId;
+  Future<Float32Array> get transform async {
+    return Float32Array($$context$$: $$context$$?.getProperty('transform'));
   }
 
-  Host({this.$$context$$});
+  HitTestRes({this.$$context$$});
 
-  void setValues({String? appId}) {
-    if (appId != null) $appId = appId;
+  void setValues({Float32Array? transform}) {
+    if (transform != null) $transform = transform;
   }
 
   Map toJson() {
-    return {'appId': $appId}..removeWhere((key, value) => value == null);
+    return {'transform': $transform}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -14016,6 +16831,13 @@ class Image {
     return await $$context$$?.getPropertyValue('onload') ?? $onload;
   }
 
+  String $referrerPolicy = "";
+
+  Future<String> get referrerPolicy async {
+    return await $$context$$?.getPropertyValue('referrerPolicy') ??
+        $referrerPolicy;
+  }
+
   String $src = "";
 
   Future<String> get src async {
@@ -14031,10 +16853,16 @@ class Image {
   Image({this.$$context$$});
 
   void setValues(
-      {num? height, dynamic onerror, dynamic onload, String? src, num? width}) {
+      {num? height,
+      dynamic onerror,
+      dynamic onload,
+      String? referrerPolicy,
+      String? src,
+      num? width}) {
     if (height != null) $height = height;
     if (onerror != null) $onerror = onerror;
     if (onload != null) $onload = onload;
+    if (referrerPolicy != null) $referrerPolicy = referrerPolicy;
     if (src != null) $src = src;
     if (width != null) $width = width;
   }
@@ -14044,6 +16872,7 @@ class Image {
       'height': $height,
       'onerror': $onerror != null ? mpjs.JsFunction($onerror!, [null]) : null,
       'onload': $onload != null ? mpjs.JsFunction($onload!, [null]) : null,
+      'referrerPolicy': $referrerPolicy,
       'src': $src,
       'width': $width
     }..removeWhere((key, value) => value == null);
@@ -14253,9 +17082,9 @@ class InitMarkerClusterOption {
     return $fail;
   }
 
-  bool? $gridSize;
+  num? $gridSize;
 
-  Future<bool?> get gridSize async {
+  Future<num?> get gridSize async {
     return await $$context$$?.getPropertyValue('gridSize') ?? $gridSize;
   }
 
@@ -14277,7 +17106,7 @@ class InitMarkerClusterOption {
       {InitMarkerClusterCompleteCallback? complete,
       bool? enableDefaultStyle,
       InitMarkerClusterFailCallback? fail,
-      bool? gridSize,
+      num? gridSize,
       InitMarkerClusterSuccessCallback? success,
       bool? zoomOnClick}) {
     if (complete != null) $complete = complete;
@@ -14361,6 +17190,13 @@ class InnerAudioContext {
     return await $$context$$?.getPropertyValue('playbackRate') ?? $playbackRate;
   }
 
+  String $referrerPolicy = "";
+
+  Future<String> get referrerPolicy async {
+    return await $$context$$?.getPropertyValue('referrerPolicy') ??
+        $referrerPolicy;
+  }
+
   String $src = "";
 
   Future<String> get src async {
@@ -14390,6 +17226,7 @@ class InnerAudioContext {
       bool? obeyMuteSwitch,
       bool? paused,
       num? playbackRate,
+      String? referrerPolicy,
       String? src,
       num? startTime,
       num? volume}) {
@@ -14401,6 +17238,7 @@ class InnerAudioContext {
     if (obeyMuteSwitch != null) $obeyMuteSwitch = obeyMuteSwitch;
     if (paused != null) $paused = paused;
     if (playbackRate != null) $playbackRate = playbackRate;
+    if (referrerPolicy != null) $referrerPolicy = referrerPolicy;
     if (src != null) $src = src;
     if (startTime != null) $startTime = startTime;
     if (volume != null) $volume = volume;
@@ -14416,6 +17254,7 @@ class InnerAudioContext {
       'obeyMuteSwitch': $obeyMuteSwitch,
       'paused': $paused,
       'playbackRate': $playbackRate,
+      'referrerPolicy': $referrerPolicy,
       'src': $src,
       'startTime': $startTime,
       'volume': $volume
@@ -14427,103 +17266,103 @@ class InnerAudioContext {
     return result;
   }
 
-  Future<void> offCanplay([OffCanplayCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offCanplay', [callback]);
+  Future<void> offCanplay([OffCanplayCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offCanplay', [listener]);
     return result;
   }
 
-  Future<void> offEnded([OffEndedCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offEnded', [callback]);
+  Future<void> offEnded([OffEndedCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offEnded', [listener]);
     return result;
   }
 
-  Future<void> offError([InnerAudioContextOffErrorCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offError([InnerAudioContextOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> offPause([OffPauseCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offPause', [callback]);
+  Future<void> offPause([OffPauseCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offPause', [listener]);
     return result;
   }
 
-  Future<void> offPlay([OffPlayCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offPlay', [callback]);
+  Future<void> offPlay([OffPlayCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offPlay', [listener]);
     return result;
   }
 
-  Future<void> offSeeked([OffSeekedCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offSeeked', [callback]);
+  Future<void> offSeeked([OffSeekedCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offSeeked', [listener]);
     return result;
   }
 
-  Future<void> offSeeking([OffSeekingCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offSeeking', [callback]);
+  Future<void> offSeeking([OffSeekingCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offSeeking', [listener]);
     return result;
   }
 
-  Future<void> offStop([OffStopCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offStop', [callback]);
+  Future<void> offStop([OffStopCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offStop', [listener]);
     return result;
   }
 
-  Future<void> offTimeUpdate([OffTimeUpdateCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offTimeUpdate', [callback]);
+  Future<void> offTimeUpdate([OffTimeUpdateCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offTimeUpdate', [listener]);
     return result;
   }
 
-  Future<void> offWaiting([OffWaitingCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offWaiting', [callback]);
+  Future<void> offWaiting([OffWaitingCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offWaiting', [listener]);
     return result;
   }
 
-  Future<void> onCanplay(OnCanplayCallback callback) async {
-    final result = await $$context$$?.callMethod('onCanplay', [callback]);
+  Future<void> onCanplay(OnCanplayCallback listener) async {
+    final result = await $$context$$?.callMethod('onCanplay', [listener]);
     return result;
   }
 
-  Future<void> onEnded(OnEndedCallback callback) async {
-    final result = await $$context$$?.callMethod('onEnded', [callback]);
+  Future<void> onEnded(OnEndedCallback listener) async {
+    final result = await $$context$$?.callMethod('onEnded', [listener]);
     return result;
   }
 
-  Future<void> onError(InnerAudioContextOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(InnerAudioContextOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onPause(OnPauseCallback callback) async {
-    final result = await $$context$$?.callMethod('onPause', [callback]);
+  Future<void> onPause(OnPauseCallback listener) async {
+    final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
-  Future<void> onPlay(OnPlayCallback callback) async {
-    final result = await $$context$$?.callMethod('onPlay', [callback]);
+  Future<void> onPlay(OnPlayCallback listener) async {
+    final result = await $$context$$?.callMethod('onPlay', [listener]);
     return result;
   }
 
-  Future<void> onSeeked(OnSeekedCallback callback) async {
-    final result = await $$context$$?.callMethod('onSeeked', [callback]);
+  Future<void> onSeeked(OnSeekedCallback listener) async {
+    final result = await $$context$$?.callMethod('onSeeked', [listener]);
     return result;
   }
 
-  Future<void> onSeeking(OnSeekingCallback callback) async {
-    final result = await $$context$$?.callMethod('onSeeking', [callback]);
+  Future<void> onSeeking(OnSeekingCallback listener) async {
+    final result = await $$context$$?.callMethod('onSeeking', [listener]);
     return result;
   }
 
-  Future<void> onStop(InnerAudioContextOnStopCallback callback) async {
-    final result = await $$context$$?.callMethod('onStop', [callback]);
+  Future<void> onStop(InnerAudioContextOnStopCallback listener) async {
+    final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
 
-  Future<void> onTimeUpdate(OnTimeUpdateCallback callback) async {
-    final result = await $$context$$?.callMethod('onTimeUpdate', [callback]);
+  Future<void> onTimeUpdate(OnTimeUpdateCallback listener) async {
+    final result = await $$context$$?.callMethod('onTimeUpdate', [listener]);
     return result;
   }
 
-  Future<void> onWaiting(OnWaitingCallback callback) async {
-    final result = await $$context$$?.callMethod('onWaiting', [callback]);
+  Future<void> onWaiting(OnWaitingCallback listener) async {
+    final result = await $$context$$?.callMethod('onWaiting', [listener]);
     return result;
   }
 
@@ -14548,7 +17387,7 @@ class InnerAudioContext {
   }
 }
 
-class InnerAudioContextOnErrorCallbackResult {
+class InnerAudioContextOnErrorListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $errCode;
@@ -14563,7 +17402,7 @@ class InnerAudioContextOnErrorCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  InnerAudioContextOnErrorCallbackResult({this.$$context$$});
+  InnerAudioContextOnErrorListenerResult({this.$$context$$});
 
   void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
@@ -14671,6 +17510,12 @@ class InsertImageOption {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
+  bool? $nowrap;
+
+  Future<bool?> get nowrap async {
+    return await $$context$$?.getPropertyValue('nowrap') ?? $nowrap;
+  }
+
   InsertImageSuccessCallback? $success;
 
   Future<InsertImageSuccessCallback?> get success async {
@@ -14693,6 +17538,7 @@ class InsertImageOption {
       String? extClass,
       InsertImageFailCallback? fail,
       String? height,
+      bool? nowrap,
       InsertImageSuccessCallback? success,
       String? width}) {
     if (src != null) $src = src;
@@ -14702,6 +17548,7 @@ class InsertImageOption {
     if (extClass != null) $extClass = extClass;
     if (fail != null) $fail = fail;
     if (height != null) $height = height;
+    if (nowrap != null) $nowrap = nowrap;
     if (success != null) $success = success;
     if (width != null) $width = width;
   }
@@ -14721,6 +17568,7 @@ class InsertImageOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'height': $height,
+      'nowrap': $nowrap,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -14933,7 +17781,7 @@ class IntersectionRectResult {
   }
 }
 
-class InterstitialAdOnErrorCallbackResult {
+class InterstitialAdOnErrorListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $errCode;
@@ -14948,7 +17796,7 @@ class InterstitialAdOnErrorCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  InterstitialAdOnErrorCallbackResult({this.$$context$$});
+  InterstitialAdOnErrorListenerResult({this.$$context$$});
 
   void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
@@ -14958,6 +17806,65 @@ class InterstitialAdOnErrorCallbackResult {
   Map toJson() {
     return {'errCode': $errCode, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
+  }
+}
+
+class IsBluetoothDevicePairedOption {
+  mpjs.JsObject? $$context$$;
+
+  String $deviceId = "";
+
+  Future<String> get deviceId async {
+    return await $$context$$?.getPropertyValue('deviceId') ?? $deviceId;
+  }
+
+  IsBluetoothDevicePairedCompleteCallback? $complete;
+
+  Future<IsBluetoothDevicePairedCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  IsBluetoothDevicePairedFailCallback? $fail;
+
+  Future<IsBluetoothDevicePairedFailCallback?> get fail async {
+    return $fail;
+  }
+
+  IsBluetoothDevicePairedSuccessCallback? $success;
+
+  Future<IsBluetoothDevicePairedSuccessCallback?> get success async {
+    return $success;
+  }
+
+  IsBluetoothDevicePairedOption({this.$$context$$});
+
+  void setValues(
+      {String? deviceId,
+      IsBluetoothDevicePairedCompleteCallback? complete,
+      IsBluetoothDevicePairedFailCallback? fail,
+      IsBluetoothDevicePairedSuccessCallback? success}) {
+    if (deviceId != null) $deviceId = deviceId;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'deviceId': $deviceId,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -15008,6 +17915,112 @@ class IsConnectedOption {
   }
 }
 
+class Join1v1ChatOption {
+  mpjs.JsObject? $$context$$;
+
+  VoIP1v1ChatUser $caller = VoIP1v1ChatUser();
+
+  Future<VoIP1v1ChatUser> get caller async {
+    return VoIP1v1ChatUser($$context$$: $$context$$?.getProperty('caller'));
+  }
+
+  VoIP1v1ChatUser $listener = VoIP1v1ChatUser();
+
+  Future<VoIP1v1ChatUser> get listener async {
+    return VoIP1v1ChatUser($$context$$: $$context$$?.getProperty('listener'));
+  }
+
+  dynamic $backgroundType;
+
+  Future<dynamic> get backgroundType async {
+    return await $$context$$?.getPropertyValue('backgroundType') ??
+        $backgroundType;
+  }
+
+  Join1v1ChatCompleteCallback? $complete;
+
+  Future<Join1v1ChatCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  bool? $disableSwitchVoice;
+
+  Future<bool?> get disableSwitchVoice async {
+    return await $$context$$?.getPropertyValue('disableSwitchVoice') ??
+        $disableSwitchVoice;
+  }
+
+  Join1v1ChatFailCallback? $fail;
+
+  Future<Join1v1ChatFailCallback?> get fail async {
+    return $fail;
+  }
+
+  num? $minWindowType;
+
+  Future<num?> get minWindowType async {
+    return await $$context$$?.getPropertyValue('minWindowType') ??
+        $minWindowType;
+  }
+
+  dynamic $roomType;
+
+  Future<dynamic> get roomType async {
+    return await $$context$$?.getPropertyValue('roomType') ?? $roomType;
+  }
+
+  Join1v1ChatSuccessCallback? $success;
+
+  Future<Join1v1ChatSuccessCallback?> get success async {
+    return $success;
+  }
+
+  Join1v1ChatOption({this.$$context$$});
+
+  void setValues(
+      {VoIP1v1ChatUser? caller,
+      VoIP1v1ChatUser? listener,
+      dynamic backgroundType,
+      Join1v1ChatCompleteCallback? complete,
+      bool? disableSwitchVoice,
+      Join1v1ChatFailCallback? fail,
+      num? minWindowType,
+      dynamic roomType,
+      Join1v1ChatSuccessCallback? success}) {
+    if (caller != null) $caller = caller;
+    if (listener != null) $listener = listener;
+    if (backgroundType != null) $backgroundType = backgroundType;
+    if (complete != null) $complete = complete;
+    if (disableSwitchVoice != null) $disableSwitchVoice = disableSwitchVoice;
+    if (fail != null) $fail = fail;
+    if (minWindowType != null) $minWindowType = minWindowType;
+    if (roomType != null) $roomType = roomType;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'caller': $caller,
+      'listener': $listener,
+      'backgroundType': $backgroundType,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => Join1v1ChatError($$context$$: e)])
+          : null,
+      'disableSwitchVoice': $disableSwitchVoice,
+      'fail': $fail != null
+          ? mpjs.JsFunction($fail!, [(e) => Join1v1ChatError($$context$$: e)])
+          : null,
+      'minWindowType': $minWindowType,
+      'roomType': $roomType,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => Join1v1ChatError($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class JoinVoIPChatOption {
   mpjs.JsObject? $$context$$;
 
@@ -15047,6 +18060,13 @@ class JoinVoIPChatOption {
     return $fail;
   }
 
+  bool? $forceCellularNetwork;
+
+  Future<bool?> get forceCellularNetwork async {
+    return await $$context$$?.getPropertyValue('forceCellularNetwork') ??
+        $forceCellularNetwork;
+  }
+
   MuteConfig? $muteConfig;
 
   Future<MuteConfig?> get muteConfig async {
@@ -15074,6 +18094,7 @@ class JoinVoIPChatOption {
       num? timeStamp,
       JoinVoIPChatCompleteCallback? complete,
       JoinVoIPChatFailCallback? fail,
+      bool? forceCellularNetwork,
       MuteConfig? muteConfig,
       dynamic roomType,
       JoinVoIPChatSuccessCallback? success}) {
@@ -15083,6 +18104,8 @@ class JoinVoIPChatOption {
     if (timeStamp != null) $timeStamp = timeStamp;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (forceCellularNetwork != null)
+      $forceCellularNetwork = forceCellularNetwork;
     if (muteConfig != null) $muteConfig = muteConfig;
     if (roomType != null) $roomType = roomType;
     if (success != null) $success = success;
@@ -15101,6 +18124,7 @@ class JoinVoIPChatOption {
       'fail': $fail != null
           ? mpjs.JsFunction($fail!, [(e) => JoinVoIPChatError($$context$$: e)])
           : null,
+      'forceCellularNetwork': $forceCellularNetwork,
       'muteConfig': $muteConfig,
       'roomType': $roomType,
       'success': $success != null
@@ -15146,8 +18170,42 @@ class JoinVoIPChatSuccessCallbackResult {
   }
 }
 
+class KvList {
+  mpjs.JsObject? $$context$$;
+
+  String $key = "";
+
+  Future<String> get key async {
+    return await $$context$$?.getPropertyValue('key') ?? $key;
+  }
+
+  dynamic $value;
+
+  Future<dynamic> get value async {
+    return await $$context$$?.getPropertyValue('value') ?? $value;
+  }
+
+  KvList({this.$$context$$});
+
+  void setValues({String? key, dynamic value}) {
+    if (key != null) $key = key;
+    if (value != null) $value = value;
+  }
+
+  Map toJson() {
+    return {'key': $key, 'value': $value}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class LaunchOptionsApp {
   mpjs.JsObject? $$context$$;
+
+  dynamic $apiCategory;
+
+  Future<dynamic> get apiCategory async {
+    return await $$context$$?.getPropertyValue('apiCategory') ?? $apiCategory;
+  }
 
   List<ForwardMaterials> $forwardMaterials = <ForwardMaterials>[];
 
@@ -15195,13 +18253,15 @@ class LaunchOptionsApp {
   LaunchOptionsApp({this.$$context$$});
 
   void setValues(
-      {List<ForwardMaterials>? forwardMaterials,
+      {dynamic apiCategory,
+      List<ForwardMaterials>? forwardMaterials,
       String? path,
       IAnyObject? query,
       ReferrerInfo? referrerInfo,
       num? scene,
       dynamic chatType,
       String? shareTicket}) {
+    if (apiCategory != null) $apiCategory = apiCategory;
     if (forwardMaterials != null) $forwardMaterials = forwardMaterials;
     if (path != null) $path = path;
     if (query != null) $query = query;
@@ -15213,6 +18273,7 @@ class LaunchOptionsApp {
 
   Map toJson() {
     return {
+      'apiCategory': $apiCategory,
       'forwardMaterials': $forwardMaterials,
       'path': $path,
       'query': $query,
@@ -15298,10 +18359,16 @@ class LivePlayerContextSnapshotOption {
     return $fail;
   }
 
-  String? $quality;
+  dynamic $quality;
 
-  Future<String?> get quality async {
+  Future<dynamic> get quality async {
     return await $$context$$?.getPropertyValue('quality') ?? $quality;
+  }
+
+  dynamic $sourceType;
+
+  Future<dynamic> get sourceType async {
+    return await $$context$$?.getPropertyValue('sourceType') ?? $sourceType;
   }
 
   LivePlayerContextSnapshotSuccessCallback? $success;
@@ -15315,11 +18382,13 @@ class LivePlayerContextSnapshotOption {
   void setValues(
       {SnapshotCompleteCallback? complete,
       SnapshotFailCallback? fail,
-      String? quality,
+      dynamic quality,
+      dynamic sourceType,
       LivePlayerContextSnapshotSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (quality != null) $quality = quality;
+    if (sourceType != null) $sourceType = sourceType;
     if (success != null) $success = success;
   }
 
@@ -15334,6 +18403,7 @@ class LivePlayerContextSnapshotOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'quality': $quality,
+      'sourceType': $sourceType,
       'success': $success != null
           ? mpjs.JsFunction($success!, [
               (e) =>
@@ -15407,10 +18477,16 @@ class LivePusherContextSnapshotOption {
     return $fail;
   }
 
-  String? $quality;
+  dynamic $quality;
 
-  Future<String?> get quality async {
+  Future<dynamic> get quality async {
     return await $$context$$?.getPropertyValue('quality') ?? $quality;
+  }
+
+  dynamic $sourceType;
+
+  Future<dynamic> get sourceType async {
+    return await $$context$$?.getPropertyValue('sourceType') ?? $sourceType;
   }
 
   LivePusherContextSnapshotSuccessCallback? $success;
@@ -15424,11 +18500,13 @@ class LivePusherContextSnapshotOption {
   void setValues(
       {SnapshotCompleteCallback? complete,
       SnapshotFailCallback? fail,
-      String? quality,
+      dynamic quality,
+      dynamic sourceType,
       LivePusherContextSnapshotSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (quality != null) $quality = quality;
+    if (sourceType != null) $sourceType = sourceType;
     if (success != null) $success = success;
   }
 
@@ -15443,6 +18521,7 @@ class LivePusherContextSnapshotOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'quality': $quality,
+      'sourceType': $sourceType,
       'success': $success != null
           ? mpjs.JsFunction($success!, [
               (e) =>
@@ -15497,6 +18576,56 @@ class LivePusherContextSnapshotSuccessCallbackResult {
       'tempImagePath': $tempImagePath,
       'width': $width,
       'errMsg': $errMsg
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class LivePusherContextStartOption {
+  mpjs.JsObject? $$context$$;
+
+  StartCompleteCallback? $complete;
+
+  Future<StartCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  StartFailCallback? $fail;
+
+  Future<StartFailCallback?> get fail async {
+    return $fail;
+  }
+
+  StartSuccessCallback? $success;
+
+  Future<StartSuccessCallback?> get success async {
+    return $success;
+  }
+
+  LivePusherContextStartOption({this.$$context$$});
+
+  void setValues(
+      {StartCompleteCallback? complete,
+      StartFailCallback? fail,
+      StartSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -16006,6 +19135,65 @@ class Margins {
   }
 }
 
+class MatchCache {
+  mpjs.JsObject? $$context$$;
+
+  String $cacheId = "";
+
+  Future<String> get cacheId async {
+    return await $$context$$?.getPropertyValue('cacheId') ?? $cacheId;
+  }
+
+  num $createTime = 0;
+
+  Future<num> get createTime async {
+    return await $$context$$?.getPropertyValue('createTime') ?? $createTime;
+  }
+
+  dynamic $data;
+
+  Future<dynamic> get data async {
+    return await $$context$$?.getPropertyValue('data') ?? $data;
+  }
+
+  num $maxAge = 0;
+
+  Future<num> get maxAge async {
+    return await $$context$$?.getPropertyValue('maxAge') ?? $maxAge;
+  }
+
+  String $ruleId = "";
+
+  Future<String> get ruleId async {
+    return await $$context$$?.getPropertyValue('ruleId') ?? $ruleId;
+  }
+
+  MatchCache({this.$$context$$});
+
+  void setValues(
+      {String? cacheId,
+      num? createTime,
+      dynamic data,
+      num? maxAge,
+      String? ruleId}) {
+    if (cacheId != null) $cacheId = cacheId;
+    if (createTime != null) $createTime = createTime;
+    if (data != null) $data = data;
+    if (maxAge != null) $maxAge = maxAge;
+    if (ruleId != null) $ruleId = ruleId;
+  }
+
+  Map toJson() {
+    return {
+      'cacheId': $cacheId,
+      'createTime': $createTime,
+      'data': $data,
+      'maxAge': $maxAge,
+      'ruleId': $ruleId
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class MediaAudioPlayer {
   mpjs.JsObject? $$context$$;
 
@@ -16062,6 +19250,12 @@ class MediaFile {
     return await $$context$$?.getPropertyValue('duration') ?? $duration;
   }
 
+  dynamic $fileType;
+
+  Future<dynamic> get fileType async {
+    return await $$context$$?.getPropertyValue('fileType') ?? $fileType;
+  }
+
   num $height = 0;
 
   Future<num> get height async {
@@ -16097,12 +19291,14 @@ class MediaFile {
 
   void setValues(
       {num? duration,
+      dynamic fileType,
       num? height,
       num? size,
       String? tempFilePath,
       String? thumbTempFilePath,
       num? width}) {
     if (duration != null) $duration = duration;
+    if (fileType != null) $fileType = fileType;
     if (height != null) $height = height;
     if (size != null) $size = size;
     if (tempFilePath != null) $tempFilePath = tempFilePath;
@@ -16113,6 +19309,7 @@ class MediaFile {
   Map toJson() {
     return {
       'duration': $duration,
+      'fileType': $fileType,
       'height': $height,
       'size': $size,
       'tempFilePath': $tempFilePath,
@@ -16587,13 +19784,13 @@ class NFCAdapter {
     return {'tech': $tech}..removeWhere((key, value) => value == null);
   }
 
-  Future<void> offDiscovered([OffDiscoveredCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offDiscovered', [callback]);
+  Future<void> offDiscovered([OffDiscoveredCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offDiscovered', [listener]);
     return result;
   }
 
-  Future<void> onDiscovered(OnDiscoveredCallback callback) async {
-    final result = await $$context$$?.callMethod('onDiscovered', [callback]);
+  Future<void> onDiscovered(OnDiscoveredCallback listener) async {
+    final result = await $$context$$?.callMethod('onDiscovered', [listener]);
     return result;
   }
 
@@ -16779,9 +19976,9 @@ class NavigateBackOption {
 class NavigateToMiniProgramOption {
   mpjs.JsObject? $$context$$;
 
-  String $appId = "";
+  String? $appId;
 
-  Future<String> get appId async {
+  Future<String?> get appId async {
     return await $$context$$?.getPropertyValue('appId') ?? $appId;
   }
 
@@ -16807,6 +20004,13 @@ class NavigateToMiniProgramOption {
 
   Future<NavigateToMiniProgramFailCallback?> get fail async {
     return $fail;
+  }
+
+  bool? $noRelaunchIfPathUnchanged;
+
+  Future<bool?> get noRelaunchIfPathUnchanged async {
+    return await $$context$$?.getPropertyValue('noRelaunchIfPathUnchanged') ??
+        $noRelaunchIfPathUnchanged;
   }
 
   String? $path;
@@ -16835,6 +20039,7 @@ class NavigateToMiniProgramOption {
       dynamic envVersion,
       IAnyObject? extraData,
       NavigateToMiniProgramFailCallback? fail,
+      bool? noRelaunchIfPathUnchanged,
       String? path,
       String? shortLink,
       NavigateToMiniProgramSuccessCallback? success}) {
@@ -16843,6 +20048,8 @@ class NavigateToMiniProgramOption {
     if (envVersion != null) $envVersion = envVersion;
     if (extraData != null) $extraData = extraData;
     if (fail != null) $fail = fail;
+    if (noRelaunchIfPathUnchanged != null)
+      $noRelaunchIfPathUnchanged = noRelaunchIfPathUnchanged;
     if (path != null) $path = path;
     if (shortLink != null) $shortLink = shortLink;
     if (success != null) $success = success;
@@ -16861,6 +20068,7 @@ class NavigateToMiniProgramOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'noRelaunchIfPathUnchanged': $noRelaunchIfPathUnchanged,
       'path': $path,
       'shortLink': $shortLink,
       'success': $success != null
@@ -16932,8 +20140,8 @@ class NavigateToOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          ? mpjs.JsFunction($success!,
+              [(e) => NavigateToSuccessCallbackResult($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
   }
@@ -17175,6 +20383,26 @@ class NotifyBLECharacteristicValueChangeOption {
   }
 }
 
+class OCRTrack {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  OCRTrack({this.$$context$$});
+
+  void setValues({dynamic mode}) {
+    if (mode != null) $mode = mode;
+  }
+
+  Map toJson() {
+    return {'mode': $mode}..removeWhere((key, value) => value == null);
+  }
+}
+
 class ObserveDescriptor {
   mpjs.JsObject? $$context$$;
 
@@ -17252,6 +20480,34 @@ class ObserveDescriptor {
   }
 }
 
+class ObserveOption {
+  mpjs.JsObject? $$context$$;
+
+  List<String>? $entryTypes;
+
+  Future<List<String>?> get entryTypes async {
+    return await $$context$$?.getPropertyValue('entryTypes') ?? $entryTypes;
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  ObserveOption({this.$$context$$});
+
+  void setValues({List<String>? entryTypes, dynamic type}) {
+    if (entryTypes != null) $entryTypes = entryTypes;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {'entryTypes': $entryTypes, 'type': $type}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class OffscreenCanvas {
   mpjs.JsObject? $$context$$;
 
@@ -17291,7 +20547,7 @@ class OffscreenCanvas {
   }
 }
 
-class OnAccelerometerChangeCallbackResult {
+class OnAccelerometerChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $x = 0;
@@ -17312,7 +20568,7 @@ class OnAccelerometerChangeCallbackResult {
     return await $$context$$?.getPropertyValue('z') ?? $z;
   }
 
-  OnAccelerometerChangeCallbackResult({this.$$context$$});
+  OnAccelerometerChangeListenerResult({this.$$context$$});
 
   void setValues({num? x, num? y, num? z}) {
     if (x != null) $x = x;
@@ -17326,76 +20582,7 @@ class OnAccelerometerChangeCallbackResult {
   }
 }
 
-class OnAppShowCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  List<ForwardMaterials> $forwardMaterials = <ForwardMaterials>[];
-
-  Future<List<ForwardMaterials>> get forwardMaterials async {
-    return await $$context$$?.getPropertyValue('forwardMaterials') ??
-        $forwardMaterials;
-  }
-
-  String $path = "";
-
-  Future<String> get path async {
-    return await $$context$$?.getPropertyValue('path') ?? $path;
-  }
-
-  IAnyObject $query = IAnyObject();
-
-  Future<IAnyObject> get query async {
-    return IAnyObject($$context$$: $$context$$?.getProperty('query'));
-  }
-
-  ReferrerInfo $referrerInfo = ReferrerInfo();
-
-  Future<ReferrerInfo> get referrerInfo async {
-    return ReferrerInfo($$context$$: $$context$$?.getProperty('referrerInfo'));
-  }
-
-  num $scene = 0;
-
-  Future<num> get scene async {
-    return await $$context$$?.getPropertyValue('scene') ?? $scene;
-  }
-
-  String? $shareTicket;
-
-  Future<String?> get shareTicket async {
-    return await $$context$$?.getPropertyValue('shareTicket') ?? $shareTicket;
-  }
-
-  OnAppShowCallbackResult({this.$$context$$});
-
-  void setValues(
-      {List<ForwardMaterials>? forwardMaterials,
-      String? path,
-      IAnyObject? query,
-      ReferrerInfo? referrerInfo,
-      num? scene,
-      String? shareTicket}) {
-    if (forwardMaterials != null) $forwardMaterials = forwardMaterials;
-    if (path != null) $path = path;
-    if (query != null) $query = query;
-    if (referrerInfo != null) $referrerInfo = referrerInfo;
-    if (scene != null) $scene = scene;
-    if (shareTicket != null) $shareTicket = shareTicket;
-  }
-
-  Map toJson() {
-    return {
-      'forwardMaterials': $forwardMaterials,
-      'path': $path,
-      'query': $query,
-      'referrerInfo': $referrerInfo,
-      'scene': $scene,
-      'shareTicket': $shareTicket
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class OnBLECharacteristicValueChangeCallbackResult {
+class OnBLECharacteristicValueChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $characteristicId = "";
@@ -17423,7 +20610,7 @@ class OnBLECharacteristicValueChangeCallbackResult {
     return ArrayBuffer($$context$$: $$context$$?.getProperty('value'));
   }
 
-  OnBLECharacteristicValueChangeCallbackResult({this.$$context$$});
+  OnBLECharacteristicValueChangeListenerResult({this.$$context$$});
 
   void setValues(
       {String? characteristicId,
@@ -17446,7 +20633,7 @@ class OnBLECharacteristicValueChangeCallbackResult {
   }
 }
 
-class OnBLEConnectionStateChangeCallbackResult {
+class OnBLEConnectionStateChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $connected = false;
@@ -17461,7 +20648,7 @@ class OnBLEConnectionStateChangeCallbackResult {
     return await $$context$$?.getPropertyValue('deviceId') ?? $deviceId;
   }
 
-  OnBLEConnectionStateChangeCallbackResult({this.$$context$$});
+  OnBLEConnectionStateChangeListenerResult({this.$$context$$});
 
   void setValues({bool? connected, String? deviceId}) {
     if (connected != null) $connected = connected;
@@ -17474,7 +20661,35 @@ class OnBLEConnectionStateChangeCallbackResult {
   }
 }
 
-class OnBLEPeripheralConnectionStateChangedCallbackResult {
+class OnBLEMTUChangeListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  String $deviceId = "";
+
+  Future<String> get deviceId async {
+    return await $$context$$?.getPropertyValue('deviceId') ?? $deviceId;
+  }
+
+  num $mtu = 0;
+
+  Future<num> get mtu async {
+    return await $$context$$?.getPropertyValue('mtu') ?? $mtu;
+  }
+
+  OnBLEMTUChangeListenerResult({this.$$context$$});
+
+  void setValues({String? deviceId, num? mtu}) {
+    if (deviceId != null) $deviceId = deviceId;
+    if (mtu != null) $mtu = mtu;
+  }
+
+  Map toJson() {
+    return {'deviceId': $deviceId, 'mtu': $mtu}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnBLEPeripheralConnectionStateChangedListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $connected = false;
@@ -17495,7 +20710,7 @@ class OnBLEPeripheralConnectionStateChangedCallbackResult {
     return await $$context$$?.getPropertyValue('serverId') ?? $serverId;
   }
 
-  OnBLEPeripheralConnectionStateChangedCallbackResult({this.$$context$$});
+  OnBLEPeripheralConnectionStateChangedListenerResult({this.$$context$$});
 
   void setValues({bool? connected, String? deviceId, String? serverId}) {
     if (connected != null) $connected = connected;
@@ -17512,7 +20727,7 @@ class OnBLEPeripheralConnectionStateChangedCallbackResult {
   }
 }
 
-class OnBackgroundFetchDataCallbackResult {
+class OnBackgroundFetchDataListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $fetchType = "";
@@ -17527,17 +20742,44 @@ class OnBackgroundFetchDataCallbackResult {
     return await $$context$$?.getPropertyValue('fetchedData') ?? $fetchedData;
   }
 
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  String $query = "";
+
+  Future<String> get query async {
+    return await $$context$$?.getPropertyValue('query') ?? $query;
+  }
+
+  num $scene = 0;
+
+  Future<num> get scene async {
+    return await $$context$$?.getPropertyValue('scene') ?? $scene;
+  }
+
   num $timeStamp = 0;
 
   Future<num> get timeStamp async {
     return await $$context$$?.getPropertyValue('timeStamp') ?? $timeStamp;
   }
 
-  OnBackgroundFetchDataCallbackResult({this.$$context$$});
+  OnBackgroundFetchDataListenerResult({this.$$context$$});
 
-  void setValues({String? fetchType, String? fetchedData, num? timeStamp}) {
+  void setValues(
+      {String? fetchType,
+      String? fetchedData,
+      String? path,
+      String? query,
+      num? scene,
+      num? timeStamp}) {
     if (fetchType != null) $fetchType = fetchType;
     if (fetchedData != null) $fetchedData = fetchedData;
+    if (path != null) $path = path;
+    if (query != null) $query = query;
+    if (scene != null) $scene = scene;
     if (timeStamp != null) $timeStamp = timeStamp;
   }
 
@@ -17545,12 +20787,15 @@ class OnBackgroundFetchDataCallbackResult {
     return {
       'fetchType': $fetchType,
       'fetchedData': $fetchedData,
+      'path': $path,
+      'query': $query,
+      'scene': $scene,
       'timeStamp': $timeStamp
     }..removeWhere((key, value) => value == null);
   }
 }
 
-class OnBeaconServiceChangeCallbackResult {
+class OnBeaconServiceChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $available = false;
@@ -17565,7 +20810,7 @@ class OnBeaconServiceChangeCallbackResult {
     return await $$context$$?.getPropertyValue('discovering') ?? $discovering;
   }
 
-  OnBeaconServiceChangeCallbackResult({this.$$context$$});
+  OnBeaconServiceChangeListenerResult({this.$$context$$});
 
   void setValues({bool? available, bool? discovering}) {
     if (available != null) $available = available;
@@ -17578,7 +20823,7 @@ class OnBeaconServiceChangeCallbackResult {
   }
 }
 
-class OnBeaconUpdateCallbackResult {
+class OnBeaconUpdateListenerResult {
   mpjs.JsObject? $$context$$;
 
   List<BeaconInfo> $beacons = <BeaconInfo>[];
@@ -17587,7 +20832,7 @@ class OnBeaconUpdateCallbackResult {
     return await $$context$$?.getPropertyValue('beacons') ?? $beacons;
   }
 
-  OnBeaconUpdateCallbackResult({this.$$context$$});
+  OnBeaconUpdateListenerResult({this.$$context$$});
 
   void setValues({List<BeaconInfo>? beacons}) {
     if (beacons != null) $beacons = beacons;
@@ -17598,7 +20843,7 @@ class OnBeaconUpdateCallbackResult {
   }
 }
 
-class OnBluetoothAdapterStateChangeCallbackResult {
+class OnBluetoothAdapterStateChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $available = false;
@@ -17613,7 +20858,7 @@ class OnBluetoothAdapterStateChangeCallbackResult {
     return await $$context$$?.getPropertyValue('discovering') ?? $discovering;
   }
 
-  OnBluetoothAdapterStateChangeCallbackResult({this.$$context$$});
+  OnBluetoothAdapterStateChangeListenerResult({this.$$context$$});
 
   void setValues({bool? available, bool? discovering}) {
     if (available != null) $available = available;
@@ -17626,7 +20871,7 @@ class OnBluetoothAdapterStateChangeCallbackResult {
   }
 }
 
-class OnBluetoothDeviceFoundCallbackResult {
+class OnBluetoothDeviceFoundListenerResult {
   mpjs.JsObject? $$context$$;
 
   List<BlueToothDevice> $devices = <BlueToothDevice>[];
@@ -17635,7 +20880,7 @@ class OnBluetoothDeviceFoundCallbackResult {
     return await $$context$$?.getPropertyValue('devices') ?? $devices;
   }
 
-  OnBluetoothDeviceFoundCallbackResult({this.$$context$$});
+  OnBluetoothDeviceFoundListenerResult({this.$$context$$});
 
   void setValues({List<BlueToothDevice>? devices}) {
     if (devices != null) $devices = devices;
@@ -17681,7 +20926,7 @@ class OnCameraFrameCallbackResult {
   }
 }
 
-class OnCharacteristicReadRequestCallbackResult {
+class OnCharacteristicReadRequestListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $callbackId = 0;
@@ -17703,7 +20948,7 @@ class OnCharacteristicReadRequestCallbackResult {
     return await $$context$$?.getPropertyValue('serviceId') ?? $serviceId;
   }
 
-  OnCharacteristicReadRequestCallbackResult({this.$$context$$});
+  OnCharacteristicReadRequestListenerResult({this.$$context$$});
 
   void setValues(
       {num? callbackId, String? characteristicId, String? serviceId}) {
@@ -17721,7 +20966,7 @@ class OnCharacteristicReadRequestCallbackResult {
   }
 }
 
-class OnCharacteristicSubscribedCallbackResult {
+class OnCharacteristicSubscribedListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $characteristicId = "";
@@ -17737,7 +20982,7 @@ class OnCharacteristicSubscribedCallbackResult {
     return await $$context$$?.getPropertyValue('serviceId') ?? $serviceId;
   }
 
-  OnCharacteristicSubscribedCallbackResult({this.$$context$$});
+  OnCharacteristicSubscribedListenerResult({this.$$context$$});
 
   void setValues({String? characteristicId, String? serviceId}) {
     if (characteristicId != null) $characteristicId = characteristicId;
@@ -17750,7 +20995,7 @@ class OnCharacteristicSubscribedCallbackResult {
   }
 }
 
-class OnCharacteristicWriteRequestCallbackResult {
+class OnCharacteristicWriteRequestListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $callbackId = 0;
@@ -17778,7 +21023,7 @@ class OnCharacteristicWriteRequestCallbackResult {
     return ArrayBuffer($$context$$: $$context$$?.getProperty('value'));
   }
 
-  OnCharacteristicWriteRequestCallbackResult({this.$$context$$});
+  OnCharacteristicWriteRequestListenerResult({this.$$context$$});
 
   void setValues(
       {num? callbackId,
@@ -17801,7 +21046,7 @@ class OnCharacteristicWriteRequestCallbackResult {
   }
 }
 
-class OnCheckForUpdateCallbackResult {
+class OnCheckForUpdateListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $hasUpdate = false;
@@ -17810,7 +21055,7 @@ class OnCheckForUpdateCallbackResult {
     return await $$context$$?.getPropertyValue('hasUpdate') ?? $hasUpdate;
   }
 
-  OnCheckForUpdateCallbackResult({this.$$context$$});
+  OnCheckForUpdateListenerResult({this.$$context$$});
 
   void setValues({bool? hasUpdate}) {
     if (hasUpdate != null) $hasUpdate = hasUpdate;
@@ -17822,7 +21067,27 @@ class OnCheckForUpdateCallbackResult {
   }
 }
 
-class OnCompassChangeCallbackResult {
+class OnChunkReceivedListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  Result $res = Result();
+
+  Future<Result> get res async {
+    return Result($$context$$: $$context$$?.getProperty('res'));
+  }
+
+  OnChunkReceivedListenerResult({this.$$context$$});
+
+  void setValues({Result? res}) {
+    if (res != null) $res = res;
+  }
+
+  Map toJson() {
+    return {'res': $res}..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnCompassChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $accuracy;
@@ -17837,7 +21102,7 @@ class OnCompassChangeCallbackResult {
     return await $$context$$?.getPropertyValue('direction') ?? $direction;
   }
 
-  OnCompassChangeCallbackResult({this.$$context$$});
+  OnCompassChangeListenerResult({this.$$context$$});
 
   void setValues({dynamic accuracy, num? direction}) {
     if (accuracy != null) $accuracy = accuracy;
@@ -17850,7 +21115,7 @@ class OnCompassChangeCallbackResult {
   }
 }
 
-class OnCopyUrlCallbackResult {
+class OnCopyUrlListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $query = "";
@@ -17859,7 +21124,7 @@ class OnCopyUrlCallbackResult {
     return await $$context$$?.getPropertyValue('query') ?? $query;
   }
 
-  OnCopyUrlCallbackResult({this.$$context$$});
+  OnCopyUrlListenerResult({this.$$context$$});
 
   void setValues({String? query}) {
     if (query != null) $query = query;
@@ -17870,7 +21135,35 @@ class OnCopyUrlCallbackResult {
   }
 }
 
-class OnDeviceMotionChangeCallbackResult {
+class OnCustomRendererEventCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  OnCustomRendererEventCallbackResult({this.$$context$$});
+
+  void setValues({num? height, num? width}) {
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+  }
+
+  Map toJson() {
+    return {'height': $height, 'width': $width}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnDeviceMotionChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $alpha = 0;
@@ -17891,7 +21184,7 @@ class OnDeviceMotionChangeCallbackResult {
     return await $$context$$?.getPropertyValue('gamma') ?? $gamma;
   }
 
-  OnDeviceMotionChangeCallbackResult({this.$$context$$});
+  OnDeviceMotionChangeListenerResult({this.$$context$$});
 
   void setValues({num? alpha, num? beta, num? gamma}) {
     if (alpha != null) $alpha = alpha;
@@ -17905,7 +21198,7 @@ class OnDeviceMotionChangeCallbackResult {
   }
 }
 
-class OnDiscoveredCallbackResult {
+class OnDiscoveredListenerResult {
   mpjs.JsObject? $$context$$;
 
   List<dynamic> $messages = <dynamic>[];
@@ -17920,7 +21213,7 @@ class OnDiscoveredCallbackResult {
     return await $$context$$?.getPropertyValue('techs') ?? $techs;
   }
 
-  OnDiscoveredCallbackResult({this.$$context$$});
+  OnDiscoveredListenerResult({this.$$context$$});
 
   void setValues({List<dynamic>? messages, List<dynamic>? techs}) {
     if (messages != null) $messages = messages;
@@ -17933,7 +21226,7 @@ class OnDiscoveredCallbackResult {
   }
 }
 
-class OnFrameRecordedCallbackResult {
+class OnFrameRecordedListenerResult {
   mpjs.JsObject? $$context$$;
 
   ArrayBuffer $frameBuffer = ArrayBuffer();
@@ -17948,7 +21241,7 @@ class OnFrameRecordedCallbackResult {
     return await $$context$$?.getPropertyValue('isLastFrame') ?? $isLastFrame;
   }
 
-  OnFrameRecordedCallbackResult({this.$$context$$});
+  OnFrameRecordedListenerResult({this.$$context$$});
 
   void setValues({ArrayBuffer? frameBuffer, bool? isLastFrame}) {
     if (frameBuffer != null) $frameBuffer = frameBuffer;
@@ -17961,7 +21254,7 @@ class OnFrameRecordedCallbackResult {
   }
 }
 
-class OnGetWifiListCallbackResult {
+class OnGetWifiListListenerResult {
   mpjs.JsObject? $$context$$;
 
   List<WifiInfo> $wifiList = <WifiInfo>[];
@@ -17970,7 +21263,7 @@ class OnGetWifiListCallbackResult {
     return await $$context$$?.getPropertyValue('wifiList') ?? $wifiList;
   }
 
-  OnGetWifiListCallbackResult({this.$$context$$});
+  OnGetWifiListListenerResult({this.$$context$$});
 
   void setValues({List<WifiInfo>? wifiList}) {
     if (wifiList != null) $wifiList = wifiList;
@@ -17981,7 +21274,7 @@ class OnGetWifiListCallbackResult {
   }
 }
 
-class OnGyroscopeChangeCallbackResult {
+class OnGyroscopeChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $x = 0;
@@ -18002,7 +21295,7 @@ class OnGyroscopeChangeCallbackResult {
     return await $$context$$?.getPropertyValue('z') ?? $z;
   }
 
-  OnGyroscopeChangeCallbackResult({this.$$context$$});
+  OnGyroscopeChangeListenerResult({this.$$context$$});
 
   void setValues({num? x, num? y, num? z}) {
     if (x != null) $x = x;
@@ -18016,7 +21309,7 @@ class OnGyroscopeChangeCallbackResult {
   }
 }
 
-class OnHCEMessageCallbackResult {
+class OnHCEMessageListenerResult {
   mpjs.JsObject? $$context$$;
 
   ArrayBuffer $data = ArrayBuffer();
@@ -18037,7 +21330,7 @@ class OnHCEMessageCallbackResult {
     return await $$context$$?.getPropertyValue('reason') ?? $reason;
   }
 
-  OnHCEMessageCallbackResult({this.$$context$$});
+  OnHCEMessageListenerResult({this.$$context$$});
 
   void setValues({ArrayBuffer? data, dynamic messageType, num? reason}) {
     if (data != null) $data = data;
@@ -18051,7 +21344,7 @@ class OnHCEMessageCallbackResult {
   }
 }
 
-class OnHeadersReceivedCallbackResult {
+class OnHeadersReceivedListenerResult {
   mpjs.JsObject? $$context$$;
 
   IAnyObject $header = IAnyObject();
@@ -18060,7 +21353,7 @@ class OnHeadersReceivedCallbackResult {
     return IAnyObject($$context$$: $$context$$?.getProperty('header'));
   }
 
-  OnHeadersReceivedCallbackResult({this.$$context$$});
+  OnHeadersReceivedListenerResult({this.$$context$$});
 
   void setValues({IAnyObject? header}) {
     if (header != null) $header = header;
@@ -18071,7 +21364,7 @@ class OnHeadersReceivedCallbackResult {
   }
 }
 
-class OnKeyboardHeightChangeCallbackResult {
+class OnKeyboardHeightChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $height = 0;
@@ -18080,7 +21373,7 @@ class OnKeyboardHeightChangeCallbackResult {
     return await $$context$$?.getPropertyValue('height') ?? $height;
   }
 
-  OnKeyboardHeightChangeCallbackResult({this.$$context$$});
+  OnKeyboardHeightChangeListenerResult({this.$$context$$});
 
   void setValues({num? height}) {
     if (height != null) $height = height;
@@ -18091,7 +21384,42 @@ class OnKeyboardHeightChangeCallbackResult {
   }
 }
 
-class OnLocalServiceFoundCallbackResult {
+class OnLazyLoadErrorListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  List<dynamic> $subpackage = <dynamic>[];
+
+  Future<List<dynamic>> get subpackage async {
+    return await $$context$$?.getPropertyValue('subpackage') ?? $subpackage;
+  }
+
+  String $type = "";
+
+  Future<String> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  OnLazyLoadErrorListenerResult({this.$$context$$});
+
+  void setValues({String? errMsg, List<dynamic>? subpackage, String? type}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (subpackage != null) $subpackage = subpackage;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'subpackage': $subpackage, 'type': $type}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnLocalServiceFoundListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $ip = "";
@@ -18118,7 +21446,7 @@ class OnLocalServiceFoundCallbackResult {
     return await $$context$$?.getPropertyValue('serviceType') ?? $serviceType;
   }
 
-  OnLocalServiceFoundCallbackResult({this.$$context$$});
+  OnLocalServiceFoundListenerResult({this.$$context$$});
 
   void setValues(
       {String? ip, num? port, String? serviceName, String? serviceType}) {
@@ -18138,7 +21466,7 @@ class OnLocalServiceFoundCallbackResult {
   }
 }
 
-class OnLocalServiceLostCallbackResult {
+class OnLocalServiceLostListenerResult {
   mpjs.JsObject? $$context$$;
 
   String $serviceName = "";
@@ -18153,7 +21481,7 @@ class OnLocalServiceLostCallbackResult {
     return await $$context$$?.getPropertyValue('serviceType') ?? $serviceType;
   }
 
-  OnLocalServiceLostCallbackResult({this.$$context$$});
+  OnLocalServiceLostListenerResult({this.$$context$$});
 
   void setValues({String? serviceName, String? serviceType}) {
     if (serviceName != null) $serviceName = serviceName;
@@ -18166,7 +21494,27 @@ class OnLocalServiceLostCallbackResult {
   }
 }
 
-class OnLocationChangeCallbackResult {
+class OnLocationChangeErrorListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  num $errCode = 0;
+
+  Future<num> get errCode async {
+    return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
+  }
+
+  OnLocationChangeErrorListenerResult({this.$$context$$});
+
+  void setValues({num? errCode}) {
+    if (errCode != null) $errCode = errCode;
+  }
+
+  Map toJson() {
+    return {'errCode': $errCode}..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnLocationChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $accuracy = 0;
@@ -18213,7 +21561,7 @@ class OnLocationChangeCallbackResult {
         $verticalAccuracy;
   }
 
-  OnLocationChangeCallbackResult({this.$$context$$});
+  OnLocationChangeListenerResult({this.$$context$$});
 
   void setValues(
       {num? accuracy,
@@ -18245,7 +21593,7 @@ class OnLocationChangeCallbackResult {
   }
 }
 
-class OnMemoryWarningCallbackResult {
+class OnMemoryWarningListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $level;
@@ -18254,7 +21602,7 @@ class OnMemoryWarningCallbackResult {
     return await $$context$$?.getPropertyValue('level') ?? $level;
   }
 
-  OnMemoryWarningCallbackResult({this.$$context$$});
+  OnMemoryWarningListenerResult({this.$$context$$});
 
   void setValues({dynamic level}) {
     if (level != null) $level = level;
@@ -18265,7 +21613,7 @@ class OnMemoryWarningCallbackResult {
   }
 }
 
-class OnNetworkStatusChangeCallbackResult {
+class OnNetworkStatusChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $isConnected = false;
@@ -18280,7 +21628,7 @@ class OnNetworkStatusChangeCallbackResult {
     return await $$context$$?.getPropertyValue('networkType') ?? $networkType;
   }
 
-  OnNetworkStatusChangeCallbackResult({this.$$context$$});
+  OnNetworkStatusChangeListenerResult({this.$$context$$});
 
   void setValues({bool? isConnected, dynamic networkType}) {
     if (isConnected != null) $isConnected = isConnected;
@@ -18293,7 +21641,35 @@ class OnNetworkStatusChangeCallbackResult {
   }
 }
 
-class OnOpenCallbackResult {
+class OnNetworkWeakChangeListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  String $networkType = "";
+
+  Future<String> get networkType async {
+    return await $$context$$?.getPropertyValue('networkType') ?? $networkType;
+  }
+
+  bool $weakNet = false;
+
+  Future<bool> get weakNet async {
+    return await $$context$$?.getPropertyValue('weakNet') ?? $weakNet;
+  }
+
+  OnNetworkWeakChangeListenerResult({this.$$context$$});
+
+  void setValues({String? networkType, bool? weakNet}) {
+    if (networkType != null) $networkType = networkType;
+    if (weakNet != null) $weakNet = weakNet;
+  }
+
+  Map toJson() {
+    return {'networkType': $networkType, 'weakNet': $weakNet}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnOpenListenerResult {
   mpjs.JsObject? $$context$$;
 
   IAnyObject $header = IAnyObject();
@@ -18308,7 +21684,7 @@ class OnOpenCallbackResult {
     return SocketProfile($$context$$: $$context$$?.getProperty('profile'));
   }
 
-  OnOpenCallbackResult({this.$$context$$});
+  OnOpenListenerResult({this.$$context$$});
 
   void setValues({IAnyObject? header, SocketProfile? profile}) {
     if (header != null) $header = header;
@@ -18321,7 +21697,7 @@ class OnOpenCallbackResult {
   }
 }
 
-class OnPageNotFoundCallbackResult {
+class OnPageNotFoundListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $isEntryPage = false;
@@ -18342,7 +21718,7 @@ class OnPageNotFoundCallbackResult {
     return IAnyObject($$context$$: $$context$$?.getProperty('query'));
   }
 
-  OnPageNotFoundCallbackResult({this.$$context$$});
+  OnPageNotFoundListenerResult({this.$$context$$});
 
   void setValues({bool? isEntryPage, String? path, IAnyObject? query}) {
     if (isEntryPage != null) $isEntryPage = isEntryPage;
@@ -18356,7 +21732,27 @@ class OnPageNotFoundCallbackResult {
   }
 }
 
-class OnSocketOpenCallbackResult {
+class OnScreenRecordingStateChangedListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $state;
+
+  Future<dynamic> get state async {
+    return await $$context$$?.getPropertyValue('state') ?? $state;
+  }
+
+  OnScreenRecordingStateChangedListenerResult({this.$$context$$});
+
+  void setValues({dynamic state}) {
+    if (state != null) $state = state;
+  }
+
+  Map toJson() {
+    return {'state': $state}..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnSocketOpenListenerResult {
   mpjs.JsObject? $$context$$;
 
   IAnyObject $header = IAnyObject();
@@ -18365,7 +21761,7 @@ class OnSocketOpenCallbackResult {
     return IAnyObject($$context$$: $$context$$?.getProperty('header'));
   }
 
-  OnSocketOpenCallbackResult({this.$$context$$});
+  OnSocketOpenListenerResult({this.$$context$$});
 
   void setValues({IAnyObject? header}) {
     if (header != null) $header = header;
@@ -18376,7 +21772,7 @@ class OnSocketOpenCallbackResult {
   }
 }
 
-class OnStopCallbackResult {
+class OnStopListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $duration = 0;
@@ -18397,7 +21793,7 @@ class OnStopCallbackResult {
     return await $$context$$?.getPropertyValue('tempFilePath') ?? $tempFilePath;
   }
 
-  OnStopCallbackResult({this.$$context$$});
+  OnStopListenerResult({this.$$context$$});
 
   void setValues({num? duration, num? fileSize, String? tempFilePath}) {
     if (duration != null) $duration = duration;
@@ -18414,7 +21810,7 @@ class OnStopCallbackResult {
   }
 }
 
-class OnThemeChangeCallbackResult {
+class OnThemeChangeListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $theme;
@@ -18423,7 +21819,7 @@ class OnThemeChangeCallbackResult {
     return await $$context$$?.getPropertyValue('theme') ?? $theme;
   }
 
-  OnThemeChangeCallbackResult({this.$$context$$});
+  OnThemeChangeListenerResult({this.$$context$$});
 
   void setValues({dynamic theme}) {
     if (theme != null) $theme = theme;
@@ -18434,8 +21830,15 @@ class OnThemeChangeCallbackResult {
   }
 }
 
-class OnUnhandledRejectionCallbackResult {
+class OnUnhandledRejectionListenerResult {
   mpjs.JsObject? $$context$$;
+
+  // Promise<dynamic> $promise= Promise();
+
+  //   Future<Promise<dynamic>> get promise async {
+  //       return $promise;
+
+  //     }
 
   String $reason = "";
 
@@ -18443,7 +21846,7 @@ class OnUnhandledRejectionCallbackResult {
     return await $$context$$?.getPropertyValue('reason') ?? $reason;
   }
 
-  OnUnhandledRejectionCallbackResult({this.$$context$$});
+  OnUnhandledRejectionListenerResult({this.$$context$$});
 
   void setValues({String? reason}) {
     if (reason != null) $reason = reason;
@@ -18454,7 +21857,7 @@ class OnUnhandledRejectionCallbackResult {
   }
 }
 
-class OnVoIPChatInterruptedCallbackResult {
+class OnVoIPChatInterruptedListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $errCode = 0;
@@ -18469,7 +21872,7 @@ class OnVoIPChatInterruptedCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  OnVoIPChatInterruptedCallbackResult({this.$$context$$});
+  OnVoIPChatInterruptedListenerResult({this.$$context$$});
 
   void setValues({num? errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
@@ -18482,7 +21885,7 @@ class OnVoIPChatInterruptedCallbackResult {
   }
 }
 
-class OnVoIPChatMembersChangedCallbackResult {
+class OnVoIPChatMembersChangedListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $errCode = 0;
@@ -18503,7 +21906,7 @@ class OnVoIPChatMembersChangedCallbackResult {
     return await $$context$$?.getPropertyValue('openIdList') ?? $openIdList;
   }
 
-  OnVoIPChatMembersChangedCallbackResult({this.$$context$$});
+  OnVoIPChatMembersChangedListenerResult({this.$$context$$});
 
   void setValues({num? errCode, String? errMsg, List<String>? openIdList}) {
     if (errCode != null) $errCode = errCode;
@@ -18517,7 +21920,7 @@ class OnVoIPChatMembersChangedCallbackResult {
   }
 }
 
-class OnVoIPChatSpeakersChangedCallbackResult {
+class OnVoIPChatSpeakersChangedListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $errCode = 0;
@@ -18538,7 +21941,7 @@ class OnVoIPChatSpeakersChangedCallbackResult {
     return await $$context$$?.getPropertyValue('openIdList') ?? $openIdList;
   }
 
-  OnVoIPChatSpeakersChangedCallbackResult({this.$$context$$});
+  OnVoIPChatSpeakersChangedListenerResult({this.$$context$$});
 
   void setValues({num? errCode, String? errMsg, List<String>? openIdList}) {
     if (errCode != null) $errCode = errCode;
@@ -18552,7 +21955,7 @@ class OnVoIPChatSpeakersChangedCallbackResult {
   }
 }
 
-class OnVoIPChatStateChangedCallbackResult {
+class OnVoIPChatStateChangedListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $code = 0;
@@ -18579,7 +21982,7 @@ class OnVoIPChatStateChangedCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  OnVoIPChatStateChangedCallbackResult({this.$$context$$});
+  OnVoIPChatStateChangedListenerResult({this.$$context$$});
 
   void setValues({num? code, IAnyObject? data, num? errCode, String? errMsg}) {
     if (code != null) $code = code;
@@ -18598,7 +22001,7 @@ class OnVoIPChatStateChangedCallbackResult {
   }
 }
 
-class OnVoIPVideoMembersChangedCallbackResult {
+class OnVoIPVideoMembersChangedListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $errCode = 0;
@@ -18619,7 +22022,7 @@ class OnVoIPVideoMembersChangedCallbackResult {
     return await $$context$$?.getPropertyValue('openIdList') ?? $openIdList;
   }
 
-  OnVoIPVideoMembersChangedCallbackResult({this.$$context$$});
+  OnVoIPVideoMembersChangedListenerResult({this.$$context$$});
 
   void setValues({num? errCode, String? errMsg, List<String>? openIdList}) {
     if (errCode != null) $errCode = errCode;
@@ -18633,7 +22036,7 @@ class OnVoIPVideoMembersChangedCallbackResult {
   }
 }
 
-class OnWifiConnectedCallbackResult {
+class OnWifiConnectedListenerResult {
   mpjs.JsObject? $$context$$;
 
   WifiInfo $wifi = WifiInfo();
@@ -18642,7 +22045,7 @@ class OnWifiConnectedCallbackResult {
     return WifiInfo($$context$$: $$context$$?.getProperty('wifi'));
   }
 
-  OnWifiConnectedCallbackResult({this.$$context$$});
+  OnWifiConnectedListenerResult({this.$$context$$});
 
   void setValues({WifiInfo? wifi}) {
     if (wifi != null) $wifi = wifi;
@@ -18653,7 +22056,27 @@ class OnWifiConnectedCallbackResult {
   }
 }
 
-class OnWindowResizeCallbackResult {
+class OnWifiConnectedWithPartialInfoListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  WifiInfo $wifi = WifiInfo();
+
+  Future<WifiInfo> get wifi async {
+    return WifiInfo($$context$$: $$context$$?.getProperty('wifi'));
+  }
+
+  OnWifiConnectedWithPartialInfoListenerResult({this.$$context$$});
+
+  void setValues({WifiInfo? wifi}) {
+    if (wifi != null) $wifi = wifi;
+  }
+
+  Map toJson() {
+    return {'wifi': $wifi}..removeWhere((key, value) => value == null);
+  }
+}
+
+class OnWindowResizeListenerResult {
   mpjs.JsObject? $$context$$;
 
   Size $size = Size();
@@ -18662,7 +22085,7 @@ class OnWindowResizeCallbackResult {
     return Size($$context$$: $$context$$?.getProperty('size'));
   }
 
-  OnWindowResizeCallbackResult({this.$$context$$});
+  OnWindowResizeListenerResult({this.$$context$$});
 
   void setValues({Size? size}) {
     if (size != null) $size = size;
@@ -18670,6 +22093,56 @@ class OnWindowResizeCallbackResult {
 
   Map toJson() {
     return {'size': $size}..removeWhere((key, value) => value == null);
+  }
+}
+
+class OpenAppAuthorizeSettingOption {
+  mpjs.JsObject? $$context$$;
+
+  OpenAppAuthorizeSettingCompleteCallback? $complete;
+
+  Future<OpenAppAuthorizeSettingCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  OpenAppAuthorizeSettingFailCallback? $fail;
+
+  Future<OpenAppAuthorizeSettingFailCallback?> get fail async {
+    return $fail;
+  }
+
+  OpenAppAuthorizeSettingSuccessCallback? $success;
+
+  Future<OpenAppAuthorizeSettingSuccessCallback?> get success async {
+    return $success;
+  }
+
+  OpenAppAuthorizeSettingOption({this.$$context$$});
+
+  void setValues(
+      {OpenAppAuthorizeSettingCompleteCallback? complete,
+      OpenAppAuthorizeSettingFailCallback? fail,
+      OpenAppAuthorizeSettingSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -18885,6 +22358,75 @@ class OpenChannelsActivityOption {
   }
 }
 
+class OpenChannelsEventOption {
+  mpjs.JsObject? $$context$$;
+
+  String $eventId = "";
+
+  Future<String> get eventId async {
+    return await $$context$$?.getPropertyValue('eventId') ?? $eventId;
+  }
+
+  String $finderUserName = "";
+
+  Future<String> get finderUserName async {
+    return await $$context$$?.getPropertyValue('finderUserName') ??
+        $finderUserName;
+  }
+
+  OpenChannelsEventCompleteCallback? $complete;
+
+  Future<OpenChannelsEventCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  OpenChannelsEventFailCallback? $fail;
+
+  Future<OpenChannelsEventFailCallback?> get fail async {
+    return $fail;
+  }
+
+  OpenChannelsEventSuccessCallback? $success;
+
+  Future<OpenChannelsEventSuccessCallback?> get success async {
+    return $success;
+  }
+
+  OpenChannelsEventOption({this.$$context$$});
+
+  void setValues(
+      {String? eventId,
+      String? finderUserName,
+      OpenChannelsEventCompleteCallback? complete,
+      OpenChannelsEventFailCallback? fail,
+      OpenChannelsEventSuccessCallback? success}) {
+    if (eventId != null) $eventId = eventId;
+    if (finderUserName != null) $finderUserName = finderUserName;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'eventId': $eventId,
+      'finderUserName': $finderUserName,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class OpenChannelsLiveOption {
   mpjs.JsObject? $$context$$;
 
@@ -18955,6 +22497,66 @@ class OpenChannelsLiveOption {
           : null,
       'feedId': $feedId,
       'nonceId': $nonceId,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class OpenChannelsUserProfileOption {
+  mpjs.JsObject? $$context$$;
+
+  String $finderUserName = "";
+
+  Future<String> get finderUserName async {
+    return await $$context$$?.getPropertyValue('finderUserName') ??
+        $finderUserName;
+  }
+
+  OpenChannelsUserProfileCompleteCallback? $complete;
+
+  Future<OpenChannelsUserProfileCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  OpenChannelsUserProfileFailCallback? $fail;
+
+  Future<OpenChannelsUserProfileFailCallback?> get fail async {
+    return $fail;
+  }
+
+  OpenChannelsUserProfileSuccessCallback? $success;
+
+  Future<OpenChannelsUserProfileSuccessCallback?> get success async {
+    return $success;
+  }
+
+  OpenChannelsUserProfileOption({this.$$context$$});
+
+  void setValues(
+      {String? finderUserName,
+      OpenChannelsUserProfileCompleteCallback? complete,
+      OpenChannelsUserProfileFailCallback? fail,
+      OpenChannelsUserProfileSuccessCallback? success}) {
+    if (finderUserName != null) $finderUserName = finderUserName;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'finderUserName': $finderUserName,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -19144,6 +22746,121 @@ class OpenDocumentOption {
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class OpenEmbeddedMiniProgramOption {
+  mpjs.JsObject? $$context$$;
+
+  String $appId = "";
+
+  Future<String> get appId async {
+    return await $$context$$?.getPropertyValue('appId') ?? $appId;
+  }
+
+  OpenEmbeddedMiniProgramCompleteCallback? $complete;
+
+  Future<OpenEmbeddedMiniProgramCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  dynamic $envVersion;
+
+  Future<dynamic> get envVersion async {
+    return await $$context$$?.getPropertyValue('envVersion') ?? $envVersion;
+  }
+
+  IAnyObject? $extraData;
+
+  Future<IAnyObject?> get extraData async {
+    return IAnyObject($$context$$: $$context$$?.getProperty('extraData'));
+  }
+
+  OpenEmbeddedMiniProgramFailCallback? $fail;
+
+  Future<OpenEmbeddedMiniProgramFailCallback?> get fail async {
+    return $fail;
+  }
+
+  bool? $noRelaunchIfPathUnchanged;
+
+  Future<bool?> get noRelaunchIfPathUnchanged async {
+    return await $$context$$?.getPropertyValue('noRelaunchIfPathUnchanged') ??
+        $noRelaunchIfPathUnchanged;
+  }
+
+  String? $path;
+
+  Future<String?> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  String? $shortLink;
+
+  Future<String?> get shortLink async {
+    return await $$context$$?.getPropertyValue('shortLink') ?? $shortLink;
+  }
+
+  OpenEmbeddedMiniProgramSuccessCallback? $success;
+
+  Future<OpenEmbeddedMiniProgramSuccessCallback?> get success async {
+    return $success;
+  }
+
+  dynamic $verify;
+
+  Future<dynamic> get verify async {
+    return await $$context$$?.getPropertyValue('verify') ?? $verify;
+  }
+
+  OpenEmbeddedMiniProgramOption({this.$$context$$});
+
+  void setValues(
+      {String? appId,
+      OpenEmbeddedMiniProgramCompleteCallback? complete,
+      dynamic envVersion,
+      IAnyObject? extraData,
+      OpenEmbeddedMiniProgramFailCallback? fail,
+      bool? noRelaunchIfPathUnchanged,
+      String? path,
+      String? shortLink,
+      OpenEmbeddedMiniProgramSuccessCallback? success,
+      dynamic verify}) {
+    if (appId != null) $appId = appId;
+    if (complete != null) $complete = complete;
+    if (envVersion != null) $envVersion = envVersion;
+    if (extraData != null) $extraData = extraData;
+    if (fail != null) $fail = fail;
+    if (noRelaunchIfPathUnchanged != null)
+      $noRelaunchIfPathUnchanged = noRelaunchIfPathUnchanged;
+    if (path != null) $path = path;
+    if (shortLink != null) $shortLink = shortLink;
+    if (success != null) $success = success;
+    if (verify != null) $verify = verify;
+  }
+
+  Map toJson() {
+    return {
+      'appId': $appId,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'envVersion': $envVersion,
+      'extraData': $extraData,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'noRelaunchIfPathUnchanged': $noRelaunchIfPathUnchanged,
+      'path': $path,
+      'shortLink': $shortLink,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'verify': $verify
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -19567,6 +23284,56 @@ class OpenSyncOption {
   }
 }
 
+class OpenSystemBluetoothSettingOption {
+  mpjs.JsObject? $$context$$;
+
+  OpenSystemBluetoothSettingCompleteCallback? $complete;
+
+  Future<OpenSystemBluetoothSettingCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  OpenSystemBluetoothSettingFailCallback? $fail;
+
+  Future<OpenSystemBluetoothSettingFailCallback?> get fail async {
+    return $fail;
+  }
+
+  OpenSystemBluetoothSettingSuccessCallback? $success;
+
+  Future<OpenSystemBluetoothSettingSuccessCallback?> get success async {
+    return $success;
+  }
+
+  OpenSystemBluetoothSettingOption({this.$$context$$});
+
+  void setValues(
+      {OpenSystemBluetoothSettingCompleteCallback? complete,
+      OpenSystemBluetoothSettingFailCallback? fail,
+      OpenSystemBluetoothSettingSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class OpenVideoEditorOption {
   mpjs.JsObject? $$context$$;
 
@@ -19574,6 +23341,18 @@ class OpenVideoEditorOption {
 
   Future<String> get filePath async {
     return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  String $maxDuration = "";
+
+  Future<String> get maxDuration async {
+    return await $$context$$?.getPropertyValue('maxDuration') ?? $maxDuration;
+  }
+
+  String $minDuration = "";
+
+  Future<String> get minDuration async {
+    return await $$context$$?.getPropertyValue('minDuration') ?? $minDuration;
   }
 
   OpenVideoEditorCompleteCallback? $complete;
@@ -19598,10 +23377,14 @@ class OpenVideoEditorOption {
 
   void setValues(
       {String? filePath,
+      String? maxDuration,
+      String? minDuration,
       OpenVideoEditorCompleteCallback? complete,
       OpenVideoEditorFailCallback? fail,
       OpenVideoEditorSuccessCallback? success}) {
     if (filePath != null) $filePath = filePath;
+    if (maxDuration != null) $maxDuration = maxDuration;
+    if (minDuration != null) $minDuration = minDuration;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
@@ -19610,6 +23393,8 @@ class OpenVideoEditorOption {
   Map toJson() {
     return {
       'filePath': $filePath,
+      'maxDuration': $maxDuration,
+      'minDuration': $minDuration,
       'complete': $complete != null
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -19707,6 +23492,12 @@ class PageScrollToOption {
     return $fail;
   }
 
+  num? $offsetTop;
+
+  Future<num?> get offsetTop async {
+    return await $$context$$?.getPropertyValue('offsetTop') ?? $offsetTop;
+  }
+
   num? $scrollTop;
 
   Future<num?> get scrollTop async {
@@ -19731,12 +23522,14 @@ class PageScrollToOption {
       {PageScrollToCompleteCallback? complete,
       num? duration,
       PageScrollToFailCallback? fail,
+      num? offsetTop,
       num? scrollTop,
       String? selector,
       PageScrollToSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (duration != null) $duration = duration;
     if (fail != null) $fail = fail;
+    if (offsetTop != null) $offsetTop = offsetTop;
     if (scrollTop != null) $scrollTop = scrollTop;
     if (selector != null) $selector = selector;
     if (success != null) $success = success;
@@ -19753,6 +23546,7 @@ class PageScrollToOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'offsetTop': $offsetTop,
       'scrollTop': $scrollTop,
       'selector': $selector,
       'success': $success != null
@@ -19973,6 +23767,249 @@ class PauseVoiceOption {
   }
 }
 
+class PerformanceEntry {
+  mpjs.JsObject? $$context$$;
+
+  num $domainLookupEnd = 0;
+
+  Future<num> get domainLookupEnd async {
+    return await $$context$$?.getPropertyValue('domainLookupEnd') ??
+        $domainLookupEnd;
+  }
+
+  num $domainLookupStart = 0;
+
+  Future<num> get domainLookupStart async {
+    return await $$context$$?.getPropertyValue('domainLookupStart') ??
+        $domainLookupStart;
+  }
+
+  num $duration = 0;
+
+  Future<num> get duration async {
+    return await $$context$$?.getPropertyValue('duration') ?? $duration;
+  }
+
+  dynamic $entryType;
+
+  Future<dynamic> get entryType async {
+    return await $$context$$?.getPropertyValue('entryType') ?? $entryType;
+  }
+
+  List<String> $fileList = <String>[];
+
+  Future<List<String>> get fileList async {
+    return await $$context$$?.getPropertyValue('fileList') ?? $fileList;
+  }
+
+  num $initDataRecvTime = 0;
+
+  Future<num> get initDataRecvTime async {
+    return await $$context$$?.getPropertyValue('initDataRecvTime') ??
+        $initDataRecvTime;
+  }
+
+  num $initDataSendTime = 0;
+
+  Future<num> get initDataSendTime async {
+    return await $$context$$?.getPropertyValue('initDataSendTime') ??
+        $initDataSendTime;
+  }
+
+  dynamic $initiatorType;
+
+  Future<dynamic> get initiatorType async {
+    return await $$context$$?.getPropertyValue('initiatorType') ??
+        $initiatorType;
+  }
+
+  String $moduleName = "";
+
+  Future<String> get moduleName async {
+    return await $$context$$?.getPropertyValue('moduleName') ?? $moduleName;
+  }
+
+  dynamic $name;
+
+  Future<dynamic> get name async {
+    return await $$context$$?.getPropertyValue('name') ?? $name;
+  }
+
+  num $navigationStart = 0;
+
+  Future<num> get navigationStart async {
+    return await $$context$$?.getPropertyValue('navigationStart') ??
+        $navigationStart;
+  }
+
+  String $navigationType = "";
+
+  Future<String> get navigationType async {
+    return await $$context$$?.getPropertyValue('navigationType') ??
+        $navigationType;
+  }
+
+  String $packageName = "";
+
+  Future<String> get packageName async {
+    return await $$context$$?.getPropertyValue('packageName') ?? $packageName;
+  }
+
+  num $packageSize = 0;
+
+  Future<num> get packageSize async {
+    return await $$context$$?.getPropertyValue('packageSize') ?? $packageSize;
+  }
+
+  num $pageId = 0;
+
+  Future<num> get pageId async {
+    return await $$context$$?.getPropertyValue('pageId') ?? $pageId;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  num $referrerPageId = 0;
+
+  Future<num> get referrerPageId async {
+    return await $$context$$?.getPropertyValue('referrerPageId') ??
+        $referrerPageId;
+  }
+
+  num $referrerPath = 0;
+
+  Future<num> get referrerPath async {
+    return await $$context$$?.getPropertyValue('referrerPath') ?? $referrerPath;
+  }
+
+  num $startTime = 0;
+
+  Future<num> get startTime async {
+    return await $$context$$?.getPropertyValue('startTime') ?? $startTime;
+  }
+
+  num $transferSize = 0;
+
+  Future<num> get transferSize async {
+    return await $$context$$?.getPropertyValue('transferSize') ?? $transferSize;
+  }
+
+  String $uri = "";
+
+  Future<String> get uri async {
+    return await $$context$$?.getPropertyValue('uri') ?? $uri;
+  }
+
+  num $viewLayerReadyTime = 0;
+
+  Future<num> get viewLayerReadyTime async {
+    return await $$context$$?.getPropertyValue('viewLayerReadyTime') ??
+        $viewLayerReadyTime;
+  }
+
+  num $viewLayerRenderEndTime = 0;
+
+  Future<num> get viewLayerRenderEndTime async {
+    return await $$context$$?.getPropertyValue('viewLayerRenderEndTime') ??
+        $viewLayerRenderEndTime;
+  }
+
+  num $viewLayerRenderStartTime = 0;
+
+  Future<num> get viewLayerRenderStartTime async {
+    return await $$context$$?.getPropertyValue('viewLayerRenderStartTime') ??
+        $viewLayerRenderStartTime;
+  }
+
+  PerformanceEntry({this.$$context$$});
+
+  void setValues(
+      {num? domainLookupEnd,
+      num? domainLookupStart,
+      num? duration,
+      dynamic entryType,
+      List<String>? fileList,
+      num? initDataRecvTime,
+      num? initDataSendTime,
+      dynamic initiatorType,
+      String? moduleName,
+      dynamic name,
+      num? navigationStart,
+      String? navigationType,
+      String? packageName,
+      num? packageSize,
+      num? pageId,
+      String? path,
+      num? referrerPageId,
+      num? referrerPath,
+      num? startTime,
+      num? transferSize,
+      String? uri,
+      num? viewLayerReadyTime,
+      num? viewLayerRenderEndTime,
+      num? viewLayerRenderStartTime}) {
+    if (domainLookupEnd != null) $domainLookupEnd = domainLookupEnd;
+    if (domainLookupStart != null) $domainLookupStart = domainLookupStart;
+    if (duration != null) $duration = duration;
+    if (entryType != null) $entryType = entryType;
+    if (fileList != null) $fileList = fileList;
+    if (initDataRecvTime != null) $initDataRecvTime = initDataRecvTime;
+    if (initDataSendTime != null) $initDataSendTime = initDataSendTime;
+    if (initiatorType != null) $initiatorType = initiatorType;
+    if (moduleName != null) $moduleName = moduleName;
+    if (name != null) $name = name;
+    if (navigationStart != null) $navigationStart = navigationStart;
+    if (navigationType != null) $navigationType = navigationType;
+    if (packageName != null) $packageName = packageName;
+    if (packageSize != null) $packageSize = packageSize;
+    if (pageId != null) $pageId = pageId;
+    if (path != null) $path = path;
+    if (referrerPageId != null) $referrerPageId = referrerPageId;
+    if (referrerPath != null) $referrerPath = referrerPath;
+    if (startTime != null) $startTime = startTime;
+    if (transferSize != null) $transferSize = transferSize;
+    if (uri != null) $uri = uri;
+    if (viewLayerReadyTime != null) $viewLayerReadyTime = viewLayerReadyTime;
+    if (viewLayerRenderEndTime != null)
+      $viewLayerRenderEndTime = viewLayerRenderEndTime;
+    if (viewLayerRenderStartTime != null)
+      $viewLayerRenderStartTime = viewLayerRenderStartTime;
+  }
+
+  Map toJson() {
+    return {
+      'domainLookupEnd': $domainLookupEnd,
+      'domainLookupStart': $domainLookupStart,
+      'duration': $duration,
+      'entryType': $entryType,
+      'fileList': $fileList,
+      'initDataRecvTime': $initDataRecvTime,
+      'initDataSendTime': $initDataSendTime,
+      'initiatorType': $initiatorType,
+      'moduleName': $moduleName,
+      'name': $name,
+      'navigationStart': $navigationStart,
+      'navigationType': $navigationType,
+      'packageName': $packageName,
+      'packageSize': $packageSize,
+      'pageId': $pageId,
+      'path': $path,
+      'referrerPageId': $referrerPageId,
+      'referrerPath': $referrerPath,
+      'startTime': $startTime,
+      'transferSize': $transferSize,
+      'uri': $uri,
+      'viewLayerReadyTime': $viewLayerReadyTime,
+      'viewLayerRenderEndTime': $viewLayerRenderEndTime,
+      'viewLayerRenderStartTime': $viewLayerRenderStartTime
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class PerformanceObserver {
   mpjs.JsObject? $$context$$;
 
@@ -19999,9 +24036,29 @@ class PerformanceObserver {
     return result;
   }
 
-  Future<void> observe(IAnyObject options) async {
+  Future<void> observe(ObserveOption options) async {
     final result = await $$context$$?.callMethod('observe', [options.toJson()]);
     return result;
+  }
+}
+
+class PlaneTrack {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $mode;
+
+  Future<dynamic> get mode async {
+    return await $$context$$?.getPropertyValue('mode') ?? $mode;
+  }
+
+  PlaneTrack({this.$$context$$});
+
+  void setValues({dynamic mode}) {
+    if (mode != null) $mode = mode;
+  }
+
+  Map toJson() {
+    return {'mode': $mode}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -20287,6 +24344,333 @@ class Plugin {
   }
 }
 
+class PluginLoginOption {
+  mpjs.JsObject? $$context$$;
+
+  PluginLoginCompleteCallback? $complete;
+
+  Future<PluginLoginCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  PluginLoginFailCallback? $fail;
+
+  Future<PluginLoginFailCallback?> get fail async {
+    return $fail;
+  }
+
+  PluginLoginSuccessCallback? $success;
+
+  Future<PluginLoginSuccessCallback?> get success async {
+    return $success;
+  }
+
+  PluginLoginOption({this.$$context$$});
+
+  void setValues(
+      {PluginLoginCompleteCallback? complete,
+      PluginLoginFailCallback? fail,
+      PluginLoginSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => PluginLoginSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PluginLoginSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $code = "";
+
+  Future<String> get code async {
+    return await $$context$$?.getPropertyValue('code') ?? $code;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  PluginLoginSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? code, String? errMsg}) {
+    if (code != null) $code = code;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'code': $code, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class PreDownloadSubpackageOption {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $complete;
+
+  Future<dynamic> get complete async {
+    return await $$context$$?.getPropertyValue('complete') ?? $complete;
+  }
+
+  dynamic $fail;
+
+  Future<dynamic> get fail async {
+    return await $$context$$?.getPropertyValue('fail') ?? $fail;
+  }
+
+  String $packageType = "";
+
+  Future<String> get packageType async {
+    return await $$context$$?.getPropertyValue('packageType') ?? $packageType;
+  }
+
+  dynamic $success;
+
+  Future<dynamic> get success async {
+    return await $$context$$?.getPropertyValue('success') ?? $success;
+  }
+
+  PreDownloadSubpackageOption({this.$$context$$});
+
+  void setValues(
+      {dynamic complete, dynamic fail, String? packageType, dynamic success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (packageType != null) $packageType = packageType;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete':
+          $complete != null ? mpjs.JsFunction($complete!, [null]) : null,
+      'fail': $fail != null ? mpjs.JsFunction($fail!, [null]) : null,
+      'packageType': $packageType,
+      'success': $success != null ? mpjs.JsFunction($success!, [null]) : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PreDownloadSubpackageTaskOnProgressUpdateListenerResult {
+  mpjs.JsObject? $$context$$;
+
+  num $progress = 0;
+
+  Future<num> get progress async {
+    return await $$context$$?.getPropertyValue('progress') ?? $progress;
+  }
+
+  num $totalBytesExpectedToWrite = 0;
+
+  Future<num> get totalBytesExpectedToWrite async {
+    return await $$context$$?.getPropertyValue('totalBytesExpectedToWrite') ??
+        $totalBytesExpectedToWrite;
+  }
+
+  num $totalBytesWritten = 0;
+
+  Future<num> get totalBytesWritten async {
+    return await $$context$$?.getPropertyValue('totalBytesWritten') ??
+        $totalBytesWritten;
+  }
+
+  PreDownloadSubpackageTaskOnProgressUpdateListenerResult({this.$$context$$});
+
+  void setValues(
+      {num? progress, num? totalBytesExpectedToWrite, num? totalBytesWritten}) {
+    if (progress != null) $progress = progress;
+    if (totalBytesExpectedToWrite != null)
+      $totalBytesExpectedToWrite = totalBytesExpectedToWrite;
+    if (totalBytesWritten != null) $totalBytesWritten = totalBytesWritten;
+  }
+
+  Map toJson() {
+    return {
+      'progress': $progress,
+      'totalBytesExpectedToWrite': $totalBytesExpectedToWrite,
+      'totalBytesWritten': $totalBytesWritten
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PreloadAssetsOption {
+  mpjs.JsObject? $$context$$;
+
+  List<Asset> $data = <Asset>[];
+
+  Future<List<Asset>> get data async {
+    return await $$context$$?.getPropertyValue('data') ?? $data;
+  }
+
+  PreloadAssetsCompleteCallback? $complete;
+
+  Future<PreloadAssetsCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  PreloadAssetsFailCallback? $fail;
+
+  Future<PreloadAssetsFailCallback?> get fail async {
+    return $fail;
+  }
+
+  PreloadAssetsSuccessCallback? $success;
+
+  Future<PreloadAssetsSuccessCallback?> get success async {
+    return $success;
+  }
+
+  PreloadAssetsOption({this.$$context$$});
+
+  void setValues(
+      {List<Asset>? data,
+      PreloadAssetsCompleteCallback? complete,
+      PreloadAssetsFailCallback? fail,
+      PreloadAssetsSuccessCallback? success}) {
+    if (data != null) $data = data;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'data': $data,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PreloadSkylineViewOption {
+  mpjs.JsObject? $$context$$;
+
+  PreloadSkylineViewCompleteCallback? $complete;
+
+  Future<PreloadSkylineViewCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  PreloadSkylineViewFailCallback? $fail;
+
+  Future<PreloadSkylineViewFailCallback?> get fail async {
+    return $fail;
+  }
+
+  PreloadSkylineViewSuccessCallback? $success;
+
+  Future<PreloadSkylineViewSuccessCallback?> get success async {
+    return $success;
+  }
+
+  PreloadSkylineViewOption({this.$$context$$});
+
+  void setValues(
+      {PreloadSkylineViewCompleteCallback? complete,
+      PreloadSkylineViewFailCallback? fail,
+      PreloadSkylineViewSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PreloadWebviewOption {
+  mpjs.JsObject? $$context$$;
+
+  PreloadWebviewCompleteCallback? $complete;
+
+  Future<PreloadWebviewCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  PreloadWebviewFailCallback? $fail;
+
+  Future<PreloadWebviewFailCallback?> get fail async {
+    return $fail;
+  }
+
+  PreloadWebviewSuccessCallback? $success;
+
+  Future<PreloadWebviewSuccessCallback?> get success async {
+    return $success;
+  }
+
+  PreloadWebviewOption({this.$$context$$});
+
+  void setValues(
+      {PreloadWebviewCompleteCallback? complete,
+      PreloadWebviewFailCallback? fail,
+      PreloadWebviewSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class PreviewImageOption {
   mpjs.JsObject? $$context$$;
 
@@ -20314,6 +24698,13 @@ class PreviewImageOption {
     return $fail;
   }
 
+  String? $referrerPolicy;
+
+  Future<String?> get referrerPolicy async {
+    return await $$context$$?.getPropertyValue('referrerPolicy') ??
+        $referrerPolicy;
+  }
+
   bool? $showmenu;
 
   Future<bool?> get showmenu async {
@@ -20333,12 +24724,14 @@ class PreviewImageOption {
       PreviewImageCompleteCallback? complete,
       String? current,
       PreviewImageFailCallback? fail,
+      String? referrerPolicy,
       bool? showmenu,
       PreviewImageSuccessCallback? success}) {
     if (urls != null) $urls = urls;
     if (complete != null) $complete = complete;
     if (current != null) $current = current;
     if (fail != null) $fail = fail;
+    if (referrerPolicy != null) $referrerPolicy = referrerPolicy;
     if (showmenu != null) $showmenu = showmenu;
     if (success != null) $success = success;
   }
@@ -20355,6 +24748,7 @@ class PreviewImageOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'referrerPolicy': $referrerPolicy,
       'showmenu': $showmenu,
       'success': $success != null
           ? mpjs.JsFunction(
@@ -20391,6 +24785,13 @@ class PreviewMediaOption {
     return $fail;
   }
 
+  String? $referrerPolicy;
+
+  Future<String?> get referrerPolicy async {
+    return await $$context$$?.getPropertyValue('referrerPolicy') ??
+        $referrerPolicy;
+  }
+
   bool? $showmenu;
 
   Future<bool?> get showmenu async {
@@ -20410,12 +24811,14 @@ class PreviewMediaOption {
       PreviewMediaCompleteCallback? complete,
       num? current,
       PreviewMediaFailCallback? fail,
+      String? referrerPolicy,
       bool? showmenu,
       PreviewMediaSuccessCallback? success}) {
     if (sources != null) $sources = sources;
     if (complete != null) $complete = complete;
     if (current != null) $current = current;
     if (fail != null) $fail = fail;
+    if (referrerPolicy != null) $referrerPolicy = referrerPolicy;
     if (showmenu != null) $showmenu = showmenu;
     if (success != null) $success = success;
   }
@@ -20432,11 +24835,53 @@ class PreviewMediaOption {
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'referrerPolicy': $referrerPolicy,
       'showmenu': $showmenu,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class PromoterResult {
+  mpjs.JsObject? $$context$$;
+
+  String $finderNickname = "";
+
+  Future<String> get finderNickname async {
+    return await $$context$$?.getPropertyValue('finderNickname') ??
+        $finderNickname;
+  }
+
+  String $promoterId = "";
+
+  Future<String> get promoterId async {
+    return await $$context$$?.getPropertyValue('promoterId') ?? $promoterId;
+  }
+
+  String $promoterOpenId = "";
+
+  Future<String> get promoterOpenId async {
+    return await $$context$$?.getPropertyValue('promoterOpenId') ??
+        $promoterOpenId;
+  }
+
+  PromoterResult({this.$$context$$});
+
+  void setValues(
+      {String? finderNickname, String? promoterId, String? promoterOpenId}) {
+    if (finderNickname != null) $finderNickname = finderNickname;
+    if (promoterId != null) $promoterId = promoterId;
+    if (promoterOpenId != null) $promoterOpenId = promoterOpenId;
+  }
+
+  Map toJson() {
+    return {
+      'finderNickname': $finderNickname,
+      'promoterId': $promoterId,
+      'promoterOpenId': $promoterOpenId
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -20571,6 +25016,156 @@ class ReadBLECharacteristicValueOption {
       'success': $success != null
           ? mpjs.JsFunction($success!, [(e) => BluetoothError($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ReadCompressedFileFailCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  ReadCompressedFileFailCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg}) {
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  }
+}
+
+class ReadCompressedFileOption {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $compressionAlgorithm;
+
+  Future<dynamic> get compressionAlgorithm async {
+    return await $$context$$?.getPropertyValue('compressionAlgorithm') ??
+        $compressionAlgorithm;
+  }
+
+  String $filePath = "";
+
+  Future<String> get filePath async {
+    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  ReadCompressedFileCompleteCallback? $complete;
+
+  Future<ReadCompressedFileCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  ReadCompressedFileFailCallback? $fail;
+
+  Future<ReadCompressedFileFailCallback?> get fail async {
+    return $fail;
+  }
+
+  ReadCompressedFileSuccessCallback? $success;
+
+  Future<ReadCompressedFileSuccessCallback?> get success async {
+    return $success;
+  }
+
+  ReadCompressedFileOption({this.$$context$$});
+
+  void setValues(
+      {dynamic compressionAlgorithm,
+      String? filePath,
+      ReadCompressedFileCompleteCallback? complete,
+      ReadCompressedFileFailCallback? fail,
+      ReadCompressedFileSuccessCallback? success}) {
+    if (compressionAlgorithm != null)
+      $compressionAlgorithm = compressionAlgorithm;
+    if (filePath != null) $filePath = filePath;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'compressionAlgorithm': $compressionAlgorithm,
+      'filePath': $filePath,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction($fail!,
+              [(e) => ReadCompressedFileFailCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!,
+              [(e) => ReadCompressedFileSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class ReadCompressedFileSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $data = ArrayBuffer();
+
+  Future<ArrayBuffer> get data async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('data'));
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  ReadCompressedFileSuccessCallbackResult({this.$$context$$});
+
+  void setValues({ArrayBuffer? data, String? errMsg}) {
+    if (data != null) $data = data;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'data': $data, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class ReadCompressedFileSyncOption {
+  mpjs.JsObject? $$context$$;
+
+  dynamic $compressionAlgorithm;
+
+  Future<dynamic> get compressionAlgorithm async {
+    return await $$context$$?.getPropertyValue('compressionAlgorithm') ??
+        $compressionAlgorithm;
+  }
+
+  String $filePath = "";
+
+  Future<String> get filePath async {
+    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  ReadCompressedFileSyncOption({this.$$context$$});
+
+  void setValues({dynamic compressionAlgorithm, String? filePath}) {
+    if (compressionAlgorithm != null)
+      $compressionAlgorithm = compressionAlgorithm;
+    if (filePath != null) $filePath = filePath;
+  }
+
+  Map toJson() {
+    return {
+      'compressionAlgorithm': $compressionAlgorithm,
+      'filePath': $filePath
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -20949,6 +25544,26 @@ class ReadSyncOption {
   }
 }
 
+class ReadZipEntryFailCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  ReadZipEntryFailCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg}) {
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  }
+}
+
 class ReadZipEntryOption {
   mpjs.JsObject? $$context$$;
 
@@ -21016,7 +25631,7 @@ class ReadZipEntryOption {
       'encoding': $encoding,
       'fail': $fail != null
           ? mpjs.JsFunction(
-              $fail!, [(e) => ReadFileFailCallbackResult($$context$$: e)])
+              $fail!, [(e) => ReadZipEntryFailCallbackResult($$context$$: e)])
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!,
@@ -21236,69 +25851,6 @@ class RecorderManagerStartOption {
       'frameSize': $frameSize,
       'numberOfChannels': $numberOfChannels,
       'sampleRate': $sampleRate
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class Rect {
-  mpjs.JsObject? $$context$$;
-
-  num $bottom = 0;
-
-  Future<num> get bottom async {
-    return await $$context$$?.getPropertyValue('bottom') ?? $bottom;
-  }
-
-  num $height = 0;
-
-  Future<num> get height async {
-    return await $$context$$?.getPropertyValue('height') ?? $height;
-  }
-
-  num $left = 0;
-
-  Future<num> get left async {
-    return await $$context$$?.getPropertyValue('left') ?? $left;
-  }
-
-  num $right = 0;
-
-  Future<num> get right async {
-    return await $$context$$?.getPropertyValue('right') ?? $right;
-  }
-
-  num $top = 0;
-
-  Future<num> get top async {
-    return await $$context$$?.getPropertyValue('top') ?? $top;
-  }
-
-  num $width = 0;
-
-  Future<num> get width async {
-    return await $$context$$?.getPropertyValue('width') ?? $width;
-  }
-
-  Rect({this.$$context$$});
-
-  void setValues(
-      {num? bottom, num? height, num? left, num? right, num? top, num? width}) {
-    if (bottom != null) $bottom = bottom;
-    if (height != null) $height = height;
-    if (left != null) $left = left;
-    if (right != null) $right = right;
-    if (top != null) $top = top;
-    if (width != null) $width = width;
-  }
-
-  Map toJson() {
-    return {
-      'bottom': $bottom,
-      'height': $height,
-      'left': $left,
-      'right': $right,
-      'top': $top,
-      'width': $width
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -21524,6 +26076,65 @@ class RemoteInfo {
       'family': $family,
       'port': $port,
       'size': $size
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class RemoveArcOption {
+  mpjs.JsObject? $$context$$;
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  RemoveArcCompleteCallback? $complete;
+
+  Future<RemoveArcCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  RemoveArcFailCallback? $fail;
+
+  Future<RemoveArcFailCallback?> get fail async {
+    return $fail;
+  }
+
+  RemoveArcSuccessCallback? $success;
+
+  Future<RemoveArcSuccessCallback?> get success async {
+    return $success;
+  }
+
+  RemoveArcOption({this.$$context$$});
+
+  void setValues(
+      {num? id,
+      RemoveArcCompleteCallback? complete,
+      RemoveArcFailCallback? fail,
+      RemoveArcSuccessCallback? success}) {
+    if (id != null) $id = id;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'id': $id,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -21775,6 +26386,65 @@ class RemoveSavedFileFailCallbackResult {
   }
 }
 
+class RemoveSavedFileOption {
+  mpjs.JsObject? $$context$$;
+
+  String $filePath = "";
+
+  Future<String> get filePath async {
+    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  RemoveSavedFileCompleteCallback? $complete;
+
+  Future<RemoveSavedFileCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  RemoveSavedFileFailCallback? $fail;
+
+  Future<RemoveSavedFileFailCallback?> get fail async {
+    return $fail;
+  }
+
+  RemoveSavedFileSuccessCallback? $success;
+
+  Future<RemoveSavedFileSuccessCallback?> get success async {
+    return $success;
+  }
+
+  RemoveSavedFileOption({this.$$context$$});
+
+  void setValues(
+      {String? filePath,
+      RemoveSavedFileCompleteCallback? complete,
+      RemoveSavedFileFailCallback? fail,
+      RemoveSavedFileSuccessCallback? success}) {
+    if (filePath != null) $filePath = filePath;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'filePath': $filePath,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction($fail!,
+              [(e) => RemoveSavedFileFailCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class RemoveServiceOption {
   mpjs.JsObject? $$context$$;
 
@@ -21952,6 +26622,65 @@ class RemoveTabBarBadgeOption {
   }
 }
 
+class RemoveVisualLayerOption {
+  mpjs.JsObject? $$context$$;
+
+  String $layerId = "";
+
+  Future<String> get layerId async {
+    return await $$context$$?.getPropertyValue('layerId') ?? $layerId;
+  }
+
+  RemoveVisualLayerCompleteCallback? $complete;
+
+  Future<RemoveVisualLayerCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  RemoveVisualLayerFailCallback? $fail;
+
+  Future<RemoveVisualLayerFailCallback?> get fail async {
+    return $fail;
+  }
+
+  RemoveVisualLayerSuccessCallback? $success;
+
+  Future<RemoveVisualLayerSuccessCallback?> get success async {
+    return $success;
+  }
+
+  RemoveVisualLayerOption({this.$$context$$});
+
+  void setValues(
+      {String? layerId,
+      RemoveVisualLayerCompleteCallback? complete,
+      RemoveVisualLayerFailCallback? fail,
+      RemoveVisualLayerSuccessCallback? success}) {
+    if (layerId != null) $layerId = layerId;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'layerId': $layerId,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class RenameFailCallbackResult {
   mpjs.JsObject? $$context$$;
 
@@ -22083,6 +26812,13 @@ class RequestOption<T extends dynamic> {
     return await $$context$$?.getPropertyValue('enableCache') ?? $enableCache;
   }
 
+  bool? $enableChunked;
+
+  Future<bool?> get enableChunked async {
+    return await $$context$$?.getPropertyValue('enableChunked') ??
+        $enableChunked;
+  }
+
   bool? $enableHttp2;
 
   Future<bool?> get enableHttp2 async {
@@ -22108,15 +26844,22 @@ class RequestOption<T extends dynamic> {
     return $fail;
   }
 
+  bool? $forceCellularNetwork;
+
+  Future<bool?> get forceCellularNetwork async {
+    return await $$context$$?.getPropertyValue('forceCellularNetwork') ??
+        $forceCellularNetwork;
+  }
+
   IAnyObject? $header;
 
   Future<IAnyObject?> get header async {
     return IAnyObject($$context$$: $$context$$?.getProperty('header'));
   }
 
-  bool? $httpDNSServiceId;
+  String? $httpDNSServiceId;
 
-  Future<bool?> get httpDNSServiceId async {
+  Future<String?> get httpDNSServiceId async {
     return await $$context$$?.getPropertyValue('httpDNSServiceId') ??
         $httpDNSServiceId;
   }
@@ -22135,6 +26878,10 @@ class RequestOption<T extends dynamic> {
 
   RequestSuccessCallback<T>? $success;
 
+  Future<RequestSuccessCallback<T>?> get success async {
+    return $success;
+  }
+
   num? $timeout;
 
   Future<num?> get timeout async {
@@ -22149,12 +26896,14 @@ class RequestOption<T extends dynamic> {
       dynamic data,
       dynamic dataType,
       bool? enableCache,
+      bool? enableChunked,
       bool? enableHttp2,
       bool? enableHttpDNS,
       bool? enableQuic,
       RequestFailCallback? fail,
+      bool? forceCellularNetwork,
       IAnyObject? header,
-      bool? httpDNSServiceId,
+      String? httpDNSServiceId,
       dynamic method,
       dynamic responseType,
       RequestSuccessCallback<T>? success,
@@ -22164,10 +26913,13 @@ class RequestOption<T extends dynamic> {
     if (data != null) $data = data;
     if (dataType != null) $dataType = dataType;
     if (enableCache != null) $enableCache = enableCache;
+    if (enableChunked != null) $enableChunked = enableChunked;
     if (enableHttp2 != null) $enableHttp2 = enableHttp2;
     if (enableHttpDNS != null) $enableHttpDNS = enableHttpDNS;
     if (enableQuic != null) $enableQuic = enableQuic;
     if (fail != null) $fail = fail;
+    if (forceCellularNetwork != null)
+      $forceCellularNetwork = forceCellularNetwork;
     if (header != null) $header = header;
     if (httpDNSServiceId != null) $httpDNSServiceId = httpDNSServiceId;
     if (method != null) $method = method;
@@ -22186,13 +26938,14 @@ class RequestOption<T extends dynamic> {
       'data': $data,
       'dataType': $dataType,
       'enableCache': $enableCache,
+      'enableChunked': $enableChunked,
       'enableHttp2': $enableHttp2,
       'enableHttpDNS': $enableHttpDNS,
       'enableQuic': $enableQuic,
       'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          ? mpjs.JsFunction($fail!, [(e) => Err($$context$$: e)])
           : null,
+      'forceCellularNetwork': $forceCellularNetwork,
       'header': $header,
       'httpDNSServiceId': $httpDNSServiceId,
       'method': $method,
@@ -22461,6 +27214,92 @@ class RequestPictureInPictureOption {
   }
 }
 
+class RequestPluginPaymentOption {
+  mpjs.JsObject? $$context$$;
+
+  num $fee = 0;
+
+  Future<num> get fee async {
+    return await $$context$$?.getPropertyValue('fee') ?? $fee;
+  }
+
+  IAnyObject $paymentArgs = IAnyObject();
+
+  Future<IAnyObject> get paymentArgs async {
+    return IAnyObject($$context$$: $$context$$?.getProperty('paymentArgs'));
+  }
+
+  dynamic $version;
+
+  Future<dynamic> get version async {
+    return await $$context$$?.getPropertyValue('version') ?? $version;
+  }
+
+  RequestPluginPaymentCompleteCallback? $complete;
+
+  Future<RequestPluginPaymentCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  String? $currencyType;
+
+  Future<String?> get currencyType async {
+    return await $$context$$?.getPropertyValue('currencyType') ?? $currencyType;
+  }
+
+  RequestPluginPaymentFailCallback? $fail;
+
+  Future<RequestPluginPaymentFailCallback?> get fail async {
+    return $fail;
+  }
+
+  RequestPluginPaymentSuccessCallback? $success;
+
+  Future<RequestPluginPaymentSuccessCallback?> get success async {
+    return $success;
+  }
+
+  RequestPluginPaymentOption({this.$$context$$});
+
+  void setValues(
+      {num? fee,
+      IAnyObject? paymentArgs,
+      dynamic version,
+      RequestPluginPaymentCompleteCallback? complete,
+      String? currencyType,
+      RequestPluginPaymentFailCallback? fail,
+      RequestPluginPaymentSuccessCallback? success}) {
+    if (fee != null) $fee = fee;
+    if (paymentArgs != null) $paymentArgs = paymentArgs;
+    if (version != null) $version = version;
+    if (complete != null) $complete = complete;
+    if (currencyType != null) $currencyType = currencyType;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'fee': $fee,
+      'paymentArgs': $paymentArgs,
+      'version': $version,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'currencyType': $currencyType,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class RequestProfile {
   mpjs.JsObject? $$context$$;
 
@@ -22512,9 +27351,9 @@ class RequestProfile {
         $downstreamThroughputKbpsEstimate;
   }
 
-  String $estimate_nettype = "";
+  num $estimate_nettype = 0;
 
-  Future<String> get estimate_nettype async {
+  Future<num> get estimate_nettype async {
     return await $$context$$?.getPropertyValue('estimate_nettype') ??
         $estimate_nettype;
   }
@@ -22638,7 +27477,7 @@ class RequestProfile {
       num? domainLookupEnd,
       num? domainLookupStart,
       num? downstreamThroughputKbpsEstimate,
-      String? estimate_nettype,
+      num? estimate_nettype,
       num? fetchStart,
       num? httpRttEstimate,
       String? peerIP,
@@ -22713,6 +27552,144 @@ class RequestProfile {
       'throughputKbps': $throughputKbps,
       'transportRttEstimate': $transportRttEstimate
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class RequestSubscribeDeviceMessageFailCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  num $errCode = 0;
+
+  Future<num> get errCode async {
+    return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
+  }
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  RequestSubscribeDeviceMessageFailCallbackResult({this.$$context$$});
+
+  void setValues({num? errCode, String? errMsg}) {
+    if (errCode != null) $errCode = errCode;
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errCode': $errCode, 'errMsg': $errMsg}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class RequestSubscribeDeviceMessageOption {
+  mpjs.JsObject? $$context$$;
+
+  String $modelId = "";
+
+  Future<String> get modelId async {
+    return await $$context$$?.getPropertyValue('modelId') ?? $modelId;
+  }
+
+  String $sn = "";
+
+  Future<String> get sn async {
+    return await $$context$$?.getPropertyValue('sn') ?? $sn;
+  }
+
+  String $snTicket = "";
+
+  Future<String> get snTicket async {
+    return await $$context$$?.getPropertyValue('snTicket') ?? $snTicket;
+  }
+
+  List<dynamic> $tmplIds = <dynamic>[];
+
+  Future<List<dynamic>> get tmplIds async {
+    return await $$context$$?.getPropertyValue('tmplIds') ?? $tmplIds;
+  }
+
+  RequestSubscribeDeviceMessageCompleteCallback? $complete;
+
+  Future<RequestSubscribeDeviceMessageCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  RequestSubscribeDeviceMessageFailCallback? $fail;
+
+  Future<RequestSubscribeDeviceMessageFailCallback?> get fail async {
+    return $fail;
+  }
+
+  RequestSubscribeDeviceMessageSuccessCallback? $success;
+
+  Future<RequestSubscribeDeviceMessageSuccessCallback?> get success async {
+    return $success;
+  }
+
+  RequestSubscribeDeviceMessageOption({this.$$context$$});
+
+  void setValues(
+      {String? modelId,
+      String? sn,
+      String? snTicket,
+      List<dynamic>? tmplIds,
+      RequestSubscribeDeviceMessageCompleteCallback? complete,
+      RequestSubscribeDeviceMessageFailCallback? fail,
+      RequestSubscribeDeviceMessageSuccessCallback? success}) {
+    if (modelId != null) $modelId = modelId;
+    if (sn != null) $sn = sn;
+    if (snTicket != null) $snTicket = snTicket;
+    if (tmplIds != null) $tmplIds = tmplIds;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'modelId': $modelId,
+      'sn': $sn,
+      'snTicket': $snTicket,
+      'tmplIds': $tmplIds,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction($fail!, [
+              (e) => RequestSubscribeDeviceMessageFailCallbackResult(
+                  $$context$$: e)
+            ])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction($success!, [
+              (e) => RequestSubscribeDeviceMessageSuccessCallbackResult(
+                  $$context$$: e)
+            ])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class RequestSubscribeDeviceMessageSuccessCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  RequestSubscribeDeviceMessageSuccessCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg}) {
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -22914,6 +27891,26 @@ class ReserveChannelsLiveOption {
   }
 }
 
+class Result {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $data = ArrayBuffer();
+
+  Future<ArrayBuffer> get data async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('data'));
+  }
+
+  Result({this.$$context$$});
+
+  void setValues({ArrayBuffer? data}) {
+    if (data != null) $data = data;
+  }
+
+  Map toJson() {
+    return {'data': $data}..removeWhere((key, value) => value == null);
+  }
+}
+
 class ResumeBGMOption {
   mpjs.JsObject? $$context$$;
 
@@ -23014,7 +28011,7 @@ class ResumeOption {
   }
 }
 
-class RewardedVideoAdOnCloseCallbackResult {
+class RewardedVideoAdOnCloseListenerResult {
   mpjs.JsObject? $$context$$;
 
   bool $isEnded = false;
@@ -23023,7 +28020,7 @@ class RewardedVideoAdOnCloseCallbackResult {
     return await $$context$$?.getPropertyValue('isEnded') ?? $isEnded;
   }
 
-  RewardedVideoAdOnCloseCallbackResult({this.$$context$$});
+  RewardedVideoAdOnCloseListenerResult({this.$$context$$});
 
   void setValues({bool? isEnded}) {
     if (isEnded != null) $isEnded = isEnded;
@@ -23034,7 +28031,7 @@ class RewardedVideoAdOnCloseCallbackResult {
   }
 }
 
-class RewardedVideoAdOnErrorCallbackResult {
+class RewardedVideoAdOnErrorListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $errCode;
@@ -23049,7 +28046,7 @@ class RewardedVideoAdOnErrorCallbackResult {
     return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
   }
 
-  RewardedVideoAdOnErrorCallbackResult({this.$$context$$});
+  RewardedVideoAdOnErrorListenerResult({this.$$context$$});
 
   void setValues({dynamic errCode, String? errMsg}) {
     if (errCode != null) $errCode = errCode;
@@ -23150,6 +28147,41 @@ class RmdirOption {
   }
 }
 
+class RunOCROption {
+  mpjs.JsObject? $$context$$;
+
+  ArrayBuffer $frameBuffer = ArrayBuffer();
+
+  Future<ArrayBuffer> get frameBuffer async {
+    return ArrayBuffer($$context$$: $$context$$?.getProperty('frameBuffer'));
+  }
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  RunOCROption({this.$$context$$});
+
+  void setValues({ArrayBuffer? frameBuffer, num? height, num? width}) {
+    if (frameBuffer != null) $frameBuffer = frameBuffer;
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+  }
+
+  Map toJson() {
+    return {'frameBuffer': $frameBuffer, 'height': $height, 'width': $width}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class SafeArea {
   mpjs.JsObject? $$context$$;
 
@@ -23230,6 +28262,74 @@ class SaveFileFailCallbackResult {
 
   Map toJson() {
     return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  }
+}
+
+class SaveFileOption {
+  mpjs.JsObject? $$context$$;
+
+  String $tempFilePath = "";
+
+  Future<String> get tempFilePath async {
+    return await $$context$$?.getPropertyValue('tempFilePath') ?? $tempFilePath;
+  }
+
+  SaveFileCompleteCallback? $complete;
+
+  Future<SaveFileCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  SaveFileFailCallback? $fail;
+
+  Future<SaveFileFailCallback?> get fail async {
+    return $fail;
+  }
+
+  String? $filePath;
+
+  Future<String?> get filePath async {
+    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
+  }
+
+  SaveFileSuccessCallback? $success;
+
+  Future<SaveFileSuccessCallback?> get success async {
+    return $success;
+  }
+
+  SaveFileOption({this.$$context$$});
+
+  void setValues(
+      {String? tempFilePath,
+      SaveFileCompleteCallback? complete,
+      SaveFileFailCallback? fail,
+      String? filePath,
+      SaveFileSuccessCallback? success}) {
+    if (tempFilePath != null) $tempFilePath = tempFilePath;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (filePath != null) $filePath = filePath;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'tempFilePath': $tempFilePath,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => SaveFileFailCallbackResult($$context$$: e)])
+          : null,
+      'filePath': $filePath,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => SaveFileSuccessCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
   }
 }
 
@@ -23762,113 +28862,6 @@ class ScrollViewContext {
   }
 }
 
-class SearchContactsOption {
-  mpjs.JsObject? $$context$$;
-
-  String $phoneNumber = "";
-
-  Future<String> get phoneNumber async {
-    return await $$context$$?.getPropertyValue('phoneNumber') ?? $phoneNumber;
-  }
-
-  SearchContactsCompleteCallback? $complete;
-
-  Future<SearchContactsCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  SearchContactsFailCallback? $fail;
-
-  Future<SearchContactsFailCallback?> get fail async {
-    return $fail;
-  }
-
-  SearchContactsSuccessCallback? $success;
-
-  Future<SearchContactsSuccessCallback?> get success async {
-    return $success;
-  }
-
-  SearchContactsOption({this.$$context$$});
-
-  void setValues(
-      {String? phoneNumber,
-      SearchContactsCompleteCallback? complete,
-      SearchContactsFailCallback? fail,
-      SearchContactsSuccessCallback? success}) {
-    if (phoneNumber != null) $phoneNumber = phoneNumber;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'phoneNumber': $phoneNumber,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction($success!,
-              [(e) => SearchContactsSuccessCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class SearchContactsResult {
-  mpjs.JsObject? $$context$$;
-
-  String $name = "";
-
-  Future<String> get name async {
-    return await $$context$$?.getPropertyValue('name') ?? $name;
-  }
-
-  String $phoneNumber = "";
-
-  Future<String> get phoneNumber async {
-    return await $$context$$?.getPropertyValue('phoneNumber') ?? $phoneNumber;
-  }
-
-  SearchContactsResult({this.$$context$$});
-
-  void setValues({String? name, String? phoneNumber}) {
-    if (name != null) $name = name;
-    if (phoneNumber != null) $phoneNumber = phoneNumber;
-  }
-
-  Map toJson() {
-    return {'name': $name, 'phoneNumber': $phoneNumber}
-      ..removeWhere((key, value) => value == null);
-  }
-}
-
-class SearchContactsSuccessCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  List<SearchContactsResult> $result = <SearchContactsResult>[];
-
-  Future<List<SearchContactsResult>> get result async {
-    return await $$context$$?.getPropertyValue('result') ?? $result;
-  }
-
-  SearchContactsSuccessCallbackResult({this.$$context$$});
-
-  void setValues({List<SearchContactsResult>? result}) {
-    if (result != null) $result = result;
-  }
-
-  Map toJson() {
-    return {'result': $result}..removeWhere((key, value) => value == null);
-  }
-}
-
 class SeekBackgroundAudioOption {
   mpjs.JsObject? $$context$$;
 
@@ -23987,6 +28980,12 @@ class SendHCEMessageOption {
 class SendMessageOption {
   mpjs.JsObject? $$context$$;
 
+  String $msg = "";
+
+  Future<String> get msg async {
+    return await $$context$$?.getPropertyValue('msg') ?? $msg;
+  }
+
   SendMessageCompleteCallback? $complete;
 
   Future<SendMessageCompleteCallback?> get complete async {
@@ -24008,11 +29007,80 @@ class SendMessageOption {
   SendMessageOption({this.$$context$$});
 
   void setValues(
-      {SendMessageCompleteCallback? complete,
+      {String? msg,
+      SendMessageCompleteCallback? complete,
       SendMessageFailCallback? fail,
       SendMessageSuccessCallback? success}) {
+    if (msg != null) $msg = msg;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'msg': $msg,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SendSmsOption {
+  mpjs.JsObject? $$context$$;
+
+  SendSmsCompleteCallback? $complete;
+
+  Future<SendSmsCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  String? $content;
+
+  Future<String?> get content async {
+    return await $$context$$?.getPropertyValue('content') ?? $content;
+  }
+
+  SendSmsFailCallback? $fail;
+
+  Future<SendSmsFailCallback?> get fail async {
+    return $fail;
+  }
+
+  String? $phoneNumber;
+
+  Future<String?> get phoneNumber async {
+    return await $$context$$?.getPropertyValue('phoneNumber') ?? $phoneNumber;
+  }
+
+  SendSmsSuccessCallback? $success;
+
+  Future<SendSmsSuccessCallback?> get success async {
+    return $success;
+  }
+
+  SendSmsOption({this.$$context$$});
+
+  void setValues(
+      {SendSmsCompleteCallback? complete,
+      String? content,
+      SendSmsFailCallback? fail,
+      String? phoneNumber,
+      SendSmsSuccessCallback? success}) {
+    if (complete != null) $complete = complete;
+    if (content != null) $content = content;
+    if (fail != null) $fail = fail;
+    if (phoneNumber != null) $phoneNumber = phoneNumber;
     if (success != null) $success = success;
   }
 
@@ -24022,10 +29090,12 @@ class SendMessageOption {
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'content': $content,
       'fail': $fail != null
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'phoneNumber': $phoneNumber,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -24467,6 +29537,74 @@ class SetBackgroundTextStyleOption {
   }
 }
 
+class SetBoundaryOption {
+  mpjs.JsObject? $$context$$;
+
+  MapPostion $northeast = MapPostion();
+
+  Future<MapPostion> get northeast async {
+    return MapPostion($$context$$: $$context$$?.getProperty('northeast'));
+  }
+
+  MapPostion $southwest = MapPostion();
+
+  Future<MapPostion> get southwest async {
+    return MapPostion($$context$$: $$context$$?.getProperty('southwest'));
+  }
+
+  SetBoundaryCompleteCallback? $complete;
+
+  Future<SetBoundaryCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  SetBoundaryFailCallback? $fail;
+
+  Future<SetBoundaryFailCallback?> get fail async {
+    return $fail;
+  }
+
+  SetBoundarySuccessCallback? $success;
+
+  Future<SetBoundarySuccessCallback?> get success async {
+    return $success;
+  }
+
+  SetBoundaryOption({this.$$context$$});
+
+  void setValues(
+      {MapPostion? northeast,
+      MapPostion? southwest,
+      SetBoundaryCompleteCallback? complete,
+      SetBoundaryFailCallback? fail,
+      SetBoundarySuccessCallback? success}) {
+    if (northeast != null) $northeast = northeast;
+    if (southwest != null) $southwest = southwest;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'northeast': $northeast,
+      'southwest': $southwest,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
 class SetCenterOffsetOption {
   mpjs.JsObject? $$context$$;
 
@@ -24645,6 +29783,85 @@ class SetContentsOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'html': $html,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SetEnable1v1ChatOption {
+  mpjs.JsObject? $$context$$;
+
+  bool $enable = false;
+
+  Future<bool> get enable async {
+    return await $$context$$?.getPropertyValue('enable') ?? $enable;
+  }
+
+  dynamic $backgroundType;
+
+  Future<dynamic> get backgroundType async {
+    return await $$context$$?.getPropertyValue('backgroundType') ??
+        $backgroundType;
+  }
+
+  SetEnable1v1ChatCompleteCallback? $complete;
+
+  Future<SetEnable1v1ChatCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  SetEnable1v1ChatFailCallback? $fail;
+
+  Future<SetEnable1v1ChatFailCallback?> get fail async {
+    return $fail;
+  }
+
+  num? $minWindowType;
+
+  Future<num?> get minWindowType async {
+    return await $$context$$?.getPropertyValue('minWindowType') ??
+        $minWindowType;
+  }
+
+  SetEnable1v1ChatSuccessCallback? $success;
+
+  Future<SetEnable1v1ChatSuccessCallback?> get success async {
+    return $success;
+  }
+
+  SetEnable1v1ChatOption({this.$$context$$});
+
+  void setValues(
+      {bool? enable,
+      dynamic backgroundType,
+      SetEnable1v1ChatCompleteCallback? complete,
+      SetEnable1v1ChatFailCallback? fail,
+      num? minWindowType,
+      SetEnable1v1ChatSuccessCallback? success}) {
+    if (enable != null) $enable = enable;
+    if (backgroundType != null) $backgroundType = backgroundType;
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (minWindowType != null) $minWindowType = minWindowType;
+    if (success != null) $success = success;
+  }
+
+  Map toJson() {
+    return {
+      'enable': $enable,
+      'backgroundType': $backgroundType,
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'minWindowType': $minWindowType,
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -25184,6 +30401,12 @@ class SetStorageOption<T extends dynamic> {
     return $complete;
   }
 
+  bool? $encrypt;
+
+  Future<bool?> get encrypt async {
+    return await $$context$$?.getPropertyValue('encrypt') ?? $encrypt;
+  }
+
   SetStorageFailCallback? $fail;
 
   Future<SetStorageFailCallback?> get fail async {
@@ -25202,11 +30425,13 @@ class SetStorageOption<T extends dynamic> {
       {T? data,
       String? key,
       SetStorageCompleteCallback? complete,
+      bool? encrypt,
       SetStorageFailCallback? fail,
       SetStorageSuccessCallback? success}) {
     if (data != null) $data = data;
     if (key != null) $key = key;
     if (complete != null) $complete = complete;
+    if (encrypt != null) $encrypt = encrypt;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
   }
@@ -25219,6 +30444,7 @@ class SetStorageOption<T extends dynamic> {
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
+      'encrypt': $encrypt,
       'fail': $fail != null
           ? mpjs.JsFunction(
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -25585,6 +30811,65 @@ class SetTopBarTextOption {
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SetVisualEffectOnCaptureOption {
+  mpjs.JsObject? $$context$$;
+
+  SetVisualEffectOnCaptureCompleteCallback? $complete;
+
+  Future<SetVisualEffectOnCaptureCompleteCallback?> get complete async {
+    return $complete;
+  }
+
+  SetVisualEffectOnCaptureFailCallback? $fail;
+
+  Future<SetVisualEffectOnCaptureFailCallback?> get fail async {
+    return $fail;
+  }
+
+  SetVisualEffectOnCaptureSuccessCallback? $success;
+
+  Future<SetVisualEffectOnCaptureSuccessCallback?> get success async {
+    return $success;
+  }
+
+  String? $visualEffect;
+
+  Future<String?> get visualEffect async {
+    return await $$context$$?.getPropertyValue('visualEffect') ?? $visualEffect;
+  }
+
+  SetVisualEffectOnCaptureOption({this.$$context$$});
+
+  void setValues(
+      {SetVisualEffectOnCaptureCompleteCallback? complete,
+      SetVisualEffectOnCaptureFailCallback? fail,
+      SetVisualEffectOnCaptureSuccessCallback? success,
+      String? visualEffect}) {
+    if (complete != null) $complete = complete;
+    if (fail != null) $fail = fail;
+    if (success != null) $success = success;
+    if (visualEffect != null) $visualEffect = visualEffect;
+  }
+
+  Map toJson() {
+    return {
+      'complete': $complete != null
+          ? mpjs.JsFunction(
+              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'fail': $fail != null
+          ? mpjs.JsFunction(
+              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'success': $success != null
+          ? mpjs.JsFunction(
+              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
+          : null,
+      'visualEffect': $visualEffect
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -26825,6 +32110,41 @@ class Size {
   }
 }
 
+class SkylineInfo {
+  mpjs.JsObject? $$context$$;
+
+  bool $isSupported = false;
+
+  Future<bool> get isSupported async {
+    return await $$context$$?.getPropertyValue('isSupported') ?? $isSupported;
+  }
+
+  dynamic $reason;
+
+  Future<dynamic> get reason async {
+    return await $$context$$?.getPropertyValue('reason') ?? $reason;
+  }
+
+  String $version = "";
+
+  Future<String> get version async {
+    return await $$context$$?.getPropertyValue('version') ?? $version;
+  }
+
+  SkylineInfo({this.$$context$$});
+
+  void setValues({bool? isSupported, dynamic reason, String? version}) {
+    if (isSupported != null) $isSupported = isSupported;
+    if (reason != null) $reason = reason;
+    if (version != null) $version = version;
+  }
+
+  Map toJson() {
+    return {'isSupported': $isSupported, 'reason': $reason, 'version': $version}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class SocketProfile {
   mpjs.JsObject? $$context$$;
 
@@ -26982,7 +32302,7 @@ class SocketTaskCloseOption {
   }
 }
 
-class SocketTaskOnCloseCallbackResult {
+class SocketTaskOnCloseListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $code = 0;
@@ -26997,7 +32317,7 @@ class SocketTaskOnCloseCallbackResult {
     return await $$context$$?.getPropertyValue('reason') ?? $reason;
   }
 
-  SocketTaskOnCloseCallbackResult({this.$$context$$});
+  SocketTaskOnCloseListenerResult({this.$$context$$});
 
   void setValues({num? code, String? reason}) {
     if (code != null) $code = code;
@@ -27010,7 +32330,7 @@ class SocketTaskOnCloseCallbackResult {
   }
 }
 
-class SocketTaskOnMessageCallbackResult {
+class SocketTaskOnMessageListenerResult {
   mpjs.JsObject? $$context$$;
 
   dynamic $data;
@@ -27019,7 +32339,7 @@ class SocketTaskOnMessageCallbackResult {
     return await $$context$$?.getPropertyValue('data') ?? $data;
   }
 
-  SocketTaskOnMessageCallbackResult({this.$$context$$});
+  SocketTaskOnMessageListenerResult({this.$$context$$});
 
   void setValues({dynamic data}) {
     if (data != null) $data = data;
@@ -27085,6 +32405,87 @@ class SocketTaskSendOption {
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SpringOption {
+  mpjs.JsObject? $$context$$;
+
+  num? $damping;
+
+  Future<num?> get damping async {
+    return await $$context$$?.getPropertyValue('damping') ?? $damping;
+  }
+
+  num? $mass;
+
+  Future<num?> get mass async {
+    return await $$context$$?.getPropertyValue('mass') ?? $mass;
+  }
+
+  bool? $overshootClamping;
+
+  Future<bool?> get overshootClamping async {
+    return await $$context$$?.getPropertyValue('overshootClamping') ??
+        $overshootClamping;
+  }
+
+  num? $restDisplacementThreshold;
+
+  Future<num?> get restDisplacementThreshold async {
+    return await $$context$$?.getPropertyValue('restDisplacementThreshold') ??
+        $restDisplacementThreshold;
+  }
+
+  num? $restSpeedThreshold;
+
+  Future<num?> get restSpeedThreshold async {
+    return await $$context$$?.getPropertyValue('restSpeedThreshold') ??
+        $restSpeedThreshold;
+  }
+
+  num? $stiffness;
+
+  Future<num?> get stiffness async {
+    return await $$context$$?.getPropertyValue('stiffness') ?? $stiffness;
+  }
+
+  num? $velocity;
+
+  Future<num?> get velocity async {
+    return await $$context$$?.getPropertyValue('velocity') ?? $velocity;
+  }
+
+  SpringOption({this.$$context$$});
+
+  void setValues(
+      {num? damping,
+      num? mass,
+      bool? overshootClamping,
+      num? restDisplacementThreshold,
+      num? restSpeedThreshold,
+      num? stiffness,
+      num? velocity}) {
+    if (damping != null) $damping = damping;
+    if (mass != null) $mass = mass;
+    if (overshootClamping != null) $overshootClamping = overshootClamping;
+    if (restDisplacementThreshold != null)
+      $restDisplacementThreshold = restDisplacementThreshold;
+    if (restSpeedThreshold != null) $restSpeedThreshold = restSpeedThreshold;
+    if (stiffness != null) $stiffness = stiffness;
+    if (velocity != null) $velocity = velocity;
+  }
+
+  Map toJson() {
+    return {
+      'damping': $damping,
+      'mass': $mass,
+      'overshootClamping': $overshootClamping,
+      'restDisplacementThreshold': $restDisplacementThreshold,
+      'restSpeedThreshold': $restSpeedThreshold,
+      'stiffness': $stiffness,
+      'velocity': $velocity
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -27741,15 +33142,23 @@ class StartLocationUpdateBackgroundOption {
     return $success;
   }
 
+  String? $type;
+
+  Future<String?> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
   StartLocationUpdateBackgroundOption({this.$$context$$});
 
   void setValues(
       {StartLocationUpdateBackgroundCompleteCallback? complete,
       StartLocationUpdateBackgroundFailCallback? fail,
-      StartLocationUpdateBackgroundSuccessCallback? success}) {
+      StartLocationUpdateBackgroundSuccessCallback? success,
+      String? type}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
+    if (type != null) $type = type;
   }
 
   Map toJson() {
@@ -27765,7 +33174,8 @@ class StartLocationUpdateBackgroundOption {
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
+          : null,
+      'type': $type
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -27791,15 +33201,23 @@ class StartLocationUpdateOption {
     return $success;
   }
 
+  String? $type;
+
+  Future<String?> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
   StartLocationUpdateOption({this.$$context$$});
 
   void setValues(
       {StartLocationUpdateCompleteCallback? complete,
       StartLocationUpdateFailCallback? fail,
-      StartLocationUpdateSuccessCallback? success}) {
+      StartLocationUpdateSuccessCallback? success,
+      String? type}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
+    if (type != null) $type = type;
   }
 
   Map toJson() {
@@ -27815,7 +33233,8 @@ class StartLocationUpdateOption {
       'success': $success != null
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
+          : null,
+      'type': $type
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -27987,7 +33406,7 @@ class StartSoterAuthenticationOption {
     return await $$context$$?.getPropertyValue('challenge') ?? $challenge;
   }
 
-  Array<dynamic> $requestAuthModes = [];
+  Array<dynamic> $requestAuthModes = Array();
 
   Future<Array<dynamic>> get requestAuthModes async {
     return $requestAuthModes;
@@ -28387,6 +33806,92 @@ class StepOption {
       'duration': $duration,
       'timingFunction': $timingFunction,
       'transformOrigin': $transformOrigin
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class Sticker {
+  mpjs.JsObject? $$context$$;
+
+  num $len = 0;
+
+  Future<num> get len async {
+    return await $$context$$?.getPropertyValue('len') ?? $len;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  String $title = "";
+
+  Future<String> get title async {
+    return await $$context$$?.getPropertyValue('title') ?? $title;
+  }
+
+  dynamic $active;
+
+  Future<dynamic> get active async {
+    return await $$context$$?.getPropertyValue('active') ?? $active;
+  }
+
+  String? $id;
+
+  Future<String?> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  String? $md5;
+
+  Future<String?> get md5 async {
+    return await $$context$$?.getPropertyValue('md5') ?? $md5;
+  }
+
+  List<String>? $pos;
+
+  Future<List<String>?> get pos async {
+    return await $$context$$?.getPropertyValue('pos') ?? $pos;
+  }
+
+  dynamic $segtype;
+
+  Future<dynamic> get segtype async {
+    return await $$context$$?.getPropertyValue('segtype') ?? $segtype;
+  }
+
+  Sticker({this.$$context$$});
+
+  void setValues(
+      {num? len,
+      String? path,
+      String? title,
+      dynamic active,
+      String? id,
+      String? md5,
+      List<String>? pos,
+      dynamic segtype}) {
+    if (len != null) $len = len;
+    if (path != null) $path = path;
+    if (title != null) $title = title;
+    if (active != null) $active = active;
+    if (id != null) $id = id;
+    if (md5 != null) $md5 = md5;
+    if (pos != null) $pos = pos;
+    if (segtype != null) $segtype = segtype;
+  }
+
+  Map toJson() {
+    return {
+      'len': $len,
+      'path': $path,
+      'title': $title,
+      'active': $active,
+      'id': $id,
+      'md5': $md5,
+      'pos': $pos,
+      'segtype': $segtype
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -29647,10 +35152,10 @@ class SystemInfo {
         $fontSizeSetting;
   }
 
-  Host $host = Host();
+  SystemInfoHost $host = SystemInfoHost();
 
-  Future<Host> get host async {
-    return Host($$context$$: $$context$$?.getProperty('host'));
+  Future<SystemInfoHost> get host async {
+    return SystemInfoHost($$context$$: $$context$$?.getProperty('host'));
   }
 
   String $language = "";
@@ -29721,15 +35226,22 @@ class SystemInfo {
         $notificationSoundAuthorized;
   }
 
+  bool $phoneCalendarAuthorized = false;
+
+  Future<bool> get phoneCalendarAuthorized async {
+    return await $$context$$?.getPropertyValue('phoneCalendarAuthorized') ??
+        $phoneCalendarAuthorized;
+  }
+
   num $pixelRatio = 0;
 
   Future<num> get pixelRatio async {
     return await $$context$$?.getPropertyValue('pixelRatio') ?? $pixelRatio;
   }
 
-  String $platform = "";
+  dynamic $platform;
 
-  Future<String> get platform async {
+  Future<dynamic> get platform async {
     return await $$context$$?.getPropertyValue('platform') ?? $platform;
   }
 
@@ -29806,7 +35318,7 @@ class SystemInfo {
       dynamic deviceOrientation,
       bool? enableDebug,
       num? fontSizeSetting,
-      Host? host,
+      SystemInfoHost? host,
       String? language,
       bool? locationAuthorized,
       bool? locationEnabled,
@@ -29817,8 +35329,9 @@ class SystemInfo {
       bool? notificationAuthorized,
       bool? notificationBadgeAuthorized,
       bool? notificationSoundAuthorized,
+      bool? phoneCalendarAuthorized,
       num? pixelRatio,
-      String? platform,
+      dynamic platform,
       SafeArea? safeArea,
       num? screenHeight,
       num? screenWidth,
@@ -29855,6 +35368,8 @@ class SystemInfo {
       $notificationBadgeAuthorized = notificationBadgeAuthorized;
     if (notificationSoundAuthorized != null)
       $notificationSoundAuthorized = notificationSoundAuthorized;
+    if (phoneCalendarAuthorized != null)
+      $phoneCalendarAuthorized = phoneCalendarAuthorized;
     if (pixelRatio != null) $pixelRatio = pixelRatio;
     if (platform != null) $platform = platform;
     if (safeArea != null) $safeArea = safeArea;
@@ -29891,6 +35406,7 @@ class SystemInfo {
       'notificationAuthorized': $notificationAuthorized,
       'notificationBadgeAuthorized': $notificationBadgeAuthorized,
       'notificationSoundAuthorized': $notificationSoundAuthorized,
+      'phoneCalendarAuthorized': $phoneCalendarAuthorized,
       'pixelRatio': $pixelRatio,
       'platform': $platform,
       'safeArea': $safeArea,
@@ -29903,6 +35419,79 @@ class SystemInfo {
       'windowHeight': $windowHeight,
       'windowWidth': $windowWidth,
       'theme': $theme
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class SystemInfoHost {
+  mpjs.JsObject? $$context$$;
+
+  String $appId = "";
+
+  Future<String> get appId async {
+    return await $$context$$?.getPropertyValue('appId') ?? $appId;
+  }
+
+  SystemInfoHost({this.$$context$$});
+
+  void setValues({String? appId}) {
+    if (appId != null) $appId = appId;
+  }
+
+  Map toJson() {
+    return {'appId': $appId}..removeWhere((key, value) => value == null);
+  }
+}
+
+class SystemSetting {
+  mpjs.JsObject? $$context$$;
+
+  bool $bluetoothEnabled = false;
+
+  Future<bool> get bluetoothEnabled async {
+    return await $$context$$?.getPropertyValue('bluetoothEnabled') ??
+        $bluetoothEnabled;
+  }
+
+  dynamic $deviceOrientation;
+
+  Future<dynamic> get deviceOrientation async {
+    return await $$context$$?.getPropertyValue('deviceOrientation') ??
+        $deviceOrientation;
+  }
+
+  bool $locationEnabled = false;
+
+  Future<bool> get locationEnabled async {
+    return await $$context$$?.getPropertyValue('locationEnabled') ??
+        $locationEnabled;
+  }
+
+  bool $wifiEnabled = false;
+
+  Future<bool> get wifiEnabled async {
+    return await $$context$$?.getPropertyValue('wifiEnabled') ?? $wifiEnabled;
+  }
+
+  SystemSetting({this.$$context$$});
+
+  void setValues(
+      {bool? bluetoothEnabled,
+      dynamic deviceOrientation,
+      bool? locationEnabled,
+      bool? wifiEnabled}) {
+    if (bluetoothEnabled != null) $bluetoothEnabled = bluetoothEnabled;
+    if (deviceOrientation != null) $deviceOrientation = deviceOrientation;
+    if (locationEnabled != null) $locationEnabled = locationEnabled;
+    if (wifiEnabled != null) $wifiEnabled = wifiEnabled;
+  }
+
+  Map toJson() {
+    return {
+      'bluetoothEnabled': $bluetoothEnabled,
+      'deviceOrientation': $deviceOrientation,
+      'locationEnabled': $locationEnabled,
+      'wifiEnabled': $wifiEnabled
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -29922,20 +35511,27 @@ class TCPSocketConnectOption {
     return await $$context$$?.getPropertyValue('port') ?? $port;
   }
 
+  num? $timeout;
+
+  Future<num?> get timeout async {
+    return await $$context$$?.getPropertyValue('timeout') ?? $timeout;
+  }
+
   TCPSocketConnectOption({this.$$context$$});
 
-  void setValues({String? address, num? port}) {
+  void setValues({String? address, num? port, num? timeout}) {
     if (address != null) $address = address;
     if (port != null) $port = port;
+    if (timeout != null) $timeout = timeout;
   }
 
   Map toJson() {
-    return {'address': $address, 'port': $port}
+    return {'address': $address, 'port': $port, 'timeout': $timeout}
       ..removeWhere((key, value) => value == null);
   }
 }
 
-class TCPSocketOnMessageCallbackResult {
+class TCPSocketOnMessageListenerResult {
   mpjs.JsObject? $$context$$;
 
   LocalInfo $localInfo = LocalInfo();
@@ -29956,7 +35552,7 @@ class TCPSocketOnMessageCallbackResult {
     return RemoteInfo($$context$$: $$context$$?.getProperty('remoteInfo'));
   }
 
-  TCPSocketOnMessageCallbackResult({this.$$context$$});
+  TCPSocketOnMessageListenerResult({this.$$context$$});
 
   void setValues(
       {LocalInfo? localInfo, ArrayBuffer? message, RemoteInfo? remoteInfo}) {
@@ -29995,6 +35591,12 @@ class TakePhotoOption {
     return await $$context$$?.getPropertyValue('quality') ?? $quality;
   }
 
+  bool? $selfieMirror;
+
+  Future<bool?> get selfieMirror async {
+    return await $$context$$?.getPropertyValue('selfieMirror') ?? $selfieMirror;
+  }
+
   TakePhotoSuccessCallback? $success;
 
   Future<TakePhotoSuccessCallback?> get success async {
@@ -30007,10 +35609,12 @@ class TakePhotoOption {
       {TakePhotoCompleteCallback? complete,
       TakePhotoFailCallback? fail,
       dynamic quality,
+      bool? selfieMirror,
       TakePhotoSuccessCallback? success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (quality != null) $quality = quality;
+    if (selfieMirror != null) $selfieMirror = selfieMirror;
     if (success != null) $success = success;
   }
 
@@ -30025,6 +35629,7 @@ class TakePhotoOption {
               $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null,
       'quality': $quality,
+      'selfieMirror': $selfieMirror,
       'success': $success != null
           ? mpjs.JsFunction($success!,
               [(e) => TakePhotoSuccessCallbackResult($$context$$: e)])
@@ -30170,8 +35775,48 @@ class TextMetrics {
   }
 }
 
+class TimingOption {
+  mpjs.JsObject? $$context$$;
+
+  num? $duration;
+
+  Future<num?> get duration async {
+    return await $$context$$?.getPropertyValue('duration') ?? $duration;
+  }
+
+  String? $easing;
+
+  Future<String?> get easing async {
+    return await $$context$$?.getPropertyValue('easing') ?? $easing;
+  }
+
+  TimingOption({this.$$context$$});
+
+  void setValues({num? duration, String? easing}) {
+    if (duration != null) $duration = duration;
+    if (easing != null) $easing = easing;
+  }
+
+  Map toJson() {
+    return {'duration': $duration, 'easing': $easing}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class ToScreenLocationOption {
   mpjs.JsObject? $$context$$;
+
+  num $latitude = 0;
+
+  Future<num> get latitude async {
+    return await $$context$$?.getPropertyValue('latitude') ?? $latitude;
+  }
+
+  num $longitude = 0;
+
+  Future<num> get longitude async {
+    return await $$context$$?.getPropertyValue('longitude') ?? $longitude;
+  }
 
   ToScreenLocationCompleteCallback? $complete;
 
@@ -30194,9 +35839,13 @@ class ToScreenLocationOption {
   ToScreenLocationOption({this.$$context$$});
 
   void setValues(
-      {ToScreenLocationCompleteCallback? complete,
+      {num? latitude,
+      num? longitude,
+      ToScreenLocationCompleteCallback? complete,
       ToScreenLocationFailCallback? fail,
       ToScreenLocationSuccessCallback? success}) {
+    if (latitude != null) $latitude = latitude;
+    if (longitude != null) $longitude = longitude;
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
@@ -30204,6 +35853,8 @@ class ToScreenLocationOption {
 
   Map toJson() {
     return {
+      'latitude': $latitude,
+      'longitude': $longitude,
       'complete': $complete != null
           ? mpjs.JsFunction(
               $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
@@ -30301,6 +35952,92 @@ class ToggleTorchOption {
           ? mpjs.JsFunction(
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class Track {
+  mpjs.JsObject? $$context$$;
+
+  PlaneTrack $plane = PlaneTrack();
+
+  Future<PlaneTrack> get plane async {
+    return PlaneTrack($$context$$: $$context$$?.getProperty('plane'));
+  }
+
+  OCRTrack? $OCR;
+
+  Future<OCRTrack?> get OCR async {
+    return OCRTrack($$context$$: $$context$$?.getProperty('OCR'));
+  }
+
+  bool? $OSD;
+
+  Future<bool?> get OSD async {
+    return await $$context$$?.getPropertyValue('OSD') ?? $OSD;
+  }
+
+  BodyTrack? $body;
+
+  Future<BodyTrack?> get body async {
+    return BodyTrack($$context$$: $$context$$?.getProperty('body'));
+  }
+
+  FaceTrack? $face;
+
+  Future<FaceTrack?> get face async {
+    return FaceTrack($$context$$: $$context$$?.getProperty('face'));
+  }
+
+  HandTrack? $hand;
+
+  Future<HandTrack?> get hand async {
+    return HandTrack($$context$$: $$context$$?.getProperty('hand'));
+  }
+
+  bool? $marker;
+
+  Future<bool?> get marker async {
+    return await $$context$$?.getPropertyValue('marker') ?? $marker;
+  }
+
+  bool? $threeDof;
+
+  Future<bool?> get threeDof async {
+    return await $$context$$?.getPropertyValue('threeDof') ?? $threeDof;
+  }
+
+  Track({this.$$context$$});
+
+  void setValues(
+      {PlaneTrack? plane,
+      OCRTrack? OCR,
+      bool? OSD,
+      BodyTrack? body,
+      FaceTrack? face,
+      HandTrack? hand,
+      bool? marker,
+      bool? threeDof}) {
+    if (plane != null) $plane = plane;
+    if (OCR != null) $OCR = OCR;
+    if (OSD != null) $OSD = OSD;
+    if (body != null) $body = body;
+    if (face != null) $face = face;
+    if (hand != null) $hand = hand;
+    if (marker != null) $marker = marker;
+    if (threeDof != null) $threeDof = threeDof;
+  }
+
+  Map toJson() {
+    return {
+      'plane': $plane,
+      'OCR': $OCR,
+      'OSD': $OSD,
+      'body': $body,
+      'face': $face,
+      'hand': $hand,
+      'marker': $marker,
+      'threeDof': $threeDof
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -30651,27 +36388,7 @@ class UDPSocketConnectOption {
   }
 }
 
-class UDPSocketOnErrorCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  UDPSocketOnErrorCallbackResult({this.$$context$$});
-
-  void setValues({String? errMsg}) {
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
-  }
-}
-
-class UDPSocketOnMessageCallbackResult {
+class UDPSocketOnMessageListenerResult {
   mpjs.JsObject? $$context$$;
 
   LocalInfo $localInfo = LocalInfo();
@@ -30692,7 +36409,7 @@ class UDPSocketOnMessageCallbackResult {
     return RemoteInfo($$context$$: $$context$$?.getProperty('remoteInfo'));
   }
 
-  UDPSocketOnMessageCallbackResult({this.$$context$$});
+  UDPSocketOnMessageListenerResult({this.$$context$$});
 
   void setValues(
       {LocalInfo? localInfo, ArrayBuffer? message, RemoteInfo? remoteInfo}) {
@@ -30743,15 +36460,27 @@ class UDPSocketSendOption {
     return await $$context$$?.getPropertyValue('offset') ?? $offset;
   }
 
+  bool? $setBroadcast;
+
+  Future<bool?> get setBroadcast async {
+    return await $$context$$?.getPropertyValue('setBroadcast') ?? $setBroadcast;
+  }
+
   UDPSocketSendOption({this.$$context$$});
 
   void setValues(
-      {String? address, dynamic message, num? port, num? length, num? offset}) {
+      {String? address,
+      dynamic message,
+      num? port,
+      num? length,
+      num? offset,
+      bool? setBroadcast}) {
     if (address != null) $address = address;
     if (message != null) $message = message;
     if (port != null) $port = port;
     if (length != null) $length = length;
     if (offset != null) $offset = offset;
+    if (setBroadcast != null) $setBroadcast = setBroadcast;
   }
 
   Map toJson() {
@@ -30760,7 +36489,8 @@ class UDPSocketSendOption {
       'message': $message,
       'port': $port,
       'length': $length,
-      'offset': $offset
+      'offset': $offset,
+      'setBroadcast': $setBroadcast
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -31494,7 +37224,7 @@ class UploadFileSuccessCallbackResult {
   }
 }
 
-class UploadTaskOnProgressUpdateCallbackResult {
+class UploadTaskOnProgressUpdateListenerResult {
   mpjs.JsObject? $$context$$;
 
   num $progress = 0;
@@ -31517,7 +37247,7 @@ class UploadTaskOnProgressUpdateCallbackResult {
         $totalBytesSent;
   }
 
-  UploadTaskOnProgressUpdateCallbackResult({this.$$context$$});
+  UploadTaskOnProgressUpdateListenerResult({this.$$context$$});
 
   void setValues(
       {num? progress, num? totalBytesExpectedToSend, num? totalBytesSent}) {
@@ -31613,6 +37343,863 @@ class UserInfo {
   }
 }
 
+class VKBodyAnchor {
+  mpjs.JsObject? $$context$$;
+
+  List<num> $confidence = <num>[];
+
+  Future<List<num>> get confidence async {
+    return await $$context$$?.getPropertyValue('confidence') ?? $confidence;
+  }
+
+  num $detectId = 0;
+
+  Future<num> get detectId async {
+    return await $$context$$?.getPropertyValue('detectId') ?? $detectId;
+  }
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  VKOrigin $origin = VKOrigin();
+
+  Future<VKOrigin> get origin async {
+    return VKOrigin($$context$$: $$context$$?.getProperty('origin'));
+  }
+
+  List<VKOrigin> $points = <VKOrigin>[];
+
+  Future<List<VKOrigin>> get points async {
+    return await $$context$$?.getPropertyValue('points') ?? $points;
+  }
+
+  num $score = 0;
+
+  Future<num> get score async {
+    return await $$context$$?.getPropertyValue('score') ?? $score;
+  }
+
+  VKSize $size = VKSize();
+
+  Future<VKSize> get size async {
+    return VKSize($$context$$: $$context$$?.getProperty('size'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKBodyAnchor({this.$$context$$});
+
+  void setValues(
+      {List<num>? confidence,
+      num? detectId,
+      num? id,
+      VKOrigin? origin,
+      List<VKOrigin>? points,
+      num? score,
+      VKSize? size,
+      dynamic type}) {
+    if (confidence != null) $confidence = confidence;
+    if (detectId != null) $detectId = detectId;
+    if (id != null) $id = id;
+    if (origin != null) $origin = origin;
+    if (points != null) $points = points;
+    if (score != null) $score = score;
+    if (size != null) $size = size;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'confidence': $confidence,
+      'detectId': $detectId,
+      'id': $id,
+      'origin': $origin,
+      'points': $points,
+      'score': $score,
+      'size': $size,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKCamera {
+  mpjs.JsObject? $$context$$;
+
+  Float32Array $intrinsics = Float32Array();
+
+  Future<Float32Array> get intrinsics async {
+    return Float32Array($$context$$: $$context$$?.getProperty('intrinsics'));
+  }
+
+  Float32Array $viewMatrix = Float32Array();
+
+  Future<Float32Array> get viewMatrix async {
+    return Float32Array($$context$$: $$context$$?.getProperty('viewMatrix'));
+  }
+
+  VKCamera({this.$$context$$});
+
+  void setValues({Float32Array? intrinsics, Float32Array? viewMatrix}) {
+    if (intrinsics != null) $intrinsics = intrinsics;
+    if (viewMatrix != null) $viewMatrix = viewMatrix;
+  }
+
+  Map toJson() {
+    return {'intrinsics': $intrinsics, 'viewMatrix': $viewMatrix}
+      ..removeWhere((key, value) => value == null);
+  }
+
+  Future<Float32Array> getProjectionMatrix(num near, num far) async {
+    final result =
+        await $$context$$?.callMethod('getProjectionMatrix', [near, far]);
+
+    return Float32Array($$context$$: result);
+  }
+}
+
+class VKConfig {
+  mpjs.JsObject? $$context$$;
+
+  Track $track = Track();
+
+  Future<Track> get track async {
+    return Track($$context$$: $$context$$?.getProperty('track'));
+  }
+
+  dynamic $gl;
+
+  Future<dynamic> get gl async {
+    return $gl;
+  }
+
+  dynamic $version;
+
+  Future<dynamic> get version async {
+    return await $$context$$?.getPropertyValue('version') ?? $version;
+  }
+
+  VKConfig({this.$$context$$});
+
+  void setValues({Track? track, dynamic version}) {
+    if (track != null) $track = track;
+    if (version != null) $version = version;
+  }
+
+  Map toJson() {
+    return {'track': $track, 'gl': $gl, 'version': $version}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKFaceAnchor {
+  mpjs.JsObject? $$context$$;
+
+  List<num> $angle = <num>[];
+
+  Future<List<num>> get angle async {
+    return await $$context$$?.getPropertyValue('angle') ?? $angle;
+  }
+
+  List<num> $confidence = <num>[];
+
+  Future<List<num>> get confidence async {
+    return await $$context$$?.getPropertyValue('confidence') ?? $confidence;
+  }
+
+  num $detectId = 0;
+
+  Future<num> get detectId async {
+    return await $$context$$?.getPropertyValue('detectId') ?? $detectId;
+  }
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  VKOrigin $origin = VKOrigin();
+
+  Future<VKOrigin> get origin async {
+    return VKOrigin($$context$$: $$context$$?.getProperty('origin'));
+  }
+
+  List<VKPoint> $points = <VKPoint>[];
+
+  Future<List<VKPoint>> get points async {
+    return await $$context$$?.getPropertyValue('points') ?? $points;
+  }
+
+  VKSize $size = VKSize();
+
+  Future<VKSize> get size async {
+    return VKSize($$context$$: $$context$$?.getProperty('size'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKFaceAnchor({this.$$context$$});
+
+  void setValues(
+      {List<num>? angle,
+      List<num>? confidence,
+      num? detectId,
+      num? id,
+      VKOrigin? origin,
+      List<VKPoint>? points,
+      VKSize? size,
+      dynamic type}) {
+    if (angle != null) $angle = angle;
+    if (confidence != null) $confidence = confidence;
+    if (detectId != null) $detectId = detectId;
+    if (id != null) $id = id;
+    if (origin != null) $origin = origin;
+    if (points != null) $points = points;
+    if (size != null) $size = size;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'angle': $angle,
+      'confidence': $confidence,
+      'detectId': $detectId,
+      'id': $id,
+      'origin': $origin,
+      'points': $points,
+      'size': $size,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKFrame {
+  mpjs.JsObject? $$context$$;
+
+  VKCamera $camera = VKCamera();
+
+  Future<VKCamera> get camera async {
+    return VKCamera($$context$$: $$context$$?.getProperty('camera'));
+  }
+
+  num $timestamp = 0;
+
+  Future<num> get timestamp async {
+    return await $$context$$?.getPropertyValue('timestamp') ?? $timestamp;
+  }
+
+  VKFrame({this.$$context$$});
+
+  void setValues({VKCamera? camera, num? timestamp}) {
+    if (camera != null) $camera = camera;
+    if (timestamp != null) $timestamp = timestamp;
+  }
+
+  Map toJson() {
+    return {'camera': $camera, 'timestamp': $timestamp}
+      ..removeWhere((key, value) => value == null);
+  }
+
+  Future<ArrayBuffer> getCameraBuffer(num width, num height) async {
+    final result =
+        await $$context$$?.callMethod('getCameraBuffer', [width, height]);
+
+    return ArrayBuffer($$context$$: result);
+  }
+
+  Future<Float32Array> getDisplayTransform() async {
+    final result = await $$context$$?.callMethod('getDisplayTransform', []);
+
+    return Float32Array($$context$$: result);
+  }
+
+  Future<YUVTextureRes> getCameraTexture(dynamic gl) async {
+    final result = await $$context$$?.callMethod('getCameraTexture', [gl]);
+
+    return YUVTextureRes($$context$$: result);
+  }
+}
+
+class VKHandAnchor {
+  mpjs.JsObject? $$context$$;
+
+  List<num> $confidence = <num>[];
+
+  Future<List<num>> get confidence async {
+    return await $$context$$?.getPropertyValue('confidence') ?? $confidence;
+  }
+
+  num $detectId = 0;
+
+  Future<num> get detectId async {
+    return await $$context$$?.getPropertyValue('detectId') ?? $detectId;
+  }
+
+  dynamic $gesture;
+
+  Future<dynamic> get gesture async {
+    return await $$context$$?.getPropertyValue('gesture') ?? $gesture;
+  }
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  VKOrigin $origin = VKOrigin();
+
+  Future<VKOrigin> get origin async {
+    return VKOrigin($$context$$: $$context$$?.getProperty('origin'));
+  }
+
+  List<VKOrigin> $points = <VKOrigin>[];
+
+  Future<List<VKOrigin>> get points async {
+    return await $$context$$?.getPropertyValue('points') ?? $points;
+  }
+
+  num $score = 0;
+
+  Future<num> get score async {
+    return await $$context$$?.getPropertyValue('score') ?? $score;
+  }
+
+  VKSize $size = VKSize();
+
+  Future<VKSize> get size async {
+    return VKSize($$context$$: $$context$$?.getProperty('size'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKHandAnchor({this.$$context$$});
+
+  void setValues(
+      {List<num>? confidence,
+      num? detectId,
+      dynamic gesture,
+      num? id,
+      VKOrigin? origin,
+      List<VKOrigin>? points,
+      num? score,
+      VKSize? size,
+      dynamic type}) {
+    if (confidence != null) $confidence = confidence;
+    if (detectId != null) $detectId = detectId;
+    if (gesture != null) $gesture = gesture;
+    if (id != null) $id = id;
+    if (origin != null) $origin = origin;
+    if (points != null) $points = points;
+    if (score != null) $score = score;
+    if (size != null) $size = size;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'confidence': $confidence,
+      'detectId': $detectId,
+      'gesture': $gesture,
+      'id': $id,
+      'origin': $origin,
+      'points': $points,
+      'score': $score,
+      'size': $size,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKMarker {
+  mpjs.JsObject? $$context$$;
+
+  num $markerId = 0;
+
+  Future<num> get markerId async {
+    return await $$context$$?.getPropertyValue('markerId') ?? $markerId;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  VKMarker({this.$$context$$});
+
+  void setValues({num? markerId, String? path}) {
+    if (markerId != null) $markerId = markerId;
+    if (path != null) $path = path;
+  }
+
+  Map toJson() {
+    return {'markerId': $markerId, 'path': $path}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKMarkerAnchor {
+  mpjs.JsObject? $$context$$;
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  num $markerId = 0;
+
+  Future<num> get markerId async {
+    return await $$context$$?.getPropertyValue('markerId') ?? $markerId;
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  Float32Array $transform = Float32Array();
+
+  Future<Float32Array> get transform async {
+    return Float32Array($$context$$: $$context$$?.getProperty('transform'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKMarkerAnchor({this.$$context$$});
+
+  void setValues(
+      {num? id,
+      num? markerId,
+      String? path,
+      Float32Array? transform,
+      dynamic type}) {
+    if (id != null) $id = id;
+    if (markerId != null) $markerId = markerId;
+    if (path != null) $path = path;
+    if (transform != null) $transform = transform;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'id': $id,
+      'markerId': $markerId,
+      'path': $path,
+      'transform': $transform,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKOCRAnchor {
+  mpjs.JsObject? $$context$$;
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  String $text = "";
+
+  Future<String> get text async {
+    return await $$context$$?.getPropertyValue('text') ?? $text;
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKOCRAnchor({this.$$context$$});
+
+  void setValues({num? id, String? text, dynamic type}) {
+    if (id != null) $id = id;
+    if (text != null) $text = text;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {'id': $id, 'text': $text, 'type': $type}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKOSDAnchor {
+  mpjs.JsObject? $$context$$;
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  num $markerId = 0;
+
+  Future<num> get markerId async {
+    return await $$context$$?.getPropertyValue('markerId') ?? $markerId;
+  }
+
+  VKOrigin $origin = VKOrigin();
+
+  Future<VKOrigin> get origin async {
+    return VKOrigin($$context$$: $$context$$?.getProperty('origin'));
+  }
+
+  String $path = "";
+
+  Future<String> get path async {
+    return await $$context$$?.getPropertyValue('path') ?? $path;
+  }
+
+  VKSize $size = VKSize();
+
+  Future<VKSize> get size async {
+    return VKSize($$context$$: $$context$$?.getProperty('size'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKOSDAnchor({this.$$context$$});
+
+  void setValues(
+      {num? id,
+      num? markerId,
+      VKOrigin? origin,
+      String? path,
+      VKSize? size,
+      dynamic type}) {
+    if (id != null) $id = id;
+    if (markerId != null) $markerId = markerId;
+    if (origin != null) $origin = origin;
+    if (path != null) $path = path;
+    if (size != null) $size = size;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'id': $id,
+      'markerId': $markerId,
+      'origin': $origin,
+      'path': $path,
+      'size': $size,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKOrigin {
+  mpjs.JsObject? $$context$$;
+
+  num $x = 0;
+
+  Future<num> get x async {
+    return await $$context$$?.getPropertyValue('x') ?? $x;
+  }
+
+  num $y = 0;
+
+  Future<num> get y async {
+    return await $$context$$?.getPropertyValue('y') ?? $y;
+  }
+
+  VKOrigin({this.$$context$$});
+
+  void setValues({num? x, num? y}) {
+    if (x != null) $x = x;
+    if (y != null) $y = y;
+  }
+
+  Map toJson() {
+    return {'x': $x, 'y': $y}..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKPlaneAnchor {
+  mpjs.JsObject? $$context$$;
+
+  num $alignment = 0;
+
+  Future<num> get alignment async {
+    return await $$context$$?.getPropertyValue('alignment') ?? $alignment;
+  }
+
+  num $id = 0;
+
+  Future<num> get id async {
+    return await $$context$$?.getPropertyValue('id') ?? $id;
+  }
+
+  VKSize $size = VKSize();
+
+  Future<VKSize> get size async {
+    return VKSize($$context$$: $$context$$?.getProperty('size'));
+  }
+
+  Float32Array $transform = Float32Array();
+
+  Future<Float32Array> get transform async {
+    return Float32Array($$context$$: $$context$$?.getProperty('transform'));
+  }
+
+  dynamic $type;
+
+  Future<dynamic> get type async {
+    return await $$context$$?.getPropertyValue('type') ?? $type;
+  }
+
+  VKPlaneAnchor({this.$$context$$});
+
+  void setValues(
+      {num? alignment,
+      num? id,
+      VKSize? size,
+      Float32Array? transform,
+      dynamic type}) {
+    if (alignment != null) $alignment = alignment;
+    if (id != null) $id = id;
+    if (size != null) $size = size;
+    if (transform != null) $transform = transform;
+    if (type != null) $type = type;
+  }
+
+  Map toJson() {
+    return {
+      'alignment': $alignment,
+      'id': $id,
+      'size': $size,
+      'transform': $transform,
+      'type': $type
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKPoint {
+  mpjs.JsObject? $$context$$;
+
+  num $x = 0;
+
+  Future<num> get x async {
+    return await $$context$$?.getPropertyValue('x') ?? $x;
+  }
+
+  num $y = 0;
+
+  Future<num> get y async {
+    return await $$context$$?.getPropertyValue('y') ?? $y;
+  }
+
+  VKPoint({this.$$context$$});
+
+  void setValues({num? x, num? y}) {
+    if (x != null) $x = x;
+    if (y != null) $y = y;
+  }
+
+  Map toJson() {
+    return {'x': $x, 'y': $y}..removeWhere((key, value) => value == null);
+  }
+}
+
+class VKSession {
+  mpjs.JsObject? $$context$$;
+
+  VKSize $cameraSize = VKSize();
+
+  Future<VKSize> get cameraSize async {
+    return VKSize($$context$$: $$context$$?.getProperty('cameraSize'));
+  }
+
+  VKConfig $config = VKConfig();
+
+  Future<VKConfig> get config async {
+    return VKConfig($$context$$: $$context$$?.getProperty('config'));
+  }
+
+  dynamic $state;
+
+  Future<dynamic> get state async {
+    return await $$context$$?.getPropertyValue('state') ?? $state;
+  }
+
+  VKSession({this.$$context$$});
+
+  void setValues({VKSize? cameraSize, VKConfig? config, dynamic state}) {
+    if (cameraSize != null) $cameraSize = cameraSize;
+    if (config != null) $config = config;
+    if (state != null) $state = state;
+  }
+
+  Map toJson() {
+    return {'cameraSize': $cameraSize, 'config': $config, 'state': $state}
+      ..removeWhere((key, value) => value == null);
+  }
+
+  Future<List<VKMarker>> getAllMarker() async {
+    final result = await $$context$$?.callMethod('getAllMarker', []);
+    return result;
+  }
+
+  Future<List<VKMarker>> getAllOSDMarker() async {
+    final result = await $$context$$?.callMethod('getAllOSDMarker', []);
+    return result;
+  }
+
+  Future<List<HitTestRes>> hitTest(num x, num y, IAnyObject reset) async {
+    final result =
+        await $$context$$?.callMethod('hitTest', [x, y, reset.toJson()]);
+    return result;
+  }
+
+  Future<void> cancelAnimationFrame(num requestID) async {
+    final result =
+        await $$context$$?.callMethod('cancelAnimationFrame', [requestID]);
+    return result;
+  }
+
+  Future<void> destroy() async {
+    final result = await $$context$$?.callMethod('destroy', []);
+    return result;
+  }
+
+  Future<void> detectBody(DetectBodyOption option) async {
+    final result =
+        await $$context$$?.callMethod('detectBody', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> detectFace(DetectFaceOption option) async {
+    final result =
+        await $$context$$?.callMethod('detectFace', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> detectHand(DetectHandOption option) async {
+    final result =
+        await $$context$$?.callMethod('detectHand', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> off(String eventName, dynamic fn) async {
+    final result = await $$context$$?.callMethod('off', [eventName, fn]);
+    return result;
+  }
+
+  Future<void> on(dynamic eventName, dynamic fn) async {
+    final result = await $$context$$?.callMethod('on', [eventName, fn]);
+    return result;
+  }
+
+  Future<void> removeMarker(num markerId) async {
+    final result = await $$context$$?.callMethod('removeMarker', [markerId]);
+    return result;
+  }
+
+  Future<void> removeOSDMarker(num markerId) async {
+    final result = await $$context$$?.callMethod('removeOSDMarker', [markerId]);
+    return result;
+  }
+
+  Future<void> runOCR(RunOCROption option) async {
+    final result = await $$context$$?.callMethod('runOCR', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> start(VKSessionStartCallback callback) async {
+    final result = await $$context$$?.callMethod('start', [callback]);
+    return result;
+  }
+
+  Future<void> stop() async {
+    final result = await $$context$$?.callMethod('stop', []);
+    return result;
+  }
+
+  Future<void> updateOSDThreshold(num threshold) async {
+    final result =
+        await $$context$$?.callMethod('updateOSDThreshold', [threshold]);
+    return result;
+  }
+
+  Future<VKFrame> getVKFrame(num width, num height) async {
+    final result = await $$context$$?.callMethod('getVKFrame', [width, height]);
+
+    return VKFrame($$context$$: result);
+  }
+
+  Future<num> addMarker(String path) async {
+    final result = await $$context$$?.callMethod('addMarker', [path]);
+    return result;
+  }
+
+  Future<num> addOSDMarker(String path) async {
+    final result = await $$context$$?.callMethod('addOSDMarker', [path]);
+    return result;
+  }
+
+  Future<num> requestAnimationFrame(dynamic callback) async {
+    final result =
+        await $$context$$?.callMethod('requestAnimationFrame', [callback]);
+    return result;
+  }
+}
+
+class VKSize {
+  mpjs.JsObject? $$context$$;
+
+  num $height = 0;
+
+  Future<num> get height async {
+    return await $$context$$?.getPropertyValue('height') ?? $height;
+  }
+
+  num $width = 0;
+
+  Future<num> get width async {
+    return await $$context$$?.getPropertyValue('width') ?? $width;
+  }
+
+  VKSize({this.$$context$$});
+
+  void setValues({num? height, num? width}) {
+    if (height != null) $height = height;
+    if (width != null) $width = width;
+  }
+
+  Map toJson() {
+    return {'height': $height, 'width': $width}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
 class VibrateLongOption {
   mpjs.JsObject? $$context$$;
 
@@ -31660,6 +38247,26 @@ class VibrateLongOption {
               $success!, [(e) => GeneralCallbackResult($$context$$: e)])
           : null
     }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VibrateShortFailCallbackResult {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  VibrateShortFailCallbackResult({this.$$context$$});
+
+  void setValues({String? errMsg}) {
+    if (errMsg != null) $errMsg = errMsg;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -31712,7 +38319,7 @@ class VibrateShortOption {
           : null,
       'fail': $fail != null
           ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
+              $fail!, [(e) => VibrateShortFailCallbackResult($$context$$: e)])
           : null,
       'success': $success != null
           ? mpjs.JsFunction(
@@ -31752,6 +38359,18 @@ class VideoDecoderStartOption {
     return await $$context$$?.getPropertyValue('source') ?? $source;
   }
 
+  bool? $abortAudio;
+
+  Future<bool?> get abortAudio async {
+    return await $$context$$?.getPropertyValue('abortAudio') ?? $abortAudio;
+  }
+
+  bool? $abortVideo;
+
+  Future<bool?> get abortVideo async {
+    return await $$context$$?.getPropertyValue('abortVideo') ?? $abortVideo;
+  }
+
   num? $mode;
 
   Future<num?> get mode async {
@@ -31760,13 +38379,55 @@ class VideoDecoderStartOption {
 
   VideoDecoderStartOption({this.$$context$$});
 
-  void setValues({String? source, num? mode}) {
+  void setValues(
+      {String? source, bool? abortAudio, bool? abortVideo, num? mode}) {
     if (source != null) $source = source;
+    if (abortAudio != null) $abortAudio = abortAudio;
+    if (abortVideo != null) $abortVideo = abortVideo;
     if (mode != null) $mode = mode;
   }
 
   Map toJson() {
-    return {'source': $source, 'mode': $mode}
+    return {
+      'source': $source,
+      'abortAudio': $abortAudio,
+      'abortVideo': $abortVideo,
+      'mode': $mode
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class VoIP1v1ChatUser {
+  mpjs.JsObject? $$context$$;
+
+  String $nickname = "";
+
+  Future<String> get nickname async {
+    return await $$context$$?.getPropertyValue('nickname') ?? $nickname;
+  }
+
+  String $openid = "";
+
+  Future<String> get openid async {
+    return await $$context$$?.getPropertyValue('openid') ?? $openid;
+  }
+
+  String? $headImage;
+
+  Future<String?> get headImage async {
+    return await $$context$$?.getPropertyValue('headImage') ?? $headImage;
+  }
+
+  VoIP1v1ChatUser({this.$$context$$});
+
+  void setValues({String? nickname, String? openid, String? headImage}) {
+    if (nickname != null) $nickname = nickname;
+    if (openid != null) $openid = openid;
+    if (headImage != null) $headImage = headImage;
+  }
+
+  Map toJson() {
+    return {'nickname': $nickname, 'openid': $openid, 'headImage': $headImage}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -31818,6 +38479,7 @@ class WebAudioContext {
   void setValues(
       {num? currentTime,
       WebAudioContextNode? destination,
+      // AudioListener? listener,
       dynamic onstatechange,
       num? sampleRate,
       String? state}) {
@@ -31841,6 +38503,11 @@ class WebAudioContext {
       'state': $state
     }..removeWhere((key, value) => value == null);
   }
+
+  // Future<AnalyserNode> createAnalyser() async {
+  //   final result = await $$context$$?.callMethod('createAnalyser', []);
+  //   return result;
+  // }
 
   // Future<BiquadFilterNode> createBiquadFilter() async {
   //   final result = await $$context$$?.callMethod('createBiquadFilter', []);
@@ -31917,8 +38584,10 @@ class WebAudioContext {
     return result;
   }
 
-  // Future<ScriptProcessorNode> createScriptProcessor(num bufferSize,num numberOfInputChannels,num numberOfOutputChannels) async {
-  //   final result = await $$context$$?.callMethod('createScriptProcessor', [bufferSize,numberOfInputChannels,numberOfOutputChannels]);
+  // Future<ScriptProcessorNode> createScriptProcessor(num bufferSize,
+  //     num numberOfInputChannels, num numberOfOutputChannels) async {
+  //   final result = await $$context$$?.callMethod('createScriptProcessor',
+  //       [bufferSize, numberOfInputChannels, numberOfOutputChannels]);
   //   return result;
   // }
 
@@ -32154,7 +38823,168 @@ class WifiInfo {
   }
 }
 
-class WorkerOnMessageCallbackResult {
+class WindowInfo {
+  mpjs.JsObject? $$context$$;
+
+  num $pixelRatio = 0;
+
+  Future<num> get pixelRatio async {
+    return await $$context$$?.getPropertyValue('pixelRatio') ?? $pixelRatio;
+  }
+
+  SafeArea $safeArea = SafeArea();
+
+  Future<SafeArea> get safeArea async {
+    return SafeArea($$context$$: $$context$$?.getProperty('safeArea'));
+  }
+
+  num $screenHeight = 0;
+
+  Future<num> get screenHeight async {
+    return await $$context$$?.getPropertyValue('screenHeight') ?? $screenHeight;
+  }
+
+  num $screenTop = 0;
+
+  Future<num> get screenTop async {
+    return await $$context$$?.getPropertyValue('screenTop') ?? $screenTop;
+  }
+
+  num $screenWidth = 0;
+
+  Future<num> get screenWidth async {
+    return await $$context$$?.getPropertyValue('screenWidth') ?? $screenWidth;
+  }
+
+  num $statusBarHeight = 0;
+
+  Future<num> get statusBarHeight async {
+    return await $$context$$?.getPropertyValue('statusBarHeight') ??
+        $statusBarHeight;
+  }
+
+  num $windowHeight = 0;
+
+  Future<num> get windowHeight async {
+    return await $$context$$?.getPropertyValue('windowHeight') ?? $windowHeight;
+  }
+
+  num $windowWidth = 0;
+
+  Future<num> get windowWidth async {
+    return await $$context$$?.getPropertyValue('windowWidth') ?? $windowWidth;
+  }
+
+  WindowInfo({this.$$context$$});
+
+  void setValues(
+      {num? pixelRatio,
+      SafeArea? safeArea,
+      num? screenHeight,
+      num? screenTop,
+      num? screenWidth,
+      num? statusBarHeight,
+      num? windowHeight,
+      num? windowWidth}) {
+    if (pixelRatio != null) $pixelRatio = pixelRatio;
+    if (safeArea != null) $safeArea = safeArea;
+    if (screenHeight != null) $screenHeight = screenHeight;
+    if (screenTop != null) $screenTop = screenTop;
+    if (screenWidth != null) $screenWidth = screenWidth;
+    if (statusBarHeight != null) $statusBarHeight = statusBarHeight;
+    if (windowHeight != null) $windowHeight = windowHeight;
+    if (windowWidth != null) $windowWidth = windowWidth;
+  }
+
+  Map toJson() {
+    return {
+      'pixelRatio': $pixelRatio,
+      'safeArea': $safeArea,
+      'screenHeight': $screenHeight,
+      'screenTop': $screenTop,
+      'screenWidth': $screenWidth,
+      'statusBarHeight': $statusBarHeight,
+      'windowHeight': $windowHeight,
+      'windowWidth': $windowWidth
+    }..removeWhere((key, value) => value == null);
+  }
+}
+
+class Worker {
+  mpjs.JsObject? $$context$$;
+
+  WorkerEnv $env = WorkerEnv();
+
+  Future<WorkerEnv> get env async {
+    return WorkerEnv($$context$$: $$context$$?.getProperty('env'));
+  }
+
+  Worker({this.$$context$$});
+
+  void setValues({WorkerEnv? env}) {
+    if (env != null) $env = env;
+  }
+
+  Map toJson() {
+    return {'env': $env}..removeWhere((key, value) => value == null);
+  }
+
+  Future<ArrayBuffer> getCameraFrameData() async {
+    final result = await $$context$$?.callMethod('getCameraFrameData', []);
+
+    return ArrayBuffer($$context$$: result);
+  }
+
+  Future<void> onMessage(WorkerOnMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onMessage', [listener]);
+    return result;
+  }
+
+  Future<void> onProcessKilled(OnProcessKilledCallback listener) async {
+    final result = await $$context$$?.callMethod('onProcessKilled', [listener]);
+    return result;
+  }
+
+  Future<void> postMessage(IAnyObject message) async {
+    final result =
+        await $$context$$?.callMethod('postMessage', [message.toJson()]);
+    return result;
+  }
+
+  Future<void> terminate() async {
+    final result = await $$context$$?.callMethod('terminate', []);
+    return result;
+  }
+
+  Future<void> testOnProcessKilled() async {
+    final result = await $$context$$?.callMethod('testOnProcessKilled', []);
+    return result;
+  }
+}
+
+class WorkerEnv {
+  mpjs.JsObject? $$context$$;
+
+  String $USER_DATA_PATH = "";
+
+  Future<String> get USER_DATA_PATH async {
+    return await $$context$$?.getPropertyValue('USER_DATA_PATH') ??
+        $USER_DATA_PATH;
+  }
+
+  WorkerEnv({this.$$context$$});
+
+  void setValues({String? USER_DATA_PATH}) {
+    if (USER_DATA_PATH != null) $USER_DATA_PATH = USER_DATA_PATH;
+  }
+
+  Map toJson() {
+    return {'USER_DATA_PATH': $USER_DATA_PATH}
+      ..removeWhere((key, value) => value == null);
+  }
+}
+
+class WorkerOnMessageListenerResult {
   mpjs.JsObject? $$context$$;
 
   IAnyObject $message = IAnyObject();
@@ -32163,7 +38993,7 @@ class WorkerOnMessageCallbackResult {
     return IAnyObject($$context$$: $$context$$?.getProperty('message'));
   }
 
-  WorkerOnMessageCallbackResult({this.$$context$$});
+  WorkerOnMessageListenerResult({this.$$context$$});
 
   void setValues({IAnyObject? message}) {
     if (message != null) $message = message;
@@ -32220,6 +39050,12 @@ class WriteBLECharacteristicValueOption {
     return $success;
   }
 
+  dynamic $writeType;
+
+  Future<dynamic> get writeType async {
+    return await $$context$$?.getPropertyValue('writeType') ?? $writeType;
+  }
+
   WriteBLECharacteristicValueOption({this.$$context$$});
 
   void setValues(
@@ -32229,7 +39065,8 @@ class WriteBLECharacteristicValueOption {
       ArrayBuffer? value,
       WriteBLECharacteristicValueCompleteCallback? complete,
       WriteBLECharacteristicValueFailCallback? fail,
-      WriteBLECharacteristicValueSuccessCallback? success}) {
+      WriteBLECharacteristicValueSuccessCallback? success,
+      dynamic writeType}) {
     if (characteristicId != null) $characteristicId = characteristicId;
     if (deviceId != null) $deviceId = deviceId;
     if (serviceId != null) $serviceId = serviceId;
@@ -32237,6 +39074,7 @@ class WriteBLECharacteristicValueOption {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (success != null) $success = success;
+    if (writeType != null) $writeType = writeType;
   }
 
   Map toJson() {
@@ -32253,7 +39091,8 @@ class WriteBLECharacteristicValueOption {
           : null,
       'success': $success != null
           ? mpjs.JsFunction($success!, [(e) => BluetoothError($$context$$: e)])
-          : null
+          : null,
+      'writeType': $writeType
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -32766,306 +39605,6 @@ class WriteSyncOption {
   }
 }
 
-class WxGetFileInfoOption {
-  mpjs.JsObject? $$context$$;
-
-  String $filePath = "";
-
-  Future<String> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  GetFileInfoCompleteCallback? $complete;
-
-  Future<GetFileInfoCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  dynamic $digestAlgorithm;
-
-  Future<dynamic> get digestAlgorithm async {
-    return await $$context$$?.getPropertyValue('digestAlgorithm') ??
-        $digestAlgorithm;
-  }
-
-  WxGetFileInfoFailCallback? $fail;
-
-  Future<WxGetFileInfoFailCallback?> get fail async {
-    return $fail;
-  }
-
-  WxGetFileInfoSuccessCallback? $success;
-
-  Future<WxGetFileInfoSuccessCallback?> get success async {
-    return $success;
-  }
-
-  WxGetFileInfoOption({this.$$context$$});
-
-  void setValues(
-      {String? filePath,
-      GetFileInfoCompleteCallback? complete,
-      dynamic digestAlgorithm,
-      WxGetFileInfoFailCallback? fail,
-      WxGetFileInfoSuccessCallback? success}) {
-    if (filePath != null) $filePath = filePath;
-    if (complete != null) $complete = complete;
-    if (digestAlgorithm != null) $digestAlgorithm = digestAlgorithm;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'filePath': $filePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'digestAlgorithm': $digestAlgorithm,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction($success!,
-              [(e) => WxGetFileInfoSuccessCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class WxGetFileInfoSuccessCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  String $digest = "";
-
-  Future<String> get digest async {
-    return await $$context$$?.getPropertyValue('digest') ?? $digest;
-  }
-
-  num $size = 0;
-
-  Future<num> get size async {
-    return await $$context$$?.getPropertyValue('size') ?? $size;
-  }
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  WxGetFileInfoSuccessCallbackResult({this.$$context$$});
-
-  void setValues({String? digest, num? size, String? errMsg}) {
-    if (digest != null) $digest = digest;
-    if (size != null) $size = size;
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'digest': $digest, 'size': $size, 'errMsg': $errMsg}
-      ..removeWhere((key, value) => value == null);
-  }
-}
-
-class WxGetSavedFileListOption {
-  mpjs.JsObject? $$context$$;
-
-  GetSavedFileListCompleteCallback? $complete;
-
-  Future<GetSavedFileListCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  GetSavedFileListFailCallback? $fail;
-
-  Future<GetSavedFileListFailCallback?> get fail async {
-    return $fail;
-  }
-
-  WxGetSavedFileListSuccessCallback? $success;
-
-  Future<WxGetSavedFileListSuccessCallback?> get success async {
-    return $success;
-  }
-
-  WxGetSavedFileListOption({this.$$context$$});
-
-  void setValues(
-      {GetSavedFileListCompleteCallback? complete,
-      GetSavedFileListFailCallback? fail,
-      WxGetSavedFileListSuccessCallback? success}) {
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction($success!,
-              [(e) => WxGetSavedFileListSuccessCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class WxGetSavedFileListSuccessCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  List<FileItem> $fileList = <FileItem>[];
-
-  Future<List<FileItem>> get fileList async {
-    return await $$context$$?.getPropertyValue('fileList') ?? $fileList;
-  }
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  WxGetSavedFileListSuccessCallbackResult({this.$$context$$});
-
-  void setValues({List<FileItem>? fileList, String? errMsg}) {
-    if (fileList != null) $fileList = fileList;
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'fileList': $fileList, 'errMsg': $errMsg}
-      ..removeWhere((key, value) => value == null);
-  }
-}
-
-class WxRemoveSavedFileOption {
-  mpjs.JsObject? $$context$$;
-
-  String $filePath = "";
-
-  Future<String> get filePath async {
-    return await $$context$$?.getPropertyValue('filePath') ?? $filePath;
-  }
-
-  RemoveSavedFileCompleteCallback? $complete;
-
-  Future<RemoveSavedFileCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  WxRemoveSavedFileFailCallback? $fail;
-
-  Future<WxRemoveSavedFileFailCallback?> get fail async {
-    return $fail;
-  }
-
-  RemoveSavedFileSuccessCallback? $success;
-
-  Future<RemoveSavedFileSuccessCallback?> get success async {
-    return $success;
-  }
-
-  WxRemoveSavedFileOption({this.$$context$$});
-
-  void setValues(
-      {String? filePath,
-      RemoveSavedFileCompleteCallback? complete,
-      WxRemoveSavedFileFailCallback? fail,
-      RemoveSavedFileSuccessCallback? success}) {
-    if (filePath != null) $filePath = filePath;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'filePath': $filePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
-class WxSaveFileOption {
-  mpjs.JsObject? $$context$$;
-
-  String $tempFilePath = "";
-
-  Future<String> get tempFilePath async {
-    return await $$context$$?.getPropertyValue('tempFilePath') ?? $tempFilePath;
-  }
-
-  SaveFileCompleteCallback? $complete;
-
-  Future<SaveFileCompleteCallback?> get complete async {
-    return $complete;
-  }
-
-  WxSaveFileFailCallback? $fail;
-
-  Future<WxSaveFileFailCallback?> get fail async {
-    return $fail;
-  }
-
-  SaveFileSuccessCallback? $success;
-
-  Future<SaveFileSuccessCallback?> get success async {
-    return $success;
-  }
-
-  WxSaveFileOption({this.$$context$$});
-
-  void setValues(
-      {String? tempFilePath,
-      SaveFileCompleteCallback? complete,
-      WxSaveFileFailCallback? fail,
-      SaveFileSuccessCallback? success}) {
-    if (tempFilePath != null) $tempFilePath = tempFilePath;
-    if (complete != null) $complete = complete;
-    if (fail != null) $fail = fail;
-    if (success != null) $success = success;
-  }
-
-  Map toJson() {
-    return {
-      'tempFilePath': $tempFilePath,
-      'complete': $complete != null
-          ? mpjs.JsFunction(
-              $complete!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'fail': $fail != null
-          ? mpjs.JsFunction(
-              $fail!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null,
-      'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => SaveFileSuccessCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
-  }
-}
-
 class WxStartRecordOption {
   mpjs.JsObject? $$context$$;
 
@@ -33210,6 +39749,34 @@ class WxaSportRecord {
       'typeId': $typeId
     }..removeWhere((key, value) => value == null);
   }
+}
+
+class YUVTextureRes {
+  mpjs.JsObject? $$context$$;
+
+  // WebGLTexture $uvTexture = WebGLTexture();
+
+  // Future<WebGLTexture> get uvTexture async {
+  //   return $uvTexture;
+  // }
+
+  // WebGLTexture $yTexture = WebGLTexture();
+
+  // Future<WebGLTexture> get yTexture async {
+  //   return $yTexture;
+  // }
+
+  YUVTextureRes({this.$$context$$});
+
+  // void setValues({WebGLTexture? uvTexture, WebGLTexture? yTexture}) {
+  //   if (uvTexture != null) $uvTexture = uvTexture;
+  //   if (yTexture != null) $yTexture = yTexture;
+  // }
+
+  // Map toJson() {
+  //   return {'uvTexture': $uvTexture, 'yTexture': $yTexture}
+  //     ..removeWhere((key, value) => value == null);
+  // }
 }
 
 class ZipFileItem {
@@ -33481,58 +40048,58 @@ class BLEPeripheralServer {
   }
 
   Future<void> offCharacteristicReadRequest(
-      [OffCharacteristicReadRequestCallback? callback]) async {
+      [OffCharacteristicReadRequestCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offCharacteristicReadRequest', [callback]);
+        ?.callMethod('offCharacteristicReadRequest', [listener]);
     return result;
   }
 
   Future<void> offCharacteristicSubscribed(
-      [OffCharacteristicSubscribedCallback? callback]) async {
+      [OffCharacteristicSubscribedCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offCharacteristicSubscribed', [callback]);
+        ?.callMethod('offCharacteristicSubscribed', [listener]);
     return result;
   }
 
   Future<void> offCharacteristicUnsubscribed(
-      [OffCharacteristicUnsubscribedCallback? callback]) async {
+      [OffCharacteristicUnsubscribedCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offCharacteristicUnsubscribed', [callback]);
+        ?.callMethod('offCharacteristicUnsubscribed', [listener]);
     return result;
   }
 
   Future<void> offCharacteristicWriteRequest(
-      [OffCharacteristicWriteRequestCallback? callback]) async {
+      [OffCharacteristicWriteRequestCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offCharacteristicWriteRequest', [callback]);
+        ?.callMethod('offCharacteristicWriteRequest', [listener]);
     return result;
   }
 
   Future<void> onCharacteristicReadRequest(
-      OnCharacteristicReadRequestCallback callback) async {
+      OnCharacteristicReadRequestCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onCharacteristicReadRequest', [callback]);
+        ?.callMethod('onCharacteristicReadRequest', [listener]);
     return result;
   }
 
   Future<void> onCharacteristicSubscribed(
-      OnCharacteristicSubscribedCallback callback) async {
+      OnCharacteristicSubscribedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onCharacteristicSubscribed', [callback]);
+        await $$context$$?.callMethod('onCharacteristicSubscribed', [listener]);
     return result;
   }
 
   Future<void> onCharacteristicUnsubscribed(
-      OnCharacteristicUnsubscribedCallback callback) async {
+      OnCharacteristicUnsubscribedCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onCharacteristicUnsubscribed', [callback]);
+        ?.callMethod('onCharacteristicUnsubscribed', [listener]);
     return result;
   }
 
   Future<void> onCharacteristicWriteRequest(
-      OnCharacteristicWriteRequestCallback callback) async {
+      OnCharacteristicWriteRequestCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onCharacteristicWriteRequest', [callback]);
+        ?.callMethod('onCharacteristicWriteRequest', [listener]);
     return result;
   }
 
@@ -33749,6 +40316,51 @@ class CloseSyncError {
   }
 }
 
+class Console {
+  mpjs.JsObject? $$context$$;
+
+  Console({this.$$context$$});
+
+  Map toJson() {
+    return {}..removeWhere((key, value) => value == null);
+  }
+
+  Future<void> debug(List<dynamic> args) async {
+    final result = await $$context$$?.callMethod('debug', [args]);
+    return result;
+  }
+
+  Future<void> error(List<dynamic> args) async {
+    final result = await $$context$$?.callMethod('error', [args]);
+    return result;
+  }
+
+  Future<void> group([String? label]) async {
+    final result = await $$context$$?.callMethod('group', [label]);
+    return result;
+  }
+
+  Future<void> groupEnd() async {
+    final result = await $$context$$?.callMethod('groupEnd', []);
+    return result;
+  }
+
+  Future<void> info(List<dynamic> args) async {
+    final result = await $$context$$?.callMethod('info', [args]);
+    return result;
+  }
+
+  Future<void> log(List<dynamic> args) async {
+    final result = await $$context$$?.callMethod('log', [args]);
+    return result;
+  }
+
+  Future<void> warn(List<dynamic> args) async {
+    final result = await $$context$$?.callMethod('warn', [args]);
+    return result;
+  }
+}
+
 class DownloadTask {
   mpjs.JsObject? $$context$$;
 
@@ -33764,29 +40376,29 @@ class DownloadTask {
   }
 
   Future<void> offHeadersReceived(
-      [OffHeadersReceivedCallback? callback]) async {
+      [OffHeadersReceivedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offHeadersReceived', [callback]);
+        await $$context$$?.callMethod('offHeadersReceived', [listener]);
     return result;
   }
 
   Future<void> offProgressUpdate(
-      [DownloadTaskOffProgressUpdateCallback? callback]) async {
+      [DownloadTaskOffProgressUpdateCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offProgressUpdate', [callback]);
+        await $$context$$?.callMethod('offProgressUpdate', [listener]);
     return result;
   }
 
-  Future<void> onHeadersReceived(OnHeadersReceivedCallback callback) async {
+  Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onHeadersReceived', [callback]);
+        await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
   }
 
   Future<void> onProgressUpdate(
-      DownloadTaskOnProgressUpdateCallback callback) async {
+      DownloadTaskOnProgressUpdateCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onProgressUpdate', [callback]);
+        await $$context$$?.callMethod('onProgressUpdate', [listener]);
     return result;
   }
 }
@@ -33882,19 +40494,19 @@ class EntryList {
     return {}..removeWhere((key, value) => value == null);
   }
 
-  Future<List<dynamic>> getEntries() async {
+  Future<List<PerformanceEntry>> getEntries() async {
     final result = await $$context$$?.callMethod('getEntries', []);
     return result;
   }
 
-  Future<List<dynamic>> getEntriesByName(String name,
+  Future<List<PerformanceEntry>> getEntriesByName(String name,
       [String? entryType]) async {
     final result =
         await $$context$$?.callMethod('getEntriesByName', [name, entryType]);
     return result;
   }
 
-  Future<List<dynamic>> getEntriesByType(String entryType) async {
+  Future<List<PerformanceEntry>> getEntriesByType(String entryType) async {
     final result =
         await $$context$$?.callMethod('getEntriesByType', [entryType]);
     return result;
@@ -33943,6 +40555,14 @@ class FileSystemManager {
   Future<List<String>> readdirSync(String dirPath) async {
     final result = await $$context$$?.callMethod('readdirSync', [dirPath]);
     return result;
+  }
+
+  Future<ArrayBuffer> readCompressedFileSync(
+      ReadCompressedFileSyncOption option) async {
+    final result = await $$context$$
+        ?.callMethod('readCompressedFileSync', [option.toJson()]);
+
+    return ArrayBuffer($$context$$: result);
   }
 
   Future<void> access(AccessOption option) async {
@@ -33995,14 +40615,13 @@ class FileSystemManager {
     return result;
   }
 
-  Future<void> getFileInfo(FileSystemManagerGetFileInfoOption option) async {
+  Future<void> getFileInfo(GetFileInfoOption option) async {
     final result =
         await $$context$$?.callMethod('getFileInfo', [option.toJson()]);
     return result;
   }
 
-  Future<void> getSavedFileList(
-      [FileSystemManagerGetSavedFileListOption? option]) async {
+  Future<void> getSavedFileList([GetSavedFileListOption? option]) async {
     final result =
         await $$context$$?.callMethod('getSavedFileList', [option?.toJson()]);
     return result;
@@ -34029,6 +40648,12 @@ class FileSystemManager {
     return result;
   }
 
+  Future<void> readCompressedFile(ReadCompressedFileOption option) async {
+    final result =
+        await $$context$$?.callMethod('readCompressedFile', [option.toJson()]);
+    return result;
+  }
+
   Future<void> readFile(ReadFileOption option) async {
     final result = await $$context$$?.callMethod('readFile', [option.toJson()]);
     return result;
@@ -34045,8 +40670,7 @@ class FileSystemManager {
     return result;
   }
 
-  Future<void> removeSavedFile(
-      FileSystemManagerRemoveSavedFileOption option) async {
+  Future<void> removeSavedFile(RemoveSavedFileOption option) async {
     final result =
         await $$context$$?.callMethod('removeSavedFile', [option.toJson()]);
     return result;
@@ -34074,7 +40698,7 @@ class FileSystemManager {
     return result;
   }
 
-  Future<void> saveFile(FileSystemManagerSaveFileOption option) async {
+  Future<void> saveFile(SaveFileOption option) async {
     final result = await $$context$$?.callMethod('saveFile', [option.toJson()]);
     return result;
   }
@@ -34240,26 +40864,6 @@ class FtruncateSyncError {
   }
 }
 
-class GeneralCallbackResult {
-  mpjs.JsObject? $$context$$;
-
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
-  }
-
-  GeneralCallbackResult({this.$$context$$});
-
-  void setValues({String? errMsg}) {
-    if (errMsg != null) $errMsg = errMsg;
-  }
-
-  Map toJson() {
-    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
-  }
-}
-
 class IntersectionObserver {
   mpjs.JsObject? $$context$$;
 
@@ -34311,33 +40915,33 @@ class InterstitialAd {
     return result;
   }
 
-  Future<void> offClose([UDPSocketOffCloseCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offClose', [callback]);
+  Future<void> offClose([UDPSocketOffCloseCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offClose', [listener]);
     return result;
   }
 
-  Future<void> offError([InterstitialAdOffErrorCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offError([InterstitialAdOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> offLoad([OffLoadCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offLoad', [callback]);
+  Future<void> offLoad([OffLoadCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offLoad', [listener]);
     return result;
   }
 
-  Future<void> onClose(UDPSocketOnCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onClose', [callback]);
+  Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
-  Future<void> onError(InterstitialAdOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(InterstitialAdOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onLoad(OnLoadCallback callback) async {
-    final result = await $$context$$?.callMethod('onLoad', [callback]);
+  Future<void> onLoad(OnLoadCallback listener) async {
+    final result = await $$context$$?.callMethod('onLoad', [listener]);
     return result;
   }
 
@@ -34400,6 +41004,34 @@ class IsoDep {
     final result =
         await $$context$$?.callMethod('transceive', [option.toJson()]);
     return result;
+  }
+}
+
+class Join1v1ChatError {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  num $errCode = 0;
+
+  Future<num> get errCode async {
+    return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
+  }
+
+  Join1v1ChatError({this.$$context$$});
+
+  void setValues({String? errMsg, num? errCode}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (errCode != null) $errCode = errCode;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'errCode': $errCode}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -34507,6 +41139,88 @@ class LivePusherContext {
     return {}..removeWhere((key, value) => value == null);
   }
 
+  Future<void> applyBlusherStickMakeup(
+      ApplyBlusherStickMakeupOption option) async {
+    final result = await $$context$$
+        ?.callMethod('applyBlusherStickMakeup', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applyEyeBrowMakeup(ApplyEyeBrowMakeupOption option) async {
+    final result =
+        await $$context$$?.callMethod('applyEyeBrowMakeup', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applyEyeShadowMakeup(ApplyEyeShadowMakeupOption option) async {
+    final result = await $$context$$
+        ?.callMethod('applyEyeShadowMakeup', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applyFaceContourMakeup(
+      ApplyFaceContourMakeupOption option) async {
+    final result = await $$context$$
+        ?.callMethod('applyFaceContourMakeup', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applyFilter(ApplyFilterOption option) async {
+    final result =
+        await $$context$$?.callMethod('applyFilter', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applyLipStickMakeup(ApplyLipStickMakeupOption option) async {
+    final result =
+        await $$context$$?.callMethod('applyLipStickMakeup', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> applySticker(ApplyStickerOption option) async {
+    final result =
+        await $$context$$?.callMethod('applySticker', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> clearFilters([ClearFiltersOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('clearFilters', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> clearMakeups([ClearMakeupsOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('clearMakeups', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> clearStickers([ClearStickersOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('clearStickers', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> createOffscreenCanvas(IAnyObject options) async {
+    final result = await $$context$$
+        ?.callMethod('createOffscreenCanvas', [options.toJson()]);
+    return result;
+  }
+
+  Future<void> exitPictureInPicture(
+      [ExitPictureInPictureOption? option]) async {
+    final result = await $$context$$
+        ?.callMethod('exitPictureInPicture', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> onCustomRendererEvent(
+      dynamic event, CustomRendererFrameEventCallback callback) async {
+    final result = await $$context$$
+        ?.callMethod('onCustomRendererEvent', [event, callback]);
+    return result;
+  }
+
   Future<void> pause([PauseOption? option]) async {
     final result = await $$context$$?.callMethod('pause', [option?.toJson()]);
     return result;
@@ -34534,9 +41248,9 @@ class LivePusherContext {
     return result;
   }
 
-  Future<void> sendMessage([SendMessageOption? option]) async {
+  Future<void> sendMessage(SendMessageOption option) async {
     final result =
-        await $$context$$?.callMethod('sendMessage', [option?.toJson()]);
+        await $$context$$?.callMethod('sendMessage', [option.toJson()]);
     return result;
   }
 
@@ -34557,7 +41271,7 @@ class LivePusherContext {
     return result;
   }
 
-  Future<void> start([CameraFrameListenerStartOption? option]) async {
+  Future<void> start([LivePusherContextStartOption? option]) async {
     final result = await $$context$$?.callMethod('start', [option?.toJson()]);
     return result;
   }
@@ -34636,6 +41350,11 @@ class MapContext {
     return {}..removeWhere((key, value) => value == null);
   }
 
+  Future<void> addArc(AddArcOption option) async {
+    final result = await $$context$$?.callMethod('addArc', [option.toJson()]);
+    return result;
+  }
+
   Future<void> addCustomLayer(AddCustomLayerOption option) async {
     final result =
         await $$context$$?.callMethod('addCustomLayer', [option.toJson()]);
@@ -34651,6 +41370,19 @@ class MapContext {
   Future<void> addMarkers(AddMarkersOption option) async {
     final result =
         await $$context$$?.callMethod('addMarkers', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> addVisualLayer(AddVisualLayerOption option) async {
+    final result =
+        await $$context$$?.callMethod('addVisualLayer', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> executeVisualLayerCommand(
+      ExecuteVisualLayerCommandOption option) async {
+    final result = await $$context$$
+        ?.callMethod('executeVisualLayerCommand', [option.toJson()]);
     return result;
   }
 
@@ -34724,6 +41456,12 @@ class MapContext {
     return result;
   }
 
+  Future<void> removeArc(RemoveArcOption option) async {
+    final result =
+        await $$context$$?.callMethod('removeArc', [option.toJson()]);
+    return result;
+  }
+
   Future<void> removeCustomLayer(RemoveCustomLayerOption option) async {
     final result =
         await $$context$$?.callMethod('removeCustomLayer', [option.toJson()]);
@@ -34739,6 +41477,18 @@ class MapContext {
   Future<void> removeMarkers(RemoveMarkersOption option) async {
     final result =
         await $$context$$?.callMethod('removeMarkers', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> removeVisualLayer(RemoveVisualLayerOption option) async {
+    final result =
+        await $$context$$?.callMethod('removeVisualLayer', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> setBoundary(SetBoundaryOption option) async {
+    final result =
+        await $$context$$?.callMethod('setBoundary', [option.toJson()]);
     return result;
   }
 
@@ -35347,19 +42097,19 @@ class Performance {
     return {}..removeWhere((key, value) => value == null);
   }
 
-  Future<List<dynamic>> getEntries() async {
+  Future<List<PerformanceEntry>> getEntries() async {
     final result = await $$context$$?.callMethod('getEntries', []);
     return result;
   }
 
-  Future<List<dynamic>> getEntriesByName(String name,
+  Future<List<PerformanceEntry>> getEntriesByName(String name,
       [String? entryType]) async {
     final result =
         await $$context$$?.callMethod('getEntriesByName', [name, entryType]);
     return result;
   }
 
-  Future<List<dynamic>> getEntriesByType(String entryType) async {
+  Future<List<PerformanceEntry>> getEntriesByType(String entryType) async {
     final result =
         await $$context$$?.callMethod('getEntriesByType', [entryType]);
     return result;
@@ -35374,6 +42124,51 @@ class Performance {
     final result = await $$context$$?.callMethod('createObserver', [callback]);
 
     return PerformanceObserver($$context$$: result);
+  }
+}
+
+class PreDownloadSubpackageTask {
+  mpjs.JsObject? $$context$$;
+
+  PreDownloadSubpackageTask({this.$$context$$});
+
+  Map toJson() {
+    return {}..removeWhere((key, value) => value == null);
+  }
+
+  Future<void> onProgressUpdate(
+      PreDownloadSubpackageTaskOnProgressUpdateCallback listener) async {
+    final result =
+        await $$context$$?.callMethod('onProgressUpdate', [listener]);
+    return result;
+  }
+}
+
+class ReadCompressedFileSyncError {
+  mpjs.JsObject? $$context$$;
+
+  String $errMsg = "";
+
+  Future<String> get errMsg async {
+    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  }
+
+  num $errCode = 0;
+
+  Future<num> get errCode async {
+    return await $$context$$?.getPropertyValue('errCode') ?? $errCode;
+  }
+
+  ReadCompressedFileSyncError({this.$$context$$});
+
+  void setValues({String? errMsg, num? errCode}) {
+    if (errMsg != null) $errMsg = errMsg;
+    if (errCode != null) $errCode = errCode;
+  }
+
+  Map toJson() {
+    return {'errMsg': $errMsg, 'errCode': $errCode}
+      ..removeWhere((key, value) => value == null);
   }
 }
 
@@ -35412,6 +42207,12 @@ class RealtimeLogManager {
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
+  }
+
+  Future<CurrentState> getCurrentState() async {
+    final result = await $$context$$?.callMethod('getCurrentState', []);
+
+    return CurrentState($$context$$: result);
   }
 
   Future<void> addFilterMsg(String msg) async {
@@ -35495,45 +42296,45 @@ class RecorderManager {
     return {}..removeWhere((key, value) => value == null);
   }
 
-  Future<void> onError(UDPSocketOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onFrameRecorded(OnFrameRecordedCallback callback) async {
-    final result = await $$context$$?.callMethod('onFrameRecorded', [callback]);
+  Future<void> onFrameRecorded(OnFrameRecordedCallback listener) async {
+    final result = await $$context$$?.callMethod('onFrameRecorded', [listener]);
     return result;
   }
 
-  Future<void> onInterruptionBegin(OnInterruptionBeginCallback callback) async {
+  Future<void> onInterruptionBegin(OnInterruptionBeginCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onInterruptionBegin', [callback]);
+        await $$context$$?.callMethod('onInterruptionBegin', [listener]);
     return result;
   }
 
-  Future<void> onInterruptionEnd(OnInterruptionEndCallback callback) async {
+  Future<void> onInterruptionEnd(OnInterruptionEndCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onInterruptionEnd', [callback]);
+        await $$context$$?.callMethod('onInterruptionEnd', [listener]);
     return result;
   }
 
-  Future<void> onPause(OnPauseCallback callback) async {
-    final result = await $$context$$?.callMethod('onPause', [callback]);
+  Future<void> onPause(OnPauseCallback listener) async {
+    final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
-  Future<void> onResume(OnResumeCallback callback) async {
-    final result = await $$context$$?.callMethod('onResume', [callback]);
+  Future<void> onResume(OnResumeCallback listener) async {
+    final result = await $$context$$?.callMethod('onResume', [listener]);
     return result;
   }
 
-  Future<void> onStart(OnStartCallback callback) async {
-    final result = await $$context$$?.callMethod('onStart', [callback]);
+  Future<void> onStart(OnStartCallback listener) async {
+    final result = await $$context$$?.callMethod('onStart', [listener]);
     return result;
   }
 
-  Future<void> onStop(RecorderManagerOnStopCallback callback) async {
-    final result = await $$context$$?.callMethod('onStop', [callback]);
+  Future<void> onStop(RecorderManagerOnStopCallback listener) async {
+    final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
 
@@ -35572,16 +42373,27 @@ class RequestTask {
     return result;
   }
 
-  Future<void> offHeadersReceived(
-      [OffHeadersReceivedCallback? callback]) async {
+  Future<void> offChunkReceived([OffChunkReceivedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offHeadersReceived', [callback]);
+        await $$context$$?.callMethod('offChunkReceived', [listener]);
     return result;
   }
 
-  Future<void> onHeadersReceived(OnHeadersReceivedCallback callback) async {
+  Future<void> offHeadersReceived(
+      [OffHeadersReceivedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('onHeadersReceived', [callback]);
+        await $$context$$?.callMethod('offHeadersReceived', [listener]);
+    return result;
+  }
+
+  Future<void> onChunkReceived(OnChunkReceivedCallback listener) async {
+    final result = await $$context$$?.callMethod('onChunkReceived', [listener]);
+    return result;
+  }
+
+  Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
+    final result =
+        await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
   }
 }
@@ -35610,33 +42422,33 @@ class RewardedVideoAd {
     return result;
   }
 
-  Future<void> offClose([RewardedVideoAdOffCloseCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offClose', [callback]);
+  Future<void> offClose([RewardedVideoAdOffCloseCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offClose', [listener]);
     return result;
   }
 
-  Future<void> offError([RewardedVideoAdOffErrorCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offError([RewardedVideoAdOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> offLoad([OffLoadCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offLoad', [callback]);
+  Future<void> offLoad([OffLoadCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offLoad', [listener]);
     return result;
   }
 
-  Future<void> onClose(RewardedVideoAdOnCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onClose', [callback]);
+  Future<void> onClose(RewardedVideoAdOnCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
-  Future<void> onError(RewardedVideoAdOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(RewardedVideoAdOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onLoad(OnLoadCallback callback) async {
-    final result = await $$context$$?.callMethod('onLoad', [callback]);
+  Future<void> onLoad(OnLoadCallback listener) async {
+    final result = await $$context$$?.callMethod('onLoad', [listener]);
     return result;
   }
 }
@@ -35695,23 +42507,23 @@ class SocketTask {
     return result;
   }
 
-  Future<void> onClose(SocketTaskOnCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onClose', [callback]);
+  Future<void> onClose(SocketTaskOnCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
-  Future<void> onError(UDPSocketOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onMessage(SocketTaskOnMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onMessage', [callback]);
+  Future<void> onMessage(SocketTaskOnMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
 
-  Future<void> onOpen(OnOpenCallback callback) async {
-    final result = await $$context$$?.callMethod('onOpen', [callback]);
+  Future<void> onOpen(OnOpenCallback listener) async {
+    final result = await $$context$$?.callMethod('onOpen', [listener]);
     return result;
   }
 
@@ -35730,6 +42542,12 @@ class TCPSocket {
     return {}..removeWhere((key, value) => value == null);
   }
 
+  Future<void> bindWifi(BindWifiOption options) async {
+    final result =
+        await $$context$$?.callMethod('bindWifi', [options.toJson()]);
+    return result;
+  }
+
   Future<void> close() async {
     final result = await $$context$$?.callMethod('close', []);
     return result;
@@ -35740,43 +42558,53 @@ class TCPSocket {
     return result;
   }
 
-  Future<void> offClose([UDPSocketOffCloseCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offClose', [callback]);
+  Future<void> offBindWifi([OffBindWifiCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offBindWifi', [listener]);
     return result;
   }
 
-  Future<void> offConnect([OffConnectCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offConnect', [callback]);
+  Future<void> offClose([UDPSocketOffCloseCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offClose', [listener]);
     return result;
   }
 
-  Future<void> offError([UDPSocketOffErrorCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offConnect([OffConnectCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offConnect', [listener]);
     return result;
   }
 
-  Future<void> offMessage([TCPSocketOffMessageCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offMessage', [callback]);
+  Future<void> offError([UDPSocketOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> onClose(UDPSocketOnCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onClose', [callback]);
+  Future<void> offMessage([TCPSocketOffMessageCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offMessage', [listener]);
     return result;
   }
 
-  Future<void> onConnect(OnConnectCallback callback) async {
-    final result = await $$context$$?.callMethod('onConnect', [callback]);
+  Future<void> onBindWifi(OnBindWifiCallback listener) async {
+    final result = await $$context$$?.callMethod('onBindWifi', [listener]);
     return result;
   }
 
-  Future<void> onError(UDPSocketOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
-  Future<void> onMessage(TCPSocketOnMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onMessage', [callback]);
+  Future<void> onConnect(OnConnectCallback listener) async {
+    final result = await $$context$$?.callMethod('onConnect', [listener]);
+    return result;
+  }
+
+  Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
+    return result;
+  }
+
+  Future<void> onMessage(TCPSocketOnMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
 
@@ -35833,43 +42661,43 @@ class UDPSocket {
     return result;
   }
 
-  Future<void> offClose([UDPSocketOffCloseCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offClose', [callback]);
+  Future<void> offClose([UDPSocketOffCloseCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offClose', [listener]);
     return result;
   }
 
-  Future<void> offError([UDPSocketOffErrorCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offError([UDPSocketOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> offListening([OffListeningCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offListening', [callback]);
+  Future<void> offListening([OffListeningCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offListening', [listener]);
     return result;
   }
 
-  Future<void> offMessage([UDPSocketOffMessageCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offMessage', [callback]);
+  Future<void> offMessage([UDPSocketOffMessageCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offMessage', [listener]);
     return result;
   }
 
-  Future<void> onClose(UDPSocketOnCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onClose', [callback]);
+  Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
-  Future<void> onError(UDPSocketOnErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onListening(OnListeningCallback callback) async {
-    final result = await $$context$$?.callMethod('onListening', [callback]);
+  Future<void> onListening(OnListeningCallback listener) async {
+    final result = await $$context$$?.callMethod('onListening', [listener]);
     return result;
   }
 
-  Future<void> onMessage(UDPSocketOnMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onMessage', [callback]);
+  Future<void> onMessage(UDPSocketOnMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
 
@@ -35908,19 +42736,19 @@ class UpdateManager {
     return result;
   }
 
-  Future<void> onCheckForUpdate(OnCheckForUpdateCallback callback) async {
+  Future<void> onCheckForUpdate(OnCheckForUpdateCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onCheckForUpdate', [callback]);
+        await $$context$$?.callMethod('onCheckForUpdate', [listener]);
     return result;
   }
 
-  Future<void> onUpdateFailed(OnUpdateFailedCallback callback) async {
-    final result = await $$context$$?.callMethod('onUpdateFailed', [callback]);
+  Future<void> onUpdateFailed(OnUpdateFailedCallback listener) async {
+    final result = await $$context$$?.callMethod('onUpdateFailed', [listener]);
     return result;
   }
 
-  Future<void> onUpdateReady(OnUpdateReadyCallback callback) async {
-    final result = await $$context$$?.callMethod('onUpdateReady', [callback]);
+  Future<void> onUpdateReady(OnUpdateReadyCallback listener) async {
+    final result = await $$context$$?.callMethod('onUpdateReady', [listener]);
     return result;
   }
 }
@@ -35940,29 +42768,29 @@ class UploadTask {
   }
 
   Future<void> offHeadersReceived(
-      [OffHeadersReceivedCallback? callback]) async {
+      [OffHeadersReceivedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offHeadersReceived', [callback]);
+        await $$context$$?.callMethod('offHeadersReceived', [listener]);
     return result;
   }
 
   Future<void> offProgressUpdate(
-      [UploadTaskOffProgressUpdateCallback? callback]) async {
+      [UploadTaskOffProgressUpdateCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offProgressUpdate', [callback]);
+        await $$context$$?.callMethod('offProgressUpdate', [listener]);
     return result;
   }
 
-  Future<void> onHeadersReceived(OnHeadersReceivedCallback callback) async {
+  Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onHeadersReceived', [callback]);
+        await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
   }
 
   Future<void> onProgressUpdate(
-      UploadTaskOnProgressUpdateCallback callback) async {
+      UploadTaskOnProgressUpdateCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onProgressUpdate', [callback]);
+        await $$context$$?.callMethod('onProgressUpdate', [listener]);
     return result;
   }
 }
@@ -36143,35 +42971,80 @@ class WifiError {
   }
 }
 
-class Worker {
+class Worklet {
   mpjs.JsObject? $$context$$;
 
-  Worker({this.$$context$$});
+  Worklet({this.$$context$$});
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
   }
 
-  Future<void> onMessage(WorkerOnMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onMessage', [callback]);
+  // Future<AnimationObject> decay(DecayOption options, List<dynamic> clamp,
+  //     num velocityFactor, dynamic callback) async {
+  //   final result = await $$context$$?.callMethod(
+  //       'decay', [options.toJson(), clamp, velocityFactor, callback]);
+  //   return result;
+  // }
+
+  // Future<AnimationObject> delay(
+  //     num delayMS, AnimationObject delayedAnimation) async {
+  //   final result =
+  //       await $$context$$?.callMethod('delay', [delayMS, delayedAnimation]);
+  //   return result;
+  // }
+
+  // Future<AnimationObject> repeat(AnimationObject animation,
+  //     [num? numberOfReps, bool? reverse, dynamic callback]) async {
+  //   final result = await $$context$$
+  //       ?.callMethod('repeat', [animation, numberOfReps, reverse, callback]);
+  //   return result;
+  // }
+
+  // Future<AnimationObject> sequence(AnimationObject animationN) async {
+  //   final result = await $$context$$?.callMethod('sequence', [animationN]);
+  //   return result;
+  // }
+
+  // Future<AnimationObject> spring(
+  //     dynamic toValue, SpringOption options, dynamic callback) async {
+  //   final result = await $$context$$
+  //       ?.callMethod('spring', [toValue, options.toJson(), callback]);
+  //   return result;
+  // }
+
+  // Future<AnimationObject> timing(
+  //     dynamic toValue, TimingOption options, dynamic callback) async {
+  //   final result = await $$context$$
+  //       ?.callMethod('timing', [toValue, options.toJson(), callback]);
+  //   return result;
+  // }
+
+  // Future<DerivedValue> derived(WorkletFunction updaterWorklet) async {
+  //   final result = await $$context$$?.callMethod('derived', [updaterWorklet]);
+  //   return result;
+  // }
+
+  // Future<SharedValue> shared(dynamic initialValue) async {
+  //   final result = await $$context$$?.callMethod('shared', [initialValue]);
+  //   return result;
+  // }
+
+  Future<dynamic> runOnJS(dynamic fn) async {
+    final result = await $$context$$?.callMethod('runOnJS', [fn]);
     return result;
   }
 
-  Future<void> onProcessKilled(OnProcessKilledCallback callback) async {
-    final result = await $$context$$?.callMethod('onProcessKilled', [callback]);
+  Future<dynamic> runOnUI(dynamic fn) async {
+    final result = await $$context$$?.callMethod('runOnUI', [fn]);
     return result;
   }
 
-  Future<void> postMessage(IAnyObject message) async {
-    final result =
-        await $$context$$?.callMethod('postMessage', [message.toJson()]);
-    return result;
-  }
-
-  Future<void> terminate() async {
-    final result = await $$context$$?.callMethod('terminate', []);
-    return result;
-  }
+  // Future<void> cancelAnimation(SharedValue sharedValue) async {
+  //   final result =
+  //       await $$context$$?.callMethod('cancelAnimation', [sharedValue]);
+  //   return result;
+  // }
 }
 
 class WriteSyncError {
@@ -36205,12 +43078,41 @@ class WriteSyncError {
 class Wx {
   mpjs.JsObject? $$context$$;
 
-  Future<IAnyObject> get env async {
-    final result = await $$context$$?.getPropertyValue('env');
-    return IAnyObject($$context$$: result);
+  // WxCloud $cloud = WxCloud();
+
+  // Future<WxCloud> get cloud async {
+  //   return $cloud;
+  // }
+
+  dynamic $env;
+
+  Future<dynamic> get env async {
+    return await $$context$$?.getPropertyValue('env') ?? $env;
+  }
+
+  Worklet $worklet = Worklet();
+
+  Future<Worklet> get worklet async {
+    return Worklet($$context$$: $$context$$?.getProperty('worklet'));
   }
 
   Wx({this.$$context$$});
+
+  void setValues({dynamic env, Worklet? worklet}) {
+    // if (env != null) $env = env;
+    if (worklet != null) $worklet = worklet;
+  }
+
+  Map toJson() {
+    return {'env': $env, 'worklet': $worklet}
+      ..removeWhere((key, value) => value == null);
+  }
+
+  Future<List<dynamic>> batchGetStorageSync(List<String> keyList) async {
+    final result =
+        await $$context$$?.callMethod('batchGetStorageSync', [keyList]);
+    return result;
+  }
 
   Future<ArrayBuffer> base64ToArrayBuffer(String base64) async {
     final result =
@@ -36225,10 +43127,28 @@ class Wx {
     return AccountInfo($$context$$: result);
   }
 
+  Future<AppAuthorizeSetting> getAppAuthorizeSetting() async {
+    final result = await $$context$$?.callMethod('getAppAuthorizeSetting', []);
+
+    return AppAuthorizeSetting($$context$$: result);
+  }
+
+  Future<AppBaseInfo> getAppBaseInfo() async {
+    final result = await $$context$$?.callMethod('getAppBaseInfo', []);
+
+    return AppBaseInfo($$context$$: result);
+  }
+
   Future<GetBatteryInfoSyncResult> getBatteryInfoSync() async {
     final result = await $$context$$?.callMethod('getBatteryInfoSync', []);
 
     return GetBatteryInfoSyncResult($$context$$: result);
+  }
+
+  Future<DeviceInfo> getDeviceInfo() async {
+    final result = await $$context$$?.callMethod('getDeviceInfo', []);
+
+    return DeviceInfo($$context$$: result);
   }
 
   Future<LaunchOptionsApp> getEnterOptionsSync() async {
@@ -36255,11 +43175,17 @@ class Wx {
     return LaunchOptionsApp($$context$$: result);
   }
 
-  Future<Rect> getMenuButtonBoundingClientRect() async {
+  Future<ClientRect> getMenuButtonBoundingClientRect() async {
     final result =
         await $$context$$?.callMethod('getMenuButtonBoundingClientRect', []);
 
-    return Rect($$context$$: result);
+    return ClientRect($$context$$: result);
+  }
+
+  Future<SkylineInfo> getSkylineInfoSync() async {
+    final result = await $$context$$?.callMethod('getSkylineInfoSync', []);
+
+    return SkylineInfo($$context$$: result);
   }
 
   Future<GetStorageInfoSyncOption> getStorageInfoSync() async {
@@ -36272,6 +43198,23 @@ class Wx {
     final result = await $$context$$?.callMethod('getSystemInfoSync', []);
 
     return SystemInfo($$context$$: result);
+  }
+
+  Future<SystemSetting> getSystemSetting() async {
+    final result = await $$context$$?.callMethod('getSystemSetting', []);
+
+    return SystemSetting($$context$$: result);
+  }
+
+  Future<WindowInfo> getWindowInfo() async {
+    final result = await $$context$$?.callMethod('getWindowInfo', []);
+
+    return WindowInfo($$context$$: result);
+  }
+
+  Future<String> getRendererUserAgent() async {
+    final result = await $$context$$?.callMethod('getRendererUserAgent', []);
+    return result;
   }
 
   Future<Animation> createAnimation(StepOption option) async {
@@ -36294,6 +43237,14 @@ class Wx {
         await $$context$$?.callMethod('getBackgroundAudioManager', []);
 
     return BackgroundAudioManager($$context$$: result);
+  }
+
+  Future<CacheManager> createCacheManager(
+      CreateCacheManagerOption option) async {
+    final result =
+        await $$context$$?.callMethod('createCacheManager', [option.toJson()]);
+
+    return CacheManager($$context$$: result);
   }
 
   Future<CameraContext> createCameraContext() async {
@@ -36409,7 +43360,7 @@ class Wx {
     return OffscreenCanvas($$context$$: result);
   }
 
-  Future<OffscreenCanvas> createOffscreenCanvasWithOption(
+  Future<OffscreenCanvas> createOffscreenCanvas2(
       CreateOffscreenCanvasOption option) async {
     final result = await $$context$$
         ?.callMethod('createOffscreenCanvas', [option.toJson()]);
@@ -36421,6 +43372,14 @@ class Wx {
     final result = await $$context$$?.callMethod('getPerformance', []);
 
     return Performance($$context$$: result);
+  }
+
+  Future<PreDownloadSubpackageTask> preDownloadSubpackage(
+      PreDownloadSubpackageOption option) async {
+    final result = await $$context$$
+        ?.callMethod('preDownloadSubpackage', [option.toJson()]);
+
+    return PreDownloadSubpackageTask($$context$$: result);
   }
 
   Future<RealtimeLogManager> getRealtimeLogManager() async {
@@ -36494,6 +43453,13 @@ class Wx {
     return UserCryptoManager($$context$$: result);
   }
 
+  Future<VKSession> createVKSession(VKConfig option) async {
+    final result =
+        await $$context$$?.callMethod('createVKSession', [option.toJson()]);
+
+    return VKSession($$context$$: result);
+  }
+
   Future<VideoContext> createVideoContext(String id,
       [dynamic component]) async {
     final result =
@@ -36532,9 +43498,19 @@ class Wx {
     return result;
   }
 
+  Future<bool> isVKSupport(dynamic version) async {
+    final result = await $$context$$?.callMethod('isVKSupport', [version]);
+    return result;
+  }
+
   Future<String> arrayBufferToBase64(ArrayBuffer arrayBuffer) async {
     final result = await $$context$$
-        ?.callMethod('arrayBufferToBase64', [arrayBuffer.$$context$$]);
+        ?.callMethod('arrayBufferToBase64', [arrayBuffer.toJson()]);
+    return result;
+  }
+
+  Future<String> createBufferURL(dynamic buffer) async {
+    final result = await $$context$$?.callMethod('createBufferURL', [buffer]);
     return result;
   }
 
@@ -36604,6 +43580,26 @@ class Wx {
     return result;
   }
 
+  Future<GeneralCallbackResult>
+      batchGetStorage<T extends BatchGetStorageOption>(T option) async {
+    final result = await $$context$$?.callMethod('batchGetStorage', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
+  }
+
+  Future<GeneralCallbackResult>
+      batchSetStorage<T extends BatchSetStorageOption>(T option) async {
+    final result = await $$context$$?.callMethod('batchSetStorage', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
+  }
+
+  Future<void> batchSetStorageSync(List<KvList> kvList) async {
+    final result =
+        await $$context$$?.callMethod('batchSetStorageSync', [kvList]);
+    return result;
+  }
+
   Future<CanvasGetImageDataSuccessCallbackResult>
       canvasGetImageData<T extends CanvasGetImageDataOption>(T option,
           [dynamic component]) async {
@@ -36631,13 +43627,20 @@ class Wx {
     return CanvasToTempFilePathSuccessCallbackResult($$context$$: result);
   }
 
-  Future<CheckIsOpenAccessibilitySuccessCallbackResult>
+  Future<void> checkIsAddedToMyMiniProgram(
+      CheckIsAddedToMyMiniProgramOption option) async {
+    final result = await $$context$$
+        ?.callMethod('checkIsAddedToMyMiniProgram', [option.toJson()]);
+    return result;
+  }
+
+  Future<CheckIsOpenAccessibilitySuccessCallbackOption>
       checkIsOpenAccessibility<T extends CheckIsOpenAccessibilityOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('checkIsOpenAccessibility', [option]);
 
-    return CheckIsOpenAccessibilitySuccessCallbackResult($$context$$: result);
+    return CheckIsOpenAccessibilitySuccessCallbackOption($$context$$: result);
   }
 
   Future<CheckIsSoterEnrolledInDeviceSuccessCallbackResult>
@@ -36821,8 +43824,9 @@ class Wx {
     return CreateBLEPeripheralServerSuccessCallbackResult($$context$$: result);
   }
 
-  Future<void> createBufferURL(dynamic buffer) async {
-    final result = await $$context$$?.callMethod('createBufferURL', [buffer]);
+  Future<void> cropImage(CropImageOption option) async {
+    final result =
+        await $$context$$?.callMethod('cropImage', [option.toJson()]);
     return result;
   }
 
@@ -36830,6 +43834,12 @@ class Wx {
       [DisableAlertBeforeUnloadOption? option]) async {
     final result = await $$context$$
         ?.callMethod('disableAlertBeforeUnload', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> editImage(EditImageOption option) async {
+    final result =
+        await $$context$$?.callMethod('editImage', [option.toJson()]);
     return result;
   }
 
@@ -36895,6 +43905,13 @@ class Wx {
     return GetBLEDeviceServicesSuccessCallbackResult($$context$$: result);
   }
 
+  Future<GetBLEMTUSuccessCallbackResult> getBLEMTU<T extends GetBLEMTUOption>(
+      T option) async {
+    final result = await $$context$$?.callMethod('getBLEMTU', [option]);
+
+    return GetBLEMTUSuccessCallbackResult($$context$$: result);
+  }
+
   Future<GetBackgroundAudioPlayerStateSuccessCallbackResult>
       getBackgroundAudioPlayerState<
           T extends GetBackgroundAudioPlayerStateOption>([T? option]) async {
@@ -36905,22 +43922,22 @@ class Wx {
         $$context$$: result);
   }
 
-  Future<GeneralCallbackResult>
+  Future<GetBackgroundFetchDataSuccessCallbackResult>
       getBackgroundFetchData<T extends GetBackgroundFetchDataOption>(
           T option) async {
     final result =
         await $$context$$?.callMethod('getBackgroundFetchData', [option]);
 
-    return GeneralCallbackResult($$context$$: result);
+    return GetBackgroundFetchDataSuccessCallbackResult($$context$$: result);
   }
 
-  Future<GeneralCallbackResult>
+  Future<GetBackgroundFetchTokenSuccessCallbackResult>
       getBackgroundFetchToken<T extends GetBackgroundFetchTokenOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getBackgroundFetchToken', [option]);
 
-    return GeneralCallbackResult($$context$$: result);
+    return GetBackgroundFetchTokenSuccessCallbackResult($$context$$: result);
   }
 
   Future<GetBatteryInfoSuccessCallbackResult>
@@ -36968,11 +43985,17 @@ class Wx {
     return result;
   }
 
-  Future<GetClipboardDataSuccessCallbackResult>
+  Future<void> getChannelsShareKey([GetChannelsShareKeyOption? option]) async {
+    final result = await $$context$$
+        ?.callMethod('getChannelsShareKey', [option?.toJson()]);
+    return result;
+  }
+
+  Future<GetClipboardDataSuccessCallbackOption>
       getClipboardData<T extends GetClipboardDataOption>([T? option]) async {
     final result = await $$context$$?.callMethod('getClipboardData', [option]);
 
-    return GetClipboardDataSuccessCallbackResult($$context$$: result);
+    return GetClipboardDataSuccessCallbackOption($$context$$: result);
   }
 
   Future<GetConnectedBluetoothDevicesSuccessCallbackResult>
@@ -36986,7 +44009,7 @@ class Wx {
   }
 
   Future<GetConnectedWifiSuccessCallbackResult>
-      getConnectedWifi<T extends GetConnectedWifiOption>([T? option]) async {
+      getConnectedWifi<T extends GetConnectedWifiOption>(T option) async {
     final result = await $$context$$?.callMethod('getConnectedWifi', [option]);
 
     return GetConnectedWifiSuccessCallbackResult($$context$$: result);
@@ -36999,11 +44022,10 @@ class Wx {
     return GetExtConfigSuccessCallbackResult($$context$$: result);
   }
 
-  Future<WxGetFileInfoSuccessCallbackResult>
-      getFileInfo<T extends WxGetFileInfoOption>(T option) async {
-    final result = await $$context$$?.callMethod('getFileInfo', [option]);
-
-    return WxGetFileInfoSuccessCallbackResult($$context$$: result);
+  Future<void> getFuzzyLocation(GetFuzzyLocationOption option) async {
+    final result =
+        await $$context$$?.callMethod('getFuzzyLocation', [option.toJson()]);
+    return result;
   }
 
   Future<void> getGroupEnterInfo(GetGroupEnterInfoOption option) async {
@@ -37023,6 +44045,12 @@ class Wx {
     final result = await $$context$$?.callMethod('getImageInfo', [option]);
 
     return GetImageInfoSuccessCallbackResult($$context$$: result);
+  }
+
+  Future<void> getLocalIPAddress(GetLocalIPAddressOption option) async {
+    final result =
+        await $$context$$?.callMethod('getLocalIPAddress', [option.toJson()]);
+    return result;
   }
 
   Future<GetLocationSuccessCallbackResult>
@@ -37046,27 +44074,20 @@ class Wx {
     return GetRandomValuesSuccessCallbackResult($$context$$: result);
   }
 
-  Future<GetSavedFileInfoSuccessCallbackResult>
-      getSavedFileInfo<T extends GetSavedFileInfoOption>(T option) async {
-    final result = await $$context$$?.callMethod('getSavedFileInfo', [option]);
-
-    return GetSavedFileInfoSuccessCallbackResult($$context$$: result);
-  }
-
-  Future<WxGetSavedFileListSuccessCallbackResult>
-      getSavedFileList<T extends WxGetSavedFileListOption>([T? option]) async {
-    final result = await $$context$$?.callMethod('getSavedFileList', [option]);
-
-    return WxGetSavedFileListSuccessCallbackResult($$context$$: result);
-  }
-
-  Future<GetScreenBrightnessSuccessCallbackResult>
+  Future<GetScreenBrightnessSuccessCallbackOption>
       getScreenBrightness<T extends GetScreenBrightnessOption>(
           [T? option]) async {
     final result =
         await $$context$$?.callMethod('getScreenBrightness', [option]);
 
-    return GetScreenBrightnessSuccessCallbackResult($$context$$: result);
+    return GetScreenBrightnessSuccessCallbackOption($$context$$: result);
+  }
+
+  Future<void> getScreenRecordingState(
+      [GetScreenRecordingStateOption? option]) async {
+    final result = await $$context$$
+        ?.callMethod('getScreenRecordingState', [option?.toJson()]);
+    return result;
   }
 
   Future<GetSelectedTextRangeSuccessCallbackResult>
@@ -37090,6 +44111,12 @@ class Wx {
     final result = await $$context$$?.callMethod('getShareInfo', [option]);
 
     return GetGroupEnterInfoSuccessCallbackResult($$context$$: result);
+  }
+
+  Future<void> getSkylineInfo([GetSkylineInfoOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('getSkylineInfo', [option?.toJson()]);
+    return result;
   }
 
   Future<PromisifySuccessResult<U, GetStorageOption<T>>>
@@ -37218,6 +44245,21 @@ class Wx {
     return result;
   }
 
+  Future<GeneralCallbackResult>
+      isBluetoothDevicePaired<T extends IsBluetoothDevicePairedOption>(
+          T option) async {
+    final result =
+        await $$context$$?.callMethod('isBluetoothDevicePaired', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
+  }
+
+  Future<void> join1v1Chat(Join1v1ChatOption option) async {
+    final result =
+        await $$context$$?.callMethod('join1v1Chat', [option.toJson()]);
+    return result;
+  }
+
   Future<JoinVoIPChatSuccessCallbackResult>
       joinVoIPChat<T extends JoinVoIPChatOption>(T option) async {
     final result = await $$context$$?.callMethod('joinVoIPChat', [option]);
@@ -37269,11 +44311,11 @@ class Wx {
     return GeneralCallbackResult($$context$$: result);
   }
 
-  Future<GeneralCallbackResult> navigateTo<T extends NavigateToOption>(
-      T option) async {
+  Future<NavigateToSuccessCallbackResult>
+      navigateTo<T extends NavigateToOption>(T option) async {
     final result = await $$context$$?.callMethod('navigateTo', [option]);
 
-    return GeneralCallbackResult($$context$$: result);
+    return NavigateToSuccessCallbackResult($$context$$: result);
   }
 
   Future<GeneralCallbackResult>
@@ -37298,183 +44340,217 @@ class Wx {
     return BluetoothError($$context$$: result);
   }
 
-  Future<void> offAccelerometerChange(dynamic callback) async {
+  Future<void> offAccelerometerChange(
+      [OffAccelerometerChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offAccelerometerChange', [callback]);
+        await $$context$$?.callMethod('offAccelerometerChange', [listener]);
     return result;
   }
 
-  Future<void> offAppHide([OffAppHideCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offAppHide', [callback]);
+  Future<void> offAppHide([OffAppHideCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offAppHide', [listener]);
     return result;
   }
 
-  Future<void> offAppShow([OffAppShowCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offAppShow', [callback]);
+  Future<void> offAppShow([OffAppShowCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offAppShow', [listener]);
     return result;
   }
 
   Future<void> offAudioInterruptionBegin(
-      [OffAudioInterruptionBeginCallback? callback]) async {
+      [OffAudioInterruptionBeginCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offAudioInterruptionBegin', [callback]);
+        await $$context$$?.callMethod('offAudioInterruptionBegin', [listener]);
     return result;
   }
 
   Future<void> offAudioInterruptionEnd(
-      [OffAudioInterruptionEndCallback? callback]) async {
+      [OffAudioInterruptionEndCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offAudioInterruptionEnd', [callback]);
+        await $$context$$?.callMethod('offAudioInterruptionEnd', [listener]);
     return result;
   }
 
-  Future<void> offBLECharacteristicValueChange(dynamic callback) async {
+  Future<void> offBLECharacteristicValueChange(
+      [OffBLECharacteristicValueChangeCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offBLECharacteristicValueChange', [callback]);
+        ?.callMethod('offBLECharacteristicValueChange', [listener]);
     return result;
   }
 
-  Future<void> offBLEConnectionStateChange(dynamic callback) async {
+  Future<void> offBLEConnectionStateChange(
+      [OffBLEConnectionStateChangeCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offBLEConnectionStateChange', [callback]);
+        ?.callMethod('offBLEConnectionStateChange', [listener]);
+    return result;
+  }
+
+  Future<void> offBLEMTUChange([OffBLEMTUChangeCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offBLEMTUChange', [listener]);
     return result;
   }
 
   Future<void> offBLEPeripheralConnectionStateChanged(
-      [OffBLEPeripheralConnectionStateChangedCallback? callback]) async {
+      [OffBLEPeripheralConnectionStateChangedCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offBLEPeripheralConnectionStateChanged', [callback]);
+        ?.callMethod('offBLEPeripheralConnectionStateChanged', [listener]);
     return result;
   }
 
   Future<void> offBeaconServiceChange(
-      [OffBeaconServiceChangeCallback? callback]) async {
+      [OffBeaconServiceChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offBeaconServiceChange', [callback]);
+        await $$context$$?.callMethod('offBeaconServiceChange', [listener]);
     return result;
   }
 
-  Future<void> offBeaconUpdate([OffBeaconUpdateCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offBeaconUpdate', [callback]);
+  Future<void> offBeaconUpdate([OffBeaconUpdateCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offBeaconUpdate', [listener]);
     return result;
   }
 
-  Future<void> offBluetoothAdapterStateChange(dynamic callback) async {
+  Future<void> offBluetoothAdapterStateChange(
+      [OffBluetoothAdapterStateChangeCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offBluetoothAdapterStateChange', [callback]);
+        ?.callMethod('offBluetoothAdapterStateChange', [listener]);
     return result;
   }
 
-  Future<void> offBluetoothDeviceFound(dynamic callback) async {
+  Future<void> offBluetoothDeviceFound(
+      [OffBluetoothDeviceFoundCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offBluetoothDeviceFound', [callback]);
+        await $$context$$?.callMethod('offBluetoothDeviceFound', [listener]);
     return result;
   }
 
-  Future<void> offCompassChange(dynamic callback) async {
+  Future<void> offCompassChange([OffCompassChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offCompassChange', [callback]);
+        await $$context$$?.callMethod('offCompassChange', [listener]);
     return result;
   }
 
-  Future<void> offCopyUrl([OffCopyUrlCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offCopyUrl', [callback]);
+  Future<void> offCopyUrl([OffCopyUrlCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offCopyUrl', [listener]);
     return result;
   }
 
-  Future<void> offDeviceMotionChange(dynamic callback) async {
+  Future<void> offDeviceMotionChange(
+      [OffDeviceMotionChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offDeviceMotionChange', [callback]);
+        await $$context$$?.callMethod('offDeviceMotionChange', [listener]);
     return result;
   }
 
-  Future<void> offError(dynamic callback) async {
-    final result = await $$context$$?.callMethod('offError', [callback]);
+  Future<void> offError([WxOffErrorCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offError', [listener]);
     return result;
   }
 
-  Future<void> offGetWifiList(dynamic callback) async {
-    final result = await $$context$$?.callMethod('offGetWifiList', [callback]);
+  Future<void> offGetWifiList([OffGetWifiListCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offGetWifiList', [listener]);
     return result;
   }
 
-  Future<void> offGyroscopeChange(dynamic callback) async {
+  Future<void> offHCEMessage([OffHCEMessageCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offHCEMessage', [listener]);
+    return result;
+  }
+
+  Future<void> offKeyboardHeightChange(
+      [OffKeyboardHeightChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offGyroscopeChange', [callback]);
+        await $$context$$?.callMethod('offKeyboardHeightChange', [listener]);
     return result;
   }
 
-  Future<void> offHCEMessage(dynamic callback) async {
-    final result = await $$context$$?.callMethod('offHCEMessage', [callback]);
-    return result;
-  }
-
-  Future<void> offKeyboardHeightChange(dynamic callback) async {
+  Future<void> offLazyLoadError([OffLazyLoadErrorCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offKeyboardHeightChange', [callback]);
+        await $$context$$?.callMethod('offLazyLoadError', [listener]);
     return result;
   }
 
   Future<void> offLocalServiceDiscoveryStop(
-      [OffLocalServiceDiscoveryStopCallback? callback]) async {
+      [OffLocalServiceDiscoveryStopCallback? listener]) async {
     final result = await $$context$$
-        ?.callMethod('offLocalServiceDiscoveryStop', [callback]);
+        ?.callMethod('offLocalServiceDiscoveryStop', [listener]);
     return result;
   }
 
   Future<void> offLocalServiceFound(
-      [OffLocalServiceFoundCallback? callback]) async {
+      [OffLocalServiceFoundCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offLocalServiceFound', [callback]);
+        await $$context$$?.callMethod('offLocalServiceFound', [listener]);
     return result;
   }
 
   Future<void> offLocalServiceLost(
-      [OffLocalServiceLostCallback? callback]) async {
+      [OffLocalServiceLostCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offLocalServiceLost', [callback]);
+        await $$context$$?.callMethod('offLocalServiceLost', [listener]);
     return result;
   }
 
   Future<void> offLocalServiceResolveFail(
-      [OffLocalServiceResolveFailCallback? callback]) async {
+      [OffLocalServiceResolveFailCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offLocalServiceResolveFail', [callback]);
+        await $$context$$?.callMethod('offLocalServiceResolveFail', [listener]);
     return result;
   }
 
-  Future<void> offLocationChange([OffLocationChangeCallback? callback]) async {
+  Future<void> offLocationChange([OffLocationChangeCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offLocationChange', [callback]);
+        await $$context$$?.callMethod('offLocationChange', [listener]);
     return result;
   }
 
-  Future<void> offMemoryWarning(dynamic callback) async {
+  Future<void> offLocationChangeError(
+      [OffLocationChangeErrorCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offMemoryWarning', [callback]);
+        await $$context$$?.callMethod('offLocationChangeError', [listener]);
     return result;
   }
 
-  Future<void> offNetworkStatusChange(dynamic callback) async {
+  Future<void> offMemoryWarning([OffMemoryWarningCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offNetworkStatusChange', [callback]);
+        await $$context$$?.callMethod('offMemoryWarning', [listener]);
     return result;
   }
 
-  Future<void> offPageNotFound([OffPageNotFoundCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offPageNotFound', [callback]);
+  Future<void> offNetworkStatusChange(
+      [OffNetworkStatusChangeCallback? listener]) async {
+    final result =
+        await $$context$$?.callMethod('offNetworkStatusChange', [listener]);
     return result;
   }
 
-  Future<void> offThemeChange([OffThemeChangeCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offThemeChange', [callback]);
+  Future<void> offNetworkWeakChange(
+      [OffNetworkWeakChangeCallback? listener]) async {
+    final result =
+        await $$context$$?.callMethod('offNetworkWeakChange', [listener]);
+    return result;
+  }
+
+  Future<void> offPageNotFound([OffPageNotFoundCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offPageNotFound', [listener]);
+    return result;
+  }
+
+  Future<void> offScreenRecordingStateChanged(
+      [OffScreenRecordingStateChangedCallback? listener]) async {
+    final result = await $$context$$
+        ?.callMethod('offScreenRecordingStateChanged', [listener]);
+    return result;
+  }
+
+  Future<void> offThemeChange([OffThemeChangeCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offThemeChange', [listener]);
     return result;
   }
 
   Future<void> offUnhandledRejection(
-      [OffUnhandledRejectionCallback? callback]) async {
+      [OffUnhandledRejectionCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offUnhandledRejection', [callback]);
+        await $$context$$?.callMethod('offUnhandledRejection', [listener]);
     return result;
   }
 
@@ -37484,324 +44560,386 @@ class Wx {
     return result;
   }
 
-  Future<void> offVoIPChatInterrupted(dynamic callback) async {
+  Future<void> offVoIPChatInterrupted(
+      [OffVoIPChatInterruptedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offVoIPChatInterrupted', [callback]);
+        await $$context$$?.callMethod('offVoIPChatInterrupted', [listener]);
     return result;
   }
 
-  Future<void> offVoIPChatMembersChanged(dynamic callback) async {
+  Future<void> offVoIPChatMembersChanged(
+      [OffVoIPChatMembersChangedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offVoIPChatMembersChanged', [callback]);
+        await $$context$$?.callMethod('offVoIPChatMembersChanged', [listener]);
+    return result;
+  }
+
+  Future<void> offVoIPChatSpeakersChanged(
+      [OffVoIPChatSpeakersChangedCallback? listener]) async {
+    final result =
+        await $$context$$?.callMethod('offVoIPChatSpeakersChanged', [listener]);
     return result;
   }
 
   Future<void> offVoIPChatStateChanged(
-      [OffVoIPChatStateChangedCallback? callback]) async {
+      [OffVoIPChatStateChangedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offVoIPChatStateChanged', [callback]);
+        await $$context$$?.callMethod('offVoIPChatStateChanged', [listener]);
     return result;
   }
 
   Future<void> offVoIPVideoMembersChanged(
-      [OffVoIPVideoMembersChangedCallback? callback]) async {
+      [OffVoIPVideoMembersChangedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offVoIPVideoMembersChanged', [callback]);
+        await $$context$$?.callMethod('offVoIPVideoMembersChanged', [listener]);
     return result;
   }
 
-  Future<void> offWifiConnected(dynamic callback) async {
+  Future<void> offWifiConnected([OffWifiConnectedCallback? listener]) async {
     final result =
-        await $$context$$?.callMethod('offWifiConnected', [callback]);
+        await $$context$$?.callMethod('offWifiConnected', [listener]);
     return result;
   }
 
-  Future<void> offWindowResize([OffWindowResizeCallback? callback]) async {
-    final result = await $$context$$?.callMethod('offWindowResize', [callback]);
+  Future<void> offWifiConnectedWithPartialInfo(
+      [OffWifiConnectedWithPartialInfoCallback? listener]) async {
+    final result = await $$context$$
+        ?.callMethod('offWifiConnectedWithPartialInfo', [listener]);
+    return result;
+  }
+
+  Future<void> offWindowResize([OffWindowResizeCallback? listener]) async {
+    final result = await $$context$$?.callMethod('offWindowResize', [listener]);
     return result;
   }
 
   Future<void> onAccelerometerChange(
-      OnAccelerometerChangeCallback callback) async {
+      OnAccelerometerChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onAccelerometerChange', [callback]);
+        await $$context$$?.callMethod('onAccelerometerChange', [listener]);
     return result;
   }
 
-  Future<void> onAppHide(OnAppHideCallback callback) async {
-    final result = await $$context$$?.callMethod('onAppHide', [callback]);
+  Future<void> onAppHide(OnAppHideCallback listener) async {
+    final result = await $$context$$?.callMethod('onAppHide', [listener]);
     return result;
   }
 
-  Future<void> onAppShow(OnAppShowCallback callback) async {
-    final result = await $$context$$?.callMethod('onAppShow', [callback]);
+  Future<void> onAppShow(OnAppShowCallback listener) async {
+    final result = await $$context$$?.callMethod('onAppShow', [listener]);
     return result;
   }
 
   Future<void> onAudioInterruptionBegin(
-      OnAudioInterruptionBeginCallback callback) async {
+      OnAudioInterruptionBeginCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onAudioInterruptionBegin', [callback]);
+        await $$context$$?.callMethod('onAudioInterruptionBegin', [listener]);
     return result;
   }
 
   Future<void> onAudioInterruptionEnd(
-      OnAudioInterruptionEndCallback callback) async {
+      OnAudioInterruptionEndCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onAudioInterruptionEnd', [callback]);
+        await $$context$$?.callMethod('onAudioInterruptionEnd', [listener]);
     return result;
   }
 
   Future<void> onBLECharacteristicValueChange(
-      OnBLECharacteristicValueChangeCallback callback) async {
+      OnBLECharacteristicValueChangeCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onBLECharacteristicValueChange', [callback]);
+        ?.callMethod('onBLECharacteristicValueChange', [listener]);
     return result;
   }
 
   Future<void> onBLEConnectionStateChange(
-      OnBLEConnectionStateChangeCallback callback) async {
+      OnBLEConnectionStateChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBLEConnectionStateChange', [callback]);
+        await $$context$$?.callMethod('onBLEConnectionStateChange', [listener]);
+    return result;
+  }
+
+  Future<void> onBLEMTUChange(OnBLEMTUChangeCallback listener) async {
+    final result = await $$context$$?.callMethod('onBLEMTUChange', [listener]);
     return result;
   }
 
   Future<void> onBLEPeripheralConnectionStateChanged(
-      OnBLEPeripheralConnectionStateChangedCallback callback) async {
+      OnBLEPeripheralConnectionStateChangedCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onBLEPeripheralConnectionStateChanged', [callback]);
+        ?.callMethod('onBLEPeripheralConnectionStateChanged', [listener]);
     return result;
   }
 
   Future<void> onBackgroundAudioPause(
-      OnBackgroundAudioPauseCallback callback) async {
+      OnBackgroundAudioPauseCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBackgroundAudioPause', [callback]);
+        await $$context$$?.callMethod('onBackgroundAudioPause', [listener]);
     return result;
   }
 
   Future<void> onBackgroundAudioPlay(
-      OnBackgroundAudioPlayCallback callback) async {
+      OnBackgroundAudioPlayCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBackgroundAudioPlay', [callback]);
+        await $$context$$?.callMethod('onBackgroundAudioPlay', [listener]);
     return result;
   }
 
   Future<void> onBackgroundAudioStop(
-      OnBackgroundAudioStopCallback callback) async {
+      OnBackgroundAudioStopCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBackgroundAudioStop', [callback]);
+        await $$context$$?.callMethod('onBackgroundAudioStop', [listener]);
     return result;
   }
 
   Future<void> onBackgroundFetchData(
-      OnBackgroundFetchDataCallback callback) async {
+      OnBackgroundFetchDataCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBackgroundFetchData', [callback]);
+        await $$context$$?.callMethod('onBackgroundFetchData', [listener]);
     return result;
   }
 
   Future<void> onBeaconServiceChange(
-      OnBeaconServiceChangeCallback callback) async {
+      OnBeaconServiceChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBeaconServiceChange', [callback]);
+        await $$context$$?.callMethod('onBeaconServiceChange', [listener]);
     return result;
   }
 
-  Future<void> onBeaconUpdate(OnBeaconUpdateCallback callback) async {
-    final result = await $$context$$?.callMethod('onBeaconUpdate', [callback]);
+  Future<void> onBeaconUpdate(OnBeaconUpdateCallback listener) async {
+    final result = await $$context$$?.callMethod('onBeaconUpdate', [listener]);
     return result;
   }
 
   Future<void> onBluetoothAdapterStateChange(
-      OnBluetoothAdapterStateChangeCallback callback) async {
+      OnBluetoothAdapterStateChangeCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onBluetoothAdapterStateChange', [callback]);
+        ?.callMethod('onBluetoothAdapterStateChange', [listener]);
     return result;
   }
 
   Future<void> onBluetoothDeviceFound(
-      OnBluetoothDeviceFoundCallback callback) async {
+      OnBluetoothDeviceFoundCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onBluetoothDeviceFound', [callback]);
+        await $$context$$?.callMethod('onBluetoothDeviceFound', [listener]);
     return result;
   }
 
-  Future<void> onCompassChange(OnCompassChangeCallback callback) async {
-    final result = await $$context$$?.callMethod('onCompassChange', [callback]);
+  Future<void> onCompassChange(OnCompassChangeCallback listener) async {
+    final result = await $$context$$?.callMethod('onCompassChange', [listener]);
     return result;
   }
 
-  Future<void> onCopyUrl(OnCopyUrlCallback callback) async {
-    final result = await $$context$$?.callMethod('onCopyUrl', [callback]);
+  Future<void> onCopyUrl(OnCopyUrlCallback listener) async {
+    final result = await $$context$$?.callMethod('onCopyUrl', [listener]);
     return result;
   }
 
   Future<void> onDeviceMotionChange(
-      OnDeviceMotionChangeCallback callback) async {
+      OnDeviceMotionChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onDeviceMotionChange', [callback]);
+        await $$context$$?.callMethod('onDeviceMotionChange', [listener]);
     return result;
   }
 
-  Future<void> onError(OnAppErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onError', [callback]);
+  Future<void> onError(WxOnErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
-  Future<void> onGetWifiList(OnGetWifiListCallback callback) async {
-    final result = await $$context$$?.callMethod('onGetWifiList', [callback]);
+  Future<void> onGetWifiList(OnGetWifiListCallback listener) async {
+    final result = await $$context$$?.callMethod('onGetWifiList', [listener]);
     return result;
   }
 
-  Future<void> onGyroscopeChange(OnGyroscopeChangeCallback callback) async {
+  Future<void> onGyroscopeChange(OnGyroscopeChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onGyroscopeChange', [callback]);
+        await $$context$$?.callMethod('onGyroscopeChange', [listener]);
     return result;
   }
 
-  Future<void> onHCEMessage(OnHCEMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onHCEMessage', [callback]);
+  Future<void> onHCEMessage(OnHCEMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onHCEMessage', [listener]);
     return result;
   }
 
   Future<void> onKeyboardHeightChange(
-      OnKeyboardHeightChangeCallback callback) async {
+      OnKeyboardHeightChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onKeyboardHeightChange', [callback]);
+        await $$context$$?.callMethod('onKeyboardHeightChange', [listener]);
+    return result;
+  }
+
+  Future<void> onLazyLoadError(OnLazyLoadErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onLazyLoadError', [listener]);
     return result;
   }
 
   Future<void> onLocalServiceDiscoveryStop(
-      OnLocalServiceDiscoveryStopCallback callback) async {
+      OnLocalServiceDiscoveryStopCallback listener) async {
     final result = await $$context$$
-        ?.callMethod('onLocalServiceDiscoveryStop', [callback]);
+        ?.callMethod('onLocalServiceDiscoveryStop', [listener]);
     return result;
   }
 
-  Future<void> onLocalServiceFound(OnLocalServiceFoundCallback callback) async {
+  Future<void> onLocalServiceFound(OnLocalServiceFoundCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onLocalServiceFound', [callback]);
+        await $$context$$?.callMethod('onLocalServiceFound', [listener]);
     return result;
   }
 
-  Future<void> onLocalServiceLost(OnLocalServiceLostCallback callback) async {
+  Future<void> onLocalServiceLost(OnLocalServiceLostCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onLocalServiceLost', [callback]);
+        await $$context$$?.callMethod('onLocalServiceLost', [listener]);
     return result;
   }
 
   Future<void> onLocalServiceResolveFail(
-      OnLocalServiceResolveFailCallback callback) async {
+      OnLocalServiceResolveFailCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onLocalServiceResolveFail', [callback]);
+        await $$context$$?.callMethod('onLocalServiceResolveFail', [listener]);
     return result;
   }
 
-  Future<void> onLocationChange(OnLocationChangeCallback callback) async {
+  Future<void> onLocationChange(OnLocationChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onLocationChange', [callback]);
+        await $$context$$?.callMethod('onLocationChange', [listener]);
     return result;
   }
 
-  Future<void> onMemoryWarning(OnMemoryWarningCallback callback) async {
-    final result = await $$context$$?.callMethod('onMemoryWarning', [callback]);
+  Future<void> onLocationChangeError(
+      OnLocationChangeErrorCallback listener) async {
+    final result =
+        await $$context$$?.callMethod('onLocationChangeError', [listener]);
+    return result;
+  }
+
+  Future<void> onMemoryWarning(OnMemoryWarningCallback listener) async {
+    final result = await $$context$$?.callMethod('onMemoryWarning', [listener]);
     return result;
   }
 
   Future<void> onNetworkStatusChange(
-      OnNetworkStatusChangeCallback callback) async {
+      OnNetworkStatusChangeCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onNetworkStatusChange', [callback]);
+        await $$context$$?.callMethod('onNetworkStatusChange', [listener]);
     return result;
   }
 
-  Future<void> onPageNotFound(OnPageNotFoundCallback callback) async {
-    final result = await $$context$$?.callMethod('onPageNotFound', [callback]);
+  Future<void> onNetworkWeakChange(OnNetworkWeakChangeCallback listener) async {
+    final result =
+        await $$context$$?.callMethod('onNetworkWeakChange', [listener]);
     return result;
   }
 
-  Future<void> onSocketClose(OnSocketCloseCallback callback) async {
-    final result = await $$context$$?.callMethod('onSocketClose', [callback]);
+  Future<void> onPageNotFound(OnPageNotFoundCallback listener) async {
+    final result = await $$context$$?.callMethod('onPageNotFound', [listener]);
     return result;
   }
 
-  Future<void> onSocketError(OnSocketErrorCallback callback) async {
-    final result = await $$context$$?.callMethod('onSocketError', [callback]);
+  Future<void> onScreenRecordingStateChanged(
+      OnScreenRecordingStateChangedCallback listener) async {
+    final result = await $$context$$
+        ?.callMethod('onScreenRecordingStateChanged', [listener]);
     return result;
   }
 
-  Future<void> onSocketMessage(OnSocketMessageCallback callback) async {
-    final result = await $$context$$?.callMethod('onSocketMessage', [callback]);
+  Future<void> onSocketClose(OnSocketCloseCallback listener) async {
+    final result = await $$context$$?.callMethod('onSocketClose', [listener]);
     return result;
   }
 
-  Future<void> onSocketOpen(OnSocketOpenCallback callback) async {
-    final result = await $$context$$?.callMethod('onSocketOpen', [callback]);
+  Future<void> onSocketError(OnSocketErrorCallback listener) async {
+    final result = await $$context$$?.callMethod('onSocketError', [listener]);
     return result;
   }
 
-  Future<void> onThemeChange(OnThemeChangeCallback callback) async {
-    final result = await $$context$$?.callMethod('onThemeChange', [callback]);
+  Future<void> onSocketMessage(OnSocketMessageCallback listener) async {
+    final result = await $$context$$?.callMethod('onSocketMessage', [listener]);
+    return result;
+  }
+
+  Future<void> onSocketOpen(OnSocketOpenCallback listener) async {
+    final result = await $$context$$?.callMethod('onSocketOpen', [listener]);
+    return result;
+  }
+
+  Future<void> onThemeChange(OnThemeChangeCallback listener) async {
+    final result = await $$context$$?.callMethod('onThemeChange', [listener]);
     return result;
   }
 
   Future<void> onUnhandledRejection(
-      OnUnhandledRejectionCallback callback) async {
+      OnUnhandledRejectionCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onUnhandledRejection', [callback]);
+        await $$context$$?.callMethod('onUnhandledRejection', [listener]);
     return result;
   }
 
-  Future<void> onUserCaptureScreen(OnUserCaptureScreenCallback callback) async {
+  Future<void> onUserCaptureScreen(OnUserCaptureScreenCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onUserCaptureScreen', [callback]);
+        await $$context$$?.callMethod('onUserCaptureScreen', [listener]);
     return result;
   }
 
   Future<void> onVoIPChatInterrupted(
-      OnVoIPChatInterruptedCallback callback) async {
+      OnVoIPChatInterruptedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onVoIPChatInterrupted', [callback]);
+        await $$context$$?.callMethod('onVoIPChatInterrupted', [listener]);
     return result;
   }
 
   Future<void> onVoIPChatMembersChanged(
-      OnVoIPChatMembersChangedCallback callback) async {
+      OnVoIPChatMembersChangedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onVoIPChatMembersChanged', [callback]);
+        await $$context$$?.callMethod('onVoIPChatMembersChanged', [listener]);
     return result;
   }
 
   Future<void> onVoIPChatSpeakersChanged(
-      OnVoIPChatSpeakersChangedCallback callback) async {
+      OnVoIPChatSpeakersChangedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onVoIPChatSpeakersChanged', [callback]);
+        await $$context$$?.callMethod('onVoIPChatSpeakersChanged', [listener]);
     return result;
   }
 
   Future<void> onVoIPChatStateChanged(
-      OnVoIPChatStateChangedCallback callback) async {
+      OnVoIPChatStateChangedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onVoIPChatStateChanged', [callback]);
+        await $$context$$?.callMethod('onVoIPChatStateChanged', [listener]);
     return result;
   }
 
   Future<void> onVoIPVideoMembersChanged(
-      OnVoIPVideoMembersChangedCallback callback) async {
+      OnVoIPVideoMembersChangedCallback listener) async {
     final result =
-        await $$context$$?.callMethod('onVoIPVideoMembersChanged', [callback]);
+        await $$context$$?.callMethod('onVoIPVideoMembersChanged', [listener]);
     return result;
   }
 
-  Future<void> onWifiConnected(OnWifiConnectedCallback callback) async {
-    final result = await $$context$$?.callMethod('onWifiConnected', [callback]);
+  Future<void> onWifiConnected(OnWifiConnectedCallback listener) async {
+    final result = await $$context$$?.callMethod('onWifiConnected', [listener]);
     return result;
   }
 
-  Future<void> onWindowResize(OnWindowResizeCallback callback) async {
-    final result = await $$context$$?.callMethod('onWindowResize', [callback]);
+  Future<void> onWifiConnectedWithPartialInfo(
+      OnWifiConnectedWithPartialInfoCallback listener) async {
+    final result = await $$context$$
+        ?.callMethod('onWifiConnectedWithPartialInfo', [listener]);
     return result;
+  }
+
+  Future<void> onWindowResize(OnWindowResizeCallback listener) async {
+    final result = await $$context$$?.callMethod('onWindowResize', [listener]);
+    return result;
+  }
+
+  Future<GeneralCallbackResult>
+      openAppAuthorizeSetting<T extends OpenAppAuthorizeSettingOption>(
+          [T? option]) async {
+    final result =
+        await $$context$$?.callMethod('openAppAuthorizeSetting', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<BluetoothError>
@@ -37826,9 +44964,22 @@ class Wx {
     return result;
   }
 
+  Future<void> openChannelsEvent(OpenChannelsEventOption option) async {
+    final result =
+        await $$context$$?.callMethod('openChannelsEvent', [option.toJson()]);
+    return result;
+  }
+
   Future<void> openChannelsLive(OpenChannelsLiveOption option) async {
     final result =
         await $$context$$?.callMethod('openChannelsLive', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> openChannelsUserProfile(
+      OpenChannelsUserProfileOption option) async {
+    final result = await $$context$$
+        ?.callMethod('openChannelsUserProfile', [option.toJson()]);
     return result;
   }
 
@@ -37846,6 +44997,15 @@ class Wx {
     return GeneralCallbackResult($$context$$: result);
   }
 
+  Future<GeneralCallbackResult>
+      openEmbeddedMiniProgram<T extends OpenEmbeddedMiniProgramOption>(
+          T option) async {
+    final result =
+        await $$context$$?.callMethod('openEmbeddedMiniProgram', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
+  }
+
   Future<GeneralCallbackResult> openLocation<T extends OpenLocationOption>(
       T option) async {
     final result = await $$context$$?.callMethod('openLocation', [option]);
@@ -37858,6 +45018,15 @@ class Wx {
     final result = await $$context$$?.callMethod('openSetting', [option]);
 
     return OpenSettingSuccessCallbackResult($$context$$: result);
+  }
+
+  Future<GeneralCallbackResult>
+      openSystemBluetoothSetting<T extends OpenSystemBluetoothSettingOption>(
+          [T? option]) async {
+    final result =
+        await $$context$$?.callMethod('openSystemBluetoothSetting', [option]);
+
+    return GeneralCallbackResult($$context$$: result);
   }
 
   Future<void> openVideoEditor(OpenVideoEditorOption option) async {
@@ -37904,6 +45073,30 @@ class Wx {
     return GeneralCallbackResult($$context$$: result);
   }
 
+  Future<void> pluginLogin([PluginLoginOption? args]) async {
+    final result =
+        await $$context$$?.callMethod('pluginLogin', [args?.toJson()]);
+    return result;
+  }
+
+  Future<void> preloadAssets(PreloadAssetsOption option) async {
+    final result =
+        await $$context$$?.callMethod('preloadAssets', [option.toJson()]);
+    return result;
+  }
+
+  Future<void> preloadSkylineView([PreloadSkylineViewOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('preloadSkylineView', [option?.toJson()]);
+    return result;
+  }
+
+  Future<void> preloadWebview([PreloadWebviewOption? option]) async {
+    final result =
+        await $$context$$?.callMethod('preloadWebview', [option?.toJson()]);
+    return result;
+  }
+
   Future<GeneralCallbackResult> previewImage<T extends PreviewImageOption>(
       T option) async {
     final result = await $$context$$?.callMethod('previewImage', [option]);
@@ -37937,13 +45130,6 @@ class Wx {
   Future<GeneralCallbackResult> redirectTo<T extends RedirectToOption>(
       T option) async {
     final result = await $$context$$?.callMethod('redirectTo', [option]);
-
-    return GeneralCallbackResult($$context$$: result);
-  }
-
-  Future<GeneralCallbackResult>
-      removeSavedFile<T extends WxRemoveSavedFileOption>(T option) async {
-    final result = await $$context$$?.callMethod('removeSavedFile', [option]);
 
     return GeneralCallbackResult($$context$$: result);
   }
@@ -38006,6 +45192,22 @@ class Wx {
     return GeneralCallbackResult($$context$$: result);
   }
 
+  Future<void> requestPluginPayment(RequestPluginPaymentOption option) async {
+    final result = await $$context$$
+        ?.callMethod('requestPluginPayment', [option.toJson()]);
+    return result;
+  }
+
+  Future<RequestSubscribeDeviceMessageSuccessCallbackResult>
+      requestSubscribeDeviceMessage<
+          T extends RequestSubscribeDeviceMessageOption>(T option) async {
+    final result = await $$context$$
+        ?.callMethod('requestSubscribeDeviceMessage', [option]);
+
+    return RequestSubscribeDeviceMessageSuccessCallbackResult(
+        $$context$$: result);
+  }
+
   Future<RequestSubscribeMessageSuccessCallbackResult>
       requestSubscribeMessage<T extends RequestSubscribeMessageOption>(
           T option) async {
@@ -38024,13 +45226,6 @@ class Wx {
   Future<void> revokeBufferURL(String url) async {
     final result = await $$context$$?.callMethod('revokeBufferURL', [url]);
     return result;
-  }
-
-  Future<SaveFileSuccessCallbackResult> saveFile<T extends WxSaveFileOption>(
-      T option) async {
-    final result = await $$context$$?.callMethod('saveFile', [option]);
-
-    return SaveFileSuccessCallbackResult($$context$$: result);
   }
 
   Future<void> saveFileToDisk(SaveFileToDiskOption option) async {
@@ -38064,13 +45259,6 @@ class Wx {
     return ScanCodeSuccessCallbackResult($$context$$: result);
   }
 
-  Future<SearchContactsSuccessCallbackResult>
-      searchContacts<T extends SearchContactsOption>(T option) async {
-    final result = await $$context$$?.callMethod('searchContacts', [option]);
-
-    return SearchContactsSuccessCallbackResult($$context$$: result);
-  }
-
   Future<GeneralCallbackResult>
       seekBackgroundAudio<T extends SeekBackgroundAudioOption>(T option) async {
     final result =
@@ -38084,6 +45272,11 @@ class Wx {
     final result = await $$context$$?.callMethod('sendHCEMessage', [option]);
 
     return NFCError($$context$$: result);
+  }
+
+  Future<void> sendSms(SendSmsOption option) async {
+    final result = await $$context$$?.callMethod('sendSms', [option.toJson()]);
+    return result;
   }
 
   Future<GeneralCallbackResult>
@@ -38131,6 +45324,12 @@ class Wx {
     final result = await $$context$$?.callMethod('setClipboardData', [option]);
 
     return GeneralCallbackResult($$context$$: result);
+  }
+
+  Future<void> setEnable1v1Chat(SetEnable1v1ChatOption option) async {
+    final result =
+        await $$context$$?.callMethod('setEnable1v1Chat', [option.toJson()]);
+    return result;
   }
 
   Future<GeneralCallbackResult> setEnableDebug<T extends SetEnableDebugOption>(
@@ -38219,6 +45418,13 @@ class Wx {
     final result = await $$context$$?.callMethod('setTopBarText', [option]);
 
     return GeneralCallbackResult($$context$$: result);
+  }
+
+  Future<void> setVisualEffectOnCapture(
+      SetVisualEffectOnCaptureOption option) async {
+    final result = await $$context$$
+        ?.callMethod('setVisualEffectOnCapture', [option.toJson()]);
+    return result;
   }
 
   Future<WifiError> setWifiList<T extends SetWifiListOption>(T option) async {
@@ -38392,8 +45598,7 @@ class Wx {
   }
 
   Future<GeneralCallbackResult>
-      startLocationUpdate<T extends StartLocationUpdateOption>(
-          [T? option]) async {
+      startLocationUpdate<T extends StartLocationUpdateOption>(T option) async {
     final result =
         await $$context$$?.callMethod('startLocationUpdate', [option]);
 
@@ -38401,7 +45606,7 @@ class Wx {
   }
 
   Future<GeneralCallbackResult> startLocationUpdateBackground<
-      T extends StartLocationUpdateBackgroundOption>([T? option]) async {
+      T extends StartLocationUpdateBackgroundOption>(T option) async {
     final result = await $$context$$
         ?.callMethod('startLocationUpdateBackground', [option]);
 
@@ -38614,6 +45819,11 @@ class Wx {
 
     return BluetoothError($$context$$: result);
   }
+
+  Future<dynamic> getXrFrameSystem() async {
+    final result = await $$context$$?.callMethod('getXrFrameSystem', []);
+    return result;
+  }
 }
 
 typedef AccessCompleteCallback = void Function(GeneralCallbackResult);
@@ -38621,6 +45831,12 @@ typedef AccessCompleteCallback = void Function(GeneralCallbackResult);
 typedef AccessFailCallback = void Function(AccessFailCallbackResult);
 
 typedef AccessSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef AddArcCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef AddArcFailCallback = void Function(GeneralCallbackResult);
+
+typedef AddArcSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef AddCardCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -38689,11 +45905,71 @@ typedef AddVideoToFavoritesFailCallback = void Function(GeneralCallbackResult);
 typedef AddVideoToFavoritesSuccessCallback = void Function(
     GeneralCallbackResult);
 
+typedef AddVisualLayerCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef AddVisualLayerFailCallback = void Function(GeneralCallbackResult);
+
+typedef AddVisualLayerSuccessCallback = void Function(GeneralCallbackResult);
+
 typedef AppendFileCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef AppendFileFailCallback = void Function(AppendFileFailCallbackResult);
 
 typedef AppendFileSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyBlusherStickMakeupCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyBlusherStickMakeupFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyBlusherStickMakeupSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyEyeBrowMakeupCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyEyeBrowMakeupFailCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyEyeBrowMakeupSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyEyeShadowMakeupCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyEyeShadowMakeupFailCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyEyeShadowMakeupSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyFaceContourMakeupCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyFaceContourMakeupFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyFaceContourMakeupSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyFilterCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyFilterFailCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyFilterSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyLipStickMakeupCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyLipStickMakeupFailCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyLipStickMakeupSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ApplyStickerCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyStickerFailCallback = void Function(GeneralCallbackResult);
+
+typedef ApplyStickerSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef AuthPrivateMessageCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -38720,6 +45996,18 @@ typedef AuthorizeSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef BackgroundAudioManagerOnErrorCallback = void Function(
     GeneralCallbackResult);
+
+typedef BatchGetStorageCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef BatchGetStorageFailCallback = void Function(GeneralCallbackResult);
+
+typedef BatchGetStorageSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef BatchSetStorageCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef BatchSetStorageFailCallback = void Function(GeneralCallbackResult);
+
+typedef BatchSetStorageSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef BlurCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -38760,6 +46048,15 @@ typedef CanvasToTempFilePathFailCallback = void Function(GeneralCallbackResult);
 typedef CanvasToTempFilePathSuccessCallback = void Function(
     CanvasToTempFilePathSuccessCallbackResult);
 
+typedef CheckIsAddedToMyMiniProgramCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef CheckIsAddedToMyMiniProgramFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef CheckIsAddedToMyMiniProgramSuccessCallback = void Function(
+    CheckIsAddedToMyMiniProgramSuccessCallbackResult);
+
 typedef CheckIsOpenAccessibilityCompleteCallback = void Function(
     GeneralCallbackResult);
 
@@ -38767,7 +46064,7 @@ typedef CheckIsOpenAccessibilityFailCallback = void Function(
     GeneralCallbackResult);
 
 typedef CheckIsOpenAccessibilitySuccessCallback = void Function(
-    CheckIsOpenAccessibilitySuccessCallbackResult);
+    CheckIsOpenAccessibilitySuccessCallbackOption);
 
 typedef CheckIsSoterEnrolledInDeviceCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -38805,7 +46102,7 @@ typedef ChooseContactCompleteCallback = void Function(GeneralCallbackResult);
 typedef ChooseContactFailCallback = void Function(GeneralCallbackResult);
 
 typedef ChooseContactSuccessCallback = void Function(
-    ChooseContactSuccessCallbackResult);
+    ChooseContactSuccessCallbackOption);
 
 typedef ChooseImageCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -38876,6 +46173,24 @@ typedef ChooseVideoSuccessCallback = void Function(
 typedef ClearCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef ClearFailCallback = void Function(GeneralCallbackResult);
+
+typedef ClearFiltersCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef ClearFiltersFailCallback = void Function(GeneralCallbackResult);
+
+typedef ClearFiltersSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef ClearMakeupsCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef ClearMakeupsFailCallback = void Function(GeneralCallbackResult);
+
+typedef ClearMakeupsSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef ClearStickersCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef ClearStickersFailCallback = void Function(GeneralCallbackResult);
+
+typedef ClearStickersSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef ClearStorageCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -38958,6 +46273,16 @@ typedef CreateBLEPeripheralServerFailCallback = void Function(
 typedef CreateBLEPeripheralServerSuccessCallback = void Function(
     CreateBLEPeripheralServerSuccessCallbackResult);
 
+typedef CropImageCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef CropImageFailCallback = void Function(GeneralCallbackResult);
+
+typedef CropImageSuccessCallback = void Function(
+    EditImageSuccessCallbackResult);
+
+typedef CustomRendererFrameEventCallback = void Function(
+    OnCustomRendererEventCallbackResult);
+
 typedef DisableAlertBeforeUnloadCompleteCallback = void Function(
     GeneralCallbackResult);
 
@@ -38975,10 +46300,17 @@ typedef DownloadFileSuccessCallback = void Function(
     DownloadFileSuccessCallbackResult);
 
 typedef DownloadTaskOffProgressUpdateCallback = void Function(
-    DownloadTaskOnProgressUpdateCallbackResult);
+    DownloadTaskOnProgressUpdateListenerResult);
 
 typedef DownloadTaskOnProgressUpdateCallback = void Function(
-    DownloadTaskOnProgressUpdateCallbackResult);
+    DownloadTaskOnProgressUpdateListenerResult);
+
+typedef EditImageCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef EditImageFailCallback = void Function(GeneralCallbackResult);
+
+typedef EditImageSuccessCallback = void Function(
+    EditImageSuccessCallbackResult);
 
 typedef EnableAlertBeforeUnloadCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -38990,6 +46322,15 @@ typedef EnableAlertBeforeUnloadSuccessCallback = void Function(
     GeneralCallbackResult);
 
 typedef EventCallback = void Function(dynamic);
+
+typedef ExecuteVisualLayerCommandCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ExecuteVisualLayerCommandFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ExecuteVisualLayerCommandSuccessCallback = void Function(
+    ExecuteVisualLayerCommandSuccessCallbackResult);
 
 typedef ExitFullScreenCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -39034,21 +46375,6 @@ typedef FileSystemManagerCloseFailCallback = void Function(
 
 typedef FileSystemManagerCloseSuccessCallback = void Function(
     GeneralCallbackResult);
-
-typedef FileSystemManagerGetFileInfoFailCallback = void Function(
-    GetFileInfoFailCallbackResult);
-
-typedef FileSystemManagerGetFileInfoSuccessCallback = void Function(
-    FileSystemManagerGetFileInfoSuccessCallbackResult);
-
-typedef FileSystemManagerGetSavedFileListSuccessCallback = void Function(
-    FileSystemManagerGetSavedFileListSuccessCallbackResult);
-
-typedef FileSystemManagerRemoveSavedFileFailCallback = void Function(
-    RemoveSavedFileFailCallbackResult);
-
-typedef FileSystemManagerSaveFileFailCallback = void Function(
-    SaveFileFailCallbackResult);
 
 typedef FromScreenLocationCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -39107,6 +46433,13 @@ typedef GetBLEDeviceServicesFailCallback = void Function(BluetoothError);
 typedef GetBLEDeviceServicesSuccessCallback = void Function(
     GetBLEDeviceServicesSuccessCallbackResult);
 
+typedef GetBLEMTUCompleteCallback = void Function(BluetoothError);
+
+typedef GetBLEMTUFailCallback = void Function(BluetoothError);
+
+typedef GetBLEMTUSuccessCallback = void Function(
+    GetBLEMTUSuccessCallbackResult);
+
 typedef GetBackgroundAudioPlayerStateCompleteCallback = void Function(
     GeneralCallbackResult);
 
@@ -39123,7 +46456,7 @@ typedef GetBackgroundFetchDataFailCallback = void Function(
     GeneralCallbackResult);
 
 typedef GetBackgroundFetchDataSuccessCallback = void Function(
-    GeneralCallbackResult);
+    GetBackgroundFetchDataSuccessCallbackResult);
 
 typedef GetBackgroundFetchTokenCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -39132,7 +46465,7 @@ typedef GetBackgroundFetchTokenFailCallback = void Function(
     GeneralCallbackResult);
 
 typedef GetBackgroundFetchTokenSuccessCallback = void Function(
-    GeneralCallbackResult);
+    GetBackgroundFetchTokenSuccessCallbackResult);
 
 typedef GetBatteryInfoCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -39188,12 +46521,20 @@ typedef GetChannelsLiveNoticeInfoFailCallback = void Function(
 typedef GetChannelsLiveNoticeInfoSuccessCallback = void Function(
     GetChannelsLiveNoticeInfoSuccessCallbackResult);
 
+typedef GetChannelsShareKeyCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef GetChannelsShareKeyFailCallback = void Function(GeneralCallbackResult);
+
+typedef GetChannelsShareKeySuccessCallback = void Function(
+    GetChannelsShareKeySuccessCallbackResult);
+
 typedef GetClipboardDataCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef GetClipboardDataFailCallback = void Function(GeneralCallbackResult);
 
 typedef GetClipboardDataSuccessCallback = void Function(
-    GetClipboardDataSuccessCallbackResult);
+    GetClipboardDataSuccessCallbackOption);
 
 typedef GetConnectedBluetoothDevicesCompleteCallback = void Function(
     BluetoothError);
@@ -39226,6 +46567,18 @@ typedef GetExtConfigSuccessCallback = void Function(
     GetExtConfigSuccessCallbackResult);
 
 typedef GetFileInfoCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef GetFileInfoFailCallback = void Function(GetFileInfoFailCallbackResult);
+
+typedef GetFileInfoSuccessCallback = void Function(
+    GetFileInfoSuccessCallbackResult);
+
+typedef GetFuzzyLocationCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef GetFuzzyLocationFailCallback = void Function(GeneralCallbackResult);
+
+typedef GetFuzzyLocationSuccessCallback = void Function(
+    GetFuzzyLocationSuccessCallbackResult);
 
 typedef GetGroupEnterInfoCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -39261,6 +46614,14 @@ typedef GetLatestUserKeyFailCallback = void Function(GeneralCallbackResult);
 
 typedef GetLatestUserKeySuccessCallback = void Function(
     GetLatestUserKeySuccessCallbackResult);
+
+typedef GetLocalIPAddressCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef GetLocalIPAddressFailCallback = void Function(GeneralCallbackResult);
+
+typedef GetLocalIPAddressSuccessCallback = void Function(
+    GetLocalIPAddressSuccessCallbackResult);
 
 typedef GetLocationCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -39310,16 +46671,12 @@ typedef GetSakFailCallback = void Function(Nfcrwerror);
 
 typedef GetSakSuccessCallback = void Function(GetSakSuccessCallbackResult);
 
-typedef GetSavedFileInfoCompleteCallback = void Function(GeneralCallbackResult);
-
-typedef GetSavedFileInfoFailCallback = void Function(GeneralCallbackResult);
-
-typedef GetSavedFileInfoSuccessCallback = void Function(
-    GetSavedFileInfoSuccessCallbackResult);
-
 typedef GetSavedFileListCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef GetSavedFileListFailCallback = void Function(GeneralCallbackResult);
+
+typedef GetSavedFileListSuccessCallback = void Function(
+    GetSavedFileListSuccessCallbackResult);
 
 typedef GetScaleCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -39333,7 +46690,16 @@ typedef GetScreenBrightnessCompleteCallback = void Function(
 typedef GetScreenBrightnessFailCallback = void Function(GeneralCallbackResult);
 
 typedef GetScreenBrightnessSuccessCallback = void Function(
-    GetScreenBrightnessSuccessCallbackResult);
+    GetScreenBrightnessSuccessCallbackOption);
+
+typedef GetScreenRecordingStateCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef GetScreenRecordingStateFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef GetScreenRecordingStateSuccessCallback = void Function(
+    GetScreenRecordingStateSuccessCallbackResult);
 
 typedef GetSelectedTextRangeCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -39370,6 +46736,12 @@ typedef GetSkewFailCallback = void Function(GeneralCallbackResult);
 
 typedef GetSkewSuccessCallback = void Function(GetSkewSuccessCallbackResult);
 
+typedef GetSkylineInfoCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef GetSkylineInfoFailCallback = void Function(GeneralCallbackResult);
+
+typedef GetSkylineInfoSuccessCallback = void Function(SkylineInfo);
+
 typedef GetStorageCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef GetStorageFailCallback = void Function(GeneralCallbackResult);
@@ -39381,7 +46753,7 @@ typedef GetStorageInfoFailCallback = void Function(GeneralCallbackResult);
 typedef GetStorageInfoSuccessCallback = void Function(
     GetStorageInfoSuccessCallbackOption);
 
-typedef GetStorageSuccessCallback<T> = void Function<T>(
+typedef GetStorageSuccessCallback<T> = void Function(
     GetStorageSuccessCallbackResult<T>);
 
 typedef GetSystemInfoAsyncCompleteCallback = void Function(
@@ -39502,10 +46874,10 @@ typedef InitMarkerClusterFailCallback = void Function(GeneralCallbackResult);
 typedef InitMarkerClusterSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef InnerAudioContextOffErrorCallback = void Function(
-    InnerAudioContextOnErrorCallbackResult);
+    InnerAudioContextOnErrorListenerResult);
 
 typedef InnerAudioContextOnErrorCallback = void Function(
-    InnerAudioContextOnErrorCallbackResult);
+    InnerAudioContextOnErrorListenerResult);
 
 typedef InnerAudioContextOnStopCallback = void Function(GeneralCallbackResult);
 
@@ -39531,16 +46903,31 @@ typedef IntersectionObserverObserveCallback = void Function(
     IntersectionObserverObserveCallbackResult);
 
 typedef InterstitialAdOffErrorCallback = void Function(
-    InterstitialAdOnErrorCallbackResult);
+    InterstitialAdOnErrorListenerResult);
 
 typedef InterstitialAdOnErrorCallback = void Function(
-    InterstitialAdOnErrorCallbackResult);
+    InterstitialAdOnErrorListenerResult);
+
+typedef IsBluetoothDevicePairedCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef IsBluetoothDevicePairedFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef IsBluetoothDevicePairedSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef IsConnectedCompleteCallback = void Function(Nfcrwerror);
 
 typedef IsConnectedFailCallback = void Function(Nfcrwerror);
 
 typedef IsConnectedSuccessCallback = void Function(Nfcrwerror);
+
+typedef Join1v1ChatCompleteCallback = void Function(Join1v1ChatError);
+
+typedef Join1v1ChatFailCallback = void Function(Join1v1ChatError);
+
+typedef Join1v1ChatSuccessCallback = void Function(Join1v1ChatError);
 
 typedef JoinVoIPChatCompleteCallback = void Function(JoinVoIPChatError);
 
@@ -39638,7 +47025,8 @@ typedef NavigateToMiniProgramFailCallback = void Function(
 typedef NavigateToMiniProgramSuccessCallback = void Function(
     GeneralCallbackResult);
 
-typedef NavigateToSuccessCallback = void Function(GeneralCallbackResult);
+typedef NavigateToSuccessCallback = void Function(
+    NavigateToSuccessCallbackResult);
 
 typedef NdefCloseCompleteCallback = void Function(Nfcrwerror);
 
@@ -39657,46 +47045,78 @@ typedef NotifyBLECharacteristicValueChangeFailCallback = void Function(
 typedef NotifyBLECharacteristicValueChangeSuccessCallback = void Function(
     BluetoothError);
 
+typedef OffAccelerometerChangeCallback = void Function(GeneralCallbackResult);
+
 typedef OffAppHideCallback = void Function(GeneralCallbackResult);
 
-typedef OffAppShowCallback = void Function(OnAppShowCallbackResult);
+typedef OffAppShowCallback = void Function(GeneralCallbackResult);
 
 typedef OffAudioInterruptionBeginCallback = void Function(
     GeneralCallbackResult);
 
 typedef OffAudioInterruptionEndCallback = void Function(GeneralCallbackResult);
 
+typedef OffBLECharacteristicValueChangeCallback = void Function(
+    OnBLECharacteristicValueChangeListenerResult);
+
+typedef OffBLEConnectionStateChangeCallback = void Function(
+    OnBLEConnectionStateChangeListenerResult);
+
+typedef OffBLEMTUChangeCallback = void Function(OnBLEMTUChangeListenerResult);
+
 typedef OffBLEPeripheralConnectionStateChangedCallback = void Function(
-    OnBLEPeripheralConnectionStateChangedCallbackResult);
+    OnBLEPeripheralConnectionStateChangedListenerResult);
 
 typedef OffBeaconServiceChangeCallback = void Function(GeneralCallbackResult);
 
 typedef OffBeaconUpdateCallback = void Function(GeneralCallbackResult);
 
+typedef OffBindWifiCallback = void Function(GeneralCallbackResult);
+
+typedef OffBluetoothAdapterStateChangeCallback = void Function(
+    OnBluetoothAdapterStateChangeListenerResult);
+
+typedef OffBluetoothDeviceFoundCallback = void Function(GeneralCallbackResult);
+
 typedef OffCanplayCallback = void Function(GeneralCallbackResult);
 
 typedef OffCharacteristicReadRequestCallback = void Function(
-    OnCharacteristicReadRequestCallbackResult);
+    OnCharacteristicReadRequestListenerResult);
 
 typedef OffCharacteristicSubscribedCallback = void Function(
-    OnCharacteristicSubscribedCallbackResult);
+    OnCharacteristicSubscribedListenerResult);
 
 typedef OffCharacteristicUnsubscribedCallback = void Function(
-    OnCharacteristicSubscribedCallbackResult);
+    OnCharacteristicSubscribedListenerResult);
 
 typedef OffCharacteristicWriteRequestCallback = void Function(
-    OnCharacteristicWriteRequestCallbackResult);
+    OnCharacteristicWriteRequestListenerResult);
+
+typedef OffChunkReceivedCallback = void Function(OnChunkReceivedListenerResult);
+
+typedef OffCompassChangeCallback = void Function(GeneralCallbackResult);
 
 typedef OffConnectCallback = void Function(GeneralCallbackResult);
 
-typedef OffCopyUrlCallback = void Function(OnCopyUrlCallbackResult);
+typedef OffCopyUrlCallback = void Function(OnCopyUrlListenerResult);
 
-typedef OffDiscoveredCallback = void Function(OnDiscoveredCallbackResult);
+typedef OffDeviceMotionChangeCallback = void Function(GeneralCallbackResult);
+
+typedef OffDiscoveredCallback = void Function(OnDiscoveredListenerResult);
 
 typedef OffEndedCallback = void Function(GeneralCallbackResult);
 
+typedef OffGetWifiListCallback = void Function(OnGetWifiListListenerResult);
+
+typedef OffHCEMessageCallback = void Function(OnHCEMessageListenerResult);
+
 typedef OffHeadersReceivedCallback = void Function(
-    OnHeadersReceivedCallbackResult);
+    OnHeadersReceivedListenerResult);
+
+typedef OffKeyboardHeightChangeCallback = void Function(
+    OnKeyboardHeightChangeListenerResult);
+
+typedef OffLazyLoadErrorCallback = void Function(OnLazyLoadErrorListenerResult);
 
 typedef OffListeningCallback = void Function(GeneralCallbackResult);
 
@@ -39706,22 +47126,35 @@ typedef OffLocalServiceDiscoveryStopCallback = void Function(
     GeneralCallbackResult);
 
 typedef OffLocalServiceFoundCallback = void Function(
-    OnLocalServiceFoundCallbackResult);
+    OnLocalServiceFoundListenerResult);
 
 typedef OffLocalServiceLostCallback = void Function(
-    OnLocalServiceLostCallbackResult);
+    OnLocalServiceLostListenerResult);
 
 typedef OffLocalServiceResolveFailCallback = void Function(
-    OnLocalServiceLostCallbackResult);
+    OnLocalServiceLostListenerResult);
 
 typedef OffLocationChangeCallback = void Function(
-    OnLocationChangeCallbackResult);
+    OnLocationChangeListenerResult);
 
-typedef OffPageNotFoundCallback = void Function(OnPageNotFoundCallbackResult);
+typedef OffLocationChangeErrorCallback = void Function(
+    OnLocationChangeErrorListenerResult);
+
+typedef OffMemoryWarningCallback = void Function(OnMemoryWarningListenerResult);
+
+typedef OffNetworkStatusChangeCallback = void Function(GeneralCallbackResult);
+
+typedef OffNetworkWeakChangeCallback = void Function(
+    OnNetworkWeakChangeListenerResult);
+
+typedef OffPageNotFoundCallback = void Function(OnPageNotFoundListenerResult);
 
 typedef OffPauseCallback = void Function(GeneralCallbackResult);
 
 typedef OffPlayCallback = void Function(GeneralCallbackResult);
+
+typedef OffScreenRecordingStateChangedCallback = void Function(
+    OnScreenRecordingStateChangedListenerResult);
 
 typedef OffSeekedCallback = void Function(GeneralCallbackResult);
 
@@ -39729,44 +47162,58 @@ typedef OffSeekingCallback = void Function(GeneralCallbackResult);
 
 typedef OffStopCallback = void Function(GeneralCallbackResult);
 
-typedef OffThemeChangeCallback = void Function(OnThemeChangeCallbackResult);
+typedef OffThemeChangeCallback = void Function(OnThemeChangeListenerResult);
 
 typedef OffTimeUpdateCallback = void Function(GeneralCallbackResult);
 
 typedef OffUnhandledRejectionCallback = void Function(
-    OnUnhandledRejectionCallbackResult);
+    OnUnhandledRejectionListenerResult);
+
+typedef OffVoIPChatInterruptedCallback = void Function(
+    OnVoIPChatInterruptedListenerResult);
+
+typedef OffVoIPChatMembersChangedCallback = void Function(
+    OnVoIPChatMembersChangedListenerResult);
+
+typedef OffVoIPChatSpeakersChangedCallback = void Function(
+    OnVoIPChatSpeakersChangedListenerResult);
 
 typedef OffVoIPChatStateChangedCallback = void Function(
-    OnVoIPChatStateChangedCallbackResult);
+    OnVoIPChatStateChangedListenerResult);
 
 typedef OffVoIPVideoMembersChangedCallback = void Function(
-    OnVoIPVideoMembersChangedCallbackResult);
+    OnVoIPVideoMembersChangedListenerResult);
 
 typedef OffWaitingCallback = void Function(GeneralCallbackResult);
 
-typedef OffWindowResizeCallback = void Function(OnWindowResizeCallbackResult);
+typedef OffWifiConnectedCallback = void Function(OnWifiConnectedListenerResult);
+
+typedef OffWifiConnectedWithPartialInfoCallback = void Function(
+    OnWifiConnectedWithPartialInfoListenerResult);
+
+typedef OffWindowResizeCallback = void Function(OnWindowResizeListenerResult);
 
 typedef OnAccelerometerChangeCallback = void Function(
-    OnAccelerometerChangeCallbackResult);
-
-typedef OnAppErrorCallback = void Function(String);
+    OnAccelerometerChangeListenerResult);
 
 typedef OnAppHideCallback = void Function(GeneralCallbackResult);
 
-typedef OnAppShowCallback = void Function(OnAppShowCallbackResult);
+typedef OnAppShowCallback = void Function(LaunchOptionsApp);
 
 typedef OnAudioInterruptionBeginCallback = void Function(GeneralCallbackResult);
 
 typedef OnAudioInterruptionEndCallback = void Function(GeneralCallbackResult);
 
 typedef OnBLECharacteristicValueChangeCallback = void Function(
-    OnBLECharacteristicValueChangeCallbackResult);
+    OnBLECharacteristicValueChangeListenerResult);
 
 typedef OnBLEConnectionStateChangeCallback = void Function(
-    OnBLEConnectionStateChangeCallbackResult);
+    OnBLEConnectionStateChangeListenerResult);
+
+typedef OnBLEMTUChangeCallback = void Function(OnBLEMTUChangeListenerResult);
 
 typedef OnBLEPeripheralConnectionStateChangedCallback = void Function(
-    OnBLEPeripheralConnectionStateChangedCallbackResult);
+    OnBLEPeripheralConnectionStateChangedListenerResult);
 
 typedef OnBackgroundAudioPauseCallback = void Function(GeneralCallbackResult);
 
@@ -39775,69 +47222,75 @@ typedef OnBackgroundAudioPlayCallback = void Function(GeneralCallbackResult);
 typedef OnBackgroundAudioStopCallback = void Function(GeneralCallbackResult);
 
 typedef OnBackgroundFetchDataCallback = void Function(
-    OnBackgroundFetchDataCallbackResult);
+    OnBackgroundFetchDataListenerResult);
 
 typedef OnBeaconServiceChangeCallback = void Function(
-    OnBeaconServiceChangeCallbackResult);
+    OnBeaconServiceChangeListenerResult);
 
-typedef OnBeaconUpdateCallback = void Function(OnBeaconUpdateCallbackResult);
+typedef OnBeaconUpdateCallback = void Function(OnBeaconUpdateListenerResult);
+
+typedef OnBindWifiCallback = void Function(GeneralCallbackResult);
 
 typedef OnBluetoothAdapterStateChangeCallback = void Function(
-    OnBluetoothAdapterStateChangeCallbackResult);
+    OnBluetoothAdapterStateChangeListenerResult);
 
 typedef OnBluetoothDeviceFoundCallback = void Function(
-    OnBluetoothDeviceFoundCallbackResult);
+    OnBluetoothDeviceFoundListenerResult);
 
 typedef OnCameraFrameCallback = void Function(OnCameraFrameCallbackResult);
 
 typedef OnCanplayCallback = void Function(GeneralCallbackResult);
 
 typedef OnCharacteristicReadRequestCallback = void Function(
-    OnCharacteristicReadRequestCallbackResult);
+    OnCharacteristicReadRequestListenerResult);
 
 typedef OnCharacteristicSubscribedCallback = void Function(
-    OnCharacteristicSubscribedCallbackResult);
+    OnCharacteristicSubscribedListenerResult);
 
 typedef OnCharacteristicUnsubscribedCallback = void Function(
-    OnCharacteristicSubscribedCallbackResult);
+    OnCharacteristicSubscribedListenerResult);
 
 typedef OnCharacteristicWriteRequestCallback = void Function(
-    OnCharacteristicWriteRequestCallbackResult);
+    OnCharacteristicWriteRequestListenerResult);
 
 typedef OnCheckForUpdateCallback = void Function(
-    OnCheckForUpdateCallbackResult);
+    OnCheckForUpdateListenerResult);
 
-typedef OnCompassChangeCallback = void Function(OnCompassChangeCallbackResult);
+typedef OnChunkReceivedCallback = void Function(OnChunkReceivedListenerResult);
+
+typedef OnCompassChangeCallback = void Function(OnCompassChangeListenerResult);
 
 typedef OnConnectCallback = void Function(GeneralCallbackResult);
 
-typedef OnCopyUrlCallback = void Function(OnCopyUrlCallbackResult);
+typedef OnCopyUrlCallback = void Function(OnCopyUrlListenerResult);
 
 typedef OnDeviceMotionChangeCallback = void Function(
-    OnDeviceMotionChangeCallbackResult);
+    OnDeviceMotionChangeListenerResult);
 
-typedef OnDiscoveredCallback = void Function(OnDiscoveredCallbackResult);
+typedef OnDiscoveredCallback = void Function(OnDiscoveredListenerResult);
 
 typedef OnEndedCallback = void Function(GeneralCallbackResult);
 
-typedef OnFrameRecordedCallback = void Function(OnFrameRecordedCallbackResult);
+typedef OnFrameRecordedCallback = void Function(OnFrameRecordedListenerResult);
 
-typedef OnGetWifiListCallback = void Function(OnGetWifiListCallbackResult);
+typedef OnGetWifiListCallback = void Function(OnGetWifiListListenerResult);
 
 typedef OnGyroscopeChangeCallback = void Function(
-    OnGyroscopeChangeCallbackResult);
+    OnGyroscopeChangeListenerResult);
 
-typedef OnHCEMessageCallback = void Function(OnHCEMessageCallbackResult);
+typedef OnHCEMessageCallback = void Function(OnHCEMessageListenerResult);
 
 typedef OnHeadersReceivedCallback = void Function(
-    OnHeadersReceivedCallbackResult);
+    OnHeadersReceivedListenerResult);
 
 typedef OnInterruptionBeginCallback = void Function(GeneralCallbackResult);
 
 typedef OnInterruptionEndCallback = void Function(GeneralCallbackResult);
 
 typedef OnKeyboardHeightChangeCallback = void Function(
-    OnKeyboardHeightChangeCallbackResult);
+    OnKeyboardHeightChangeListenerResult);
+
+typedef OnLazyLoadErrorCallback = void Function(OnLazyLoadErrorListenerResult);
 
 typedef OnListeningCallback = void Function(GeneralCallbackResult);
 
@@ -39847,27 +47300,33 @@ typedef OnLocalServiceDiscoveryStopCallback = void Function(
     GeneralCallbackResult);
 
 typedef OnLocalServiceFoundCallback = void Function(
-    OnLocalServiceFoundCallbackResult);
+    OnLocalServiceFoundListenerResult);
 
 typedef OnLocalServiceLostCallback = void Function(
-    OnLocalServiceLostCallbackResult);
+    OnLocalServiceLostListenerResult);
 
 typedef OnLocalServiceResolveFailCallback = void Function(
-    OnLocalServiceLostCallbackResult);
+    OnLocalServiceLostListenerResult);
 
 typedef OnLocationChangeCallback = void Function(
-    OnLocationChangeCallbackResult);
+    OnLocationChangeListenerResult);
 
-typedef OnMemoryWarningCallback = void Function(OnMemoryWarningCallbackResult);
+typedef OnLocationChangeErrorCallback = void Function(
+    OnLocationChangeErrorListenerResult);
+
+typedef OnMemoryWarningCallback = void Function(OnMemoryWarningListenerResult);
 
 typedef OnNetworkStatusChangeCallback = void Function(
-    OnNetworkStatusChangeCallbackResult);
+    OnNetworkStatusChangeListenerResult);
+
+typedef OnNetworkWeakChangeCallback = void Function(
+    OnNetworkWeakChangeListenerResult);
 
 typedef OnNextCallback = void Function(GeneralCallbackResult);
 
-typedef OnOpenCallback = void Function(OnOpenCallbackResult);
+typedef OnOpenCallback = void Function(OnOpenListenerResult);
 
-typedef OnPageNotFoundCallback = void Function(OnPageNotFoundCallbackResult);
+typedef OnPageNotFoundCallback = void Function(OnPageNotFoundListenerResult);
 
 typedef OnPauseCallback = void Function(GeneralCallbackResult);
 
@@ -39879,27 +47338,30 @@ typedef OnProcessKilledCallback = void Function(GeneralCallbackResult);
 
 typedef OnResumeCallback = void Function(GeneralCallbackResult);
 
+typedef OnScreenRecordingStateChangedCallback = void Function(
+    OnScreenRecordingStateChangedListenerResult);
+
 typedef OnSeekedCallback = void Function(GeneralCallbackResult);
 
 typedef OnSeekingCallback = void Function(GeneralCallbackResult);
 
-typedef OnSocketCloseCallback = void Function(SocketTaskOnCloseCallbackResult);
+typedef OnSocketCloseCallback = void Function(SocketTaskOnCloseListenerResult);
 
-typedef OnSocketErrorCallback = void Function(UDPSocketOnErrorCallbackResult);
+typedef OnSocketErrorCallback = void Function(GeneralCallbackResult);
 
 typedef OnSocketMessageCallback = void Function(
-    SocketTaskOnMessageCallbackResult);
+    SocketTaskOnMessageListenerResult);
 
-typedef OnSocketOpenCallback = void Function(OnSocketOpenCallbackResult);
+typedef OnSocketOpenCallback = void Function(OnSocketOpenListenerResult);
 
 typedef OnStartCallback = void Function(GeneralCallbackResult);
 
-typedef OnThemeChangeCallback = void Function(OnThemeChangeCallbackResult);
+typedef OnThemeChangeCallback = void Function(OnThemeChangeListenerResult);
 
 typedef OnTimeUpdateCallback = void Function(GeneralCallbackResult);
 
 typedef OnUnhandledRejectionCallback = void Function(
-    OnUnhandledRejectionCallbackResult);
+    OnUnhandledRejectionListenerResult);
 
 typedef OnUpdateFailedCallback = void Function(GeneralCallbackResult);
 
@@ -39908,25 +47370,37 @@ typedef OnUpdateReadyCallback = void Function(GeneralCallbackResult);
 typedef OnUserCaptureScreenCallback = void Function(GeneralCallbackResult);
 
 typedef OnVoIPChatInterruptedCallback = void Function(
-    OnVoIPChatInterruptedCallbackResult);
+    OnVoIPChatInterruptedListenerResult);
 
 typedef OnVoIPChatMembersChangedCallback = void Function(
-    OnVoIPChatMembersChangedCallbackResult);
+    OnVoIPChatMembersChangedListenerResult);
 
 typedef OnVoIPChatSpeakersChangedCallback = void Function(
-    OnVoIPChatSpeakersChangedCallbackResult);
+    OnVoIPChatSpeakersChangedListenerResult);
 
 typedef OnVoIPChatStateChangedCallback = void Function(
-    OnVoIPChatStateChangedCallbackResult);
+    OnVoIPChatStateChangedListenerResult);
 
 typedef OnVoIPVideoMembersChangedCallback = void Function(
-    OnVoIPVideoMembersChangedCallbackResult);
+    OnVoIPVideoMembersChangedListenerResult);
 
 typedef OnWaitingCallback = void Function(GeneralCallbackResult);
 
-typedef OnWifiConnectedCallback = void Function(OnWifiConnectedCallbackResult);
+typedef OnWifiConnectedCallback = void Function(OnWifiConnectedListenerResult);
 
-typedef OnWindowResizeCallback = void Function(OnWindowResizeCallbackResult);
+typedef OnWifiConnectedWithPartialInfoCallback = void Function(
+    OnWifiConnectedWithPartialInfoListenerResult);
+
+typedef OnWindowResizeCallback = void Function(OnWindowResizeListenerResult);
+
+typedef OpenAppAuthorizeSettingCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenAppAuthorizeSettingFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenAppAuthorizeSettingSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef OpenBluetoothAdapterCompleteCallback = void Function(BluetoothError);
 
@@ -39948,11 +47422,27 @@ typedef OpenChannelsActivityFailCallback = void Function(GeneralCallbackResult);
 typedef OpenChannelsActivitySuccessCallback = void Function(
     GeneralCallbackResult);
 
+typedef OpenChannelsEventCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenChannelsEventFailCallback = void Function(GeneralCallbackResult);
+
+typedef OpenChannelsEventSuccessCallback = void Function(GeneralCallbackResult);
+
 typedef OpenChannelsLiveCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef OpenChannelsLiveFailCallback = void Function(GeneralCallbackResult);
 
 typedef OpenChannelsLiveSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef OpenChannelsUserProfileCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenChannelsUserProfileFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenChannelsUserProfileSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef OpenCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -39970,6 +47460,15 @@ typedef OpenDocumentCompleteCallback = void Function(GeneralCallbackResult);
 typedef OpenDocumentFailCallback = void Function(GeneralCallbackResult);
 
 typedef OpenDocumentSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef OpenEmbeddedMiniProgramCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenEmbeddedMiniProgramFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenEmbeddedMiniProgramSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef OpenFailCallback = void Function(OpenFailCallbackResult);
 
@@ -39993,6 +47492,15 @@ typedef OpenSettingSuccessCallback = void Function(
     OpenSettingSuccessCallbackResult);
 
 typedef OpenSuccessCallback = void Function(OpenSuccessCallbackResult);
+
+typedef OpenSystemBluetoothSettingCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenSystemBluetoothSettingFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef OpenSystemBluetoothSettingSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef OpenVideoEditorCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -40059,6 +47567,36 @@ typedef PlayVoiceFailCallback = void Function(GeneralCallbackResult);
 
 typedef PlayVoiceSuccessCallback = void Function(GeneralCallbackResult);
 
+typedef PluginLoginCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef PluginLoginFailCallback = void Function(GeneralCallbackResult);
+
+typedef PluginLoginSuccessCallback = void Function(
+    PluginLoginSuccessCallbackResult);
+
+typedef PreDownloadSubpackageTaskOnProgressUpdateCallback = void Function(
+    PreDownloadSubpackageTaskOnProgressUpdateListenerResult);
+
+typedef PreloadAssetsCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadAssetsFailCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadAssetsSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadSkylineViewCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef PreloadSkylineViewFailCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadSkylineViewSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef PreloadWebviewCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadWebviewFailCallback = void Function(GeneralCallbackResult);
+
+typedef PreloadWebviewSuccessCallback = void Function(GeneralCallbackResult);
+
 typedef PreviewImageCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef PreviewImageFailCallback = void Function(GeneralCallbackResult);
@@ -40087,6 +47625,15 @@ typedef ReadBLECharacteristicValueSuccessCallback = void Function(
 
 typedef ReadCompleteCallback = void Function(GeneralCallbackResult);
 
+typedef ReadCompressedFileCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef ReadCompressedFileFailCallback = void Function(
+    ReadCompressedFileFailCallbackResult);
+
+typedef ReadCompressedFileSuccessCallback = void Function(
+    ReadCompressedFileSuccessCallbackResult);
+
 typedef ReadFailCallback = void Function(ReadFailCallbackResult);
 
 typedef ReadFileCompleteCallback = void Function(GeneralCallbackResult);
@@ -40099,7 +47646,8 @@ typedef ReadSuccessCallback = void Function(ReadSuccessCallbackResult);
 
 typedef ReadZipEntryCompleteCallback = void Function(GeneralCallbackResult);
 
-typedef ReadZipEntryFailCallback = void Function(ReadFileFailCallbackResult);
+typedef ReadZipEntryFailCallback = void Function(
+    ReadZipEntryFailCallbackResult);
 
 typedef ReadZipEntrySuccessCallback = void Function(
     ReadZipEntrySuccessCallbackResult);
@@ -40110,7 +47658,7 @@ typedef ReaddirFailCallback = void Function(ReaddirFailCallbackResult);
 
 typedef ReaddirSuccessCallback = void Function(ReaddirSuccessCallbackResult);
 
-typedef RecorderManagerOnStopCallback = void Function(OnStopCallbackResult);
+typedef RecorderManagerOnStopCallback = void Function(OnStopListenerResult);
 
 typedef RedirectToCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -40123,6 +47671,12 @@ typedef RedoCompleteCallback = void Function(GeneralCallbackResult);
 typedef RedoFailCallback = void Function(GeneralCallbackResult);
 
 typedef RedoSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef RemoveArcCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef RemoveArcFailCallback = void Function(GeneralCallbackResult);
+
+typedef RemoveArcSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef RemoveCustomLayerCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -40153,6 +47707,9 @@ typedef RemoveMarkersSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef RemoveSavedFileCompleteCallback = void Function(GeneralCallbackResult);
 
+typedef RemoveSavedFileFailCallback = void Function(
+    RemoveSavedFileFailCallbackResult);
+
 typedef RemoveSavedFileSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef RemoveServiceCompleteCallback = void Function(GeneralCallbackResult);
@@ -40174,6 +47731,13 @@ typedef RemoveTabBarBadgeFailCallback = void Function(GeneralCallbackResult);
 
 typedef RemoveTabBarBadgeSuccessCallback = void Function(GeneralCallbackResult);
 
+typedef RemoveVisualLayerCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef RemoveVisualLayerFailCallback = void Function(GeneralCallbackResult);
+
+typedef RemoveVisualLayerSuccessCallback = void Function(GeneralCallbackResult);
+
 typedef RenameCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef RenameFailCallback = void Function(RenameFailCallbackResult);
@@ -40182,7 +47746,7 @@ typedef RenameSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef RequestCompleteCallback = void Function(GeneralCallbackResult);
 
-typedef RequestFailCallback = void Function(GeneralCallbackResult);
+typedef RequestFailCallback = void Function(Err);
 
 typedef RequestFullScreenCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -40214,6 +47778,23 @@ typedef RequestPictureInPictureFailCallback = void Function(
 typedef RequestPictureInPictureSuccessCallback = void Function(
     GeneralCallbackResult);
 
+typedef RequestPluginPaymentCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef RequestPluginPaymentFailCallback = void Function(GeneralCallbackResult);
+
+typedef RequestPluginPaymentSuccessCallback = void Function(
+    GeneralCallbackResult);
+
+typedef RequestSubscribeDeviceMessageCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef RequestSubscribeDeviceMessageFailCallback = void Function(
+    RequestSubscribeDeviceMessageFailCallbackResult);
+
+typedef RequestSubscribeDeviceMessageSuccessCallback = void Function(
+    RequestSubscribeDeviceMessageSuccessCallbackResult);
+
 typedef RequestSubscribeMessageCompleteCallback = void Function(
     GeneralCallbackResult);
 
@@ -40223,7 +47804,7 @@ typedef RequestSubscribeMessageFailCallback = void Function(
 typedef RequestSubscribeMessageSuccessCallback = void Function(
     RequestSubscribeMessageSuccessCallbackResult);
 
-typedef RequestSuccessCallback<T> = void Function<T>(
+typedef RequestSuccessCallback<T> = void Function(
     RequestSuccessCallbackResult<T>);
 
 typedef ResumeBGMCompleteCallback = void Function(GeneralCallbackResult);
@@ -40239,16 +47820,16 @@ typedef ResumeFailCallback = void Function(GeneralCallbackResult);
 typedef ResumeSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef RewardedVideoAdOffCloseCallback = void Function(
-    RewardedVideoAdOnCloseCallbackResult);
+    RewardedVideoAdOnCloseListenerResult);
 
 typedef RewardedVideoAdOffErrorCallback = void Function(
-    RewardedVideoAdOnErrorCallbackResult);
+    RewardedVideoAdOnErrorListenerResult);
 
 typedef RewardedVideoAdOnCloseCallback = void Function(
-    RewardedVideoAdOnCloseCallbackResult);
+    RewardedVideoAdOnCloseListenerResult);
 
 typedef RewardedVideoAdOnErrorCallback = void Function(
-    RewardedVideoAdOnErrorCallbackResult);
+    RewardedVideoAdOnErrorListenerResult);
 
 typedef RmdirCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -40257,6 +47838,8 @@ typedef RmdirFailCallback = void Function(RmdirFailCallbackResult);
 typedef RmdirSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef SaveFileCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef SaveFileFailCallback = void Function(SaveFileFailCallbackResult);
 
 typedef SaveFileSuccessCallback = void Function(SaveFileSuccessCallbackResult);
 
@@ -40292,13 +47875,6 @@ typedef ScanCodeSuccessCallback = void Function(ScanCodeSuccessCallbackResult);
 
 typedef ScrollOffsetCallback = void Function(ScrollOffsetCallbackResult);
 
-typedef SearchContactsCompleteCallback = void Function(GeneralCallbackResult);
-
-typedef SearchContactsFailCallback = void Function(GeneralCallbackResult);
-
-typedef SearchContactsSuccessCallback = void Function(
-    SearchContactsSuccessCallbackResult);
-
 typedef SeekBackgroundAudioCompleteCallback = void Function(
     GeneralCallbackResult);
 
@@ -40322,6 +47898,12 @@ typedef SendMessageCompleteCallback = void Function(GeneralCallbackResult);
 typedef SendMessageFailCallback = void Function(GeneralCallbackResult);
 
 typedef SendMessageSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef SendSmsCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef SendSmsFailCallback = void Function(GeneralCallbackResult);
+
+typedef SendSmsSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef SendSocketMessageCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -40371,6 +47953,12 @@ typedef SetBackgroundTextStyleFailCallback = void Function(
 typedef SetBackgroundTextStyleSuccessCallback = void Function(
     GeneralCallbackResult);
 
+typedef SetBoundaryCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef SetBoundaryFailCallback = void Function(GeneralCallbackResult);
+
+typedef SetBoundarySuccessCallback = void Function(GeneralCallbackResult);
+
 typedef SetCenterOffsetCompleteCallback = void Function(GeneralCallbackResult);
 
 typedef SetCenterOffsetFailCallback = void Function(GeneralCallbackResult);
@@ -40388,6 +47976,12 @@ typedef SetContentsCompleteCallback = void Function(GeneralCallbackResult);
 typedef SetContentsFailCallback = void Function(GeneralCallbackResult);
 
 typedef SetContentsSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef SetEnable1v1ChatCompleteCallback = void Function(GeneralCallbackResult);
+
+typedef SetEnable1v1ChatFailCallback = void Function(GeneralCallbackResult);
+
+typedef SetEnable1v1ChatSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef SetEnableDebugCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -40482,6 +48076,15 @@ typedef SetTopBarTextCompleteCallback = void Function(GeneralCallbackResult);
 typedef SetTopBarTextFailCallback = void Function(GeneralCallbackResult);
 
 typedef SetTopBarTextSuccessCallback = void Function(GeneralCallbackResult);
+
+typedef SetVisualEffectOnCaptureCompleteCallback = void Function(
+    GeneralCallbackResult);
+
+typedef SetVisualEffectOnCaptureFailCallback = void Function(
+    GeneralCallbackResult);
+
+typedef SetVisualEffectOnCaptureSuccessCallback = void Function(
+    GeneralCallbackResult);
 
 typedef SetWifiListCompleteCallback = void Function(WifiError);
 
@@ -40594,10 +48197,10 @@ typedef SnapshotFailCallback = void Function(GeneralCallbackResult);
 typedef SocketTaskCloseFailCallback = void Function(GeneralCallbackResult);
 
 typedef SocketTaskOnCloseCallback = void Function(
-    SocketTaskOnCloseCallbackResult);
+    SocketTaskOnCloseListenerResult);
 
 typedef SocketTaskOnMessageCallback = void Function(
-    SocketTaskOnMessageCallbackResult);
+    SocketTaskOnMessageListenerResult);
 
 typedef StartAccelerometerCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -40891,10 +48494,10 @@ typedef SwitchTabFailCallback = void Function(GeneralCallbackResult);
 typedef SwitchTabSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef TCPSocketOffMessageCallback = void Function(
-    TCPSocketOnMessageCallbackResult);
+    TCPSocketOnMessageListenerResult);
 
 typedef TCPSocketOnMessageCallback = void Function(
-    TCPSocketOnMessageCallbackResult);
+    TCPSocketOnMessageListenerResult);
 
 typedef TakePhotoCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -40937,19 +48540,17 @@ typedef TruncateSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef UDPSocketOffCloseCallback = void Function(GeneralCallbackResult);
 
-typedef UDPSocketOffErrorCallback = void Function(
-    UDPSocketOnErrorCallbackResult);
+typedef UDPSocketOffErrorCallback = void Function(GeneralCallbackResult);
 
 typedef UDPSocketOffMessageCallback = void Function(
-    UDPSocketOnMessageCallbackResult);
+    UDPSocketOnMessageListenerResult);
 
 typedef UDPSocketOnCloseCallback = void Function(GeneralCallbackResult);
 
-typedef UDPSocketOnErrorCallback = void Function(
-    UDPSocketOnErrorCallbackResult);
+typedef UDPSocketOnErrorCallback = void Function(GeneralCallbackResult);
 
 typedef UDPSocketOnMessageCallback = void Function(
-    UDPSocketOnMessageCallbackResult);
+    UDPSocketOnMessageListenerResult);
 
 typedef UndoCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -41006,10 +48607,12 @@ typedef UploadFileSuccessCallback = void Function(
     UploadFileSuccessCallbackResult);
 
 typedef UploadTaskOffProgressUpdateCallback = void Function(
-    UploadTaskOnProgressUpdateCallbackResult);
+    UploadTaskOnProgressUpdateListenerResult);
 
 typedef UploadTaskOnProgressUpdateCallback = void Function(
-    UploadTaskOnProgressUpdateCallbackResult);
+    UploadTaskOnProgressUpdateListenerResult);
+
+typedef VKSessionStartCallback = void Function(dynamic);
 
 typedef VibrateLongCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -41019,11 +48622,12 @@ typedef VibrateLongSuccessCallback = void Function(GeneralCallbackResult);
 
 typedef VibrateShortCompleteCallback = void Function(GeneralCallbackResult);
 
-typedef VibrateShortFailCallback = void Function(GeneralCallbackResult);
+typedef VibrateShortFailCallback = void Function(
+    VibrateShortFailCallbackResult);
 
 typedef VibrateShortSuccessCallback = void Function(GeneralCallbackResult);
 
-typedef WorkerOnMessageCallback = void Function(WorkerOnMessageCallbackResult);
+typedef WorkerOnMessageCallback = void Function(WorkerOnMessageListenerResult);
 
 typedef WriteBLECharacteristicValueCompleteCallback = void Function(
     BluetoothError);
@@ -41060,17 +48664,9 @@ typedef WriteNdefMessageSuccessCallback = void Function(Nfcrwerror);
 
 typedef WriteSuccessCallback = void Function(WriteSuccessCallbackResult);
 
-typedef WxGetFileInfoFailCallback = void Function(GeneralCallbackResult);
+typedef WxOffErrorCallback = void Function(GeneralCallbackResult);
 
-typedef WxGetFileInfoSuccessCallback = void Function(
-    WxGetFileInfoSuccessCallbackResult);
-
-typedef WxGetSavedFileListSuccessCallback = void Function(
-    WxGetSavedFileListSuccessCallbackResult);
-
-typedef WxRemoveSavedFileFailCallback = void Function(GeneralCallbackResult);
-
-typedef WxSaveFileFailCallback = void Function(GeneralCallbackResult);
+typedef WxOnErrorCallback = void Function(String);
 
 typedef WxStartRecordSuccessCallback = void Function(
     StartRecordSuccessCallbackResult);
