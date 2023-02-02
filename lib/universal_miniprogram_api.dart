@@ -5762,7 +5762,7 @@ class CheckIsSupportSoterAuthenticationOption {
 class CheckIsSupportSoterAuthenticationSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $supportMode = Array();
+  Array<dynamic> $supportMode = [];
 
   Future<Array<dynamic>> get supportMode async {
     return $supportMode;
@@ -11199,7 +11199,7 @@ class GetAvailableAudioSourcesOption {
 class GetAvailableAudioSourcesSuccessCallbackResult {
   mpjs.JsObject? $$context$$;
 
-  Array<dynamic> $audioSources = Array();
+  Array<dynamic> $audioSources = [];
 
   Future<Array<dynamic>> get audioSources async {
     return $audioSources;
@@ -33398,7 +33398,7 @@ class StartSoterAuthenticationOption {
     return await $$context$$?.getPropertyValue('challenge') ?? $challenge;
   }
 
-  Array<dynamic> $requestAuthModes = Array();
+  Array<dynamic> $requestAuthModes = [];
 
   Future<Array<dynamic>> get requestAuthModes async {
     return $requestAuthModes;
