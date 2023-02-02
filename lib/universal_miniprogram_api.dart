@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
+typedef Array<T> = List<T>;
+
 class IAnyObject {
   mpjs.JsObject? $$context$$;
 
