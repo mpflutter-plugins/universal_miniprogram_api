@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
 typedef Array<T> = List<T>;
@@ -289,7 +288,9 @@ class AddCardOption {
   List<AddCardRequestInfo> $cardList = <AddCardRequestInfo>[];
 
   Future<List<AddCardRequestInfo>> get cardList async {
-    return await $$context$$?.getPropertyValue('cardList') ?? $cardList;
+    return ((await $$context$$?.getPropertyValue('cardList')) as List)
+        .map((it) => AddCardRequestInfo($$context$$: it))
+        .toList();
   }
 
   AddCardCompleteCallback? $complete;
@@ -423,7 +424,9 @@ class AddCardSuccessCallbackResult {
   List<AddCardResponseInfo> $cardList = <AddCardResponseInfo>[];
 
   Future<List<AddCardResponseInfo>> get cardList async {
-    return await $$context$$?.getPropertyValue('cardList') ?? $cardList;
+    return ((await $$context$$?.getPropertyValue('cardList')) as List)
+        .map((it) => AddCardResponseInfo($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -1605,8 +1608,9 @@ class AdvertiseReqObj {
   List<ManufacturerData>? $manufacturerData;
 
   Future<List<ManufacturerData>?> get manufacturerData async {
-    return await $$context$$?.getPropertyValue('manufacturerData') ??
-        $manufacturerData;
+    return ((await $$context$$?.getPropertyValue('manufacturerData')) as List)
+        .map((it) => ManufacturerData($$context$$: it))
+        .toList();
   }
 
   List<String>? $serviceUuids;
@@ -1647,7 +1651,9 @@ class AnimationExportResult {
   List<IAnyObject> $actions = <IAnyObject>[];
 
   Future<List<IAnyObject>> get actions async {
-    return await $$context$$?.getPropertyValue('actions') ?? $actions;
+    return ((await $$context$$?.getPropertyValue('actions')) as List)
+        .map((it) => IAnyObject($$context$$: it))
+        .toList();
   }
 
   AnimationExportResult({this.$$context$$});
@@ -2520,7 +2526,9 @@ class ApplyStickerOption {
   List<Sticker> $stickers = <Sticker>[];
 
   Future<List<Sticker>> get stickers async {
-    return await $$context$$?.getPropertyValue('stickers') ?? $stickers;
+    return ((await $$context$$?.getPropertyValue('stickers')) as List)
+        .map((it) => Sticker($$context$$: it))
+        .toList();
   }
 
   String $type = "";
@@ -3199,8 +3207,9 @@ class BLEPeripheralService {
   List<Characteristic> $characteristics = <Characteristic>[];
 
   Future<List<Characteristic>> get characteristics async {
-    return await $$context$$?.getPropertyValue('characteristics') ??
-        $characteristics;
+    return ((await $$context$$?.getPropertyValue('characteristics')) as List)
+        .map((it) => Characteristic($$context$$: it))
+        .toList();
   }
 
   String $uuid = "";
@@ -5264,7 +5273,9 @@ class Characteristic {
   List<CharacteristicDescriptor>? $descriptors;
 
   Future<List<CharacteristicDescriptor>?> get descriptors async {
-    return await $$context$$?.getPropertyValue('descriptors') ?? $descriptors;
+    return ((await $$context$$?.getPropertyValue('descriptors')) as List)
+        .map((it) => CharacteristicDescriptor($$context$$: it))
+        .toList();
   }
 
   CharacteristicPermission? $permission;
@@ -6236,7 +6247,9 @@ class ChooseImageSuccessCallbackResult {
   List<ImageFile> $tempFiles = <ImageFile>[];
 
   Future<List<ImageFile>> get tempFiles async {
-    return await $$context$$?.getPropertyValue('tempFiles') ?? $tempFiles;
+    return ((await $$context$$?.getPropertyValue('tempFiles')) as List)
+        .map((it) => ImageFile($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -6795,7 +6808,9 @@ class ChooseMediaSuccessCallbackResult {
   List<MediaFile> $tempFiles = <MediaFile>[];
 
   Future<List<MediaFile>> get tempFiles async {
-    return await $$context$$?.getPropertyValue('tempFiles') ?? $tempFiles;
+    return ((await $$context$$?.getPropertyValue('tempFiles')) as List)
+        .map((it) => MediaFile($$context$$: it))
+        .toList();
   }
 
   String $type = "";
@@ -6907,7 +6922,9 @@ class ChooseMessageFileSuccessCallbackResult {
   List<ChooseFile> $tempFiles = <ChooseFile>[];
 
   Future<List<ChooseFile>> get tempFiles async {
-    return await $$context$$?.getPropertyValue('tempFiles') ?? $tempFiles;
+    return ((await $$context$$?.getPropertyValue('tempFiles')) as List)
+        .map((it) => ChooseFile($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -7734,15 +7751,15 @@ class CloseSyncOption {
   }
 }
 
-class Color {
-  mpjs.JsObject? $$context$$;
+// class Color {
+//   mpjs.JsObject? $$context$$;
 
-  Color({this.$$context$$});
+//   Color({this.$$context$$});
 
-  Map toJson() {
-    return {}..removeWhere((key, value) => value == null);
-  }
-}
+//   Map toJson() {
+//     return {}..removeWhere((key, value) => value == null);
+//   }
+// }
 
 class CompressImageOption {
   mpjs.JsObject? $$context$$;
@@ -9728,7 +9745,8 @@ class EntryItem {
 
   EntryItem({this.$$context$$});
 
-  void setValues({String? path, dynamic encoding, num? length, num? position}) {
+  void setValues(
+      {String? path, dynamic encoding, num? length, num? position}) {
     if (path != null) $path = path;
     if (encoding != null) $encoding = encoding;
     if (length != null) $length = length;
@@ -10359,13 +10377,17 @@ class FaceDetectSuccessCallbackResult {
   List<IAnyObject> $faceInfo = <IAnyObject>[];
 
   Future<List<IAnyObject>> get faceInfo async {
-    return await $$context$$?.getPropertyValue('faceInfo') ?? $faceInfo;
+    return ((await $$context$$?.getPropertyValue('faceInfo')) as List)
+        .map((it) => IAnyObject($$context$$: it))
+        .toList();
   }
 
   List<IAnyObject> $pointArray = <IAnyObject>[];
 
   Future<List<IAnyObject>> get pointArray async {
-    return await $$context$$?.getPropertyValue('pointArray') ?? $pointArray;
+    return ((await $$context$$?.getPropertyValue('pointArray')) as List)
+        .map((it) => IAnyObject($$context$$: it))
+        .toList();
   }
 
   num $x = 0;
@@ -11298,8 +11320,9 @@ class GetBLEDeviceCharacteristicsSuccessCallbackResult {
   List<BLECharacteristic> $characteristics = <BLECharacteristic>[];
 
   Future<List<BLECharacteristic>> get characteristics async {
-    return await $$context$$?.getPropertyValue('characteristics') ??
-        $characteristics;
+    return ((await $$context$$?.getPropertyValue('characteristics')) as List)
+        .map((it) => BLECharacteristic($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -11472,7 +11495,9 @@ class GetBLEDeviceServicesSuccessCallbackResult {
   List<BLEService> $services = <BLEService>[];
 
   Future<List<BLEService>> get services async {
-    return await $$context$$?.getPropertyValue('services') ?? $services;
+    return ((await $$context$$?.getPropertyValue('services')) as List)
+        .map((it) => BLEService($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -12085,7 +12110,9 @@ class GetBeaconsSuccessCallbackResult {
   List<BeaconInfo> $beacons = <BeaconInfo>[];
 
   Future<List<BeaconInfo>> get beacons async {
-    return await $$context$$?.getPropertyValue('beacons') ?? $beacons;
+    return ((await $$context$$?.getPropertyValue('beacons')) as List)
+        .map((it) => BeaconInfo($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -12249,7 +12276,9 @@ class GetBluetoothDevicesSuccessCallbackResult {
   List<BlueToothDevice> $devices = <BlueToothDevice>[];
 
   Future<List<BlueToothDevice>> get devices async {
-    return await $$context$$?.getPropertyValue('devices') ?? $devices;
+    return ((await $$context$$?.getPropertyValue('devices')) as List)
+        .map((it) => BlueToothDevice($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -12910,7 +12939,9 @@ class GetConnectedBluetoothDevicesSuccessCallbackResult {
   List<BluetoothDeviceInfo> $devices = <BluetoothDeviceInfo>[];
 
   Future<List<BluetoothDeviceInfo>> get devices async {
-    return await $$context$$?.getPropertyValue('devices') ?? $devices;
+    return ((await $$context$$?.getPropertyValue('devices')) as List)
+        .map((it) => BluetoothDeviceInfo($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -14690,7 +14721,9 @@ class GetSavedFileListSuccessCallbackResult {
   List<FileItem> $fileList = <FileItem>[];
 
   Future<List<FileItem>> get fileList async {
-    return await $$context$$?.getPropertyValue('fileList') ?? $fileList;
+    return ((await $$context$$?.getPropertyValue('fileList')) as List)
+        .map((it) => FileItem($$context$$: it))
+        .toList();
   }
 
   String $errMsg = "";
@@ -16940,7 +16973,9 @@ class IncludePointsOption {
   List<MapPostion> $points = <MapPostion>[];
 
   Future<List<MapPostion>> get points async {
-    return await $$context$$?.getPropertyValue('points') ?? $points;
+    return ((await $$context$$?.getPropertyValue('points')) as List)
+        .map((it) => MapPostion($$context$$: it))
+        .toList();
   }
 
   IncludePointsCompleteCallback? $complete;
@@ -18202,8 +18237,9 @@ class LaunchOptionsApp {
   List<ForwardMaterials> $forwardMaterials = <ForwardMaterials>[];
 
   Future<List<ForwardMaterials>> get forwardMaterials async {
-    return await $$context$$?.getPropertyValue('forwardMaterials') ??
-        $forwardMaterials;
+    return ((await $$context$$?.getPropertyValue('forwardMaterials')) as List)
+        .map((it) => ForwardMaterials($$context$$: it))
+        .toList();
   }
 
   String $path = "";
@@ -20821,7 +20857,9 @@ class OnBeaconUpdateListenerResult {
   List<BeaconInfo> $beacons = <BeaconInfo>[];
 
   Future<List<BeaconInfo>> get beacons async {
-    return await $$context$$?.getPropertyValue('beacons') ?? $beacons;
+    return ((await $$context$$?.getPropertyValue('beacons')) as List)
+        .map((it) => BeaconInfo($$context$$: it))
+        .toList();
   }
 
   OnBeaconUpdateListenerResult({this.$$context$$});
@@ -20869,7 +20907,9 @@ class OnBluetoothDeviceFoundListenerResult {
   List<BlueToothDevice> $devices = <BlueToothDevice>[];
 
   Future<List<BlueToothDevice>> get devices async {
-    return await $$context$$?.getPropertyValue('devices') ?? $devices;
+    return ((await $$context$$?.getPropertyValue('devices')) as List)
+        .map((it) => BlueToothDevice($$context$$: it))
+        .toList();
   }
 
   OnBluetoothDeviceFoundListenerResult({this.$$context$$});
@@ -21252,7 +21292,9 @@ class OnGetWifiListListenerResult {
   List<WifiInfo> $wifiList = <WifiInfo>[];
 
   Future<List<WifiInfo>> get wifiList async {
-    return await $$context$$?.getPropertyValue('wifiList') ?? $wifiList;
+    return ((await $$context$$?.getPropertyValue('wifiList')) as List)
+        .map((it) => WifiInfo($$context$$: it))
+        .toList();
   }
 
   OnGetWifiListListenerResult({this.$$context$$});
@@ -21825,12 +21867,11 @@ class OnThemeChangeListenerResult {
 class OnUnhandledRejectionListenerResult {
   mpjs.JsObject? $$context$$;
 
-  // Promise<dynamic> $promise= Promise();
+  // Promise<dynamic> $promise = Promise();
 
-  //   Future<Promise<dynamic>> get promise async {
-  //       return $promise;
-
-  //     }
+  // Future<Promise<dynamic>> get promise async {
+  //   return $promise;
+  // }
 
   String $reason = "";
 
@@ -21841,6 +21882,7 @@ class OnUnhandledRejectionListenerResult {
   OnUnhandledRejectionListenerResult({this.$$context$$});
 
   void setValues({String? reason}) {
+    // if (promise != null) $promise = promise;
     if (reason != null) $reason = reason;
   }
 
@@ -22200,7 +22242,9 @@ class OpenCardOption {
   List<OpenCardRequestInfo> $cardList = <OpenCardRequestInfo>[];
 
   Future<List<OpenCardRequestInfo>> get cardList async {
-    return await $$context$$?.getPropertyValue('cardList') ?? $cardList;
+    return ((await $$context$$?.getPropertyValue('cardList')) as List)
+        .map((it) => OpenCardRequestInfo($$context$$: it))
+        .toList();
   }
 
   OpenCardCompleteCallback? $complete;
@@ -24444,7 +24488,10 @@ class PreDownloadSubpackageOption {
   PreDownloadSubpackageOption({this.$$context$$});
 
   void setValues(
-      {dynamic complete, dynamic fail, String? packageType, dynamic success}) {
+      {dynamic complete,
+      dynamic fail,
+      String? packageType,
+      dynamic success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (packageType != null) $packageType = packageType;
@@ -24510,7 +24557,9 @@ class PreloadAssetsOption {
   List<Asset> $data = <Asset>[];
 
   Future<List<Asset>> get data async {
-    return await $$context$$?.getPropertyValue('data') ?? $data;
+    return ((await $$context$$?.getPropertyValue('data')) as List)
+        .map((it) => Asset($$context$$: it))
+        .toList();
   }
 
   PreloadAssetsCompleteCallback? $complete;
@@ -24756,7 +24805,9 @@ class PreviewMediaOption {
   List<MediaSource> $sources = <MediaSource>[];
 
   Future<List<MediaSource>> get sources async {
-    return await $$context$$?.getPropertyValue('sources') ?? $sources;
+    return ((await $$context$$?.getPropertyValue('sources')) as List)
+        .map((it) => MediaSource($$context$$: it))
+        .toList();
   }
 
   PreviewMediaCompleteCallback? $complete;
@@ -30872,7 +30923,9 @@ class SetWifiListOption {
   List<WifiData> $wifiList = <WifiData>[];
 
   Future<List<WifiData>> get wifiList async {
-    return await $$context$$?.getPropertyValue('wifiList') ?? $wifiList;
+    return ((await $$context$$?.getPropertyValue('wifiList')) as List)
+        .map((it) => WifiData($$context$$: it))
+        .toList();
   }
 
   SetWifiListCompleteCallback? $complete;
@@ -31151,7 +31204,9 @@ class ShareToWeRunOption {
   List<WxaSportRecord> $recordList = <WxaSportRecord>[];
 
   Future<List<WxaSportRecord>> get recordList async {
-    return await $$context$$?.getPropertyValue('recordList') ?? $recordList;
+    return ((await $$context$$?.getPropertyValue('recordList')) as List)
+        .map((it) => WxaSportRecord($$context$$: it))
+        .toList();
   }
 
   ShareToWeRunCompleteCallback? $complete;
@@ -36739,8 +36794,9 @@ class UpdatableMessageFrontEndTemplateInfo {
       <UpdatableMessageFrontEndParameter>[];
 
   Future<List<UpdatableMessageFrontEndParameter>> get parameterList async {
-    return await $$context$$?.getPropertyValue('parameterList') ??
-        $parameterList;
+    return ((await $$context$$?.getPropertyValue('parameterList')) as List)
+        .map((it) => UpdatableMessageFrontEndParameter($$context$$: it))
+        .toList();
   }
 
   UpdatableMessageFrontEndTemplateInfo({this.$$context$$});
@@ -37365,7 +37421,9 @@ class VKBodyAnchor {
   List<VKOrigin> $points = <VKOrigin>[];
 
   Future<List<VKOrigin>> get points async {
-    return await $$context$$?.getPropertyValue('points') ?? $points;
+    return ((await $$context$$?.getPropertyValue('points')) as List)
+        .map((it) => VKOrigin($$context$$: it))
+        .toList();
   }
 
   num $score = 0;
@@ -37465,12 +37523,6 @@ class VKConfig {
     return Track($$context$$: $$context$$?.getProperty('track'));
   }
 
-  dynamic $gl;
-
-  Future<dynamic> get gl async {
-    return $gl;
-  }
-
   dynamic $version;
 
   Future<dynamic> get version async {
@@ -37485,7 +37537,7 @@ class VKConfig {
   }
 
   Map toJson() {
-    return {'track': $track, 'gl': $gl, 'version': $version}
+    return {'track': $track, 'version': $version}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -37526,7 +37578,9 @@ class VKFaceAnchor {
   List<VKPoint> $points = <VKPoint>[];
 
   Future<List<VKPoint>> get points async {
-    return await $$context$$?.getPropertyValue('points') ?? $points;
+    return ((await $$context$$?.getPropertyValue('points')) as List)
+        .map((it) => VKPoint($$context$$: it))
+        .toList();
   }
 
   VKSize $size = VKSize();
@@ -37616,11 +37670,11 @@ class VKFrame {
     return Float32Array($$context$$: result);
   }
 
-  Future<YUVTextureRes> getCameraTexture(dynamic gl) async {
-    final result = await $$context$$?.callMethod('getCameraTexture', [gl]);
+  // Future<YUVTextureRes> getCameraTexture(WebGLRenderingContext gl) async {
+  //   final result = await $$context$$?.callMethod('getCameraTexture', [gl]);
 
-    return YUVTextureRes($$context$$: result);
-  }
+  //   return YUVTextureRes($$context$$: result);
+  // }
 }
 
 class VKHandAnchor {
@@ -37659,7 +37713,9 @@ class VKHandAnchor {
   List<VKOrigin> $points = <VKOrigin>[];
 
   Future<List<VKOrigin>> get points async {
-    return await $$context$$?.getPropertyValue('points') ?? $points;
+    return ((await $$context$$?.getPropertyValue('points')) as List)
+        .map((it) => VKOrigin($$context$$: it))
+        .toList();
   }
 
   num $score = 0;
@@ -38425,76 +38481,72 @@ class VoIP1v1ChatUser {
 }
 
 class WebAudioContext {
-  mpjs.JsObject? $$context$$;
+  // mpjs.JsObject? $$context$$;
 
-  num $currentTime = 0;
+  // num $currentTime = 0;
 
-  Future<num> get currentTime async {
-    return await $$context$$?.getPropertyValue('currentTime') ?? $currentTime;
-  }
+  // Future<num> get currentTime async {
+  //   return await $$context$$?.getPropertyValue('currentTime') ?? $currentTime;
+  // }
 
-  WebAudioContextNode $destination = WebAudioContextNode();
+  // WebAudioContextNode $destination = WebAudioContextNode();
 
-  Future<WebAudioContextNode> get destination async {
-    return WebAudioContextNode(
-        $$context$$: $$context$$?.getProperty('destination'));
-  }
+  // Future<WebAudioContextNode> get destination async {
+  //   return WebAudioContextNode(
+  //       $$context$$: $$context$$?.getProperty('destination'));
+  // }
 
-// AudioListener $listener= AudioListener();
+  // // AudioListener $listener = AudioListener();
 
-//       Future<AudioListener> get listener async {
-//           return $listener;
+  // // Future<AudioListener> get listener async {
+  // //   return $listener;
+  // // }
 
-//         }
+  // dynamic $onstatechange;
 
-  dynamic $onstatechange;
+  // Future<dynamic> get onstatechange async {
+  //   return await $$context$$?.getPropertyValue('onstatechange') ??
+  //       $onstatechange;
+  // }
 
-  Future<dynamic> get onstatechange async {
-    return await $$context$$?.getPropertyValue('onstatechange') ??
-        $onstatechange;
-  }
+  // num $sampleRate = 0;
 
-  num $sampleRate = 0;
+  // Future<num> get sampleRate async {
+  //   return await $$context$$?.getPropertyValue('sampleRate') ?? $sampleRate;
+  // }
 
-  Future<num> get sampleRate async {
-    return await $$context$$?.getPropertyValue('sampleRate') ?? $sampleRate;
-  }
+  // String $state = "";
 
-  String $state = "";
+  // Future<String> get state async {
+  //   return await $$context$$?.getPropertyValue('state') ?? $state;
+  // }
 
-  Future<String> get state async {
-    return await $$context$$?.getPropertyValue('state') ?? $state;
-  }
+  // WebAudioContext({this.$$context$$});
 
-  WebAudioContext({this.$$context$$});
+  // void setValues(
+  //     {num? currentTime,
+  //     WebAudioContextNode? destination,
+  //     dynamic onstatechange,
+  //     num? sampleRate,
+  //     String? state}) {
+  //   if (currentTime != null) $currentTime = currentTime;
+  //   if (destination != null) $destination = destination;
+  //   if (onstatechange != null) $onstatechange = onstatechange;
+  //   if (sampleRate != null) $sampleRate = sampleRate;
+  //   if (state != null) $state = state;
+  // }
 
-  void setValues(
-      {num? currentTime,
-      WebAudioContextNode? destination,
-      // AudioListener? listener,
-      dynamic onstatechange,
-      num? sampleRate,
-      String? state}) {
-    if (currentTime != null) $currentTime = currentTime;
-    if (destination != null) $destination = destination;
-// if (listener != null) $listener = listener;
-    if (onstatechange != null) $onstatechange = onstatechange;
-    if (sampleRate != null) $sampleRate = sampleRate;
-    if (state != null) $state = state;
-  }
-
-  Map toJson() {
-    return {
-      'currentTime': $currentTime,
-      'destination': $destination,
-// 'listener': $listener,
-      'onstatechange': $onstatechange != null
-          ? mpjs.JsFunction($onstatechange!, [null])
-          : null,
-      'sampleRate': $sampleRate,
-      'state': $state
-    }..removeWhere((key, value) => value == null);
-  }
+  // Map toJson() {
+  //   return {
+  //     'currentTime': $currentTime,
+  //     'destination': $destination,
+  //     'onstatechange': $onstatechange != null
+  //         ? mpjs.JsFunction($onstatechange!, [null])
+  //         : null,
+  //     'sampleRate': $sampleRate,
+  //     'state': $state
+  //   }..removeWhere((key, value) => value == null);
+  // }
 
   // Future<AnalyserNode> createAnalyser() async {
   //   final result = await $$context$$?.callMethod('createAnalyser', []);
@@ -38512,12 +38564,14 @@ class WebAudioContext {
   // }
 
   // Future<ChannelMergerNode> createChannelMerger(num numberOfInputs) async {
-  //   final result = await $$context$$?.callMethod('createChannelMerger', [numberOfInputs]);
+  //   final result =
+  //       await $$context$$?.callMethod('createChannelMerger', [numberOfInputs]);
   //   return result;
   // }
 
   // Future<ChannelSplitterNode> createChannelSplitter(num numberOfOutputs) async {
-  //   final result = await $$context$$?.callMethod('createChannelSplitter', [numberOfOutputs]);
+  //   final result = await $$context$$
+  //       ?.callMethod('createChannelSplitter', [numberOfOutputs]);
   //   return result;
   // }
 
@@ -38532,7 +38586,8 @@ class WebAudioContext {
   // }
 
   // Future<DynamicsCompressorNode> createDynamicsCompressor() async {
-  //   final result = await $$context$$?.callMethod('createDynamicsCompressor', []);
+  //   final result =
+  //       await $$context$$?.callMethod('createDynamicsCompressor', []);
   //   return result;
   // }
 
@@ -38541,8 +38596,10 @@ class WebAudioContext {
   //   return result;
   // }
 
-  // Future<IIRFilterNode> createIIRFilter(List<num> feedforward,List<num> feedback) async {
-  //   final result = await $$context$$?.callMethod('createIIRFilter', [feedforward,feedback]);
+  // Future<IIRFilterNode> createIIRFilter(
+  //     List<num> feedforward, List<num> feedback) async {
+  //   final result = await $$context$$
+  //       ?.callMethod('createIIRFilter', [feedforward, feedback]);
   //   return result;
   // }
 
@@ -38556,25 +38613,27 @@ class WebAudioContext {
   //   return result;
   // }
 
-  // Future<PeriodicWaveNode> createPeriodicWave(Float32Array real,Float32Array imag,Constraints constraints) async {
-  //   final result = await $$context$$?.callMethod('createPeriodicWave', [real.toJson(),imag.toJson(),constraints.toJson()]);
+  // Future<PeriodicWaveNode> createPeriodicWave(
+  //     Float32Array real, Float32Array imag, Constraints constraints) async {
+  //   final result = await $$context$$?.callMethod('createPeriodicWave',
+  //       [real.toJson(), imag.toJson(), constraints.toJson()]);
   //   return result;
   // }
 
-  Future<dynamic> close() async {
-    final result = await $$context$$?.callMethod('close', []);
-    return result;
-  }
+  // Future<dynamic> close() async {
+  //   final result = await $$context$$?.callMethod('close', []);
+  //   return result;
+  // }
 
-  Future<dynamic> resume() async {
-    final result = await $$context$$?.callMethod('resume', []);
-    return result;
-  }
+  // Future<dynamic> resume() async {
+  //   final result = await $$context$$?.callMethod('resume', []);
+  //   return result;
+  // }
 
-  Future<dynamic> suspend() async {
-    final result = await $$context$$?.callMethod('suspend', []);
-    return result;
-  }
+  // Future<dynamic> suspend() async {
+  //   final result = await $$context$$?.callMethod('suspend', []);
+  //   return result;
+  // }
 
   // Future<ScriptProcessorNode> createScriptProcessor(num bufferSize,
   //     num numberOfInputChannels, num numberOfOutputChannels) async {
@@ -38588,19 +38647,19 @@ class WebAudioContext {
   //   return result;
   // }
 
-  Future<AudioBuffer> createBuffer(
-      num numOfChannels, num length, num sampleRate) async {
-    final result = await $$context$$
-        ?.callMethod('createBuffer', [numOfChannels, length, sampleRate]);
+  // Future<AudioBuffer> createBuffer(
+  //     num numOfChannels, num length, num sampleRate) async {
+  //   final result = await $$context$$
+  //       ?.callMethod('createBuffer', [numOfChannels, length, sampleRate]);
 
-    return AudioBuffer($$context$$: result);
-  }
+  //   return AudioBuffer($$context$$: result);
+  // }
 
-  Future<AudioBuffer> decodeAudioData() async {
-    final result = await $$context$$?.callMethod('decodeAudioData', []);
+  // Future<AudioBuffer> decodeAudioData() async {
+  //   final result = await $$context$$?.callMethod('decodeAudioData', []);
 
-    return AudioBuffer($$context$$: result);
-  }
+  //   return AudioBuffer($$context$$: result);
+  // }
 }
 
 class WebAudioContextNode {
@@ -39744,7 +39803,7 @@ class WxaSportRecord {
 }
 
 class YUVTextureRes {
-  mpjs.JsObject? $$context$$;
+  // mpjs.JsObject? $$context$$;
 
   // WebGLTexture $uvTexture = WebGLTexture();
 
@@ -39758,7 +39817,7 @@ class YUVTextureRes {
   //   return $yTexture;
   // }
 
-  YUVTextureRes({this.$$context$$});
+  // YUVTextureRes({this.$$context$$});
 
   // void setValues({WebGLTexture? uvTexture, WebGLTexture? yTexture}) {
   //   if (uvTexture != null) $uvTexture = uvTexture;
@@ -42964,13 +43023,13 @@ class WifiError {
 }
 
 class Worklet {
-  mpjs.JsObject? $$context$$;
+  // mpjs.JsObject? $$context$$;
 
-  Worklet({this.$$context$$});
+  // Worklet({this.$$context$$});
 
-  Map toJson() {
-    return {}..removeWhere((key, value) => value == null);
-  }
+  // Map toJson() {
+  //   return {}..removeWhere((key, value) => value == null);
+  // }
 
   // Future<AnimationObject> decay(DecayOption options, List<dynamic> clamp,
   //     num velocityFactor, dynamic callback) async {
@@ -43022,15 +43081,15 @@ class Worklet {
   //   return result;
   // }
 
-  Future<dynamic> runOnJS(dynamic fn) async {
-    final result = await $$context$$?.callMethod('runOnJS', [fn]);
-    return result;
-  }
+  // Future<dynamic> runOnJS(dynamic fn) async {
+  //   final result = await $$context$$?.callMethod('runOnJS', [fn]);
+  //   return result;
+  // }
 
-  Future<dynamic> runOnUI(dynamic fn) async {
-    final result = await $$context$$?.callMethod('runOnUI', [fn]);
-    return result;
-  }
+  // Future<dynamic> runOnUI(dynamic fn) async {
+  //   final result = await $$context$$?.callMethod('runOnUI', [fn]);
+  //   return result;
+  // }
 
   // Future<void> cancelAnimation(SharedValue sharedValue) async {
   //   final result =
@@ -43084,14 +43143,14 @@ class Wx {
 
   Worklet $worklet = Worklet();
 
-  Future<Worklet> get worklet async {
-    return Worklet($$context$$: $$context$$?.getProperty('worklet'));
-  }
+  // Future<Worklet> get worklet async {
+  //   return Worklet($$context$$: $$context$$?.getProperty('worklet'));
+  // }
 
   Wx({this.$$context$$});
 
   void setValues({dynamic env, Worklet? worklet}) {
-    // if (env != null) $env = env;
+    if (env != null) $env = env;
     if (worklet != null) $worklet = worklet;
   }
 
@@ -43311,7 +43370,8 @@ class Wx {
     return LogManager($$context$$: result);
   }
 
-  Future<MapContext> createMapContext(String mapId, [dynamic component]) async {
+  Future<MapContext> createMapContext(String mapId,
+      [dynamic component]) async {
     final result =
         await $$context$$?.callMethod('createMapContext', [mapId, component]);
 
@@ -43466,11 +43526,11 @@ class Wx {
     return VideoDecoder($$context$$: result);
   }
 
-  Future<WebAudioContext> createWebAudioContext() async {
-    final result = await $$context$$?.callMethod('createWebAudioContext', []);
+  // Future<WebAudioContext> createWebAudioContext() async {
+  //   final result = await $$context$$?.callMethod('createWebAudioContext', []);
 
-    return WebAudioContext($$context$$: result);
-  }
+  //   return WebAudioContext($$context$$: result);
+  // }
 
   Future<Worker> createWorker(String scriptPath,
       [CreateWorkerOption? options]) async {
