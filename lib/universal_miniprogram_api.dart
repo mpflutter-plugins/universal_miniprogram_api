@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
 
 typedef Array<T> = List<T>;
@@ -29,6 +32,16 @@ class ArrayBuffer {
 
   Map toJson() {
     return {}..removeWhere((key, value) => value == null);
+  }
+
+  static Future<ArrayBuffer?> fromUint8List(Uint8List data) async {
+    return await UniversalMiniProgramApi.uni.base64ToArrayBuffer(base64.encode(data));
+  }
+
+  Future<Uint8List?> toUint8List() async {
+    if ($$context$$ != null) {
+      return await $$context$$!.getPropertyValue("");
+    }
   }
 }
 
@@ -9745,8 +9758,7 @@ class EntryItem {
 
   EntryItem({this.$$context$$});
 
-  void setValues(
-      {String? path, dynamic encoding, num? length, num? position}) {
+  void setValues({String? path, dynamic encoding, num? length, num? position}) {
     if (path != null) $path = path;
     if (encoding != null) $encoding = encoding;
     if (length != null) $length = length;
@@ -24488,10 +24500,7 @@ class PreDownloadSubpackageOption {
   PreDownloadSubpackageOption({this.$$context$$});
 
   void setValues(
-      {dynamic complete,
-      dynamic fail,
-      String? packageType,
-      dynamic success}) {
+      {dynamic complete, dynamic fail, String? packageType, dynamic success}) {
     if (complete != null) $complete = complete;
     if (fail != null) $fail = fail;
     if (packageType != null) $packageType = packageType;
@@ -43370,8 +43379,7 @@ class Wx {
     return LogManager($$context$$: result);
   }
 
-  Future<MapContext> createMapContext(String mapId,
-      [dynamic component]) async {
+  Future<MapContext> createMapContext(String mapId, [dynamic component]) async {
     final result =
         await $$context$$?.callMethod('createMapContext', [mapId, component]);
 
