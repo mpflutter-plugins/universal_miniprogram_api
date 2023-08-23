@@ -35,7 +35,8 @@ class ArrayBuffer {
   }
 
   static Future<ArrayBuffer?> fromUint8List(Uint8List data) async {
-    return await UniversalMiniProgramApi.uni.base64ToArrayBuffer(base64.encode(data));
+    return await UniversalMiniProgramApi.uni
+        .base64ToArrayBuffer(base64.encode(data));
   }
 
   Future<Uint8List?> toUint8List() async {
@@ -3413,61 +3414,97 @@ class BackgroundAudioManager {
   }
 
   Future<void> onCanplay(OnCanplayCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onCanplay', [listener]);
     return result;
   }
 
   Future<void> onEnded(OnEndedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onEnded', [listener]);
     return result;
   }
 
   Future<void> onError(BackgroundAudioManagerOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onNext(OnNextCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onNext', [listener]);
     return result;
   }
 
   Future<void> onPause(OnPauseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
   Future<void> onPlay(OnPlayCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPlay', [listener]);
     return result;
   }
 
   Future<void> onPrev(OnPrevCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPrev', [listener]);
     return result;
   }
 
   Future<void> onSeeked(OnSeekedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSeeked', [listener]);
     return result;
   }
 
   Future<void> onSeeking(OnSeekingCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSeeking', [listener]);
     return result;
   }
 
   Future<void> onStop(InnerAudioContextOnStopCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
 
   Future<void> onTimeUpdate(OnTimeUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onTimeUpdate', [listener]);
     return result;
   }
 
   Future<void> onWaiting(OnWaitingCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onWaiting', [listener]);
     return result;
   }
@@ -17356,51 +17393,81 @@ class InnerAudioContext {
   }
 
   Future<void> onCanplay(OnCanplayCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onCanplay', [listener]);
     return result;
   }
 
   Future<void> onEnded(OnEndedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onEnded', [listener]);
     return result;
   }
 
   Future<void> onError(InnerAudioContextOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(InnerAudioContextOnErrorListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onPause(OnPauseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
   Future<void> onPlay(OnPlayCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPlay', [listener]);
     return result;
   }
 
   Future<void> onSeeked(OnSeekedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSeeked', [listener]);
     return result;
   }
 
   Future<void> onSeeking(OnSeekingCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSeeking', [listener]);
     return result;
   }
 
   Future<void> onStop(InnerAudioContextOnStopCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
 
   Future<void> onTimeUpdate(OnTimeUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onTimeUpdate', [listener]);
     return result;
   }
 
   Future<void> onWaiting(OnWaitingCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onWaiting', [listener]);
     return result;
   }
@@ -19830,6 +19897,9 @@ class NFCAdapter {
   }
 
   Future<void> onDiscovered(OnDiscoveredCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnDiscoveredListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onDiscovered', [listener]);
     return result;
   }
@@ -38996,11 +39066,17 @@ class Worker {
   }
 
   Future<void> onMessage(WorkerOnMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(WorkerOnMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
 
   Future<void> onProcessKilled(OnProcessKilledCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onProcessKilled', [listener]);
     return result;
   }
@@ -40137,6 +40213,9 @@ class BLEPeripheralServer {
 
   Future<void> onCharacteristicReadRequest(
       OnCharacteristicReadRequestCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCharacteristicReadRequestListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onCharacteristicReadRequest', [listener]);
     return result;
@@ -40144,6 +40223,9 @@ class BLEPeripheralServer {
 
   Future<void> onCharacteristicSubscribed(
       OnCharacteristicSubscribedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCharacteristicSubscribedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onCharacteristicSubscribed', [listener]);
     return result;
@@ -40151,6 +40233,9 @@ class BLEPeripheralServer {
 
   Future<void> onCharacteristicUnsubscribed(
       OnCharacteristicUnsubscribedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCharacteristicSubscribedListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onCharacteristicUnsubscribed', [listener]);
     return result;
@@ -40158,6 +40243,9 @@ class BLEPeripheralServer {
 
   Future<void> onCharacteristicWriteRequest(
       OnCharacteristicWriteRequestCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCharacteristicWriteRequestListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onCharacteristicWriteRequest', [listener]);
     return result;
@@ -40450,6 +40538,9 @@ class DownloadTask {
   }
 
   Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnHeadersReceivedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
@@ -40457,6 +40548,9 @@ class DownloadTask {
 
   Future<void> onProgressUpdate(
       DownloadTaskOnProgressUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(DownloadTaskOnProgressUpdateListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onProgressUpdate', [listener]);
     return result;
@@ -40991,16 +41085,25 @@ class InterstitialAd {
   }
 
   Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
   Future<void> onError(InterstitialAdOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(InterstitialAdOnErrorListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onLoad(OnLoadCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onLoad', [listener]);
     return result;
   }
@@ -42198,6 +42301,10 @@ class PreDownloadSubpackageTask {
 
   Future<void> onProgressUpdate(
       PreDownloadSubpackageTaskOnProgressUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(PreDownloadSubpackageTaskOnProgressUpdateListenerResult(
+          $$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onProgressUpdate', [listener]);
     return result;
@@ -42357,43 +42464,67 @@ class RecorderManager {
   }
 
   Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onFrameRecorded(OnFrameRecordedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnFrameRecordedListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onFrameRecorded', [listener]);
     return result;
   }
 
   Future<void> onInterruptionBegin(OnInterruptionBeginCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onInterruptionBegin', [listener]);
     return result;
   }
 
   Future<void> onInterruptionEnd(OnInterruptionEndCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onInterruptionEnd', [listener]);
     return result;
   }
 
   Future<void> onPause(OnPauseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPause', [listener]);
     return result;
   }
 
   Future<void> onResume(OnResumeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onResume', [listener]);
     return result;
   }
 
   Future<void> onStart(OnStartCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onStart', [listener]);
     return result;
   }
 
   Future<void> onStop(RecorderManagerOnStopCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnStopListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onStop', [listener]);
     return result;
   }
@@ -42447,11 +42578,17 @@ class RequestTask {
   }
 
   Future<void> onChunkReceived(OnChunkReceivedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnChunkReceivedListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onChunkReceived', [listener]);
     return result;
   }
 
   Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnHeadersReceivedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
@@ -42503,11 +42640,17 @@ class RewardedVideoAd {
   }
 
   Future<void> onError(RewardedVideoAdOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(RewardedVideoAdOnErrorListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onLoad(OnLoadCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onLoad', [listener]);
     return result;
   }
@@ -42568,21 +42711,33 @@ class SocketTask {
   }
 
   Future<void> onClose(SocketTaskOnCloseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(SocketTaskOnCloseListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
   Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onMessage(SocketTaskOnMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(SocketTaskOnMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
 
   Future<void> onOpen(OnOpenCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnOpenListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onOpen', [listener]);
     return result;
   }
@@ -42649,21 +42804,33 @@ class TCPSocket {
   }
 
   Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
   Future<void> onConnect(OnConnectCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onConnect', [listener]);
     return result;
   }
 
   Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onMessage(TCPSocketOnMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(TCPSocketOnMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
@@ -42742,21 +42909,33 @@ class UDPSocket {
   }
 
   Future<void> onClose(UDPSocketOnCloseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onClose', [listener]);
     return result;
   }
 
   Future<void> onError(UDPSocketOnErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onError', [listener]);
     return result;
   }
 
   Future<void> onListening(OnListeningCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onListening', [listener]);
     return result;
   }
 
   Future<void> onMessage(UDPSocketOnMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(UDPSocketOnMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onMessage', [listener]);
     return result;
   }
@@ -42797,17 +42976,26 @@ class UpdateManager {
   }
 
   Future<void> onCheckForUpdate(OnCheckForUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCheckForUpdateListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onCheckForUpdate', [listener]);
     return result;
   }
 
   Future<void> onUpdateFailed(OnUpdateFailedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onUpdateFailed', [listener]);
     return result;
   }
 
   Future<void> onUpdateReady(OnUpdateReadyCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onUpdateReady', [listener]);
     return result;
   }
@@ -42842,6 +43030,9 @@ class UploadTask {
   }
 
   Future<void> onHeadersReceived(OnHeadersReceivedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnHeadersReceivedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onHeadersReceived', [listener]);
     return result;
@@ -42849,6 +43040,9 @@ class UploadTask {
 
   Future<void> onProgressUpdate(
       UploadTaskOnProgressUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(UploadTaskOnProgressUpdateListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onProgressUpdate', [listener]);
     return result;
@@ -44675,23 +44869,35 @@ class Wx {
 
   Future<void> onAccelerometerChange(
       OnAccelerometerChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnAccelerometerChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onAccelerometerChange', [listener]);
     return result;
   }
 
   Future<void> onAppHide(OnAppHideCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onAppHide', [listener]);
     return result;
   }
 
   Future<void> onAppShow(OnAppShowCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(LaunchOptionsApp($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onAppShow', [listener]);
     return result;
   }
 
   Future<void> onAudioInterruptionBegin(
       OnAudioInterruptionBeginCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onAudioInterruptionBegin', [listener]);
     return result;
@@ -44699,6 +44905,9 @@ class Wx {
 
   Future<void> onAudioInterruptionEnd(
       OnAudioInterruptionEndCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onAudioInterruptionEnd', [listener]);
     return result;
@@ -44706,6 +44915,9 @@ class Wx {
 
   Future<void> onBLECharacteristicValueChange(
       OnBLECharacteristicValueChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBLECharacteristicValueChangeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onBLECharacteristicValueChange', [listener]);
     return result;
@@ -44713,18 +44925,28 @@ class Wx {
 
   Future<void> onBLEConnectionStateChange(
       OnBLEConnectionStateChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBLEConnectionStateChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBLEConnectionStateChange', [listener]);
     return result;
   }
 
   Future<void> onBLEMTUChange(OnBLEMTUChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBLEMTUChangeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onBLEMTUChange', [listener]);
     return result;
   }
 
   Future<void> onBLEPeripheralConnectionStateChanged(
       OnBLEPeripheralConnectionStateChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBLEPeripheralConnectionStateChangedListenerResult(
+          $$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onBLEPeripheralConnectionStateChanged', [listener]);
     return result;
@@ -44732,6 +44954,9 @@ class Wx {
 
   Future<void> onBackgroundAudioPause(
       OnBackgroundAudioPauseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBackgroundAudioPause', [listener]);
     return result;
@@ -44739,6 +44964,9 @@ class Wx {
 
   Future<void> onBackgroundAudioPlay(
       OnBackgroundAudioPlayCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBackgroundAudioPlay', [listener]);
     return result;
@@ -44746,6 +44974,9 @@ class Wx {
 
   Future<void> onBackgroundAudioStop(
       OnBackgroundAudioStopCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBackgroundAudioStop', [listener]);
     return result;
@@ -44753,6 +44984,9 @@ class Wx {
 
   Future<void> onBackgroundFetchData(
       OnBackgroundFetchDataCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBackgroundFetchDataListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBackgroundFetchData', [listener]);
     return result;
@@ -44760,18 +44994,27 @@ class Wx {
 
   Future<void> onBeaconServiceChange(
       OnBeaconServiceChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBeaconServiceChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBeaconServiceChange', [listener]);
     return result;
   }
 
   Future<void> onBeaconUpdate(OnBeaconUpdateCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBeaconUpdateListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onBeaconUpdate', [listener]);
     return result;
   }
 
   Future<void> onBluetoothAdapterStateChange(
       OnBluetoothAdapterStateChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBluetoothAdapterStateChangeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onBluetoothAdapterStateChange', [listener]);
     return result;
@@ -44779,23 +45022,35 @@ class Wx {
 
   Future<void> onBluetoothDeviceFound(
       OnBluetoothDeviceFoundCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnBluetoothDeviceFoundListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onBluetoothDeviceFound', [listener]);
     return result;
   }
 
   Future<void> onCompassChange(OnCompassChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCompassChangeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onCompassChange', [listener]);
     return result;
   }
 
   Future<void> onCopyUrl(OnCopyUrlCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnCopyUrlListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onCopyUrl', [listener]);
     return result;
   }
 
   Future<void> onDeviceMotionChange(
       OnDeviceMotionChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnDeviceMotionChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onDeviceMotionChange', [listener]);
     return result;
@@ -44807,47 +45062,71 @@ class Wx {
   }
 
   Future<void> onGetWifiList(OnGetWifiListCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnGetWifiListListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onGetWifiList', [listener]);
     return result;
   }
 
   Future<void> onGyroscopeChange(OnGyroscopeChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnGyroscopeChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onGyroscopeChange', [listener]);
     return result;
   }
 
   Future<void> onHCEMessage(OnHCEMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnHCEMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onHCEMessage', [listener]);
     return result;
   }
 
   Future<void> onKeyboardHeightChange(
       OnKeyboardHeightChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnKeyboardHeightChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onKeyboardHeightChange', [listener]);
     return result;
   }
 
   Future<void> onLazyLoadError(OnLazyLoadErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLazyLoadErrorListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onLazyLoadError', [listener]);
     return result;
   }
 
   Future<void> onLocalServiceDiscoveryStop(
       OnLocalServiceDiscoveryStopCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onLocalServiceDiscoveryStop', [listener]);
     return result;
   }
 
   Future<void> onLocalServiceFound(OnLocalServiceFoundCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLocalServiceFoundListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onLocalServiceFound', [listener]);
     return result;
   }
 
   Future<void> onLocalServiceLost(OnLocalServiceLostCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLocalServiceLostListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onLocalServiceLost', [listener]);
     return result;
@@ -44855,12 +45134,18 @@ class Wx {
 
   Future<void> onLocalServiceResolveFail(
       OnLocalServiceResolveFailCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLocalServiceLostListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onLocalServiceResolveFail', [listener]);
     return result;
   }
 
   Future<void> onLocationChange(OnLocationChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLocationChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onLocationChange', [listener]);
     return result;
@@ -44868,74 +45153,113 @@ class Wx {
 
   Future<void> onLocationChangeError(
       OnLocationChangeErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnLocationChangeErrorListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onLocationChangeError', [listener]);
     return result;
   }
 
   Future<void> onMemoryWarning(OnMemoryWarningCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnMemoryWarningListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onMemoryWarning', [listener]);
     return result;
   }
 
   Future<void> onNetworkStatusChange(
       OnNetworkStatusChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnNetworkStatusChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onNetworkStatusChange', [listener]);
     return result;
   }
 
   Future<void> onNetworkWeakChange(OnNetworkWeakChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnNetworkWeakChangeListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onNetworkWeakChange', [listener]);
     return result;
   }
 
   Future<void> onPageNotFound(OnPageNotFoundCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnPageNotFoundListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onPageNotFound', [listener]);
     return result;
   }
 
   Future<void> onScreenRecordingStateChanged(
       OnScreenRecordingStateChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnScreenRecordingStateChangedListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onScreenRecordingStateChanged', [listener]);
     return result;
   }
 
   Future<void> onSocketClose(OnSocketCloseCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(SocketTaskOnCloseListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSocketClose', [listener]);
     return result;
   }
 
   Future<void> onSocketError(OnSocketErrorCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSocketError', [listener]);
     return result;
   }
 
   Future<void> onSocketMessage(OnSocketMessageCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(SocketTaskOnMessageListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSocketMessage', [listener]);
     return result;
   }
 
   Future<void> onSocketOpen(OnSocketOpenCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnSocketOpenListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onSocketOpen', [listener]);
     return result;
   }
 
   Future<void> onThemeChange(OnThemeChangeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnThemeChangeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onThemeChange', [listener]);
     return result;
   }
 
   Future<void> onUnhandledRejection(
       OnUnhandledRejectionCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnUnhandledRejectionListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onUnhandledRejection', [listener]);
     return result;
   }
 
   Future<void> onUserCaptureScreen(OnUserCaptureScreenCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(GeneralCallbackResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onUserCaptureScreen', [listener]);
     return result;
@@ -44943,6 +45267,9 @@ class Wx {
 
   Future<void> onVoIPChatInterrupted(
       OnVoIPChatInterruptedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnVoIPChatInterruptedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onVoIPChatInterrupted', [listener]);
     return result;
@@ -44950,6 +45277,9 @@ class Wx {
 
   Future<void> onVoIPChatMembersChanged(
       OnVoIPChatMembersChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnVoIPChatMembersChangedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onVoIPChatMembersChanged', [listener]);
     return result;
@@ -44957,6 +45287,9 @@ class Wx {
 
   Future<void> onVoIPChatSpeakersChanged(
       OnVoIPChatSpeakersChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnVoIPChatSpeakersChangedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onVoIPChatSpeakersChanged', [listener]);
     return result;
@@ -44964,6 +45297,9 @@ class Wx {
 
   Future<void> onVoIPChatStateChanged(
       OnVoIPChatStateChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnVoIPChatStateChangedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onVoIPChatStateChanged', [listener]);
     return result;
@@ -44971,24 +45307,36 @@ class Wx {
 
   Future<void> onVoIPVideoMembersChanged(
       OnVoIPVideoMembersChangedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnVoIPVideoMembersChangedListenerResult($$context$$: obj));
+    });
     final result =
         await $$context$$?.callMethod('onVoIPVideoMembersChanged', [listener]);
     return result;
   }
 
   Future<void> onWifiConnected(OnWifiConnectedCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnWifiConnectedListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onWifiConnected', [listener]);
     return result;
   }
 
   Future<void> onWifiConnectedWithPartialInfo(
       OnWifiConnectedWithPartialInfoCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnWifiConnectedWithPartialInfoListenerResult($$context$$: obj));
+    });
     final result = await $$context$$
         ?.callMethod('onWifiConnectedWithPartialInfo', [listener]);
     return result;
   }
 
   Future<void> onWindowResize(OnWindowResizeCallback listener) async {
+    mpjs.JsObject.mirrorFunction(listener, (obj) {
+      listener(OnWindowResizeListenerResult($$context$$: obj));
+    });
     final result = await $$context$$?.callMethod('onWindowResize', [listener]);
     return result;
   }
