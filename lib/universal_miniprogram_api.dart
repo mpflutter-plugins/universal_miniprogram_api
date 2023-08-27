@@ -3860,7 +3860,7 @@ class BlueToothDevice {
   Map toJson() {
     return {
       'RSSI': $RSSI,
-      'advertisData': $advertisData,
+      'advertisData': $advertisData.$$context$$,
       'advertisServiceUUIDs': $advertisServiceUUIDs,
       'connectable': $connectable,
       'deviceId': $deviceId,
@@ -5369,7 +5369,7 @@ class Characteristic {
       'descriptors': $descriptors,
       'permission': $permission,
       'properties': $properties,
-      'value': $value
+      'value': $value?.$$context$$
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -9148,7 +9148,7 @@ class DetectBodyOption {
 
   Map toJson() {
     return {
-      'frameBuffer': $frameBuffer,
+      'frameBuffer': $frameBuffer.$$context$$,
       'height': $height,
       'width': $width,
       'scoreThreshold': $scoreThreshold,
@@ -9216,7 +9216,7 @@ class DetectFaceOption {
 
   Map toJson() {
     return {
-      'frameBuffer': $frameBuffer,
+      'frameBuffer': $frameBuffer.$$context$$,
       'height': $height,
       'width': $width,
       'modelModel': $modelModel,
@@ -9277,7 +9277,7 @@ class DetectHandOption {
 
   Map toJson() {
     return {
-      'frameBuffer': $frameBuffer,
+      'frameBuffer': $frameBuffer.$$context$$,
       'height': $height,
       'width': $width,
       'algoMode': $algoMode,
@@ -10379,7 +10379,7 @@ class FaceDetectOption {
 
   Map toJson() {
     return {
-      'frameBuffer': $frameBuffer,
+      'frameBuffer': $frameBuffer.$$context$$,
       'height': $height,
       'width': $width,
       'complete': $complete != null
@@ -10799,7 +10799,7 @@ class FrameDataOptions {
 
   Map toJson() {
     return {
-      'data': $data,
+      'data': $data.$$context$$,
       'height': $height,
       'pkDts': $pkDts,
       'pkPts': $pkPts,
@@ -11210,7 +11210,7 @@ class GetAtqaSuccessCallbackResult {
   }
 
   Map toJson() {
-    return {'atqa': $atqa, 'errMsg': $errMsg}
+    return {'atqa': $atqa.$$context$$, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -13685,7 +13685,7 @@ class GetHistoricalBytesSuccessCallbackResult {
   }
 
   Map toJson() {
-    return {'histBytes': $histBytes, 'errMsg': $errMsg}
+    return {'histBytes': $histBytes.$$context$$, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -14469,7 +14469,7 @@ class GetRandomValuesSuccessCallbackResult {
   }
 
   Map toJson() {
-    return {'randomValues': $randomValues, 'errMsg': $errMsg}
+    return {'randomValues': $randomValues.$$context$$, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -20738,7 +20738,7 @@ class OnBLECharacteristicValueChangeListenerResult {
       'characteristicId': $characteristicId,
       'deviceId': $deviceId,
       'serviceId': $serviceId,
-      'value': $value
+      'value': $value.$$context$$
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -21035,7 +21035,7 @@ class OnCameraFrameCallbackResult {
   }
 
   Map toJson() {
-    return {'data': $data, 'height': $height, 'width': $width}
+    return {'data': $data.$$context$$, 'height': $height, 'width': $width}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -21155,7 +21155,7 @@ class OnCharacteristicWriteRequestListenerResult {
       'callbackId': $callbackId,
       'characteristicId': $characteristicId,
       'serviceId': $serviceId,
-      'value': $value
+      'value': $value.$$context$$
     }..removeWhere((key, value) => value == null);
   }
 }
@@ -21363,7 +21363,7 @@ class OnFrameRecordedListenerResult {
   }
 
   Map toJson() {
-    return {'frameBuffer': $frameBuffer, 'isLastFrame': $isLastFrame}
+    return {'frameBuffer': $frameBuffer.$$context$$, 'isLastFrame': $isLastFrame}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -21455,7 +21455,7 @@ class OnHCEMessageListenerResult {
   }
 
   Map toJson() {
-    return {'data': $data, 'messageType': $messageType, 'reason': $reason}
+    return {'data': $data.$$context$$, 'messageType': $messageType, 'reason': $reason}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -25255,7 +25255,7 @@ class ReadCompressedFileSuccessCallbackResult {
   }
 
   Map toJson() {
-    return {'data': $data, 'errMsg': $errMsg}
+    return {'data': $data.$$context$$, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -25520,7 +25520,7 @@ class ReadOption {
 
   Map toJson() {
     return {
-      'arrayBuffer': $arrayBuffer,
+      'arrayBuffer': $arrayBuffer.$$context$$,
       'fd': $fd,
       'complete': $complete != null
           ? mpjs.JsFunction(
@@ -25600,7 +25600,7 @@ class ReadSuccessCallbackResult {
 
   Map toJson() {
     return {
-      'arrayBuffer': $arrayBuffer,
+      'arrayBuffer': $arrayBuffer.$$context$$,
       'bytesRead': $bytesRead,
       'errMsg': $errMsg
     }..removeWhere((key, value) => value == null);
@@ -25657,7 +25657,7 @@ class ReadSyncOption {
 
   Map toJson() {
     return {
-      'arrayBuffer': $arrayBuffer,
+      'arrayBuffer': $arrayBuffer.$$context$$,
       'fd': $fd,
       'length': $length,
       'offset': $offset,
@@ -28029,7 +28029,7 @@ class Result {
   }
 
   Map toJson() {
-    return {'data': $data}..removeWhere((key, value) => value == null);
+    return {'data': $data.$$context$$}..removeWhere((key, value) => value == null);
   }
 }
 
@@ -28299,7 +28299,7 @@ class RunOCROption {
   }
 
   Map toJson() {
-    return {'frameBuffer': $frameBuffer, 'height': $height, 'width': $width}
+    return {'frameBuffer': $frameBuffer.$$context$$, 'height': $height, 'width': $width}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -29085,7 +29085,7 @@ class SendHCEMessageOption {
 
   Map toJson() {
     return {
-      'data': $data,
+      'data': $data.$$context$$,
       'complete': $complete != null
           ? mpjs.JsFunction($complete!, [(e) => NFCError($$context$$: e)])
           : null,
@@ -35690,7 +35690,7 @@ class TCPSocketOnMessageListenerResult {
   Map toJson() {
     return {
       'localInfo': $localInfo,
-      'message': $message,
+      'message': $message.$$context$$,
       'remoteInfo': $remoteInfo
     }..removeWhere((key, value) => value == null);
   }
@@ -36210,7 +36210,7 @@ class TransceiveOption {
 
   Map toJson() {
     return {
-      'data': $data,
+      'data': $data.$$context$$,
       'complete': $complete != null
           ? mpjs.JsFunction($complete!, [(e) => Nfcrwerror($$context$$: e)])
           : null,
@@ -36248,7 +36248,7 @@ class TransceiveSuccessCallbackResult {
   }
 
   Map toJson() {
-    return {'data': $data, 'errMsg': $errMsg}
+    return {'data': $data.$$context$$, 'errMsg': $errMsg}
       ..removeWhere((key, value) => value == null);
   }
 }
@@ -36547,7 +36547,7 @@ class UDPSocketOnMessageListenerResult {
   Map toJson() {
     return {
       'localInfo': $localInfo,
-      'message': $message,
+      'message': $message.$$context$$,
       'remoteInfo': $remoteInfo
     }..removeWhere((key, value) => value == null);
   }
@@ -39218,7 +39218,7 @@ class WriteBLECharacteristicValueOption {
       'characteristicId': $characteristicId,
       'deviceId': $deviceId,
       'serviceId': $serviceId,
-      'value': $value,
+      'value': $value.$$context$$,
       'complete': $complete != null
           ? mpjs.JsFunction($complete!, [(e) => BluetoothError($$context$$: e)])
           : null,
@@ -39311,7 +39311,7 @@ class WriteCharacteristicValueObject {
       'characteristicId': $characteristicId,
       'needNotify': $needNotify,
       'serviceId': $serviceId,
-      'value': $value,
+      'value': $value.$$context$$,
       'callbackId': $callbackId,
       'complete': $complete != null
           ? mpjs.JsFunction(
@@ -43759,7 +43759,7 @@ class Wx {
 
   Future<String> arrayBufferToBase64(ArrayBuffer arrayBuffer) async {
     final result = await $$context$$
-        ?.callMethod('arrayBufferToBase64', [arrayBuffer.toJson()]);
+        ?.callMethod('arrayBufferToBase64', [arrayBuffer.$$context$$]);
     return result;
   }
 
