@@ -1,4 +1,4 @@
-import { CGSource } from "dts2mp";
+import { CGSource } from "./dts2mp";
 import { readFileSync, writeFileSync } from "fs";
 
 const fooSource = new CGSource(

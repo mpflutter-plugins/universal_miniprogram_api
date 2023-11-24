@@ -1,16 +1,14 @@
 name: universal_miniprogram_api
 description: The MPFlutter universal miniprogram api.
 publish_to: none
-version: 0.1.7
+version: 2.0.0
 homepage: /
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
+  sdk: ">=3.1.1 <4.0.0"
 
 dependencies:
-  flutter: ">=0.18.3"
-  mpcore: ">=0.18.3"
-
-dependency_overrides:
-  mpcore: 
-    path: "/Users/saiakirahui/Documents/mpflutter/mpflutter/packages/mpcore"
+  flutter:
+    sdk: flutter
+  mpflutter:
+    path: /Users/bytedance/Desktop/mpflutter

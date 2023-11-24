@@ -1,57 +1,44 @@
 import 'dart:convert';
-import 'package:mpcore/mpjs/mpjs.dart' as mpjs;
+import 'package:mpflutter/mpjs/mpjs.dart' as mpjs;
 
 class AccessOption {
-  mpjs.JsObject? $$context$$;
+  late mpjs.JSObject $$context$$;
 
-  String $path = "";
-
-  Future<String> get path async {
-    return await $$context$$?.getPropertyValue('path') ?? $path;
+  set path(String value) {
+    $$context$$["path"] = value;
   }
 
-  AccessSuccessCallback? $success;
-
-  Future<AccessSuccessCallback?> get success async {
-    return $success;
+  String get path {
+    return $$context$$["path"];
   }
 
-  AccessOption({this.$$context$$});
-
-  void setValues({String? path, AccessSuccessCallback? success}) {
-    if (path != null) $path = path;
-    if (success != null) $success = success;
+  set success(AccessSuccessCallback? value) {
+    $$context$$["success"] = value;
   }
 
-  Map toJson() {
-    return {
-      'path': $path,
-      'success': $success != null
-          ? mpjs.JsFunction(
-              $success!, [(e) => GeneralCallbackResult($$context$$: e)])
-          : null
-    }..removeWhere((key, value) => value == null);
+  AccessSuccessCallback? get success {
+    return success;
+  }
+
+  AccessOption({mpjs.JSObject? $$context$$}) {
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
   }
 }
 
 typedef AccessSuccessCallback = void Function(GeneralCallbackResult);
 
 class GeneralCallbackResult {
-  mpjs.JsObject? $$context$$;
+  late mpjs.JSObject $$context$$;
 
-  String $errMsg = "";
-
-  Future<String> get errMsg async {
-    return await $$context$$?.getPropertyValue('errMsg') ?? $errMsg;
+  set errMsg(String value) {
+    $$context$$["errMsg"] = value;
   }
 
-  GeneralCallbackResult({this.$$context$$});
-
-  void setValues({String? errMsg}) {
-    if (errMsg != null) $errMsg = errMsg;
+  String get errMsg {
+    return $$context$$["errMsg"];
   }
 
-  Map toJson() {
-    return {'errMsg': $errMsg}..removeWhere((key, value) => value == null);
+  GeneralCallbackResult({mpjs.JSObject? $$context$$}) {
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
   }
 }

@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dts2mp": "git+https://github.com/mpflutter-plugins/dts2mp",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },

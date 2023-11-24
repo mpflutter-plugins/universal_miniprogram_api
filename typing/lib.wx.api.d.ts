@@ -30,6 +30,27 @@ declare namespace WechatMiniprogram {
     interface Uint8ClampedArray {}
     interface Float32Array {}
     interface Record<T, U> {}
+    interface AnalyserNode {}
+    interface BiquadFilterNode {}
+    interface BufferSourceNode {}
+    interface ChannelMergerNode {}
+    interface ChannelSplitterNode {}
+    interface ConstantSourceNode {}
+    interface DelayNode {}
+    interface DynamicsCompressorNode {}
+    interface GainNode {}
+    interface IIRFilterNode {}
+    interface OscillatorNode {}
+    interface PannerNode {}
+    interface PeriodicWaveNode {}
+    interface ScriptProcessorNode {}
+    interface WaveShaperNode {}
+    interface WebGLRenderingContext {}
+    interface WebGLTexture {}
+    interface AnimationObject {}
+    interface DerivedValue {}
+    interface WorkletFunction {}
+    interface SharedValue {}
 
   interface AccessFailCallbackResult {
       /** 错误信息
