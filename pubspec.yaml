@@ -1,5 +1,5 @@
-name: universal_miniprogram_api
-description: The MPFlutter universal miniprogram api.
+name: wechat_miniprogram_api_mpflutter
+description: The MPFlutter wechat miniprogram api.
 publish_to: none
 version: 2.0.0
 homepage: /
@@ -11,4 +11,4 @@ dependencies:
   flutter:
     sdk: flutter
   mpflutter:
-    path: /Users/bytedance/Desktop/mpflutter
+    path: /Users/saiakirahui/Documents/mpflutter/mpflutter

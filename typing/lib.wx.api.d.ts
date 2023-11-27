@@ -51,6 +51,8 @@ declare namespace WechatMiniprogram {
     interface DerivedValue {}
     interface WorkletFunction {}
     interface SharedValue {}
+    interface AudioListener {}
+    interface WxCloud {}
 
   interface AccessFailCallbackResult {
       /** 错误信息
@@ -3555,7 +3557,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
       /** 接口调用失败的回调函数 */
       fail?: GetStorageFailCallback
       /** 接口调用成功的回调函数 */
-      success?: GetStorageSuccessCallback<T>
+      success?: GetStorageSuccessCallback
   }
   interface GetStorageSuccessCallbackResult<T = any> {
       /** key对应的内容 */
@@ -5028,7 +5030,7 @@ console.log(res.errCode)
   }
   interface OnUnhandledRejectionListenerResult {
       /** 被拒绝的 Promise 对象 */
-      promise: Promise<any>
+    //   promise: Promise<any>
       /** 拒绝原因，一般是一个 Error 对象 */
       reason: string
   }
@@ -6363,7 +6365,7 @@ console.log(res.errCode)
        * - 'arraybuffer': 响应的数据为 ArrayBuffer; */
       responseType?: 'text' | 'arraybuffer'
       /** 接口调用成功的回调函数 */
-      success?: RequestSuccessCallback<T>
+      success?: RequestSuccessCallback
       /** 需要基础库： `2.10.0`
        *
        * 超时时间，单位为毫秒。默认值为 60000 */
@@ -27618,8 +27620,8 @@ success (res) {
       option: GetStorageInfoSuccessCallbackOption
   ) => void
   /** 接口调用成功的回调函数 */
-  type GetStorageSuccessCallback<T = any> = (
-      result: GetStorageSuccessCallbackResult<T>
+  type GetStorageSuccessCallback = (
+      result: GetStorageSuccessCallbackResult
   ) => void
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type GetSystemInfoAsyncCompleteCallback = (
@@ -28844,12 +28846,7 @@ success (res) {
       result: RequestSubscribeMessageSuccessCallbackResult
   ) => void
   /** 接口调用成功的回调函数 */
-  type RequestSuccessCallback<
-      T extends string | IAnyObject | ArrayBuffer =
-          | string
-          | IAnyObject
-          | ArrayBuffer
-  > = (result: RequestSuccessCallbackResult<T>) => void
+  type RequestSuccessCallback = (result: RequestSuccessCallbackResult) => void
   /** 接口调用结束的回调函数（调用成功、失败都会执行） */
   type ResumeBGMCompleteCallback = (res: GeneralCallbackResult) => void
   /** 接口调用失败的回调函数 */

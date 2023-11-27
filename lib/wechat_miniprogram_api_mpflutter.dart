@@ -5,7 +5,7 @@ class IAnyObject {
   late mpjs.JSObject $$context$$;
 
   IAnyObject({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13,7 +13,7 @@ class PromisifySuccessResult<T, U> {
   late mpjs.JSObject $$context$$;
 
   PromisifySuccessResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21,7 +21,7 @@ class ArrayBuffer {
   late mpjs.JSObject $$context$$;
 
   ArrayBuffer({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29,7 +29,7 @@ class Array<T> {
   late mpjs.JSObject $$context$$;
 
   Array({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -37,7 +37,7 @@ class Uint8ClampedArray {
   late mpjs.JSObject $$context$$;
 
   Uint8ClampedArray({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -45,7 +45,7 @@ class Float32Array {
   late mpjs.JSObject $$context$$;
 
   Float32Array({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -53,7 +53,7 @@ class Record<T, U> {
   late mpjs.JSObject $$context$$;
 
   Record({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -61,7 +61,7 @@ class AnalyserNode {
   late mpjs.JSObject $$context$$;
 
   AnalyserNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -69,7 +69,7 @@ class BiquadFilterNode {
   late mpjs.JSObject $$context$$;
 
   BiquadFilterNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -77,7 +77,7 @@ class BufferSourceNode {
   late mpjs.JSObject $$context$$;
 
   BufferSourceNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -85,7 +85,7 @@ class ChannelMergerNode {
   late mpjs.JSObject $$context$$;
 
   ChannelMergerNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -93,7 +93,7 @@ class ChannelSplitterNode {
   late mpjs.JSObject $$context$$;
 
   ChannelSplitterNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -101,7 +101,7 @@ class ConstantSourceNode {
   late mpjs.JSObject $$context$$;
 
   ConstantSourceNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -109,7 +109,7 @@ class DelayNode {
   late mpjs.JSObject $$context$$;
 
   DelayNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -117,7 +117,7 @@ class DynamicsCompressorNode {
   late mpjs.JSObject $$context$$;
 
   DynamicsCompressorNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -125,7 +125,7 @@ class GainNode {
   late mpjs.JSObject $$context$$;
 
   GainNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -133,7 +133,7 @@ class IIRFilterNode {
   late mpjs.JSObject $$context$$;
 
   IIRFilterNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -141,7 +141,7 @@ class OscillatorNode {
   late mpjs.JSObject $$context$$;
 
   OscillatorNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -149,7 +149,7 @@ class PannerNode {
   late mpjs.JSObject $$context$$;
 
   PannerNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -157,7 +157,7 @@ class PeriodicWaveNode {
   late mpjs.JSObject $$context$$;
 
   PeriodicWaveNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -165,7 +165,7 @@ class ScriptProcessorNode {
   late mpjs.JSObject $$context$$;
 
   ScriptProcessorNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -173,7 +173,7 @@ class WaveShaperNode {
   late mpjs.JSObject $$context$$;
 
   WaveShaperNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -181,7 +181,7 @@ class WebGLRenderingContext {
   late mpjs.JSObject $$context$$;
 
   WebGLRenderingContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -189,7 +189,7 @@ class WebGLTexture {
   late mpjs.JSObject $$context$$;
 
   WebGLTexture({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -197,7 +197,7 @@ class AnimationObject {
   late mpjs.JSObject $$context$$;
 
   AnimationObject({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -205,7 +205,7 @@ class DerivedValue {
   late mpjs.JSObject $$context$$;
 
   DerivedValue({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -213,7 +213,7 @@ class WorkletFunction {
   late mpjs.JSObject $$context$$;
 
   WorkletFunction({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -221,7 +221,23 @@ class SharedValue {
   late mpjs.JSObject $$context$$;
 
   SharedValue({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
+  }
+}
+
+class AudioListener {
+  late mpjs.JSObject $$context$$;
+
+  AudioListener({mpjs.JSObject? $$context$$}) {
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
+  }
+}
+
+class WxCloud {
+  late mpjs.JSObject $$context$$;
+
+  WxCloud({mpjs.JSObject? $$context$$}) {
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -237,7 +253,7 @@ class AccessFailCallbackResult {
   }
 
   AccessFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -277,7 +293,7 @@ class AccessOption {
   }
 
   AccessOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -301,7 +317,7 @@ class AccountInfo {
   }
 
   AccountInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -389,7 +405,7 @@ class AddArcOption {
   }
 
   AddArcOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -429,7 +445,7 @@ class AddCardOption {
   }
 
   AddCardOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -453,7 +469,7 @@ class AddCardRequestInfo {
   }
 
   AddCardRequestInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -493,7 +509,7 @@ class AddCardResponseInfo {
   }
 
   AddCardResponseInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -517,7 +533,7 @@ class AddCardSuccessCallbackResult {
   }
 
   AddCardSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -557,7 +573,7 @@ class AddCustomLayerOption {
   }
 
   AddCustomLayerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -605,7 +621,7 @@ class AddFileToFavoritesOption {
   }
 
   AddFileToFavoritesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -685,7 +701,7 @@ class AddGroundOverlayOption {
   }
 
   AddGroundOverlayOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -733,7 +749,7 @@ class AddMarkersOption {
   }
 
   AddMarkersOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -829,7 +845,7 @@ class AddPhoneCalendarOption {
   }
 
   AddPhoneCalendarOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1117,7 +1133,7 @@ class AddPhoneContactOption {
   }
 
   AddPhoneContactOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1229,7 +1245,7 @@ class AddPhoneRepeatCalendarOption {
   }
 
   AddPhoneRepeatCalendarOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1269,7 +1285,7 @@ class AddServiceOption {
   }
 
   AddServiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1317,7 +1333,7 @@ class AddVideoToFavoritesOption {
   }
 
   AddVideoToFavoritesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1381,7 +1397,7 @@ class AddVisualLayerOption {
   }
 
   AddVisualLayerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1429,7 +1445,7 @@ class AdvertiseReqObj {
   }
 
   AdvertiseReqObj({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1445,7 +1461,7 @@ class AnimationExportResult {
   }
 
   AnimationExportResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1469,7 +1485,7 @@ class AnimationOption {
   }
 
   AnimationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1565,7 +1581,7 @@ class AppAuthorizeSetting {
   }
 
   AppAuthorizeSetting({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1621,7 +1637,7 @@ class AppBaseInfo {
   }
 
   AppBaseInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1637,7 +1653,7 @@ class AppBaseInfoHost {
   }
 
   AppBaseInfoHost({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1653,7 +1669,7 @@ class AppendFileFailCallbackResult {
   }
 
   AppendFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1709,7 +1725,7 @@ class AppendFileOption {
   }
 
   AppendFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1765,7 +1781,7 @@ class ApplyBlusherStickMakeupOption {
   }
 
   ApplyBlusherStickMakeupOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1829,7 +1845,7 @@ class ApplyEyeBrowMakeupOption {
   }
 
   ApplyEyeBrowMakeupOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1901,7 +1917,7 @@ class ApplyEyeShadowMakeupOption {
   }
 
   ApplyEyeShadowMakeupOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -1949,7 +1965,7 @@ class ApplyFaceContourMakeupOption {
   }
 
   ApplyFaceContourMakeupOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2005,7 +2021,7 @@ class ApplyFilterOption {
   }
 
   ApplyFilterOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2085,7 +2101,7 @@ class ApplyLipStickMakeupOption {
   }
 
   ApplyLipStickMakeupOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2141,7 +2157,7 @@ class ApplyStickerOption {
   }
 
   ApplyStickerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2165,7 +2181,7 @@ class Asset {
   }
 
   Asset({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2205,7 +2221,7 @@ class AudioBuffer {
   }
 
   AudioBuffer({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void copyFromChannel() {
@@ -2263,7 +2279,7 @@ class AuthPrivateMessageOption {
   }
 
   AuthPrivateMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2303,7 +2319,7 @@ class AuthPrivateMessageSuccessCallbackResult {
   }
 
   AuthPrivateMessageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2407,7 +2423,7 @@ class AuthSetting {
   }
 
   AuthSetting({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2447,7 +2463,7 @@ class AuthorizeForMiniProgramOption {
   }
 
   AuthorizeForMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2487,7 +2503,7 @@ class AuthorizeOption {
   }
 
   AuthorizeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2511,7 +2527,7 @@ class BLECharacteristic {
   }
 
   BLECharacteristic({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2567,7 +2583,7 @@ class BLECharacteristicProperties {
   }
 
   BLECharacteristicProperties({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2599,7 +2615,7 @@ class BLEPeripheralServerCloseOption {
   }
 
   BLEPeripheralServerCloseOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2623,7 +2639,7 @@ class BLEPeripheralService {
   }
 
   BLEPeripheralService({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2647,7 +2663,7 @@ class BLEService {
   }
 
   BLEService({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2767,7 +2783,7 @@ class BackgroundAudioManager {
   }
 
   BackgroundAudioManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void onCanplay(OnCanplayCallback listener) {
@@ -2887,7 +2903,7 @@ class BatchGetStorageOption {
   }
 
   BatchGetStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2927,7 +2943,7 @@ class BatchSetStorageOption {
   }
 
   BatchSetStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -2983,7 +2999,7 @@ class BeaconInfo {
   }
 
   BeaconInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3023,7 +3039,7 @@ class BeaconInfoObj {
   }
 
   BeaconInfoObj({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3039,7 +3055,7 @@ class BindWifiOption {
   }
 
   BindWifiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3111,7 +3127,7 @@ class BlueToothDevice {
   }
 
   BlueToothDevice({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3135,7 +3151,7 @@ class BluetoothDeviceInfo {
   }
 
   BluetoothDeviceInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3167,7 +3183,7 @@ class BlurOption {
   }
 
   BlurOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3183,7 +3199,7 @@ class BodyTrack {
   }
 
   BodyTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3255,7 +3271,7 @@ class BoundingClientRectCallbackResult {
   }
 
   BoundingClientRectCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3311,7 +3327,7 @@ class BoundingClientRectResult {
   }
 
   BoundingClientRectResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3351,7 +3367,7 @@ class CacheManager {
   }
 
   CacheManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<String> addRules(IAnyObject rules) {
@@ -3473,7 +3489,7 @@ class CameraContextStartRecordOption {
   }
 
   CameraContextStartRecordOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3513,7 +3529,7 @@ class CameraContextStopRecordOption {
   }
 
   CameraContextStopRecordOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3553,7 +3569,7 @@ class CameraFrameListenerStartOption {
   }
 
   CameraFrameListenerStartOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -3577,7 +3593,7 @@ class Canvas {
   }
 
   Canvas({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void cancelAnimationFrame(num requestID) {
@@ -3735,7 +3751,7 @@ class CanvasContext {
   }
 
   CanvasContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void arc(num x, num y, num r, num sAngle, num eAngle,
@@ -3791,14 +3807,14 @@ class CanvasContext {
     return result;
   }
 
-  void drawImage(
+  void drawImage2(
       String imageResource, num dx, num dy, num dWidth, num dHeight) {
     final result = $$context$$
         .callMethod('drawImage', [imageResource, dx, dy, dWidth, dHeight]);
     return result;
   }
 
-  void drawImage(String imageResource, num sx, num sy, num sWidth, num sHeight,
+  void drawImage3(String imageResource, num sx, num sy, num sWidth, num sHeight,
       num dx, num dy, num dWidth, num dHeight) {
     final result = $$context$$.callMethod('drawImage',
         [imageResource, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight]);
@@ -4043,7 +4059,7 @@ class CanvasGetImageDataOption {
   }
 
   CanvasGetImageDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4083,7 +4099,7 @@ class CanvasGetImageDataSuccessCallbackResult {
   }
 
   CanvasGetImageDataSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4163,7 +4179,7 @@ class CanvasPutImageDataOption {
   }
 
   CanvasPutImageDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4275,7 +4291,7 @@ class CanvasToTempFilePathOption {
   }
 
   CanvasToTempFilePathOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4299,7 +4315,7 @@ class CanvasToTempFilePathSuccessCallbackResult {
   }
 
   CanvasToTempFilePathSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4347,7 +4363,7 @@ class Characteristic {
   }
 
   Characteristic({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4379,7 +4395,7 @@ class CharacteristicDescriptor {
   }
 
   CharacteristicDescriptor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4419,7 +4435,7 @@ class CharacteristicPermission {
   }
 
   CharacteristicPermission({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4467,7 +4483,7 @@ class CharacteristicProperties {
   }
 
   CharacteristicProperties({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4499,7 +4515,7 @@ class CheckIsAddedToMyMiniProgramOption {
   }
 
   CheckIsAddedToMyMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4524,7 +4540,7 @@ class CheckIsAddedToMyMiniProgramSuccessCallbackResult {
 
   CheckIsAddedToMyMiniProgramSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4556,7 +4572,7 @@ class CheckIsOpenAccessibilityOption {
   }
 
   CheckIsOpenAccessibilityOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4572,7 +4588,7 @@ class CheckIsOpenAccessibilitySuccessCallbackOption {
   }
 
   CheckIsOpenAccessibilitySuccessCallbackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4612,7 +4628,7 @@ class CheckIsSoterEnrolledInDeviceOption {
   }
 
   CheckIsSoterEnrolledInDeviceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4637,7 +4653,7 @@ class CheckIsSoterEnrolledInDeviceSuccessCallbackResult {
 
   CheckIsSoterEnrolledInDeviceSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4669,7 +4685,7 @@ class CheckIsSupportSoterAuthenticationOption {
   }
 
   CheckIsSupportSoterAuthenticationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4694,7 +4710,7 @@ class CheckIsSupportSoterAuthenticationSuccessCallbackResult {
 
   CheckIsSupportSoterAuthenticationSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4726,7 +4742,7 @@ class CheckSessionOption {
   }
 
   CheckSessionOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4758,7 +4774,7 @@ class ChooseAddressOption {
   }
 
   ChooseAddressOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4854,7 +4870,7 @@ class ChooseAddressSuccessCallbackResult {
   }
 
   ChooseAddressSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4886,7 +4902,7 @@ class ChooseContactOption {
   }
 
   ChooseContactOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4918,7 +4934,7 @@ class ChooseContactSuccessCallbackOption {
   }
 
   ChooseContactSuccessCallbackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -4966,7 +4982,7 @@ class ChooseFile {
   }
 
   ChooseFile({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5022,7 +5038,7 @@ class ChooseImageOption {
   }
 
   ChooseImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5054,7 +5070,7 @@ class ChooseImageSuccessCallbackResult {
   }
 
   ChooseImageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5086,7 +5102,7 @@ class ChooseInvoiceOption {
   }
 
   ChooseInvoiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5110,7 +5126,7 @@ class ChooseInvoiceSuccessCallbackResult {
   }
 
   ChooseInvoiceSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5142,7 +5158,7 @@ class ChooseInvoiceTitleOption {
   }
 
   ChooseInvoiceTitleOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5214,7 +5230,7 @@ class ChooseInvoiceTitleSuccessCallbackResult {
   }
 
   ChooseInvoiceTitleSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5246,7 +5262,7 @@ class ChooseLicensePlateOption {
   }
 
   ChooseLicensePlateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5270,7 +5286,7 @@ class ChooseLicensePlateSuccessCallbackResult {
   }
 
   ChooseLicensePlateSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5318,7 +5334,7 @@ class ChooseLocationOption {
   }
 
   ChooseLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5366,7 +5382,7 @@ class ChooseLocationSuccessCallbackResult {
   }
 
   ChooseLocationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5446,7 +5462,7 @@ class ChooseMediaOption {
   }
 
   ChooseMediaOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5478,7 +5494,7 @@ class ChooseMediaSuccessCallbackResult {
   }
 
   ChooseMediaSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5534,7 +5550,7 @@ class ChooseMessageFileOption {
   }
 
   ChooseMessageFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5558,7 +5574,7 @@ class ChooseMessageFileSuccessCallbackResult {
   }
 
   ChooseMessageFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5590,7 +5606,7 @@ class ChoosePoiOption {
   }
 
   ChoosePoiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5654,7 +5670,7 @@ class ChoosePoiSuccessCallbackResult {
   }
 
   ChoosePoiSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5718,7 +5734,7 @@ class ChooseVideoOption {
   }
 
   ChooseVideoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5774,7 +5790,7 @@ class ChooseVideoSuccessCallbackResult {
   }
 
   ChooseVideoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5806,7 +5822,7 @@ class ClearFiltersOption {
   }
 
   ClearFiltersOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5838,7 +5854,7 @@ class ClearMakeupsOption {
   }
 
   ClearMakeupsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5870,7 +5886,7 @@ class ClearOption {
   }
 
   ClearOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5902,7 +5918,7 @@ class ClearStickersOption {
   }
 
   ClearStickersOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5934,7 +5950,7 @@ class ClearStorageOption {
   }
 
   ClearStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -5990,7 +6006,7 @@ class ClientRect {
   }
 
   ClientRect({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6030,7 +6046,7 @@ class CloseBLEConnectionOption {
   }
 
   CloseBLEConnectionOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6062,7 +6078,7 @@ class CloseBluetoothAdapterOption {
   }
 
   CloseBluetoothAdapterOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6078,7 +6094,7 @@ class CloseFailCallbackResult {
   }
 
   CloseFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6126,7 +6142,7 @@ class CloseSocketOption {
   }
 
   CloseSocketOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6142,7 +6158,7 @@ class CloseSyncOption {
   }
 
   CloseSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6150,7 +6166,7 @@ class Color {
   late mpjs.JSObject $$context$$;
 
   Color({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6214,7 +6230,7 @@ class CompressImageOption {
   }
 
   CompressImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6238,7 +6254,7 @@ class CompressImageSuccessCallbackResult {
   }
 
   CompressImageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6310,7 +6326,7 @@ class CompressVideoOption {
   }
 
   CompressVideoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6342,7 +6358,7 @@ class CompressVideoSuccessCallbackResult {
   }
 
   CompressVideoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6430,7 +6446,7 @@ class ConnectSocketOption {
   }
 
   ConnectSocketOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6502,7 +6518,7 @@ class ConnectWifiOption {
   }
 
   ConnectWifiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6518,7 +6534,7 @@ class Constraints {
   }
 
   Constraints({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6534,7 +6550,7 @@ class ContextCallbackResult {
   }
 
   ContextCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6550,7 +6566,7 @@ class CopyFileFailCallbackResult {
   }
 
   CopyFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6598,7 +6614,7 @@ class CopyFileOption {
   }
 
   CopyFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6646,7 +6662,7 @@ class CreateBLEConnectionOption {
   }
 
   CreateBLEConnectionOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6678,7 +6694,7 @@ class CreateBLEPeripheralServerOption {
   }
 
   CreateBLEPeripheralServerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6702,7 +6718,7 @@ class CreateBLEPeripheralServerSuccessCallbackResult {
   }
 
   CreateBLEPeripheralServerSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6742,7 +6758,7 @@ class CreateCacheManagerOption {
   }
 
   CreateCacheManagerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6758,7 +6774,7 @@ class CreateInnerAudioContextOption {
   }
 
   CreateInnerAudioContextOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6790,7 +6806,7 @@ class CreateIntersectionObserverOption {
   }
 
   CreateIntersectionObserverOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6806,7 +6822,7 @@ class CreateInterstitialAdOption {
   }
 
   CreateInterstitialAdOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6846,7 +6862,7 @@ class CreateMediaRecorderOption {
   }
 
   CreateMediaRecorderOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6886,7 +6902,7 @@ class CreateOffscreenCanvasOption {
   }
 
   CreateOffscreenCanvasOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6910,7 +6926,7 @@ class CreateRewardedVideoAdOption {
   }
 
   CreateRewardedVideoAdOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6926,7 +6942,7 @@ class CreateWorkerOption {
   }
 
   CreateWorkerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -6974,7 +6990,7 @@ class CropImageOption {
   }
 
   CropImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7014,7 +7030,7 @@ class CurrentState {
   }
 
   CurrentState({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7038,7 +7054,7 @@ class Danmu {
   }
 
   Danmu({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7078,7 +7094,7 @@ class DecayOption {
   }
 
   DecayOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7110,7 +7126,7 @@ class DescOption {
   }
 
   DescOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7134,7 +7150,7 @@ class DescriptorPermission {
   }
 
   DescriptorPermission({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7158,7 +7174,7 @@ class DestinationOption {
   }
 
   DestinationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7206,7 +7222,7 @@ class DetectBodyOption {
   }
 
   DetectBodyOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7262,7 +7278,7 @@ class DetectFaceOption {
   }
 
   DetectFaceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7310,7 +7326,7 @@ class DetectHandOption {
   }
 
   DetectHandOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7382,7 +7398,7 @@ class DeviceInfo {
   }
 
   DeviceInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7414,7 +7430,7 @@ class DisableAlertBeforeUnloadOption {
   }
 
   DisableAlertBeforeUnloadOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7478,7 +7494,7 @@ class DownloadFileOption {
   }
 
   DownloadFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7526,7 +7542,7 @@ class DownloadFileSuccessCallbackResult {
   }
 
   DownloadFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7558,7 +7574,7 @@ class DownloadTaskOnProgressUpdateListenerResult {
   }
 
   DownloadTaskOnProgressUpdateListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7598,7 +7614,7 @@ class EditImageOption {
   }
 
   EditImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7622,7 +7638,7 @@ class EditImageSuccessCallbackResult {
   }
 
   EditImageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7662,7 +7678,7 @@ class EnableAlertBeforeUnloadOption {
   }
 
   EnableAlertBeforeUnloadOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7670,7 +7686,7 @@ class EntriesResult {
   late mpjs.JSObject $$context$$;
 
   EntriesResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7710,7 +7726,7 @@ class EntryItem {
   }
 
   EntryItem({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7734,7 +7750,7 @@ class Err {
   }
 
   Err({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7782,7 +7798,7 @@ class ExecuteVisualLayerCommandOption {
   }
 
   ExecuteVisualLayerCommandOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7806,7 +7822,7 @@ class ExecuteVisualLayerCommandSuccessCallbackResult {
   }
 
   ExecuteVisualLayerCommandSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7838,7 +7854,7 @@ class ExitFullScreenOption {
   }
 
   ExitFullScreenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7870,7 +7886,7 @@ class ExitMiniProgramOption {
   }
 
   ExitMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7902,7 +7918,7 @@ class ExitPictureInPictureOption {
   }
 
   ExitPictureInPictureOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7934,7 +7950,7 @@ class ExitVoIPChatOption {
   }
 
   ExitVoIPChatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7950,7 +7966,7 @@ class ExtInfoOption {
   }
 
   ExtInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7966,7 +7982,7 @@ class ExtraOption {
   }
 
   ExtraOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -7982,7 +7998,7 @@ class ExtractDataSourceOption {
   }
 
   ExtractDataSourceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8014,7 +8030,7 @@ class FaceAngel {
   }
 
   FaceAngel({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8062,7 +8078,7 @@ class FaceConf {
   }
 
   FaceConf({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8150,7 +8166,7 @@ class FaceDetectOption {
   }
 
   FaceDetectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8222,7 +8238,7 @@ class FaceDetectSuccessCallbackResult {
   }
 
   FaceDetectSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8238,7 +8254,7 @@ class FaceTrack {
   }
 
   FaceTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8326,7 +8342,7 @@ class Fields {
   }
 
   Fields({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8358,7 +8374,7 @@ class FileItem {
   }
 
   FileItem({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8398,7 +8414,7 @@ class FileSystemManagerCloseOption {
   }
 
   FileSystemManagerCloseOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8438,7 +8454,7 @@ class ForwardMaterials {
   }
 
   ForwardMaterials({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8486,7 +8502,7 @@ class FrameDataOptions {
   }
 
   FrameDataOptions({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8534,7 +8550,7 @@ class FromScreenLocationOption {
   }
 
   FromScreenLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8550,7 +8566,7 @@ class FstatFailCallbackResult {
   }
 
   FstatFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8590,7 +8606,7 @@ class FstatOption {
   }
 
   FstatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8614,7 +8630,7 @@ class FstatSuccessCallbackResult {
   }
 
   FstatSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8630,7 +8646,7 @@ class FstatSyncOption {
   }
 
   FstatSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8646,7 +8662,7 @@ class FtruncateFailCallbackResult {
   }
 
   FtruncateFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8694,7 +8710,7 @@ class FtruncateOption {
   }
 
   FtruncateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8718,7 +8734,7 @@ class FtruncateSyncOption {
   }
 
   FtruncateSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8734,7 +8750,7 @@ class GeneralCallbackResult {
   }
 
   GeneralCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8766,7 +8782,7 @@ class GetAtqaOption {
   }
 
   GetAtqaOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8790,7 +8806,7 @@ class GetAtqaSuccessCallbackResult {
   }
 
   GetAtqaSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8822,7 +8838,7 @@ class GetAvailableAudioSourcesOption {
   }
 
   GetAvailableAudioSourcesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8846,7 +8862,7 @@ class GetAvailableAudioSourcesSuccessCallbackResult {
   }
 
   GetAvailableAudioSourcesSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8894,7 +8910,7 @@ class GetBLEDeviceCharacteristicsOption {
   }
 
   GetBLEDeviceCharacteristicsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8919,7 +8935,7 @@ class GetBLEDeviceCharacteristicsSuccessCallbackResult {
 
   GetBLEDeviceCharacteristicsSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8959,7 +8975,7 @@ class GetBLEDeviceRSSIOption {
   }
 
   GetBLEDeviceRSSIOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -8983,7 +8999,7 @@ class GetBLEDeviceRSSISuccessCallbackResult {
   }
 
   GetBLEDeviceRSSISuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9023,7 +9039,7 @@ class GetBLEDeviceServicesOption {
   }
 
   GetBLEDeviceServicesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9047,7 +9063,7 @@ class GetBLEDeviceServicesSuccessCallbackResult {
   }
 
   GetBLEDeviceServicesSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9095,7 +9111,7 @@ class GetBLEMTUOption {
   }
 
   GetBLEMTUOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9119,7 +9135,7 @@ class GetBLEMTUSuccessCallbackResult {
   }
 
   GetBLEMTUSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9151,7 +9167,7 @@ class GetBackgroundAudioPlayerStateOption {
   }
 
   GetBackgroundAudioPlayerStateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9208,7 +9224,7 @@ class GetBackgroundAudioPlayerStateSuccessCallbackResult {
 
   GetBackgroundAudioPlayerStateSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9248,7 +9264,7 @@ class GetBackgroundFetchDataOption {
   }
 
   GetBackgroundFetchDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9304,7 +9320,7 @@ class GetBackgroundFetchDataSuccessCallbackResult {
   }
 
   GetBackgroundFetchDataSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9336,7 +9352,7 @@ class GetBackgroundFetchTokenOption {
   }
 
   GetBackgroundFetchTokenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9360,7 +9376,7 @@ class GetBackgroundFetchTokenSuccessCallbackResult {
   }
 
   GetBackgroundFetchTokenSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9392,7 +9408,7 @@ class GetBatteryInfoOption {
   }
 
   GetBatteryInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9424,7 +9440,7 @@ class GetBatteryInfoSuccessCallbackResult {
   }
 
   GetBatteryInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9448,7 +9464,7 @@ class GetBatteryInfoSyncResult {
   }
 
   GetBatteryInfoSyncResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9480,7 +9496,7 @@ class GetBeaconsOption {
   }
 
   GetBeaconsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9504,7 +9520,7 @@ class GetBeaconsSuccessCallbackResult {
   }
 
   GetBeaconsSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9536,7 +9552,7 @@ class GetBluetoothAdapterStateOption {
   }
 
   GetBluetoothAdapterStateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9568,7 +9584,7 @@ class GetBluetoothAdapterStateSuccessCallbackResult {
   }
 
   GetBluetoothAdapterStateSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9600,7 +9616,7 @@ class GetBluetoothDevicesOption {
   }
 
   GetBluetoothDevicesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9624,7 +9640,7 @@ class GetBluetoothDevicesSuccessCallbackResult {
   }
 
   GetBluetoothDevicesSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9664,7 +9680,7 @@ class GetCenterLocationOption {
   }
 
   GetCenterLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9696,7 +9712,7 @@ class GetCenterLocationSuccessCallbackResult {
   }
 
   GetCenterLocationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9752,7 +9768,7 @@ class GetChannelsLiveInfoOption {
   }
 
   GetChannelsLiveInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9832,7 +9848,7 @@ class GetChannelsLiveInfoSuccessCallbackResult {
   }
 
   GetChannelsLiveInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9872,7 +9888,7 @@ class GetChannelsLiveNoticeInfoOption {
   }
 
   GetChannelsLiveNoticeInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9944,7 +9960,7 @@ class GetChannelsLiveNoticeInfoSuccessCallbackResult {
   }
 
   GetChannelsLiveNoticeInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -9976,7 +9992,7 @@ class GetChannelsShareKeyOption {
   }
 
   GetChannelsShareKeyOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10008,7 +10024,7 @@ class GetChannelsShareKeySuccessCallbackResult {
   }
 
   GetChannelsShareKeySuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10040,7 +10056,7 @@ class GetClipboardDataOption {
   }
 
   GetClipboardDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10056,7 +10072,7 @@ class GetClipboardDataSuccessCallbackOption {
   }
 
   GetClipboardDataSuccessCallbackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10096,7 +10112,7 @@ class GetConnectedBluetoothDevicesOption {
   }
 
   GetConnectedBluetoothDevicesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10121,7 +10137,7 @@ class GetConnectedBluetoothDevicesSuccessCallbackResult {
 
   GetConnectedBluetoothDevicesSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10161,7 +10177,7 @@ class GetConnectedWifiOption {
   }
 
   GetConnectedWifiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10185,7 +10201,7 @@ class GetConnectedWifiSuccessCallbackResult {
   }
 
   GetConnectedWifiSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10217,7 +10233,7 @@ class GetContentsOption {
   }
 
   GetContentsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10257,7 +10273,7 @@ class GetContentsSuccessCallbackResult {
   }
 
   GetContentsSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10289,7 +10305,7 @@ class GetExtConfigOption {
   }
 
   GetExtConfigOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10313,7 +10329,7 @@ class GetExtConfigSuccessCallbackResult {
   }
 
   GetExtConfigSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10329,7 +10345,7 @@ class GetFileInfoFailCallbackResult {
   }
 
   GetFileInfoFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10369,7 +10385,7 @@ class GetFileInfoOption {
   }
 
   GetFileInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10393,7 +10409,7 @@ class GetFileInfoSuccessCallbackResult {
   }
 
   GetFileInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10433,7 +10449,7 @@ class GetFuzzyLocationOption {
   }
 
   GetFuzzyLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10465,7 +10481,7 @@ class GetFuzzyLocationSuccessCallbackResult {
   }
 
   GetFuzzyLocationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10497,7 +10513,7 @@ class GetGroupEnterInfoOption {
   }
 
   GetGroupEnterInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10537,7 +10553,7 @@ class GetGroupEnterInfoSuccessCallbackResult {
   }
 
   GetGroupEnterInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10569,7 +10585,7 @@ class GetHCEStateOption {
   }
 
   GetHCEStateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10601,7 +10617,7 @@ class GetHistoricalBytesOption {
   }
 
   GetHistoricalBytesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10625,7 +10641,7 @@ class GetHistoricalBytesSuccessCallbackResult {
   }
 
   GetHistoricalBytesSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10665,7 +10681,7 @@ class GetImageInfoOption {
   }
 
   GetImageInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10721,7 +10737,7 @@ class GetImageInfoSuccessCallbackResult {
   }
 
   GetImageInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10753,7 +10769,7 @@ class GetLatestUserKeyOption {
   }
 
   GetLatestUserKeyOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10801,7 +10817,7 @@ class GetLatestUserKeySuccessCallbackResult {
   }
 
   GetLatestUserKeySuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10833,7 +10849,7 @@ class GetLocalIPAddressOption {
   }
 
   GetLocalIPAddressOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10865,7 +10881,7 @@ class GetLocalIPAddressSuccessCallbackResult {
   }
 
   GetLocalIPAddressSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -10929,7 +10945,7 @@ class GetLocationOption {
   }
 
   GetLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11001,7 +11017,7 @@ class GetLocationSuccessCallbackResult {
   }
 
   GetLocationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11017,7 +11033,7 @@ class GetLogManagerOption {
   }
 
   GetLogManagerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11049,7 +11065,7 @@ class GetMaxTransceiveLengthOption {
   }
 
   GetMaxTransceiveLengthOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11073,7 +11089,7 @@ class GetMaxTransceiveLengthSuccessCallbackResult {
   }
 
   GetMaxTransceiveLengthSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11105,7 +11121,7 @@ class GetNetworkTypeOption {
   }
 
   GetNetworkTypeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11145,7 +11161,7 @@ class GetNetworkTypeSuccessCallbackResult {
   }
 
   GetNetworkTypeSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11185,7 +11201,7 @@ class GetRandomValuesOption {
   }
 
   GetRandomValuesOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11209,7 +11225,7 @@ class GetRandomValuesSuccessCallbackResult {
   }
 
   GetRandomValuesSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11241,7 +11257,7 @@ class GetRegionOption {
   }
 
   GetRegionOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11273,7 +11289,7 @@ class GetRegionSuccessCallbackResult {
   }
 
   GetRegionSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11305,7 +11321,7 @@ class GetRotateOption {
   }
 
   GetRotateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11329,7 +11345,7 @@ class GetRotateSuccessCallbackResult {
   }
 
   GetRotateSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11361,7 +11377,7 @@ class GetSakOption {
   }
 
   GetSakOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11385,7 +11401,7 @@ class GetSakSuccessCallbackResult {
   }
 
   GetSakSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11417,7 +11433,7 @@ class GetSavedFileListOption {
   }
 
   GetSavedFileListOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11441,7 +11457,7 @@ class GetSavedFileListSuccessCallbackResult {
   }
 
   GetSavedFileListSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11473,7 +11489,7 @@ class GetScaleOption {
   }
 
   GetScaleOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11497,7 +11513,7 @@ class GetScaleSuccessCallbackResult {
   }
 
   GetScaleSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11529,7 +11545,7 @@ class GetScreenBrightnessOption {
   }
 
   GetScreenBrightnessOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11545,7 +11561,7 @@ class GetScreenBrightnessSuccessCallbackOption {
   }
 
   GetScreenBrightnessSuccessCallbackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11577,7 +11593,7 @@ class GetScreenRecordingStateOption {
   }
 
   GetScreenRecordingStateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11601,7 +11617,7 @@ class GetScreenRecordingStateSuccessCallbackResult {
   }
 
   GetScreenRecordingStateSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11633,7 +11649,7 @@ class GetSelectedTextRangeOption {
   }
 
   GetSelectedTextRangeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11665,7 +11681,7 @@ class GetSelectedTextRangeSuccessCallbackResult {
   }
 
   GetSelectedTextRangeSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11697,7 +11713,7 @@ class GetSelectionTextOption {
   }
 
   GetSelectionTextOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11721,7 +11737,7 @@ class GetSelectionTextSuccessCallbackResult {
   }
 
   GetSelectionTextSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11761,7 +11777,7 @@ class GetSettingOption {
   }
 
   GetSettingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11802,7 +11818,7 @@ class GetSettingSuccessCallbackResult {
   }
 
   GetSettingSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11850,7 +11866,7 @@ class GetShareInfoOption {
   }
 
   GetShareInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11882,7 +11898,7 @@ class GetSkewOption {
   }
 
   GetSkewOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11906,7 +11922,7 @@ class GetSkewSuccessCallbackResult {
   }
 
   GetSkewSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11938,7 +11954,7 @@ class GetSkylineInfoOption {
   }
 
   GetSkylineInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -11970,7 +11986,7 @@ class GetStorageInfoOption {
   }
 
   GetStorageInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12002,7 +12018,7 @@ class GetStorageInfoSuccessCallbackOption {
   }
 
   GetStorageInfoSuccessCallbackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12034,7 +12050,7 @@ class GetStorageInfoSyncOption {
   }
 
   GetStorageInfoSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12073,16 +12089,16 @@ class GetStorageOption<T extends dynamic> {
     return fail;
   }
 
-  set success(GetStorageSuccessCallback<T>? value) {
+  set success(GetStorageSuccessCallback? value) {
     $$context$$["success"] = value;
   }
 
-  GetStorageSuccessCallback<T>? get success {
+  GetStorageSuccessCallback? get success {
     return success;
   }
 
   GetStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12106,7 +12122,7 @@ class GetStorageSuccessCallbackResult<T extends dynamic> {
   }
 
   GetStorageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12138,7 +12154,7 @@ class GetSystemInfoAsyncOption {
   }
 
   GetSystemInfoAsyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12170,7 +12186,7 @@ class GetSystemInfoOption {
   }
 
   GetSystemInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12218,7 +12234,7 @@ class GetUserInfoOption {
   }
 
   GetUserInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12282,7 +12298,7 @@ class GetUserInfoSuccessCallbackResult {
   }
 
   GetUserInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12330,7 +12346,7 @@ class GetUserProfileOption {
   }
 
   GetUserProfileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12394,7 +12410,7 @@ class GetUserProfileSuccessCallbackResult {
   }
 
   GetUserProfileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12434,7 +12450,7 @@ class GetVideoInfoOption {
   }
 
   GetVideoInfoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12514,7 +12530,7 @@ class GetVideoInfoSuccessCallbackResult {
   }
 
   GetVideoInfoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12546,7 +12562,7 @@ class GetWeRunDataOption {
   }
 
   GetWeRunDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12586,7 +12602,7 @@ class GetWeRunDataSuccessCallbackResult {
   }
 
   GetWeRunDataSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12618,7 +12634,7 @@ class GetWifiListOption {
   }
 
   GetWifiListOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12634,7 +12650,7 @@ class HandTrack {
   }
 
   HandTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12666,7 +12682,7 @@ class HideHomeButtonOption {
   }
 
   HideHomeButtonOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12698,7 +12714,7 @@ class HideKeyboardOption {
   }
 
   HideKeyboardOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12738,7 +12754,7 @@ class HideLoadingOption {
   }
 
   HideLoadingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12770,7 +12786,7 @@ class HideNavigationBarLoadingOption {
   }
 
   HideNavigationBarLoadingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12810,7 +12826,7 @@ class HideShareMenuOption {
   }
 
   HideShareMenuOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12850,7 +12866,7 @@ class HideTabBarOption {
   }
 
   HideTabBarOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12890,7 +12906,7 @@ class HideTabBarRedDotOption {
   }
 
   HideTabBarRedDotOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12930,7 +12946,7 @@ class HideToastOption {
   }
 
   HideToastOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -12946,7 +12962,7 @@ class HitTestRes {
   }
 
   HitTestRes({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13002,7 +13018,7 @@ class Image {
   }
 
   Image({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13034,7 +13050,7 @@ class ImageData {
   }
 
   ImageData({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13058,7 +13074,7 @@ class ImageFile {
   }
 
   ImageFile({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13106,7 +13122,7 @@ class IncludePointsOption {
   }
 
   IncludePointsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13138,7 +13154,7 @@ class InitFaceDetectOption {
   }
 
   InitFaceDetectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13194,7 +13210,7 @@ class InitMarkerClusterOption {
   }
 
   InitMarkerClusterOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13298,7 +13314,7 @@ class InnerAudioContext {
   }
 
   InnerAudioContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void destroy() {
@@ -13447,7 +13463,7 @@ class InnerAudioContextOnErrorListenerResult {
   }
 
   InnerAudioContextOnErrorListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13479,7 +13495,7 @@ class InsertDividerOption {
   }
 
   InsertDividerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13567,7 +13583,7 @@ class InsertImageOption {
   }
 
   InsertImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13607,7 +13623,7 @@ class InsertTextOption {
   }
 
   InsertTextOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13672,7 +13688,7 @@ class IntersectionObserverObserveCallbackResult {
   }
 
   IntersectionObserverObserveCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13728,7 +13744,7 @@ class IntersectionRectResult {
   }
 
   IntersectionRectResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13752,7 +13768,7 @@ class InterstitialAdOnErrorListenerResult {
   }
 
   InterstitialAdOnErrorListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13792,7 +13808,7 @@ class IsBluetoothDevicePairedOption {
   }
 
   IsBluetoothDevicePairedOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13824,7 +13840,7 @@ class IsConnectedOption {
   }
 
   IsConnectedOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13904,7 +13920,7 @@ class Join1v1ChatOption {
   }
 
   Join1v1ChatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -13992,7 +14008,7 @@ class JoinVoIPChatOption {
   }
 
   JoinVoIPChatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14024,7 +14040,7 @@ class JoinVoIPChatSuccessCallbackResult {
   }
 
   JoinVoIPChatSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14048,7 +14064,7 @@ class KvList {
   }
 
   KvList({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14120,7 +14136,7 @@ class LaunchOptionsApp {
   }
 
   LaunchOptionsApp({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14160,7 +14176,7 @@ class LivePlayerContextRequestFullScreenOption {
   }
 
   LivePlayerContextRequestFullScreenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14208,7 +14224,7 @@ class LivePlayerContextSnapshotOption {
   }
 
   LivePlayerContextSnapshotOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14248,7 +14264,7 @@ class LivePlayerContextSnapshotSuccessCallbackResult {
   }
 
   LivePlayerContextSnapshotSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14296,7 +14312,7 @@ class LivePusherContextSnapshotOption {
   }
 
   LivePusherContextSnapshotOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14336,7 +14352,7 @@ class LivePusherContextSnapshotSuccessCallbackResult {
   }
 
   LivePusherContextSnapshotSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14368,7 +14384,7 @@ class LivePusherContextStartOption {
   }
 
   LivePusherContextStartOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14384,7 +14400,7 @@ class LoadFontFaceCompleteCallbackResult {
   }
 
   LoadFontFaceCompleteCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14456,7 +14472,7 @@ class LoadFontFaceOption {
   }
 
   LoadFontFaceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14488,7 +14504,7 @@ class LocalInfo {
   }
 
   LocalInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14528,7 +14544,7 @@ class LoginOption {
   }
 
   LoginOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14552,7 +14568,7 @@ class LoginSuccessCallbackResult {
   }
 
   LoginSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14608,7 +14624,7 @@ class MakeBluetoothPairOption {
   }
 
   MakeBluetoothPairOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14648,7 +14664,7 @@ class MakePhoneCallOption {
   }
 
   MakePhoneCallOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14672,7 +14688,7 @@ class ManufacturerData {
   }
 
   ManufacturerData({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14696,7 +14712,7 @@ class MapBounds {
   }
 
   MapBounds({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14720,7 +14736,7 @@ class MapPostion {
   }
 
   MapPostion({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14760,7 +14776,7 @@ class Margins {
   }
 
   Margins({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14808,7 +14824,7 @@ class MatchCache {
   }
 
   MatchCache({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14824,7 +14840,7 @@ class MediaAudioPlayer {
   }
 
   MediaAudioPlayer({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   dynamic addAudioSource(VideoDecoder source) {
@@ -14915,7 +14931,7 @@ class MediaFile {
   }
 
   MediaFile({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14931,7 +14947,7 @@ class MediaQueryObserverObserveCallbackResult {
   }
 
   MediaQueryObserverObserveCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14963,7 +14979,7 @@ class MediaSource {
   }
 
   MediaSource({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -14995,7 +15011,7 @@ class MediaTrack {
   }
 
   MediaTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15027,7 +15043,7 @@ class MiniProgram {
   }
 
   MiniProgram({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15043,7 +15059,7 @@ class MkdirFailCallbackResult {
   }
 
   MkdirFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15091,7 +15107,7 @@ class MkdirOption {
   }
 
   MkdirOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15155,7 +15171,7 @@ class MoveAlongOption {
   }
 
   MoveAlongOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15203,7 +15219,7 @@ class MoveToLocationOption {
   }
 
   MoveToLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15227,7 +15243,7 @@ class MuteConfig {
   }
 
   MuteConfig({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15259,7 +15275,7 @@ class MuteOption {
   }
 
   MuteOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15275,7 +15291,7 @@ class NFCAdapter {
   }
 
   NFCAdapter({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void offDiscovered([OffDiscoveredCallback? listener]) {
@@ -15385,7 +15401,7 @@ class NavigateBackMiniProgramOption {
   }
 
   NavigateBackMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15425,7 +15441,7 @@ class NavigateBackOption {
   }
 
   NavigateBackOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15505,7 +15521,7 @@ class NavigateToMiniProgramOption {
   }
 
   NavigateToMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15553,7 +15569,7 @@ class NavigateToOption {
   }
 
   NavigateToOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15577,7 +15593,7 @@ class NavigateToSuccessCallbackResult {
   }
 
   NavigateToSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15609,7 +15625,7 @@ class NdefCloseOption {
   }
 
   NdefCloseOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15641,7 +15657,7 @@ class NdefConnectOption {
   }
 
   NdefConnectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15657,7 +15673,7 @@ class NodeCallbackResult {
   }
 
   NodeCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15729,7 +15745,7 @@ class NotifyBLECharacteristicValueChangeOption {
   }
 
   NotifyBLECharacteristicValueChangeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15745,7 +15761,7 @@ class OCRTrack {
   }
 
   OCRTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15809,7 +15825,7 @@ class ObserveDescriptor {
   }
 
   ObserveDescriptor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15833,7 +15849,7 @@ class ObserveOption {
   }
 
   ObserveOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15857,7 +15873,7 @@ class OffscreenCanvas {
   }
 
   OffscreenCanvas({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   Image createImage() {
@@ -15900,7 +15916,7 @@ class OnAccelerometerChangeListenerResult {
   }
 
   OnAccelerometerChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15940,7 +15956,7 @@ class OnBLECharacteristicValueChangeListenerResult {
   }
 
   OnBLECharacteristicValueChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15964,7 +15980,7 @@ class OnBLEConnectionStateChangeListenerResult {
   }
 
   OnBLEConnectionStateChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -15988,7 +16004,7 @@ class OnBLEMTUChangeListenerResult {
   }
 
   OnBLEMTUChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16021,7 +16037,7 @@ class OnBLEPeripheralConnectionStateChangedListenerResult {
 
   OnBLEPeripheralConnectionStateChangedListenerResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16077,7 +16093,7 @@ class OnBackgroundFetchDataListenerResult {
   }
 
   OnBackgroundFetchDataListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16101,7 +16117,7 @@ class OnBeaconServiceChangeListenerResult {
   }
 
   OnBeaconServiceChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16117,7 +16133,7 @@ class OnBeaconUpdateListenerResult {
   }
 
   OnBeaconUpdateListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16141,7 +16157,7 @@ class OnBluetoothAdapterStateChangeListenerResult {
   }
 
   OnBluetoothAdapterStateChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16157,7 +16173,7 @@ class OnBluetoothDeviceFoundListenerResult {
   }
 
   OnBluetoothDeviceFoundListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16189,7 +16205,7 @@ class OnCameraFrameCallbackResult {
   }
 
   OnCameraFrameCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16221,7 +16237,7 @@ class OnCharacteristicReadRequestListenerResult {
   }
 
   OnCharacteristicReadRequestListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16245,7 +16261,7 @@ class OnCharacteristicSubscribedListenerResult {
   }
 
   OnCharacteristicSubscribedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16285,7 +16301,7 @@ class OnCharacteristicWriteRequestListenerResult {
   }
 
   OnCharacteristicWriteRequestListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16301,7 +16317,7 @@ class OnCheckForUpdateListenerResult {
   }
 
   OnCheckForUpdateListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16317,7 +16333,7 @@ class OnChunkReceivedListenerResult {
   }
 
   OnChunkReceivedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16341,7 +16357,7 @@ class OnCompassChangeListenerResult {
   }
 
   OnCompassChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16357,7 +16373,7 @@ class OnCopyUrlListenerResult {
   }
 
   OnCopyUrlListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16381,7 +16397,7 @@ class OnCustomRendererEventCallbackResult {
   }
 
   OnCustomRendererEventCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16413,7 +16429,7 @@ class OnDeviceMotionChangeListenerResult {
   }
 
   OnDeviceMotionChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16437,7 +16453,7 @@ class OnDiscoveredListenerResult {
   }
 
   OnDiscoveredListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16461,7 +16477,7 @@ class OnFrameRecordedListenerResult {
   }
 
   OnFrameRecordedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16477,7 +16493,7 @@ class OnGetWifiListListenerResult {
   }
 
   OnGetWifiListListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16509,7 +16525,7 @@ class OnGyroscopeChangeListenerResult {
   }
 
   OnGyroscopeChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16541,7 +16557,7 @@ class OnHCEMessageListenerResult {
   }
 
   OnHCEMessageListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16557,7 +16573,7 @@ class OnHeadersReceivedListenerResult {
   }
 
   OnHeadersReceivedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16573,7 +16589,7 @@ class OnKeyboardHeightChangeListenerResult {
   }
 
   OnKeyboardHeightChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16605,7 +16621,7 @@ class OnLazyLoadErrorListenerResult {
   }
 
   OnLazyLoadErrorListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16645,7 +16661,7 @@ class OnLocalServiceFoundListenerResult {
   }
 
   OnLocalServiceFoundListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16669,7 +16685,7 @@ class OnLocalServiceLostListenerResult {
   }
 
   OnLocalServiceLostListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16685,7 +16701,7 @@ class OnLocationChangeErrorListenerResult {
   }
 
   OnLocationChangeErrorListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16749,7 +16765,7 @@ class OnLocationChangeListenerResult {
   }
 
   OnLocationChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16765,7 +16781,7 @@ class OnMemoryWarningListenerResult {
   }
 
   OnMemoryWarningListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16789,7 +16805,7 @@ class OnNetworkStatusChangeListenerResult {
   }
 
   OnNetworkStatusChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16813,7 +16829,7 @@ class OnNetworkWeakChangeListenerResult {
   }
 
   OnNetworkWeakChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16837,7 +16853,7 @@ class OnOpenListenerResult {
   }
 
   OnOpenListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16869,7 +16885,7 @@ class OnPageNotFoundListenerResult {
   }
 
   OnPageNotFoundListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16885,7 +16901,7 @@ class OnScreenRecordingStateChangedListenerResult {
   }
 
   OnScreenRecordingStateChangedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16901,7 +16917,7 @@ class OnSocketOpenListenerResult {
   }
 
   OnSocketOpenListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16933,7 +16949,7 @@ class OnStopListenerResult {
   }
 
   OnStopListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16949,20 +16965,12 @@ class OnThemeChangeListenerResult {
   }
 
   OnThemeChangeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
 class OnUnhandledRejectionListenerResult {
   late mpjs.JSObject $$context$$;
-
-  set promise(Promise<dynamic> value) {
-    $$context$$["promise"] = value;
-  }
-
-  Promise<dynamic> get promise {
-    return promise;
-  }
 
   set reason(String value) {
     $$context$$["reason"] = value;
@@ -16973,7 +16981,7 @@ class OnUnhandledRejectionListenerResult {
   }
 
   OnUnhandledRejectionListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -16997,7 +17005,7 @@ class OnVoIPChatInterruptedListenerResult {
   }
 
   OnVoIPChatInterruptedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17029,7 +17037,7 @@ class OnVoIPChatMembersChangedListenerResult {
   }
 
   OnVoIPChatMembersChangedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17061,7 +17069,7 @@ class OnVoIPChatSpeakersChangedListenerResult {
   }
 
   OnVoIPChatSpeakersChangedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17101,7 +17109,7 @@ class OnVoIPChatStateChangedListenerResult {
   }
 
   OnVoIPChatStateChangedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17133,7 +17141,7 @@ class OnVoIPVideoMembersChangedListenerResult {
   }
 
   OnVoIPVideoMembersChangedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17149,7 +17157,7 @@ class OnWifiConnectedListenerResult {
   }
 
   OnWifiConnectedListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17165,7 +17173,7 @@ class OnWifiConnectedWithPartialInfoListenerResult {
   }
 
   OnWifiConnectedWithPartialInfoListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17181,7 +17189,7 @@ class OnWindowResizeListenerResult {
   }
 
   OnWindowResizeListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17213,7 +17221,7 @@ class OpenAppAuthorizeSettingOption {
   }
 
   OpenAppAuthorizeSettingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17253,7 +17261,7 @@ class OpenBluetoothAdapterOption {
   }
 
   OpenBluetoothAdapterOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17293,7 +17301,7 @@ class OpenCardOption {
   }
 
   OpenCardOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17317,7 +17325,7 @@ class OpenCardRequestInfo {
   }
 
   OpenCardRequestInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17365,7 +17373,7 @@ class OpenChannelsActivityOption {
   }
 
   OpenChannelsActivityOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17413,7 +17421,7 @@ class OpenChannelsEventOption {
   }
 
   OpenChannelsEventOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17469,7 +17477,7 @@ class OpenChannelsLiveOption {
   }
 
   OpenChannelsLiveOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17509,7 +17517,7 @@ class OpenChannelsUserProfileOption {
   }
 
   OpenChannelsUserProfileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17589,7 +17597,7 @@ class OpenCustomerServiceChatOption {
   }
 
   OpenCustomerServiceChatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17645,7 +17653,7 @@ class OpenDocumentOption {
   }
 
   OpenDocumentOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17733,7 +17741,7 @@ class OpenEmbeddedMiniProgramOption {
   }
 
   OpenEmbeddedMiniProgramOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17749,7 +17757,7 @@ class OpenFailCallbackResult {
   }
 
   OpenFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17821,7 +17829,7 @@ class OpenLocationOption {
   }
 
   OpenLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17877,7 +17885,7 @@ class OpenMapAppOption {
   }
 
   OpenMapAppOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17925,7 +17933,7 @@ class OpenOption {
   }
 
   OpenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17965,7 +17973,7 @@ class OpenSettingOption {
   }
 
   OpenSettingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -17998,7 +18006,7 @@ class OpenSettingSuccessCallbackResult {
   }
 
   OpenSettingSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18022,7 +18030,7 @@ class OpenSuccessCallbackResult {
   }
 
   OpenSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18046,7 +18054,7 @@ class OpenSyncOption {
   }
 
   OpenSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18078,7 +18086,7 @@ class OpenSystemBluetoothSettingOption {
   }
 
   OpenSystemBluetoothSettingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18134,7 +18142,7 @@ class OpenVideoEditorOption {
   }
 
   OpenVideoEditorOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18182,7 +18190,7 @@ class OpenVideoEditorSuccessCallbackResult {
   }
 
   OpenVideoEditorSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18246,7 +18254,7 @@ class PageScrollToOption {
   }
 
   PageScrollToOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18254,7 +18262,7 @@ class Path2D {
   late mpjs.JSObject $$context$$;
 
   Path2D({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18286,7 +18294,7 @@ class PauseBGMOption {
   }
 
   PauseBGMOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18318,7 +18326,7 @@ class PauseBackgroundAudioOption {
   }
 
   PauseBackgroundAudioOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18350,7 +18358,7 @@ class PauseOption {
   }
 
   PauseOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18382,7 +18390,7 @@ class PauseVoiceOption {
   }
 
   PauseVoiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18582,7 +18590,7 @@ class PerformanceEntry {
   }
 
   PerformanceEntry({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18598,7 +18606,7 @@ class PerformanceObserver {
   }
 
   PerformanceObserver({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void disconnect() {
@@ -18624,7 +18632,7 @@ class PlaneTrack {
   }
 
   PlaneTrack({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18664,7 +18672,7 @@ class PlayBGMOption {
   }
 
   PlayBGMOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18720,7 +18728,7 @@ class PlayBackgroundAudioOption {
   }
 
   PlayBackgroundAudioOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18752,7 +18760,7 @@ class PlayOption {
   }
 
   PlayOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18800,7 +18808,7 @@ class PlayVoiceOption {
   }
 
   PlayVoiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18824,7 +18832,7 @@ class Plugin {
   }
 
   Plugin({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18856,7 +18864,7 @@ class PluginLoginOption {
   }
 
   PluginLoginOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18880,7 +18888,7 @@ class PluginLoginSuccessCallbackResult {
   }
 
   PluginLoginSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18920,7 +18928,7 @@ class PreDownloadSubpackageOption {
   }
 
   PreDownloadSubpackageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18953,7 +18961,7 @@ class PreDownloadSubpackageTaskOnProgressUpdateListenerResult {
 
   PreDownloadSubpackageTaskOnProgressUpdateListenerResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -18993,7 +19001,7 @@ class PreloadAssetsOption {
   }
 
   PreloadAssetsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19025,7 +19033,7 @@ class PreloadSkylineViewOption {
   }
 
   PreloadSkylineViewOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19057,7 +19065,7 @@ class PreloadWebviewOption {
   }
 
   PreloadWebviewOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19121,7 +19129,7 @@ class PreviewImageOption {
   }
 
   PreviewImageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19185,7 +19193,7 @@ class PreviewMediaOption {
   }
 
   PreviewMediaOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19217,7 +19225,7 @@ class PromoterResult {
   }
 
   PromoterResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19257,7 +19265,7 @@ class ReLaunchOption {
   }
 
   ReLaunchOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19313,7 +19321,7 @@ class ReadBLECharacteristicValueOption {
   }
 
   ReadBLECharacteristicValueOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19329,7 +19337,7 @@ class ReadCompressedFileFailCallbackResult {
   }
 
   ReadCompressedFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19377,7 +19385,7 @@ class ReadCompressedFileOption {
   }
 
   ReadCompressedFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19401,7 +19409,7 @@ class ReadCompressedFileSuccessCallbackResult {
   }
 
   ReadCompressedFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19425,7 +19433,7 @@ class ReadCompressedFileSyncOption {
   }
 
   ReadCompressedFileSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19441,7 +19449,7 @@ class ReadFailCallbackResult {
   }
 
   ReadFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19457,7 +19465,7 @@ class ReadFileFailCallbackResult {
   }
 
   ReadFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19521,7 +19529,7 @@ class ReadFileOption {
   }
 
   ReadFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19545,7 +19553,7 @@ class ReadFileSuccessCallbackResult {
   }
 
   ReadFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19617,7 +19625,7 @@ class ReadOption {
   }
 
   ReadOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19641,7 +19649,7 @@ class ReadResult {
   }
 
   ReadResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19673,7 +19681,7 @@ class ReadSuccessCallbackResult {
   }
 
   ReadSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19721,7 +19729,7 @@ class ReadSyncOption {
   }
 
   ReadSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19737,7 +19745,7 @@ class ReadZipEntryFailCallbackResult {
   }
 
   ReadZipEntryFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19793,7 +19801,7 @@ class ReadZipEntryOption {
   }
 
   ReadZipEntryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19817,7 +19825,7 @@ class ReadZipEntrySuccessCallbackResult {
   }
 
   ReadZipEntrySuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19833,7 +19841,7 @@ class ReaddirFailCallbackResult {
   }
 
   ReaddirFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19873,7 +19881,7 @@ class ReaddirOption {
   }
 
   ReaddirOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19897,7 +19905,7 @@ class ReaddirSuccessCallbackResult {
   }
 
   ReaddirSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -19961,7 +19969,7 @@ class RecorderManagerStartOption {
   }
 
   RecorderManagerStartOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20001,7 +20009,7 @@ class RedirectToOption {
   }
 
   RedirectToOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20033,7 +20041,7 @@ class RedoOption {
   }
 
   RedoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20057,7 +20065,7 @@ class ReferrerInfo {
   }
 
   ReferrerInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20097,7 +20105,7 @@ class RelativeRectResult {
   }
 
   RelativeRectResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20137,7 +20145,7 @@ class RemoteInfo {
   }
 
   RemoteInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20177,7 +20185,7 @@ class RemoveArcOption {
   }
 
   RemoveArcOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20217,7 +20225,7 @@ class RemoveCustomLayerOption {
   }
 
   RemoveCustomLayerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20249,7 +20257,7 @@ class RemoveFormatOption {
   }
 
   RemoveFormatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20289,7 +20297,7 @@ class RemoveGroundOverlayOption {
   }
 
   RemoveGroundOverlayOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20329,7 +20337,7 @@ class RemoveMarkersOption {
   }
 
   RemoveMarkersOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20345,7 +20353,7 @@ class RemoveSavedFileFailCallbackResult {
   }
 
   RemoveSavedFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20385,7 +20393,7 @@ class RemoveSavedFileOption {
   }
 
   RemoveSavedFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20425,7 +20433,7 @@ class RemoveServiceOption {
   }
 
   RemoveServiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20465,7 +20473,7 @@ class RemoveStorageOption {
   }
 
   RemoveStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20505,7 +20513,7 @@ class RemoveTabBarBadgeOption {
   }
 
   RemoveTabBarBadgeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20545,7 +20553,7 @@ class RemoveVisualLayerOption {
   }
 
   RemoveVisualLayerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20561,7 +20569,7 @@ class RenameFailCallbackResult {
   }
 
   RenameFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20609,7 +20617,7 @@ class RenameOption {
   }
 
   RenameOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20617,7 +20625,7 @@ class RenderingContext {
   late mpjs.JSObject $$context$$;
 
   RenderingContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20744,11 +20752,11 @@ class RequestOption<T extends dynamic> {
     return $$context$$["responseType"];
   }
 
-  set success(RequestSuccessCallback<T>? value) {
+  set success(RequestSuccessCallback? value) {
     $$context$$["success"] = value;
   }
 
-  RequestSuccessCallback<T>? get success {
+  RequestSuccessCallback? get success {
     return success;
   }
 
@@ -20761,7 +20769,7 @@ class RequestOption<T extends dynamic> {
   }
 
   RequestOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20849,7 +20857,7 @@ class RequestOrderPaymentOption {
   }
 
   RequestOrderPaymentOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20921,7 +20929,7 @@ class RequestPaymentOption {
   }
 
   RequestPaymentOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -20953,7 +20961,7 @@ class RequestPictureInPictureOption {
   }
 
   RequestPictureInPictureOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21017,7 +21025,7 @@ class RequestPluginPaymentOption {
   }
 
   RequestPluginPaymentOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21225,7 +21233,7 @@ class RequestProfile {
   }
 
   RequestProfile({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21250,7 +21258,7 @@ class RequestSubscribeDeviceMessageFailCallbackResult {
 
   RequestSubscribeDeviceMessageFailCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21314,7 +21322,7 @@ class RequestSubscribeDeviceMessageOption {
   }
 
   RequestSubscribeDeviceMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21331,7 +21339,7 @@ class RequestSubscribeDeviceMessageSuccessCallbackResult {
 
   RequestSubscribeDeviceMessageSuccessCallbackResult(
       {mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21355,7 +21363,7 @@ class RequestSubscribeMessageFailCallbackResult {
   }
 
   RequestSubscribeMessageFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21395,7 +21403,7 @@ class RequestSubscribeMessageOption {
   }
 
   RequestSubscribeMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21411,7 +21419,7 @@ class RequestSubscribeMessageSuccessCallbackResult {
   }
 
   RequestSubscribeMessageSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21467,7 +21475,7 @@ class RequestSuccessCallbackResult<T extends dynamic> {
   }
 
   RequestSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21483,7 +21491,7 @@ class ReserveChannelsLiveOption {
   }
 
   ReserveChannelsLiveOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21499,7 +21507,7 @@ class Result {
   }
 
   Result({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21531,7 +21539,7 @@ class ResumeBGMOption {
   }
 
   ResumeBGMOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21563,7 +21571,7 @@ class ResumeOption {
   }
 
   ResumeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21579,7 +21587,7 @@ class RewardedVideoAdOnCloseListenerResult {
   }
 
   RewardedVideoAdOnCloseListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21603,7 +21611,7 @@ class RewardedVideoAdOnErrorListenerResult {
   }
 
   RewardedVideoAdOnErrorListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21619,7 +21627,7 @@ class RmdirFailCallbackResult {
   }
 
   RmdirFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21667,7 +21675,7 @@ class RmdirOption {
   }
 
   RmdirOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21699,7 +21707,7 @@ class RunOCROption {
   }
 
   RunOCROption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21755,7 +21763,7 @@ class SafeArea {
   }
 
   SafeArea({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21771,7 +21779,7 @@ class SaveFileFailCallbackResult {
   }
 
   SaveFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21819,7 +21827,7 @@ class SaveFileOption {
   }
 
   SaveFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21843,7 +21851,7 @@ class SaveFileSuccessCallbackResult {
   }
 
   SaveFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21883,7 +21891,7 @@ class SaveFileToDiskOption {
   }
 
   SaveFileToDiskOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21923,7 +21931,7 @@ class SaveImageToPhotosAlbumOption {
   }
 
   SaveImageToPhotosAlbumOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -21963,7 +21971,7 @@ class SaveVideoToPhotosAlbumOption {
   }
 
   SaveVideoToPhotosAlbumOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22011,7 +22019,7 @@ class ScanCodeOption {
   }
 
   ScanCodeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22067,7 +22075,7 @@ class ScanCodeSuccessCallbackResult {
   }
 
   ScanCodeSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22107,7 +22115,7 @@ class ScrollOffsetCallbackResult {
   }
 
   ScrollOffsetCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22155,7 +22163,7 @@ class ScrollToOption {
   }
 
   ScrollToOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22211,7 +22219,7 @@ class ScrollViewContext {
   }
 
   ScrollViewContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void scrollIntoView(String selector) {
@@ -22261,7 +22269,7 @@ class SeekBackgroundAudioOption {
   }
 
   SeekBackgroundAudioOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22301,7 +22309,7 @@ class SendHCEMessageOption {
   }
 
   SendHCEMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22341,7 +22349,7 @@ class SendMessageOption {
   }
 
   SendMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22389,7 +22397,7 @@ class SendSmsOption {
   }
 
   SendSmsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22429,7 +22437,7 @@ class SendSocketMessageOption {
   }
 
   SendSocketMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22469,7 +22477,7 @@ class SetBGMVolumeOption {
   }
 
   SetBGMVolumeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22485,7 +22493,7 @@ class SetBLEMTUFailCallbackResult {
   }
 
   SetBLEMTUFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22533,7 +22541,7 @@ class SetBLEMTUOption {
   }
 
   SetBLEMTUOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22557,7 +22565,7 @@ class SetBLEMTUSuccessCallbackResult {
   }
 
   SetBLEMTUSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22613,7 +22621,7 @@ class SetBackgroundColorOption {
   }
 
   SetBackgroundColorOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22653,7 +22661,7 @@ class SetBackgroundFetchTokenOption {
   }
 
   SetBackgroundFetchTokenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22693,7 +22701,7 @@ class SetBackgroundTextStyleOption {
   }
 
   SetBackgroundTextStyleOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22741,7 +22749,7 @@ class SetBoundaryOption {
   }
 
   SetBoundaryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22781,7 +22789,7 @@ class SetCenterOffsetOption {
   }
 
   SetCenterOffsetOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22821,7 +22829,7 @@ class SetClipboardDataOption {
   }
 
   SetClipboardDataOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22869,7 +22877,7 @@ class SetContentsOption {
   }
 
   SetContentsOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22925,7 +22933,7 @@ class SetEnable1v1ChatOption {
   }
 
   SetEnable1v1ChatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -22965,7 +22973,7 @@ class SetEnableDebugOption {
   }
 
   SetEnableDebugOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23021,7 +23029,7 @@ class SetInnerAudioOption {
   }
 
   SetInnerAudioOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23061,7 +23069,7 @@ class SetKeepScreenOnOption {
   }
 
   SetKeepScreenOnOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23101,7 +23109,7 @@ class SetLocMarkerIconOption {
   }
 
   SetLocMarkerIconOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23141,7 +23149,7 @@ class SetMICVolumeOption {
   }
 
   SetMICVolumeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23197,7 +23205,7 @@ class SetNavigationBarColorOption {
   }
 
   SetNavigationBarColorOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23237,7 +23245,7 @@ class SetNavigationBarTitleOption {
   }
 
   SetNavigationBarTitleOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23277,7 +23285,7 @@ class SetScreenBrightnessOption {
   }
 
   SetScreenBrightnessOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23333,7 +23341,7 @@ class SetStorageOption<T extends dynamic> {
   }
 
   SetStorageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23381,7 +23389,7 @@ class SetTabBarBadgeOption {
   }
 
   SetTabBarBadgeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23445,7 +23453,7 @@ class SetTabBarItemOption {
   }
 
   SetTabBarItemOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23509,7 +23517,7 @@ class SetTabBarStyleOption {
   }
 
   SetTabBarStyleOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23549,7 +23557,7 @@ class SetTimeoutOption {
   }
 
   SetTimeoutOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23589,7 +23597,7 @@ class SetTopBarTextOption {
   }
 
   SetTopBarTextOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23629,7 +23637,7 @@ class SetVisualEffectOnCaptureOption {
   }
 
   SetVisualEffectOnCaptureOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23669,7 +23677,7 @@ class SetWifiListOption {
   }
 
   SetWifiListOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23717,7 +23725,7 @@ class SetWindowSizeOption {
   }
 
   SetWindowSizeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23757,7 +23765,7 @@ class SetZoomOption {
   }
 
   SetZoomOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23781,7 +23789,7 @@ class SetZoomSuccessCallbackResult {
   }
 
   SetZoomSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23829,7 +23837,7 @@ class ShareFileMessageOption {
   }
 
   ShareFileMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23869,7 +23877,7 @@ class ShareToWeRunOption {
   }
 
   ShareToWeRunOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23917,7 +23925,7 @@ class ShareVideoMessageOption {
   }
 
   ShareVideoMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23973,7 +23981,7 @@ class ShowActionSheetOption {
   }
 
   ShowActionSheetOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -23997,7 +24005,7 @@ class ShowActionSheetSuccessCallbackResult {
   }
 
   ShowActionSheetSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24045,7 +24053,7 @@ class ShowLoadingOption {
   }
 
   ShowLoadingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24149,7 +24157,7 @@ class ShowModalOption {
   }
 
   ShowModalOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24189,7 +24197,7 @@ class ShowModalSuccessCallbackResult {
   }
 
   ShowModalSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24221,7 +24229,7 @@ class ShowNavigationBarLoadingOption {
   }
 
   ShowNavigationBarLoadingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24261,7 +24269,7 @@ class ShowRedPackageOption {
   }
 
   ShowRedPackageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24301,7 +24309,7 @@ class ShowShareImageMenuOption {
   }
 
   ShowShareImageMenuOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24349,7 +24357,7 @@ class ShowShareMenuOption {
   }
 
   ShowShareMenuOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24389,7 +24397,7 @@ class ShowTabBarOption {
   }
 
   ShowTabBarOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24429,7 +24437,7 @@ class ShowTabBarRedDotOption {
   }
 
   ShowTabBarRedDotOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24501,7 +24509,7 @@ class ShowToastOption {
   }
 
   ShowToastOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24525,7 +24533,7 @@ class Size {
   }
 
   Size({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24557,7 +24565,7 @@ class SkylineInfo {
   }
 
   SkylineInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24629,7 +24637,7 @@ class SocketProfile {
   }
 
   SocketProfile({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24677,7 +24685,7 @@ class SocketTaskCloseOption {
   }
 
   SocketTaskCloseOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24701,7 +24709,7 @@ class SocketTaskOnCloseListenerResult {
   }
 
   SocketTaskOnCloseListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24717,7 +24725,7 @@ class SocketTaskOnMessageListenerResult {
   }
 
   SocketTaskOnMessageListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24757,7 +24765,7 @@ class SocketTaskSendOption {
   }
 
   SocketTaskSendOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24821,7 +24829,7 @@ class SpringOption {
   }
 
   SpringOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24861,7 +24869,7 @@ class StartAccelerometerOption {
   }
 
   StartAccelerometerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24909,7 +24917,7 @@ class StartAdvertisingObject {
   }
 
   StartAdvertisingObject({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -24957,7 +24965,7 @@ class StartBeaconDiscoveryOption {
   }
 
   StartBeaconDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25021,7 +25029,7 @@ class StartBluetoothDevicesDiscoveryOption {
   }
 
   StartBluetoothDevicesDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25053,7 +25061,7 @@ class StartCompassOption {
   }
 
   StartCompassOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25093,7 +25101,7 @@ class StartDeviceMotionListeningOption {
   }
 
   StartDeviceMotionListeningOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25125,7 +25133,7 @@ class StartDiscoveryOption {
   }
 
   StartDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25165,7 +25173,7 @@ class StartGyroscopeOption {
   }
 
   StartGyroscopeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25205,7 +25213,7 @@ class StartHCEOption {
   }
 
   StartHCEOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25221,7 +25229,7 @@ class StartLocalServiceDiscoveryFailCallbackResult {
   }
 
   StartLocalServiceDiscoveryFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25261,7 +25269,7 @@ class StartLocalServiceDiscoveryOption {
   }
 
   StartLocalServiceDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25301,7 +25309,7 @@ class StartLocationUpdateBackgroundOption {
   }
 
   StartLocationUpdateBackgroundOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25341,7 +25349,7 @@ class StartLocationUpdateOption {
   }
 
   StartLocationUpdateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25373,7 +25381,7 @@ class StartPreviewOption {
   }
 
   StartPreviewOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25405,7 +25413,7 @@ class StartPullDownRefreshOption {
   }
 
   StartPullDownRefreshOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25429,7 +25437,7 @@ class StartRecordSuccessCallbackResult {
   }
 
   StartRecordSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25453,7 +25461,7 @@ class StartRecordTimeoutCallbackResult {
   }
 
   StartRecordTimeoutCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25509,7 +25517,7 @@ class StartSoterAuthenticationOption {
   }
 
   StartSoterAuthenticationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25557,7 +25565,7 @@ class StartSoterAuthenticationSuccessCallbackResult {
   }
 
   StartSoterAuthenticationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25589,7 +25597,7 @@ class StartWifiOption {
   }
 
   StartWifiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25605,7 +25613,7 @@ class StatFailCallbackResult {
   }
 
   StatFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25653,7 +25661,7 @@ class StatOption {
   }
 
   StatOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25677,7 +25685,7 @@ class StatSuccessCallbackResult {
   }
 
   StatSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25717,7 +25725,7 @@ class Stats {
   }
 
   Stats({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   bool isDirectory() {
@@ -25767,7 +25775,7 @@ class StepOption {
   }
 
   StepOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25839,7 +25847,7 @@ class Sticker {
   }
 
   Sticker({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25871,7 +25879,7 @@ class StopAccelerometerOption {
   }
 
   StopAccelerometerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25903,7 +25911,7 @@ class StopAdvertisingOption {
   }
 
   StopAdvertisingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25935,7 +25943,7 @@ class StopBGMOption {
   }
 
   StopBGMOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25967,7 +25975,7 @@ class StopBackgroundAudioOption {
   }
 
   StopBackgroundAudioOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -25999,7 +26007,7 @@ class StopBeaconDiscoveryOption {
   }
 
   StopBeaconDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26031,7 +26039,7 @@ class StopBluetoothDevicesDiscoveryOption {
   }
 
   StopBluetoothDevicesDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26063,7 +26071,7 @@ class StopCompassOption {
   }
 
   StopCompassOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26095,7 +26103,7 @@ class StopDeviceMotionListeningOption {
   }
 
   StopDeviceMotionListeningOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26127,7 +26135,7 @@ class StopDiscoveryOption {
   }
 
   StopDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26159,7 +26167,7 @@ class StopFaceDetectOption {
   }
 
   StopFaceDetectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26191,7 +26199,7 @@ class StopGyroscopeOption {
   }
 
   StopGyroscopeOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26223,7 +26231,7 @@ class StopHCEOption {
   }
 
   StopHCEOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26239,7 +26247,7 @@ class StopLocalServiceDiscoveryFailCallbackResult {
   }
 
   StopLocalServiceDiscoveryFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26271,7 +26279,7 @@ class StopLocalServiceDiscoveryOption {
   }
 
   StopLocalServiceDiscoveryOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26303,7 +26311,7 @@ class StopLocationUpdateOption {
   }
 
   StopLocationUpdateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26335,7 +26343,7 @@ class StopOption {
   }
 
   StopOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26367,7 +26375,7 @@ class StopPreviewOption {
   }
 
   StopPreviewOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26399,7 +26407,7 @@ class StopPullDownRefreshOption {
   }
 
   StopPullDownRefreshOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26431,7 +26439,7 @@ class StopRecordSuccessCallbackResult {
   }
 
   StopRecordSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26463,7 +26471,7 @@ class StopVoiceOption {
   }
 
   StopVoiceOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26495,7 +26503,7 @@ class StopWifiOption {
   }
 
   StopWifiOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26535,7 +26543,7 @@ class SubscribeVoIPVideoMembersOption {
   }
 
   SubscribeVoIPVideoMembersOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26559,7 +26567,7 @@ class SubscriptionsSetting {
   }
 
   SubscriptionsSetting({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26591,7 +26599,7 @@ class SwitchCameraOption {
   }
 
   SwitchCameraOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26631,7 +26639,7 @@ class SwitchTabOption {
   }
 
   SwitchTabOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26903,7 +26911,7 @@ class SystemInfo {
   }
 
   SystemInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26919,7 +26927,7 @@ class SystemInfoHost {
   }
 
   SystemInfoHost({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26959,7 +26967,7 @@ class SystemSetting {
   }
 
   SystemSetting({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -26991,7 +26999,7 @@ class TCPSocketConnectOption {
   }
 
   TCPSocketConnectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27023,7 +27031,7 @@ class TCPSocketOnMessageListenerResult {
   }
 
   TCPSocketOnMessageListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27071,7 +27079,7 @@ class TakePhotoOption {
   }
 
   TakePhotoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27095,7 +27103,7 @@ class TakePhotoSuccessCallbackResult {
   }
 
   TakePhotoSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27167,7 +27175,7 @@ class TechType {
   }
 
   TechType({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27183,7 +27191,7 @@ class TextMetrics {
   }
 
   TextMetrics({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27207,7 +27215,7 @@ class TimingOption {
   }
 
   TimingOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27255,7 +27263,7 @@ class ToScreenLocationOption {
   }
 
   ToScreenLocationOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27287,7 +27295,7 @@ class ToScreenLocationSuccessCallbackResult {
   }
 
   ToScreenLocationSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27319,7 +27327,7 @@ class ToggleTorchOption {
   }
 
   ToggleTorchOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27391,7 +27399,7 @@ class Track {
   }
 
   Track({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27431,7 +27439,7 @@ class TransceiveOption {
   }
 
   TransceiveOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27455,7 +27463,7 @@ class TransceiveSuccessCallbackResult {
   }
 
   TransceiveSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27543,7 +27551,7 @@ class TranslateMarkerOption {
   }
 
   TranslateMarkerOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27559,7 +27567,7 @@ class TruncateFailCallbackResult {
   }
 
   TruncateFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27607,7 +27615,7 @@ class TruncateOption {
   }
 
   TruncateOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27631,7 +27639,7 @@ class TruncateSyncOption {
   }
 
   TruncateSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27655,7 +27663,7 @@ class UDPSocketConnectOption {
   }
 
   UDPSocketConnectOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27687,7 +27695,7 @@ class UDPSocketOnMessageListenerResult {
   }
 
   UDPSocketOnMessageListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27743,7 +27751,7 @@ class UDPSocketSendOption {
   }
 
   UDPSocketSendOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27775,7 +27783,7 @@ class UndoOption {
   }
 
   UndoOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27791,7 +27799,7 @@ class UnlinkFailCallbackResult {
   }
 
   UnlinkFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27831,7 +27839,7 @@ class UnlinkOption {
   }
 
   UnlinkOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27847,7 +27855,7 @@ class UnzipFailCallbackResult {
   }
 
   UnzipFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27895,7 +27903,7 @@ class UnzipOption {
   }
 
   UnzipOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27919,7 +27927,7 @@ class UpdatableMessageFrontEndParameter {
   }
 
   UpdatableMessageFrontEndParameter({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -27936,7 +27944,7 @@ class UpdatableMessageFrontEndTemplateInfo {
   }
 
   UpdatableMessageFrontEndTemplateInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28016,7 +28024,7 @@ class UpdateGroundOverlayOption {
   }
 
   UpdateGroundOverlayOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28097,7 +28105,7 @@ class UpdateShareMenuOption {
   }
 
   UpdateShareMenuOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28137,7 +28145,7 @@ class UpdateVoIPChatMuteConfigOption {
   }
 
   UpdateVoIPChatMuteConfigOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28169,7 +28177,7 @@ class UpdateWeChatAppOption {
   }
 
   UpdateWeChatAppOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28249,7 +28257,7 @@ class UploadFileOption {
   }
 
   UploadFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28281,7 +28289,7 @@ class UploadFileSuccessCallbackResult {
   }
 
   UploadFileSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28313,7 +28321,7 @@ class UploadTaskOnProgressUpdateListenerResult {
   }
 
   UploadTaskOnProgressUpdateListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28377,7 +28385,7 @@ class UserInfo {
   }
 
   UserInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28449,7 +28457,7 @@ class VKBodyAnchor {
   }
 
   VKBodyAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28473,7 +28481,7 @@ class VKCamera {
   }
 
   VKCamera({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   Float32Array getProjectionMatrix(num near, num far) {
@@ -28511,7 +28519,7 @@ class VKConfig {
   }
 
   VKConfig({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28583,7 +28591,7 @@ class VKFaceAnchor {
   }
 
   VKFaceAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28607,7 +28615,7 @@ class VKFrame {
   }
 
   VKFrame({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   ArrayBuffer getCameraBuffer(num width, num height) {
@@ -28705,7 +28713,7 @@ class VKHandAnchor {
   }
 
   VKHandAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28729,7 +28737,7 @@ class VKMarker {
   }
 
   VKMarker({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28777,7 +28785,7 @@ class VKMarkerAnchor {
   }
 
   VKMarkerAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28809,7 +28817,7 @@ class VKOCRAnchor {
   }
 
   VKOCRAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28865,7 +28873,7 @@ class VKOSDAnchor {
   }
 
   VKOSDAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28889,7 +28897,7 @@ class VKOrigin {
   }
 
   VKOrigin({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28937,7 +28945,7 @@ class VKPlaneAnchor {
   }
 
   VKPlaneAnchor({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28961,7 +28969,7 @@ class VKPoint {
   }
 
   VKPoint({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -28993,7 +29001,7 @@ class VKSession {
   }
 
   VKSession({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<VKMarker> getAllMarker() {
@@ -29118,7 +29126,7 @@ class VKSize {
   }
 
   VKSize({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29150,7 +29158,7 @@ class VibrateLongOption {
   }
 
   VibrateLongOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29166,7 +29174,7 @@ class VibrateShortFailCallbackResult {
   }
 
   VibrateShortFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29206,7 +29214,7 @@ class VibrateShortOption {
   }
 
   VibrateShortOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29222,7 +29230,7 @@ class VideoContextRequestFullScreenOption {
   }
 
   VideoContextRequestFullScreenOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29262,7 +29270,7 @@ class VideoDecoderStartOption {
   }
 
   VideoDecoderStartOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29294,7 +29302,7 @@ class VoIP1v1ChatUser {
   }
 
   VoIP1v1ChatUser({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29318,11 +29326,11 @@ class WebAudioContext {
   }
 
   set listener(AudioListener value) {
-    $$context$$["listener"] = value;
+    $$context$$["listener"] = value.$$context$$;
   }
 
   AudioListener get listener {
-    return listener;
+    return AudioListener($$context$$: $$context$$["listener"]);
   }
 
   set onstatechange(dynamic value) {
@@ -29350,7 +29358,7 @@ class WebAudioContext {
   }
 
   WebAudioContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   AnalyserNode createAnalyser() {
@@ -29571,7 +29579,7 @@ class WebAudioContextNode {
   }
 
   WebAudioContextNode({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29603,7 +29611,7 @@ class WifiData {
   }
 
   WifiData({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29651,7 +29659,7 @@ class WifiInfo {
   }
 
   WifiInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29723,7 +29731,7 @@ class WindowInfo {
   }
 
   WindowInfo({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29739,7 +29747,7 @@ class Worker {
   }
 
   Worker({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   ArrayBuffer getCameraFrameData() {
@@ -29786,7 +29794,7 @@ class WorkerEnv {
   }
 
   WorkerEnv({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29802,7 +29810,7 @@ class WorkerOnMessageListenerResult {
   }
 
   WorkerOnMessageListenerResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29874,7 +29882,7 @@ class WriteBLECharacteristicValueOption {
   }
 
   WriteBLECharacteristicValueOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29946,7 +29954,7 @@ class WriteCharacteristicValueObject {
   }
 
   WriteCharacteristicValueObject({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29962,7 +29970,7 @@ class WriteFailCallbackResult {
   }
 
   WriteFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -29978,7 +29986,7 @@ class WriteFileFailCallbackResult {
   }
 
   WriteFileFailCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30034,7 +30042,7 @@ class WriteFileOption {
   }
 
   WriteFileOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30090,7 +30098,7 @@ class WriteNdefMessageOption {
   }
 
   WriteNdefMessageOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30170,7 +30178,7 @@ class WriteOption {
   }
 
   WriteOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30186,7 +30194,7 @@ class WriteResult {
   }
 
   WriteResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30210,7 +30218,7 @@ class WriteSuccessCallbackResult {
   }
 
   WriteSuccessCallbackResult({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30266,7 +30274,7 @@ class WriteSyncOption {
   }
 
   WriteSyncOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30298,7 +30306,7 @@ class WxStartRecordOption {
   }
 
   WxStartRecordOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30330,7 +30338,7 @@ class WxStopRecordOption {
   }
 
   WxStopRecordOption({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30370,7 +30378,7 @@ class WxaSportRecord {
   }
 
   WxaSportRecord({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30394,7 +30402,7 @@ class YUVTextureRes {
   }
 
   YUVTextureRes({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30418,7 +30426,7 @@ class ZipFileItem {
   }
 
   ZipFileItem({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30426,7 +30434,7 @@ class Animation {
   late mpjs.JSObject $$context$$;
 
   Animation({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   AnimationExportResult export() {
@@ -30614,7 +30622,7 @@ class AudioContext {
   late mpjs.JSObject $$context$$;
 
   AudioContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void pause() {
@@ -30642,7 +30650,7 @@ class BLEPeripheralServer {
   late mpjs.JSObject $$context$$;
 
   BLEPeripheralServer({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void addService(AddServiceOption option) {
@@ -30755,7 +30763,7 @@ class BackgroundAudioError {
   }
 
   BackgroundAudioError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30779,7 +30787,7 @@ class BeaconError {
   }
 
   BeaconError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30803,7 +30811,7 @@ class BluetoothError {
   }
 
   BluetoothError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30811,7 +30819,7 @@ class CameraContext {
   late mpjs.JSObject $$context$$;
 
   CameraContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void setZoom(SetZoomOption option) {
@@ -30845,7 +30853,7 @@ class CameraFrameListener {
   late mpjs.JSObject $$context$$;
 
   CameraFrameListener({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void start([CameraFrameListenerStartOption? option]) {
@@ -30863,7 +30871,7 @@ class CanvasGradient {
   late mpjs.JSObject $$context$$;
 
   CanvasGradient({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void addColorStop(num stop, String color) {
@@ -30892,7 +30900,7 @@ class CloseSyncError {
   }
 
   CloseSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -30900,7 +30908,7 @@ class Console {
   late mpjs.JSObject $$context$$;
 
   Console({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void debug(List<dynamic> args) {
@@ -30943,7 +30951,7 @@ class DownloadTask {
   late mpjs.JSObject $$context$$;
 
   DownloadTask({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void abort() {
@@ -30976,7 +30984,7 @@ class EditorContext {
   late mpjs.JSObject $$context$$;
 
   EditorContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void blur([BlurOption? option]) {
@@ -31052,7 +31060,7 @@ class EntryList {
   late mpjs.JSObject $$context$$;
 
   EntryList({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<PerformanceEntry> getEntries() {
@@ -31076,7 +31084,7 @@ class EventChannel {
   late mpjs.JSObject $$context$$;
 
   EventChannel({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void emit(String eventName, dynamic args) {
@@ -31104,7 +31112,7 @@ class FileSystemManager {
   late mpjs.JSObject $$context$$;
 
   FileSystemManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<String> readdirSync(String dirPath) {
@@ -31367,7 +31375,7 @@ class FstatSyncError {
   }
 
   FstatSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -31391,7 +31399,7 @@ class FtruncateSyncError {
   }
 
   FtruncateSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -31399,7 +31407,7 @@ class IntersectionObserver {
   late mpjs.JSObject $$context$$;
 
   IntersectionObserver({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void disconnect() {
@@ -31433,7 +31441,7 @@ class InterstitialAd {
   late mpjs.JSObject $$context$$;
 
   InterstitialAd({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void destroy() {
@@ -31486,7 +31494,7 @@ class IsoDep {
   late mpjs.JSObject $$context$$;
 
   IsoDep({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -31547,7 +31555,7 @@ class Join1v1ChatError {
   }
 
   Join1v1ChatError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -31571,7 +31579,7 @@ class JoinVoIPChatError {
   }
 
   JoinVoIPChatError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -31579,7 +31587,7 @@ class LivePlayerContext {
   late mpjs.JSObject $$context$$;
 
   LivePlayerContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void exitFullScreen([ExitFullScreenOption? option]) {
@@ -31641,7 +31649,7 @@ class LivePusherContext {
   late mpjs.JSObject $$context$$;
 
   LivePusherContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void applyBlusherStickMakeup(ApplyBlusherStickMakeupOption option) {
@@ -31808,7 +31816,7 @@ class LogManager {
   late mpjs.JSObject $$context$$;
 
   LogManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void debug(List<dynamic> args) {
@@ -31836,7 +31844,7 @@ class MapContext {
   late mpjs.JSObject $$context$$;
 
   MapContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void addArc(AddArcOption option) {
@@ -32007,7 +32015,7 @@ class MediaContainer {
   late mpjs.JSObject $$context$$;
 
   MediaContainer({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void addTrack(MediaTrack track) {
@@ -32041,7 +32049,7 @@ class MediaQueryObserver {
   late mpjs.JSObject $$context$$;
 
   MediaQueryObserver({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void disconnect() {
@@ -32061,7 +32069,7 @@ class MediaRecorder {
   late mpjs.JSObject $$context$$;
 
   MediaRecorder({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void off(String eventName, dynamic callback) {
@@ -32109,7 +32117,7 @@ class MifareClassic {
   late mpjs.JSObject $$context$$;
 
   MifareClassic({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32148,7 +32156,7 @@ class MifareUltralight {
   late mpjs.JSObject $$context$$;
 
   MifareUltralight({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32203,7 +32211,7 @@ class NFCError {
   }
 
   NFCError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -32211,7 +32219,7 @@ class Ndef {
   late mpjs.JSObject $$context$$;
 
   Ndef({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32255,7 +32263,7 @@ class NfcA {
   late mpjs.JSObject $$context$$;
 
   NfcA({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32304,7 +32312,7 @@ class NfcB {
   late mpjs.JSObject $$context$$;
 
   NfcB({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32343,7 +32351,7 @@ class NfcF {
   late mpjs.JSObject $$context$$;
 
   NfcF({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32382,7 +32390,7 @@ class NfcV {
   late mpjs.JSObject $$context$$;
 
   NfcV({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close([NdefCloseOption? option]) {
@@ -32437,7 +32445,7 @@ class Nfcrwerror {
   }
 
   Nfcrwerror({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -32445,7 +32453,7 @@ class NodesRef {
   late mpjs.JSObject $$context$$;
 
   NodesRef({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   SelectorQuery boundingClientRect([BoundingClientRectCallback? callback]) {
@@ -32500,7 +32508,7 @@ class OpenSyncError {
   }
 
   OpenSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -32508,7 +32516,7 @@ class Performance {
   late mpjs.JSObject $$context$$;
 
   Performance({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<PerformanceEntry> getEntries() {
@@ -32543,7 +32551,7 @@ class PreDownloadSubpackageTask {
   late mpjs.JSObject $$context$$;
 
   PreDownloadSubpackageTask({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void onProgressUpdate(
@@ -32573,7 +32581,7 @@ class ReadCompressedFileSyncError {
   }
 
   ReadCompressedFileSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -32597,7 +32605,7 @@ class ReadSyncError {
   }
 
   ReadSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -32605,7 +32613,7 @@ class RealtimeLogManager {
   late mpjs.JSObject $$context$$;
 
   RealtimeLogManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   CurrentState getCurrentState() {
@@ -32655,7 +32663,7 @@ class RealtimeTagLogManager {
   late mpjs.JSObject $$context$$;
 
   RealtimeTagLogManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void addFilterMsg(String msg) {
@@ -32688,7 +32696,7 @@ class RecorderManager {
   late mpjs.JSObject $$context$$;
 
   RecorderManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void onError(UDPSocketOnErrorCallback listener) {
@@ -32756,7 +32764,7 @@ class RequestTask {
   late mpjs.JSObject $$context$$;
 
   RequestTask({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void abort() {
@@ -32789,7 +32797,7 @@ class RewardedVideoAd {
   late mpjs.JSObject $$context$$;
 
   RewardedVideoAd({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   dynamic load() {
@@ -32842,7 +32850,7 @@ class SelectorQuery {
   late mpjs.JSObject $$context$$;
 
   SelectorQuery({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   NodesRef exec([dynamic? callback]) {
@@ -32880,7 +32888,7 @@ class SocketTask {
   late mpjs.JSObject $$context$$;
 
   SocketTask({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close(SocketTaskCloseOption option) {
@@ -32918,7 +32926,7 @@ class TCPSocket {
   late mpjs.JSObject $$context$$;
 
   TCPSocket({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void bindWifi(BindWifiOption options) {
@@ -33012,7 +33020,7 @@ class TruncateSyncError {
   }
 
   TruncateSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -33020,7 +33028,7 @@ class UDPSocket {
   late mpjs.JSObject $$context$$;
 
   UDPSocket({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void close() {
@@ -33098,7 +33106,7 @@ class UpdateManager {
   late mpjs.JSObject $$context$$;
 
   UpdateManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void applyUpdate() {
@@ -33126,7 +33134,7 @@ class UploadTask {
   late mpjs.JSObject $$context$$;
 
   UploadTask({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void abort() {
@@ -33159,7 +33167,7 @@ class UserCryptoManager {
   late mpjs.JSObject $$context$$;
 
   UserCryptoManager({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void getLatestUserKey([GetLatestUserKeyOption? option]) {
@@ -33179,7 +33187,7 @@ class VideoContext {
   late mpjs.JSObject $$context$$;
 
   VideoContext({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   void exitBackgroundPlayback() {
@@ -33254,7 +33262,7 @@ class VideoDecoder {
   late mpjs.JSObject $$context$$;
 
   VideoDecoder({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   FrameDataOptions getFrameData() {
@@ -33314,7 +33322,7 @@ class WifiError {
   }
 
   WifiError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -33322,7 +33330,7 @@ class Worklet {
   late mpjs.JSObject $$context$$;
 
   Worklet({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   AnimationObject decay(DecayOption options, List<dynamic> clamp,
@@ -33420,7 +33428,7 @@ class WriteSyncError {
   }
 
   WriteSyncError({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 }
 
@@ -33428,11 +33436,11 @@ class Wx {
   late mpjs.JSObject $$context$$;
 
   set cloud(WxCloud value) {
-    $$context$$["cloud"] = value;
+    $$context$$["cloud"] = value.$$context$$;
   }
 
   WxCloud get cloud {
-    return cloud;
+    return WxCloud($$context$$: $$context$$["cloud"]);
   }
 
   set env(dynamic value) {
@@ -33452,7 +33460,7 @@ class Wx {
   }
 
   Wx({mpjs.JSObject? $$context$$}) {
-    this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");
+    this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");
   }
 
   List<dynamic> batchGetStorageSync(List<String> keyList) {
@@ -33698,7 +33706,7 @@ class Wx {
     return OffscreenCanvas($$context$$: result);
   }
 
-  OffscreenCanvas createOffscreenCanvas(CreateOffscreenCanvasOption option) {
+  OffscreenCanvas createOffscreenCanvas2(CreateOffscreenCanvasOption option) {
     final result =
         $$context$$.callMethod('createOffscreenCanvas', [option.$$context$$]);
 
@@ -36993,7 +37001,7 @@ typedef GetStorageInfoSuccessCallback = void Function(
     GetStorageInfoSuccessCallbackOption);
 
 typedef GetStorageSuccessCallback = void Function(
-    GetStorageSuccessCallbackResult<T>);
+    GetStorageSuccessCallbackResult);
 
 typedef GetSystemInfoAsyncCompleteCallback = void Function(
     GeneralCallbackResult);
@@ -38043,7 +38051,7 @@ typedef RequestSubscribeMessageFailCallback = void Function(
 typedef RequestSubscribeMessageSuccessCallback = void Function(
     RequestSubscribeMessageSuccessCallbackResult);
 
-typedef RequestSuccessCallback = void Function(RequestSuccessCallbackResult<T>);
+typedef RequestSuccessCallback = void Function(RequestSuccessCallbackResult);
 
 typedef ResumeBGMCompleteCallback = void Function(GeneralCallbackResult);
 
@@ -38910,3 +38918,5 @@ typedef WxStartRecordSuccessCallback = void Function(
     StartRecordSuccessCallbackResult);
 
 typedef WxStopRecordSuccessCallback = void Function(GeneralCallbackResult);
+
+final wx = Wx($$context$$: mpjs.context['wx']);

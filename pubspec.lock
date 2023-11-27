@@ -6,7 +6,7 @@ packages:
     description:
       name: characters
       sha256: "04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.3.0"
   collection:
@@ -14,7 +14,7 @@ packages:
     description:
       name: collection
       sha256: f092b211a4319e98e5ff58223576de6c2803db36221657b46c82574721240687
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.17.2"
   crypto:
@@ -22,7 +22,7 @@ packages:
     description:
       name: crypto
       sha256: ff625774173754681d66daaf4a448684fb04b78f902da9cb3d308c19cc5e8bab
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.3"
   flutter:
@@ -35,7 +35,7 @@ packages:
     description:
       name: full_screen_back_gesture
       sha256: "40099ec0e1db20dbd093fae339b37032c5e7bdc23ca3f919bdabab2b47cc3092"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.0.2"
   material_color_utilities:
@@ -43,7 +43,7 @@ packages:
     description:
       name: material_color_utilities
       sha256: "9528f2f296073ff54cb9fee677df673ace1218163c3bc7628093e7eed5203d41"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.5.0"
   meta:
@@ -51,13 +51,13 @@ packages:
     description:
       name: meta
       sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.9.1"
   mpflutter:
     dependency: "direct main"
     description:
-      path: "/Users/bytedance/Desktop/mpflutter"
+      path: "/Users/saiakirahui/Documents/mpflutter/mpflutter"
       relative: false
     source: path
     version: "2.0.0"
@@ -66,7 +66,7 @@ packages:
     description:
       name: path
       sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.3"
   sky_engine:
@@ -79,7 +79,7 @@ packages:
     description:
       name: sprintf
       sha256: "1fc9ffe69d4df602376b52949af107d8f5703b77cda567c4d7d86a0693120f23"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.0.0"
   typed_data:
@@ -87,7 +87,7 @@ packages:
     description:
       name: typed_data
       sha256: facc8d6582f16042dd49f2463ff1bd6e2c9ef9f3d5da3d9b087e244a7b564b3c
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.3.2"
   uuid:
@@ -95,7 +95,7 @@ packages:
     description:
       name: uuid
       sha256: df5a4d8f22ee4ccd77f8839ac7cb274ebc11ef9adcce8b92be14b797fe889921
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.2.1"
   vector_math:
@@ -103,7 +103,7 @@ packages:
     description:
       name: vector_math
       sha256: "80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803"
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.4"
   web:
@@ -111,7 +111,7 @@ packages:
     description:
       name: web
       sha256: dc8ccd225a2005c1be616fe02951e2e342092edf968cf0844220383757ef8f10
-      url: "https://pub.mpflutter.com"
+      url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.4-beta"
 sdks:

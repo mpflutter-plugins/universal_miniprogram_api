@@ -8,5 +8,5 @@ const fooSource = new CGSource(
 Object.keys(fooSource.modules).forEach((key) => {
   let code = fooSource.modules[key].code();
   code = code.replace(/ in\(/g, ' $in(');
-  writeFileSync("lib/universal_miniprogram_api.dart", code);
+  writeFileSync("lib/wechat_miniprogram_api_mpflutter.dart", code);
 });
