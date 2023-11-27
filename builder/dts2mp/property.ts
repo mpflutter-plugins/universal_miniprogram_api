@@ -128,9 +128,33 @@ export class CGPropertyNode extends CGCodeNode {
       set ${this.nameOfProp()}(${this.codeDartType()}${
       this.isOptional() ? "?" : ""
     } value) {
-        $$context$$["${this.nameOfProp()}"] = value${
-      this.isClassType() ? `${this.isOptional() ? "?" : ""}.$$context$$` : ""
-    };
+        ${(() => {
+          if (this.isFunctionType()) {
+            const args = this.functionTypeArgs();
+            return `$$context$$["${this.nameOfProp()}"] = (${args
+              .map((it) => it.nameOfNode())
+              .join(",")}) {
+              value?.call(${args
+                .map((it) => {
+                  const interfaceInstance =
+                    this.module.interfaceInstances[
+                      CGUtils.tsToDartType(it.parameter.type)
+                    ];
+                  if (interfaceInstance) {
+                    return `${interfaceInstance.nameOfNode()}($$context$$: ${it.nameOfNode()})`;
+                  } else {
+                    return it.nameOfNode();
+                  }
+                })
+                .join(",")});
+            };`;
+          }
+          return `$$context$$["${this.nameOfProp()}"] = value${
+            this.isClassType()
+              ? `${this.isOptional() ? "?" : ""}.$$context$$`
+              : ""
+          };`;
+        })()}
       }
       
       ${this.codeDartType()}${

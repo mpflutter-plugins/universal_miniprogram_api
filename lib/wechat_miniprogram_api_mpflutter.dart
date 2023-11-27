@@ -269,7 +269,9 @@ class AccessOption {
   }
 
   set complete(AccessCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AccessCompleteCallback? get complete {
@@ -277,7 +279,9 @@ class AccessOption {
   }
 
   set fail(AccessFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(AccessFailCallbackResult($$context$$: result));
+    };
   }
 
   AccessFailCallback? get fail {
@@ -285,7 +289,9 @@ class AccessOption {
   }
 
   set success(AccessSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AccessSuccessCallback? get success {
@@ -365,7 +371,9 @@ class AddArcOption {
   }
 
   set complete(AddArcCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddArcCompleteCallback? get complete {
@@ -373,7 +381,9 @@ class AddArcOption {
   }
 
   set fail(AddArcFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddArcFailCallback? get fail {
@@ -389,7 +399,9 @@ class AddArcOption {
   }
 
   set success(AddArcSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddArcSuccessCallback? get success {
@@ -421,7 +433,9 @@ class AddCardOption {
   }
 
   set complete(AddCardCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddCardCompleteCallback? get complete {
@@ -429,7 +443,9 @@ class AddCardOption {
   }
 
   set fail(AddCardFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddCardFailCallback? get fail {
@@ -437,7 +453,9 @@ class AddCardOption {
   }
 
   set success(AddCardSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(AddCardSuccessCallbackResult($$context$$: result));
+    };
   }
 
   AddCardSuccessCallback? get success {
@@ -549,7 +567,9 @@ class AddCustomLayerOption {
   }
 
   set complete(AddCustomLayerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddCustomLayerCompleteCallback? get complete {
@@ -557,7 +577,9 @@ class AddCustomLayerOption {
   }
 
   set fail(AddCustomLayerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddCustomLayerFailCallback? get fail {
@@ -565,7 +587,9 @@ class AddCustomLayerOption {
   }
 
   set success(AddCustomLayerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddCustomLayerSuccessCallback? get success {
@@ -589,7 +613,9 @@ class AddFileToFavoritesOption {
   }
 
   set complete(AddFileToFavoritesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddFileToFavoritesCompleteCallback? get complete {
@@ -597,7 +623,9 @@ class AddFileToFavoritesOption {
   }
 
   set fail(AddFileToFavoritesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddFileToFavoritesFailCallback? get fail {
@@ -613,7 +641,9 @@ class AddFileToFavoritesOption {
   }
 
   set success(AddFileToFavoritesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddFileToFavoritesSuccessCallback? get success {
@@ -653,7 +683,9 @@ class AddGroundOverlayOption {
   }
 
   set complete(AddGroundOverlayCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddGroundOverlayCompleteCallback? get complete {
@@ -661,7 +693,9 @@ class AddGroundOverlayOption {
   }
 
   set fail(AddGroundOverlayFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddGroundOverlayFailCallback? get fail {
@@ -677,7 +711,9 @@ class AddGroundOverlayOption {
   }
 
   set success(AddGroundOverlaySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddGroundOverlaySuccessCallback? get success {
@@ -725,7 +761,9 @@ class AddMarkersOption {
   }
 
   set complete(AddMarkersCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddMarkersCompleteCallback? get complete {
@@ -733,7 +771,9 @@ class AddMarkersOption {
   }
 
   set fail(AddMarkersFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddMarkersFailCallback? get fail {
@@ -741,7 +781,9 @@ class AddMarkersOption {
   }
 
   set success(AddMarkersSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddMarkersSuccessCallback? get success {
@@ -797,7 +839,9 @@ class AddPhoneCalendarOption {
   }
 
   set complete(AddPhoneCalendarCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneCalendarCompleteCallback? get complete {
@@ -821,7 +865,9 @@ class AddPhoneCalendarOption {
   }
 
   set fail(AddPhoneCalendarFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneCalendarFailCallback? get fail {
@@ -837,7 +883,9 @@ class AddPhoneCalendarOption {
   }
 
   set success(AddPhoneCalendarSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneCalendarSuccessCallback? get success {
@@ -901,7 +949,9 @@ class AddPhoneContactOption {
   }
 
   set complete(AddPhoneContactCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneContactCompleteCallback? get complete {
@@ -917,7 +967,9 @@ class AddPhoneContactOption {
   }
 
   set fail(AddPhoneContactFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneContactFailCallback? get fail {
@@ -1045,7 +1097,9 @@ class AddPhoneContactOption {
   }
 
   set success(AddPhoneContactSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneContactSuccessCallback? get success {
@@ -1181,7 +1235,9 @@ class AddPhoneRepeatCalendarOption {
   }
 
   set complete(AddPhoneRepeatCalendarCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneRepeatCalendarCompleteCallback? get complete {
@@ -1205,7 +1261,9 @@ class AddPhoneRepeatCalendarOption {
   }
 
   set fail(AddPhoneRepeatCalendarFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneRepeatCalendarFailCallback? get fail {
@@ -1237,7 +1295,9 @@ class AddPhoneRepeatCalendarOption {
   }
 
   set success(AddPhoneRepeatCalendarSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddPhoneRepeatCalendarSuccessCallback? get success {
@@ -1261,7 +1321,9 @@ class AddServiceOption {
   }
 
   set complete(AddServiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddServiceCompleteCallback? get complete {
@@ -1269,7 +1331,9 @@ class AddServiceOption {
   }
 
   set fail(AddServiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddServiceFailCallback? get fail {
@@ -1277,7 +1341,9 @@ class AddServiceOption {
   }
 
   set success(AddServiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddServiceSuccessCallback? get success {
@@ -1301,7 +1367,9 @@ class AddVideoToFavoritesOption {
   }
 
   set complete(AddVideoToFavoritesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVideoToFavoritesCompleteCallback? get complete {
@@ -1309,7 +1377,9 @@ class AddVideoToFavoritesOption {
   }
 
   set fail(AddVideoToFavoritesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVideoToFavoritesFailCallback? get fail {
@@ -1317,7 +1387,9 @@ class AddVideoToFavoritesOption {
   }
 
   set success(AddVideoToFavoritesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVideoToFavoritesSuccessCallback? get success {
@@ -1349,7 +1421,9 @@ class AddVisualLayerOption {
   }
 
   set complete(AddVisualLayerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVisualLayerCompleteCallback? get complete {
@@ -1357,7 +1431,9 @@ class AddVisualLayerOption {
   }
 
   set fail(AddVisualLayerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVisualLayerFailCallback? get fail {
@@ -1381,7 +1457,9 @@ class AddVisualLayerOption {
   }
 
   set success(AddVisualLayerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AddVisualLayerSuccessCallback? get success {
@@ -1693,7 +1771,9 @@ class AppendFileOption {
   }
 
   set complete(AppendFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AppendFileCompleteCallback? get complete {
@@ -1709,7 +1789,9 @@ class AppendFileOption {
   }
 
   set fail(AppendFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(AppendFileFailCallbackResult($$context$$: result));
+    };
   }
 
   AppendFileFailCallback? get fail {
@@ -1717,7 +1799,9 @@ class AppendFileOption {
   }
 
   set success(AppendFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AppendFileSuccessCallback? get success {
@@ -1757,7 +1841,9 @@ class ApplyBlusherStickMakeupOption {
   }
 
   set complete(ApplyBlusherStickMakeupCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyBlusherStickMakeupCompleteCallback? get complete {
@@ -1765,7 +1851,9 @@ class ApplyBlusherStickMakeupOption {
   }
 
   set fail(ApplyBlusherStickMakeupFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyBlusherStickMakeupFailCallback? get fail {
@@ -1773,7 +1861,9 @@ class ApplyBlusherStickMakeupOption {
   }
 
   set success(ApplyBlusherStickMakeupSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyBlusherStickMakeupSuccessCallback? get success {
@@ -1821,7 +1911,9 @@ class ApplyEyeBrowMakeupOption {
   }
 
   set complete(ApplyEyeBrowMakeupCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeBrowMakeupCompleteCallback? get complete {
@@ -1829,7 +1921,9 @@ class ApplyEyeBrowMakeupOption {
   }
 
   set fail(ApplyEyeBrowMakeupFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeBrowMakeupFailCallback? get fail {
@@ -1837,7 +1931,9 @@ class ApplyEyeBrowMakeupOption {
   }
 
   set success(ApplyEyeBrowMakeupSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeBrowMakeupSuccessCallback? get success {
@@ -1877,7 +1973,9 @@ class ApplyEyeShadowMakeupOption {
   }
 
   set complete(ApplyEyeShadowMakeupCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeShadowMakeupCompleteCallback? get complete {
@@ -1885,7 +1983,9 @@ class ApplyEyeShadowMakeupOption {
   }
 
   set fail(ApplyEyeShadowMakeupFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeShadowMakeupFailCallback? get fail {
@@ -1909,7 +2009,9 @@ class ApplyEyeShadowMakeupOption {
   }
 
   set success(ApplyEyeShadowMakeupSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyEyeShadowMakeupSuccessCallback? get success {
@@ -1941,7 +2043,9 @@ class ApplyFaceContourMakeupOption {
   }
 
   set complete(ApplyFaceContourMakeupCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFaceContourMakeupCompleteCallback? get complete {
@@ -1949,7 +2053,9 @@ class ApplyFaceContourMakeupOption {
   }
 
   set fail(ApplyFaceContourMakeupFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFaceContourMakeupFailCallback? get fail {
@@ -1957,7 +2063,9 @@ class ApplyFaceContourMakeupOption {
   }
 
   set success(ApplyFaceContourMakeupSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFaceContourMakeupSuccessCallback? get success {
@@ -1989,7 +2097,9 @@ class ApplyFilterOption {
   }
 
   set complete(ApplyFilterCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFilterCompleteCallback? get complete {
@@ -1997,7 +2107,9 @@ class ApplyFilterOption {
   }
 
   set fail(ApplyFilterFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFilterFailCallback? get fail {
@@ -2013,7 +2125,9 @@ class ApplyFilterOption {
   }
 
   set success(ApplyFilterSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyFilterSuccessCallback? get success {
@@ -2077,7 +2191,9 @@ class ApplyLipStickMakeupOption {
   }
 
   set complete(ApplyLipStickMakeupCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyLipStickMakeupCompleteCallback? get complete {
@@ -2085,7 +2201,9 @@ class ApplyLipStickMakeupOption {
   }
 
   set fail(ApplyLipStickMakeupFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyLipStickMakeupFailCallback? get fail {
@@ -2093,7 +2211,9 @@ class ApplyLipStickMakeupOption {
   }
 
   set success(ApplyLipStickMakeupSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyLipStickMakeupSuccessCallback? get success {
@@ -2125,7 +2245,9 @@ class ApplyStickerOption {
   }
 
   set complete(ApplyStickerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyStickerCompleteCallback? get complete {
@@ -2133,7 +2255,9 @@ class ApplyStickerOption {
   }
 
   set fail(ApplyStickerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyStickerFailCallback? get fail {
@@ -2141,7 +2265,9 @@ class ApplyStickerOption {
   }
 
   set success(ApplyStickerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ApplyStickerSuccessCallback? get success {
@@ -2255,7 +2381,9 @@ class AuthPrivateMessageOption {
   }
 
   set complete(AuthPrivateMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthPrivateMessageCompleteCallback? get complete {
@@ -2263,7 +2391,9 @@ class AuthPrivateMessageOption {
   }
 
   set fail(AuthPrivateMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthPrivateMessageFailCallback? get fail {
@@ -2271,7 +2401,9 @@ class AuthPrivateMessageOption {
   }
 
   set success(AuthPrivateMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(AuthPrivateMessageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   AuthPrivateMessageSuccessCallback? get success {
@@ -2439,7 +2571,9 @@ class AuthorizeForMiniProgramOption {
   }
 
   set complete(AuthorizeForMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeForMiniProgramCompleteCallback? get complete {
@@ -2447,7 +2581,9 @@ class AuthorizeForMiniProgramOption {
   }
 
   set fail(AuthorizeForMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeForMiniProgramFailCallback? get fail {
@@ -2455,7 +2591,9 @@ class AuthorizeForMiniProgramOption {
   }
 
   set success(AuthorizeForMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeForMiniProgramSuccessCallback? get success {
@@ -2479,7 +2617,9 @@ class AuthorizeOption {
   }
 
   set complete(AuthorizeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeCompleteCallback? get complete {
@@ -2487,7 +2627,9 @@ class AuthorizeOption {
   }
 
   set fail(AuthorizeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeFailCallback? get fail {
@@ -2495,7 +2637,9 @@ class AuthorizeOption {
   }
 
   set success(AuthorizeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   AuthorizeSuccessCallback? get success {
@@ -2591,7 +2735,9 @@ class BLEPeripheralServerCloseOption {
   late mpjs.JSObject $$context$$;
 
   set complete(FileSystemManagerCloseCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseCompleteCallback? get complete {
@@ -2599,7 +2745,9 @@ class BLEPeripheralServerCloseOption {
   }
 
   set fail(SocketTaskCloseFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SocketTaskCloseFailCallback? get fail {
@@ -2607,7 +2755,9 @@ class BLEPeripheralServerCloseOption {
   }
 
   set success(FileSystemManagerCloseSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseSuccessCallback? get success {
@@ -2879,7 +3029,9 @@ class BatchGetStorageOption {
   }
 
   set complete(BatchGetStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchGetStorageCompleteCallback? get complete {
@@ -2887,7 +3039,9 @@ class BatchGetStorageOption {
   }
 
   set fail(BatchGetStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchGetStorageFailCallback? get fail {
@@ -2895,7 +3049,9 @@ class BatchGetStorageOption {
   }
 
   set success(BatchGetStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchGetStorageSuccessCallback? get success {
@@ -2919,7 +3075,9 @@ class BatchSetStorageOption {
   }
 
   set complete(BatchSetStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchSetStorageCompleteCallback? get complete {
@@ -2927,7 +3085,9 @@ class BatchSetStorageOption {
   }
 
   set fail(BatchSetStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchSetStorageFailCallback? get fail {
@@ -2935,7 +3095,9 @@ class BatchSetStorageOption {
   }
 
   set success(BatchSetStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BatchSetStorageSuccessCallback? get success {
@@ -3159,7 +3321,9 @@ class BlurOption {
   late mpjs.JSObject $$context$$;
 
   set complete(BlurCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BlurCompleteCallback? get complete {
@@ -3167,7 +3331,9 @@ class BlurOption {
   }
 
   set fail(BlurFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BlurFailCallback? get fail {
@@ -3175,7 +3341,9 @@ class BlurOption {
   }
 
   set success(BlurSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   BlurSuccessCallback? get success {
@@ -3441,7 +3609,9 @@ class CameraContextStartRecordOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartRecordCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartRecordCompleteCallback? get complete {
@@ -3449,7 +3619,9 @@ class CameraContextStartRecordOption {
   }
 
   set fail(StartRecordFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartRecordFailCallback? get fail {
@@ -3465,7 +3637,9 @@ class CameraContextStartRecordOption {
   }
 
   set success(CameraContextStartRecordSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CameraContextStartRecordSuccessCallback? get success {
@@ -3481,7 +3655,9 @@ class CameraContextStartRecordOption {
   }
 
   set timeoutCallback(StartRecordTimeoutCallback? value) {
-    $$context$$["timeoutCallback"] = value;
+    $$context$$["timeoutCallback"] = (result) {
+      value?.call(StartRecordTimeoutCallbackResult($$context$$: result));
+    };
   }
 
   StartRecordTimeoutCallback? get timeoutCallback {
@@ -3497,7 +3673,9 @@ class CameraContextStopRecordOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopRecordCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopRecordCompleteCallback? get complete {
@@ -3513,7 +3691,9 @@ class CameraContextStopRecordOption {
   }
 
   set fail(StopRecordFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopRecordFailCallback? get fail {
@@ -3521,7 +3701,9 @@ class CameraContextStopRecordOption {
   }
 
   set success(CameraContextStopRecordSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(StopRecordSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CameraContextStopRecordSuccessCallback? get success {
@@ -3537,7 +3719,9 @@ class CameraFrameListenerStartOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartCompleteCallback? get complete {
@@ -3545,7 +3729,9 @@ class CameraFrameListenerStartOption {
   }
 
   set fail(StartFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartFailCallback? get fail {
@@ -3553,7 +3739,9 @@ class CameraFrameListenerStartOption {
   }
 
   set success(StartSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartSuccessCallback? get success {
@@ -4035,7 +4223,9 @@ class CanvasGetImageDataOption {
   }
 
   set complete(CanvasGetImageDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasGetImageDataCompleteCallback? get complete {
@@ -4043,7 +4233,9 @@ class CanvasGetImageDataOption {
   }
 
   set fail(CanvasGetImageDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasGetImageDataFailCallback? get fail {
@@ -4051,7 +4243,9 @@ class CanvasGetImageDataOption {
   }
 
   set success(CanvasGetImageDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CanvasGetImageDataSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CanvasGetImageDataSuccessCallback? get success {
@@ -4155,7 +4349,9 @@ class CanvasPutImageDataOption {
   }
 
   set complete(CanvasPutImageDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasPutImageDataCompleteCallback? get complete {
@@ -4163,7 +4359,9 @@ class CanvasPutImageDataOption {
   }
 
   set fail(CanvasPutImageDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasPutImageDataFailCallback? get fail {
@@ -4171,7 +4369,9 @@ class CanvasPutImageDataOption {
   }
 
   set success(CanvasPutImageDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasPutImageDataSuccessCallback? get success {
@@ -4203,7 +4403,9 @@ class CanvasToTempFilePathOption {
   }
 
   set complete(CanvasToTempFilePathCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasToTempFilePathCompleteCallback? get complete {
@@ -4227,7 +4429,9 @@ class CanvasToTempFilePathOption {
   }
 
   set fail(CanvasToTempFilePathFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CanvasToTempFilePathFailCallback? get fail {
@@ -4259,7 +4463,10 @@ class CanvasToTempFilePathOption {
   }
 
   set success(CanvasToTempFilePathSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          CanvasToTempFilePathSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CanvasToTempFilePathSuccessCallback? get success {
@@ -4491,7 +4698,9 @@ class CheckIsAddedToMyMiniProgramOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CheckIsAddedToMyMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsAddedToMyMiniProgramCompleteCallback? get complete {
@@ -4499,7 +4708,9 @@ class CheckIsAddedToMyMiniProgramOption {
   }
 
   set fail(CheckIsAddedToMyMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsAddedToMyMiniProgramFailCallback? get fail {
@@ -4507,7 +4718,10 @@ class CheckIsAddedToMyMiniProgramOption {
   }
 
   set success(CheckIsAddedToMyMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CheckIsAddedToMyMiniProgramSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   CheckIsAddedToMyMiniProgramSuccessCallback? get success {
@@ -4548,7 +4762,9 @@ class CheckIsOpenAccessibilityOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CheckIsOpenAccessibilityCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsOpenAccessibilityCompleteCallback? get complete {
@@ -4556,7 +4772,9 @@ class CheckIsOpenAccessibilityOption {
   }
 
   set fail(CheckIsOpenAccessibilityFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsOpenAccessibilityFailCallback? get fail {
@@ -4564,7 +4782,10 @@ class CheckIsOpenAccessibilityOption {
   }
 
   set success(CheckIsOpenAccessibilitySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (option) {
+      value?.call(
+          CheckIsOpenAccessibilitySuccessCallbackOption($$context$$: option));
+    };
   }
 
   CheckIsOpenAccessibilitySuccessCallback? get success {
@@ -4604,7 +4825,9 @@ class CheckIsSoterEnrolledInDeviceOption {
   }
 
   set complete(CheckIsSoterEnrolledInDeviceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsSoterEnrolledInDeviceCompleteCallback? get complete {
@@ -4612,7 +4835,9 @@ class CheckIsSoterEnrolledInDeviceOption {
   }
 
   set fail(CheckIsSoterEnrolledInDeviceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsSoterEnrolledInDeviceFailCallback? get fail {
@@ -4620,7 +4845,10 @@ class CheckIsSoterEnrolledInDeviceOption {
   }
 
   set success(CheckIsSoterEnrolledInDeviceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CheckIsSoterEnrolledInDeviceSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   CheckIsSoterEnrolledInDeviceSuccessCallback? get success {
@@ -4661,7 +4889,9 @@ class CheckIsSupportSoterAuthenticationOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CheckIsSupportSoterAuthenticationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsSupportSoterAuthenticationCompleteCallback? get complete {
@@ -4669,7 +4899,9 @@ class CheckIsSupportSoterAuthenticationOption {
   }
 
   set fail(CheckIsSupportSoterAuthenticationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckIsSupportSoterAuthenticationFailCallback? get fail {
@@ -4677,7 +4909,10 @@ class CheckIsSupportSoterAuthenticationOption {
   }
 
   set success(CheckIsSupportSoterAuthenticationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CheckIsSupportSoterAuthenticationSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   CheckIsSupportSoterAuthenticationSuccessCallback? get success {
@@ -4718,7 +4953,9 @@ class CheckSessionOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CheckSessionCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckSessionCompleteCallback? get complete {
@@ -4726,7 +4963,9 @@ class CheckSessionOption {
   }
 
   set fail(CheckSessionFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckSessionFailCallback? get fail {
@@ -4734,7 +4973,9 @@ class CheckSessionOption {
   }
 
   set success(CheckSessionSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CheckSessionSuccessCallback? get success {
@@ -4750,7 +4991,9 @@ class ChooseAddressOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseAddressCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseAddressCompleteCallback? get complete {
@@ -4758,7 +5001,9 @@ class ChooseAddressOption {
   }
 
   set fail(ChooseAddressFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseAddressFailCallback? get fail {
@@ -4766,7 +5011,9 @@ class ChooseAddressOption {
   }
 
   set success(ChooseAddressSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseAddressSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseAddressSuccessCallback? get success {
@@ -4878,7 +5125,9 @@ class ChooseContactOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseContactCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseContactCompleteCallback? get complete {
@@ -4886,7 +5135,9 @@ class ChooseContactOption {
   }
 
   set fail(ChooseContactFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseContactFailCallback? get fail {
@@ -4894,7 +5145,9 @@ class ChooseContactOption {
   }
 
   set success(ChooseContactSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (option) {
+      value?.call(ChooseContactSuccessCallbackOption($$context$$: option));
+    };
   }
 
   ChooseContactSuccessCallback? get success {
@@ -4990,7 +5243,9 @@ class ChooseImageOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseImageCompleteCallback? get complete {
@@ -5006,7 +5261,9 @@ class ChooseImageOption {
   }
 
   set fail(ChooseImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseImageFailCallback? get fail {
@@ -5030,7 +5287,9 @@ class ChooseImageOption {
   }
 
   set success(ChooseImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseImageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseImageSuccessCallback? get success {
@@ -5078,7 +5337,9 @@ class ChooseInvoiceOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseInvoiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseInvoiceCompleteCallback? get complete {
@@ -5086,7 +5347,9 @@ class ChooseInvoiceOption {
   }
 
   set fail(ChooseInvoiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseInvoiceFailCallback? get fail {
@@ -5094,7 +5357,9 @@ class ChooseInvoiceOption {
   }
 
   set success(ChooseInvoiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseInvoiceSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseInvoiceSuccessCallback? get success {
@@ -5134,7 +5399,9 @@ class ChooseInvoiceTitleOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseInvoiceTitleCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseInvoiceTitleCompleteCallback? get complete {
@@ -5142,7 +5409,9 @@ class ChooseInvoiceTitleOption {
   }
 
   set fail(ChooseInvoiceTitleFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseInvoiceTitleFailCallback? get fail {
@@ -5150,7 +5419,9 @@ class ChooseInvoiceTitleOption {
   }
 
   set success(ChooseInvoiceTitleSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseInvoiceTitleSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseInvoiceTitleSuccessCallback? get success {
@@ -5238,7 +5509,9 @@ class ChooseLicensePlateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseLicensePlateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseLicensePlateCompleteCallback? get complete {
@@ -5246,7 +5519,9 @@ class ChooseLicensePlateOption {
   }
 
   set fail(ChooseLicensePlateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseLicensePlateFailCallback? get fail {
@@ -5254,7 +5529,9 @@ class ChooseLicensePlateOption {
   }
 
   set success(ChooseLicensePlateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseLicensePlateSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseLicensePlateSuccessCallback? get success {
@@ -5294,7 +5571,9 @@ class ChooseLocationOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChooseLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseLocationCompleteCallback? get complete {
@@ -5302,7 +5581,9 @@ class ChooseLocationOption {
   }
 
   set fail(ChooseLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseLocationFailCallback? get fail {
@@ -5326,7 +5607,9 @@ class ChooseLocationOption {
   }
 
   set success(ChooseLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseLocationSuccessCallback? get success {
@@ -5398,7 +5681,9 @@ class ChooseMediaOption {
   }
 
   set complete(ChooseMediaCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseMediaCompleteCallback? get complete {
@@ -5414,7 +5699,9 @@ class ChooseMediaOption {
   }
 
   set fail(ChooseMediaFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseMediaFailCallback? get fail {
@@ -5454,7 +5741,9 @@ class ChooseMediaOption {
   }
 
   set success(ChooseMediaSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseMediaSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseMediaSuccessCallback? get success {
@@ -5510,7 +5799,9 @@ class ChooseMessageFileOption {
   }
 
   set complete(ChooseMessageFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseMessageFileCompleteCallback? get complete {
@@ -5526,7 +5817,9 @@ class ChooseMessageFileOption {
   }
 
   set fail(ChooseMessageFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseMessageFileFailCallback? get fail {
@@ -5534,7 +5827,9 @@ class ChooseMessageFileOption {
   }
 
   set success(ChooseMessageFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseMessageFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseMessageFileSuccessCallback? get success {
@@ -5582,7 +5877,9 @@ class ChoosePoiOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ChoosePoiCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChoosePoiCompleteCallback? get complete {
@@ -5590,7 +5887,9 @@ class ChoosePoiOption {
   }
 
   set fail(ChoosePoiFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChoosePoiFailCallback? get fail {
@@ -5598,7 +5897,9 @@ class ChoosePoiOption {
   }
 
   set success(ChoosePoiSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChoosePoiSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChoosePoiSuccessCallback? get success {
@@ -5686,7 +5987,9 @@ class ChooseVideoOption {
   }
 
   set complete(ChooseVideoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseVideoCompleteCallback? get complete {
@@ -5702,7 +6005,9 @@ class ChooseVideoOption {
   }
 
   set fail(ChooseVideoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ChooseVideoFailCallback? get fail {
@@ -5726,7 +6031,9 @@ class ChooseVideoOption {
   }
 
   set success(ChooseVideoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ChooseVideoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ChooseVideoSuccessCallback? get success {
@@ -5798,7 +6105,9 @@ class ClearFiltersOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ClearFiltersCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearFiltersCompleteCallback? get complete {
@@ -5806,7 +6115,9 @@ class ClearFiltersOption {
   }
 
   set fail(ClearFiltersFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearFiltersFailCallback? get fail {
@@ -5814,7 +6125,9 @@ class ClearFiltersOption {
   }
 
   set success(ClearFiltersSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearFiltersSuccessCallback? get success {
@@ -5830,7 +6143,9 @@ class ClearMakeupsOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ClearMakeupsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearMakeupsCompleteCallback? get complete {
@@ -5838,7 +6153,9 @@ class ClearMakeupsOption {
   }
 
   set fail(ClearMakeupsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearMakeupsFailCallback? get fail {
@@ -5846,7 +6163,9 @@ class ClearMakeupsOption {
   }
 
   set success(ClearMakeupsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearMakeupsSuccessCallback? get success {
@@ -5862,7 +6181,9 @@ class ClearOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ClearCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearCompleteCallback? get complete {
@@ -5870,7 +6191,9 @@ class ClearOption {
   }
 
   set fail(ClearFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearFailCallback? get fail {
@@ -5878,7 +6201,9 @@ class ClearOption {
   }
 
   set success(ClearSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearSuccessCallback? get success {
@@ -5894,7 +6219,9 @@ class ClearStickersOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ClearStickersCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStickersCompleteCallback? get complete {
@@ -5902,7 +6229,9 @@ class ClearStickersOption {
   }
 
   set fail(ClearStickersFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStickersFailCallback? get fail {
@@ -5910,7 +6239,9 @@ class ClearStickersOption {
   }
 
   set success(ClearStickersSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStickersSuccessCallback? get success {
@@ -5926,7 +6257,9 @@ class ClearStorageOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ClearStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStorageCompleteCallback? get complete {
@@ -5934,7 +6267,9 @@ class ClearStorageOption {
   }
 
   set fail(ClearStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStorageFailCallback? get fail {
@@ -5942,7 +6277,9 @@ class ClearStorageOption {
   }
 
   set success(ClearStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ClearStorageSuccessCallback? get success {
@@ -6022,7 +6359,9 @@ class CloseBLEConnectionOption {
   }
 
   set complete(CloseBLEConnectionCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBLEConnectionCompleteCallback? get complete {
@@ -6030,7 +6369,9 @@ class CloseBLEConnectionOption {
   }
 
   set fail(CloseBLEConnectionFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBLEConnectionFailCallback? get fail {
@@ -6038,7 +6379,9 @@ class CloseBLEConnectionOption {
   }
 
   set success(CloseBLEConnectionSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBLEConnectionSuccessCallback? get success {
@@ -6054,7 +6397,9 @@ class CloseBluetoothAdapterOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CloseBluetoothAdapterCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBluetoothAdapterCompleteCallback? get complete {
@@ -6062,7 +6407,9 @@ class CloseBluetoothAdapterOption {
   }
 
   set fail(CloseBluetoothAdapterFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBluetoothAdapterFailCallback? get fail {
@@ -6070,7 +6417,9 @@ class CloseBluetoothAdapterOption {
   }
 
   set success(CloseBluetoothAdapterSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CloseBluetoothAdapterSuccessCallback? get success {
@@ -6110,7 +6459,9 @@ class CloseSocketOption {
   }
 
   set complete(CloseSocketCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CloseSocketCompleteCallback? get complete {
@@ -6118,7 +6469,9 @@ class CloseSocketOption {
   }
 
   set fail(CloseSocketFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CloseSocketFailCallback? get fail {
@@ -6134,7 +6487,9 @@ class CloseSocketOption {
   }
 
   set success(CloseSocketSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CloseSocketSuccessCallback? get success {
@@ -6182,7 +6537,9 @@ class CompressImageOption {
   }
 
   set complete(CompressImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CompressImageCompleteCallback? get complete {
@@ -6206,7 +6563,9 @@ class CompressImageOption {
   }
 
   set fail(CompressImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CompressImageFailCallback? get fail {
@@ -6222,7 +6581,9 @@ class CompressImageOption {
   }
 
   set success(CompressImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CompressImageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CompressImageSuccessCallback? get success {
@@ -6302,7 +6663,9 @@ class CompressVideoOption {
   }
 
   set complete(CompressVideoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CompressVideoCompleteCallback? get complete {
@@ -6310,7 +6673,9 @@ class CompressVideoOption {
   }
 
   set fail(CompressVideoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CompressVideoFailCallback? get fail {
@@ -6318,7 +6683,9 @@ class CompressVideoOption {
   }
 
   set success(CompressVideoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(CompressVideoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CompressVideoSuccessCallback? get success {
@@ -6374,7 +6741,9 @@ class ConnectSocketOption {
   }
 
   set complete(ConnectSocketCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ConnectSocketCompleteCallback? get complete {
@@ -6382,7 +6751,9 @@ class ConnectSocketOption {
   }
 
   set fail(ConnectSocketFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ConnectSocketFailCallback? get fail {
@@ -6422,7 +6793,9 @@ class ConnectSocketOption {
   }
 
   set success(ConnectSocketSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ConnectSocketSuccessCallback? get success {
@@ -6478,7 +6851,9 @@ class ConnectWifiOption {
   }
 
   set complete(ConnectWifiCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   ConnectWifiCompleteCallback? get complete {
@@ -6486,7 +6861,9 @@ class ConnectWifiOption {
   }
 
   set fail(ConnectWifiFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   ConnectWifiFailCallback? get fail {
@@ -6510,7 +6887,9 @@ class ConnectWifiOption {
   }
 
   set success(ConnectWifiSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   ConnectWifiSuccessCallback? get success {
@@ -6590,7 +6969,9 @@ class CopyFileOption {
   }
 
   set complete(CopyFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CopyFileCompleteCallback? get complete {
@@ -6598,7 +6979,9 @@ class CopyFileOption {
   }
 
   set fail(CopyFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(CopyFileFailCallbackResult($$context$$: result));
+    };
   }
 
   CopyFileFailCallback? get fail {
@@ -6606,7 +6989,9 @@ class CopyFileOption {
   }
 
   set success(CopyFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CopyFileSuccessCallback? get success {
@@ -6630,7 +7015,9 @@ class CreateBLEConnectionOption {
   }
 
   set complete(CreateBLEConnectionCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CreateBLEConnectionCompleteCallback? get complete {
@@ -6638,7 +7025,9 @@ class CreateBLEConnectionOption {
   }
 
   set fail(CreateBLEConnectionFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CreateBLEConnectionFailCallback? get fail {
@@ -6646,7 +7035,9 @@ class CreateBLEConnectionOption {
   }
 
   set success(CreateBLEConnectionSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   CreateBLEConnectionSuccessCallback? get success {
@@ -6670,7 +7061,9 @@ class CreateBLEPeripheralServerOption {
   late mpjs.JSObject $$context$$;
 
   set complete(CreateBLEPeripheralServerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CreateBLEPeripheralServerCompleteCallback? get complete {
@@ -6678,7 +7071,9 @@ class CreateBLEPeripheralServerOption {
   }
 
   set fail(CreateBLEPeripheralServerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CreateBLEPeripheralServerFailCallback? get fail {
@@ -6686,7 +7081,10 @@ class CreateBLEPeripheralServerOption {
   }
 
   set success(CreateBLEPeripheralServerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          CreateBLEPeripheralServerSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CreateBLEPeripheralServerSuccessCallback? get success {
@@ -6966,7 +7364,9 @@ class CropImageOption {
   }
 
   set complete(CropImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CropImageCompleteCallback? get complete {
@@ -6974,7 +7374,9 @@ class CropImageOption {
   }
 
   set fail(CropImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   CropImageFailCallback? get fail {
@@ -6982,7 +7384,9 @@ class CropImageOption {
   }
 
   set success(CropImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(EditImageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   CropImageSuccessCallback? get success {
@@ -7406,7 +7810,9 @@ class DisableAlertBeforeUnloadOption {
   late mpjs.JSObject $$context$$;
 
   set complete(DisableAlertBeforeUnloadCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   DisableAlertBeforeUnloadCompleteCallback? get complete {
@@ -7414,7 +7820,9 @@ class DisableAlertBeforeUnloadOption {
   }
 
   set fail(DisableAlertBeforeUnloadFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   DisableAlertBeforeUnloadFailCallback? get fail {
@@ -7422,7 +7830,9 @@ class DisableAlertBeforeUnloadOption {
   }
 
   set success(DisableAlertBeforeUnloadSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   DisableAlertBeforeUnloadSuccessCallback? get success {
@@ -7446,7 +7856,9 @@ class DownloadFileOption {
   }
 
   set complete(DownloadFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   DownloadFileCompleteCallback? get complete {
@@ -7454,7 +7866,9 @@ class DownloadFileOption {
   }
 
   set fail(DownloadFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   DownloadFileFailCallback? get fail {
@@ -7478,7 +7892,9 @@ class DownloadFileOption {
   }
 
   set success(DownloadFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(DownloadFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   DownloadFileSuccessCallback? get success {
@@ -7590,7 +8006,9 @@ class EditImageOption {
   }
 
   set complete(EditImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   EditImageCompleteCallback? get complete {
@@ -7598,7 +8016,9 @@ class EditImageOption {
   }
 
   set fail(EditImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   EditImageFailCallback? get fail {
@@ -7606,7 +8026,9 @@ class EditImageOption {
   }
 
   set success(EditImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(EditImageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   EditImageSuccessCallback? get success {
@@ -7654,7 +8076,9 @@ class EnableAlertBeforeUnloadOption {
   }
 
   set complete(EnableAlertBeforeUnloadCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   EnableAlertBeforeUnloadCompleteCallback? get complete {
@@ -7662,7 +8086,9 @@ class EnableAlertBeforeUnloadOption {
   }
 
   set fail(EnableAlertBeforeUnloadFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   EnableAlertBeforeUnloadFailCallback? get fail {
@@ -7670,7 +8096,9 @@ class EnableAlertBeforeUnloadOption {
   }
 
   set success(EnableAlertBeforeUnloadSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   EnableAlertBeforeUnloadSuccessCallback? get success {
@@ -7774,7 +8202,9 @@ class ExecuteVisualLayerCommandOption {
   }
 
   set complete(ExecuteVisualLayerCommandCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExecuteVisualLayerCommandCompleteCallback? get complete {
@@ -7782,7 +8212,9 @@ class ExecuteVisualLayerCommandOption {
   }
 
   set fail(ExecuteVisualLayerCommandFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExecuteVisualLayerCommandFailCallback? get fail {
@@ -7790,7 +8222,10 @@ class ExecuteVisualLayerCommandOption {
   }
 
   set success(ExecuteVisualLayerCommandSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          ExecuteVisualLayerCommandSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ExecuteVisualLayerCommandSuccessCallback? get success {
@@ -7830,7 +8265,9 @@ class ExitFullScreenOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ExitFullScreenCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitFullScreenCompleteCallback? get complete {
@@ -7838,7 +8275,9 @@ class ExitFullScreenOption {
   }
 
   set fail(ExitFullScreenFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitFullScreenFailCallback? get fail {
@@ -7846,7 +8285,9 @@ class ExitFullScreenOption {
   }
 
   set success(ExitFullScreenSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitFullScreenSuccessCallback? get success {
@@ -7862,7 +8303,9 @@ class ExitMiniProgramOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ExitMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitMiniProgramCompleteCallback? get complete {
@@ -7870,7 +8313,9 @@ class ExitMiniProgramOption {
   }
 
   set fail(ExitMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitMiniProgramFailCallback? get fail {
@@ -7878,7 +8323,9 @@ class ExitMiniProgramOption {
   }
 
   set success(ExitMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitMiniProgramSuccessCallback? get success {
@@ -7894,7 +8341,9 @@ class ExitPictureInPictureOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ExitPictureInPictureCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitPictureInPictureCompleteCallback? get complete {
@@ -7902,7 +8351,9 @@ class ExitPictureInPictureOption {
   }
 
   set fail(ExitPictureInPictureFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitPictureInPictureFailCallback? get fail {
@@ -7910,7 +8361,9 @@ class ExitPictureInPictureOption {
   }
 
   set success(ExitPictureInPictureSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitPictureInPictureSuccessCallback? get success {
@@ -7926,7 +8379,9 @@ class ExitVoIPChatOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ExitVoIPChatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitVoIPChatCompleteCallback? get complete {
@@ -7934,7 +8389,9 @@ class ExitVoIPChatOption {
   }
 
   set fail(ExitVoIPChatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitVoIPChatFailCallback? get fail {
@@ -7942,7 +8399,9 @@ class ExitVoIPChatOption {
   }
 
   set success(ExitVoIPChatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ExitVoIPChatSuccessCallback? get success {
@@ -8110,7 +8569,9 @@ class FaceDetectOption {
   }
 
   set complete(FaceDetectCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FaceDetectCompleteCallback? get complete {
@@ -8150,7 +8611,9 @@ class FaceDetectOption {
   }
 
   set fail(FaceDetectFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FaceDetectFailCallback? get fail {
@@ -8158,7 +8621,9 @@ class FaceDetectOption {
   }
 
   set success(FaceDetectSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(FaceDetectSuccessCallbackResult($$context$$: result));
+    };
   }
 
   FaceDetectSuccessCallback? get success {
@@ -8390,7 +8855,9 @@ class FileSystemManagerCloseOption {
   }
 
   set complete(FileSystemManagerCloseCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseCompleteCallback? get complete {
@@ -8398,7 +8865,9 @@ class FileSystemManagerCloseOption {
   }
 
   set fail(FileSystemManagerCloseFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(CloseFailCallbackResult($$context$$: result));
+    };
   }
 
   FileSystemManagerCloseFailCallback? get fail {
@@ -8406,7 +8875,9 @@ class FileSystemManagerCloseOption {
   }
 
   set success(FileSystemManagerCloseSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseSuccessCallback? get success {
@@ -8526,7 +8997,9 @@ class FromScreenLocationOption {
   }
 
   set complete(FromScreenLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FromScreenLocationCompleteCallback? get complete {
@@ -8534,7 +9007,9 @@ class FromScreenLocationOption {
   }
 
   set fail(FromScreenLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FromScreenLocationFailCallback? get fail {
@@ -8542,7 +9017,9 @@ class FromScreenLocationOption {
   }
 
   set success(FromScreenLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetCenterLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   FromScreenLocationSuccessCallback? get success {
@@ -8582,7 +9059,9 @@ class FstatOption {
   }
 
   set complete(FstatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FstatCompleteCallback? get complete {
@@ -8590,7 +9069,9 @@ class FstatOption {
   }
 
   set fail(FstatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(FstatFailCallbackResult($$context$$: result));
+    };
   }
 
   FstatFailCallback? get fail {
@@ -8598,7 +9079,9 @@ class FstatOption {
   }
 
   set success(FstatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(FstatSuccessCallbackResult($$context$$: result));
+    };
   }
 
   FstatSuccessCallback? get success {
@@ -8686,7 +9169,9 @@ class FtruncateOption {
   }
 
   set complete(FtruncateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FtruncateCompleteCallback? get complete {
@@ -8694,7 +9179,9 @@ class FtruncateOption {
   }
 
   set fail(FtruncateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(FtruncateFailCallbackResult($$context$$: result));
+    };
   }
 
   FtruncateFailCallback? get fail {
@@ -8702,7 +9189,9 @@ class FtruncateOption {
   }
 
   set success(FtruncateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FtruncateSuccessCallback? get success {
@@ -8758,7 +9247,9 @@ class GetAtqaOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetAtqaCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetAtqaCompleteCallback? get complete {
@@ -8766,7 +9257,9 @@ class GetAtqaOption {
   }
 
   set fail(GetAtqaFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetAtqaFailCallback? get fail {
@@ -8774,7 +9267,9 @@ class GetAtqaOption {
   }
 
   set success(GetAtqaSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetAtqaSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetAtqaSuccessCallback? get success {
@@ -8814,7 +9309,9 @@ class GetAvailableAudioSourcesOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetAvailableAudioSourcesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetAvailableAudioSourcesCompleteCallback? get complete {
@@ -8822,7 +9319,9 @@ class GetAvailableAudioSourcesOption {
   }
 
   set fail(GetAvailableAudioSourcesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetAvailableAudioSourcesFailCallback? get fail {
@@ -8830,7 +9329,10 @@ class GetAvailableAudioSourcesOption {
   }
 
   set success(GetAvailableAudioSourcesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetAvailableAudioSourcesSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetAvailableAudioSourcesSuccessCallback? get success {
@@ -8886,7 +9388,9 @@ class GetBLEDeviceCharacteristicsOption {
   }
 
   set complete(GetBLEDeviceCharacteristicsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEDeviceCharacteristicsCompleteCallback? get complete {
@@ -8894,7 +9398,9 @@ class GetBLEDeviceCharacteristicsOption {
   }
 
   set fail(GetBLEDeviceCharacteristicsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEDeviceCharacteristicsFailCallback? get fail {
@@ -8902,7 +9408,10 @@ class GetBLEDeviceCharacteristicsOption {
   }
 
   set success(GetBLEDeviceCharacteristicsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBLEDeviceCharacteristicsSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   GetBLEDeviceCharacteristicsSuccessCallback? get success {
@@ -8951,7 +9460,9 @@ class GetBLEDeviceRSSIOption {
   }
 
   set complete(GetBLEDeviceRSSICompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBLEDeviceRSSICompleteCallback? get complete {
@@ -8959,7 +9470,9 @@ class GetBLEDeviceRSSIOption {
   }
 
   set fail(GetBLEDeviceRSSIFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBLEDeviceRSSIFailCallback? get fail {
@@ -8967,7 +9480,9 @@ class GetBLEDeviceRSSIOption {
   }
 
   set success(GetBLEDeviceRSSISuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBLEDeviceRSSISuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBLEDeviceRSSISuccessCallback? get success {
@@ -9015,7 +9530,9 @@ class GetBLEDeviceServicesOption {
   }
 
   set complete(GetBLEDeviceServicesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEDeviceServicesCompleteCallback? get complete {
@@ -9023,7 +9540,9 @@ class GetBLEDeviceServicesOption {
   }
 
   set fail(GetBLEDeviceServicesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEDeviceServicesFailCallback? get fail {
@@ -9031,7 +9550,10 @@ class GetBLEDeviceServicesOption {
   }
 
   set success(GetBLEDeviceServicesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetBLEDeviceServicesSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBLEDeviceServicesSuccessCallback? get success {
@@ -9079,7 +9601,9 @@ class GetBLEMTUOption {
   }
 
   set complete(GetBLEMTUCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEMTUCompleteCallback? get complete {
@@ -9087,7 +9611,9 @@ class GetBLEMTUOption {
   }
 
   set fail(GetBLEMTUFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBLEMTUFailCallback? get fail {
@@ -9095,7 +9621,9 @@ class GetBLEMTUOption {
   }
 
   set success(GetBLEMTUSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBLEMTUSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBLEMTUSuccessCallback? get success {
@@ -9143,7 +9671,9 @@ class GetBackgroundAudioPlayerStateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBackgroundAudioPlayerStateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundAudioPlayerStateCompleteCallback? get complete {
@@ -9151,7 +9681,9 @@ class GetBackgroundAudioPlayerStateOption {
   }
 
   set fail(GetBackgroundAudioPlayerStateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundAudioPlayerStateFailCallback? get fail {
@@ -9159,7 +9691,10 @@ class GetBackgroundAudioPlayerStateOption {
   }
 
   set success(GetBackgroundAudioPlayerStateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBackgroundAudioPlayerStateSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   GetBackgroundAudioPlayerStateSuccessCallback? get success {
@@ -9240,7 +9775,9 @@ class GetBackgroundFetchDataOption {
   }
 
   set complete(GetBackgroundFetchDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundFetchDataCompleteCallback? get complete {
@@ -9248,7 +9785,9 @@ class GetBackgroundFetchDataOption {
   }
 
   set fail(GetBackgroundFetchDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundFetchDataFailCallback? get fail {
@@ -9256,7 +9795,10 @@ class GetBackgroundFetchDataOption {
   }
 
   set success(GetBackgroundFetchDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetBackgroundFetchDataSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBackgroundFetchDataSuccessCallback? get success {
@@ -9328,7 +9870,9 @@ class GetBackgroundFetchTokenOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBackgroundFetchTokenCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundFetchTokenCompleteCallback? get complete {
@@ -9336,7 +9880,9 @@ class GetBackgroundFetchTokenOption {
   }
 
   set fail(GetBackgroundFetchTokenFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBackgroundFetchTokenFailCallback? get fail {
@@ -9344,7 +9890,10 @@ class GetBackgroundFetchTokenOption {
   }
 
   set success(GetBackgroundFetchTokenSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetBackgroundFetchTokenSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBackgroundFetchTokenSuccessCallback? get success {
@@ -9384,7 +9933,9 @@ class GetBatteryInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBatteryInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBatteryInfoCompleteCallback? get complete {
@@ -9392,7 +9943,9 @@ class GetBatteryInfoOption {
   }
 
   set fail(GetBatteryInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetBatteryInfoFailCallback? get fail {
@@ -9400,7 +9953,9 @@ class GetBatteryInfoOption {
   }
 
   set success(GetBatteryInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBatteryInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBatteryInfoSuccessCallback? get success {
@@ -9472,7 +10027,9 @@ class GetBeaconsOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBeaconsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   GetBeaconsCompleteCallback? get complete {
@@ -9480,7 +10037,9 @@ class GetBeaconsOption {
   }
 
   set fail(GetBeaconsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   GetBeaconsFailCallback? get fail {
@@ -9488,7 +10047,9 @@ class GetBeaconsOption {
   }
 
   set success(GetBeaconsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetBeaconsSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBeaconsSuccessCallback? get success {
@@ -9528,7 +10089,9 @@ class GetBluetoothAdapterStateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBluetoothAdapterStateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBluetoothAdapterStateCompleteCallback? get complete {
@@ -9536,7 +10099,9 @@ class GetBluetoothAdapterStateOption {
   }
 
   set fail(GetBluetoothAdapterStateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBluetoothAdapterStateFailCallback? get fail {
@@ -9544,7 +10109,10 @@ class GetBluetoothAdapterStateOption {
   }
 
   set success(GetBluetoothAdapterStateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetBluetoothAdapterStateSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBluetoothAdapterStateSuccessCallback? get success {
@@ -9592,7 +10160,9 @@ class GetBluetoothDevicesOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetBluetoothDevicesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBluetoothDevicesCompleteCallback? get complete {
@@ -9600,7 +10170,9 @@ class GetBluetoothDevicesOption {
   }
 
   set fail(GetBluetoothDevicesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetBluetoothDevicesFailCallback? get fail {
@@ -9608,7 +10180,10 @@ class GetBluetoothDevicesOption {
   }
 
   set success(GetBluetoothDevicesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value
+          ?.call(GetBluetoothDevicesSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetBluetoothDevicesSuccessCallback? get success {
@@ -9648,7 +10223,9 @@ class GetCenterLocationOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetCenterLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetCenterLocationCompleteCallback? get complete {
@@ -9656,7 +10233,9 @@ class GetCenterLocationOption {
   }
 
   set fail(GetCenterLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetCenterLocationFailCallback? get fail {
@@ -9672,7 +10251,9 @@ class GetCenterLocationOption {
   }
 
   set success(GetCenterLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetCenterLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetCenterLocationSuccessCallback? get success {
@@ -9728,7 +10309,9 @@ class GetChannelsLiveInfoOption {
   }
 
   set complete(GetChannelsLiveInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsLiveInfoCompleteCallback? get complete {
@@ -9744,7 +10327,9 @@ class GetChannelsLiveInfoOption {
   }
 
   set fail(GetChannelsLiveInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsLiveInfoFailCallback? get fail {
@@ -9760,7 +10345,10 @@ class GetChannelsLiveInfoOption {
   }
 
   set success(GetChannelsLiveInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value
+          ?.call(GetChannelsLiveInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetChannelsLiveInfoSuccessCallback? get success {
@@ -9864,7 +10452,9 @@ class GetChannelsLiveNoticeInfoOption {
   }
 
   set complete(GetChannelsLiveNoticeInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsLiveNoticeInfoCompleteCallback? get complete {
@@ -9872,7 +10462,9 @@ class GetChannelsLiveNoticeInfoOption {
   }
 
   set fail(GetChannelsLiveNoticeInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsLiveNoticeInfoFailCallback? get fail {
@@ -9880,7 +10472,10 @@ class GetChannelsLiveNoticeInfoOption {
   }
 
   set success(GetChannelsLiveNoticeInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetChannelsLiveNoticeInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetChannelsLiveNoticeInfoSuccessCallback? get success {
@@ -9968,7 +10563,9 @@ class GetChannelsShareKeyOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetChannelsShareKeyCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsShareKeyCompleteCallback? get complete {
@@ -9976,7 +10573,9 @@ class GetChannelsShareKeyOption {
   }
 
   set fail(GetChannelsShareKeyFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetChannelsShareKeyFailCallback? get fail {
@@ -9984,7 +10583,10 @@ class GetChannelsShareKeyOption {
   }
 
   set success(GetChannelsShareKeySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value
+          ?.call(GetChannelsShareKeySuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetChannelsShareKeySuccessCallback? get success {
@@ -10032,7 +10634,9 @@ class GetClipboardDataOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetClipboardDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetClipboardDataCompleteCallback? get complete {
@@ -10040,7 +10644,9 @@ class GetClipboardDataOption {
   }
 
   set fail(GetClipboardDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetClipboardDataFailCallback? get fail {
@@ -10048,7 +10654,9 @@ class GetClipboardDataOption {
   }
 
   set success(GetClipboardDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (option) {
+      value?.call(GetClipboardDataSuccessCallbackOption($$context$$: option));
+    };
   }
 
   GetClipboardDataSuccessCallback? get success {
@@ -10088,7 +10696,9 @@ class GetConnectedBluetoothDevicesOption {
   }
 
   set complete(GetConnectedBluetoothDevicesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetConnectedBluetoothDevicesCompleteCallback? get complete {
@@ -10096,7 +10706,9 @@ class GetConnectedBluetoothDevicesOption {
   }
 
   set fail(GetConnectedBluetoothDevicesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   GetConnectedBluetoothDevicesFailCallback? get fail {
@@ -10104,7 +10716,10 @@ class GetConnectedBluetoothDevicesOption {
   }
 
   set success(GetConnectedBluetoothDevicesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetConnectedBluetoothDevicesSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   GetConnectedBluetoothDevicesSuccessCallback? get success {
@@ -10145,7 +10760,9 @@ class GetConnectedWifiOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetConnectedWifiCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   GetConnectedWifiCompleteCallback? get complete {
@@ -10153,7 +10770,9 @@ class GetConnectedWifiOption {
   }
 
   set fail(GetConnectedWifiFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   GetConnectedWifiFailCallback? get fail {
@@ -10169,7 +10788,9 @@ class GetConnectedWifiOption {
   }
 
   set success(GetConnectedWifiSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetConnectedWifiSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetConnectedWifiSuccessCallback? get success {
@@ -10209,7 +10830,9 @@ class GetContentsOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetContentsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetContentsCompleteCallback? get complete {
@@ -10217,7 +10840,9 @@ class GetContentsOption {
   }
 
   set fail(GetContentsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetContentsFailCallback? get fail {
@@ -10225,7 +10850,9 @@ class GetContentsOption {
   }
 
   set success(GetContentsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetContentsSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetContentsSuccessCallback? get success {
@@ -10281,7 +10908,9 @@ class GetExtConfigOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetExtConfigCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetExtConfigCompleteCallback? get complete {
@@ -10289,7 +10918,9 @@ class GetExtConfigOption {
   }
 
   set fail(GetExtConfigFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetExtConfigFailCallback? get fail {
@@ -10297,7 +10928,9 @@ class GetExtConfigOption {
   }
 
   set success(GetExtConfigSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetExtConfigSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetExtConfigSuccessCallback? get success {
@@ -10361,7 +10994,9 @@ class GetFileInfoOption {
   }
 
   set complete(GetFileInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetFileInfoCompleteCallback? get complete {
@@ -10369,7 +11004,9 @@ class GetFileInfoOption {
   }
 
   set fail(GetFileInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(GetFileInfoFailCallbackResult($$context$$: result));
+    };
   }
 
   GetFileInfoFailCallback? get fail {
@@ -10377,7 +11014,9 @@ class GetFileInfoOption {
   }
 
   set success(GetFileInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetFileInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetFileInfoSuccessCallback? get success {
@@ -10417,7 +11056,9 @@ class GetFuzzyLocationOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetFuzzyLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetFuzzyLocationCompleteCallback? get complete {
@@ -10425,7 +11066,9 @@ class GetFuzzyLocationOption {
   }
 
   set fail(GetFuzzyLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetFuzzyLocationFailCallback? get fail {
@@ -10433,7 +11076,9 @@ class GetFuzzyLocationOption {
   }
 
   set success(GetFuzzyLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetFuzzyLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetFuzzyLocationSuccessCallback? get success {
@@ -10489,7 +11134,9 @@ class GetGroupEnterInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetGroupEnterInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetGroupEnterInfoCompleteCallback? get complete {
@@ -10497,7 +11144,9 @@ class GetGroupEnterInfoOption {
   }
 
   set fail(GetGroupEnterInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetGroupEnterInfoFailCallback? get fail {
@@ -10505,7 +11154,9 @@ class GetGroupEnterInfoOption {
   }
 
   set success(GetGroupEnterInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetGroupEnterInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetGroupEnterInfoSuccessCallback? get success {
@@ -10561,7 +11212,9 @@ class GetHCEStateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetHCEStateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   GetHCEStateCompleteCallback? get complete {
@@ -10569,7 +11222,9 @@ class GetHCEStateOption {
   }
 
   set fail(GetHCEStateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   GetHCEStateFailCallback? get fail {
@@ -10577,7 +11232,9 @@ class GetHCEStateOption {
   }
 
   set success(GetHCEStateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   GetHCEStateSuccessCallback? get success {
@@ -10593,7 +11250,9 @@ class GetHistoricalBytesOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetHistoricalBytesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetHistoricalBytesCompleteCallback? get complete {
@@ -10601,7 +11260,9 @@ class GetHistoricalBytesOption {
   }
 
   set fail(GetHistoricalBytesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetHistoricalBytesFailCallback? get fail {
@@ -10609,7 +11270,9 @@ class GetHistoricalBytesOption {
   }
 
   set success(GetHistoricalBytesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetHistoricalBytesSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetHistoricalBytesSuccessCallback? get success {
@@ -10657,7 +11320,9 @@ class GetImageInfoOption {
   }
 
   set complete(GetImageInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetImageInfoCompleteCallback? get complete {
@@ -10665,7 +11330,9 @@ class GetImageInfoOption {
   }
 
   set fail(GetImageInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetImageInfoFailCallback? get fail {
@@ -10673,7 +11340,9 @@ class GetImageInfoOption {
   }
 
   set success(GetImageInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetImageInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetImageInfoSuccessCallback? get success {
@@ -10745,7 +11414,9 @@ class GetLatestUserKeyOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetLatestUserKeyCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLatestUserKeyCompleteCallback? get complete {
@@ -10753,7 +11424,9 @@ class GetLatestUserKeyOption {
   }
 
   set fail(GetLatestUserKeyFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLatestUserKeyFailCallback? get fail {
@@ -10761,7 +11434,9 @@ class GetLatestUserKeyOption {
   }
 
   set success(GetLatestUserKeySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetLatestUserKeySuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetLatestUserKeySuccessCallback? get success {
@@ -10825,7 +11500,9 @@ class GetLocalIPAddressOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetLocalIPAddressCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLocalIPAddressCompleteCallback? get complete {
@@ -10833,7 +11510,9 @@ class GetLocalIPAddressOption {
   }
 
   set fail(GetLocalIPAddressFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLocalIPAddressFailCallback? get fail {
@@ -10841,7 +11520,9 @@ class GetLocalIPAddressOption {
   }
 
   set success(GetLocalIPAddressSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetLocalIPAddressSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetLocalIPAddressSuccessCallback? get success {
@@ -10897,7 +11578,9 @@ class GetLocationOption {
   }
 
   set complete(GetLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLocationCompleteCallback? get complete {
@@ -10905,7 +11588,9 @@ class GetLocationOption {
   }
 
   set fail(GetLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetLocationFailCallback? get fail {
@@ -10929,7 +11614,9 @@ class GetLocationOption {
   }
 
   set success(GetLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetLocationSuccessCallback? get success {
@@ -11041,7 +11728,9 @@ class GetMaxTransceiveLengthOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetMaxTransceiveLengthCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetMaxTransceiveLengthCompleteCallback? get complete {
@@ -11049,7 +11738,9 @@ class GetMaxTransceiveLengthOption {
   }
 
   set fail(GetMaxTransceiveLengthFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetMaxTransceiveLengthFailCallback? get fail {
@@ -11057,7 +11748,10 @@ class GetMaxTransceiveLengthOption {
   }
 
   set success(GetMaxTransceiveLengthSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetMaxTransceiveLengthSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetMaxTransceiveLengthSuccessCallback? get success {
@@ -11097,7 +11791,9 @@ class GetNetworkTypeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetNetworkTypeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetNetworkTypeCompleteCallback? get complete {
@@ -11105,7 +11801,9 @@ class GetNetworkTypeOption {
   }
 
   set fail(GetNetworkTypeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetNetworkTypeFailCallback? get fail {
@@ -11113,7 +11811,9 @@ class GetNetworkTypeOption {
   }
 
   set success(GetNetworkTypeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetNetworkTypeSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetNetworkTypeSuccessCallback? get success {
@@ -11177,7 +11877,9 @@ class GetRandomValuesOption {
   }
 
   set complete(GetRandomValuesCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRandomValuesCompleteCallback? get complete {
@@ -11185,7 +11887,9 @@ class GetRandomValuesOption {
   }
 
   set fail(GetRandomValuesFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRandomValuesFailCallback? get fail {
@@ -11193,7 +11897,9 @@ class GetRandomValuesOption {
   }
 
   set success(GetRandomValuesSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetRandomValuesSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetRandomValuesSuccessCallback? get success {
@@ -11233,7 +11939,9 @@ class GetRegionOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetRegionCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRegionCompleteCallback? get complete {
@@ -11241,7 +11949,9 @@ class GetRegionOption {
   }
 
   set fail(GetRegionFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRegionFailCallback? get fail {
@@ -11249,7 +11959,9 @@ class GetRegionOption {
   }
 
   set success(GetRegionSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetRegionSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetRegionSuccessCallback? get success {
@@ -11297,7 +12009,9 @@ class GetRotateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetRotateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRotateCompleteCallback? get complete {
@@ -11305,7 +12019,9 @@ class GetRotateOption {
   }
 
   set fail(GetRotateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetRotateFailCallback? get fail {
@@ -11313,7 +12029,9 @@ class GetRotateOption {
   }
 
   set success(GetRotateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetRotateSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetRotateSuccessCallback? get success {
@@ -11353,7 +12071,9 @@ class GetSakOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSakCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetSakCompleteCallback? get complete {
@@ -11361,7 +12081,9 @@ class GetSakOption {
   }
 
   set fail(GetSakFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   GetSakFailCallback? get fail {
@@ -11369,7 +12091,9 @@ class GetSakOption {
   }
 
   set success(GetSakSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetSakSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSakSuccessCallback? get success {
@@ -11409,7 +12133,9 @@ class GetSavedFileListOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSavedFileListCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSavedFileListCompleteCallback? get complete {
@@ -11417,7 +12143,9 @@ class GetSavedFileListOption {
   }
 
   set fail(GetSavedFileListFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSavedFileListFailCallback? get fail {
@@ -11425,7 +12153,9 @@ class GetSavedFileListOption {
   }
 
   set success(GetSavedFileListSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetSavedFileListSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSavedFileListSuccessCallback? get success {
@@ -11465,7 +12195,9 @@ class GetScaleOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetScaleCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScaleCompleteCallback? get complete {
@@ -11473,7 +12205,9 @@ class GetScaleOption {
   }
 
   set fail(GetScaleFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScaleFailCallback? get fail {
@@ -11481,7 +12215,9 @@ class GetScaleOption {
   }
 
   set success(GetScaleSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetScaleSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetScaleSuccessCallback? get success {
@@ -11521,7 +12257,9 @@ class GetScreenBrightnessOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetScreenBrightnessCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScreenBrightnessCompleteCallback? get complete {
@@ -11529,7 +12267,9 @@ class GetScreenBrightnessOption {
   }
 
   set fail(GetScreenBrightnessFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScreenBrightnessFailCallback? get fail {
@@ -11537,7 +12277,10 @@ class GetScreenBrightnessOption {
   }
 
   set success(GetScreenBrightnessSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (option) {
+      value
+          ?.call(GetScreenBrightnessSuccessCallbackOption($$context$$: option));
+    };
   }
 
   GetScreenBrightnessSuccessCallback? get success {
@@ -11569,7 +12312,9 @@ class GetScreenRecordingStateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetScreenRecordingStateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScreenRecordingStateCompleteCallback? get complete {
@@ -11577,7 +12322,9 @@ class GetScreenRecordingStateOption {
   }
 
   set fail(GetScreenRecordingStateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetScreenRecordingStateFailCallback? get fail {
@@ -11585,7 +12332,10 @@ class GetScreenRecordingStateOption {
   }
 
   set success(GetScreenRecordingStateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetScreenRecordingStateSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetScreenRecordingStateSuccessCallback? get success {
@@ -11625,7 +12375,9 @@ class GetSelectedTextRangeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSelectedTextRangeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSelectedTextRangeCompleteCallback? get complete {
@@ -11633,7 +12385,9 @@ class GetSelectedTextRangeOption {
   }
 
   set fail(GetSelectedTextRangeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSelectedTextRangeFailCallback? get fail {
@@ -11641,7 +12395,10 @@ class GetSelectedTextRangeOption {
   }
 
   set success(GetSelectedTextRangeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          GetSelectedTextRangeSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSelectedTextRangeSuccessCallback? get success {
@@ -11689,7 +12446,9 @@ class GetSelectionTextOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSelectionTextCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSelectionTextCompleteCallback? get complete {
@@ -11697,7 +12456,9 @@ class GetSelectionTextOption {
   }
 
   set fail(GetSelectionTextFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSelectionTextFailCallback? get fail {
@@ -11705,7 +12466,9 @@ class GetSelectionTextOption {
   }
 
   set success(GetSelectionTextSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetSelectionTextSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSelectionTextSuccessCallback? get success {
@@ -11745,7 +12508,9 @@ class GetSettingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSettingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSettingCompleteCallback? get complete {
@@ -11753,7 +12518,9 @@ class GetSettingOption {
   }
 
   set fail(GetSettingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSettingFailCallback? get fail {
@@ -11761,7 +12528,9 @@ class GetSettingOption {
   }
 
   set success(GetSettingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetSettingSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSettingSuccessCallback? get success {
@@ -11834,7 +12603,9 @@ class GetShareInfoOption {
   }
 
   set complete(GetShareInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetShareInfoCompleteCallback? get complete {
@@ -11842,7 +12613,9 @@ class GetShareInfoOption {
   }
 
   set fail(GetShareInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetShareInfoFailCallback? get fail {
@@ -11850,7 +12623,9 @@ class GetShareInfoOption {
   }
 
   set success(GetShareInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetGroupEnterInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetShareInfoSuccessCallback? get success {
@@ -11874,7 +12649,9 @@ class GetSkewOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSkewCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSkewCompleteCallback? get complete {
@@ -11882,7 +12659,9 @@ class GetSkewOption {
   }
 
   set fail(GetSkewFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSkewFailCallback? get fail {
@@ -11890,7 +12669,9 @@ class GetSkewOption {
   }
 
   set success(GetSkewSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetSkewSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetSkewSuccessCallback? get success {
@@ -11930,7 +12711,9 @@ class GetSkylineInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSkylineInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSkylineInfoCompleteCallback? get complete {
@@ -11938,7 +12721,9 @@ class GetSkylineInfoOption {
   }
 
   set fail(GetSkylineInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSkylineInfoFailCallback? get fail {
@@ -11946,7 +12731,9 @@ class GetSkylineInfoOption {
   }
 
   set success(GetSkylineInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SkylineInfo($$context$$: result));
+    };
   }
 
   GetSkylineInfoSuccessCallback? get success {
@@ -11962,7 +12749,9 @@ class GetStorageInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetStorageInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetStorageInfoCompleteCallback? get complete {
@@ -11970,7 +12759,9 @@ class GetStorageInfoOption {
   }
 
   set fail(GetStorageInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetStorageInfoFailCallback? get fail {
@@ -11978,7 +12769,9 @@ class GetStorageInfoOption {
   }
 
   set success(GetStorageInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (option) {
+      value?.call(GetStorageInfoSuccessCallbackOption($$context$$: option));
+    };
   }
 
   GetStorageInfoSuccessCallback? get success {
@@ -12066,7 +12859,9 @@ class GetStorageOption<T extends dynamic> {
   }
 
   set complete(GetStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetStorageCompleteCallback? get complete {
@@ -12082,7 +12877,9 @@ class GetStorageOption<T extends dynamic> {
   }
 
   set fail(GetStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetStorageFailCallback? get fail {
@@ -12090,7 +12887,9 @@ class GetStorageOption<T extends dynamic> {
   }
 
   set success(GetStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetStorageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetStorageSuccessCallback? get success {
@@ -12130,7 +12929,9 @@ class GetSystemInfoAsyncOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSystemInfoAsyncCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSystemInfoAsyncCompleteCallback? get complete {
@@ -12138,7 +12939,9 @@ class GetSystemInfoAsyncOption {
   }
 
   set fail(GetSystemInfoAsyncFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSystemInfoAsyncFailCallback? get fail {
@@ -12146,7 +12949,9 @@ class GetSystemInfoAsyncOption {
   }
 
   set success(GetSystemInfoAsyncSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SystemInfo($$context$$: result));
+    };
   }
 
   GetSystemInfoAsyncSuccessCallback? get success {
@@ -12162,7 +12967,9 @@ class GetSystemInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetSystemInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSystemInfoCompleteCallback? get complete {
@@ -12170,7 +12977,9 @@ class GetSystemInfoOption {
   }
 
   set fail(GetSystemInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetSystemInfoFailCallback? get fail {
@@ -12178,7 +12987,9 @@ class GetSystemInfoOption {
   }
 
   set success(GetSystemInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SystemInfo($$context$$: result));
+    };
   }
 
   GetSystemInfoSuccessCallback? get success {
@@ -12194,7 +13005,9 @@ class GetUserInfoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetUserInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetUserInfoCompleteCallback? get complete {
@@ -12202,7 +13015,9 @@ class GetUserInfoOption {
   }
 
   set fail(GetUserInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetUserInfoFailCallback? get fail {
@@ -12218,7 +13033,9 @@ class GetUserInfoOption {
   }
 
   set success(GetUserInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetUserInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetUserInfoSuccessCallback? get success {
@@ -12314,7 +13131,9 @@ class GetUserProfileOption {
   }
 
   set complete(GetUserProfileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetUserProfileCompleteCallback? get complete {
@@ -12322,7 +13141,9 @@ class GetUserProfileOption {
   }
 
   set fail(GetUserProfileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetUserProfileFailCallback? get fail {
@@ -12338,7 +13159,9 @@ class GetUserProfileOption {
   }
 
   set success(GetUserProfileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetUserProfileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetUserProfileSuccessCallback? get success {
@@ -12426,7 +13249,9 @@ class GetVideoInfoOption {
   }
 
   set complete(GetVideoInfoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetVideoInfoCompleteCallback? get complete {
@@ -12434,7 +13259,9 @@ class GetVideoInfoOption {
   }
 
   set fail(GetVideoInfoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetVideoInfoFailCallback? get fail {
@@ -12442,7 +13269,9 @@ class GetVideoInfoOption {
   }
 
   set success(GetVideoInfoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetVideoInfoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetVideoInfoSuccessCallback? get success {
@@ -12538,7 +13367,9 @@ class GetWeRunDataOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetWeRunDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetWeRunDataCompleteCallback? get complete {
@@ -12546,7 +13377,9 @@ class GetWeRunDataOption {
   }
 
   set fail(GetWeRunDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   GetWeRunDataFailCallback? get fail {
@@ -12554,7 +13387,9 @@ class GetWeRunDataOption {
   }
 
   set success(GetWeRunDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(GetWeRunDataSuccessCallbackResult($$context$$: result));
+    };
   }
 
   GetWeRunDataSuccessCallback? get success {
@@ -12610,7 +13445,9 @@ class GetWifiListOption {
   late mpjs.JSObject $$context$$;
 
   set complete(GetWifiListCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   GetWifiListCompleteCallback? get complete {
@@ -12618,7 +13455,9 @@ class GetWifiListOption {
   }
 
   set fail(GetWifiListFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   GetWifiListFailCallback? get fail {
@@ -12626,7 +13465,9 @@ class GetWifiListOption {
   }
 
   set success(GetWifiListSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   GetWifiListSuccessCallback? get success {
@@ -12658,7 +13499,9 @@ class HideHomeButtonOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideHomeButtonCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideHomeButtonCompleteCallback? get complete {
@@ -12666,7 +13509,9 @@ class HideHomeButtonOption {
   }
 
   set fail(HideHomeButtonFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideHomeButtonFailCallback? get fail {
@@ -12674,7 +13519,9 @@ class HideHomeButtonOption {
   }
 
   set success(HideHomeButtonSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideHomeButtonSuccessCallback? get success {
@@ -12690,7 +13537,9 @@ class HideKeyboardOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideKeyboardCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideKeyboardCompleteCallback? get complete {
@@ -12698,7 +13547,9 @@ class HideKeyboardOption {
   }
 
   set fail(HideKeyboardFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideKeyboardFailCallback? get fail {
@@ -12706,7 +13557,9 @@ class HideKeyboardOption {
   }
 
   set success(HideKeyboardSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideKeyboardSuccessCallback? get success {
@@ -12722,7 +13575,9 @@ class HideLoadingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideLoadingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideLoadingCompleteCallback? get complete {
@@ -12730,7 +13585,9 @@ class HideLoadingOption {
   }
 
   set fail(HideLoadingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideLoadingFailCallback? get fail {
@@ -12746,7 +13603,9 @@ class HideLoadingOption {
   }
 
   set success(HideLoadingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideLoadingSuccessCallback? get success {
@@ -12762,7 +13621,9 @@ class HideNavigationBarLoadingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideNavigationBarLoadingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideNavigationBarLoadingCompleteCallback? get complete {
@@ -12770,7 +13631,9 @@ class HideNavigationBarLoadingOption {
   }
 
   set fail(HideNavigationBarLoadingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideNavigationBarLoadingFailCallback? get fail {
@@ -12778,7 +13641,9 @@ class HideNavigationBarLoadingOption {
   }
 
   set success(HideNavigationBarLoadingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideNavigationBarLoadingSuccessCallback? get success {
@@ -12794,7 +13659,9 @@ class HideShareMenuOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideShareMenuCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideShareMenuCompleteCallback? get complete {
@@ -12802,7 +13669,9 @@ class HideShareMenuOption {
   }
 
   set fail(HideShareMenuFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideShareMenuFailCallback? get fail {
@@ -12818,7 +13687,9 @@ class HideShareMenuOption {
   }
 
   set success(HideShareMenuSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideShareMenuSuccessCallback? get success {
@@ -12842,7 +13713,9 @@ class HideTabBarOption {
   }
 
   set complete(HideTabBarCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarCompleteCallback? get complete {
@@ -12850,7 +13723,9 @@ class HideTabBarOption {
   }
 
   set fail(HideTabBarFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarFailCallback? get fail {
@@ -12858,7 +13733,9 @@ class HideTabBarOption {
   }
 
   set success(HideTabBarSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarSuccessCallback? get success {
@@ -12882,7 +13759,9 @@ class HideTabBarRedDotOption {
   }
 
   set complete(HideTabBarRedDotCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarRedDotCompleteCallback? get complete {
@@ -12890,7 +13769,9 @@ class HideTabBarRedDotOption {
   }
 
   set fail(HideTabBarRedDotFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarRedDotFailCallback? get fail {
@@ -12898,7 +13779,9 @@ class HideTabBarRedDotOption {
   }
 
   set success(HideTabBarRedDotSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideTabBarRedDotSuccessCallback? get success {
@@ -12914,7 +13797,9 @@ class HideToastOption {
   late mpjs.JSObject $$context$$;
 
   set complete(HideToastCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideToastCompleteCallback? get complete {
@@ -12922,7 +13807,9 @@ class HideToastOption {
   }
 
   set fail(HideToastFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideToastFailCallback? get fail {
@@ -12938,7 +13825,9 @@ class HideToastOption {
   }
 
   set success(HideToastSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   HideToastSuccessCallback? get success {
@@ -12978,7 +13867,9 @@ class Image {
   }
 
   set onerror(dynamic value) {
-    $$context$$["onerror"] = value;
+    $$context$$["onerror"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get onerror {
@@ -12986,7 +13877,9 @@ class Image {
   }
 
   set onload(dynamic value) {
-    $$context$$["onload"] = value;
+    $$context$$["onload"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get onload {
@@ -13090,7 +13983,9 @@ class IncludePointsOption {
   }
 
   set complete(IncludePointsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IncludePointsCompleteCallback? get complete {
@@ -13098,7 +13993,9 @@ class IncludePointsOption {
   }
 
   set fail(IncludePointsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IncludePointsFailCallback? get fail {
@@ -13114,7 +14011,9 @@ class IncludePointsOption {
   }
 
   set success(IncludePointsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IncludePointsSuccessCallback? get success {
@@ -13130,7 +14029,9 @@ class InitFaceDetectOption {
   late mpjs.JSObject $$context$$;
 
   set complete(InitFaceDetectCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitFaceDetectCompleteCallback? get complete {
@@ -13138,7 +14039,9 @@ class InitFaceDetectOption {
   }
 
   set fail(InitFaceDetectFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitFaceDetectFailCallback? get fail {
@@ -13146,7 +14049,9 @@ class InitFaceDetectOption {
   }
 
   set success(InitFaceDetectSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitFaceDetectSuccessCallback? get success {
@@ -13162,7 +14067,9 @@ class InitMarkerClusterOption {
   late mpjs.JSObject $$context$$;
 
   set complete(InitMarkerClusterCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitMarkerClusterCompleteCallback? get complete {
@@ -13178,7 +14085,9 @@ class InitMarkerClusterOption {
   }
 
   set fail(InitMarkerClusterFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitMarkerClusterFailCallback? get fail {
@@ -13194,7 +14103,9 @@ class InitMarkerClusterOption {
   }
 
   set success(InitMarkerClusterSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InitMarkerClusterSuccessCallback? get success {
@@ -13471,7 +14382,9 @@ class InsertDividerOption {
   late mpjs.JSObject $$context$$;
 
   set complete(InsertDividerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertDividerCompleteCallback? get complete {
@@ -13479,7 +14392,9 @@ class InsertDividerOption {
   }
 
   set fail(InsertDividerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertDividerFailCallback? get fail {
@@ -13487,7 +14402,9 @@ class InsertDividerOption {
   }
 
   set success(InsertDividerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertDividerSuccessCallback? get success {
@@ -13519,7 +14436,9 @@ class InsertImageOption {
   }
 
   set complete(InsertImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertImageCompleteCallback? get complete {
@@ -13543,7 +14462,9 @@ class InsertImageOption {
   }
 
   set fail(InsertImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertImageFailCallback? get fail {
@@ -13567,7 +14488,9 @@ class InsertImageOption {
   }
 
   set success(InsertImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertImageSuccessCallback? get success {
@@ -13591,7 +14514,9 @@ class InsertTextOption {
   late mpjs.JSObject $$context$$;
 
   set complete(InsertTextCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertTextCompleteCallback? get complete {
@@ -13599,7 +14524,9 @@ class InsertTextOption {
   }
 
   set fail(InsertTextFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertTextFailCallback? get fail {
@@ -13607,7 +14534,9 @@ class InsertTextOption {
   }
 
   set success(InsertTextSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   InsertTextSuccessCallback? get success {
@@ -13784,7 +14713,9 @@ class IsBluetoothDevicePairedOption {
   }
 
   set complete(IsBluetoothDevicePairedCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IsBluetoothDevicePairedCompleteCallback? get complete {
@@ -13792,7 +14723,9 @@ class IsBluetoothDevicePairedOption {
   }
 
   set fail(IsBluetoothDevicePairedFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IsBluetoothDevicePairedFailCallback? get fail {
@@ -13800,7 +14733,9 @@ class IsBluetoothDevicePairedOption {
   }
 
   set success(IsBluetoothDevicePairedSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   IsBluetoothDevicePairedSuccessCallback? get success {
@@ -13816,7 +14751,9 @@ class IsConnectedOption {
   late mpjs.JSObject $$context$$;
 
   set complete(IsConnectedCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   IsConnectedCompleteCallback? get complete {
@@ -13824,7 +14761,9 @@ class IsConnectedOption {
   }
 
   set fail(IsConnectedFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   IsConnectedFailCallback? get fail {
@@ -13832,7 +14771,9 @@ class IsConnectedOption {
   }
 
   set success(IsConnectedSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   IsConnectedSuccessCallback? get success {
@@ -13872,7 +14813,9 @@ class Join1v1ChatOption {
   }
 
   set complete(Join1v1ChatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Join1v1ChatError($$context$$: res));
+    };
   }
 
   Join1v1ChatCompleteCallback? get complete {
@@ -13888,7 +14831,9 @@ class Join1v1ChatOption {
   }
 
   set fail(Join1v1ChatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Join1v1ChatError($$context$$: res));
+    };
   }
 
   Join1v1ChatFailCallback? get fail {
@@ -13912,7 +14857,9 @@ class Join1v1ChatOption {
   }
 
   set success(Join1v1ChatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Join1v1ChatError($$context$$: res));
+    };
   }
 
   Join1v1ChatSuccessCallback? get success {
@@ -13960,7 +14907,9 @@ class JoinVoIPChatOption {
   }
 
   set complete(JoinVoIPChatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(JoinVoIPChatError($$context$$: res));
+    };
   }
 
   JoinVoIPChatCompleteCallback? get complete {
@@ -13968,7 +14917,9 @@ class JoinVoIPChatOption {
   }
 
   set fail(JoinVoIPChatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(JoinVoIPChatError($$context$$: res));
+    };
   }
 
   JoinVoIPChatFailCallback? get fail {
@@ -14000,7 +14951,9 @@ class JoinVoIPChatOption {
   }
 
   set success(JoinVoIPChatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(JoinVoIPChatSuccessCallbackResult($$context$$: result));
+    };
   }
 
   JoinVoIPChatSuccessCallback? get success {
@@ -14144,7 +15097,9 @@ class LivePlayerContextRequestFullScreenOption {
   late mpjs.JSObject $$context$$;
 
   set complete(RequestFullScreenCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestFullScreenCompleteCallback? get complete {
@@ -14160,7 +15115,9 @@ class LivePlayerContextRequestFullScreenOption {
   }
 
   set fail(RequestFullScreenFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestFullScreenFailCallback? get fail {
@@ -14168,7 +15125,9 @@ class LivePlayerContextRequestFullScreenOption {
   }
 
   set success(RequestFullScreenSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestFullScreenSuccessCallback? get success {
@@ -14184,7 +15143,9 @@ class LivePlayerContextSnapshotOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SnapshotCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SnapshotCompleteCallback? get complete {
@@ -14192,7 +15153,9 @@ class LivePlayerContextSnapshotOption {
   }
 
   set fail(SnapshotFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SnapshotFailCallback? get fail {
@@ -14216,7 +15179,10 @@ class LivePlayerContextSnapshotOption {
   }
 
   set success(LivePlayerContextSnapshotSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          LivePlayerContextSnapshotSuccessCallbackResult($$context$$: result));
+    };
   }
 
   LivePlayerContextSnapshotSuccessCallback? get success {
@@ -14272,7 +15238,9 @@ class LivePusherContextSnapshotOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SnapshotCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SnapshotCompleteCallback? get complete {
@@ -14280,7 +15248,9 @@ class LivePusherContextSnapshotOption {
   }
 
   set fail(SnapshotFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SnapshotFailCallback? get fail {
@@ -14304,7 +15274,10 @@ class LivePusherContextSnapshotOption {
   }
 
   set success(LivePusherContextSnapshotSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          LivePusherContextSnapshotSuccessCallbackResult($$context$$: result));
+    };
   }
 
   LivePusherContextSnapshotSuccessCallback? get success {
@@ -14360,7 +15333,9 @@ class LivePusherContextStartOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartCompleteCallback? get complete {
@@ -14368,7 +15343,9 @@ class LivePusherContextStartOption {
   }
 
   set fail(StartFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartFailCallback? get fail {
@@ -14376,7 +15353,9 @@ class LivePusherContextStartOption {
   }
 
   set success(StartSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartSuccessCallback? get success {
@@ -14424,7 +15403,9 @@ class LoadFontFaceOption {
   }
 
   set complete(LoadFontFaceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (result) {
+      value?.call(LoadFontFaceCompleteCallbackResult($$context$$: result));
+    };
   }
 
   LoadFontFaceCompleteCallback? get complete {
@@ -14440,7 +15421,9 @@ class LoadFontFaceOption {
   }
 
   set fail(LoadFontFaceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(LoadFontFaceCompleteCallbackResult($$context$$: result));
+    };
   }
 
   LoadFontFaceFailCallback? get fail {
@@ -14464,7 +15447,9 @@ class LoadFontFaceOption {
   }
 
   set success(LoadFontFaceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(LoadFontFaceCompleteCallbackResult($$context$$: result));
+    };
   }
 
   LoadFontFaceSuccessCallback? get success {
@@ -14512,7 +15497,9 @@ class LoginOption {
   late mpjs.JSObject $$context$$;
 
   set complete(LoginCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   LoginCompleteCallback? get complete {
@@ -14520,7 +15507,9 @@ class LoginOption {
   }
 
   set fail(LoginFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   LoginFailCallback? get fail {
@@ -14528,7 +15517,9 @@ class LoginOption {
   }
 
   set success(LoginSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(LoginSuccessCallbackResult($$context$$: result));
+    };
   }
 
   LoginSuccessCallback? get success {
@@ -14592,7 +15583,9 @@ class MakeBluetoothPairOption {
   }
 
   set complete(MakeBluetoothPairCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakeBluetoothPairCompleteCallback? get complete {
@@ -14600,7 +15593,9 @@ class MakeBluetoothPairOption {
   }
 
   set fail(MakeBluetoothPairFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakeBluetoothPairFailCallback? get fail {
@@ -14608,7 +15603,9 @@ class MakeBluetoothPairOption {
   }
 
   set success(MakeBluetoothPairSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakeBluetoothPairSuccessCallback? get success {
@@ -14640,7 +15637,9 @@ class MakePhoneCallOption {
   }
 
   set complete(MakePhoneCallCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakePhoneCallCompleteCallback? get complete {
@@ -14648,7 +15647,9 @@ class MakePhoneCallOption {
   }
 
   set fail(MakePhoneCallFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakePhoneCallFailCallback? get fail {
@@ -14656,7 +15657,9 @@ class MakePhoneCallOption {
   }
 
   set success(MakePhoneCallSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MakePhoneCallSuccessCallback? get success {
@@ -15075,7 +16078,9 @@ class MkdirOption {
   }
 
   set complete(MkdirCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MkdirCompleteCallback? get complete {
@@ -15083,7 +16088,9 @@ class MkdirOption {
   }
 
   set fail(MkdirFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(MkdirFailCallbackResult($$context$$: result));
+    };
   }
 
   MkdirFailCallback? get fail {
@@ -15099,7 +16106,9 @@ class MkdirOption {
   }
 
   set success(MkdirSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MkdirSuccessCallback? get success {
@@ -15147,7 +16156,9 @@ class MoveAlongOption {
   }
 
   set complete(MoveAlongCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveAlongCompleteCallback? get complete {
@@ -15155,7 +16166,9 @@ class MoveAlongOption {
   }
 
   set fail(MoveAlongFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveAlongFailCallback? get fail {
@@ -15163,7 +16176,9 @@ class MoveAlongOption {
   }
 
   set success(MoveAlongSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveAlongSuccessCallback? get success {
@@ -15179,7 +16194,9 @@ class MoveToLocationOption {
   late mpjs.JSObject $$context$$;
 
   set complete(MoveToLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveToLocationCompleteCallback? get complete {
@@ -15187,7 +16204,9 @@ class MoveToLocationOption {
   }
 
   set fail(MoveToLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveToLocationFailCallback? get fail {
@@ -15211,7 +16230,9 @@ class MoveToLocationOption {
   }
 
   set success(MoveToLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MoveToLocationSuccessCallback? get success {
@@ -15251,7 +16272,9 @@ class MuteOption {
   late mpjs.JSObject $$context$$;
 
   set complete(MuteCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MuteCompleteCallback? get complete {
@@ -15259,7 +16282,9 @@ class MuteOption {
   }
 
   set fail(MuteFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MuteFailCallback? get fail {
@@ -15267,7 +16292,9 @@ class MuteOption {
   }
 
   set success(MuteSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   MuteSuccessCallback? get success {
@@ -15369,7 +16396,9 @@ class NavigateBackMiniProgramOption {
   late mpjs.JSObject $$context$$;
 
   set complete(NavigateBackMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackMiniProgramCompleteCallback? get complete {
@@ -15385,7 +16414,9 @@ class NavigateBackMiniProgramOption {
   }
 
   set fail(NavigateBackMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackMiniProgramFailCallback? get fail {
@@ -15393,7 +16424,9 @@ class NavigateBackMiniProgramOption {
   }
 
   set success(NavigateBackMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackMiniProgramSuccessCallback? get success {
@@ -15409,7 +16442,9 @@ class NavigateBackOption {
   late mpjs.JSObject $$context$$;
 
   set complete(NavigateBackCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackCompleteCallback? get complete {
@@ -15425,7 +16460,9 @@ class NavigateBackOption {
   }
 
   set fail(NavigateBackFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackFailCallback? get fail {
@@ -15433,7 +16470,9 @@ class NavigateBackOption {
   }
 
   set success(NavigateBackSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateBackSuccessCallback? get success {
@@ -15457,7 +16496,9 @@ class NavigateToMiniProgramOption {
   }
 
   set complete(NavigateToMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateToMiniProgramCompleteCallback? get complete {
@@ -15481,7 +16522,9 @@ class NavigateToMiniProgramOption {
   }
 
   set fail(NavigateToMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateToMiniProgramFailCallback? get fail {
@@ -15513,7 +16556,9 @@ class NavigateToMiniProgramOption {
   }
 
   set success(NavigateToMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateToMiniProgramSuccessCallback? get success {
@@ -15537,7 +16582,9 @@ class NavigateToOption {
   }
 
   set complete(NavigateToCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateToCompleteCallback? get complete {
@@ -15553,7 +16600,9 @@ class NavigateToOption {
   }
 
   set fail(NavigateToFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   NavigateToFailCallback? get fail {
@@ -15561,7 +16610,9 @@ class NavigateToOption {
   }
 
   set success(NavigateToSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(NavigateToSuccessCallbackResult($$context$$: result));
+    };
   }
 
   NavigateToSuccessCallback? get success {
@@ -15601,7 +16652,9 @@ class NdefCloseOption {
   late mpjs.JSObject $$context$$;
 
   set complete(NdefCloseCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   NdefCloseCompleteCallback? get complete {
@@ -15609,7 +16662,9 @@ class NdefCloseOption {
   }
 
   set fail(NdefCloseFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   NdefCloseFailCallback? get fail {
@@ -15617,7 +16672,9 @@ class NdefCloseOption {
   }
 
   set success(NdefCloseSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   NdefCloseSuccessCallback? get success {
@@ -15633,7 +16690,9 @@ class NdefConnectOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ConnectCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   ConnectCompleteCallback? get complete {
@@ -15641,7 +16700,9 @@ class NdefConnectOption {
   }
 
   set fail(ConnectFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   ConnectFailCallback? get fail {
@@ -15649,7 +16710,9 @@ class NdefConnectOption {
   }
 
   set success(ConnectSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   ConnectSuccessCallback? get success {
@@ -15713,7 +16776,9 @@ class NotifyBLECharacteristicValueChangeOption {
   }
 
   set complete(NotifyBLECharacteristicValueChangeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   NotifyBLECharacteristicValueChangeCompleteCallback? get complete {
@@ -15721,7 +16786,9 @@ class NotifyBLECharacteristicValueChangeOption {
   }
 
   set fail(NotifyBLECharacteristicValueChangeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   NotifyBLECharacteristicValueChangeFailCallback? get fail {
@@ -15729,7 +16796,9 @@ class NotifyBLECharacteristicValueChangeOption {
   }
 
   set success(NotifyBLECharacteristicValueChangeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   NotifyBLECharacteristicValueChangeSuccessCallback? get success {
@@ -17197,7 +18266,9 @@ class OpenAppAuthorizeSettingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(OpenAppAuthorizeSettingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenAppAuthorizeSettingCompleteCallback? get complete {
@@ -17205,7 +18276,9 @@ class OpenAppAuthorizeSettingOption {
   }
 
   set fail(OpenAppAuthorizeSettingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenAppAuthorizeSettingFailCallback? get fail {
@@ -17213,7 +18286,9 @@ class OpenAppAuthorizeSettingOption {
   }
 
   set success(OpenAppAuthorizeSettingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenAppAuthorizeSettingSuccessCallback? get success {
@@ -17229,7 +18304,9 @@ class OpenBluetoothAdapterOption {
   late mpjs.JSObject $$context$$;
 
   set complete(OpenBluetoothAdapterCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   OpenBluetoothAdapterCompleteCallback? get complete {
@@ -17237,7 +18314,9 @@ class OpenBluetoothAdapterOption {
   }
 
   set fail(OpenBluetoothAdapterFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   OpenBluetoothAdapterFailCallback? get fail {
@@ -17253,7 +18332,9 @@ class OpenBluetoothAdapterOption {
   }
 
   set success(OpenBluetoothAdapterSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   OpenBluetoothAdapterSuccessCallback? get success {
@@ -17277,7 +18358,9 @@ class OpenCardOption {
   }
 
   set complete(OpenCardCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCardCompleteCallback? get complete {
@@ -17285,7 +18368,9 @@ class OpenCardOption {
   }
 
   set fail(OpenCardFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCardFailCallback? get fail {
@@ -17293,7 +18378,9 @@ class OpenCardOption {
   }
 
   set success(OpenCardSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCardSuccessCallback? get success {
@@ -17349,7 +18436,9 @@ class OpenChannelsActivityOption {
   }
 
   set complete(OpenChannelsActivityCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsActivityCompleteCallback? get complete {
@@ -17357,7 +18446,9 @@ class OpenChannelsActivityOption {
   }
 
   set fail(OpenChannelsActivityFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsActivityFailCallback? get fail {
@@ -17365,7 +18456,9 @@ class OpenChannelsActivityOption {
   }
 
   set success(OpenChannelsActivitySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsActivitySuccessCallback? get success {
@@ -17397,7 +18490,9 @@ class OpenChannelsEventOption {
   }
 
   set complete(OpenChannelsEventCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsEventCompleteCallback? get complete {
@@ -17405,7 +18500,9 @@ class OpenChannelsEventOption {
   }
 
   set fail(OpenChannelsEventFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsEventFailCallback? get fail {
@@ -17413,7 +18510,9 @@ class OpenChannelsEventOption {
   }
 
   set success(OpenChannelsEventSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsEventSuccessCallback? get success {
@@ -17437,7 +18536,9 @@ class OpenChannelsLiveOption {
   }
 
   set complete(OpenChannelsLiveCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsLiveCompleteCallback? get complete {
@@ -17445,7 +18546,9 @@ class OpenChannelsLiveOption {
   }
 
   set fail(OpenChannelsLiveFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsLiveFailCallback? get fail {
@@ -17469,7 +18572,9 @@ class OpenChannelsLiveOption {
   }
 
   set success(OpenChannelsLiveSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsLiveSuccessCallback? get success {
@@ -17493,7 +18598,9 @@ class OpenChannelsUserProfileOption {
   }
 
   set complete(OpenChannelsUserProfileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsUserProfileCompleteCallback? get complete {
@@ -17501,7 +18608,9 @@ class OpenChannelsUserProfileOption {
   }
 
   set fail(OpenChannelsUserProfileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsUserProfileFailCallback? get fail {
@@ -17509,7 +18618,9 @@ class OpenChannelsUserProfileOption {
   }
 
   set success(OpenChannelsUserProfileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenChannelsUserProfileSuccessCallback? get success {
@@ -17541,7 +18652,9 @@ class OpenCustomerServiceChatOption {
   }
 
   set complete(OpenCustomerServiceChatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCustomerServiceChatCompleteCallback? get complete {
@@ -17549,7 +18662,9 @@ class OpenCustomerServiceChatOption {
   }
 
   set fail(OpenCustomerServiceChatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCustomerServiceChatFailCallback? get fail {
@@ -17589,7 +18704,9 @@ class OpenCustomerServiceChatOption {
   }
 
   set success(OpenCustomerServiceChatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCustomerServiceChatSuccessCallback? get success {
@@ -17613,7 +18730,9 @@ class OpenDocumentOption {
   }
 
   set complete(OpenDocumentCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenDocumentCompleteCallback? get complete {
@@ -17621,7 +18740,9 @@ class OpenDocumentOption {
   }
 
   set fail(OpenDocumentFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenDocumentFailCallback? get fail {
@@ -17645,7 +18766,9 @@ class OpenDocumentOption {
   }
 
   set success(OpenDocumentSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenDocumentSuccessCallback? get success {
@@ -17669,7 +18792,9 @@ class OpenEmbeddedMiniProgramOption {
   }
 
   set complete(OpenEmbeddedMiniProgramCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenEmbeddedMiniProgramCompleteCallback? get complete {
@@ -17693,7 +18818,9 @@ class OpenEmbeddedMiniProgramOption {
   }
 
   set fail(OpenEmbeddedMiniProgramFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenEmbeddedMiniProgramFailCallback? get fail {
@@ -17725,7 +18852,9 @@ class OpenEmbeddedMiniProgramOption {
   }
 
   set success(OpenEmbeddedMiniProgramSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenEmbeddedMiniProgramSuccessCallback? get success {
@@ -17789,7 +18918,9 @@ class OpenLocationOption {
   }
 
   set complete(OpenLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenLocationCompleteCallback? get complete {
@@ -17797,7 +18928,9 @@ class OpenLocationOption {
   }
 
   set fail(OpenLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenLocationFailCallback? get fail {
@@ -17821,7 +18954,9 @@ class OpenLocationOption {
   }
 
   set success(OpenLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenLocationSuccessCallback? get success {
@@ -17861,7 +18996,9 @@ class OpenMapAppOption {
   }
 
   set complete(OpenMapAppCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenMapAppCompleteCallback? get complete {
@@ -17869,7 +19006,9 @@ class OpenMapAppOption {
   }
 
   set fail(OpenMapAppFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenMapAppFailCallback? get fail {
@@ -17877,7 +19016,9 @@ class OpenMapAppOption {
   }
 
   set success(OpenMapAppSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenMapAppSuccessCallback? get success {
@@ -17901,7 +19042,9 @@ class OpenOption {
   }
 
   set complete(OpenCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenCompleteCallback? get complete {
@@ -17909,7 +19052,9 @@ class OpenOption {
   }
 
   set fail(OpenFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(OpenFailCallbackResult($$context$$: result));
+    };
   }
 
   OpenFailCallback? get fail {
@@ -17925,7 +19070,9 @@ class OpenOption {
   }
 
   set success(OpenSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(OpenSuccessCallbackResult($$context$$: result));
+    };
   }
 
   OpenSuccessCallback? get success {
@@ -17941,7 +19088,9 @@ class OpenSettingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(OpenSettingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenSettingCompleteCallback? get complete {
@@ -17949,7 +19098,9 @@ class OpenSettingOption {
   }
 
   set fail(OpenSettingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenSettingFailCallback? get fail {
@@ -17957,7 +19108,9 @@ class OpenSettingOption {
   }
 
   set success(OpenSettingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(OpenSettingSuccessCallbackResult($$context$$: result));
+    };
   }
 
   OpenSettingSuccessCallback? get success {
@@ -18062,7 +19215,9 @@ class OpenSystemBluetoothSettingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(OpenSystemBluetoothSettingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenSystemBluetoothSettingCompleteCallback? get complete {
@@ -18070,7 +19225,9 @@ class OpenSystemBluetoothSettingOption {
   }
 
   set fail(OpenSystemBluetoothSettingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenSystemBluetoothSettingFailCallback? get fail {
@@ -18078,7 +19235,9 @@ class OpenSystemBluetoothSettingOption {
   }
 
   set success(OpenSystemBluetoothSettingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenSystemBluetoothSettingSuccessCallback? get success {
@@ -18118,7 +19277,9 @@ class OpenVideoEditorOption {
   }
 
   set complete(OpenVideoEditorCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenVideoEditorCompleteCallback? get complete {
@@ -18126,7 +19287,9 @@ class OpenVideoEditorOption {
   }
 
   set fail(OpenVideoEditorFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   OpenVideoEditorFailCallback? get fail {
@@ -18134,7 +19297,9 @@ class OpenVideoEditorOption {
   }
 
   set success(OpenVideoEditorSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(OpenVideoEditorSuccessCallbackResult($$context$$: result));
+    };
   }
 
   OpenVideoEditorSuccessCallback? get success {
@@ -18198,7 +19363,9 @@ class PageScrollToOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PageScrollToCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PageScrollToCompleteCallback? get complete {
@@ -18214,7 +19381,9 @@ class PageScrollToOption {
   }
 
   set fail(PageScrollToFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PageScrollToFailCallback? get fail {
@@ -18246,7 +19415,9 @@ class PageScrollToOption {
   }
 
   set success(PageScrollToSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PageScrollToSuccessCallback? get success {
@@ -18270,7 +19441,9 @@ class PauseBGMOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PauseBGMCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBGMCompleteCallback? get complete {
@@ -18278,7 +19451,9 @@ class PauseBGMOption {
   }
 
   set fail(PauseBGMFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBGMFailCallback? get fail {
@@ -18286,7 +19461,9 @@ class PauseBGMOption {
   }
 
   set success(PauseBGMSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBGMSuccessCallback? get success {
@@ -18302,7 +19479,9 @@ class PauseBackgroundAudioOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PauseBackgroundAudioCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBackgroundAudioCompleteCallback? get complete {
@@ -18310,7 +19489,9 @@ class PauseBackgroundAudioOption {
   }
 
   set fail(PauseBackgroundAudioFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBackgroundAudioFailCallback? get fail {
@@ -18318,7 +19499,9 @@ class PauseBackgroundAudioOption {
   }
 
   set success(PauseBackgroundAudioSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseBackgroundAudioSuccessCallback? get success {
@@ -18334,7 +19517,9 @@ class PauseOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PauseCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseCompleteCallback? get complete {
@@ -18342,7 +19527,9 @@ class PauseOption {
   }
 
   set fail(PauseFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseFailCallback? get fail {
@@ -18350,7 +19537,9 @@ class PauseOption {
   }
 
   set success(PauseSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseSuccessCallback? get success {
@@ -18366,7 +19555,9 @@ class PauseVoiceOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PauseVoiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseVoiceCompleteCallback? get complete {
@@ -18374,7 +19565,9 @@ class PauseVoiceOption {
   }
 
   set fail(PauseVoiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseVoiceFailCallback? get fail {
@@ -18382,7 +19575,9 @@ class PauseVoiceOption {
   }
 
   set success(PauseVoiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PauseVoiceSuccessCallback? get success {
@@ -18648,7 +19843,9 @@ class PlayBGMOption {
   }
 
   set complete(PlayBGMCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBGMCompleteCallback? get complete {
@@ -18656,7 +19853,9 @@ class PlayBGMOption {
   }
 
   set fail(PlayBGMFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBGMFailCallback? get fail {
@@ -18664,7 +19863,9 @@ class PlayBGMOption {
   }
 
   set success(PlayBGMSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBGMSuccessCallback? get success {
@@ -18688,7 +19889,9 @@ class PlayBackgroundAudioOption {
   }
 
   set complete(PlayBackgroundAudioCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBackgroundAudioCompleteCallback? get complete {
@@ -18704,7 +19907,9 @@ class PlayBackgroundAudioOption {
   }
 
   set fail(PlayBackgroundAudioFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBackgroundAudioFailCallback? get fail {
@@ -18712,7 +19917,9 @@ class PlayBackgroundAudioOption {
   }
 
   set success(PlayBackgroundAudioSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayBackgroundAudioSuccessCallback? get success {
@@ -18736,7 +19943,9 @@ class PlayOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PlayCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayCompleteCallback? get complete {
@@ -18744,7 +19953,9 @@ class PlayOption {
   }
 
   set fail(PlayFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayFailCallback? get fail {
@@ -18752,7 +19963,9 @@ class PlayOption {
   }
 
   set success(PlaySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlaySuccessCallback? get success {
@@ -18776,7 +19989,9 @@ class PlayVoiceOption {
   }
 
   set complete(PlayVoiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayVoiceCompleteCallback? get complete {
@@ -18792,7 +20007,9 @@ class PlayVoiceOption {
   }
 
   set fail(PlayVoiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayVoiceFailCallback? get fail {
@@ -18800,7 +20017,9 @@ class PlayVoiceOption {
   }
 
   set success(PlayVoiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PlayVoiceSuccessCallback? get success {
@@ -18840,7 +20059,9 @@ class PluginLoginOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PluginLoginCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PluginLoginCompleteCallback? get complete {
@@ -18848,7 +20069,9 @@ class PluginLoginOption {
   }
 
   set fail(PluginLoginFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PluginLoginFailCallback? get fail {
@@ -18856,7 +20079,9 @@ class PluginLoginOption {
   }
 
   set success(PluginLoginSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(PluginLoginSuccessCallbackResult($$context$$: result));
+    };
   }
 
   PluginLoginSuccessCallback? get success {
@@ -18896,7 +20121,9 @@ class PreDownloadSubpackageOption {
   late mpjs.JSObject $$context$$;
 
   set complete(dynamic value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get complete {
@@ -18904,7 +20131,9 @@ class PreDownloadSubpackageOption {
   }
 
   set fail(dynamic value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get fail {
@@ -18920,7 +20149,9 @@ class PreDownloadSubpackageOption {
   }
 
   set success(dynamic value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get success {
@@ -18977,7 +20208,9 @@ class PreloadAssetsOption {
   }
 
   set complete(PreloadAssetsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadAssetsCompleteCallback? get complete {
@@ -18985,7 +20218,9 @@ class PreloadAssetsOption {
   }
 
   set fail(PreloadAssetsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadAssetsFailCallback? get fail {
@@ -18993,7 +20228,9 @@ class PreloadAssetsOption {
   }
 
   set success(PreloadAssetsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadAssetsSuccessCallback? get success {
@@ -19009,7 +20246,9 @@ class PreloadSkylineViewOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PreloadSkylineViewCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadSkylineViewCompleteCallback? get complete {
@@ -19017,7 +20256,9 @@ class PreloadSkylineViewOption {
   }
 
   set fail(PreloadSkylineViewFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadSkylineViewFailCallback? get fail {
@@ -19025,7 +20266,9 @@ class PreloadSkylineViewOption {
   }
 
   set success(PreloadSkylineViewSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadSkylineViewSuccessCallback? get success {
@@ -19041,7 +20284,9 @@ class PreloadWebviewOption {
   late mpjs.JSObject $$context$$;
 
   set complete(PreloadWebviewCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadWebviewCompleteCallback? get complete {
@@ -19049,7 +20294,9 @@ class PreloadWebviewOption {
   }
 
   set fail(PreloadWebviewFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadWebviewFailCallback? get fail {
@@ -19057,7 +20304,9 @@ class PreloadWebviewOption {
   }
 
   set success(PreloadWebviewSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreloadWebviewSuccessCallback? get success {
@@ -19081,7 +20330,9 @@ class PreviewImageOption {
   }
 
   set complete(PreviewImageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewImageCompleteCallback? get complete {
@@ -19097,7 +20348,9 @@ class PreviewImageOption {
   }
 
   set fail(PreviewImageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewImageFailCallback? get fail {
@@ -19121,7 +20374,9 @@ class PreviewImageOption {
   }
 
   set success(PreviewImageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewImageSuccessCallback? get success {
@@ -19145,7 +20400,9 @@ class PreviewMediaOption {
   }
 
   set complete(PreviewMediaCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewMediaCompleteCallback? get complete {
@@ -19161,7 +20418,9 @@ class PreviewMediaOption {
   }
 
   set fail(PreviewMediaFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewMediaFailCallback? get fail {
@@ -19185,7 +20444,9 @@ class PreviewMediaOption {
   }
 
   set success(PreviewMediaSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   PreviewMediaSuccessCallback? get success {
@@ -19241,7 +20502,9 @@ class ReLaunchOption {
   }
 
   set complete(ReLaunchCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReLaunchCompleteCallback? get complete {
@@ -19249,7 +20512,9 @@ class ReLaunchOption {
   }
 
   set fail(ReLaunchFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReLaunchFailCallback? get fail {
@@ -19257,7 +20522,9 @@ class ReLaunchOption {
   }
 
   set success(ReLaunchSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReLaunchSuccessCallback? get success {
@@ -19297,7 +20564,9 @@ class ReadBLECharacteristicValueOption {
   }
 
   set complete(ReadBLECharacteristicValueCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   ReadBLECharacteristicValueCompleteCallback? get complete {
@@ -19305,7 +20574,9 @@ class ReadBLECharacteristicValueOption {
   }
 
   set fail(ReadBLECharacteristicValueFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   ReadBLECharacteristicValueFailCallback? get fail {
@@ -19313,7 +20584,9 @@ class ReadBLECharacteristicValueOption {
   }
 
   set success(ReadBLECharacteristicValueSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   ReadBLECharacteristicValueSuccessCallback? get success {
@@ -19361,7 +20634,9 @@ class ReadCompressedFileOption {
   }
 
   set complete(ReadCompressedFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReadCompressedFileCompleteCallback? get complete {
@@ -19369,7 +20644,9 @@ class ReadCompressedFileOption {
   }
 
   set fail(ReadCompressedFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(ReadCompressedFileFailCallbackResult($$context$$: result));
+    };
   }
 
   ReadCompressedFileFailCallback? get fail {
@@ -19377,7 +20654,9 @@ class ReadCompressedFileOption {
   }
 
   set success(ReadCompressedFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ReadCompressedFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ReadCompressedFileSuccessCallback? get success {
@@ -19481,7 +20760,9 @@ class ReadFileOption {
   }
 
   set complete(ReadFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReadFileCompleteCallback? get complete {
@@ -19497,7 +20778,9 @@ class ReadFileOption {
   }
 
   set fail(ReadFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(ReadFileFailCallbackResult($$context$$: result));
+    };
   }
 
   ReadFileFailCallback? get fail {
@@ -19521,7 +20804,9 @@ class ReadFileOption {
   }
 
   set success(ReadFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ReadFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ReadFileSuccessCallback? get success {
@@ -19577,7 +20862,9 @@ class ReadOption {
   }
 
   set complete(ReadCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReadCompleteCallback? get complete {
@@ -19585,7 +20872,9 @@ class ReadOption {
   }
 
   set fail(ReadFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(ReadFailCallbackResult($$context$$: result));
+    };
   }
 
   ReadFailCallback? get fail {
@@ -19617,7 +20906,9 @@ class ReadOption {
   }
 
   set success(ReadSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ReadSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ReadSuccessCallback? get success {
@@ -19769,7 +21060,9 @@ class ReadZipEntryOption {
   }
 
   set complete(ReadZipEntryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReadZipEntryCompleteCallback? get complete {
@@ -19785,7 +21078,9 @@ class ReadZipEntryOption {
   }
 
   set fail(ReadZipEntryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(ReadZipEntryFailCallbackResult($$context$$: result));
+    };
   }
 
   ReadZipEntryFailCallback? get fail {
@@ -19793,7 +21088,9 @@ class ReadZipEntryOption {
   }
 
   set success(ReadZipEntrySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ReadZipEntrySuccessCallbackResult($$context$$: result));
+    };
   }
 
   ReadZipEntrySuccessCallback? get success {
@@ -19857,7 +21154,9 @@ class ReaddirOption {
   }
 
   set complete(ReaddirCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ReaddirCompleteCallback? get complete {
@@ -19865,7 +21164,9 @@ class ReaddirOption {
   }
 
   set fail(ReaddirFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(ReaddirFailCallbackResult($$context$$: result));
+    };
   }
 
   ReaddirFailCallback? get fail {
@@ -19873,7 +21174,9 @@ class ReaddirOption {
   }
 
   set success(ReaddirSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ReaddirSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ReaddirSuccessCallback? get success {
@@ -19985,7 +21288,9 @@ class RedirectToOption {
   }
 
   set complete(RedirectToCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedirectToCompleteCallback? get complete {
@@ -19993,7 +21298,9 @@ class RedirectToOption {
   }
 
   set fail(RedirectToFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedirectToFailCallback? get fail {
@@ -20001,7 +21308,9 @@ class RedirectToOption {
   }
 
   set success(RedirectToSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedirectToSuccessCallback? get success {
@@ -20017,7 +21326,9 @@ class RedoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(RedoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedoCompleteCallback? get complete {
@@ -20025,7 +21336,9 @@ class RedoOption {
   }
 
   set fail(RedoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedoFailCallback? get fail {
@@ -20033,7 +21346,9 @@ class RedoOption {
   }
 
   set success(RedoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RedoSuccessCallback? get success {
@@ -20161,7 +21476,9 @@ class RemoveArcOption {
   }
 
   set complete(RemoveArcCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveArcCompleteCallback? get complete {
@@ -20169,7 +21486,9 @@ class RemoveArcOption {
   }
 
   set fail(RemoveArcFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveArcFailCallback? get fail {
@@ -20177,7 +21496,9 @@ class RemoveArcOption {
   }
 
   set success(RemoveArcSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveArcSuccessCallback? get success {
@@ -20201,7 +21522,9 @@ class RemoveCustomLayerOption {
   }
 
   set complete(RemoveCustomLayerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveCustomLayerCompleteCallback? get complete {
@@ -20209,7 +21532,9 @@ class RemoveCustomLayerOption {
   }
 
   set fail(RemoveCustomLayerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveCustomLayerFailCallback? get fail {
@@ -20217,7 +21542,9 @@ class RemoveCustomLayerOption {
   }
 
   set success(RemoveCustomLayerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveCustomLayerSuccessCallback? get success {
@@ -20233,7 +21560,9 @@ class RemoveFormatOption {
   late mpjs.JSObject $$context$$;
 
   set complete(RemoveFormatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveFormatCompleteCallback? get complete {
@@ -20241,7 +21570,9 @@ class RemoveFormatOption {
   }
 
   set fail(RemoveFormatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveFormatFailCallback? get fail {
@@ -20249,7 +21580,9 @@ class RemoveFormatOption {
   }
 
   set success(RemoveFormatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveFormatSuccessCallback? get success {
@@ -20273,7 +21606,9 @@ class RemoveGroundOverlayOption {
   }
 
   set complete(RemoveGroundOverlayCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveGroundOverlayCompleteCallback? get complete {
@@ -20281,7 +21616,9 @@ class RemoveGroundOverlayOption {
   }
 
   set fail(RemoveGroundOverlayFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveGroundOverlayFailCallback? get fail {
@@ -20289,7 +21626,9 @@ class RemoveGroundOverlayOption {
   }
 
   set success(RemoveGroundOverlaySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveGroundOverlaySuccessCallback? get success {
@@ -20313,7 +21652,9 @@ class RemoveMarkersOption {
   }
 
   set complete(RemoveMarkersCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveMarkersCompleteCallback? get complete {
@@ -20321,7 +21662,9 @@ class RemoveMarkersOption {
   }
 
   set fail(RemoveMarkersFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveMarkersFailCallback? get fail {
@@ -20329,7 +21672,9 @@ class RemoveMarkersOption {
   }
 
   set success(RemoveMarkersSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveMarkersSuccessCallback? get success {
@@ -20369,7 +21714,9 @@ class RemoveSavedFileOption {
   }
 
   set complete(RemoveSavedFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveSavedFileCompleteCallback? get complete {
@@ -20377,7 +21724,9 @@ class RemoveSavedFileOption {
   }
 
   set fail(RemoveSavedFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(RemoveSavedFileFailCallbackResult($$context$$: result));
+    };
   }
 
   RemoveSavedFileFailCallback? get fail {
@@ -20385,7 +21734,9 @@ class RemoveSavedFileOption {
   }
 
   set success(RemoveSavedFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveSavedFileSuccessCallback? get success {
@@ -20409,7 +21760,9 @@ class RemoveServiceOption {
   }
 
   set complete(RemoveServiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveServiceCompleteCallback? get complete {
@@ -20417,7 +21770,9 @@ class RemoveServiceOption {
   }
 
   set fail(RemoveServiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveServiceFailCallback? get fail {
@@ -20425,7 +21780,9 @@ class RemoveServiceOption {
   }
 
   set success(RemoveServiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveServiceSuccessCallback? get success {
@@ -20449,7 +21806,9 @@ class RemoveStorageOption {
   }
 
   set complete(RemoveStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveStorageCompleteCallback? get complete {
@@ -20457,7 +21816,9 @@ class RemoveStorageOption {
   }
 
   set fail(RemoveStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveStorageFailCallback? get fail {
@@ -20465,7 +21826,9 @@ class RemoveStorageOption {
   }
 
   set success(RemoveStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveStorageSuccessCallback? get success {
@@ -20489,7 +21852,9 @@ class RemoveTabBarBadgeOption {
   }
 
   set complete(RemoveTabBarBadgeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveTabBarBadgeCompleteCallback? get complete {
@@ -20497,7 +21862,9 @@ class RemoveTabBarBadgeOption {
   }
 
   set fail(RemoveTabBarBadgeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveTabBarBadgeFailCallback? get fail {
@@ -20505,7 +21872,9 @@ class RemoveTabBarBadgeOption {
   }
 
   set success(RemoveTabBarBadgeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveTabBarBadgeSuccessCallback? get success {
@@ -20529,7 +21898,9 @@ class RemoveVisualLayerOption {
   }
 
   set complete(RemoveVisualLayerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveVisualLayerCompleteCallback? get complete {
@@ -20537,7 +21908,9 @@ class RemoveVisualLayerOption {
   }
 
   set fail(RemoveVisualLayerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveVisualLayerFailCallback? get fail {
@@ -20545,7 +21918,9 @@ class RemoveVisualLayerOption {
   }
 
   set success(RemoveVisualLayerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RemoveVisualLayerSuccessCallback? get success {
@@ -20593,7 +21968,9 @@ class RenameOption {
   }
 
   set complete(RenameCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RenameCompleteCallback? get complete {
@@ -20601,7 +21978,9 @@ class RenameOption {
   }
 
   set fail(RenameFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(RenameFailCallbackResult($$context$$: result));
+    };
   }
 
   RenameFailCallback? get fail {
@@ -20609,7 +21988,9 @@ class RenameOption {
   }
 
   set success(RenameSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RenameSuccessCallback? get success {
@@ -20641,7 +22022,9 @@ class RequestOption<T extends dynamic> {
   }
 
   set complete(RequestCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestCompleteCallback? get complete {
@@ -20705,7 +22088,9 @@ class RequestOption<T extends dynamic> {
   }
 
   set fail(RequestFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (err) {
+      value?.call(Err($$context$$: err));
+    };
   }
 
   RequestFailCallback? get fail {
@@ -20753,7 +22138,9 @@ class RequestOption<T extends dynamic> {
   }
 
   set success(RequestSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(RequestSuccessCallbackResult($$context$$: result));
+    };
   }
 
   RequestSuccessCallback? get success {
@@ -20809,7 +22196,9 @@ class RequestOrderPaymentOption {
   }
 
   set complete(RequestOrderPaymentCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestOrderPaymentCompleteCallback? get complete {
@@ -20825,7 +22214,9 @@ class RequestOrderPaymentOption {
   }
 
   set fail(RequestOrderPaymentFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestOrderPaymentFailCallback? get fail {
@@ -20849,7 +22240,9 @@ class RequestOrderPaymentOption {
   }
 
   set success(RequestOrderPaymentSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestOrderPaymentSuccessCallback? get success {
@@ -20897,7 +22290,9 @@ class RequestPaymentOption {
   }
 
   set complete(RequestPaymentCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPaymentCompleteCallback? get complete {
@@ -20905,7 +22300,9 @@ class RequestPaymentOption {
   }
 
   set fail(RequestPaymentFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPaymentFailCallback? get fail {
@@ -20921,7 +22318,9 @@ class RequestPaymentOption {
   }
 
   set success(RequestPaymentSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPaymentSuccessCallback? get success {
@@ -20937,7 +22336,9 @@ class RequestPictureInPictureOption {
   late mpjs.JSObject $$context$$;
 
   set complete(RequestPictureInPictureCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPictureInPictureCompleteCallback? get complete {
@@ -20945,7 +22346,9 @@ class RequestPictureInPictureOption {
   }
 
   set fail(RequestPictureInPictureFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPictureInPictureFailCallback? get fail {
@@ -20953,7 +22356,9 @@ class RequestPictureInPictureOption {
   }
 
   set success(RequestPictureInPictureSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPictureInPictureSuccessCallback? get success {
@@ -20993,7 +22398,9 @@ class RequestPluginPaymentOption {
   }
 
   set complete(RequestPluginPaymentCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPluginPaymentCompleteCallback? get complete {
@@ -21009,7 +22416,9 @@ class RequestPluginPaymentOption {
   }
 
   set fail(RequestPluginPaymentFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPluginPaymentFailCallback? get fail {
@@ -21017,7 +22426,9 @@ class RequestPluginPaymentOption {
   }
 
   set success(RequestPluginPaymentSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestPluginPaymentSuccessCallback? get success {
@@ -21298,7 +22709,9 @@ class RequestSubscribeDeviceMessageOption {
   }
 
   set complete(RequestSubscribeDeviceMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestSubscribeDeviceMessageCompleteCallback? get complete {
@@ -21306,7 +22719,10 @@ class RequestSubscribeDeviceMessageOption {
   }
 
   set fail(RequestSubscribeDeviceMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(
+          RequestSubscribeDeviceMessageFailCallbackResult($$context$$: result));
+    };
   }
 
   RequestSubscribeDeviceMessageFailCallback? get fail {
@@ -21314,7 +22730,10 @@ class RequestSubscribeDeviceMessageOption {
   }
 
   set success(RequestSubscribeDeviceMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(RequestSubscribeDeviceMessageSuccessCallbackResult(
+          $$context$$: result));
+    };
   }
 
   RequestSubscribeDeviceMessageSuccessCallback? get success {
@@ -21379,7 +22798,9 @@ class RequestSubscribeMessageOption {
   }
 
   set complete(RequestSubscribeMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RequestSubscribeMessageCompleteCallback? get complete {
@@ -21387,7 +22808,10 @@ class RequestSubscribeMessageOption {
   }
 
   set fail(RequestSubscribeMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(
+          RequestSubscribeMessageFailCallbackResult($$context$$: result));
+    };
   }
 
   RequestSubscribeMessageFailCallback? get fail {
@@ -21395,7 +22819,10 @@ class RequestSubscribeMessageOption {
   }
 
   set success(RequestSubscribeMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          RequestSubscribeMessageSuccessCallbackResult($$context$$: result));
+    };
   }
 
   RequestSubscribeMessageSuccessCallback? get success {
@@ -21515,7 +22942,9 @@ class ResumeBGMOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ResumeBGMCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeBGMCompleteCallback? get complete {
@@ -21523,7 +22952,9 @@ class ResumeBGMOption {
   }
 
   set fail(ResumeBGMFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeBGMFailCallback? get fail {
@@ -21531,7 +22962,9 @@ class ResumeBGMOption {
   }
 
   set success(ResumeBGMSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeBGMSuccessCallback? get success {
@@ -21547,7 +22980,9 @@ class ResumeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ResumeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeCompleteCallback? get complete {
@@ -21555,7 +22990,9 @@ class ResumeOption {
   }
 
   set fail(ResumeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeFailCallback? get fail {
@@ -21563,7 +23000,9 @@ class ResumeOption {
   }
 
   set success(ResumeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ResumeSuccessCallback? get success {
@@ -21643,7 +23082,9 @@ class RmdirOption {
   }
 
   set complete(RmdirCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RmdirCompleteCallback? get complete {
@@ -21651,7 +23092,9 @@ class RmdirOption {
   }
 
   set fail(RmdirFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(RmdirFailCallbackResult($$context$$: result));
+    };
   }
 
   RmdirFailCallback? get fail {
@@ -21667,7 +23110,9 @@ class RmdirOption {
   }
 
   set success(RmdirSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   RmdirSuccessCallback? get success {
@@ -21795,7 +23240,9 @@ class SaveFileOption {
   }
 
   set complete(SaveFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveFileCompleteCallback? get complete {
@@ -21803,7 +23250,9 @@ class SaveFileOption {
   }
 
   set fail(SaveFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(SaveFileFailCallbackResult($$context$$: result));
+    };
   }
 
   SaveFileFailCallback? get fail {
@@ -21819,7 +23268,9 @@ class SaveFileOption {
   }
 
   set success(SaveFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SaveFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   SaveFileSuccessCallback? get success {
@@ -21867,7 +23318,9 @@ class SaveFileToDiskOption {
   }
 
   set complete(SaveFileToDiskCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveFileToDiskCompleteCallback? get complete {
@@ -21875,7 +23328,9 @@ class SaveFileToDiskOption {
   }
 
   set fail(SaveFileToDiskFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveFileToDiskFailCallback? get fail {
@@ -21883,7 +23338,9 @@ class SaveFileToDiskOption {
   }
 
   set success(SaveFileToDiskSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveFileToDiskSuccessCallback? get success {
@@ -21907,7 +23364,9 @@ class SaveImageToPhotosAlbumOption {
   }
 
   set complete(SaveImageToPhotosAlbumCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveImageToPhotosAlbumCompleteCallback? get complete {
@@ -21915,7 +23374,9 @@ class SaveImageToPhotosAlbumOption {
   }
 
   set fail(SaveImageToPhotosAlbumFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveImageToPhotosAlbumFailCallback? get fail {
@@ -21923,7 +23384,9 @@ class SaveImageToPhotosAlbumOption {
   }
 
   set success(SaveImageToPhotosAlbumSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveImageToPhotosAlbumSuccessCallback? get success {
@@ -21947,7 +23410,9 @@ class SaveVideoToPhotosAlbumOption {
   }
 
   set complete(SaveVideoToPhotosAlbumCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveVideoToPhotosAlbumCompleteCallback? get complete {
@@ -21955,7 +23420,9 @@ class SaveVideoToPhotosAlbumOption {
   }
 
   set fail(SaveVideoToPhotosAlbumFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveVideoToPhotosAlbumFailCallback? get fail {
@@ -21963,7 +23430,9 @@ class SaveVideoToPhotosAlbumOption {
   }
 
   set success(SaveVideoToPhotosAlbumSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SaveVideoToPhotosAlbumSuccessCallback? get success {
@@ -21979,7 +23448,9 @@ class ScanCodeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ScanCodeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ScanCodeCompleteCallback? get complete {
@@ -21987,7 +23458,9 @@ class ScanCodeOption {
   }
 
   set fail(ScanCodeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ScanCodeFailCallback? get fail {
@@ -22011,7 +23484,9 @@ class ScanCodeOption {
   }
 
   set success(ScanCodeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ScanCodeSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ScanCodeSuccessCallback? get success {
@@ -22245,7 +23720,9 @@ class SeekBackgroundAudioOption {
   }
 
   set complete(SeekBackgroundAudioCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SeekBackgroundAudioCompleteCallback? get complete {
@@ -22253,7 +23730,9 @@ class SeekBackgroundAudioOption {
   }
 
   set fail(SeekBackgroundAudioFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SeekBackgroundAudioFailCallback? get fail {
@@ -22261,7 +23740,9 @@ class SeekBackgroundAudioOption {
   }
 
   set success(SeekBackgroundAudioSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SeekBackgroundAudioSuccessCallback? get success {
@@ -22285,7 +23766,9 @@ class SendHCEMessageOption {
   }
 
   set complete(SendHCEMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   SendHCEMessageCompleteCallback? get complete {
@@ -22293,7 +23776,9 @@ class SendHCEMessageOption {
   }
 
   set fail(SendHCEMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   SendHCEMessageFailCallback? get fail {
@@ -22301,7 +23786,9 @@ class SendHCEMessageOption {
   }
 
   set success(SendHCEMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   SendHCEMessageSuccessCallback? get success {
@@ -22325,7 +23812,9 @@ class SendMessageOption {
   }
 
   set complete(SendMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendMessageCompleteCallback? get complete {
@@ -22333,7 +23822,9 @@ class SendMessageOption {
   }
 
   set fail(SendMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendMessageFailCallback? get fail {
@@ -22341,7 +23832,9 @@ class SendMessageOption {
   }
 
   set success(SendMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendMessageSuccessCallback? get success {
@@ -22357,7 +23850,9 @@ class SendSmsOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SendSmsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSmsCompleteCallback? get complete {
@@ -22373,7 +23868,9 @@ class SendSmsOption {
   }
 
   set fail(SendSmsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSmsFailCallback? get fail {
@@ -22389,7 +23886,9 @@ class SendSmsOption {
   }
 
   set success(SendSmsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSmsSuccessCallback? get success {
@@ -22413,7 +23912,9 @@ class SendSocketMessageOption {
   }
 
   set complete(SendSocketMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSocketMessageCompleteCallback? get complete {
@@ -22421,7 +23922,9 @@ class SendSocketMessageOption {
   }
 
   set fail(SendSocketMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSocketMessageFailCallback? get fail {
@@ -22429,7 +23932,9 @@ class SendSocketMessageOption {
   }
 
   set success(SendSocketMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSocketMessageSuccessCallback? get success {
@@ -22453,7 +23958,9 @@ class SetBGMVolumeOption {
   }
 
   set complete(SetBGMVolumeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBGMVolumeCompleteCallback? get complete {
@@ -22461,7 +23968,9 @@ class SetBGMVolumeOption {
   }
 
   set fail(SetBGMVolumeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBGMVolumeFailCallback? get fail {
@@ -22469,7 +23978,9 @@ class SetBGMVolumeOption {
   }
 
   set success(SetBGMVolumeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBGMVolumeSuccessCallback? get success {
@@ -22517,7 +24028,9 @@ class SetBLEMTUOption {
   }
 
   set complete(SetBLEMTUCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBLEMTUCompleteCallback? get complete {
@@ -22525,7 +24038,9 @@ class SetBLEMTUOption {
   }
 
   set fail(SetBLEMTUFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(SetBLEMTUFailCallbackResult($$context$$: result));
+    };
   }
 
   SetBLEMTUFailCallback? get fail {
@@ -22533,7 +24048,9 @@ class SetBLEMTUOption {
   }
 
   set success(SetBLEMTUSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SetBLEMTUSuccessCallbackResult($$context$$: result));
+    };
   }
 
   SetBLEMTUSuccessCallback? get success {
@@ -22597,7 +24114,9 @@ class SetBackgroundColorOption {
   }
 
   set complete(SetBackgroundColorCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundColorCompleteCallback? get complete {
@@ -22605,7 +24124,9 @@ class SetBackgroundColorOption {
   }
 
   set fail(SetBackgroundColorFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundColorFailCallback? get fail {
@@ -22613,7 +24134,9 @@ class SetBackgroundColorOption {
   }
 
   set success(SetBackgroundColorSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundColorSuccessCallback? get success {
@@ -22637,7 +24160,9 @@ class SetBackgroundFetchTokenOption {
   }
 
   set complete(SetBackgroundFetchTokenCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundFetchTokenCompleteCallback? get complete {
@@ -22645,7 +24170,9 @@ class SetBackgroundFetchTokenOption {
   }
 
   set fail(SetBackgroundFetchTokenFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundFetchTokenFailCallback? get fail {
@@ -22653,7 +24180,9 @@ class SetBackgroundFetchTokenOption {
   }
 
   set success(SetBackgroundFetchTokenSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundFetchTokenSuccessCallback? get success {
@@ -22677,7 +24206,9 @@ class SetBackgroundTextStyleOption {
   }
 
   set complete(SetBackgroundTextStyleCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundTextStyleCompleteCallback? get complete {
@@ -22685,7 +24216,9 @@ class SetBackgroundTextStyleOption {
   }
 
   set fail(SetBackgroundTextStyleFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundTextStyleFailCallback? get fail {
@@ -22693,7 +24226,9 @@ class SetBackgroundTextStyleOption {
   }
 
   set success(SetBackgroundTextStyleSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBackgroundTextStyleSuccessCallback? get success {
@@ -22725,7 +24260,9 @@ class SetBoundaryOption {
   }
 
   set complete(SetBoundaryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBoundaryCompleteCallback? get complete {
@@ -22733,7 +24270,9 @@ class SetBoundaryOption {
   }
 
   set fail(SetBoundaryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBoundaryFailCallback? get fail {
@@ -22741,7 +24280,9 @@ class SetBoundaryOption {
   }
 
   set success(SetBoundarySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetBoundarySuccessCallback? get success {
@@ -22765,7 +24306,9 @@ class SetCenterOffsetOption {
   }
 
   set complete(SetCenterOffsetCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetCenterOffsetCompleteCallback? get complete {
@@ -22773,7 +24316,9 @@ class SetCenterOffsetOption {
   }
 
   set fail(SetCenterOffsetFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetCenterOffsetFailCallback? get fail {
@@ -22781,7 +24326,9 @@ class SetCenterOffsetOption {
   }
 
   set success(SetCenterOffsetSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetCenterOffsetSuccessCallback? get success {
@@ -22805,7 +24352,9 @@ class SetClipboardDataOption {
   }
 
   set complete(SetClipboardDataCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetClipboardDataCompleteCallback? get complete {
@@ -22813,7 +24362,9 @@ class SetClipboardDataOption {
   }
 
   set fail(SetClipboardDataFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetClipboardDataFailCallback? get fail {
@@ -22821,7 +24372,9 @@ class SetClipboardDataOption {
   }
 
   set success(SetClipboardDataSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetClipboardDataSuccessCallback? get success {
@@ -22837,7 +24390,9 @@ class SetContentsOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SetContentsCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetContentsCompleteCallback? get complete {
@@ -22853,7 +24408,9 @@ class SetContentsOption {
   }
 
   set fail(SetContentsFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetContentsFailCallback? get fail {
@@ -22869,7 +24426,9 @@ class SetContentsOption {
   }
 
   set success(SetContentsSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetContentsSuccessCallback? get success {
@@ -22901,7 +24460,9 @@ class SetEnable1v1ChatOption {
   }
 
   set complete(SetEnable1v1ChatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnable1v1ChatCompleteCallback? get complete {
@@ -22909,7 +24470,9 @@ class SetEnable1v1ChatOption {
   }
 
   set fail(SetEnable1v1ChatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnable1v1ChatFailCallback? get fail {
@@ -22925,7 +24488,9 @@ class SetEnable1v1ChatOption {
   }
 
   set success(SetEnable1v1ChatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnable1v1ChatSuccessCallback? get success {
@@ -22949,7 +24514,9 @@ class SetEnableDebugOption {
   }
 
   set complete(SetEnableDebugCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnableDebugCompleteCallback? get complete {
@@ -22957,7 +24524,9 @@ class SetEnableDebugOption {
   }
 
   set fail(SetEnableDebugFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnableDebugFailCallback? get fail {
@@ -22965,7 +24534,9 @@ class SetEnableDebugOption {
   }
 
   set success(SetEnableDebugSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetEnableDebugSuccessCallback? get success {
@@ -22981,7 +24552,9 @@ class SetInnerAudioOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SetInnerAudioOptionCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetInnerAudioOptionCompleteCallback? get complete {
@@ -22989,7 +24562,9 @@ class SetInnerAudioOption {
   }
 
   set fail(SetInnerAudioOptionFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetInnerAudioOptionFailCallback? get fail {
@@ -23021,7 +24596,9 @@ class SetInnerAudioOption {
   }
 
   set success(SetInnerAudioOptionSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetInnerAudioOptionSuccessCallback? get success {
@@ -23045,7 +24622,9 @@ class SetKeepScreenOnOption {
   }
 
   set complete(SetKeepScreenOnCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetKeepScreenOnCompleteCallback? get complete {
@@ -23053,7 +24632,9 @@ class SetKeepScreenOnOption {
   }
 
   set fail(SetKeepScreenOnFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetKeepScreenOnFailCallback? get fail {
@@ -23061,7 +24642,9 @@ class SetKeepScreenOnOption {
   }
 
   set success(SetKeepScreenOnSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetKeepScreenOnSuccessCallback? get success {
@@ -23077,7 +24660,9 @@ class SetLocMarkerIconOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SetLocMarkerIconCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetLocMarkerIconCompleteCallback? get complete {
@@ -23085,7 +24670,9 @@ class SetLocMarkerIconOption {
   }
 
   set fail(SetLocMarkerIconFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetLocMarkerIconFailCallback? get fail {
@@ -23101,7 +24688,9 @@ class SetLocMarkerIconOption {
   }
 
   set success(SetLocMarkerIconSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetLocMarkerIconSuccessCallback? get success {
@@ -23125,7 +24714,9 @@ class SetMICVolumeOption {
   }
 
   set complete(SetMICVolumeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetMICVolumeCompleteCallback? get complete {
@@ -23133,7 +24724,9 @@ class SetMICVolumeOption {
   }
 
   set fail(SetMICVolumeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetMICVolumeFailCallback? get fail {
@@ -23141,7 +24734,9 @@ class SetMICVolumeOption {
   }
 
   set success(SetMICVolumeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetMICVolumeSuccessCallback? get success {
@@ -23181,7 +24776,9 @@ class SetNavigationBarColorOption {
   }
 
   set complete(SetNavigationBarColorCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarColorCompleteCallback? get complete {
@@ -23189,7 +24786,9 @@ class SetNavigationBarColorOption {
   }
 
   set fail(SetNavigationBarColorFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarColorFailCallback? get fail {
@@ -23197,7 +24796,9 @@ class SetNavigationBarColorOption {
   }
 
   set success(SetNavigationBarColorSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarColorSuccessCallback? get success {
@@ -23221,7 +24822,9 @@ class SetNavigationBarTitleOption {
   }
 
   set complete(SetNavigationBarTitleCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarTitleCompleteCallback? get complete {
@@ -23229,7 +24832,9 @@ class SetNavigationBarTitleOption {
   }
 
   set fail(SetNavigationBarTitleFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarTitleFailCallback? get fail {
@@ -23237,7 +24842,9 @@ class SetNavigationBarTitleOption {
   }
 
   set success(SetNavigationBarTitleSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetNavigationBarTitleSuccessCallback? get success {
@@ -23261,7 +24868,9 @@ class SetScreenBrightnessOption {
   }
 
   set complete(SetScreenBrightnessCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetScreenBrightnessCompleteCallback? get complete {
@@ -23269,7 +24878,9 @@ class SetScreenBrightnessOption {
   }
 
   set fail(SetScreenBrightnessFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetScreenBrightnessFailCallback? get fail {
@@ -23277,7 +24888,9 @@ class SetScreenBrightnessOption {
   }
 
   set success(SetScreenBrightnessSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetScreenBrightnessSuccessCallback? get success {
@@ -23309,7 +24922,9 @@ class SetStorageOption<T extends dynamic> {
   }
 
   set complete(SetStorageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetStorageCompleteCallback? get complete {
@@ -23325,7 +24940,9 @@ class SetStorageOption<T extends dynamic> {
   }
 
   set fail(SetStorageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetStorageFailCallback? get fail {
@@ -23333,7 +24950,9 @@ class SetStorageOption<T extends dynamic> {
   }
 
   set success(SetStorageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetStorageSuccessCallback? get success {
@@ -23365,7 +24984,9 @@ class SetTabBarBadgeOption {
   }
 
   set complete(SetTabBarBadgeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarBadgeCompleteCallback? get complete {
@@ -23373,7 +24994,9 @@ class SetTabBarBadgeOption {
   }
 
   set fail(SetTabBarBadgeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarBadgeFailCallback? get fail {
@@ -23381,7 +25004,9 @@ class SetTabBarBadgeOption {
   }
 
   set success(SetTabBarBadgeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarBadgeSuccessCallback? get success {
@@ -23405,7 +25030,9 @@ class SetTabBarItemOption {
   }
 
   set complete(SetTabBarItemCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarItemCompleteCallback? get complete {
@@ -23413,7 +25040,9 @@ class SetTabBarItemOption {
   }
 
   set fail(SetTabBarItemFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarItemFailCallback? get fail {
@@ -23437,7 +25066,9 @@ class SetTabBarItemOption {
   }
 
   set success(SetTabBarItemSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarItemSuccessCallback? get success {
@@ -23485,7 +25116,9 @@ class SetTabBarStyleOption {
   }
 
   set complete(SetTabBarStyleCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarStyleCompleteCallback? get complete {
@@ -23493,7 +25126,9 @@ class SetTabBarStyleOption {
   }
 
   set fail(SetTabBarStyleFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarStyleFailCallback? get fail {
@@ -23509,7 +25144,9 @@ class SetTabBarStyleOption {
   }
 
   set success(SetTabBarStyleSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTabBarStyleSuccessCallback? get success {
@@ -23533,7 +25170,9 @@ class SetTimeoutOption {
   }
 
   set complete(SetTimeoutCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   SetTimeoutCompleteCallback? get complete {
@@ -23541,7 +25180,9 @@ class SetTimeoutOption {
   }
 
   set fail(SetTimeoutFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   SetTimeoutFailCallback? get fail {
@@ -23549,7 +25190,9 @@ class SetTimeoutOption {
   }
 
   set success(SetTimeoutSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   SetTimeoutSuccessCallback? get success {
@@ -23573,7 +25216,9 @@ class SetTopBarTextOption {
   }
 
   set complete(SetTopBarTextCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTopBarTextCompleteCallback? get complete {
@@ -23581,7 +25226,9 @@ class SetTopBarTextOption {
   }
 
   set fail(SetTopBarTextFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTopBarTextFailCallback? get fail {
@@ -23589,7 +25236,9 @@ class SetTopBarTextOption {
   }
 
   set success(SetTopBarTextSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetTopBarTextSuccessCallback? get success {
@@ -23605,7 +25254,9 @@ class SetVisualEffectOnCaptureOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SetVisualEffectOnCaptureCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetVisualEffectOnCaptureCompleteCallback? get complete {
@@ -23613,7 +25264,9 @@ class SetVisualEffectOnCaptureOption {
   }
 
   set fail(SetVisualEffectOnCaptureFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetVisualEffectOnCaptureFailCallback? get fail {
@@ -23621,7 +25274,9 @@ class SetVisualEffectOnCaptureOption {
   }
 
   set success(SetVisualEffectOnCaptureSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetVisualEffectOnCaptureSuccessCallback? get success {
@@ -23653,7 +25308,9 @@ class SetWifiListOption {
   }
 
   set complete(SetWifiListCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   SetWifiListCompleteCallback? get complete {
@@ -23661,7 +25318,9 @@ class SetWifiListOption {
   }
 
   set fail(SetWifiListFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   SetWifiListFailCallback? get fail {
@@ -23669,7 +25328,9 @@ class SetWifiListOption {
   }
 
   set success(SetWifiListSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   SetWifiListSuccessCallback? get success {
@@ -23701,7 +25362,9 @@ class SetWindowSizeOption {
   }
 
   set complete(SetWindowSizeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetWindowSizeCompleteCallback? get complete {
@@ -23709,7 +25372,9 @@ class SetWindowSizeOption {
   }
 
   set fail(SetWindowSizeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetWindowSizeFailCallback? get fail {
@@ -23717,7 +25382,9 @@ class SetWindowSizeOption {
   }
 
   set success(SetWindowSizeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetWindowSizeSuccessCallback? get success {
@@ -23741,7 +25408,9 @@ class SetZoomOption {
   }
 
   set complete(SetZoomCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetZoomCompleteCallback? get complete {
@@ -23749,7 +25418,9 @@ class SetZoomOption {
   }
 
   set fail(SetZoomFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SetZoomFailCallback? get fail {
@@ -23757,7 +25428,9 @@ class SetZoomOption {
   }
 
   set success(SetZoomSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(SetZoomSuccessCallbackResult($$context$$: result));
+    };
   }
 
   SetZoomSuccessCallback? get success {
@@ -23805,7 +25478,9 @@ class ShareFileMessageOption {
   }
 
   set complete(ShareFileMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareFileMessageCompleteCallback? get complete {
@@ -23813,7 +25488,9 @@ class ShareFileMessageOption {
   }
 
   set fail(ShareFileMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareFileMessageFailCallback? get fail {
@@ -23829,7 +25506,9 @@ class ShareFileMessageOption {
   }
 
   set success(ShareFileMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareFileMessageSuccessCallback? get success {
@@ -23853,7 +25532,9 @@ class ShareToWeRunOption {
   }
 
   set complete(ShareToWeRunCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareToWeRunCompleteCallback? get complete {
@@ -23861,7 +25542,9 @@ class ShareToWeRunOption {
   }
 
   set fail(ShareToWeRunFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareToWeRunFailCallback? get fail {
@@ -23869,7 +25552,9 @@ class ShareToWeRunOption {
   }
 
   set success(ShareToWeRunSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareToWeRunSuccessCallback? get success {
@@ -23893,7 +25578,9 @@ class ShareVideoMessageOption {
   }
 
   set complete(ShareVideoMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareVideoMessageCompleteCallback? get complete {
@@ -23901,7 +25588,9 @@ class ShareVideoMessageOption {
   }
 
   set fail(ShareVideoMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareVideoMessageFailCallback? get fail {
@@ -23909,7 +25598,9 @@ class ShareVideoMessageOption {
   }
 
   set success(ShareVideoMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShareVideoMessageSuccessCallback? get success {
@@ -23949,7 +25640,9 @@ class ShowActionSheetOption {
   }
 
   set complete(ShowActionSheetCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowActionSheetCompleteCallback? get complete {
@@ -23957,7 +25650,9 @@ class ShowActionSheetOption {
   }
 
   set fail(ShowActionSheetFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowActionSheetFailCallback? get fail {
@@ -23973,7 +25668,9 @@ class ShowActionSheetOption {
   }
 
   set success(ShowActionSheetSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ShowActionSheetSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ShowActionSheetSuccessCallback? get success {
@@ -24021,7 +25718,9 @@ class ShowLoadingOption {
   }
 
   set complete(ShowLoadingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowLoadingCompleteCallback? get complete {
@@ -24029,7 +25728,9 @@ class ShowLoadingOption {
   }
 
   set fail(ShowLoadingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowLoadingFailCallback? get fail {
@@ -24045,7 +25746,9 @@ class ShowLoadingOption {
   }
 
   set success(ShowLoadingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowLoadingSuccessCallback? get success {
@@ -24077,7 +25780,9 @@ class ShowModalOption {
   }
 
   set complete(ShowModalCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowModalCompleteCallback? get complete {
@@ -24117,7 +25822,9 @@ class ShowModalOption {
   }
 
   set fail(ShowModalFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowModalFailCallback? get fail {
@@ -24141,7 +25848,9 @@ class ShowModalOption {
   }
 
   set success(ShowModalSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ShowModalSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ShowModalSuccessCallback? get success {
@@ -24205,7 +25914,9 @@ class ShowNavigationBarLoadingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ShowNavigationBarLoadingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowNavigationBarLoadingCompleteCallback? get complete {
@@ -24213,7 +25924,9 @@ class ShowNavigationBarLoadingOption {
   }
 
   set fail(ShowNavigationBarLoadingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowNavigationBarLoadingFailCallback? get fail {
@@ -24221,7 +25934,9 @@ class ShowNavigationBarLoadingOption {
   }
 
   set success(ShowNavigationBarLoadingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowNavigationBarLoadingSuccessCallback? get success {
@@ -24245,7 +25960,9 @@ class ShowRedPackageOption {
   }
 
   set complete(ShowRedPackageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowRedPackageCompleteCallback? get complete {
@@ -24253,7 +25970,9 @@ class ShowRedPackageOption {
   }
 
   set fail(ShowRedPackageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowRedPackageFailCallback? get fail {
@@ -24261,7 +25980,9 @@ class ShowRedPackageOption {
   }
 
   set success(ShowRedPackageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowRedPackageSuccessCallback? get success {
@@ -24285,7 +26006,9 @@ class ShowShareImageMenuOption {
   }
 
   set complete(ShowShareImageMenuCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareImageMenuCompleteCallback? get complete {
@@ -24293,7 +26016,9 @@ class ShowShareImageMenuOption {
   }
 
   set fail(ShowShareImageMenuFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareImageMenuFailCallback? get fail {
@@ -24301,7 +26026,9 @@ class ShowShareImageMenuOption {
   }
 
   set success(ShowShareImageMenuSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareImageMenuSuccessCallback? get success {
@@ -24317,7 +26044,9 @@ class ShowShareMenuOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ShowShareMenuCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareMenuCompleteCallback? get complete {
@@ -24325,7 +26054,9 @@ class ShowShareMenuOption {
   }
 
   set fail(ShowShareMenuFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareMenuFailCallback? get fail {
@@ -24341,7 +26072,9 @@ class ShowShareMenuOption {
   }
 
   set success(ShowShareMenuSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowShareMenuSuccessCallback? get success {
@@ -24373,7 +26106,9 @@ class ShowTabBarOption {
   }
 
   set complete(ShowTabBarCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarCompleteCallback? get complete {
@@ -24381,7 +26116,9 @@ class ShowTabBarOption {
   }
 
   set fail(ShowTabBarFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarFailCallback? get fail {
@@ -24389,7 +26126,9 @@ class ShowTabBarOption {
   }
 
   set success(ShowTabBarSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarSuccessCallback? get success {
@@ -24413,7 +26152,9 @@ class ShowTabBarRedDotOption {
   }
 
   set complete(ShowTabBarRedDotCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarRedDotCompleteCallback? get complete {
@@ -24421,7 +26162,9 @@ class ShowTabBarRedDotOption {
   }
 
   set fail(ShowTabBarRedDotFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarRedDotFailCallback? get fail {
@@ -24429,7 +26172,9 @@ class ShowTabBarRedDotOption {
   }
 
   set success(ShowTabBarRedDotSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowTabBarRedDotSuccessCallback? get success {
@@ -24453,7 +26198,9 @@ class ShowToastOption {
   }
 
   set complete(ShowToastCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowToastCompleteCallback? get complete {
@@ -24469,7 +26216,9 @@ class ShowToastOption {
   }
 
   set fail(ShowToastFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowToastFailCallback? get fail {
@@ -24501,7 +26250,9 @@ class ShowToastOption {
   }
 
   set success(ShowToastSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ShowToastSuccessCallback? get success {
@@ -24653,7 +26404,9 @@ class SocketTaskCloseOption {
   }
 
   set complete(FileSystemManagerCloseCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseCompleteCallback? get complete {
@@ -24661,7 +26414,9 @@ class SocketTaskCloseOption {
   }
 
   set fail(SocketTaskCloseFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SocketTaskCloseFailCallback? get fail {
@@ -24677,7 +26432,9 @@ class SocketTaskCloseOption {
   }
 
   set success(FileSystemManagerCloseSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   FileSystemManagerCloseSuccessCallback? get success {
@@ -24741,7 +26498,9 @@ class SocketTaskSendOption {
   }
 
   set complete(SendCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendCompleteCallback? get complete {
@@ -24749,7 +26508,9 @@ class SocketTaskSendOption {
   }
 
   set fail(SendFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendFailCallback? get fail {
@@ -24757,7 +26518,9 @@ class SocketTaskSendOption {
   }
 
   set success(SendSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SendSuccessCallback? get success {
@@ -24837,7 +26600,9 @@ class StartAccelerometerOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartAccelerometerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAccelerometerCompleteCallback? get complete {
@@ -24845,7 +26610,9 @@ class StartAccelerometerOption {
   }
 
   set fail(StartAccelerometerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAccelerometerFailCallback? get fail {
@@ -24861,7 +26628,9 @@ class StartAccelerometerOption {
   }
 
   set success(StartAccelerometerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAccelerometerSuccessCallback? get success {
@@ -24885,7 +26654,9 @@ class StartAdvertisingObject {
   }
 
   set complete(StartAdvertisingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAdvertisingCompleteCallback? get complete {
@@ -24893,7 +26664,9 @@ class StartAdvertisingObject {
   }
 
   set fail(StartAdvertisingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAdvertisingFailCallback? get fail {
@@ -24909,7 +26682,9 @@ class StartAdvertisingObject {
   }
 
   set success(StartAdvertisingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartAdvertisingSuccessCallback? get success {
@@ -24933,7 +26708,9 @@ class StartBeaconDiscoveryOption {
   }
 
   set complete(StartBeaconDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StartBeaconDiscoveryCompleteCallback? get complete {
@@ -24941,7 +26718,9 @@ class StartBeaconDiscoveryOption {
   }
 
   set fail(StartBeaconDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StartBeaconDiscoveryFailCallback? get fail {
@@ -24957,7 +26736,9 @@ class StartBeaconDiscoveryOption {
   }
 
   set success(StartBeaconDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StartBeaconDiscoverySuccessCallback? get success {
@@ -24981,7 +26762,9 @@ class StartBluetoothDevicesDiscoveryOption {
   }
 
   set complete(StartBluetoothDevicesDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StartBluetoothDevicesDiscoveryCompleteCallback? get complete {
@@ -24989,7 +26772,9 @@ class StartBluetoothDevicesDiscoveryOption {
   }
 
   set fail(StartBluetoothDevicesDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StartBluetoothDevicesDiscoveryFailCallback? get fail {
@@ -25021,7 +26806,9 @@ class StartBluetoothDevicesDiscoveryOption {
   }
 
   set success(StartBluetoothDevicesDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StartBluetoothDevicesDiscoverySuccessCallback? get success {
@@ -25037,7 +26824,9 @@ class StartCompassOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartCompassCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartCompassCompleteCallback? get complete {
@@ -25045,7 +26834,9 @@ class StartCompassOption {
   }
 
   set fail(StartCompassFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartCompassFailCallback? get fail {
@@ -25053,7 +26844,9 @@ class StartCompassOption {
   }
 
   set success(StartCompassSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartCompassSuccessCallback? get success {
@@ -25069,7 +26862,9 @@ class StartDeviceMotionListeningOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartDeviceMotionListeningCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartDeviceMotionListeningCompleteCallback? get complete {
@@ -25077,7 +26872,9 @@ class StartDeviceMotionListeningOption {
   }
 
   set fail(StartDeviceMotionListeningFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartDeviceMotionListeningFailCallback? get fail {
@@ -25093,7 +26890,9 @@ class StartDeviceMotionListeningOption {
   }
 
   set success(StartDeviceMotionListeningSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartDeviceMotionListeningSuccessCallback? get success {
@@ -25109,7 +26908,9 @@ class StartDiscoveryOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StartDiscoveryCompleteCallback? get complete {
@@ -25117,7 +26918,9 @@ class StartDiscoveryOption {
   }
 
   set fail(StartDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StartDiscoveryFailCallback? get fail {
@@ -25125,7 +26928,9 @@ class StartDiscoveryOption {
   }
 
   set success(StartDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StartDiscoverySuccessCallback? get success {
@@ -25141,7 +26946,9 @@ class StartGyroscopeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartGyroscopeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartGyroscopeCompleteCallback? get complete {
@@ -25149,7 +26956,9 @@ class StartGyroscopeOption {
   }
 
   set fail(StartGyroscopeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartGyroscopeFailCallback? get fail {
@@ -25165,7 +26974,9 @@ class StartGyroscopeOption {
   }
 
   set success(StartGyroscopeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartGyroscopeSuccessCallback? get success {
@@ -25189,7 +27000,9 @@ class StartHCEOption {
   }
 
   set complete(StartHCECompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StartHCECompleteCallback? get complete {
@@ -25197,7 +27010,9 @@ class StartHCEOption {
   }
 
   set fail(StartHCEFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StartHCEFailCallback? get fail {
@@ -25205,7 +27020,9 @@ class StartHCEOption {
   }
 
   set success(StartHCESuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StartHCESuccessCallback? get success {
@@ -25245,7 +27062,9 @@ class StartLocalServiceDiscoveryOption {
   }
 
   set complete(StartLocalServiceDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocalServiceDiscoveryCompleteCallback? get complete {
@@ -25253,7 +27072,10 @@ class StartLocalServiceDiscoveryOption {
   }
 
   set fail(StartLocalServiceDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(
+          StartLocalServiceDiscoveryFailCallbackResult($$context$$: result));
+    };
   }
 
   StartLocalServiceDiscoveryFailCallback? get fail {
@@ -25261,7 +27083,9 @@ class StartLocalServiceDiscoveryOption {
   }
 
   set success(StartLocalServiceDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocalServiceDiscoverySuccessCallback? get success {
@@ -25277,7 +27101,9 @@ class StartLocationUpdateBackgroundOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartLocationUpdateBackgroundCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateBackgroundCompleteCallback? get complete {
@@ -25285,7 +27111,9 @@ class StartLocationUpdateBackgroundOption {
   }
 
   set fail(StartLocationUpdateBackgroundFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateBackgroundFailCallback? get fail {
@@ -25293,7 +27121,9 @@ class StartLocationUpdateBackgroundOption {
   }
 
   set success(StartLocationUpdateBackgroundSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateBackgroundSuccessCallback? get success {
@@ -25317,7 +27147,9 @@ class StartLocationUpdateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartLocationUpdateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateCompleteCallback? get complete {
@@ -25325,7 +27157,9 @@ class StartLocationUpdateOption {
   }
 
   set fail(StartLocationUpdateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateFailCallback? get fail {
@@ -25333,7 +27167,9 @@ class StartLocationUpdateOption {
   }
 
   set success(StartLocationUpdateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartLocationUpdateSuccessCallback? get success {
@@ -25357,7 +27193,9 @@ class StartPreviewOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartPreviewCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPreviewCompleteCallback? get complete {
@@ -25365,7 +27203,9 @@ class StartPreviewOption {
   }
 
   set fail(StartPreviewFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPreviewFailCallback? get fail {
@@ -25373,7 +27213,9 @@ class StartPreviewOption {
   }
 
   set success(StartPreviewSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPreviewSuccessCallback? get success {
@@ -25389,7 +27231,9 @@ class StartPullDownRefreshOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartPullDownRefreshCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPullDownRefreshCompleteCallback? get complete {
@@ -25397,7 +27241,9 @@ class StartPullDownRefreshOption {
   }
 
   set fail(StartPullDownRefreshFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPullDownRefreshFailCallback? get fail {
@@ -25405,7 +27251,9 @@ class StartPullDownRefreshOption {
   }
 
   set success(StartPullDownRefreshSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartPullDownRefreshSuccessCallback? get success {
@@ -25493,7 +27341,9 @@ class StartSoterAuthenticationOption {
   }
 
   set complete(StartSoterAuthenticationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartSoterAuthenticationCompleteCallback? get complete {
@@ -25501,7 +27351,9 @@ class StartSoterAuthenticationOption {
   }
 
   set fail(StartSoterAuthenticationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartSoterAuthenticationFailCallback? get fail {
@@ -25509,7 +27361,10 @@ class StartSoterAuthenticationOption {
   }
 
   set success(StartSoterAuthenticationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(
+          StartSoterAuthenticationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   StartSoterAuthenticationSuccessCallback? get success {
@@ -25573,7 +27428,9 @@ class StartWifiOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartWifiCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StartWifiCompleteCallback? get complete {
@@ -25581,7 +27438,9 @@ class StartWifiOption {
   }
 
   set fail(StartWifiFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StartWifiFailCallback? get fail {
@@ -25589,7 +27448,9 @@ class StartWifiOption {
   }
 
   set success(StartWifiSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StartWifiSuccessCallback? get success {
@@ -25629,7 +27490,9 @@ class StatOption {
   }
 
   set complete(StatCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StatCompleteCallback? get complete {
@@ -25637,7 +27500,9 @@ class StatOption {
   }
 
   set fail(StatFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(StatFailCallbackResult($$context$$: result));
+    };
   }
 
   StatFailCallback? get fail {
@@ -25653,7 +27518,9 @@ class StatOption {
   }
 
   set success(StatSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(StatSuccessCallbackResult($$context$$: result));
+    };
   }
 
   StatSuccessCallback? get success {
@@ -25855,7 +27722,9 @@ class StopAccelerometerOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopAccelerometerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAccelerometerCompleteCallback? get complete {
@@ -25863,7 +27732,9 @@ class StopAccelerometerOption {
   }
 
   set fail(StopAccelerometerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAccelerometerFailCallback? get fail {
@@ -25871,7 +27742,9 @@ class StopAccelerometerOption {
   }
 
   set success(StopAccelerometerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAccelerometerSuccessCallback? get success {
@@ -25887,7 +27760,9 @@ class StopAdvertisingOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopAdvertisingCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAdvertisingCompleteCallback? get complete {
@@ -25895,7 +27770,9 @@ class StopAdvertisingOption {
   }
 
   set fail(StopAdvertisingFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAdvertisingFailCallback? get fail {
@@ -25903,7 +27780,9 @@ class StopAdvertisingOption {
   }
 
   set success(StopAdvertisingSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopAdvertisingSuccessCallback? get success {
@@ -25919,7 +27798,9 @@ class StopBGMOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopBGMCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBGMCompleteCallback? get complete {
@@ -25927,7 +27808,9 @@ class StopBGMOption {
   }
 
   set fail(StopBGMFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBGMFailCallback? get fail {
@@ -25935,7 +27818,9 @@ class StopBGMOption {
   }
 
   set success(StopBGMSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBGMSuccessCallback? get success {
@@ -25951,7 +27836,9 @@ class StopBackgroundAudioOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopBackgroundAudioCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBackgroundAudioCompleteCallback? get complete {
@@ -25959,7 +27846,9 @@ class StopBackgroundAudioOption {
   }
 
   set fail(StopBackgroundAudioFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBackgroundAudioFailCallback? get fail {
@@ -25967,7 +27856,9 @@ class StopBackgroundAudioOption {
   }
 
   set success(StopBackgroundAudioSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopBackgroundAudioSuccessCallback? get success {
@@ -25983,7 +27874,9 @@ class StopBeaconDiscoveryOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopBeaconDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StopBeaconDiscoveryCompleteCallback? get complete {
@@ -25991,7 +27884,9 @@ class StopBeaconDiscoveryOption {
   }
 
   set fail(StopBeaconDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StopBeaconDiscoveryFailCallback? get fail {
@@ -25999,7 +27894,9 @@ class StopBeaconDiscoveryOption {
   }
 
   set success(StopBeaconDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BeaconError($$context$$: res));
+    };
   }
 
   StopBeaconDiscoverySuccessCallback? get success {
@@ -26015,7 +27912,9 @@ class StopBluetoothDevicesDiscoveryOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopBluetoothDevicesDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StopBluetoothDevicesDiscoveryCompleteCallback? get complete {
@@ -26023,7 +27922,9 @@ class StopBluetoothDevicesDiscoveryOption {
   }
 
   set fail(StopBluetoothDevicesDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StopBluetoothDevicesDiscoveryFailCallback? get fail {
@@ -26031,7 +27932,9 @@ class StopBluetoothDevicesDiscoveryOption {
   }
 
   set success(StopBluetoothDevicesDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   StopBluetoothDevicesDiscoverySuccessCallback? get success {
@@ -26047,7 +27950,9 @@ class StopCompassOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopCompassCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopCompassCompleteCallback? get complete {
@@ -26055,7 +27960,9 @@ class StopCompassOption {
   }
 
   set fail(StopCompassFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopCompassFailCallback? get fail {
@@ -26063,7 +27970,9 @@ class StopCompassOption {
   }
 
   set success(StopCompassSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopCompassSuccessCallback? get success {
@@ -26079,7 +27988,9 @@ class StopDeviceMotionListeningOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopDeviceMotionListeningCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopDeviceMotionListeningCompleteCallback? get complete {
@@ -26087,7 +27998,9 @@ class StopDeviceMotionListeningOption {
   }
 
   set fail(StopDeviceMotionListeningFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopDeviceMotionListeningFailCallback? get fail {
@@ -26095,7 +28008,9 @@ class StopDeviceMotionListeningOption {
   }
 
   set success(StopDeviceMotionListeningSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopDeviceMotionListeningSuccessCallback? get success {
@@ -26111,7 +28026,9 @@ class StopDiscoveryOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StopDiscoveryCompleteCallback? get complete {
@@ -26119,7 +28036,9 @@ class StopDiscoveryOption {
   }
 
   set fail(StopDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StopDiscoveryFailCallback? get fail {
@@ -26127,7 +28046,9 @@ class StopDiscoveryOption {
   }
 
   set success(StopDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   StopDiscoverySuccessCallback? get success {
@@ -26143,7 +28064,9 @@ class StopFaceDetectOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopFaceDetectCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopFaceDetectCompleteCallback? get complete {
@@ -26151,7 +28074,9 @@ class StopFaceDetectOption {
   }
 
   set fail(StopFaceDetectFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopFaceDetectFailCallback? get fail {
@@ -26159,7 +28084,9 @@ class StopFaceDetectOption {
   }
 
   set success(StopFaceDetectSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopFaceDetectSuccessCallback? get success {
@@ -26175,7 +28102,9 @@ class StopGyroscopeOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopGyroscopeCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopGyroscopeCompleteCallback? get complete {
@@ -26183,7 +28112,9 @@ class StopGyroscopeOption {
   }
 
   set fail(StopGyroscopeFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopGyroscopeFailCallback? get fail {
@@ -26191,7 +28122,9 @@ class StopGyroscopeOption {
   }
 
   set success(StopGyroscopeSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopGyroscopeSuccessCallback? get success {
@@ -26207,7 +28140,9 @@ class StopHCEOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopHCECompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StopHCECompleteCallback? get complete {
@@ -26215,7 +28150,9 @@ class StopHCEOption {
   }
 
   set fail(StopHCEFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StopHCEFailCallback? get fail {
@@ -26223,7 +28160,9 @@ class StopHCEOption {
   }
 
   set success(StopHCESuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(NFCError($$context$$: res));
+    };
   }
 
   StopHCESuccessCallback? get success {
@@ -26255,7 +28194,9 @@ class StopLocalServiceDiscoveryOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopLocalServiceDiscoveryCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopLocalServiceDiscoveryCompleteCallback? get complete {
@@ -26263,7 +28204,10 @@ class StopLocalServiceDiscoveryOption {
   }
 
   set fail(StopLocalServiceDiscoveryFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(
+          StopLocalServiceDiscoveryFailCallbackResult($$context$$: result));
+    };
   }
 
   StopLocalServiceDiscoveryFailCallback? get fail {
@@ -26271,7 +28215,9 @@ class StopLocalServiceDiscoveryOption {
   }
 
   set success(StopLocalServiceDiscoverySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopLocalServiceDiscoverySuccessCallback? get success {
@@ -26287,7 +28233,9 @@ class StopLocationUpdateOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopLocationUpdateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopLocationUpdateCompleteCallback? get complete {
@@ -26295,7 +28243,9 @@ class StopLocationUpdateOption {
   }
 
   set fail(StopLocationUpdateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopLocationUpdateFailCallback? get fail {
@@ -26303,7 +28253,9 @@ class StopLocationUpdateOption {
   }
 
   set success(StopLocationUpdateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopLocationUpdateSuccessCallback? get success {
@@ -26319,7 +28271,9 @@ class StopOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopCompleteCallback? get complete {
@@ -26327,7 +28281,9 @@ class StopOption {
   }
 
   set fail(StopFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopFailCallback? get fail {
@@ -26335,7 +28291,9 @@ class StopOption {
   }
 
   set success(StopSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopSuccessCallback? get success {
@@ -26351,7 +28309,9 @@ class StopPreviewOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopPreviewCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPreviewCompleteCallback? get complete {
@@ -26359,7 +28319,9 @@ class StopPreviewOption {
   }
 
   set fail(StopPreviewFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPreviewFailCallback? get fail {
@@ -26367,7 +28329,9 @@ class StopPreviewOption {
   }
 
   set success(StopPreviewSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPreviewSuccessCallback? get success {
@@ -26383,7 +28347,9 @@ class StopPullDownRefreshOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopPullDownRefreshCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPullDownRefreshCompleteCallback? get complete {
@@ -26391,7 +28357,9 @@ class StopPullDownRefreshOption {
   }
 
   set fail(StopPullDownRefreshFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPullDownRefreshFailCallback? get fail {
@@ -26399,7 +28367,9 @@ class StopPullDownRefreshOption {
   }
 
   set success(StopPullDownRefreshSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopPullDownRefreshSuccessCallback? get success {
@@ -26447,7 +28417,9 @@ class StopVoiceOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopVoiceCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopVoiceCompleteCallback? get complete {
@@ -26455,7 +28427,9 @@ class StopVoiceOption {
   }
 
   set fail(StopVoiceFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopVoiceFailCallback? get fail {
@@ -26463,7 +28437,9 @@ class StopVoiceOption {
   }
 
   set success(StopVoiceSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopVoiceSuccessCallback? get success {
@@ -26479,7 +28455,9 @@ class StopWifiOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopWifiCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StopWifiCompleteCallback? get complete {
@@ -26487,7 +28465,9 @@ class StopWifiOption {
   }
 
   set fail(StopWifiFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StopWifiFailCallback? get fail {
@@ -26495,7 +28475,9 @@ class StopWifiOption {
   }
 
   set success(StopWifiSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(WifiError($$context$$: res));
+    };
   }
 
   StopWifiSuccessCallback? get success {
@@ -26519,7 +28501,9 @@ class SubscribeVoIPVideoMembersOption {
   }
 
   set complete(SubscribeVoIPVideoMembersCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SubscribeVoIPVideoMembersCompleteCallback? get complete {
@@ -26527,7 +28511,9 @@ class SubscribeVoIPVideoMembersOption {
   }
 
   set fail(SubscribeVoIPVideoMembersFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SubscribeVoIPVideoMembersFailCallback? get fail {
@@ -26535,7 +28521,9 @@ class SubscribeVoIPVideoMembersOption {
   }
 
   set success(SubscribeVoIPVideoMembersSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SubscribeVoIPVideoMembersSuccessCallback? get success {
@@ -26575,7 +28563,9 @@ class SwitchCameraOption {
   late mpjs.JSObject $$context$$;
 
   set complete(SwitchCameraCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchCameraCompleteCallback? get complete {
@@ -26583,7 +28573,9 @@ class SwitchCameraOption {
   }
 
   set fail(SwitchCameraFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchCameraFailCallback? get fail {
@@ -26591,7 +28583,9 @@ class SwitchCameraOption {
   }
 
   set success(SwitchCameraSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchCameraSuccessCallback? get success {
@@ -26615,7 +28609,9 @@ class SwitchTabOption {
   }
 
   set complete(SwitchTabCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchTabCompleteCallback? get complete {
@@ -26623,7 +28619,9 @@ class SwitchTabOption {
   }
 
   set fail(SwitchTabFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchTabFailCallback? get fail {
@@ -26631,7 +28629,9 @@ class SwitchTabOption {
   }
 
   set success(SwitchTabSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   SwitchTabSuccessCallback? get success {
@@ -27039,7 +29039,9 @@ class TakePhotoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(TakePhotoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TakePhotoCompleteCallback? get complete {
@@ -27047,7 +29049,9 @@ class TakePhotoOption {
   }
 
   set fail(TakePhotoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TakePhotoFailCallback? get fail {
@@ -27071,7 +29075,9 @@ class TakePhotoOption {
   }
 
   set success(TakePhotoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(TakePhotoSuccessCallbackResult($$context$$: result));
+    };
   }
 
   TakePhotoSuccessCallback? get success {
@@ -27239,7 +29245,9 @@ class ToScreenLocationOption {
   }
 
   set complete(ToScreenLocationCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ToScreenLocationCompleteCallback? get complete {
@@ -27247,7 +29255,9 @@ class ToScreenLocationOption {
   }
 
   set fail(ToScreenLocationFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ToScreenLocationFailCallback? get fail {
@@ -27255,7 +29265,9 @@ class ToScreenLocationOption {
   }
 
   set success(ToScreenLocationSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(ToScreenLocationSuccessCallbackResult($$context$$: result));
+    };
   }
 
   ToScreenLocationSuccessCallback? get success {
@@ -27303,7 +29315,9 @@ class ToggleTorchOption {
   late mpjs.JSObject $$context$$;
 
   set complete(ToggleTorchCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ToggleTorchCompleteCallback? get complete {
@@ -27311,7 +29325,9 @@ class ToggleTorchOption {
   }
 
   set fail(ToggleTorchFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ToggleTorchFailCallback? get fail {
@@ -27319,7 +29335,9 @@ class ToggleTorchOption {
   }
 
   set success(ToggleTorchSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   ToggleTorchSuccessCallback? get success {
@@ -27415,7 +29433,9 @@ class TransceiveOption {
   }
 
   set complete(TransceiveCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   TransceiveCompleteCallback? get complete {
@@ -27423,7 +29443,9 @@ class TransceiveOption {
   }
 
   set fail(TransceiveFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   TransceiveFailCallback? get fail {
@@ -27431,7 +29453,9 @@ class TransceiveOption {
   }
 
   set success(TransceiveSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(TransceiveSuccessCallbackResult($$context$$: result));
+    };
   }
 
   TransceiveSuccessCallback? get success {
@@ -27503,7 +29527,9 @@ class TranslateMarkerOption {
   }
 
   set animationEnd(dynamic? value) {
-    $$context$$["animationEnd"] = value;
+    $$context$$["animationEnd"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic? get animationEnd {
@@ -27511,7 +29537,9 @@ class TranslateMarkerOption {
   }
 
   set complete(TranslateMarkerCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TranslateMarkerCompleteCallback? get complete {
@@ -27527,7 +29555,9 @@ class TranslateMarkerOption {
   }
 
   set fail(TranslateMarkerFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TranslateMarkerFailCallback? get fail {
@@ -27543,7 +29573,9 @@ class TranslateMarkerOption {
   }
 
   set success(TranslateMarkerSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TranslateMarkerSuccessCallback? get success {
@@ -27583,7 +29615,9 @@ class TruncateOption {
   }
 
   set complete(TruncateCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TruncateCompleteCallback? get complete {
@@ -27591,7 +29625,9 @@ class TruncateOption {
   }
 
   set fail(TruncateFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(TruncateFailCallbackResult($$context$$: result));
+    };
   }
 
   TruncateFailCallback? get fail {
@@ -27607,7 +29643,9 @@ class TruncateOption {
   }
 
   set success(TruncateSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   TruncateSuccessCallback? get success {
@@ -27759,7 +29797,9 @@ class UndoOption {
   late mpjs.JSObject $$context$$;
 
   set complete(UndoCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UndoCompleteCallback? get complete {
@@ -27767,7 +29807,9 @@ class UndoOption {
   }
 
   set fail(UndoFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UndoFailCallback? get fail {
@@ -27775,7 +29817,9 @@ class UndoOption {
   }
 
   set success(UndoSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UndoSuccessCallback? get success {
@@ -27815,7 +29859,9 @@ class UnlinkOption {
   }
 
   set complete(UnlinkCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UnlinkCompleteCallback? get complete {
@@ -27823,7 +29869,9 @@ class UnlinkOption {
   }
 
   set fail(UnlinkFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(UnlinkFailCallbackResult($$context$$: result));
+    };
   }
 
   UnlinkFailCallback? get fail {
@@ -27831,7 +29879,9 @@ class UnlinkOption {
   }
 
   set success(UnlinkSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UnlinkSuccessCallback? get success {
@@ -27879,7 +29929,9 @@ class UnzipOption {
   }
 
   set complete(UnzipCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UnzipCompleteCallback? get complete {
@@ -27887,7 +29939,9 @@ class UnzipOption {
   }
 
   set fail(UnzipFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(UnzipFailCallbackResult($$context$$: result));
+    };
   }
 
   UnzipFailCallback? get fail {
@@ -27895,7 +29949,9 @@ class UnzipOption {
   }
 
   set success(UnzipSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UnzipSuccessCallback? get success {
@@ -27976,7 +30032,9 @@ class UpdateGroundOverlayOption {
   }
 
   set complete(UpdateGroundOverlayCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateGroundOverlayCompleteCallback? get complete {
@@ -27984,7 +30042,9 @@ class UpdateGroundOverlayOption {
   }
 
   set fail(UpdateGroundOverlayFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateGroundOverlayFailCallback? get fail {
@@ -28000,7 +30060,9 @@ class UpdateGroundOverlayOption {
   }
 
   set success(UpdateGroundOverlaySuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateGroundOverlaySuccessCallback? get success {
@@ -28040,7 +30102,9 @@ class UpdateShareMenuOption {
   }
 
   set complete(UpdateShareMenuCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateShareMenuCompleteCallback? get complete {
@@ -28048,7 +30112,9 @@ class UpdateShareMenuOption {
   }
 
   set fail(UpdateShareMenuFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateShareMenuFailCallback? get fail {
@@ -28072,7 +30138,9 @@ class UpdateShareMenuOption {
   }
 
   set success(UpdateShareMenuSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateShareMenuSuccessCallback? get success {
@@ -28121,7 +30189,9 @@ class UpdateVoIPChatMuteConfigOption {
   }
 
   set complete(UpdateVoIPChatMuteConfigCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateVoIPChatMuteConfigCompleteCallback? get complete {
@@ -28129,7 +30199,9 @@ class UpdateVoIPChatMuteConfigOption {
   }
 
   set fail(UpdateVoIPChatMuteConfigFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateVoIPChatMuteConfigFailCallback? get fail {
@@ -28137,7 +30209,9 @@ class UpdateVoIPChatMuteConfigOption {
   }
 
   set success(UpdateVoIPChatMuteConfigSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateVoIPChatMuteConfigSuccessCallback? get success {
@@ -28153,7 +30227,9 @@ class UpdateWeChatAppOption {
   late mpjs.JSObject $$context$$;
 
   set complete(UpdateWeChatAppCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateWeChatAppCompleteCallback? get complete {
@@ -28161,7 +30237,9 @@ class UpdateWeChatAppOption {
   }
 
   set fail(UpdateWeChatAppFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateWeChatAppFailCallback? get fail {
@@ -28169,7 +30247,9 @@ class UpdateWeChatAppOption {
   }
 
   set success(UpdateWeChatAppSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UpdateWeChatAppSuccessCallback? get success {
@@ -28209,7 +30289,9 @@ class UploadFileOption {
   }
 
   set complete(UploadFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UploadFileCompleteCallback? get complete {
@@ -28217,7 +30299,9 @@ class UploadFileOption {
   }
 
   set fail(UploadFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   UploadFileFailCallback? get fail {
@@ -28241,7 +30325,9 @@ class UploadFileOption {
   }
 
   set success(UploadFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(UploadFileSuccessCallbackResult($$context$$: result));
+    };
   }
 
   UploadFileSuccessCallback? get success {
@@ -29134,7 +31220,9 @@ class VibrateLongOption {
   late mpjs.JSObject $$context$$;
 
   set complete(VibrateLongCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   VibrateLongCompleteCallback? get complete {
@@ -29142,7 +31230,9 @@ class VibrateLongOption {
   }
 
   set fail(VibrateLongFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   VibrateLongFailCallback? get fail {
@@ -29150,7 +31240,9 @@ class VibrateLongOption {
   }
 
   set success(VibrateLongSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   VibrateLongSuccessCallback? get success {
@@ -29190,7 +31282,9 @@ class VibrateShortOption {
   }
 
   set complete(VibrateShortCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   VibrateShortCompleteCallback? get complete {
@@ -29198,7 +31292,9 @@ class VibrateShortOption {
   }
 
   set fail(VibrateShortFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(VibrateShortFailCallbackResult($$context$$: result));
+    };
   }
 
   VibrateShortFailCallback? get fail {
@@ -29206,7 +31302,9 @@ class VibrateShortOption {
   }
 
   set success(VibrateShortSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   VibrateShortSuccessCallback? get success {
@@ -29334,7 +31432,9 @@ class WebAudioContext {
   }
 
   set onstatechange(dynamic value) {
-    $$context$$["onstatechange"] = value;
+    $$context$$["onstatechange"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get onstatechange {
@@ -29539,7 +31639,9 @@ class WebAudioContextNode {
   }
 
   set setOrientation(dynamic value) {
-    $$context$$["setOrientation"] = value;
+    $$context$$["setOrientation"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get setOrientation {
@@ -29547,7 +31649,9 @@ class WebAudioContextNode {
   }
 
   set setPosition(dynamic value) {
-    $$context$$["setPosition"] = value;
+    $$context$$["setPosition"] = (args) {
+      value?.call(args);
+    };
   }
 
   dynamic get setPosition {
@@ -29850,7 +31954,9 @@ class WriteBLECharacteristicValueOption {
   }
 
   set complete(WriteBLECharacteristicValueCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   WriteBLECharacteristicValueCompleteCallback? get complete {
@@ -29858,7 +31964,9 @@ class WriteBLECharacteristicValueOption {
   }
 
   set fail(WriteBLECharacteristicValueFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   WriteBLECharacteristicValueFailCallback? get fail {
@@ -29866,7 +31974,9 @@ class WriteBLECharacteristicValueOption {
   }
 
   set success(WriteBLECharacteristicValueSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(BluetoothError($$context$$: res));
+    };
   }
 
   WriteBLECharacteristicValueSuccessCallback? get success {
@@ -29930,7 +32040,9 @@ class WriteCharacteristicValueObject {
   }
 
   set complete(WriteCharacteristicValueCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteCharacteristicValueCompleteCallback? get complete {
@@ -29938,7 +32050,9 @@ class WriteCharacteristicValueObject {
   }
 
   set fail(WriteCharacteristicValueFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteCharacteristicValueFailCallback? get fail {
@@ -29946,7 +32060,9 @@ class WriteCharacteristicValueObject {
   }
 
   set success(WriteCharacteristicValueSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteCharacteristicValueSuccessCallback? get success {
@@ -30010,7 +32126,9 @@ class WriteFileOption {
   }
 
   set complete(WriteFileCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteFileCompleteCallback? get complete {
@@ -30026,7 +32144,9 @@ class WriteFileOption {
   }
 
   set fail(WriteFileFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(WriteFileFailCallbackResult($$context$$: result));
+    };
   }
 
   WriteFileFailCallback? get fail {
@@ -30034,7 +32154,9 @@ class WriteFileOption {
   }
 
   set success(WriteFileSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteFileSuccessCallback? get success {
@@ -30050,7 +32172,9 @@ class WriteNdefMessageOption {
   late mpjs.JSObject $$context$$;
 
   set complete(WriteNdefMessageCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   WriteNdefMessageCompleteCallback? get complete {
@@ -30058,7 +32182,9 @@ class WriteNdefMessageOption {
   }
 
   set fail(WriteNdefMessageFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   WriteNdefMessageFailCallback? get fail {
@@ -30074,7 +32200,9 @@ class WriteNdefMessageOption {
   }
 
   set success(WriteNdefMessageSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(Nfcrwerror($$context$$: res));
+    };
   }
 
   WriteNdefMessageSuccessCallback? get success {
@@ -30122,7 +32250,9 @@ class WriteOption {
   }
 
   set complete(WriteCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WriteCompleteCallback? get complete {
@@ -30138,7 +32268,9 @@ class WriteOption {
   }
 
   set fail(WriteFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (result) {
+      value?.call(WriteFailCallbackResult($$context$$: result));
+    };
   }
 
   WriteFailCallback? get fail {
@@ -30170,7 +32302,9 @@ class WriteOption {
   }
 
   set success(WriteSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(WriteSuccessCallbackResult($$context$$: result));
+    };
   }
 
   WriteSuccessCallback? get success {
@@ -30282,7 +32416,9 @@ class WxStartRecordOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StartRecordCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartRecordCompleteCallback? get complete {
@@ -30290,7 +32426,9 @@ class WxStartRecordOption {
   }
 
   set fail(StartRecordFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StartRecordFailCallback? get fail {
@@ -30298,7 +32436,9 @@ class WxStartRecordOption {
   }
 
   set success(WxStartRecordSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (result) {
+      value?.call(StartRecordSuccessCallbackResult($$context$$: result));
+    };
   }
 
   WxStartRecordSuccessCallback? get success {
@@ -30314,7 +32454,9 @@ class WxStopRecordOption {
   late mpjs.JSObject $$context$$;
 
   set complete(StopRecordCompleteCallback? value) {
-    $$context$$["complete"] = value;
+    $$context$$["complete"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopRecordCompleteCallback? get complete {
@@ -30322,7 +32464,9 @@ class WxStopRecordOption {
   }
 
   set fail(StopRecordFailCallback? value) {
-    $$context$$["fail"] = value;
+    $$context$$["fail"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   StopRecordFailCallback? get fail {
@@ -30330,7 +32474,9 @@ class WxStopRecordOption {
   }
 
   set success(WxStopRecordSuccessCallback? value) {
-    $$context$$["success"] = value;
+    $$context$$["success"] = (res) {
+      value?.call(GeneralCallbackResult($$context$$: res));
+    };
   }
 
   WxStopRecordSuccessCallback? get success {

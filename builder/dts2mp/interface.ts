@@ -102,7 +102,7 @@ class ${className}${this.codeOfGeneric()} ${
     ${className}({mpjs.JSObject? $$context$$})${
       this.extendsClass ? ":super($$context$$:$$context$$)" : ""
     }${this.extendsClass ? ";" : `
-      {this.$$context$$ = $$context$$ ?? mpjs.JSObject("new");}
+      {this.$$context$$ = $$context$$ ?? mpjs.JSObject("Object");}
     `}
 
     ${this.methods.map((it) => it.code()).join("\n\n")}
